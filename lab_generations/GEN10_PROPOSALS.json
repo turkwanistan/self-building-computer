@@ -1,0 +1,49 @@
+{
+  "do_not_implement_without_request": true,
+  "generation": "gen10-proposals-from-gen9-evidence",
+  "implemented": false,
+  "proposals": [
+    {
+      "complexity": "medium",
+      "evidence": "Gen9 self-use showed a coherent Twin can become fail-closed immediately after a required benchmark rewrites Tier-1 evidence artifacts, even though source topology is unchanged.",
+      "expected_benefit": "Create deterministic evidence epochs or snapshot transactions so compile/minimize/evaluate operate on one provenance-locked view, while newer evidence is queued for the next epoch rather than creating avoidable transient incoherence.",
+      "kind": "context/reasoning",
+      "rank": 1,
+      "title": "Evidence Epoch / Snapshot Freshness Coordinator"
+    },
+    {
+      "complexity": "low-medium",
+      "evidence": "Early Gen9 self-use showed safety/recovery vocabulary can dominate the actual design intent; classification remains the first scope decision before evidence minimization.",
+      "expected_benefit": "Improve deterministic intent precedence and add adversarial mixed-intent cases without learned/opaque routing.",
+      "kind": "context/reasoning",
+      "rank": 2,
+      "title": "Task Intent Classification Hardening"
+    },
+    {
+      "complexity": "medium-large",
+      "evidence": "Gen9 used capsules safely for ablation and retained regressions; optimizer rules now provide concrete evidence candidates to mutate or withhold.",
+      "expected_benefit": "Measure evaluator discrimination against bounded mutants and necessity counterexamples without risking accepted state.",
+      "kind": "verification",
+      "rank": 3,
+      "title": "Evaluator / Mutation Nursery on Experiment Capsules"
+    },
+    {
+      "complexity": "large",
+      "evidence": "Version-pinned Gen7 and Gen9 leave-one-out tests demonstrate value from replaying controlled evidence differences.",
+      "expected_benefit": "Replay historical tasks with one evidence/version difference at a time and quantify whether a removed record was causally necessary.",
+      "kind": "causal/replay",
+      "rank": 4,
+      "title": "Counterfactual Necessity Replay"
+    },
+    {
+      "complexity": "medium",
+      "evidence": "Gen9 repeatedly removed registry/generation/object support that was semantically dominated by authoritative capability/memory evidence.",
+      "expected_benefit": "Consolidate near-equivalent retained capabilities/memories only after evaluators, regressions, and necessity proofs preserve lineage.",
+      "kind": "retention",
+      "rank": 5,
+      "title": "Capability Consolidator with Necessity Proofs"
+    }
+  ],
+  "source_generation": "gen9-context-necessity-r1",
+  "top_recommendation": "Evidence Epoch / Snapshot Freshness Coordinator"
+}

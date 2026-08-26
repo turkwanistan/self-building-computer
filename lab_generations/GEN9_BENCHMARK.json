@@ -1,0 +1,103 @@
+{
+  "benchmark_bug_correction": {
+    "finding": "After the Twin learned Gen9, three direct benchmark_gen9 validation edges were incorrectly counted as legacy false positives. The benchmark now proves they are post-gold current-valid only when the validation node is absent from the exact accepted Gen8 Twin and an observed two-node dependency path starts at a frozen required owner. The strict legacy threshold is evaluated against the exact lossless accepted Gen8 Twin.",
+    "gold_modified": false,
+    "thresholds_relaxed": false
+  },
+  "benchmark_source_sha256": "03fe8a7845d08574f211f5cada42578c4be53912a81c0797554c5117a5b19152",
+  "checks": [
+    "gold_7_cases",
+    "stale_missing_blocks_minimization",
+    "contradiction_blocks_minimization",
+    "deterministic_identical_inputs",
+    "necessary_leave_one_out_fails_evaluator",
+    "redundant_leave_one_out_preserves_evaluator",
+    "optimizer_selftest",
+    "high_fanout_bounded_by_necessity_proof",
+    "current_valid_gen8_validation_preserved",
+    "safety_critical_cannot_be_optimized_away",
+    "version_scoped_gen7_evidence_exact",
+    "protected_state_capsule_ablation",
+    "predeclared_success_criteria",
+    "context_reduction_preserved_or_improved"
+  ],
+  "gold_sha256": "dc755fd02e1dc44c1aed1cdf9a3f1745d6049178472a0165cbdf40867f5ae637",
+  "live_artifact_sha256": "514d7959268f06b028047e6b0e3a9d0587a30bb63b77b1c36afffeb12910008b",
+  "metrics": {
+    "baseline_necessity_aware": {
+      "critical_fn": 0,
+      "critical_fp": 18,
+      "critical_precision": 0.727273,
+      "critical_tp": 48
+    },
+    "capsule_probe": {
+      "accepted_state_unchanged": true,
+      "recipe_digest": "329ad4f247c9948b884a05875a160c1e024493beb0a24465fb9d6ee5ae0c478d",
+      "run_id": "cap8_20260826T184721Z_c048cf73"
+    },
+    "compile_latency_ms": {
+      "max": 257.929,
+      "median": 108.448
+    },
+    "context_payload_bytes": {
+      "baseline_average": 20623.43,
+      "baseline_median": 12285,
+      "minimized_average": 11119,
+      "minimized_median": 10840,
+      "reduction": 0.460856
+    },
+    "context_reduction": {
+      "broad_baseline_bytes": 528879,
+      "gen9_broad_reduction": 0.978976,
+      "gen9_practical_reduction": 0.959743,
+      "gen9_vs_gen8_payload_reduction": 0.460856,
+      "practical_baseline_bytes": 276200
+    },
+    "legacy_gen8_exact_id_metric_comparable_frozen_twin": {
+      "critical_fn": 0,
+      "critical_fp": 3,
+      "critical_precision": 0.931818,
+      "critical_tp": 41,
+      "frozen_twin_graph_digest": "ceab9a44188706a209b23066217de4e8991b44d067d6c21f9018d56861c182eb",
+      "frozen_twin_sha256": "f1299fa23330944c734377203c4769fb4e8e27a9ac104f64397299a277ba9eea"
+    },
+    "legacy_gen8_exact_id_metric_current_twin_diagnostic": {
+      "critical_fn": 0,
+      "critical_fp": 6,
+      "critical_precision": 0.87234,
+      "critical_tp": 41,
+      "note": "Diagnostic only: current Gen9 Twin legitimately adds direct post-Gen8 validators."
+    },
+    "minimization_latency_ms": {
+      "max": 6.941,
+      "median": 1.94,
+      "p95": 4.516
+    },
+    "minimized_necessity_aware": {
+      "critical_fn": 0,
+      "critical_fp": 0,
+      "critical_precision": 1.0,
+      "critical_tp": 47,
+      "required_evidence_recall": 1.0
+    },
+    "permanent_mcp_tools": 10,
+    "post_gold_current_validations": {
+      "architecture-experience-loop-current": [
+        "validation:benchmark:benchmark_gen9"
+      ],
+      "change-context-compiler": [
+        "validation:benchmark:benchmark_gen9"
+      ],
+      "change-experiment-capsule": [
+        "validation:benchmark:benchmark_gen9"
+      ]
+    },
+    "task_kind_classification_ok": true,
+    "unrelated_context_negative_controls_ok": true
+  },
+  "passed": 20,
+  "representative_packets_live_sha256": "9894246bfbf81038a75337964bfc41dcdc39c086e66bb5389601a422aec8358a",
+  "source_version": "gen9-context-necessity-benchmark-r2",
+  "total": 20,
+  "version": "gen9-context-necessity-canonical-benchmark-r2"
+}

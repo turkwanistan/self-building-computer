@@ -1,7 +1,7 @@
 {
   "lab": {
-    "accepted_at": "2026-08-26T17:57:05.716800+00:00",
-    "build_id": "gen8-context-compiler-r1-39b7f040fca1",
+    "accepted_at": "2026-08-26T18:54:11.731342+00:00",
+    "build_id": "gen9-context-necessity-r1-6be10d7af323",
     "features_add": [
       "architectural_digital_twin",
       "causal_observability_spine",
@@ -10,7 +10,10 @@
       "mutation_safe_retained_regression_strategy",
       "deterministic_provenance_backed_context_compiler",
       "reproducible_experiment_capsule",
-      "version_pinned_historical_regression_views"
+      "version_pinned_historical_regression_views",
+      "deterministic_context_necessity_optimizer",
+      "proof_carrying_evidence_minimization",
+      "current_valid_post_gold_evidence_accounting"
     ],
     "gen5_validation": {
       "accepted_guest_identity": {
@@ -640,43 +643,103 @@
         "validated_at": "2026-08-26T17:57:05.716800+00:00"
       }
     },
-    "generation": "gen8-context-compiler-r1",
-    "generation_source_sha256": "39b7f040fca1afb2332b5dd902e186b710ea4d1d5a2cd0351aa307f6d8f786c3",
+    "gen9_validation": {
+      "benchmark": {
+        "context_payload_reduction_vs_gen8": 0.460856,
+        "critical_fn": 0,
+        "critical_fp": 0,
+        "critical_tp": 47,
+        "legacy_comparable_precision": 0.931818,
+        "median_minimization_latency_ms": 1.94,
+        "necessity_precision": 1.0,
+        "passed": 20,
+        "required_evidence_recall": 1.0,
+        "total": 20
+      },
+      "benchmark_source_sha256": "03fe8a7845d08574f211f5cada42578c4be53912a81c0797554c5117a5b19152",
+      "capability_build": "gen9-context-necessity-r1-6be10d7af323",
+      "commit_or_push_performed": false,
+      "final_twin": {
+        "causal_digest": "4dd7281a397768bd43a6bbdf431bd770eb99ebd5deb7b8d2f6ab91685c4b4036",
+        "causal_edges": 4985,
+        "causal_events": 4710,
+        "edges": 259,
+        "graph_digest": "4d983ad01376a04a54dc834d0dc46ee4d606293fca572f3d8ead45e81e65c45f",
+        "inputs": 89,
+        "nodes": 179,
+        "snapshot_sha256": "2c05c6282070c74bee204e837d0b8d6a03677ab404a407318c8a4d27594484be",
+        "verify": "PASS_NO_ISSUES",
+        "version": "gen7-architectural-twin-r1"
+      },
+      "generation": "gen9-context-necessity-r1",
+      "gold_sha256": "dc755fd02e1dc44c1aed1cdf9a3f1745d6049178472a0165cbdf40867f5ae637",
+      "optimizer_sha256": "6be10d7af3238fb59a2cf8f5d9a858de4b3957a9681634bbe4ef78e33402d299",
+      "permanent_mcp_tools": 10,
+      "protected_state": "PASS_STATIC_AND_TREES_UNCHANGED_TRACE_PREFIX_APPEND_ONLY",
+      "retained_regressions": {
+        "gen2": "12/12",
+        "gen3": "16/16",
+        "gen4": "18/18",
+        "gen5": "12/12",
+        "gen6": "13/13",
+        "gen7": "15/15 version-pinned",
+        "gen8": "17/17"
+      },
+      "server_modified": false,
+      "validation": {
+        "canonical_project_tests": "PASS_13_13",
+        "containment": "PASS",
+        "context_compiler_diff": "PASS_ZERO_BYTES",
+        "final_lab_identity": "PASS_GEN9_CAPABILITY_OVER_GEN6_SERVER_UNCHANGED",
+        "frozen_safe_mcp": "PASS_UNCHANGED",
+        "git_diff_check": "PASS",
+        "json_jsonl": "PASS_65_JSON_2_JSONL_110_LINES",
+        "python_syntax": "PASS_34_FILES_MUTATION_FREE",
+        "secret_credential_scan": "PASS_15_CHANGED_CANONICAL_FILES",
+        "server_diff": "PASS_ZERO_BYTES",
+        "temp_archive_cleanup": "PASS_NO_TEMP_TRANSFER_FILES",
+        "validated_at": "2026-08-26T18:55:07.088888+00:00"
+      }
+    },
+    "generation": "gen9-context-necessity-r1",
+    "generation_source_sha256": "6be10d7af3238fb59a2cf8f5d9a858de4b3957a9681634bbe4ef78e33402d299",
     "live_server_identity": {
       "build_id": "gen6-experience-memory-r1-dc0d2cb41595",
       "generation": "gen6-experience-memory-r1",
       "last_known_good_sha256": "dc0d2cb41595a9a3d953873879ccc3e0bd88db2b4dcdee4cf8aa43dd4cb103e9",
-      "note": "Gen8 is guest-local capability infrastructure and intentionally does not modify server.py; operational lab_status remains the accepted Gen6 server build.",
+      "note": "Gen9 is additive guest-local capability infrastructure; operational MCP server intentionally remains accepted Gen6.",
       "recovery_state": "ACCEPTED",
       "server_sha256": "dc0d2cb41595a9a3d953873879ccc3e0bd88db2b4dcdee4cf8aa43dd4cb103e9",
       "tool_surface": 10
     },
     "recovery_state": "ACCEPTED",
     "source_sha256": "dc0d2cb41595a9a3d953873879ccc3e0bd88db2b4dcdee4cf8aa43dd4cb103e9",
-    "state": "GEN8_ACCEPTED_CONTEXT_COMPILER",
+    "state": "GEN9_ACCEPTED_CONTEXT_NECESSITY",
     "tool_count": 10
   },
   "next_iteration": {
-    "cycle_id": "gen9-context-necessity-001",
-    "proposals_artifact": "lab_generations/GEN9_PROPOSALS.json",
-    "required_stop": "DO_NOT_IMPLEMENT_GEN9_WITHOUT_USER_REQUEST",
+    "cycle_id": "gen10-evidence-epoch-001",
+    "proposals_artifact": "lab_generations/GEN10_PROPOSALS.json",
+    "required_stop": "DO_NOT_IMPLEMENT_GEN10_WITHOUT_USER_REQUEST",
     "safe_mcp_policy": "FROZEN_NO_CHANGES",
     "status": "PROPOSED_NOT_STARTED",
     "target": "Optiplex_Lab + mcp-lab VM",
-    "top_recommendation": "Context Necessity Optimizer / semantic evidence minimization"
+    "top_recommendation": "Evidence Epoch / Snapshot Freshness Coordinator"
   },
-  "resume_instruction": "Repository/live state is authoritative. Target remains **Optiplex_Lab + isolated `mcp-lab` VM**; `Optiplex_MCP` remains frozen. Canonical accepted capability generation is `gen8-context-compiler-r1` / build `gen8-context-compiler-r1-39b7f040fca1`, while operational `server.py` intentionally remains Gen6: `lab_status` must report generation `gen6-experience-memory-r1`, build `gen6-experience-memory-r1-dc0d2cb41595`, server/LKG `dc0d2cb41595a9a3d953873879ccc3e0bd88db2b4dcdee4cf8aa43dd4cb103e9`, recovery `ACCEPTED`, exactly 10 tools. Final Gen8 Twin is 173 nodes / 242 edges / 85 inputs, graph digest `ceab9a44188706a209b23066217de4e8991b44d067d6c21f9018d56861c182eb`, file SHA `f1299fa23330944c734377203c4769fb4e8e27a9ac104f64397299a277ba9eea`. Verify frozen Optiplex_MCP release `frontend-a5c1c5be8b22`, guardrail `guardrail-gen0-c51a9161a95d`, 51 tools, schema `195c410b85d40f4cfe65ef7eb8baa0463a32e93882fd9d39c0045e6518cd2913`, policy `authority-v1`. Read `START_HERE.md`, `state/current.json`, `STATUS.md`, `lab_generations/GEN8_RESULT.json`, `lab_generations/GEN9_PROPOSALS.json`, and the Gen8 plan. Top Gen9 recommendation is **Context Necessity Optimizer / semantic evidence minimization**. Do not implement Gen9 without explicit user request. Never run `mcp_probe.py` synchronously through Lab shell.",
-  "state": "LIFECYCLE_ACCEPTED_GEN8_CONTEXT_COMPILER",
+  "resume_instruction": "Repository/live state is authoritative. Target remains Optiplex_Lab + isolated mcp-lab VM; Optiplex_MCP is frozen. Canonical accepted capability is gen9-context-necessity-r1 / build gen9-context-necessity-r1-6be10d7af323, optimizer SHA 6be10d7af3238fb59a2cf8f5d9a858de4b3957a9681634bbe4ef78e33402d299. Operational lab_status must intentionally remain Gen6 build gen6-experience-memory-r1-dc0d2cb41595, server/LKG dc0d2cb41595a9a3d953873879ccc3e0bd88db2b4dcdee4cf8aa43dd4cb103e9, recovery ACCEPTED, exactly 10 tools. Gen9 benchmark is 20/20, recall 1.0, 47 TP / 0 FP / 0 FN necessity-aware, comparable legacy precision 0.931818, context payload reduction 46.0856%, median minimization 1.94 ms. Final Twin is 179 nodes / 259 edges / 89 inputs, graph digest 4d983ad01376a04a54dc834d0dc46ee4d606293fca572f3d8ead45e81e65c45f, snapshot SHA 2c05c6282070c74bee204e837d0b8d6a03677ab404a407318c8a4d27594484be. Retained: Gen2 12/12, Gen3 16/16, Gen4 18/18, Gen5 12/12, Gen6 13/13, Gen7 15/15 version-pinned, Gen8 17/17. Top Gen10 proposal is Evidence Epoch / Snapshot Freshness Coordinator. Do not implement Gen10 without explicit request. Never run mcp_probe.py synchronously through Lab shell.",
+  "state": "LIFECYCLE_ACCEPTED_GEN9_CONTEXT_NECESSITY",
   "validation": {
+    "canonical_project_tests": "PASS_13_13",
     "containment": "PASS",
-    "final_lab_identity": "PASS_GEN8_CAPABILITY_OVER_GEN6_SERVER_UNCHANGED",
-    "final_live_equals_lkg": true,
+    "context_compiler_diff": "PASS_ZERO_BYTES",
+    "final_lab_identity": "PASS_GEN9_CAPABILITY_OVER_GEN6_SERVER_UNCHANGED",
     "frozen_safe_mcp": "PASS_UNCHANGED",
     "git_diff_check": "PASS",
-    "json_jsonl": "PASS",
-    "project_tests": "PASS_13",
-    "python_syntax": "PASS_MUTATION_FREE",
-    "secret_credential_scan": "PASS",
-    "validated_at": "2026-08-26T17:57:05.716800+00:00"
+    "json_jsonl": "PASS_65_JSON_2_JSONL_110_LINES",
+    "python_syntax": "PASS_34_FILES_MUTATION_FREE",
+    "secret_credential_scan": "PASS_15_CHANGED_CANONICAL_FILES",
+    "server_diff": "PASS_ZERO_BYTES",
+    "temp_archive_cleanup": "PASS_NO_TEMP_TRANSFER_FILES",
+    "validated_at": "2026-08-26T18:55:07.088888+00:00"
   }
 }

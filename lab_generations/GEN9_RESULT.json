@@ -1,0 +1,302 @@
+{
+  "accepted_at": "2026-08-26T18:54:11.731342+00:00",
+  "architectures_considered": [
+    "Retune Gen8 graph expansion in-place",
+    "Embedding/vector or learned reranking",
+    "Runtime exhaustive capsule ablation",
+    "Proof-carrying deterministic post-compiler optimizer (chosen)"
+  ],
+  "benchmark": {
+    "benchmark_bug_correction": {
+      "finding": "After the Twin learned Gen9, three direct benchmark_gen9 validation edges were incorrectly counted as legacy false positives. The benchmark now proves they are post-gold current-valid only when the validation node is absent from the exact accepted Gen8 Twin and an observed two-node dependency path starts at a frozen required owner. The strict legacy threshold is evaluated against the exact lossless accepted Gen8 Twin.",
+      "gold_modified": false,
+      "thresholds_relaxed": false
+    },
+    "benchmark_source_sha256": "03fe8a7845d08574f211f5cada42578c4be53912a81c0797554c5117a5b19152",
+    "checks": [
+      "gold_7_cases",
+      "stale_missing_blocks_minimization",
+      "contradiction_blocks_minimization",
+      "deterministic_identical_inputs",
+      "necessary_leave_one_out_fails_evaluator",
+      "redundant_leave_one_out_preserves_evaluator",
+      "optimizer_selftest",
+      "high_fanout_bounded_by_necessity_proof",
+      "current_valid_gen8_validation_preserved",
+      "safety_critical_cannot_be_optimized_away",
+      "version_scoped_gen7_evidence_exact",
+      "protected_state_capsule_ablation",
+      "predeclared_success_criteria",
+      "context_reduction_preserved_or_improved"
+    ],
+    "gold_sha256": "dc755fd02e1dc44c1aed1cdf9a3f1745d6049178472a0165cbdf40867f5ae637",
+    "live_artifact_sha256": "514d7959268f06b028047e6b0e3a9d0587a30bb63b77b1c36afffeb12910008b",
+    "metrics": {
+      "baseline_necessity_aware": {
+        "critical_fn": 0,
+        "critical_fp": 18,
+        "critical_precision": 0.727273,
+        "critical_tp": 48
+      },
+      "capsule_probe": {
+        "accepted_state_unchanged": true,
+        "recipe_digest": "329ad4f247c9948b884a05875a160c1e024493beb0a24465fb9d6ee5ae0c478d",
+        "run_id": "cap8_20260826T184721Z_c048cf73"
+      },
+      "compile_latency_ms": {
+        "max": 257.929,
+        "median": 108.448
+      },
+      "context_payload_bytes": {
+        "baseline_average": 20623.43,
+        "baseline_median": 12285,
+        "minimized_average": 11119,
+        "minimized_median": 10840,
+        "reduction": 0.460856
+      },
+      "context_reduction": {
+        "broad_baseline_bytes": 528879,
+        "gen9_broad_reduction": 0.978976,
+        "gen9_practical_reduction": 0.959743,
+        "gen9_vs_gen8_payload_reduction": 0.460856,
+        "practical_baseline_bytes": 276200
+      },
+      "legacy_gen8_exact_id_metric_comparable_frozen_twin": {
+        "critical_fn": 0,
+        "critical_fp": 3,
+        "critical_precision": 0.931818,
+        "critical_tp": 41,
+        "frozen_twin_graph_digest": "ceab9a44188706a209b23066217de4e8991b44d067d6c21f9018d56861c182eb",
+        "frozen_twin_sha256": "f1299fa23330944c734377203c4769fb4e8e27a9ac104f64397299a277ba9eea"
+      },
+      "legacy_gen8_exact_id_metric_current_twin_diagnostic": {
+        "critical_fn": 0,
+        "critical_fp": 6,
+        "critical_precision": 0.87234,
+        "critical_tp": 41,
+        "note": "Diagnostic only: current Gen9 Twin legitimately adds direct post-Gen8 validators."
+      },
+      "minimization_latency_ms": {
+        "max": 6.941,
+        "median": 1.94,
+        "p95": 4.516
+      },
+      "minimized_necessity_aware": {
+        "critical_fn": 0,
+        "critical_fp": 0,
+        "critical_precision": 1.0,
+        "critical_tp": 47,
+        "required_evidence_recall": 1.0
+      },
+      "permanent_mcp_tools": 10,
+      "post_gold_current_validations": {
+        "architecture-experience-loop-current": [
+          "validation:benchmark:benchmark_gen9"
+        ],
+        "change-context-compiler": [
+          "validation:benchmark:benchmark_gen9"
+        ],
+        "change-experiment-capsule": [
+          "validation:benchmark:benchmark_gen9"
+        ]
+      },
+      "task_kind_classification_ok": true,
+      "unrelated_context_negative_controls_ok": true
+    },
+    "passed": 20,
+    "representative_packets_live_sha256": "9894246bfbf81038a75337964bfc41dcdc39c086e66bb5389601a422aec8358a",
+    "source_version": "gen9-context-necessity-benchmark-r2",
+    "total": 20,
+    "version": "gen9-context-necessity-canonical-benchmark-r2"
+  },
+  "canonical_files_changed_or_added": [
+    "plans/GEN9_CONTEXT_NECESSITY_OPTIMIZER.md",
+    "lab_mcp/context_necessity.py",
+    "lab_mcp/bench/benchmark_gen9.py",
+    "lab_generations/GEN9_GOLD.json",
+    "lab_generations/GEN9_BENCHMARK.json",
+    "lab_generations/GEN9_CONTEXT_PACKETS.json",
+    "lab_generations/GEN9_RETAINED_REGRESSIONS.json",
+    "lab_generations/GEN9_SELF_USE.json",
+    "lab_generations/GEN9_PROTECTED_STATE.json",
+    "lab_generations/GEN9_RESULT.json",
+    "lab_generations/GEN10_PROPOSALS.json",
+    "STATUS.md",
+    "NEXT_SESSION.md",
+    "state/current.json",
+    "history/events.jsonl"
+  ],
+  "capability_build": "gen9-context-necessity-r1-6be10d7af323",
+  "chosen_design": "Additive deterministic proof-carrying post-compiler optimizer: Gen8 stays the conservative recall substrate; Gen9 minimizes only with explicit task/safety obligations, provenance-backed dominance, current-version evidence, and fail-closed safety locks.",
+  "commit_or_push_performed": false,
+  "final_twin": {
+    "causal_digest": "4dd7281a397768bd43a6bbdf431bd770eb99ebd5deb7b8d2f6ab91685c4b4036",
+    "causal_edges": 4985,
+    "causal_events": 4710,
+    "edges": 259,
+    "graph_digest": "4d983ad01376a04a54dc834d0dc46ee4d606293fca572f3d8ead45e81e65c45f",
+    "inputs": 89,
+    "nodes": 179,
+    "snapshot_sha256": "2c05c6282070c74bee204e837d0b8d6a03677ab404a407318c8a4d27594484be",
+    "verify": "PASS_NO_ISSUES",
+    "version": "gen7-architectural-twin-r1"
+  },
+  "frozen_optiplex_mcp": {
+    "guardrail": "guardrail-gen0-c51a9161a95d",
+    "modified": false,
+    "policy": "authority-v1",
+    "release": "frontend-a5c1c5be8b22",
+    "schema_sha256": "195c410b85d40f4cfe65ef7eb8baa0463a32e93882fd9d39c0045e6518cd2913",
+    "tool_count": 51
+  },
+  "gen10_proposals": "lab_generations/GEN10_PROPOSALS.json",
+  "generation": "gen9-context-necessity-r1",
+  "git_status_note": "Unrelated untracked host/check_chatgpt_ui_staleness.sh was present during Gen9 and deliberately preserved untouched; it is not a Gen9 artifact.",
+  "guest_selftests": {
+    "architecture_twin": "6/6",
+    "capability_forge": "8/8",
+    "causal_spine": "5/5",
+    "code_mode": "5/5",
+    "context_compiler": "6/6",
+    "context_necessity": "8/8",
+    "experience_loop": "3/3",
+    "experience_memory": "6/6",
+    "experiment_capsule": "5/5",
+    "lab_selftest": "12/12",
+    "regression_compiler": "5/5",
+    "workflow_graphs": "8/8",
+    "workflow_skills": "4/4"
+  },
+  "implementation": {
+    "benchmark": "lab_mcp/bench/benchmark_gen9.py",
+    "benchmark_sha256": "03fe8a7845d08574f211f5cada42578c4be53912a81c0797554c5117a5b19152",
+    "benchmark_version": "gen9-context-necessity-benchmark-r2",
+    "context_compiler_modified": false,
+    "mechanisms": [
+      "safety gate",
+      "explicit non-removable obligations",
+      "unobligated Tier2/3 pruning",
+      "evaluation generation scoping",
+      "evaluation owner-alias collapse",
+      "lifecycle validation-witness dominance",
+      "reverse-consumer pruning",
+      "active workflow-version dominance",
+      "semantic duplicate collapse",
+      "proof-carrying deterministic digest"
+    ],
+    "optimizer": "lab_mcp/context_necessity.py",
+    "optimizer_sha256": "6be10d7af3238fb59a2cf8f5d9a858de4b3957a9681634bbe4ef78e33402d299",
+    "optimizer_version": "gen9-context-necessity-r1",
+    "permanent_mcp_tools": 10,
+    "server_modified": false
+  },
+  "operational_server": {
+    "build_id": "gen6-experience-memory-r1-dc0d2cb41595",
+    "generation": "gen6-experience-memory-r1",
+    "live_equals_lkg": true,
+    "lkg_sha256": "dc0d2cb41595a9a3d953873879ccc3e0bd88db2b4dcdee4cf8aa43dd4cb103e9",
+    "recovery_state": "ACCEPTED",
+    "server_sha256": "dc0d2cb41595a9a3d953873879ccc3e0bd88db2b4dcdee4cf8aa43dd4cb103e9",
+    "tool_surface": 10
+  },
+  "protected_state_artifact": "lab_generations/GEN9_PROTECTED_STATE.json",
+  "retained_regressions": {
+    "gen2": {
+      "accepted_state_unchanged": true,
+      "artifact_sha256": "2f535ab181fdea8b3864784095d108c4deb051cdf25f3cb98650bdca17401027",
+      "capsule_run": "cap8_20260826T183226Z_41d9a8a2",
+      "forbidden_mutations": [],
+      "passed": 12,
+      "total": 12
+    },
+    "gen3": {
+      "accepted_state_unchanged": true,
+      "artifact_sha256": "6f1622709033313e73779c86b043b067b5bd6d0fc1333c3fce1d7440d900dd4f",
+      "capsule_run": "cap8_20260826T183241Z_f8994bd4",
+      "forbidden_mutations": [],
+      "passed": 16,
+      "total": 16
+    },
+    "gen4": {
+      "accepted_state_unchanged": true,
+      "artifact_sha256": "92e1d0f642e7a87eda769b4b41abe2979e16508f395ea7510d86937c4150dce4",
+      "capsule_run": "cap8_20260826T183308Z_1934e3ce",
+      "forbidden_mutations": [],
+      "passed": 18,
+      "total": 18
+    },
+    "gen5": {
+      "accepted_state_unchanged": true,
+      "artifact_sha256": "3c860b1fd31374e43de12e436dd40f4b080013b7f1672acbdab4d31663158e99",
+      "capsule_run": "cap8_20260826T183356Z_5a3e3651",
+      "empty_capsule_state": [
+        "/var/lib/optiplex-lab/capabilities",
+        "/var/lib/optiplex-lab/regressions"
+      ],
+      "forbidden_mutations": [],
+      "passed": 12,
+      "total": 12
+    },
+    "gen6": {
+      "accepted_state_unchanged": true,
+      "artifact_sha256": "56ffc1d87b50a8a4516f36e9a69a7dbed4ed908ab1c3dc38c3f26eed0942e1fc",
+      "capsule_run": "cap8_20260826T183431Z_ed4315c8",
+      "forbidden_mutations": [],
+      "passed": 13,
+      "total": 13
+    },
+    "gen7": {
+      "accepted_state_unchanged": true,
+      "artifact_sha256": "98347e4c298489b5885577bda60712a4b53e23840829e6d08efe4a93eaaa1134",
+      "capsule_run": "cap8_20260826T184848Z_afbed977",
+      "forbidden_mutations": [],
+      "note": "Unmodified Gen7 benchmark; capsule hides Gen8 and Gen9 files/state. Future-valid evidence is not rewritten into historical gold.",
+      "passed": 15,
+      "total": 15,
+      "version_pinned": true
+    },
+    "gen8": {
+      "artifact_sha256": "a712c22d053f3bcccdf558e367d30d2505400fb6414533631c972c5e3037ba75",
+      "critical_fn": 0,
+      "critical_fp_current_gen9_twin": 25,
+      "critical_tp": 41,
+      "note": "Current-view precision is expected to decline as valid Gen9 validators are added; all 17 acceptance checks and zero-FN recall remain intact.",
+      "passed": 17,
+      "required_evidence_recall": 1.0,
+      "total": 17
+    }
+  },
+  "scope": "Optiplex_Lab + isolated mcp-lab VM",
+  "self_use_artifact": "lab_generations/GEN9_SELF_USE.json",
+  "starting_gen8": {
+    "benchmark": "17/17",
+    "capability_build": "gen8-context-compiler-r1-39b7f040fca1",
+    "context_compiler_sha256": "39b7f040fca1afb2332b5dd902e186b710ea4d1d5a2cd0351aa307f6d8f786c3",
+    "critical_fn": 0,
+    "critical_fp": 21,
+    "critical_tp": 41,
+    "experiment_capsule_sha256": "69d66ecaec546f08ea6079c5446254bc1704c791f77bf76ce472d1f4907f7415",
+    "generation": "gen8-context-compiler-r1",
+    "precision": 0.6613,
+    "required_recall": 1.0,
+    "twin_graph_digest": "ceab9a44188706a209b23066217de4e8991b44d067d6c21f9018d56861c182eb",
+    "twin_sha256": "f1299fa23330944c734377203c4769fb4e8e27a9ac104f64397299a277ba9eea"
+  },
+  "status": "ACCEPTED",
+  "suggested_commit_message": "gen9: add deterministic context necessity optimizer",
+  "thesis": "Prove What Context Is Necessary",
+  "validation": {
+    "canonical_project_tests": "PASS_13_13",
+    "containment": "PASS",
+    "context_compiler_diff": "PASS_ZERO_BYTES",
+    "final_lab_identity": "PASS_GEN9_CAPABILITY_OVER_GEN6_SERVER_UNCHANGED",
+    "frozen_safe_mcp": "PASS_UNCHANGED",
+    "git_diff_check": "PASS",
+    "json_jsonl": "PASS_65_JSON_2_JSONL_110_LINES",
+    "python_syntax": "PASS_34_FILES_MUTATION_FREE",
+    "secret_credential_scan": "PASS_15_CHANGED_CANONICAL_FILES",
+    "server_diff": "PASS_ZERO_BYTES",
+    "temp_archive_cleanup": "PASS_NO_TEMP_TRANSFER_FILES",
+    "validated_at": "2026-08-26T18:55:07.088888+00:00"
+  }
+}

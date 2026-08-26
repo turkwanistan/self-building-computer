@@ -1,0 +1,56 @@
+{
+  "findings": [
+    {
+      "baseline_bytes": 17376,
+      "finding": "Gen8 Twin predated Gen9 source files, so exact Gen9 owners could not be selected. Gen9 correctly cannot invent missing evidence; this forced a derived Twin rebuild.",
+      "minimized_bytes": 11464,
+      "phase": "pre_gen9_twin_rebuild",
+      "reduction": 0.340239,
+      "result": "REJECTED_AS_INSUFFICIENT_CONTEXT",
+      "task": "Plan final Gen9 validation naming context_necessity.py and benchmark_gen9.py."
+    },
+    {
+      "finding": "Frozen evaluation exposed explicit source-path locking of a validation alias. Fixed optimizer lock semantics; gold unchanged; optimizer selftest increased to 8/8.",
+      "phase": "optimizer_bug",
+      "result": "FIXED_WITH_REGRESSION_TEST"
+    },
+    {
+      "finding": "Gen9-expanded Twin added three legitimate benchmark_gen9 validation edges. Raw legacy accounting mislabeled them as FPs. Corrected benchmark to prove post-gold current-valid edges and use exact frozen Gen8 Twin for strict comparable legacy threshold; thresholds/gold unchanged.",
+      "phase": "expanded_twin_benchmark_accounting",
+      "result": "FIXED_BENCHMARK_BUG"
+    },
+    {
+      "finding": "After the benchmark rewrote Tier-1 benchmark artifacts newer than the Twin, Gen8 failed closed and Gen9 blocked minimization rather than dropping uncertain required evidence.",
+      "owner_resolution": {
+        "benchmark_gen9": true,
+        "context_necessity": true
+      },
+      "phase": "finalization_fail_closed",
+      "result": "SAFETY_PASS"
+    },
+    {
+      "fail_closed": false,
+      "finding": "Once Gen9 owners were indexed, focused self-use resolved exactly the optimizer source plus current benchmark/selftest validation; no evidence was removable because the packet was already minimal.",
+      "minimization_blocked": false,
+      "phase": "focused_gen9_owner_self_use",
+      "result": "PASS",
+      "selected": [
+        "authority:guest-security-boundary",
+        "operational:accepted-identity",
+        "source:/opt/optiplex-lab/context_necessity.py",
+        "validation:benchmark:benchmark_gen9",
+        "validation:selftest:context_necessity"
+      ],
+      "tasks": [
+        "Explain how context_necessity.py minimizes Gen8 context while preserving critical evidence.",
+        "Plan a safe code change to context_necessity.py and identify required validation evidence."
+      ]
+    },
+    {
+      "finding": "Representative Gen9 packets safely removed large over-inclusion: Gen7 evaluation 67.1%, lifecycle server 73.9%, memory 24.0%, debugging 26.6%, while required recall remained 1.0 and critical FN 0.",
+      "phase": "frozen_benchmark_self_use",
+      "result": "PASS"
+    }
+  ],
+  "version": "gen9-self-use-r1"
+}

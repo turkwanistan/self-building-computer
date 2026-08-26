@@ -1,0 +1,70 @@
+{
+  "mutation_safe": true,
+  "retained": {
+    "gen2": {
+      "accepted_state_unchanged": true,
+      "artifact_sha256": "2f535ab181fdea8b3864784095d108c4deb051cdf25f3cb98650bdca17401027",
+      "capsule_run": "cap8_20260826T183226Z_41d9a8a2",
+      "forbidden_mutations": [],
+      "passed": 12,
+      "total": 12
+    },
+    "gen3": {
+      "accepted_state_unchanged": true,
+      "artifact_sha256": "6f1622709033313e73779c86b043b067b5bd6d0fc1333c3fce1d7440d900dd4f",
+      "capsule_run": "cap8_20260826T183241Z_f8994bd4",
+      "forbidden_mutations": [],
+      "passed": 16,
+      "total": 16
+    },
+    "gen4": {
+      "accepted_state_unchanged": true,
+      "artifact_sha256": "92e1d0f642e7a87eda769b4b41abe2979e16508f395ea7510d86937c4150dce4",
+      "capsule_run": "cap8_20260826T183308Z_1934e3ce",
+      "forbidden_mutations": [],
+      "passed": 18,
+      "total": 18
+    },
+    "gen5": {
+      "accepted_state_unchanged": true,
+      "artifact_sha256": "3c860b1fd31374e43de12e436dd40f4b080013b7f1672acbdab4d31663158e99",
+      "capsule_run": "cap8_20260826T183356Z_5a3e3651",
+      "empty_capsule_state": [
+        "/var/lib/optiplex-lab/capabilities",
+        "/var/lib/optiplex-lab/regressions"
+      ],
+      "forbidden_mutations": [],
+      "passed": 12,
+      "total": 12
+    },
+    "gen6": {
+      "accepted_state_unchanged": true,
+      "artifact_sha256": "56ffc1d87b50a8a4516f36e9a69a7dbed4ed908ab1c3dc38c3f26eed0942e1fc",
+      "capsule_run": "cap8_20260826T183431Z_ed4315c8",
+      "forbidden_mutations": [],
+      "passed": 13,
+      "total": 13
+    },
+    "gen7": {
+      "accepted_state_unchanged": true,
+      "artifact_sha256": "98347e4c298489b5885577bda60712a4b53e23840829e6d08efe4a93eaaa1134",
+      "capsule_run": "cap8_20260826T184848Z_afbed977",
+      "forbidden_mutations": [],
+      "note": "Unmodified Gen7 benchmark; capsule hides Gen8 and Gen9 files/state. Future-valid evidence is not rewritten into historical gold.",
+      "passed": 15,
+      "total": 15,
+      "version_pinned": true
+    },
+    "gen8": {
+      "artifact_sha256": "a712c22d053f3bcccdf558e367d30d2505400fb6414533631c972c5e3037ba75",
+      "critical_fn": 0,
+      "critical_fp_current_gen9_twin": 25,
+      "critical_tp": 41,
+      "note": "Current-view precision is expected to decline as valid Gen9 validators are added; all 17 acceptance checks and zero-FN recall remain intact.",
+      "passed": 17,
+      "required_evidence_recall": 1.0,
+      "total": 17
+    }
+  },
+  "version": "gen9-retained-regressions-r1"
+}
