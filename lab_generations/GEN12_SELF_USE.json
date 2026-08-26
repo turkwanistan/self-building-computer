@@ -1,0 +1,49 @@
+{
+  "base_epoch": {
+    "entry_count": 121,
+    "epoch_digest": "c231bc0288fac0316721af91370ea421673013d0f99e0d06ec9238bc62d6b612",
+    "epoch_id": "ep10_c231bc0288fac0316721af91370ea421673013d0f99e0d06ec9238bc62d6b612",
+    "routing_digest": "dd4b8e36e56fadf2433ada6d0face390ea8634de11a46f854b0992d2d68e9d05",
+    "twin_graph_digest": "5ee94b2176309edbe3c6b58a1535b7cba02a00a8d8aa077c777924dcecab9930"
+  },
+  "evaluator_choice_replayed": true,
+  "noop_baseline_replayed": true,
+  "raw_guest_self_use_sha256": "e4dbcea9de3eeda5ac9fca396c1b63b1e2c187b6ad38099083daf1dc3cea660e",
+  "real_findings": [
+    {
+      "finding": "Initial replay() routing branch compared an intent-routing overlay against generic evaluator/original-decision baseline rather than sealed Gen11 base route.",
+      "phase": "early_rejected_engine_replay",
+      "result": "DEFECT_REPRODUCED_AND_FIXED_GOLD_UNCHANGED"
+    },
+    {
+      "finding": "Initial attribution draft did not directly inspect Capsule mutation inventory; final design reads capsule-mutations.json and rejects undeclared mutations.",
+      "phase": "implementation_hardening",
+      "result": "FIXED_BEFORE_ACCEPTANCE"
+    },
+    {
+      "finding": "Initial benchmark assumed evidence_epoch.load_epoch returned one manifest; accepted API returns (root, manifest).",
+      "phase": "benchmark_harness",
+      "result": "FIXED_HARNESS_GOLD_UNCHANGED"
+    },
+    {
+      "finding": "Gen12 refuses to guess a delegated mutation protocol or blindly add another Capsule when child isolation owns execution.",
+      "phase": "nested_isolation",
+      "result": "FAIL_CLOSED_BY_DESIGN"
+    }
+  ],
+  "rejected_engine_defect_reproduced": true,
+  "rejected_engine_replay": {
+    "accepted_state_unchanged": true,
+    "attribution_correct": true,
+    "capsule_run_id": "cap8_20260826T212754Z_9780dc55",
+    "changed": true,
+    "defect": "disabled corrected intent-routing baseline branch; rejected variant used generic original decision instead of sealed base route",
+    "overlay_digest": "869560c22156dc067ecc5216e681c1bad05719ddca0bc1dbc3ddaab86bc6de65",
+    "replay_digest": "20dc311d0ae2d94dd3a4c5782bdefc8cf2a3ff9495c1cf4815a1b14941706ed0"
+  },
+  "routing_design_replayed": true,
+  "same_epoch_all_cases": true,
+  "status": "PASS",
+  "unsafe_weakened_authority_fail_closed": true,
+  "version": "gen12-self-use-r1"
+}

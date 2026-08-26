@@ -1,0 +1,168 @@
+{
+  "base_epoch": {
+    "entry_count": 121,
+    "epoch_digest": "c231bc0288fac0316721af91370ea421673013d0f99e0d06ec9238bc62d6b612",
+    "epoch_id": "ep10_c231bc0288fac0316721af91370ea421673013d0f99e0d06ec9238bc62d6b612",
+    "routing_digest": "dd4b8e36e56fadf2433ada6d0face390ea8634de11a46f854b0992d2d68e9d05",
+    "twin_graph_digest": "5ee94b2176309edbe3c6b58a1535b7cba02a00a8d8aa077c777924dcecab9930"
+  },
+  "benchmark_source_sha256": "8b748b9f75a6556e5158535f57930063c6e762e765da911444ea605dc2963f46",
+  "checks": [
+    {
+      "id": "A1_noop_ok",
+      "pass": true
+    },
+    {
+      "id": "A2_baseline_reproduced",
+      "pass": true
+    },
+    {
+      "id": "A3_baseline_invariant_true",
+      "pass": true
+    },
+    {
+      "id": "B1_replay_identity_deterministic",
+      "pass": true
+    },
+    {
+      "id": "B2_semantic_result_deterministic",
+      "pass": true
+    },
+    {
+      "id": "C1_implementation_executes",
+      "pass": true
+    },
+    {
+      "id": "C2_implementation_delta_attributed",
+      "pass": true
+    },
+    {
+      "id": "C3_implementation_deterministic_semantics",
+      "pass": true
+    },
+    {
+      "id": "C4_single_isolation_owner",
+      "pass": true
+    },
+    {
+      "id": "C5_live_engine_unchanged",
+      "pass": true
+    },
+    {
+      "id": "C6_protected_state_unchanged",
+      "pass": true
+    },
+    {
+      "id": "D1_routing_replay_ok",
+      "pass": true
+    },
+    {
+      "id": "D2_routing_diff_explicit",
+      "pass": true
+    },
+    {
+      "id": "D3_routing_obligations_explicit",
+      "pass": true
+    },
+    {
+      "id": "E1_evaluator_replay_ok",
+      "pass": true
+    },
+    {
+      "id": "E2_evaluator_identity_is_delta",
+      "pass": true
+    },
+    {
+      "id": "F1_future_evidence_absent_from_sealed_epoch",
+      "pass": true
+    },
+    {
+      "id": "F2_historical_selection_base_only",
+      "pass": true
+    },
+    {
+      "id": "G1_irrelevant_overlay_executes",
+      "pass": true
+    },
+    {
+      "id": "H1_irrelevant_overlay_no_semantic_perturbation",
+      "pass": true
+    },
+    {
+      "id": "I1_wrong_epoch_fail_closed",
+      "pass": true
+    },
+    {
+      "id": "I2_route_mismatch_fail_closed",
+      "pass": true
+    },
+    {
+      "id": "I3_missing_blob_fail_closed",
+      "pass": true
+    },
+    {
+      "id": "I4_undeclared_mutation_fail_closed",
+      "pass": true
+    },
+    {
+      "id": "I5_historical_leak_fail_closed",
+      "pass": true
+    },
+    {
+      "id": "I6_authority_weakening_fail_closed",
+      "pass": true
+    },
+    {
+      "id": "I7_contradictory_authority_fail_closed",
+      "pass": true
+    },
+    {
+      "id": "I8_current_state_mutation_fail_closed",
+      "pass": true
+    },
+    {
+      "id": "I9_live_authority_unvalidated_fail_closed",
+      "pass": true
+    },
+    {
+      "id": "I10_unsafe_nested_isolation_not_guessed",
+      "pass": true
+    }
+  ],
+  "engine_sha256": "5a0fa7b8e62f3bbcd1e7eadacae1cc6ca00380a5c930fef3a507753003ca8781",
+  "entry_twin": {
+    "edges": 298,
+    "graph_digest": "5ee94b2176309edbe3c6b58a1535b7cba02a00a8d8aa077c777924dcecab9930",
+    "inputs": 100,
+    "nodes": 196
+  },
+  "metrics": {
+    "baseline_reproduction_rate": 1.0,
+    "declared_delta_attribution_correctness": 1.0,
+    "deterministic_replay_rate": 1.0,
+    "forbidden_accepted_state_mutations": 0,
+    "historical_evidence_leakage": 0,
+    "implementation_replay_semantic_delta": true,
+    "negative_control_semantic_delta": false,
+    "single_isolation_owner": "replay",
+    "unsafe_authority_weakening_accepted": 0,
+    "unsafe_cases_rejected": "10/10"
+  },
+  "passed": 30,
+  "raw_guest_artifact_sha256": "f92e33479098060fb6a5eabb60b35e0af01e99c0a20aecf1d8e3ab3c8ab581eb",
+  "status": "PASS",
+  "total": 30,
+  "unsafe_error_codes": [
+    "WRONG_EPOCH_DIGEST",
+    "ROUTING_DIGEST_MISMATCH",
+    "MISSING_CONTENT_ADDRESSED_BLOB",
+    "UNDECLARED_SOURCE_MUTATION",
+    "HISTORICAL_EVIDENCE_LEAKAGE",
+    "UNSAFE_AUTHORITY_WEAKENING",
+    "CONTRADICTORY_AUTHORITY",
+    "ACCEPTED_STATE_MUTATION_FORBIDDEN",
+    "LIVE_AUTHORITY_VALIDATION_REQUIRED",
+    "ISOLATION_DELEGATION_UNSUPPORTED_FOR_MUTATION"
+  ],
+  "version": "gen12-counterfactual-replay-benchmark-r1"
+}

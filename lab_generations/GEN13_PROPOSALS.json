@@ -1,0 +1,39 @@
+{
+  "generated_from": "accepted Gen12 counterfactual replay evidence",
+  "guardrails": [
+    "No automatic promotion from replay results",
+    "No production self-mutation",
+    "Keep permanent Lab MCP surface at 10 by default",
+    "Frozen Optiplex_MCP remains unchanged",
+    "Retain Gen2-Gen12 matrix as onboarding safety gate"
+  ],
+  "project_onboarding_readiness_reassessment": "READY_TO_BEGIN_BOUNDED_OUTWARD_FORK; core safety/context/epoch/routing/replay substrate is mature enough to onboard one isolated external project while retaining self-improvement regressions.",
+  "ranked_proposals": [
+    {
+      "goal": "Prove the mature substrate can inspect, model, benchmark, and safely add guest-local capabilities for one real external project/domain without changing the permanent MCP surface. Start with bounded capability discovery and domain adapters, not autonomous production mutation.",
+      "name": "Project Onboarding + Domain Capability Expansion Pilot",
+      "rank": 1
+    },
+    {
+      "goal": "Formalize isolation ownership and delegated evaluator protocols so replay/evaluator chains can compose without OverlayFS nesting hazards.",
+      "name": "Hierarchical Experiment Isolation / Nested Evaluation Delegation",
+      "rank": 2
+    },
+    {
+      "goal": "Counterfactually mutate evaluator assumptions/configurations inside sealed epochs to measure evaluator brittleness before accepting stronger automation.",
+      "name": "Evaluator Mutation Nursery",
+      "rank": 3
+    },
+    {
+      "goal": "Use Twin, memory, necessity, and replay evidence to identify redundant/overlapping guest-local capabilities and simplify without losing benchmark coverage.",
+      "name": "Capability Consolidation",
+      "rank": 4
+    },
+    {
+      "goal": "Use counterfactual replay plus the causal spine to localize which decision/evidence edge most likely caused a historical failure, without rewriting history.",
+      "name": "Replay-Guided Causal Debugging",
+      "rank": 5
+    }
+  ],
+  "version": "gen13-proposals-r1"
+}

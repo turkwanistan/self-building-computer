@@ -1,0 +1,142 @@
+{
+  "base": {
+    "build": "gen11-intent-authority-routing-r1-59a1bef513c7",
+    "entry_twin_graph_digest": "29267110a328bd1b11b5f94869bcb738ff04390f1b1d0fad0d5091c1cfa98294",
+    "entry_twin_shape": [
+      192,
+      288,
+      98
+    ],
+    "evidence_epoch_sha256": "24e9542919ff9aa781c33c534d012d82af91a9bf418be9a102fb7ba30b40b481",
+    "generation": "gen11-intent-authority-routing-r1",
+    "router_sha256": "59a1bef513c7d12b1411f78dfd9b5a4c007368d1c5e9e9e7f431f0bfedf2575b"
+  },
+  "cases": [
+    {
+      "expect": "baseline_semantics_identical",
+      "id": "A_noop_baseline",
+      "type": "noop"
+    },
+    {
+      "expect": "replay_digest_and_semantics_identical_on_repeat",
+      "id": "B_repeat_identity",
+      "type": "noop"
+    },
+    {
+      "expect": "declared_patch_executes_in_isolation_and_delta_is_attributed",
+      "id": "C_real_implementation_overlay",
+      "type": "implementation_change"
+    },
+    {
+      "expect": "intent_authority_evidence_obligation_diff_is_explicit",
+      "id": "D_routing_overlay",
+      "type": "intent_routing"
+    },
+    {
+      "expect": "evidence_and_implementation_constant_evaluator_delta_explicit",
+      "id": "E_evaluator_variant",
+      "type": "evaluator"
+    },
+    {
+      "expect": "future_tier1_evidence_not_visible",
+      "id": "F_historical_pin",
+      "type": "authority_evidence_selection"
+    },
+    {
+      "expect": "irrelevant_declared_overlay_does_not_change_semantic_outcome",
+      "id": "G_irrelevant_noop",
+      "type": "implementation_change"
+    },
+    {
+      "expect": "fail_closed",
+      "id": "I_epoch_mismatch",
+      "type": "unsafe"
+    },
+    {
+      "expect": "fail_closed",
+      "id": "I_route_mismatch",
+      "type": "unsafe"
+    },
+    {
+      "expect": "fail_closed",
+      "id": "I_missing_blob",
+      "type": "unsafe"
+    },
+    {
+      "expect": "fail_closed",
+      "id": "I_undeclared_mutation",
+      "type": "unsafe"
+    },
+    {
+      "expect": "fail_closed",
+      "id": "I_history_leak",
+      "type": "unsafe"
+    },
+    {
+      "expect": "fail_closed",
+      "id": "I_authority_weakening",
+      "type": "unsafe"
+    },
+    {
+      "expect": "fail_closed",
+      "id": "I_contradictory_authority",
+      "type": "unsafe"
+    },
+    {
+      "expect": "fail_closed",
+      "id": "I_current_state_mutation",
+      "type": "unsafe"
+    },
+    {
+      "expect": "fail_closed",
+      "id": "I_live_only_unvalidated",
+      "type": "unsafe"
+    }
+  ],
+  "frozen_at": "2026-08-26T21:08:04.210338+00:00",
+  "frozen_before_implementation": true,
+  "implementation_path_absent_when_frozen": true,
+  "required_demonstrations": [
+    "baseline_reproduction",
+    "determinism",
+    "implementation_replay",
+    "routing_replay",
+    "evaluator_replay",
+    "historical_version_pinned_replay",
+    "declared_delta_attribution",
+    "negative_controls",
+    "unsafe_fail_closed",
+    "accepted_state_unchanged"
+  ],
+  "thesis": "Replay Alternate Decisions Without Rewriting History",
+  "thresholds": {
+    "baseline_reproduction_rate": 1.0,
+    "context_reduction_vs_gen8_min": 0.4,
+    "critical_authority_false_negatives": 0,
+    "critical_authority_recall": 1.0,
+    "declared_delta_attribution_correctness": 1.0,
+    "deterministic_replay_rate": 1.0,
+    "forbidden_accepted_state_mutations": 0,
+    "frozen_optiplex_mcp_unchanged": true,
+    "gen10_epoch_coherence_preserved": true,
+    "gen11_benchmark": "39/39",
+    "gen11_routing_gold": "29/29",
+    "historical_evidence_leakage": 0,
+    "necessity_precision_min": 0.98,
+    "permanent_lab_mcp_tools": 10,
+    "required_evidence_recall": 1.0,
+    "unsafe_authority_weakening_accepted": 0
+  },
+  "unsafe_cases": [
+    "wrong_epoch_digest",
+    "routing_digest_mismatch",
+    "missing_content_addressed_blob",
+    "undeclared_source_mutation",
+    "historical_evidence_leakage",
+    "remove_mandatory_safety_authority",
+    "contradictory_authority",
+    "attempt_mutate_accepted_state",
+    "unsafe_live_only_authority_without_validation"
+  ],
+  "version": "gen12-counterfactual-replay-gold-r1"
+}

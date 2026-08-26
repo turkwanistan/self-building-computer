@@ -1,0 +1,31 @@
+{
+  "allowed_audit_growth": [
+    {
+      "after_sha256": "74abead73da369126bb2fdcade0a93ce3a2c5135e5188e2388056039a0b6830d",
+      "before_sha256": "929a33102f436cd4e6ab7c4264e1c817dafe53e50ae6a9855e4f661239b8cd17",
+      "bytes_appended_at_comparison": 17914,
+      "kind": "append_only_outer_audit",
+      "path": "/var/lib/optiplex-lab/traces/events.jsonl"
+    }
+  ],
+  "baseline_digest": "2562dc8eac998869f4e559e92cc2194a091e4efb9be1cdf4eeee10c034f00dca",
+  "comparison_checkpoint_after_digest": "fedfafa9203a568fcc44503fbf85b95e71d1d9f686aec952823f2b67f0cb431d",
+  "containment": {
+    "blocked": [
+      "192.168.127.1:8790",
+      "10.0.0.1:22",
+      "172.16.0.1:22",
+      "100.64.0.1:22"
+    ],
+    "host_control_sockets": [],
+    "host_repo_visible": false,
+    "result": "PASS",
+    "unexpected_reachable": []
+  },
+  "forbidden_changes": [],
+  "post_comparison_note": "Subsequent final validation shell calls were read/cleanup/Twin-build operations; their only protected side effect is the normal append-only Lab trace event.",
+  "server_modified": false,
+  "status": "PASS",
+  "temp_debris": "PASS_ZERO_GEN12_VAR_TMP_FILES",
+  "version": "gen12-protected-state-r1"
+}

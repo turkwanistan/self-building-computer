@@ -1,0 +1,76 @@
+{
+  "matrix": {
+    "gen10": {
+      "isolation": "direct_with_built_in_capsules_plus_protected_bracketing",
+      "result": "24/24"
+    },
+    "gen11": {
+      "isolation": "direct_after_fresh_twin",
+      "result": "39/39",
+      "routing_gold": "29/29"
+    },
+    "gen2": {
+      "isolation": "experiment_capsule",
+      "result": "12/12",
+      "run_id": "cap8_20260826T212326Z_8e9e6f97"
+    },
+    "gen3": {
+      "isolation": "experiment_capsule",
+      "result": "16/16",
+      "run_id": "cap8_20260826T212341Z_38c3cc00"
+    },
+    "gen4": {
+      "isolation": "experiment_capsule",
+      "result": "18/18",
+      "run_id": "cap8_20260826T212408Z_2e41df34"
+    },
+    "gen5": {
+      "isolation": "historical_empty_forge_experiment_capsule",
+      "result": "12/12",
+      "run_id": "cap8_20260826T212427Z_6a69ef79"
+    },
+    "gen6": {
+      "isolation": "experiment_capsule",
+      "result": "13/13",
+      "run_id": "cap8_20260826T212501Z_ee360cd1"
+    },
+    "gen7": {
+      "isolation": "version_pinned_experiment_capsule",
+      "result": "15/15",
+      "run_id": "cap8_20260826T212510Z_9036920a"
+    },
+    "gen8": {
+      "harness_note": "First durable-job attempt was 16/17 because the job ledger changed /var/lib between the two inner reproducibility trials; synchronous quiescent rerun restored the benchmark unchanged-input premise and passed 17/17.",
+      "isolation": "quiescent_experiment_capsule",
+      "result": "17/17",
+      "run_id": "cap8_20260826T212628Z_643a64e7"
+    },
+    "gen9": {
+      "isolation": "mutation_safe_experiment_capsule",
+      "result": "20/20",
+      "run_id": "cap8_20260826T212526Z_421fbb43"
+    }
+  },
+  "nested_isolation_policy": "No outer Capsule around Gen10; it owns its built-in Gen9/Gen10 isolation chain.",
+  "quality_preservation": {
+    "gen10": {
+      "context_reduction_vs_gen8": 0.454882,
+      "critical_fn": 0,
+      "necessity_precision": 1.0,
+      "required_evidence_recall": 1.0
+    },
+    "gen11": {
+      "context_reduction_vs_gen8": 0.44824,
+      "critical_authority_fn": 0,
+      "critical_authority_recall": 1.0,
+      "deterministic_routing": 1.0,
+      "mixed_intent_precedence": 1.0,
+      "necessity_precision": 1.0,
+      "required_evidence_recall": 1.0,
+      "safety_ambiguity_conservative": 1.0,
+      "unsafe_routing_errors": 0
+    }
+  },
+  "status": "PASS",
+  "version": "gen12-retained-regressions-r1"
+}

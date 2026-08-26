@@ -1,0 +1,139 @@
+{
+  "accepted_at": "2026-08-26T21:43:04.694230+00:00",
+  "architecture": {
+    "alternatives_considered": [
+      "full state snapshot cloning",
+      "Git/worktree replay",
+      "trace-only simulation",
+      "content-addressed epoch + declared overlay + Experiment Capsule",
+      "hybrid chosen architecture"
+    ],
+    "chosen": "content-addressed sealed epoch + explicit typed overlay + direct simulation for non-mutating replay + one Experiment Capsule isolation owner for implementation execution",
+    "historical_truth_immutable": true,
+    "nested_isolation": "detect/refuse unsafe nesting; do not guess delegated mutation protocol",
+    "overlay_separate_identity": true
+  },
+  "benchmark": {
+    "baseline_reproduction_rate": 1.0,
+    "declared_delta_attribution_correctness": 1.0,
+    "deterministic_replay_rate": 1.0,
+    "forbidden_accepted_state_mutations": 0,
+    "historical_evidence_leakage": 0,
+    "result": "30/30 PASS",
+    "unsafe_authority_weakening_accepted": 0,
+    "unsafe_cases_rejected": "10/10"
+  },
+  "benchmark_source_sha256": "8b748b9f75a6556e5158535f57930063c6e762e765da911444ea605dc2963f46",
+  "capability_build": "gen12-counterfactual-replay-r1-5a0fa7b8e62f",
+  "commit_or_push_performed": false,
+  "containment": "PASS",
+  "counterfactual_replay_sha256": "5a0fa7b8e62f3bbcd1e7eadacae1cc6ca00380a5c930fef3a507753003ca8781",
+  "final_twin": {
+    "causal_digest": "6aa5a59232e6c5f325a18a19904526d4707031070e43e9177a883ebfcf79f714",
+    "causal_edges": 4985,
+    "causal_events": 4910,
+    "causal_index_sha256": "6aaeeb42940b91ddb807b634da5d4599c747dd77ec4c2142e55a383cd872d858",
+    "edges": 300,
+    "graph_digest": "2eff93563f5fe4f3af8d524f15a025a0f09220148ce3f8305f9cc034bcd13fb8",
+    "inputs": 102,
+    "nodes": 198,
+    "post_checkpoint_note": "The Lab shell call returning the final checkpoint appends one ordinary trace audit event after build/verify completes; this is valid next-epoch evidence, as in prior generations.",
+    "snapshot_sha256": "9f10358f396ad515724d50fafe500b33de80772c1018eae0b12ff18a65eacd9e",
+    "verify": "PASS_ZERO_ISSUES_AT_CHECKPOINT"
+  },
+  "frozen_safe_mcp": {
+    "guardrail": "guardrail-gen0-c51a9161a95d",
+    "modified": false,
+    "policy": "authority-v1",
+    "release": "frontend-a5c1c5be8b22",
+    "schema_sha256": "195c410b85d40f4cfe65ef7eb8baa0463a32e93882fd9d39c0045e6518cd2913",
+    "source_sha256": "a5c1c5be8b22f0268211fad81d42fefa5b1a3da46cb3582377c378f4b78260c7",
+    "tool_count": 51
+  },
+  "generation": "gen12-counterfactual-replay-r1",
+  "gold_sha256": "6673cfea161e76019f4093af96d048277e407c73073197140c254fa9a7ace1fb",
+  "operational_server": {
+    "build_id": "gen6-experience-memory-r1-dc0d2cb41595",
+    "generation": "gen6-experience-memory-r1",
+    "live_equals_lkg": true,
+    "lkg_sha256": "dc0d2cb41595a9a3d953873879ccc3e0bd88db2b4dcdee4cf8aa43dd4cb103e9",
+    "recovery_state": "ACCEPTED",
+    "server_sha256": "dc0d2cb41595a9a3d953873879ccc3e0bd88db2b4dcdee4cf8aa43dd4cb103e9",
+    "tool_names": [
+      "shell",
+      "read_file",
+      "read_range",
+      "write_file",
+      "list_files",
+      "job",
+      "service",
+      "lab_status",
+      "self_restart",
+      "reboot"
+    ],
+    "tool_surface": 10
+  },
+  "permanent_mcp_tools": 10,
+  "protected_state": "PASS_ZERO_FORBIDDEN_APPEND_ONLY_TRACE",
+  "quality_preservation": {
+    "context_reduction_vs_gen8": 0.44824,
+    "critical_authority_fn": 0,
+    "critical_authority_recall": 1.0,
+    "gen10_epoch_coherence": true,
+    "gen11_benchmark": "39/39",
+    "gen11_routing_gold": "29/29",
+    "necessity_precision": 1.0,
+    "required_evidence_recall": 1.0,
+    "unsafe_routing_errors": 0
+  },
+  "retained_regressions": {
+    "gen10": "24/24 direct with built-in capsules",
+    "gen11": "39/39; routing gold 29/29",
+    "gen2": "12/12",
+    "gen3": "16/16",
+    "gen4": "18/18",
+    "gen5": "12/12 historical empty-state",
+    "gen6": "13/13",
+    "gen7": "15/15 version-pinned",
+    "gen8": "17/17 quiescent",
+    "gen9": "20/20 mutation-safe"
+  },
+  "scope": "Optiplex_Lab + isolated mcp-lab VM",
+  "self_use": {
+    "defects_found": 3,
+    "early_rejected_engine_defect_reproduced": true,
+    "evaluator_choice_replayed": true,
+    "nested_isolation_policy_finding": true,
+    "noop_replayed": true,
+    "routing_choice_replayed": true,
+    "status": "PASS",
+    "unsafe_weakened_authority_fail_closed": true
+  },
+  "server_modified": false,
+  "status": "ACCEPTED",
+  "supported_replay_classes": [
+    "implementation_change",
+    "intent_routing",
+    "evaluator",
+    "authority_evidence_selection",
+    "noop"
+  ],
+  "thesis": "Replay Alternate Decisions Without Rewriting History",
+  "validation": {
+    "canonical_project_tests": "PASS_13_13",
+    "commit_or_push_performed": false,
+    "containment": "PASS",
+    "final_lab_identity": "PASS_GEN12_CAPABILITY_OVER_GEN6_SERVER_UNCHANGED_10_TOOLS",
+    "frozen_safe_mcp": "PASS_UNCHANGED_51_TOOLS",
+    "git_diff_check": "PASS",
+    "json_jsonl": "PASS_89_JSON_2_JSONL_116_RECORDS",
+    "protected_state": "PASS_ZERO_FORBIDDEN_TRACE_PREFIX_APPEND_ONLY",
+    "python_syntax": "PASS_40_FILES_MUTATION_FREE_AST",
+    "secret_credential_scan": "PASS_15_GEN12_OWNED_CANONICAL_FILES",
+    "server_modified": false,
+    "status": "PASS_FINAL_CANONICAL_VALIDATION",
+    "temp_archive_cleanup": "PASS_ZERO_GEN12_VAR_TMP_AND_REPO_DEBRIS",
+    "validated_at": "2026-08-26T21:43:34.360938+00:00"
+  },
+  "version": "gen12-result-r1"
+}

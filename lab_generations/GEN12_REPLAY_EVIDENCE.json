@@ -1,0 +1,82 @@
+{
+  "base_epoch": {
+    "entry_count": 121,
+    "epoch_digest": "c231bc0288fac0316721af91370ea421673013d0f99e0d06ec9238bc62d6b612",
+    "epoch_id": "ep10_c231bc0288fac0316721af91370ea421673013d0f99e0d06ec9238bc62d6b612",
+    "routing_digest": "dd4b8e36e56fadf2433ada6d0face390ea8634de11a46f854b0992d2d68e9d05",
+    "twin_graph_digest": "5ee94b2176309edbe3c6b58a1535b7cba02a00a8d8aa077c777924dcecab9930"
+  },
+  "evaluator": {
+    "alternative_evaluator_digest": "5bc46655948f5e7d84b2e7b3ae44e260023055ce774e466fd8a2c5cac3086b81",
+    "attribution_correct": true,
+    "baseline_evaluator_digest": "87134617acabdd6cf90cf97c2b1a8be9308357bd8e57e6da7281bf0c1b3c63fb",
+    "changed": true,
+    "replay_digest": "37356db052e7037acc0f9bbb836bcae8042889cd2802a9d2227604e6bd1f9be9"
+  },
+  "historical_selection": {
+    "attribution_correct": true,
+    "historical_leakage": 0,
+    "replay_digest": "31fc21bc131330fa9018300e3dc0f51caf2ef5965e3aead6f79bd1d013a74653",
+    "selected_from_base_only": true
+  },
+  "implementation": {
+    "accepted_state_unchanged": true,
+    "attribution_correct": true,
+    "capsule_run_id": "cap8_20260826T211425Z_7081096e",
+    "changed": true,
+    "declared_effect_paths": [
+      "/opt/optiplex-lab/counterfactual_replay.py"
+    ],
+    "isolation_owner": "replay",
+    "overlay_digest": "e15cf3f98dec49759a9e6b0d56fd1558322d650564c882204e878c525eac1e2e",
+    "replay_digest": "af1a3047c099d6afd81cf42f9b0f07023810f85864eca173a5c0bca077963529",
+    "semantic_delta": {
+      "authority_monotonic": [
+        true,
+        false
+      ]
+    },
+    "unexpected_mutations": []
+  },
+  "negative_control": {
+    "attribution_correct": true,
+    "changed": false,
+    "replay_digest": "bfd493baf41d9082fe98fb46777d50e05ccedaab7ea4259c40672fec098065cc",
+    "semantic_diff": []
+  },
+  "noop": {
+    "alternative_semantic_digest": "81e9a6023a7ff245d56f3462fb69977ad5056979cb454d689e365224d8fbee46",
+    "attribution_correct": true,
+    "baseline_semantic_digest": "81e9a6023a7ff245d56f3462fb69977ad5056979cb454d689e365224d8fbee46",
+    "changed": false,
+    "replay_digest": "cd41770f3d120ee3e946174acba0ca8764ce92271be7051117c39f2a0ad99a8f"
+  },
+  "routing": {
+    "attribution_correct": true,
+    "authority_added": [
+      "causal_history"
+    ],
+    "authority_removed": [],
+    "changed": true,
+    "evidence_obligations_changed": true,
+    "primary_intent": [
+      "implementation_change",
+      "evaluation_benchmarking"
+    ],
+    "replay_digest": "5d395a13fcb8efe5f2aaab462e357325669659a2ce85ebba854cfa3212539f15"
+  },
+  "same_sealed_base_for_demonstrations": true,
+  "unsafe_error_codes": [
+    "WRONG_EPOCH_DIGEST",
+    "ROUTING_DIGEST_MISMATCH",
+    "MISSING_CONTENT_ADDRESSED_BLOB",
+    "UNDECLARED_SOURCE_MUTATION",
+    "HISTORICAL_EVIDENCE_LEAKAGE",
+    "UNSAFE_AUTHORITY_WEAKENING",
+    "CONTRADICTORY_AUTHORITY",
+    "ACCEPTED_STATE_MUTATION_FORBIDDEN",
+    "LIVE_AUTHORITY_VALIDATION_REQUIRED",
+    "ISOLATION_DELEGATION_UNSUPPORTED_FOR_MUTATION"
+  ],
+  "version": "gen12-replay-evidence-r1"
+}
