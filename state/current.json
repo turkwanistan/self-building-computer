@@ -1,42 +1,11 @@
 {
-  "cycle_id": "bootstrap-20260825",
-  "state": "PUBLISHED_READY_FOR_BLUE_GREEN",
-  "stable_release": "gen0-optiplex-mcp-agent",
-  "candidate_release": null,
-  "previous_release": null,
-  "guardrail_release": "gen0-optiplex-mcp-agent",
+  "candidate_release": "frontend-a5c1c5be8b22",
+  "context_policy": "REPO_AND_ROOT_STATE_AUTHORITATIVE_CHATGPT_MEMORY_ADVISORY",
+  "cycle_id": "noop-lifecycle-001",
   "expected_tool_count": 51,
   "expected_tool_schema_sha256": "195c410b85d40f4cfe65ef7eb8baa0463a32e93882fd9d39c0045e6518cd2913",
-  "security_authority_delta": "NONE",
-  "context_policy": "REPO_AND_ROOT_STATE_AUTHORITATIVE_CHATGPT_MEMORY_ADVISORY",
-  "publication": {
-    "repository": "git@github.com:turkwanistan/self-building-computer.git",
-    "branch": "main",
-    "bootstrap_commit": "40c5624",
-    "state": "PUBLISHED"
-  },
+  "guardrail_release": "guardrail-gen0-c51a9161a95d",
   "lab": {
-    "name": "mcp-lab",
-    "network": "mcp-lab-net",
-    "subnet": "192.168.127.0/24",
-    "ip": "192.168.127.10",
-    "snapshot": "known-good",
-    "tool_count": 7,
-    "state": "ACCEPTED",
-    "root": true,
-    "public_internet": true,
-    "private_network_access": false,
-    "host_service_access": false,
-    "host_mounts": false,
-    "host_docker_socket": false,
-    "host_libvirt_socket": false,
-    "tailscale_client": false,
-    "tunnel_profile": "optiplex-lab",
-    "tunnel_service": "mcp-lab-tunnel.service",
-    "tunnel_health": "http://127.0.0.1:8794/healthz",
-    "tunnel_state": "ACTIVE_READY",
-    "tunnel_id_policy": "VERIFY_LIVE_FROM_HOST_PROFILE_DO_NOT_CACHE",
-    "tunnel_id_source": "/home/mcp/.config/tunnel-client/optiplex-lab.yaml",
     "chatgpt_connector_acceptance": "ACCEPTED",
     "chatgpt_connector_accepted_at": "2026-08-26T01:30:14Z",
     "chatgpt_connector_tools": [
@@ -49,20 +18,116 @@
       "reboot"
     ],
     "chatgpt_smoke": {
-      "root_shell": true,
+      "host_service_192_168_127_1_8790_blocked": true,
       "public_https": true,
-      "write_read_cleanup": true,
-      "host_service_192_168_127_1_8790_blocked": true
-    }
+      "root_shell": true,
+      "write_read_cleanup": true
+    },
+    "host_docker_socket": false,
+    "host_libvirt_socket": false,
+    "host_mounts": false,
+    "host_service_access": false,
+    "ip": "192.168.127.10",
+    "name": "mcp-lab",
+    "network": "mcp-lab-net",
+    "private_network_access": false,
+    "public_internet": true,
+    "root": true,
+    "snapshot": "known-good",
+    "state": "ACCEPTED",
+    "subnet": "192.168.127.0/24",
+    "tailscale_client": false,
+    "tool_count": 7,
+    "tunnel_health": "http://127.0.0.1:8794/healthz",
+    "tunnel_id_policy": "VERIFY_LIVE_FROM_HOST_PROFILE_DO_NOT_CACHE",
+    "tunnel_id_source": "/home/mcp/.config/tunnel-client/optiplex-lab.yaml",
+    "tunnel_profile": "optiplex-lab",
+    "tunnel_service": "mcp-lab-tunnel.service",
+    "tunnel_state": "ACTIVE_READY"
+  },
+  "lifecycle_implementation": {
+    "activated_at": "2026-08-26T02:48:32.026032Z",
+    "active_slot": "green",
+    "authority_delta": "NONE",
+    "bootstrap_verified_at": "2026-08-26T02:30:29Z",
+    "candidate_slot": "green",
+    "candidate_source_sha256": "a5c1c5be8b22f0268211fad81d42fefa5b1a3da46cb3582377c378f4b78260c7",
+    "gates": {
+      "candidate_tests": "PASS",
+      "confinement": "PASS",
+      "guardrail_regression": "PASS",
+      "inactive_slot_smoke": "PASS",
+      "secret_scan": "PASS"
+    },
+    "guardrail_gap": "generation-0 bind port made configurable without authority expansion",
+    "guardrail_source_repo": "/home/mcp/projects/projects/optiplex-mcp-agent",
+    "guardrail_source_sha256": "c51a9161a95d2ec5e1c30d3ead269aab0e63f8cba969a0164bec14d801d487a2",
+    "guardrail_tests": "68 passed, 10 skipped",
+    "installed": true,
+    "mcp_verifier_source": "host/verify-evolution-mcp.py",
+    "no_op_cycle_id": "noop-lifecycle-001",
+    "planned_ports": {
+      "blue": 8792,
+      "frontdoor": 8790,
+      "green": 8793,
+      "guardrail": 8795
+    },
+    "post_activation_verification": {
+      "fresh_session_product_boundary": {
+        "browser_mediation": "PASS",
+        "exact_tool_surface": "PASS",
+        "guardrail_identity": "PASS",
+        "policy": "PASS",
+        "release_identity": "PASS",
+        "schema_hash": "PASS",
+        "tool_count_51": "PASS",
+        "unauthorized_git_push_rejected": "PASS"
+      },
+      "note": "Fresh ChatGPT session verified the refresh-sensitive product boundary. Some ordinary MCP calls were blocked by the platform before reaching MCP there; the same active candidate backend was then used from the existing session to complete those non-refresh-sensitive security checks.",
+      "supplemental_active_candidate_backend_checks": {
+        "generic_sandbox_internet_blocked": "PASS",
+        "harmless_sandbox_command": "PASS",
+        "outside_project_read_rejected": "PASS",
+        "project_preflight": "PASS",
+        "read_only_project_operation": "PASS"
+      }
+    },
+    "post_activation_verified_at": "2026-08-26T02:57:09.253852Z",
+    "rollback_drill_passed": false,
+    "root_bootstrap_script": "host/bootstrap-evolution.sh",
+    "root_events_path": "/var/lib/mcp-evolution/events.jsonl",
+    "root_lifecycle_cli_source": "host/evolutionctl.py",
+    "root_state": "FRESH_SESSION_VERIFY",
+    "root_state_path": "/var/lib/mcp-evolution/current.json",
+    "self_building_tests": "13 passed",
+    "services": {
+      "mcp-agent.service": "inactive",
+      "mcp-evolution-blue.service": "active",
+      "mcp-evolution-frontdoor.service": "active",
+      "mcp-evolution-green.service": "active",
+      "mcp-evolution-guardrail.service": "active"
+    },
+    "stable_slot": "blue",
+    "verification_state": "PROMOTE_READY"
   },
   "original_objective": "Implement the approved Self-Building Computer architecture, including safe evolvable MCP lifecycle and isolated unrestricted mcp-lab VM.",
-  "resume_instruction": "Publication and ChatGPT lab acceptance are complete. Begin the root-owned immutable release / blue-green safe-MCP lifecycle stage from repository authority. Preserve the current production MCP and do not widen host security authority without explicit user approval.",
+  "previous_release": null,
+  "publication": {
+    "bootstrap_commit": "40c5624",
+    "branch": "main",
+    "repository": "git@github.com:turkwanistan/self-building-computer.git",
+    "state": "PUBLISHED"
+  },
+  "resume_instruction": "Human may now run: sudo mcp-evolution accept noop-lifecycle-001; sudo mcp-evolution promote noop-lifecycle-001; sudo mcp-evolution rollback --drill; then verify root state reaches LIFECYCLE_ACCEPTED. Do not begin real capability evolution before that final state.",
+  "security_authority_delta": "NONE",
+  "stable_release": "frontend-baseline-91db2634c80d",
+  "state": "NOOP_PROMOTE_READY",
   "validation": {
+    "events_jsonl_validation": "PASS",
     "project_tests": "PASS",
-    "test_command": "python -m pytest -q",
     "secret_credential_scan": "PASS",
     "state_json_validation": "PASS",
-    "events_jsonl_validation": "PASS",
-    "validated_at": "2026-08-26T01:30:14Z"
+    "test_command": "python -m pytest -q",
+    "validated_at": "2026-08-26T02:57:09.253852Z"
   }
 }

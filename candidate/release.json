@@ -1,0 +1,9 @@
+{
+  "cycle_id": "noop-lifecycle-001",
+  "kind": "NOOP_LIFECYCLE_DRILL",
+  "authority_delta": "NONE",
+  "expected_tool_count": 51,
+  "expected_tool_schema_sha256": "195c410b85d40f4cfe65ef7eb8baa0463a32e93882fd9d39c0045e6518cd2913",
+  "purpose": "Prove immutable staging, inactive-slot validation, activation, fresh-session verification, promotion, and rollback without adding a capability.",
+  "original_objective": "Complete the self-building lifecycle machinery before starting iterative capability evolution."
+}
