@@ -1,7 +1,7 @@
 {
   "lab": {
-    "accepted_at": "2026-08-26T18:54:11.731342+00:00",
-    "build_id": "gen9-context-necessity-r1-6be10d7af323",
+    "accepted_at": "2026-08-26T19:50:26.806938+00:00",
+    "build_id": "gen10-evidence-epoch-r1-9418201f1401",
     "features_add": [
       "architectural_digital_twin",
       "causal_observability_spine",
@@ -13,8 +13,77 @@
       "version_pinned_historical_regression_views",
       "deterministic_context_necessity_optimizer",
       "proof_carrying_evidence_minimization",
-      "current_valid_post_gold_evidence_accounting"
+      "current_valid_post_gold_evidence_accounting",
+      "deterministic_evidence_epochs",
+      "content_addressed_epoch_evidence",
+      "transaction_bound_context_reasoning",
+      "append_only_prefix_epoch_semantics",
+      "next_epoch_freshness_handoff",
+      "live_authority_revalidation"
     ],
+    "gen10_validation": {
+      "benchmark": {
+        "avoidable_same_transaction_self_invalidation": "0/1",
+        "context_payload_reduction_vs_gen8": 0.456605,
+        "critical_fn": 0,
+        "finalize_median_ms": 75.007,
+        "necessity_precision": 1.0,
+        "next_epoch_freshness": "1/1",
+        "passed": 24,
+        "required_evidence_recall": 1.0,
+        "seal_median_ms": 183.767,
+        "total": 24,
+        "unsafe_fail_closed": "5/5",
+        "verify_median_ms": 70.402
+      },
+      "benchmark_source_sha256": "6c43563621203bd6b201b40de8d425984a9aa1ba1c340be9198c6fb8ea05c6ef",
+      "capability_build": "gen10-evidence-epoch-r1-9418201f1401",
+      "commit_or_push_performed": false,
+      "coordinator_sha256": "9418201f1401e56a6dd62f8cb696b3bf947f822073b83d07fa57b028f3ba035f",
+      "final_twin": {
+        "causal_digest": "e507a9a07f0af1ea2bdd16e8b70d7e29f0400ae5d67abcb3530af5ab49ef3db5",
+        "edges": 279,
+        "graph_digest": "947181e319337fac733ca7482b8b14e967a8c99a54d22bc6dde368df67ca3b09",
+        "inputs": 94,
+        "nodes": 186,
+        "snapshot_sha256": "1129f3d9039eaadb800d36dd6aa97198a7bf5ee60f460c6be9a385a6e4fcb336",
+        "verify": "PASS_NO_ISSUES_AT_CHECKPOINT"
+      },
+      "frozen_safe_mcp": "PASS_UNCHANGED",
+      "generation": "gen10-evidence-epoch-r1",
+      "gold_sha256": "970c3a1db846f25d9f0d9f1e8a8b28d11a1c45439642c8d5831eca2ab94f31de",
+      "operational_server": {
+        "build_id": "gen6-experience-memory-r1-dc0d2cb41595",
+        "generation": "gen6-experience-memory-r1",
+        "live_equals_lkg": true,
+        "lkg_sha256": "dc0d2cb41595a9a3d953873879ccc3e0bd88db2b4dcdee4cf8aa43dd4cb103e9",
+        "recovery_state": "ACCEPTED",
+        "server_sha256": "dc0d2cb41595a9a3d953873879ccc3e0bd88db2b4dcdee4cf8aa43dd4cb103e9",
+        "tool_surface": 10
+      },
+      "protected_state": "PASS_ZERO_FORBIDDEN_PREFIX_PRESERVING_AUDIT_ONLY",
+      "retained_regressions": {
+        "gen2": "12/12",
+        "gen3": "16/16",
+        "gen4": "18/18",
+        "gen5": "12/12",
+        "gen6": "13/13",
+        "gen7": "15/15 version-pinned",
+        "gen8": "17/17",
+        "gen9": "20/20"
+      },
+      "server_modified": false,
+      "validation": {
+        "accepted_core_diff": "PASS_ZERO_DIFF",
+        "canonical_project_tests": "PASS_13_13",
+        "containment": "PASS",
+        "git_diff_check": "PASS",
+        "json_jsonl": "PASS_73_JSON_2_JSONL_113_RECORDS",
+        "python_syntax": "PASS_36_FILES_MUTATION_FREE",
+        "secret_scan": "PASS",
+        "validated_at": "2026-08-26T19:50:54.252978+00:00"
+      }
+    },
     "gen5_validation": {
       "accepted_guest_identity": {
         "build_id": "gen5-capability-forge-r1-d752f3cb4470",
@@ -701,8 +770,8 @@
         "validated_at": "2026-08-26T18:55:07.088888+00:00"
       }
     },
-    "generation": "gen9-context-necessity-r1",
-    "generation_source_sha256": "6be10d7af3238fb59a2cf8f5d9a858de4b3957a9681634bbe4ef78e33402d299",
+    "generation": "gen10-evidence-epoch-r1",
+    "generation_source_sha256": "9418201f1401e56a6dd62f8cb696b3bf947f822073b83d07fa57b028f3ba035f",
     "live_server_identity": {
       "build_id": "gen6-experience-memory-r1-dc0d2cb41595",
       "generation": "gen6-experience-memory-r1",
@@ -714,32 +783,31 @@
     },
     "recovery_state": "ACCEPTED",
     "source_sha256": "dc0d2cb41595a9a3d953873879ccc3e0bd88db2b4dcdee4cf8aa43dd4cb103e9",
-    "state": "GEN9_ACCEPTED_CONTEXT_NECESSITY",
+    "state": "GEN10_ACCEPTED_EVIDENCE_EPOCH",
     "tool_count": 10
   },
   "next_iteration": {
-    "cycle_id": "gen10-evidence-epoch-001",
-    "proposals_artifact": "lab_generations/GEN10_PROPOSALS.json",
-    "required_stop": "DO_NOT_IMPLEMENT_GEN10_WITHOUT_USER_REQUEST",
+    "cycle_id": "gen11-intent-authority-routing-001",
+    "proposals_artifact": "lab_generations/GEN11_PROPOSALS.json",
+    "required_stop": "DO_NOT_IMPLEMENT_GEN11_WITHOUT_USER_REQUEST",
     "safe_mcp_policy": "FROZEN_NO_CHANGES",
     "status": "PROPOSED_NOT_STARTED",
     "target": "Optiplex_Lab + mcp-lab VM",
-    "top_recommendation": "Evidence Epoch / Snapshot Freshness Coordinator"
+    "top_recommendation": "Task Intent Classification + Authority Routing Hardening"
   },
-  "resume_instruction": "Repository/live state is authoritative. Target remains Optiplex_Lab + isolated mcp-lab VM; Optiplex_MCP is frozen. Canonical accepted capability is gen9-context-necessity-r1 / build gen9-context-necessity-r1-6be10d7af323, optimizer SHA 6be10d7af3238fb59a2cf8f5d9a858de4b3957a9681634bbe4ef78e33402d299. Operational lab_status must intentionally remain Gen6 build gen6-experience-memory-r1-dc0d2cb41595, server/LKG dc0d2cb41595a9a3d953873879ccc3e0bd88db2b4dcdee4cf8aa43dd4cb103e9, recovery ACCEPTED, exactly 10 tools. Gen9 benchmark is 20/20, recall 1.0, 47 TP / 0 FP / 0 FN necessity-aware, comparable legacy precision 0.931818, context payload reduction 46.0856%, median minimization 1.94 ms. Final Twin is 179 nodes / 259 edges / 89 inputs, graph digest 4d983ad01376a04a54dc834d0dc46ee4d606293fca572f3d8ead45e81e65c45f, snapshot SHA 2c05c6282070c74bee204e837d0b8d6a03677ab404a407318c8a4d27594484be. Retained: Gen2 12/12, Gen3 16/16, Gen4 18/18, Gen5 12/12, Gen6 13/13, Gen7 15/15 version-pinned, Gen8 17/17. Top Gen10 proposal is Evidence Epoch / Snapshot Freshness Coordinator. Do not implement Gen10 without explicit request. Never run mcp_probe.py synchronously through Lab shell.",
-  "state": "LIFECYCLE_ACCEPTED_GEN9_CONTEXT_NECESSITY",
+  "resume_instruction": "Repository/live state is authoritative. Canonical accepted capability is gen10-evidence-epoch-r1 / build gen10-evidence-epoch-r1-9418201f1401, coordinator SHA 9418201f1401e56a6dd62f8cb696b3bf947f822073b83d07fa57b028f3ba035f. Operational Lab intentionally remains Gen6 build gen6-experience-memory-r1-dc0d2cb41595, server/LKG dc0d2cb41595a9a3d953873879ccc3e0bd88db2b4dcdee4cf8aa43dd4cb103e9, recovery ACCEPTED, exactly 10 tools. Gen10 benchmark 24/24, recall 1.0, critical FN 0, necessity precision 1.0, context reduction vs Gen8 45.6605%, unsafe fail-close 5/5, avoidable same-transaction self-invalidation 0/1, next-epoch freshness 1/1. Final Twin checkpoint 186 nodes / 279 edges / 94 inputs, graph 947181e319337fac733ca7482b8b14e967a8c99a54d22bc6dde368df67ca3b09, snapshot 1129f3d9039eaadb800d36dd6aa97198a7bf5ee60f460c6be9a385a6e4fcb336. Retained Gen2 12/12; Gen3 16/16; Gen4 18/18; Gen5 12/12; Gen6 13/13; Gen7 15/15 version-pinned; Gen8 17/17; Gen9 20/20. Top Gen11 proposal is Task Intent Classification + Authority Routing Hardening. Preserve unrelated Git work and never run mcp_probe.py synchronously through Lab shell.",
+  "state": "LIFECYCLE_ACCEPTED_GEN10_EVIDENCE_EPOCH",
   "validation": {
+    "accepted_core_diff": "PASS_ZERO_DIFF",
     "canonical_project_tests": "PASS_13_13",
     "containment": "PASS",
-    "context_compiler_diff": "PASS_ZERO_BYTES",
-    "final_lab_identity": "PASS_GEN9_CAPABILITY_OVER_GEN6_SERVER_UNCHANGED",
+    "final_lab_identity": "PASS_GEN10_CAPABILITY_OVER_GEN6_SERVER_UNCHANGED",
     "frozen_safe_mcp": "PASS_UNCHANGED",
     "git_diff_check": "PASS",
-    "json_jsonl": "PASS_65_JSON_2_JSONL_110_LINES",
-    "python_syntax": "PASS_34_FILES_MUTATION_FREE",
-    "secret_credential_scan": "PASS_15_CHANGED_CANONICAL_FILES",
-    "server_diff": "PASS_ZERO_BYTES",
-    "temp_archive_cleanup": "PASS_NO_TEMP_TRANSFER_FILES",
-    "validated_at": "2026-08-26T18:55:07.088888+00:00"
+    "json_jsonl": "PASS_73_JSON_2_JSONL_113_RECORDS",
+    "python_syntax": "PASS_36_FILES_MUTATION_FREE",
+    "secret_credential_scan": "PASS",
+    "temp_archive_cleanup": "PASS_NO_OBVIOUS_PROJECT_TRANSFER_FILES",
+    "validated_at": "2026-08-26T19:50:54.252978+00:00"
   }
 }

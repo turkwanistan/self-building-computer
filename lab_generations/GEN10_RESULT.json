@@ -1,0 +1,182 @@
+{
+  "accepted_at": "2026-08-26T19:50:26.806938+00:00",
+  "architectures_considered": [
+    "Immutable Evidence Epoch Manifest",
+    "Copy-on-write / content-addressed evidence snapshot",
+    "Transactional Twin + Context snapshot",
+    "Optimistic validation",
+    "Experiment-Capsule-backed reasoning epoch",
+    "Hybrid manifest + content-addressed view + transactional provenance + live revalidation + capsules (chosen)"
+  ],
+  "benchmark": {
+    "gold_sha256": "970c3a1db846f25d9f0d9f1e8a8b28d11a1c45439642c8d5831eca2ab94f31de",
+    "metrics": {
+      "avoidable_same_transaction_self_invalidation": "0/1",
+      "benchmark_epoch_digest": "0d9ee3427e78037bfbe4b3801b9f71162b8537892921a90de9d8e3f19aa8423c",
+      "benchmark_transaction_digest": "75b60b0921586005288bc9a120fb60e9650c6a83b9bbe9e5e4b2e22b90b04128",
+      "context_payload_reduction_vs_gen8": 0.456605,
+      "critical_fn": 0,
+      "epoch_creation_seal_median_ms": 183.767,
+      "epoch_creation_seal_p95_ms": 238.749,
+      "epoch_finalize_median_ms": 75.007,
+      "epoch_verify_median_ms": 70.402,
+      "epoch_verify_p95_ms": 77.171,
+      "materialized_bytes": 8408732,
+      "necessity_aware_precision": 1.0,
+      "next_epoch_freshness": "1/1",
+      "required_evidence_recall": 1.0,
+      "unique_blob_bytes": 51337764,
+      "unsafe_fail_closed": "5/5"
+    },
+    "passed": 24,
+    "total": 24
+  },
+  "canonical_files_changed_or_added": [
+    "plans/GEN10_EVIDENCE_EPOCH_COORDINATOR.md",
+    "lab_mcp/evidence_epoch.py",
+    "lab_mcp/bench/benchmark_gen10.py",
+    "lab_generations/GEN10_GOLD.json",
+    "lab_generations/GEN10_BENCHMARK.json",
+    "lab_generations/GEN10_EPOCH_EVIDENCE.json",
+    "lab_generations/GEN10_RETAINED_REGRESSIONS.json",
+    "lab_generations/GEN10_SELF_USE.json",
+    "lab_generations/GEN10_PROTECTED_STATE.json",
+    "lab_generations/GEN10_RESULT.json",
+    "lab_generations/GEN11_PROPOSALS.json",
+    "STATUS.md",
+    "NEXT_SESSION.md",
+    "state/current.json",
+    "history/events.jsonl"
+  ],
+  "capability_build": "gen10-evidence-epoch-r1-9418201f1401",
+  "chosen_design": "Deterministic immutable evidence epochs backed by content-addressed blobs/materialized views; transaction-bound Twin/compiler/optimizer/evaluator provenance; live revalidation for authorities that cannot safely be frozen; append-only prefix semantics; and Experiment Capsules for mutation-producing evaluation.",
+  "commit_or_push_performed": false,
+  "final_twin": {
+    "causal_digest": "e507a9a07f0af1ea2bdd16e8b70d7e29f0400ae5d67abcb3530af5ab49ef3db5",
+    "edges": 279,
+    "graph_digest": "947181e319337fac733ca7482b8b14e967a8c99a54d22bc6dde368df67ca3b09",
+    "inputs": 94,
+    "nodes": 186,
+    "snapshot_sha256": "1129f3d9039eaadb800d36dd6aa97198a7bf5ee60f460c6be9a385a6e4fcb336",
+    "verify": "PASS_NO_ISSUES_AT_CHECKPOINT"
+  },
+  "frozen_optiplex_mcp": {
+    "guardrail": "guardrail-gen0-c51a9161a95d",
+    "modified": false,
+    "policy": "authority-v1",
+    "release": "frontend-a5c1c5be8b22",
+    "schema_sha256": "195c410b85d40f4cfe65ef7eb8baa0463a32e93882fd9d39c0045e6518cd2913",
+    "tool_count": 51
+  },
+  "gen11_proposals": "lab_generations/GEN11_PROPOSALS.json",
+  "gen9_self_invalidation_reproduction": {
+    "generated_control_sha256": "02cda49c92c41713cca43495eeab3b940f224eb63e4a851361aa4db6294e2dd1",
+    "generated_evidence_queued_for_next_epoch": true,
+    "next_epoch_observed_generated_evidence": true,
+    "result": "PASS_FIXED_BY_TRANSACTION_BOUNDARY",
+    "same_transaction_remained_coherent": true,
+    "start_control_sha256": "667d2ce15095f2a57fc4db76e8078a1a2e56c2fe00fb3980d3c201c6508cf87a",
+    "unsafe_changes_still_fail_closed": true
+  },
+  "generation": "gen10-evidence-epoch-r1",
+  "implementation": {
+    "architecture_twin_modified": false,
+    "benchmark": "lab_mcp/bench/benchmark_gen10.py",
+    "benchmark_sha256": "6c43563621203bd6b201b40de8d425984a9aa1ba1c340be9198c6fb8ea05c6ef",
+    "benchmark_version": "gen10-evidence-epoch-benchmark-r1",
+    "context_compiler_modified": false,
+    "context_necessity_modified": false,
+    "coordinator": "lab_mcp/evidence_epoch.py",
+    "coordinator_sha256": "9418201f1401e56a6dd62f8cb696b3bf947f822073b83d07fa57b028f3ba035f",
+    "coordinator_version": "gen10-evidence-epoch-r1",
+    "experiment_capsule_modified": false,
+    "lifecycle": [
+      "begin",
+      "seal",
+      "verify",
+      "compile_minimize",
+      "capsule_evaluate",
+      "finalize",
+      "advance/rebuild next view",
+      "crash recovery"
+    ],
+    "permanent_mcp_tools": 10,
+    "server_modified": false
+  },
+  "operational_server": {
+    "build_id": "gen6-experience-memory-r1-dc0d2cb41595",
+    "generation": "gen6-experience-memory-r1",
+    "live_equals_lkg": true,
+    "lkg_sha256": "dc0d2cb41595a9a3d953873879ccc3e0bd88db2b4dcdee4cf8aa43dd4cb103e9",
+    "recovery_state": "ACCEPTED",
+    "server_sha256": "dc0d2cb41595a9a3d953873879ccc3e0bd88db2b4dcdee4cf8aa43dd4cb103e9",
+    "tool_surface": 10
+  },
+  "protected_state": {
+    "accepted": true,
+    "artifact": "lab_generations/GEN10_PROTECTED_STATE.json",
+    "containment": "PASS",
+    "earliest_gen8_systemd_caveat_preserved": true,
+    "forbidden_changes": 0,
+    "trace_bytes_appended_at_checkpoint": 25608,
+    "trace_prefix_preserved": true
+  },
+  "retained_regressions": {
+    "gen2": "12/12",
+    "gen3": "16/16",
+    "gen4": "18/18",
+    "gen5": "12/12",
+    "gen6": "13/13",
+    "gen7": "15/15 version-pinned",
+    "gen8": "17/17",
+    "gen9": "20/20 quiescent capsule rerun",
+    "mutation_safe": true
+  },
+  "scope": "Optiplex_Lab + isolated mcp-lab VM",
+  "self_use": {
+    "artifact": "lab_generations/GEN10_SELF_USE.json",
+    "bugs_fixed": [
+      "volatile append-only tail accidentally influenced canonical epoch identity",
+      "benchmark read wrong Experiment Capsule / Gen9 metric fields",
+      "fixed control payload ceased to mutate on repeat benchmark",
+      "concurrent polling perturbed legacy Gen9 exact protected-digest window; quiescent rerun passed"
+    ],
+    "deterministic": true,
+    "fail_closed": false,
+    "final_epoch_digest": "e2d120e53e86a3492e8291ac67e6ea9ad53eee3e509ab523bf36da45ebe3bb6a",
+    "final_transaction_digest": "b30a5dfbe6b0cec1cdfab7418cbc05391978a0b18c19d35afba55162a91aa271",
+    "findings": 8
+  },
+  "starting_gen9": {
+    "benchmark": "20/20",
+    "capability_build": "gen9-context-necessity-r1-6be10d7af323",
+    "context_payload_reduction_vs_gen8": 0.460856,
+    "critical_fn": 0,
+    "generation": "gen9-context-necessity-r1",
+    "necessity_precision": 1.0,
+    "optimizer_sha256": "6be10d7af3238fb59a2cf8f5d9a858de4b3957a9681634bbe4ef78e33402d299",
+    "required_recall": 1.0,
+    "twin_graph_digest": "4d983ad01376a04a54dc834d0dc46ee4d606293fca572f3d8ead45e81e65c45f"
+  },
+  "status": "ACCEPTED",
+  "suggested_commit_message": "gen10: add deterministic evidence epoch coordinator",
+  "thesis": "Reason Over One Coherent Evidence Epoch",
+  "unrelated_work_preserved": [
+    "ideas.md (concurrent modified tracked file; not modified or claimed by Gen10)",
+    "host/check_chatgpt_ui_staleness.sh (untracked user work; preserved untouched)"
+  ],
+  "validation": {
+    "accepted_core_diff": "PASS_ZERO_DIFF_SERVER_COMPILER_OPTIMIZER_CAPSULE_TWIN",
+    "canonical_project_tests": "PASS_13_13",
+    "containment": "PASS",
+    "final_lab_identity": "PASS_GEN10_CAPABILITY_OVER_GEN6_SERVER_UNCHANGED",
+    "frozen_safe_mcp": "PASS_UNCHANGED",
+    "git_diff_check": "PASS",
+    "json_jsonl": "PASS_73_JSON_2_JSONL_113_RECORDS",
+    "json_jsonl_checkpoint": "PASS_71_JSON_2_JSONL_111_RECORDS_BEFORE_FINAL_HANDOFF_FILES",
+    "python_syntax": "PASS_36_FILES_MUTATION_FREE",
+    "secret_credential_scan": "PASS_GEN10_OWNED_FILES",
+    "temp_archive_cleanup": "PASS_NO_OBVIOUS_PROJECT_TRANSFER_FILES",
+    "validated_at": "2026-08-26T19:50:54.252978+00:00"
+  }
+}

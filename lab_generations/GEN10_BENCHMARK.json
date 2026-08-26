@@ -1,0 +1,148 @@
+{
+  "benchmark": "gen10-evidence-epoch-benchmark-r1",
+  "checks": [
+    {
+      "name": "gold_frozen_before_implementation",
+      "ok": true
+    },
+    {
+      "name": "coordinator_selftest",
+      "ok": true
+    },
+    {
+      "name": "normal_immutable_epoch_deterministic",
+      "ok": true
+    },
+    {
+      "name": "compiler_optimizer_same_epoch",
+      "ok": true
+    },
+    {
+      "name": "expected_tier1_write_same_transaction_coherent",
+      "ok": true
+    },
+    {
+      "name": "finalize_expected_output_queued",
+      "ok": true
+    },
+    {
+      "name": "active_epoch_survives_twin_rebuild",
+      "ok": true
+    },
+    {
+      "name": "next_epoch_observes_generated_evidence",
+      "ok": true
+    },
+    {
+      "name": "unexpected_critical_mid_epoch_fails_closed",
+      "ok": true
+    },
+    {
+      "name": "missing_pinned_blob_fails_closed",
+      "ok": true
+    },
+    {
+      "name": "contradictory_authority_epoch_refused",
+      "ok": true
+    },
+    {
+      "name": "append_only_prefix_growth_safe",
+      "ok": true
+    },
+    {
+      "name": "append_only_prefix_mutation_fails_closed",
+      "ok": true
+    },
+    {
+      "name": "crash_incomplete_epoch_recovery",
+      "ok": true
+    },
+    {
+      "name": "concurrent_reads_no_mixed_epoch",
+      "ok": true
+    },
+    {
+      "name": "protected_state_mutation_isolated",
+      "ok": true
+    },
+    {
+      "name": "unrelated_new_evidence_does_not_perturb_sealed_epoch",
+      "ok": true
+    },
+    {
+      "name": "live_authority_cannot_be_frozen_without_verifier",
+      "ok": true
+    },
+    {
+      "name": "historical_gen7_version_pinned_15_of_15",
+      "ok": true
+    },
+    {
+      "name": "gen9_quality_preserved",
+      "ok": true
+    },
+    {
+      "name": "epoch_latency_within_frozen_thresholds",
+      "ok": true
+    },
+    {
+      "name": "unsafe_conditions_still_fail_closed",
+      "ok": true
+    },
+    {
+      "name": "avoidable_transient_fail_closed_eliminated",
+      "ok": true
+    },
+    {
+      "name": "next_epoch_freshness_complete",
+      "ok": true
+    }
+  ],
+  "generation": "gen10-evidence-epoch-r1",
+  "gold_sha256": "970c3a1db846f25d9f0d9f1e8a8b28d11a1c45439642c8d5831eca2ab94f31de",
+  "metrics": {
+    "benchmark_source_sha256": "6c43563621203bd6b201b40de8d425984a9aa1ba1c340be9198c6fb8ea05c6ef",
+    "coordinator_sha256": "9418201f1401e56a6dd62f8cb696b3bf947f822073b83d07fa57b028f3ba035f",
+    "determinism": {
+      "epoch_digest": "0d9ee3427e78037bfbe4b3801b9f71162b8537892921a90de9d8e3f19aa8423c",
+      "transaction_digest": "75b60b0921586005288bc9a120fb60e9650c6a83b9bbe9e5e4b2e22b90b04128"
+    },
+    "epoch_latency_ms": {
+      "creation_samples": 6,
+      "creation_seal_median": 183.767,
+      "creation_seal_p95": 238.749,
+      "finalize_median": 75.007,
+      "verify_median": 70.402,
+      "verify_p95": 77.171,
+      "verify_samples": 13
+    },
+    "gen9_quality": {
+      "context_payload_reduction_vs_gen8": 0.456605,
+      "critical_fn": 0,
+      "necessity_aware_precision": 1.0,
+      "required_recall": 1.0
+    },
+    "next_epoch": {
+      "fresh": 1,
+      "freshness_rate": 1.0,
+      "trials": 1
+    },
+    "permanent_mcp_tools": 10,
+    "safety": {
+      "avoidable_same_transaction_fail_closed": 0,
+      "avoidable_same_transaction_fail_closed_trials": 1,
+      "unsafe_blocked": 5,
+      "unsafe_fail_closed_rate": 1.0,
+      "unsafe_trials": 5
+    },
+    "storage": {
+      "entries": 115,
+      "epoch_manifest_bytes": 54366,
+      "materialized_bytes": 8408732,
+      "unique_blob_bytes": 51337764
+    }
+  },
+  "passed": 24,
+  "source": "/var/lib/optiplex-lab/benchmarks/gen10-evidence-epoch-benchmark.json",
+  "total": 24
+}

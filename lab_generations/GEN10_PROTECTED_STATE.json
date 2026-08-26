@@ -1,0 +1,46 @@
+{
+  "accepted": true,
+  "common_resource_forbidden_changes": [],
+  "comparison_checkpoint_utc": "2026-08-26T19:44:54.997065+00:00",
+  "containment": {
+    "host_control_sockets_present": false,
+    "host_mounts_present": false,
+    "host_repository_present": false,
+    "protected_host_endpoint_blocked": true,
+    "public_internet": true,
+    "result": "PASS"
+  },
+  "gen8_earliest_manifest_lesson": "Earliest Gen8 baseline predates /etc/systemd/system monitoring; Gen10 claims only same-schema Gen10 baseline/final coverage for that tree, plus exact common-resource historical comparisons.",
+  "operational_files": {
+    "build_sha256": "4199c2f68000bb2f39a19acc4b87ba22f78679a3140568baff2753938a8124b6",
+    "live_equals_lkg": true,
+    "lkg_sha256": "dc0d2cb41595a9a3d953873879ccc3e0bd88db2b4dcdee4cf8aa43dd4cb103e9",
+    "server_sha256": "dc0d2cb41595a9a3d953873879ccc3e0bd88db2b4dcdee4cf8aa43dd4cb103e9"
+  },
+  "permanent_mcp_tools": {
+    "count": 10,
+    "names": [
+      "shell",
+      "read_file",
+      "read_range",
+      "write_file",
+      "list_files",
+      "job",
+      "service",
+      "lab_status",
+      "self_restart",
+      "reboot"
+    ]
+  },
+  "protected_after_digest": "e8b9d1155f2715bdd6cf2be7430d81901b72266251d61c69b49cad76020fefc8",
+  "protected_before_digest": "0f6875bd8e5db6141f65348be6fdc64cc515cce1138f3879435e4d91efce71b0",
+  "trace": {
+    "baseline_bytes": 1797322,
+    "baseline_sha256": "cfe8f411a27342666b4aabc7206c2121a9d54093cc85a4999176c73d6a9853e2",
+    "bytes_appended": 25608,
+    "current_bytes": 1822930,
+    "prefix_preserved": true,
+    "prefix_sha256_current": "cfe8f411a27342666b4aabc7206c2121a9d54093cc85a4999176c73d6a9853e2"
+  },
+  "version": "gen10-protected-final-comparison-r1"
+}

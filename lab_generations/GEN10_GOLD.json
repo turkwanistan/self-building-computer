@@ -1,0 +1,115 @@
+{
+  "baseline": {
+    "benchmark_gen9_sha256": "03fe8a7845d08574f211f5cada42578c4be53912a81c0797554c5117a5b19152",
+    "capability_build": "gen9-context-necessity-r1-6be10d7af323",
+    "gen9_context_payload_reduction_vs_gen8": 0.460856,
+    "gen9_critical_fn": 0,
+    "gen9_necessity_precision": 1.0,
+    "gen9_required_recall": 1.0,
+    "generation": "gen9-context-necessity-r1",
+    "gold_gen9_sha256": "dc755fd02e1dc44c1aed1cdf9a3f1745d6049178472a0165cbdf40867f5ae637",
+    "optimizer_sha256": "6be10d7af3238fb59a2cf8f5d9a858de4b3957a9681634bbe4ef78e33402d299",
+    "twin_edges": 259,
+    "twin_graph_digest": "4d983ad01376a04a54dc834d0dc46ee4d606293fca572f3d8ead45e81e65c45f",
+    "twin_inputs": 89,
+    "twin_nodes": 179,
+    "twin_snapshot_sha256": "2c05c6282070c74bee204e837d0b8d6a03677ab404a407318c8a4d27594484be"
+  },
+  "cases": [
+    {
+      "id": "normal-immutable-epoch",
+      "requirement": "Identical evidence and policy produce the same sealed epoch digest and the same compile/minimize output."
+    },
+    {
+      "id": "expected-tier1-write",
+      "requirement": "An evaluator that rewrites declared Tier-1 evidence does not invalidate the already sealed current transaction."
+    },
+    {
+      "id": "next-epoch-observes-generated",
+      "requirement": "A subsequent refreshed epoch includes the generated evidence and does not lose it."
+    },
+    {
+      "id": "unexpected-critical-mid-epoch",
+      "requirement": "Unexpected mutation of critical source/authority evidence fails closed even though immutable starting bytes exist."
+    },
+    {
+      "id": "missing-pinned-blob",
+      "requirement": "Missing/corrupt content-addressed pinned evidence fails closed."
+    },
+    {
+      "id": "contradictory-authority-at-begin",
+      "requirement": "Contradictory authoritative start state cannot seal an epoch."
+    },
+    {
+      "id": "append-only-growth",
+      "requirement": "Prefix-preserving append-only growth is classified as next-epoch evidence; shrink/prefix mutation is unsafe."
+    },
+    {
+      "id": "compiler-optimizer-coherence",
+      "requirement": "Raw Gen8 and minimized Gen9 packets carry the exact same epoch ID/digest and evidence/Twin view."
+    },
+    {
+      "id": "twin-rebuild-active-epoch",
+      "requirement": "Rebuilding live Twin after seal does not change active epoch output; the next epoch observes rebuilt Twin."
+    },
+    {
+      "id": "historical-gen7-version-pinned",
+      "requirement": "Gen7 retained benchmark stays 15/15 in a version-pinned epoch/capsule view without Gen8/Gen9/Gen10 evidence."
+    },
+    {
+      "id": "crash-recovery",
+      "requirement": "Half-created/incomplete epochs never become authoritative and are recovered without adopting partial state."
+    },
+    {
+      "id": "concurrent-overlap",
+      "requirement": "Concurrent reads of sealed epochs cannot produce a mixed-epoch packet."
+    },
+    {
+      "id": "protected-state-mutation",
+      "requirement": "Mutation-producing capsule tests cause zero forbidden accepted-state mutation."
+    },
+    {
+      "id": "negative-control-unrelated-evidence",
+      "requirement": "Unrelated evidence produced elsewhere cannot perturb a sealed epoch output."
+    },
+    {
+      "id": "live-authority-refuses-freeze",
+      "requirement": "An authority declared live-revalidate-only cannot be sealed as safely pinned without a live verifier."
+    }
+  ],
+  "frozen_before_implementation": true,
+  "safety_invariants": [
+    "No critical stale/missing/contradictory evidence is reclassified as safe merely because an epoch is pinned.",
+    "Expected outputs are queued for the next epoch only when the starting bytes are complete and verifiable.",
+    "Unclassified critical mutation fails closed.",
+    "Live-revalidation authorities cannot be satisfied by frozen bytes alone.",
+    "Historical gold/evidence is not rewritten to match current state."
+  ],
+  "success_criteria": {
+    "avoidable_same_transaction_fail_closed_rate_max": 0.0,
+    "context_payload_reduction_vs_gen8_min": 0.4,
+    "critical_evidence_fn_max": 0,
+    "deterministic_epoch_digest_required": true,
+    "deterministic_packet_digest_required": true,
+    "epoch_create_seal_median_ms_max": 250.0,
+    "epoch_finalize_median_ms_max": 150.0,
+    "epoch_verify_median_ms_max": 100.0,
+    "historical_gen7": "15/15",
+    "necessity_aware_critical_precision_min": 0.98,
+    "next_epoch_freshness_rate_min": 1.0,
+    "protected_state_forbidden_mutations_max": 0,
+    "required_evidence_recall_min": 1.0,
+    "retained": {
+      "gen2": "12/12",
+      "gen3": "16/16",
+      "gen4": "18/18",
+      "gen5": "12/12",
+      "gen6": "13/13",
+      "gen7_version_pinned": "15/15",
+      "gen8": "17/17",
+      "gen9": "20/20"
+    },
+    "unsafe_condition_fail_closed_rate_min": 1.0
+  },
+  "version": "gen10-evidence-epoch-gold-r1"
+}

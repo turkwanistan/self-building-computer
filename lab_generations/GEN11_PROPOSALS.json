@@ -1,0 +1,50 @@
+{
+  "do_not_implement_without_request": true,
+  "generation": "gen11-proposals-from-gen10-evidence",
+  "implemented": false,
+  "proposals": [
+    {
+      "complexity": "low-medium",
+      "evidence": "Gen9 self-use showed safety/recovery vocabulary can dominate actual design intent. Gen10 solved evidence-time consistency, making intent classification the remaining front-door decision that determines which coherent epoch evidence is even relevant.",
+      "expected_benefit": "Deterministic precedence for design/change/debug/evaluation/lifecycle/security/mixed-intent tasks; adversarial mixed-intent benchmark cases; explicit authority-routing proofs before compilation without learned/opaque routing.",
+      "kind": "context/reasoning",
+      "rank": 1,
+      "title": "Task Intent Classification + Authority Routing Hardening"
+    },
+    {
+      "complexity": "medium-large",
+      "evidence": "Gen10 now provides immutable reproducible evidence universes and historical version-pinned views, removing a major ambiguity that previously made replay unsafe or temporally incoherent.",
+      "expected_benefit": "Replay one controlled evidence/version difference at a time and quantify causal necessity without rewriting historical gold or mixing epochs.",
+      "kind": "causal/replay",
+      "rank": 2,
+      "title": "Counterfactual Replay over Sealed Evidence Epochs"
+    },
+    {
+      "complexity": "medium-large",
+      "evidence": "Gen10 used capsules to prove five unsafe mutations fail closed and exposed multiple benchmark-harness bugs. Evaluator quality is increasingly a limiting factor rather than execution authority.",
+      "expected_benefit": "Generate bounded adversarial mutants/counterexamples against sealed epochs, measure evaluator discrimination, and catch benchmark blind spots without risking accepted state.",
+      "kind": "verification",
+      "rank": 3,
+      "title": "Evaluator / Mutation Nursery on Experiment Capsules + Epochs"
+    },
+    {
+      "complexity": "medium",
+      "evidence": "Gen9 showed semantically dominated registry/generation evidence can be removed safely; Gen10 adds stable evidence provenance needed to compare retained capabilities across time.",
+      "expected_benefit": "Merge or retire near-equivalent capabilities/memories only when lineage, regressions, epoch provenance, and necessity proofs remain intact.",
+      "kind": "retention",
+      "rank": 4,
+      "title": "Capability Consolidator with Necessity + Epoch Proofs"
+    },
+    {
+      "complexity": "medium",
+      "evidence": "The project has a small stable MCP kernel, dynamic capabilities, memory, Twin/context minimization, and now coherent evidence epochs. The roadmap intentionally considers an outward project/domain fork around Gen13.",
+      "expected_benefit": "Define the smallest generic interface for onboarding an unfamiliar repo/domain, inventorying available machinery and gaps, and deciding whether the Lab is ready to begin domain-capability generations without prematurely implementing the full Gen13 branch.",
+      "kind": "outward-facing platform",
+      "rank": 5,
+      "title": "Project Onboarding Readiness / Capability Discovery Bridge"
+    }
+  ],
+  "source_generation": "gen10-evidence-epoch-r1",
+  "strategic_note": "The roadmap now targets a project-onboarding/domain-capability fork around Gen13 when evidence says the self-improvement substrate is trustworthy enough; Gen11 should improve the front-door decision boundary rather than widen the MCP surface.",
+  "top_recommendation": "Task Intent Classification + Authority Routing Hardening"
+}

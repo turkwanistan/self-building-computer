@@ -1,0 +1,85 @@
+{
+  "benchmark": {
+    "epoch_digest": "0d9ee3427e78037bfbe4b3801b9f71162b8537892921a90de9d8e3f19aa8423c",
+    "next_epoch": {
+      "fresh": 1,
+      "freshness_rate": 1.0,
+      "trials": 1
+    },
+    "passed": 24,
+    "safety": {
+      "avoidable_same_transaction_fail_closed": 0,
+      "avoidable_same_transaction_fail_closed_trials": 1,
+      "unsafe_blocked": 5,
+      "unsafe_fail_closed_rate": 1.0,
+      "unsafe_trials": 5
+    },
+    "total": 24,
+    "transaction_digest": "75b60b0921586005288bc9a120fb60e9650c6a83b9bbe9e5e4b2e22b90b04128"
+  },
+  "final_twin": {
+    "causal_digest": "e507a9a07f0af1ea2bdd16e8b70d7e29f0400ae5d67abcb3530af5ab49ef3db5",
+    "edges": 279,
+    "graph_digest": "947181e319337fac733ca7482b8b14e967a8c99a54d22bc6dde368df67ca3b09",
+    "inputs": 94,
+    "nodes": 186,
+    "snapshot_sha256": "1129f3d9039eaadb800d36dd6aa97198a7bf5ee60f460c6be9a385a6e4fcb336",
+    "verify": "PASS_NO_ISSUES_AT_CHECKPOINT"
+  },
+  "findings": [
+    {
+      "finding": "Initial append-only manifest identity included volatile live tail length/hash; removed volatile live-tail observations from canonical epoch identity while keeping them as diagnostics. Frozen criteria unchanged.",
+      "phase": "epoch_identity_determinism",
+      "result": "FIXED_COORDINATOR_BUG"
+    },
+    {
+      "finding": "A capsule evaluator rewrote declared Tier-1 evidence after compile/minimize; the active transaction digest remained unchanged, finalize classified it as expected output, and queued it for the next epoch.",
+      "phase": "expected_tier1_write_reproduction",
+      "result": "PASS"
+    },
+    {
+      "finding": "The subsequent epoch captured the newly generated Tier-1 artifact.",
+      "phase": "next_epoch_freshness",
+      "result": "PASS"
+    },
+    {
+      "finding": "A live-revalidate-only authority without a deterministic verifier was refused instead of frozen.",
+      "phase": "live_authority_negative_control",
+      "result": "PASS_FAIL_CLOSED"
+    },
+    {
+      "finding": "Corrected Experiment Capsule child-exit and Gen9 metric field names; no thresholds or gold changed.",
+      "phase": "benchmark_harness_schema",
+      "result": "FIXED_BENCHMARK_BUG"
+    },
+    {
+      "finding": "Changed the control artifact to derive from starting SHA256 so every benchmark rerun deterministically causes a real mutation.",
+      "phase": "benchmark_repeatability_fixture",
+      "result": "FIXED_BENCHMARK_BUG"
+    },
+    {
+      "finding": "Polling appended audit telemetry during a historical exact-digest window; semantic metrics stayed green and quiescent Gen9 rerun passed 20/20.",
+      "phase": "retained_gen9_concurrency",
+      "result": "QUIESCENT_RERUN_PASS"
+    },
+    {
+      "baseline_context_payload_bytes": 11203,
+      "compiler_packet_digest": "ad8297cd531e71ceb7a259a3536bedaa6704b064f987cbda684a7dd21e512f47",
+      "context_payload_bytes": 8248,
+      "context_payload_reduction": 0.263769,
+      "epoch_digest": "e2d120e53e86a3492e8291ac67e6ea9ad53eee3e509ab523bf36da45ebe3bb6a",
+      "epoch_id": "ep10_e2d120e53e86a3492e8291ac67e6ea9ad53eee3e509ab523bf36da45ebe3bb6a",
+      "finalize_latency_ms": 71.535,
+      "finding": "After the final Twin rebuild, two independent epoch starts and transactions were deterministic, non-fail-closed, and finalized with no unsafe or pending changes.",
+      "optimizer_packet_digest": "92e6ff7c96c4f3f2e5811acb0ba78e36a7958ec8c8de58f0c6e3ee6042e15616",
+      "phase": "final_self_use",
+      "result": "PASS",
+      "transaction_digest": "b30a5dfbe6b0cec1cdfab7418cbc05391978a0b18c19d35afba55162a91aa271"
+    }
+  ],
+  "starting_problem": {
+    "classification": "SAFETY_PASS_PLUS_TRANSACTION_CONSISTENCY_GAP",
+    "finding": "Gen9 correctly failed closed after its evaluator rewrote Tier-1 evidence newer than the Twin; the safety rule was correct, but compile/minimize/evaluate lacked a coherent transaction boundary."
+  },
+  "version": "gen10-self-use-r1"
+}

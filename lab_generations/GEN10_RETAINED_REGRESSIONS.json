@@ -1,0 +1,72 @@
+{
+  "first_aggregate_gen9_concurrency_artifact": {
+    "cause": "concurrent prefix-preserving outer audit append during nested protected digest equality window",
+    "only_failed_check": "protected_state_capsule_ablation",
+    "passed": 19,
+    "semantic_quality_regression": false,
+    "total": 20
+  },
+  "mutation_safe": true,
+  "note": "Initial Gen9 outer-capsule rerun was perturbed only by concurrent append-only audit telemetry from polling; quiescent rerun passed 20/20. Historical gold was not changed.",
+  "ok": true,
+  "retained": {
+    "gen2": {
+      "accepted_state_unchanged": true,
+      "capsule_run": "cap8_20260826T193907Z_bdd6dad6",
+      "child_exit_code": 0,
+      "passed": 12,
+      "total": 12
+    },
+    "gen3": {
+      "accepted_state_unchanged": true,
+      "capsule_run": "cap8_20260826T193921Z_631e995c",
+      "child_exit_code": 0,
+      "passed": 16,
+      "total": 16
+    },
+    "gen4": {
+      "accepted_state_unchanged": true,
+      "capsule_run": "cap8_20260826T193948Z_5f677c86",
+      "child_exit_code": 0,
+      "passed": 18,
+      "total": 18
+    },
+    "gen5": {
+      "accepted_state_unchanged": true,
+      "capsule_run": "cap8_20260826T194007Z_1176cf67",
+      "child_exit_code": 0,
+      "passed": 12,
+      "total": 12
+    },
+    "gen6": {
+      "accepted_state_unchanged": true,
+      "capsule_run": "cap8_20260826T194041Z_2d390fd6",
+      "child_exit_code": 0,
+      "passed": 13,
+      "total": 13
+    },
+    "gen7": {
+      "accepted_state_unchanged": true,
+      "capsule_run": "cap8_20260826T194049Z_ccd33924",
+      "child_exit_code": 0,
+      "passed": 15,
+      "total": 15,
+      "version_pinned": true
+    },
+    "gen8": {
+      "accepted_state_unchanged": true,
+      "capsule_run": "cap8_20260826T194054Z_2599e5d1",
+      "child_exit_code": 0,
+      "passed": 17,
+      "total": 17
+    },
+    "gen9": {
+      "accepted_state_unchanged": true,
+      "capsule_run": "cap8_20260826T194214Z_f1c62f65",
+      "child_exit_code": 0,
+      "passed": 20,
+      "total": 20
+    }
+  },
+  "version": "gen10-retained-regressions-r1"
+}

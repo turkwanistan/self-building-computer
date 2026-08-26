@@ -1,0 +1,93 @@
+{
+  "compiler_packet_digest": "dea71598d878d6a5b9325114124344fbf95943eb70ee04721a9a7797da2d3540",
+  "epoch1_finalization": {
+    "epoch_digest": "b72d3acbb0311acc790a8b853abd908dfee148557ae2d30695e3db60087a442e",
+    "epoch_id": "ep10_b72d3acbb0311acc790a8b853abd908dfee148557ae2d30695e3db60087a442e",
+    "finalize_latency_ms": 75.007,
+    "next_epoch_candidates": [
+      {
+        "path": "/var/lib/optiplex-lab/benchmarks/gen10-evidence-epoch-control.json",
+        "state": "expected_output"
+      },
+      {
+        "path": "/var/lib/optiplex-lab/traces/events.jsonl",
+        "state": "append_only_growth"
+      }
+    ],
+    "ok": true,
+    "state": "FINALIZED",
+    "unsafe": [],
+    "verification_digest": "79a4d26b3d25f786b1fba12831327916ab63e6d5e4afb01f0207cf85883e52ff"
+  },
+  "epoch_digest": "0d9ee3427e78037bfbe4b3801b9f71162b8537892921a90de9d8e3f19aa8423c",
+  "epoch_id": "ep10_0d9ee3427e78037bfbe4b3801b9f71162b8537892921a90de9d8e3f19aa8423c",
+  "expected_tier1_handoff": {
+    "classification": "expected_output",
+    "current_transaction_unchanged": true,
+    "next_epoch_observed": true,
+    "path": "/var/lib/optiplex-lab/benchmarks/gen10-evidence-epoch-control.json",
+    "published_sha256": "02cda49c92c41713cca43495eeab3b940f224eb63e4a851361aa4db6294e2dd1",
+    "queued_for_next_epoch": true,
+    "start_sha256": "667d2ce15095f2a57fc4db76e8078a1a2e56c2fe00fb3980d3c201c6508cf87a"
+  },
+  "manifest": {
+    "entries": 115,
+    "freshness_modes": {
+      "append_only": 5,
+      "hash": 110
+    },
+    "policies": {
+      "append_only_prefix": 5,
+      "pinned_hash": 106,
+      "pinned_plus_live_revalidate": 4
+    }
+  },
+  "optimizer_packet_digest": "7e02dae118cddff06cd4cd78169aa5caae892e45917dda8bfc8334dd13c7de84",
+  "representative_authorities": [
+    {
+      "bytes": 473,
+      "path": "/etc/optiplex-lab/build.json",
+      "policy": "pinned_plus_live_revalidate",
+      "sha256": "4199c2f68000bb2f39a19acc4b87ba22f78679a3140568baff2753938a8124b6"
+    },
+    {
+      "bytes": 21231,
+      "path": "/opt/optiplex-lab/server.py",
+      "policy": "pinned_plus_live_revalidate",
+      "sha256": "dc0d2cb41595a9a3d953873879ccc3e0bd88db2b4dcdee4cf8aa43dd4cb103e9"
+    },
+    {
+      "bytes": 21231,
+      "path": "/var/lib/optiplex-lab/recovery/server.last-known-good.py",
+      "policy": "pinned_plus_live_revalidate",
+      "sha256": "dc0d2cb41595a9a3d953873879ccc3e0bd88db2b4dcdee4cf8aa43dd4cb103e9"
+    },
+    {
+      "bytes": 41153,
+      "path": "/opt/optiplex-lab/context_compiler.py",
+      "policy": "pinned_hash",
+      "sha256": "39b7f040fca1afb2332b5dd902e186b710ea4d1d5a2cd0351aa307f6d8f786c3"
+    },
+    {
+      "bytes": 29536,
+      "path": "/opt/optiplex-lab/context_necessity.py",
+      "policy": "pinned_hash",
+      "sha256": "6be10d7af3238fb59a2cf8f5d9a858de4b3957a9681634bbe4ef78e33402d299"
+    },
+    {
+      "bytes": 35989,
+      "path": "/opt/optiplex-lab/evidence_epoch.py",
+      "policy": "pinned_hash",
+      "sha256": "9418201f1401e56a6dd62f8cb696b3bf947f822073b83d07fa57b028f3ba035f"
+    },
+    {
+      "bytes": 1811041,
+      "path": "/var/lib/optiplex-lab/traces/events.jsonl",
+      "policy": "append_only_prefix",
+      "sha256": "bbcea484f139bd9fb32db55cbf47e2c85dd606e00ab38d14b18923797b006636"
+    }
+  ],
+  "transaction_digest": "75b60b0921586005288bc9a120fb60e9650c6a83b9bbe9e5e4b2e22b90b04128",
+  "twin_graph_digest": "e9409da890454b4acef0f5e565f686655147152606facaa69cb8b22b3f878338",
+  "version": "gen10-epoch-evidence-r1"
+}
