@@ -1,14 +1,13 @@
 {
   "lab": {
-    "accepted_at": "2026-08-26T13:00:18.251357+00:00",
-    "build_id": "gen6-experience-memory-r1-dc0d2cb41595",
+    "accepted_at": "2026-08-26T14:51:25.077246+00:00",
+    "build_id": "gen7-self-model-r1-f5ba258ed555",
     "features_add": [
-      "procedural_memory_distiller",
-      "applicability_aware_memory_retrieval",
-      "failure_to_regression_compiler",
-      "regression_gated_forge_promotion",
-      "memory_supersession_retirement",
-      "memory_first_experience_loop"
+      "architectural_digital_twin",
+      "causal_observability_spine",
+      "bounded_change_impact_analysis",
+      "provenance_backed_staleness_detection",
+      "mutation_safe_retained_regression_strategy"
     ],
     "gen5_validation": {
       "accepted_guest_identity": {
@@ -485,32 +484,116 @@
         "validated_at": "2026-08-26T13:01:22.484014+00:00"
       }
     },
-    "generation": "gen6-experience-memory-r1",
+    "gen7_validation": {
+      "architecture_twin": {
+        "edges": 224,
+        "graph_digest": "49ddf70f7baa2b73508e2921250cdf131805648421d96338ebd0cf84c9b4ce2c",
+        "inferred_edges": 1,
+        "inputs": 80,
+        "nodes": 165,
+        "sha256": "f5ba258ed5559b755f5b68891a74f48bdfac243638bff60cc730c0f3cbf61d8e"
+      },
+      "artifacts": {
+        "lab_generations/GEN7_BENCHMARK.json": "eb3abccff56b06fc8c085b1900d90070d912e4c64b2f3bab1bda95937383c01b",
+        "lab_generations/GEN7_CAUSAL_EVIDENCE.json": "3b1d5aa52774d95fe4e5bf8c9fe6cd31f0084c409d3466d851d322f11de47ddc",
+        "lab_generations/GEN7_RESULT.json": "ebd4f1c15da7e3e1eeaf8a3e783d87729baaec799f80a79b4b2a5f2bc25d19f1",
+        "lab_generations/GEN7_RETAINED_REGRESSIONS.json": "dbd993e49c6d8d45eadad38cf562a1903c968776bfa51891b5a1fbaba0174ee1",
+        "lab_generations/GEN7_TWIN_SNAPSHOT.json": "9c863f25697ec8b22dae9426ad8a03c55de49219ef2f8731c6fb0d072de31808",
+        "lab_generations/GEN7_TWIN_SNAPSHOT.json.xz": "bd03b811a2fd648518227ff73f523536388fd205c9a685af8fe773e8aacec274",
+        "lab_generations/GEN8_PROPOSALS.json": "50c4b4000bb14075f7d86c5c936ae4302f7fb5988cc6cec817326018f6e1814b",
+        "lab_mcp/architecture_twin.py": "f5ba258ed5559b755f5b68891a74f48bdfac243638bff60cc730c0f3cbf61d8e",
+        "lab_mcp/bench/benchmark_gen7.py": "2763c039594076e0c10f5ff902f85b3d12fb2362277796adc1a0c51b3a21f2fa",
+        "lab_mcp/causal_spine.py": "be7a798db4f7976e74deb787ad277a56f5fde719144280b8619b7e87b92124d3",
+        "plans/GEN7_ARCHITECTURAL_TWIN_CAUSAL_SPINE.md": "5e32129404fea0a60839b4e1fe0f1b2b07da37a9c74c4be97e32d5cc460099a8"
+      },
+      "benchmark": {
+        "context_proxy_reduction": 0.9966,
+        "dependency_precision": 1.0,
+        "dependency_recall": 1.0,
+        "impact_fn": 0,
+        "impact_fp": 0,
+        "impact_precision": 1.0,
+        "impact_recall": 1.0,
+        "median_query_ms": 1.586,
+        "passed": 15,
+        "total": 15
+      },
+      "canonical_project_tests": "PASS_13",
+      "causal_spine": {
+        "edges": 4380,
+        "events": 3918,
+        "final_rebuild_digest": "9892698abd8af3978692f38f2e4bbf8e0932f8677ef06e4bfdabe0eeda11da94",
+        "sha256": "be7a798db4f7976e74deb787ad277a56f5fde719144280b8619b7e87b92124d3"
+      },
+      "commit_or_push_performed": false,
+      "containment": "PASS",
+      "frozen_safe_mcp": "PASS_UNCHANGED",
+      "generation": "gen7-self-model-r1",
+      "git_diff_check": "PASS",
+      "json_jsonl": "PASS",
+      "python_syntax": "PASS_MUTATION_FREE",
+      "recovery": {
+        "final_live_equals_lkg": true,
+        "historical_bad_candidate": "PASS",
+        "metadata_reconciliation_graph": "wg_20260826T143225Z_c5b9612c",
+        "metadata_reconciliation_job": "job_3b61e3fc4ef2"
+      },
+      "retained_regressions": {
+        "gen2": "12/12 PASS",
+        "gen3": "16/16 PASS",
+        "gen4": "18/18 PASS",
+        "gen5": "12/12 PASS",
+        "gen6": "13/13 PASS",
+        "mutation_safe": true
+      },
+      "scope": "Optiplex_Lab + isolated mcp-lab VM",
+      "secret_scan": "PASS",
+      "self_hosting": {
+        "permanent_mcp_tools_after": 10,
+        "permanent_mcp_tools_before": 10,
+        "server_modified": false,
+        "twin_used_on_own_changes": true
+      },
+      "status": "ACCEPTED",
+      "validated_at": "2026-08-26T14:51:25.077246+00:00"
+    },
+    "generation": "gen7-self-model-r1",
+    "generation_source_sha256": "f5ba258ed5559b755f5b68891a74f48bdfac243638bff60cc730c0f3cbf61d8e",
+    "live_server_identity": {
+      "build_id": "gen6-experience-memory-r1-dc0d2cb41595",
+      "generation": "gen6-experience-memory-r1",
+      "last_known_good_sha256": "dc0d2cb41595a9a3d953873879ccc3e0bd88db2b4dcdee4cf8aa43dd4cb103e9",
+      "note": "Gen7 is guest-local infrastructure and intentionally does not modify server.py; lab_status therefore remains the accepted Gen6 server build.",
+      "recovery_state": "ACCEPTED",
+      "server_sha256": "dc0d2cb41595a9a3d953873879ccc3e0bd88db2b4dcdee4cf8aa43dd4cb103e9",
+      "tool_surface": 10
+    },
     "recovery_state": "ACCEPTED",
     "source_sha256": "dc0d2cb41595a9a3d953873879ccc3e0bd88db2b4dcdee4cf8aa43dd4cb103e9",
-    "state": "GEN6_ACCEPTED_EXPERIENCE_MEMORY",
+    "state": "GEN7_ACCEPTED_SELF_MODEL",
     "tool_count": 10
   },
   "next_iteration": {
-    "cycle_id": "gen7-lab-self-model-001",
-    "proposals_artifact": "lab_generations/GEN7_PROPOSALS.json",
-    "required_stop": "DO_NOT_IMPLEMENT_GEN7_WITHOUT_USER_REQUEST",
+    "cycle_id": "gen8-context-compiler-001",
+    "proposals_artifact": "lab_generations/GEN8_PROPOSALS.json",
+    "required_stop": "DO_NOT_IMPLEMENT_GEN8_WITHOUT_USER_REQUEST",
     "safe_mcp_policy": "FROZEN_NO_CHANGES",
     "status": "PROPOSED_NOT_STARTED",
     "target": "Optiplex_Lab + mcp-lab VM",
-    "top_recommendation": "Architectural Digital Twin + Causal Observability Spine"
+    "top_recommendation": "Context Compiler on top of the Architectural Twin"
   },
-  "resume_instruction": "Repository/live state is authoritative. Target remains **Optiplex_Lab + isolated `mcp-lab` VM**. `Optiplex_MCP` remains frozen.\n\nBefore Lab shell, discover exactly the same 10 permanent tools and call `lab_status`. Expected Gen6 identity:\n- generation `gen6-experience-memory-r1`\n- build `gen6-experience-memory-r1-dc0d2cb41595`\n- server/LKG `dc0d2cb41595a9a3d953873879ccc3e0bd88db2b4dcdee4cf8aa43dd4cb103e9`\n- Forge `309e25ec374956125459b6cf26815f916534d7a4520dfc6ddce8bb62e8755f26`\n- memory `c0cd4076393bbd214590f7644bab9c7c7c3df548863d2bb64ffb2209ae6e6a39`\n- regressions `e1b2a84c18ce56f1209797e0b812e89df851af524c74cf268e3535f3eb1660fe`\n- experience loop `854d7e95fd412777137a330384ef236b25efdb794f9c98aac59ad2ce62e8c60c`\n- recovery `ACCEPTED`; tool surface 10\n\nVerify frozen Optiplex_MCP: release `frontend-a5c1c5be8b22`, guardrail `guardrail-gen0-c51a9161a95d`, 51 tools, schema `195c410b85d40f4cfe65ef7eb8baa0463a32e93882fd9d39c0045e6518cd2913`, policy `authority-v1`.\n\nRead `START_HERE.md`, `state/current.json`, `STATUS.md`, `lab_generations/GEN6_RESULT.json`, `lab_generations/GEN7_PROPOSALS.json`, and `plans/GEN6_EXPERIENCE_MEMORY.md`.\n\nTop evidence-backed Gen7 direction: **Architectural Digital Twin + Causal Observability Spine**. Do not implement Gen7 without an explicit request. Never run `mcp_probe.py` synchronously through Lab shell.\n",
-  "state": "LIFECYCLE_ACCEPTED_GEN6_EXPERIENCE_MEMORY",
+  "resume_instruction": "Repository/live state is authoritative. Target remains **Optiplex_Lab + isolated `mcp-lab` VM**; `Optiplex_MCP` remains frozen. Canonical accepted capability generation is `gen7-self-model-r1`, but Gen7 did not modify `server.py`: live `lab_status` must therefore still report server generation `gen6-experience-memory-r1`, build `gen6-experience-memory-r1-dc0d2cb41595`, server/LKG `dc0d2cb41595a9a3d953873879ccc3e0bd88db2b4dcdee4cf8aa43dd4cb103e9`, recovery `ACCEPTED`, and exactly 10 tools. Before Lab shell, discover the exact 10-tool connector and call `lab_status`. Verify frozen Optiplex_MCP release `frontend-a5c1c5be8b22`, guardrail `guardrail-gen0-c51a9161a95d`, 51 tools, schema `195c410b85d40f4cfe65ef7eb8baa0463a32e93882fd9d39c0045e6518cd2913`, policy `authority-v1`. Read `START_HERE.md`, `state/current.json`, `STATUS.md`, `lab_generations/GEN7_RESULT.json`, `lab_generations/GEN8_PROPOSALS.json`, and the Gen7 plan. Top evidence-backed Gen8 direction is **Context Compiler on top of the Architectural Twin**. Do not implement Gen8 without explicit user request. Never run `mcp_probe.py` synchronously through Lab shell.",
+  "state": "LIFECYCLE_ACCEPTED_GEN7_SELF_MODEL",
   "validation": {
     "containment": "PASS",
-    "final_lab_identity": "PASS",
+    "final_lab_identity": "PASS_GEN7_OVERLAY_GEN6_SERVER_UNCHANGED",
+    "final_live_equals_lkg": true,
     "frozen_safe_mcp": "PASS_UNCHANGED",
     "git_diff_check": "PASS",
     "json_jsonl": "PASS",
     "project_tests": "PASS_13",
     "python_syntax": "PASS_MUTATION_FREE",
     "secret_credential_scan": "PASS",
-    "validated_at": "2026-08-26T13:01:22.484014+00:00"
+    "validated_at": "2026-08-26T14:51:25.077246+00:00"
   }
 }

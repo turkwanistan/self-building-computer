@@ -1,0 +1,88 @@
+{
+  "version": "gen7-twin-snapshot-manifest-r1",
+  "schema_version": 1,
+  "generation": "gen7-self-model-r1",
+  "builder": {
+    "path": "lab_mcp/architecture_twin.py",
+    "sha256": "f5ba258ed5559b755f5b68891a74f48bdfac243638bff60cc730c0f3cbf61d8e"
+  },
+  "accepted_snapshot": {
+    "path": "lab_generations/GEN7_TWIN_SNAPSHOT.json.xz",
+    "compression": "xz",
+    "compressed_sha256": "bd03b811a2fd648518227ff73f523536388fd205c9a685af8fe773e8aacec274",
+    "compressed_bytes": 18608,
+    "decompressed_sha256": "5bf9ad61cd25eb4e085afc9be759b1b2e6f95c7148f776b945fb466ec322e7f4",
+    "decompressed_bytes": 228203,
+    "graph_digest": "49ddf70f7baa2b73508e2921250cdf131805648421d96338ebd0cf84c9b4ce2c",
+    "generated_at": "2026-08-26T14:34:55.496537+00:00"
+  },
+  "determinism": {
+    "result": "PASS",
+    "consecutive_builds": 2,
+    "graph_digest_first": "49ddf70f7baa2b73508e2921250cdf131805648421d96338ebd0cf84c9b4ce2c",
+    "graph_digest_second": "49ddf70f7baa2b73508e2921250cdf131805648421d96338ebd0cf84c9b4ce2c",
+    "build_ms": [700.863, 725.385]
+  },
+  "counts": {
+    "nodes": 165,
+    "edges": 224,
+    "inputs": 80,
+    "node_kinds": {
+      "artifact": 12,
+      "authority_boundary": 1,
+      "benchmark_artifact": 25,
+      "build": 1,
+      "build_state": 1,
+      "capability": 14,
+      "evaluator": 10,
+      "evidence_artifact": 5,
+      "external_authority": 1,
+      "generation": 7,
+      "mcp_tool": 10,
+      "procedural_memory": 1,
+      "prohibited_target": 5,
+      "recovery": 1,
+      "registry": 5,
+      "regression": 2,
+      "service": 1,
+      "source": 22,
+      "validation": 19,
+      "workflow": 19,
+      "workflow_graph": 3
+    },
+    "edge_relations": {
+      "authoritative_for": 49,
+      "consumes": 1,
+      "depends_on": 34,
+      "gates": 1,
+      "generated_from": 50,
+      "invokes": 39,
+      "prohibited_from_accessing": 6,
+      "recovers_to": 1,
+      "references": 20,
+      "validates": 23
+    },
+    "evidence_kinds": {
+      "history_seed": 10,
+      "inferred": 1,
+      "observed_definition": 29,
+      "observed_registry": 69,
+      "observed_runtime": 26,
+      "observed_static": 83,
+      "policy_seed": 6
+    },
+    "confidence": {
+      "0.8": 1,
+      "0.9": 3,
+      "1.0": 220
+    }
+  },
+  "causal_index": {
+    "canonical_copy": false,
+    "reason": "The multi-megabyte causal index is derived and deterministically rebuildable from append-only hashed evidence; Gen7 preserves compact selected causal evidence plus source hashes rather than duplicating raw evidence.",
+    "final_rebuild_digest": "9892698abd8af3978692f38f2e4bbf8e0932f8677ef06e4bfdabe0eeda11da94",
+    "final_rebuild_events": 3918,
+    "final_rebuild_edges": 4380,
+    "selected_evidence": "lab_generations/GEN7_CAUSAL_EVIDENCE.json"
+  }
+}

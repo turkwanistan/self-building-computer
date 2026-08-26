@@ -1,0 +1,58 @@
+{
+  "version": "gen7-causal-evidence-r1",
+  "causal_digest": "788b54d6e958544a03c8b62d302b1615f6e4cd1730f62bb2fc728f315563d1a5",
+  "events": 3612,
+  "edges": 4045,
+  "strength_counts": {"causal": 1762, "lineage": 2283},
+  "relation_counts": {
+    "contains_run_event": 2283,
+    "generated_regression": 1,
+    "invokes_code_run": 354,
+    "node_completed_by": 157,
+    "produced_real_task_evidence": 14,
+    "restored_child_started": 15,
+    "run_completed_by": 443,
+    "step_completed_by": 763,
+    "triggered_auto_rollback": 15
+  },
+  "sanitization_policy": "raw args/parameters/stdout/stderr/context text excluded; hashes/IDs/status metadata only",
+  "sources": [
+    {"path":"/var/lib/optiplex-lab/traces/events.jsonl","bytes":1365404,"sha256_at_ingest":"90f62437b403bb9cffcdb703cfc9b236f52619e274e8530cf2dabf92e878bdc2"},
+    {"path":"/var/lib/optiplex-lab/capabilities/provenance.jsonl","bytes":46527,"sha256_at_ingest":"2dad7e4479234869690b3b9652fcb0580546970c86397f53136c55355d65f2f8"},
+    {"path":"/var/lib/optiplex-lab/memory/provenance.jsonl","bytes":1831,"sha256_at_ingest":"eacaa1df6199a1e25e0b0e2535d354886c28d80e12e7721cf063842cffbd8bd2"},
+    {"path":"/var/lib/optiplex-lab/regressions/provenance.jsonl","bytes":629,"sha256_at_ingest":"8dde1d78aaaf1e634e7fdd120e41d31cc40f0f74fd7fe46d16f9704dca5d1cf4"},
+    {"path":"/var/lib/optiplex-lab/recovery/launcher-events.jsonl","bytes":17443,"sha256_at_ingest":"9134d62cddead864086d2524806487ef7243378f65d03b3699fbe3f532efbfcc"},
+    {"path":"/etc/optiplex-lab/build.json","bytes":469,"sha256_at_ingest":"40a9eb523e662087c360a7ec7d90cb165c9a1f0453a97e37a669102fe1335d24"}
+  ],
+  "gen6_failure_regression": {
+    "needle": "5be7002dfbe9b489445fcc2009b0c9d79af6baaee1cc308b6dd8e9cf64e75436",
+    "seed_count": 1,
+    "event_count": 2,
+    "edge_count": 1,
+    "uncertainty": [],
+    "events": [
+      {"id":"ev:2e35820528291d68d00fb2ee","timestamp":"2026-08-26T12:27:23.310828+00:00","source_path":"/var/lib/optiplex-lab/traces/events.jsonl","source_line":848,"evidence_line_sha256":"9a3f337fc484f5aac0de892df726d075548e7443eb06ba292c17a4544e49e11e","data":{"event":"invoke","tool":"capability_forge","forge_version":"gen6-capability-forge-r2","run_id":"cap_20260826T122722Z_a51e6c1d","content_hash":"7a615a3f98a7a3be8babdf6376f38be2025543618af8dfff638ce2f028c8c708","phase":"execute","ok":false,"real_task":false,"timestamp":"2026-08-26T12:27:23.310828+00:00"}},
+      {"id":"ev:50fcd91e867d1275e56c1302","timestamp":"2026-08-26T12:27:23.314193+00:00","source_path":"/var/lib/optiplex-lab/regressions/provenance.jsonl","source_line":2,"evidence_line_sha256":"7fd7751a45263a775fe927c3e2503aa613dbdffcd4d5a47b64360d2400aea995","data":{"event":"compiled","known_bad_detected":true,"known_bad_hash":"7a615a3f98a7a3be8babdf6376f38be2025543618af8dfff638ce2f028c8c708","known_good_hash":null,"known_good_passed":null,"regression_hash":"5be7002dfbe9b489445fcc2009b0c9d79af6baaee1cc308b6dd8e9cf64e75436","source_case":"p","state":"CANDIDATE","timestamp":"2026-08-26T12:27:23.314193+00:00"}}
+    ],
+    "edges": [
+      {"id":"ce:4c28cb0e4050824d970bfbec","src":"ev:2e35820528291d68d00fb2ee","dst":"ev:50fcd91e867d1275e56c1302","relation":"generated_regression","strength":"causal","confidence":1.0,"evidence":"regression provenance explicitly names known_bad_hash","details":{"known_bad_hash":"7a615a3f98a7a3be8babdf6376f38be2025543618af8dfff638ce2f028c8c708","regression_hash":"5be7002dfbe9b489445fcc2009b0c9d79af6baaee1cc308b6dd8e9cf64e75436"}}
+    ]
+  },
+  "bad_candidate_recovery": {
+    "needle": "8f320ff7a3176837da2d308320bd8952c9ac7809375491c85faf403d44105b3e",
+    "seed_count": 9,
+    "event_count": 12,
+    "edge_count": 6,
+    "uncertainty": [],
+    "representative_chain": [
+      {"event":"child_started","source_sha256":"8f320ff7a3176837da2d308320bd8952c9ac7809375491c85faf403d44105b3e","timestamp":"2026-08-26T14:11:34.997732+00:00","source_path":"/var/lib/optiplex-lab/recovery/launcher-events.jsonl","source_line":92,"evidence_line_sha256":"4dc720bb0dfb3e7874997045a3fd418b8ee20906fd7c049b03e28551e836e47f"},
+      {"event":"child_exited","source_sha256":"8f320ff7a3176837da2d308320bd8952c9ac7809375491c85faf403d44105b3e","exit_code":1,"timestamp":"2026-08-26T14:11:35.606856+00:00","source_path":"/var/lib/optiplex-lab/recovery/launcher-events.jsonl","source_line":93,"evidence_line_sha256":"84e82923a4502dabbf627bc4c4d7ad343caf9fd04ee984dba3dee3589403990f"},
+      {"event":"auto_rollback","bad_sha256":"8f320ff7a3176837da2d308320bd8952c9ac7809375491c85faf403d44105b3e","restored_sha256":"dc0d2cb41595a9a3d953873879ccc3e0bd88db2b4dcdee4cf8aa43dd4cb103e9","timestamp":"2026-08-26T14:11:35.607776+00:00","source_path":"/var/lib/optiplex-lab/recovery/launcher-events.jsonl","source_line":94,"evidence_line_sha256":"2f0ee42eac0d1b020a942c8cdfe1c17f5811c369ae20de224cdf5f66a868bbcc"},
+      {"event":"child_started","source_sha256":"dc0d2cb41595a9a3d953873879ccc3e0bd88db2b4dcdee4cf8aa43dd4cb103e9","timestamp":"2026-08-26T14:11:36.109450+00:00","source_path":"/var/lib/optiplex-lab/recovery/launcher-events.jsonl","source_line":95,"evidence_line_sha256":"6dd9bb619ab0f72fa40c0004afacaeb093383273302b11c536751ff5f1d3a72f"}
+    ],
+    "relations": [
+      {"relation":"triggered_auto_rollback","strength":"causal","confidence":1.0,"evidence":"bad_sha256 matches exited child source_sha256"},
+      {"relation":"restored_child_started","strength":"causal","confidence":1.0,"evidence":"restored_sha256 matches subsequent child source_sha256"}
+    ]
+  }
+}

@@ -1,0 +1,52 @@
+{
+  "generation": "gen8-proposals-from-gen7-evidence",
+  "source_generation": "gen7-self-model-r1",
+  "generated_at": "2026-08-26T14:45:00Z",
+  "implemented": false,
+  "headline_question": "Now that the Lab can deterministically explain its architecture, dependencies, impact and historical causal evidence, what most improves the next self-change cycle?",
+  "top_recommendation": "Context Compiler on top of the Architectural Twin",
+  "proposals": [
+    {
+      "rank": 1,
+      "title": "Context Compiler on top of the Architectural Twin",
+      "kind": "context/reasoning",
+      "complexity": "medium",
+      "evidence": "Gen7 achieved dependency and change-impact precision/recall of 1.0/1.0 with zero measured FP/FN, median bounded query latency 1.586 ms, and a 7,466-byte architecture packet versus a 2,166,931-byte broad authoritative-input proxy (99.66% reduction). The Twin now supplies exactly the grounded dependency, authority, freshness, regression and recovery information a bounded context compiler needs.",
+      "expected_benefit": "Compile task-specific, freshness-checked context packets from Twin + procedural memory + regressions while always retaining mandatory containment/authority invariants. Reduce broad repository rereading without weakening fail-closed validation."
+    },
+    {
+      "rank": 2,
+      "title": "Reproducible Experiment Capsule + Evaluator / Mutation Nursery",
+      "kind": "verification/isolation",
+      "complexity": "medium-large",
+      "evidence": "Gen7 found two concrete experiment-isolation failures: the legacy Gen5 benchmark mutated the populated live Forge registry when run directly, and the retained Gen4 lifecycle benchmark rewound real /etc/optiplex-lab/build.json metadata despite cloned workflow/graph registries. Both were detected and reconciled, but they show that benchmark isolation is not yet systemic.",
+      "expected_benefit": "Run benchmark descendants, evaluator mutants and lifecycle experiments inside disposable version-pinned state capsules with explicit writable-resource declarations and post-run mutation assertions. Then use bounded mutants/adversarial cases to measure evaluator discrimination before promotion."
+    },
+    {
+      "rank": 3,
+      "title": "Counterfactual Replay",
+      "kind": "causal/replay",
+      "complexity": "large",
+      "evidence": "Gen7 reconstructed explicit real historical chains including timeout capability -> generated regression and bad candidate -> auto rollback -> restored LKG with confidence-1 causal links. The remaining causal-minimality question is what would have happened if one artifact/evaluator/version differed.",
+      "expected_benefit": "Replay selected historical episodes in disposable capsules, vary one version at a time, report replay fidelity explicitly, and strengthen failure attribution/regression synthesis without treating temporal correlation as causation."
+    },
+    {
+      "rank": 4,
+      "title": "Capability Consolidator with semantic lineage",
+      "kind": "retention",
+      "complexity": "medium",
+      "evidence": "The accepted Twin currently models 14 capabilities and durable lineage, while Gen6 already supports memory supersession/retirement. Growth is visible but not yet the dominant measured bottleneck.",
+      "expected_benefit": "Detect near-equivalent capabilities/memories, consolidate only after replaying attached evaluators/regressions, and preserve immutable ancestry/rollback references."
+    },
+    {
+      "rank": 5,
+      "title": "Targeted Causal Span Enrichment",
+      "kind": "observability",
+      "complexity": "low-medium",
+      "evidence": "Gen7 required only one inferred architecture edge out of 224 and successfully reconstructed the required historical causal paths from existing IDs/hashes. Broad instrumentation is therefore not justified yet.",
+      "expected_benefit": "Add parent/correlation IDs only at empirically demonstrated causal gaps, keeping raw evidence compact and avoiding a server-wide tracing rewrite."
+    }
+  ],
+  "roadmap_assessment": "Gen7 materially changes the ordering of the roadmap. The Context Compiler is now the strongest next step because its prerequisite grounded self-model exists and measured context reduction is large. Experiment isolation/evaluator mutation rises to second because Gen7 exposed real retained-benchmark state leakage. Counterfactual Replay becomes credible but should build on disposable experiment capsules rather than precede them.",
+  "do_not_implement_without_request": true
+}

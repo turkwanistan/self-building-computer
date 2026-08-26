@@ -1,0 +1,41 @@
+{
+  "artifacts": {
+    "causal_index": "/var/lib/optiplex-lab/twin/causal-index.json",
+    "sqlite": "/var/lib/optiplex-lab/twin/twin.sqlite3",
+    "twin_snapshot": "/var/lib/optiplex-lab/twin/twin-current.json"
+  },
+  "benchmark": "gen7-architectural-twin-benchmark",
+  "checks": [
+    {"detail":{"required_kinds_present":["authority_boundary","benchmark_artifact","build_state","capability","evaluator","mcp_tool","procedural_memory","recovery","registry","regression","source","workflow","workflow_graph"],"tool_count":10},"name":"architecture_reconstruction","ok":true},
+    {"detail":{"fn":0,"fp":0,"negative_cases":6,"positive_cases":12,"precision":1.0,"recall":1.0,"tn":6,"tp":12},"name":"dependency_precision_recall","ok":true},
+    {"detail":{"freshness":{"current_sha256":"854d7e95fd412777137a330384ef236b25efdb794f9c98aac59ad2ce62e8c60c","expected_sha256":"854d7e95fd412777137a330384ef236b25efdb794f9c98aac59ad2ce62e8c60c","path":"/opt/optiplex-lab/experience_loop.py","state":"fresh"},"owners":["source:/opt/optiplex-lab/experience_loop.py"]},"name":"real_source_query","ok":true},
+    {"detail":{"expected":["validation:benchmark:benchmark_gen6","validation:benchmark:benchmark_gen7","validation:selftest:experience_loop"],"fn":0,"fp":0,"precision":1.0,"predicted":["validation:benchmark:benchmark_gen6","validation:benchmark:benchmark_gen7","validation:selftest:experience_loop"],"recall":1.0,"tp":3},"name":"change_impact_precision","ok":true},
+    {"detail":{"impact_count":0,"unexpected":[]},"name":"unrelated_negative_control","ok":true},
+    {"detail":{"edges":1,"events":2},"name":"causal_failure_to_regression","ok":true},
+    {"detail":{"events":12,"relations":["restored_child_started","triggered_auto_rollback"]},"name":"causal_recovery_lineage","ok":true},
+    {"detail":{"issues":[],"newer_evidence_available":1,"ok":true,"states":{"fresh":79,"newer_evidence_available":1,"not_applicable":85}},"name":"append_only_new_evidence_detected","ok":true},
+    {"detail":{"expected_sha256":"854d7e95fd412777137a330384ef236b25efdb794f9c98aac59ad2ce62e8c60c","path":"/tmp/gen7-definitely-missing-evidence.py","state":"missing"},"name":"missing_evidence_explicit","ok":true},
+    {"detail":{"causal":"617b6be51992d7669e9275fe4012ec6d3e521848606b0879732de84f2636e1b4","twin":"48c3ff8fb962712a0d21615f8ed9f620969e382583cd97c86bc1655964212530"},"name":"rebuild_determinism","ok":true},
+    {"detail":{"causal_validations":["validation:benchmark:benchmark_gen7","validation:selftest:architecture_twin","validation:selftest:causal_spine"],"twin_validations":["validation:benchmark:benchmark_gen7","validation:selftest:architecture_twin"]},"name":"self_hosted_twin_validation","ok":true},
+    {"detail":{"max":1.951,"median":1.586,"samples":25},"name":"query_latency_bounded","ok":true},
+    {"detail":{"bounded_packet_bytes":7466,"broad_authoritative_input_bytes":2166931,"reduction":0.9966},"name":"context_reduction","ok":true},
+    {"detail":{"all_validation_nodes":19,"avoided_proxy":16,"selected":["validation:benchmark:benchmark_gen6","validation:benchmark:benchmark_gen7","validation:selftest:experience_loop"],"selected_for_experience_loop":3},"name":"bounded_validation_selection","ok":true},
+    {"detail":{"prohibited_edges":6,"tools":["shell","read_file","read_range","write_file","list_files","job","service","lab_status","self_restart","reboot"]},"name":"tool_surface_and_containment_model","ok":true}
+  ],
+  "ended_at":"2026-08-26T14:33:38.603822+00:00",
+  "generation":"gen7-self-model-r1",
+  "metrics":{
+    "causal":{"digest":"617b6be51992d7669e9275fe4012ec6d3e521848606b0879732de84f2636e1b4","edges":4380,"events":3915},
+    "change_impact":{"expected":["validation:benchmark:benchmark_gen6","validation:benchmark:benchmark_gen7","validation:selftest:experience_loop"],"fn":0,"fp":0,"precision":1.0,"predicted":["validation:benchmark:benchmark_gen6","validation:benchmark:benchmark_gen7","validation:selftest:experience_loop"],"recall":1.0,"tp":3},
+    "context_proxy":{"bounded_packet_bytes":7466,"broad_authoritative_input_bytes":2166931,"reduction":0.9966},
+    "dependency":{"fn":0,"fp":0,"negative_cases":6,"positive_cases":12,"precision":1.0,"recall":1.0,"tn":6,"tp":12},
+    "permanent_mcp_tools":10,
+    "query_latency_ms":{"max":1.951,"median":1.586,"samples":25},
+    "twin":{"build_ms":724.147,"edges":224,"graph_digest":"48c3ff8fb962712a0d21615f8ed9f620969e382583cd97c86bc1655964212530","inputs":80,"nodes":165,"snapshot_bytes":228203,"sqlite_bytes":3772416},
+    "validation_selection":{"all_validation_nodes":19,"avoided_proxy":16,"selected":["validation:benchmark:benchmark_gen6","validation:benchmark:benchmark_gen7","validation:selftest:experience_loop"],"selected_for_experience_loop":3}
+  },
+  "passed":15,
+  "source_hashes":{"architecture_twin":"f5ba258ed5559b755f5b68891a74f48bdfac243638bff60cc730c0f3cbf61d8e","causal_spine":"be7a798db4f7976e74deb787ad277a56f5fde719144280b8619b7e87b92124d3"},
+  "started_at":"2026-08-26T14:33:35.939797+00:00",
+  "total":15
+}

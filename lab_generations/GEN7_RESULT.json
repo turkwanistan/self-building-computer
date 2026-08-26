@@ -1,0 +1,350 @@
+{
+  "accepted_at": "2026-08-26T14:51:25.077246+00:00",
+  "authoritative_inputs": {
+    "hash_backed_inputs": 80,
+    "policy": "Derived from real guest source, workflow/graph definitions, capability/memory/regression registries, build/recovery state, benchmark artifacts and append-only trace/provenance evidence. The Twin is disposable derived state, not authority.",
+    "raw_sensitive_payload_policy": "Do not index raw parameters/arguments/stdout/stderr/context. Causal indexing retains IDs, hashes, event type, state and sanitized structural metadata only."
+  },
+  "benchmark": {
+    "artifact": "lab_generations/GEN7_BENCHMARK.json",
+    "change_impact": {
+      "fn": 0,
+      "fp": 0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "tp": 3
+    },
+    "context_proxy": {
+      "bounded_packet_bytes": 7466,
+      "broad_authoritative_input_bytes": 2166931,
+      "reduction": 0.9966
+    },
+    "dependency": {
+      "fn": 0,
+      "fp": 0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "tn": 6,
+      "tp": 12
+    },
+    "guest_artifact_sha256": "e27c5c6cead7426ead29f957f12ebbca506e3f8f964687018805af71b72e833b",
+    "passed": 15,
+    "query_latency_ms": {
+      "max": 1.951,
+      "median": 1.586,
+      "samples": 25
+    },
+    "total": 15,
+    "validation_selection": {
+      "all_validation_nodes": 19,
+      "avoided_proxy": 16,
+      "safety_note": "Full retained/final acceptance suite still runs; avoidance is a bounded selection proxy, not permission to skip final gates.",
+      "selected_for_experience_loop": 3
+    }
+  },
+  "causal_observability": {
+    "causation_policy": "Explicit identifier/hash/reference joins may be causal or lineage; temporal proximity alone is not promoted to causation.",
+    "derived_index_rebuildable": true,
+    "final_rebuild_digest": "9892698abd8af3978692f38f2e4bbf8e0932f8677ef06e4bfdabe0eeda11da94",
+    "final_rebuild_edges": 4380,
+    "final_rebuild_events": 3918,
+    "raw_evidence_append_only": true,
+    "selected_evidence": "lab_generations/GEN7_CAUSAL_EVIDENCE.json",
+    "version": "gen7-causal-spine-r1"
+  },
+  "change_impact_algorithm": {
+    "autonomous_code_change_authority": false,
+    "steps": [
+      "resolve exact Twin node/path/hash/reference",
+      "walk bounded forward/reverse impact-bearing relations",
+      "attach relevant workflows/graphs/capabilities/memories/regressions/benchmarks/recovery",
+      "select validations from explicit validates/gates/dependency evidence",
+      "report direct/transitive impact separately",
+      "surface uncertainty/staleness and fail closed rather than inventing edges"
+    ]
+  },
+  "commit_or_push_performed": false,
+  "containment": {
+    "blocked": [
+      "192.168.127.1:8790",
+      "10.0.0.1:22",
+      "172.16.0.1:22",
+      "100.64.0.1:22"
+    ],
+    "host_control_sockets": [],
+    "host_mount_indicators": [],
+    "host_repository_present": false,
+    "public_internet": true,
+    "result": "PASS",
+    "unexpected_reachable": []
+  },
+  "design": {
+    "alternatives": [
+      {
+        "decision": "CHOSEN",
+        "name": "Rebuildable relational/property index over authoritative evidence",
+        "why": "SQLite plus deterministic JSON gives bounded queries, provenance, deterministic rebuild and disposable derived state without creating a competing source of truth."
+      },
+      {
+        "decision": "REJECTED",
+        "name": "Hand-maintained unified architecture/causal registry",
+        "why": "Would duplicate authority and become stale; only explicit stable policy/history seed facts are allowed and are provenance-tagged."
+      },
+      {
+        "decision": "DEFERRED",
+        "name": "Instrument every Gen2-Gen6 subsystem with new causal span propagation",
+        "why": "Existing run IDs, hashes and append-only provenance already reconstruct the required causal paths; broad instrumentation would increase restart/recovery risk without measured need."
+      }
+    ],
+    "chosen": "Guest-local deterministic Architectural Digital Twin plus derived Causal Observability Spine over existing append-only evidence",
+    "permanent_mcp_surface_widened": false,
+    "server_modified_for_gen7": false
+  },
+  "final_identity_model": {
+    "accepted_capability_build": "gen7-self-model-r1-f5ba258ed555",
+    "accepted_capability_generation": "gen7-self-model-r1",
+    "explanation": "Gen7 is guest-local infrastructure invoked through the existing 10-tool surface; it does not modify server.py. Therefore canonical capability-generation identity advances to Gen7 while lab_status correctly retains the unchanged accepted Gen6 MCP server build.",
+    "live_mcp_server_build": "gen6-experience-memory-r1-dc0d2cb41595",
+    "live_mcp_server_generation": "gen6-experience-memory-r1",
+    "permanent_mcp_tools": 10,
+    "recovery_state": "ACCEPTED",
+    "server_sha256": "dc0d2cb41595a9a3d953873879ccc3e0bd88db2b4dcdee4cf8aa43dd4cb103e9"
+  },
+  "frozen_safe_mcp": {
+    "guardrail": "guardrail-gen0-c51a9161a95d",
+    "modified": false,
+    "policy": "authority-v1",
+    "release": "frontend-a5c1c5be8b22",
+    "schema_sha256": "195c410b85d40f4cfe65ef7eb8baa0463a32e93882fd9d39c0045e6518cd2913",
+    "tool_count": 51
+  },
+  "gen8": {
+    "artifact": "lab_generations/GEN8_PROPOSALS.json",
+    "implemented": false,
+    "top_recommendation": "Context Compiler on top of the Architectural Twin"
+  },
+  "generation": "gen7-self-model-r1",
+  "historical_causal_reconstruction": {
+    "bad_candidate_recovery": {
+      "bad_sha256": "8f320ff7a3176837da2d308320bd8952c9ac7809375491c85faf403d44105b3e",
+      "confidence": 1.0,
+      "relations": [
+        "triggered_auto_rollback",
+        "restored_child_started"
+      ],
+      "restored_lkg_sha256": "dc0d2cb41595a9a3d953873879ccc3e0bd88db2b4dcdee4cf8aa43dd4cb103e9",
+      "result": "PASS",
+      "strength": "causal"
+    },
+    "failure_to_regression": {
+      "bad_capability_hash": "7a615a3f98a7a3be8babdf6376f38be2025543618af8dfff638ce2f028c8c708",
+      "basis": "Regression provenance explicitly names known_bad_hash.",
+      "confidence": 1.0,
+      "regression_hash": "5be7002dfbe9b489445fcc2009b0c9d79af6baaee1cc308b6dd8e9cf64e75436",
+      "relation": "generated_regression",
+      "result": "PASS",
+      "strength": "causal"
+    }
+  },
+  "implementation_findings": [
+    {
+      "effect": "Missed Gen6 benchmark dependency on experience_loop.py",
+      "fix": "Recompute role per source path in relationship pass; no heuristic expansion required.",
+      "kind": "Twin AST role-state bug"
+    },
+    {
+      "effect": "Initial transfer normalized bytes despite functional equivalence",
+      "fix": "Rejected mismatched provenance and restored byte-identical canonical payload before proceeding.",
+      "kind": "Canonical/guest source byte mismatch"
+    },
+    {
+      "effect": "Direct rerun against populated Gen6 Forge failed 6/12 and changed reuse counters",
+      "fix": "Restore accepted registry snapshot; preserve append-only provenance; rerun Gen5 against isolated empty Forge/regression namespace for 12/12 PASS.",
+      "kind": "Legacy Gen5 benchmark non-idempotence"
+    },
+    {
+      "effect": "Gen4 benchmark rewound /etc/optiplex-lab/build.json generation metadata while server bytes stayed accepted",
+      "fix": "Detected by final lab_status gate and reconciled using accepted lab-upgrade-transaction with the byte-identical Gen6 candidate.",
+      "kind": "Retained Gen4 lifecycle metadata leakage"
+    }
+  ],
+  "real_examples": {
+    "impact": {
+      "selected_validations": [
+        "validation:selftest:experience_loop",
+        "validation:benchmark:benchmark_gen6",
+        "validation:benchmark:benchmark_gen7"
+      ],
+      "source": "/opt/optiplex-lab/experience_loop.py"
+    },
+    "negative_control": {
+      "component": "public-repo-investigation",
+      "unexpected_strong_impact_count": 0
+    },
+    "source_query": {
+      "authoritative_owner": "source:/opt/optiplex-lab/experience_loop.py",
+      "freshness": "fresh",
+      "source": "/opt/optiplex-lab/experience_loop.py"
+    },
+    "stale_missing": {
+      "append_only_growth": "newer_evidence_available",
+      "missing_state": "missing",
+      "missing_test_path": "/tmp/gen7-definitely-missing-evidence.py"
+    }
+  },
+  "recovery": {
+    "final_metadata_reconciliation": {
+      "graph": "lab-upgrade-transaction@1",
+      "graph_run": "wg_20260826T143225Z_c5b9612c",
+      "job": "job_3b61e3fc4ef2",
+      "restart_checkpoint_confirmed": true,
+      "restored_live_server_build": "gen6-experience-memory-r1-dc0d2cb41595",
+      "restored_live_server_generation": "gen6-experience-memory-r1",
+      "result": "PASS",
+      "server_bytes_changed": false
+    },
+    "historical_bad_candidate_recovery": "PASS"
+  },
+  "retained_regressions": {
+    "artifact": "lab_generations/GEN7_RETAINED_REGRESSIONS.json",
+    "gen2": "12/12 PASS",
+    "gen3": "16/16 PASS",
+    "gen4": "18/18 PASS",
+    "gen5": "12/12 PASS",
+    "gen6": "13/13 PASS",
+    "mutation_safe_strategy": "Mutable benchmark state was redirected/cloned. Gen5 ran in an empty isolated Forge/regression namespace. Gen4 registry/run state was cloned, but the benchmark still touched lifecycle build metadata; the final gate detected this and Gen6 live metadata was explicitly restored through the accepted lifecycle graph."
+  },
+  "scope": "Optiplex_Lab + isolated mcp-lab VM",
+  "self_hosting": {
+    "architecture_twin_validations": [
+      "validation:selftest:architecture_twin",
+      "validation:benchmark:benchmark_gen7"
+    ],
+    "causal_spine_validations": [
+      "validation:selftest:architecture_twin",
+      "validation:selftest:causal_spine",
+      "validation:benchmark:benchmark_gen7"
+    ],
+    "result": "PASS",
+    "server_restart_required_for_gen7_feature": false,
+    "twin_used_on_own_changes": true
+  },
+  "sources": {
+    "architecture_twin": {
+      "path": "lab_mcp/architecture_twin.py",
+      "sha256": "f5ba258ed5559b755f5b68891a74f48bdfac243638bff60cc730c0f3cbf61d8e"
+    },
+    "benchmark": {
+      "path": "lab_mcp/bench/benchmark_gen7.py",
+      "sha256": "2763c039594076e0c10f5ff902f85b3d12fb2362277796adc1a0c51b3a21f2fa"
+    },
+    "causal_spine": {
+      "path": "lab_mcp/causal_spine.py",
+      "sha256": "be7a798db4f7976e74deb787ad277a56f5fde719144280b8619b7e87b92124d3"
+    },
+    "plan": "plans/GEN7_ARCHITECTURAL_TWIN_CAUSAL_SPINE.md"
+  },
+  "starting_gen6_identity": {
+    "canonical_generation": "gen6-experience-memory-r1",
+    "experience_loop_sha256": "854d7e95fd412777137a330384ef236b25efdb794f9c98aac59ad2ce62e8c60c",
+    "forge_sha256": "309e25ec374956125459b6cf26815f916534d7a4520dfc6ddce8bb62e8755f26",
+    "live_server_build": "gen6-experience-memory-r1-dc0d2cb41595",
+    "memory_sha256": "c0cd4076393bbd214590f7644bab9c7c7c3df548863d2bb64ffb2209ae6e6a39",
+    "recovery_state": "ACCEPTED",
+    "regression_sha256": "e1b2a84c18ce56f1209797e0b812e89df851af524c74cf268e3535f3eb1660fe",
+    "server_sha256": "dc0d2cb41595a9a3d953873879ccc3e0bd88db2b4dcdee4cf8aa43dd4cb103e9",
+    "tool_count": 10
+  },
+  "status": "ACCEPTED",
+  "thesis": "Understand Yourself Before Changing Yourself",
+  "twin": {
+    "accepted_graph_digest": "49ddf70f7baa2b73508e2921250cdf131805648421d96338ebd0cf84c9b4ce2c",
+    "edges": 224,
+    "evidence_policy": {
+      "history_seed": 10,
+      "inferred": 1,
+      "inferred_confidence": 0.8,
+      "observed_definition": 29,
+      "observed_registry": 69,
+      "observed_runtime": 26,
+      "observed_static": 83,
+      "policy_seed": 6,
+      "rule": "Observed evidence is preferred and hash/path-backed. Inference remains explicitly labeled with reduced confidence; stale or missing evidence is surfaced rather than silently promoted to fact."
+    },
+    "inputs": 80,
+    "modelled_entities": [
+      "source/module",
+      "service/runtime",
+      "MCP tool",
+      "workflow",
+      "workflow graph",
+      "capability",
+      "evaluator",
+      "procedural memory",
+      "regression",
+      "registry",
+      "benchmark/evidence artifact",
+      "generation/build",
+      "recovery/LKG",
+      "authority/security boundary"
+    ],
+    "modelled_relations": [
+      "authoritative_for",
+      "consumes",
+      "depends_on",
+      "gates",
+      "generated_from",
+      "invokes",
+      "prohibited_from_accessing",
+      "recovers_to",
+      "references",
+      "validates"
+    ],
+    "nodes": 165,
+    "rebuild_determinism": {
+      "build_ms": [
+        700.863,
+        725.385
+      ],
+      "consecutive_builds": 2,
+      "graph_digest": "49ddf70f7baa2b73508e2921250cdf131805648421d96338ebd0cf84c9b4ce2c",
+      "result": "PASS"
+    },
+    "schema_version": 1,
+    "snapshot": {
+      "compressed_path": "lab_generations/GEN7_TWIN_SNAPSHOT.json.xz",
+      "compressed_sha256": "bd03b811a2fd648518227ff73f523536388fd205c9a685af8fe773e8aacec274",
+      "decompressed_bytes": 228203,
+      "decompressed_sha256": "5bf9ad61cd25eb4e085afc9be759b1b2e6f95c7148f776b945fb466ec322e7f4",
+      "manifest": "lab_generations/GEN7_TWIN_SNAPSHOT.json"
+    },
+    "version": "gen7-architectural-twin-r1"
+  },
+  "validation": {
+    "canonical_project_tests": "PASS_13",
+    "containment": "PASS",
+    "final_guest_selftests": {
+      "architecture_twin": "6/6 PASS",
+      "causal_spine": "5/5 PASS",
+      "code_mode": "5/5 PASS",
+      "experience_loop": "3/3 PASS",
+      "forge": "8/8 PASS",
+      "graphs": "8/8 PASS",
+      "lab": "12/12 PASS",
+      "memory": "6/6 PASS",
+      "regressions": "5/5 PASS",
+      "workflows": "4/4 PASS"
+    },
+    "final_lab_connector_surface": "PASS_10",
+    "final_lab_server_identity": "PASS_GEN6_SERVER_UNCHANGED",
+    "final_live_equals_lkg": true,
+    "frozen_safe_mcp": "PASS_UNCHANGED",
+    "gen7_benchmark": "15/15 PASS",
+    "git_diff_check": "PASS",
+    "json_jsonl": "PASS_43_JSON_2_JSONL_107_LINES",
+    "python_syntax": "PASS_MUTATION_FREE_29_FILES",
+    "retained_gen2_gen6": "PASS",
+    "secret_scan": "PASS_TEXT_ARTIFACTS",
+    "validated_at": "2026-08-26T14:51:25.077246+00:00"
+  }
+}

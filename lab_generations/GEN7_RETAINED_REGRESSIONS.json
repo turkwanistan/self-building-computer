@@ -1,0 +1,36 @@
+{
+  "artifacts": {
+    "gen2-orchestration-after.json": {
+      "bytes": 4150,
+      "passed": 12,
+      "sha256": "8c69a29d6381d6b3fdd676128f2a037ddd4c953147a37428084fb82c5cdb5479",
+      "total": 12
+    },
+    "gen3-workflow-benchmark.json": {
+      "bytes": 11517,
+      "passed": 16,
+      "sha256": "192253e90a839e8d02f85e0636a9a7f99114f8dbd73beb9137ad0533e71afc41",
+      "total": 16
+    },
+    "gen4-workflow-graph-benchmark.json": {
+      "bytes": 9551,
+      "passed": 18,
+      "sha256": "e9d080885e6b04d37468d85ff8a4c6b5ed5b33d79245ed7b9e45d617b88c6fd9",
+      "total": 18
+    },
+    "gen5-isolated.json": {
+      "bytes": 18345,
+      "passed": 12,
+      "sha256": "3bc2a9ac31bc438f49b66d21457d576aee9a2188065bd8222bde723114ba8527",
+      "total": 12
+    },
+    "gen6-experience-memory-benchmark.json": {
+      "bytes": 25657,
+      "passed": 13,
+      "sha256": "b34a591ba668c0057544855540e3520b315eb77b8c41f3c5fc83b84d24287852",
+      "total": 13
+    }
+  },
+  "isolation_policy": "Retained Gen2-Gen6 benchmarks were run with redirected/cloned mutable state where required. Gen5 specifically used an empty isolated Forge/regression namespace so its non-idempotent benchmark could not mutate the accepted live capability registry.",
+  "version": "gen7-retained-regressions-r1"
+}
