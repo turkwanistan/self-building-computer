@@ -1,0 +1,208 @@
+{
+  "architectures_considered": [
+    "Deterministic Twin/causal Context Compiler + bounded Experiment Capsule (chosen)",
+    "Hand-built template/SQLite context planner",
+    "Generic embedding/RAG context layer + general sandbox (deferred as premature/broader than Gen8)"
+  ],
+  "benchmark": {
+    "gold_sha256": "f7fc1835e2fd65f99f52945533c6d709614302bab9ce79f9c4ef5f40c01d840d",
+    "metrics": {
+      "compile_latency_ms": {
+        "max": 266.939,
+        "median": 110.09,
+        "p95": 208.652
+      },
+      "context_reduction": {
+        "average_packet_bytes": 23073.86,
+        "broad_baseline_bytes": 474597,
+        "broad_reduction": 0.951,
+        "median_packet_bytes": 14670,
+        "practical_baseline_bytes": 276200,
+        "practical_reduction": 0.916
+      },
+      "context_selection_precision": 0.6613,
+      "critical_evidence_fn": 0,
+      "critical_evidence_fp": 21,
+      "critical_evidence_tp": 41,
+      "gen4_capsule_run": "cap8_20260826T160908Z_a0fba037",
+      "gen5_capsule_run": "cap8_20260826T152539Z_a2d9178c",
+      "gold_sha256": "f7fc1835e2fd65f99f52945533c6d709614302bab9ce79f9c4ef5f40c01d840d",
+      "packet_bytes": {
+        "average": 23073.86,
+        "max": 44140,
+        "median": 14670,
+        "min": 11295
+      },
+      "permanent_mcp_tools": 10,
+      "repro_capsule_runs": [
+        "cap8_20260826T162324Z_21fe7bed",
+        "cap8_20260826T162326Z_29f28f96"
+      ],
+      "required_evidence_recall": 1.0,
+      "task_kind_classification_ok": true,
+      "unrelated_context_negative_controls_ok": true
+    },
+    "passed": 17,
+    "source_sha256": "5ab33dc21de64f88b60ee4ec404051e669fbe754fafadfe5d88ec2486ce207e7",
+    "total": 17
+  },
+  "capability_build": "gen8-context-compiler-r1-39b7f040fca1",
+  "commit_or_push_performed": false,
+  "context_compiler": {
+    "algorithm": [
+      "normalize/classify task",
+      "resolve exact authoritative owners",
+      "bounded Twin dependency expansion",
+      "attach causal history",
+      "attach procedural memory",
+      "attach workflows/graphs/capabilities",
+      "attach regressions",
+      "select source/evidence excerpts",
+      "attach validation/recovery/security constraints",
+      "tier evidence",
+      "budget prune Tier3 then Tier2",
+      "surface stale/missing/contradictory evidence",
+      "emit inclusion/omission rationale"
+    ],
+    "contradiction_policy": "surfaced as Tier0 conflict; never silently merged",
+    "priority_model": {
+      "tier0": "authority/security, live identity, critical contradiction warnings; never pruned",
+      "tier1": "direct authoritative sources and required validations/recovery/regressions",
+      "tier2": "memory, causal/supporting/transitive evidence",
+      "tier3": "optional background/candidates"
+    },
+    "schema_version": 1,
+    "sha256": "39b7f040fca1afb2332b5dd902e186b710ea4d1d5a2cd0351aa307f6d8f786c3",
+    "stale_policy": "critical stale/missing evidence fails closed and triggers bounded broad fallback",
+    "task_modes": [
+      "explanation_architecture",
+      "code_change_planning",
+      "debugging",
+      "evaluation",
+      "lifecycle_recovery"
+    ],
+    "version": "gen8-context-compiler-r1"
+  },
+  "experiment_capsule": {
+    "filesystem_isolation": "mount+PID namespaces with OverlayFS COW over /opt/optiplex-lab, /etc/optiplex-lab, /etc/systemd/system, /var/lib/optiplex-lab, /root; private /tmp and /run",
+    "gen4_result": "18/18 PASS; zero forbidden accepted mutations",
+    "gen5_result": "12/12 PASS; zero forbidden accepted mutations",
+    "service_isolation": "systemctl/systemd-run virtualized inside namespace",
+    "sha256": "69d66ecaec546f08ea6079c5446254bc1704c791f77bf76ce472d1f4907f7415",
+    "version": "gen8-experiment-capsule-r1"
+  },
+  "final_guest_validation": {
+    "architecture_twin": "6/6",
+    "causal_spine": "5/5",
+    "code_mode": "5/5",
+    "context_compiler": "6/6",
+    "experience_loop": "3/3",
+    "experiment_capsule": "5/5",
+    "forge": "8/8",
+    "gen8_benchmark": "17/17",
+    "graphs": "8/8",
+    "lab": "12/12",
+    "memory": "6/6",
+    "regressions": "5/5",
+    "twin_verify": true,
+    "workflows": "4/4"
+  },
+  "final_twin": {
+    "edges": 242,
+    "graph_digest": "ceab9a44188706a209b23066217de4e8991b44d067d6c21f9018d56861c182eb",
+    "inputs": 85,
+    "nodes": 173,
+    "version": "gen7-architectural-twin-r1"
+  },
+  "gen9_proposals": "lab_generations/GEN9_PROPOSALS.json",
+  "generation": "gen8-context-compiler-r1",
+  "operational_server": {
+    "build_id": "gen6-experience-memory-r1-dc0d2cb41595",
+    "generation": "gen6-experience-memory-r1",
+    "lkg_sha256": "dc0d2cb41595a9a3d953873879ccc3e0bd88db2b4dcdee4cf8aa43dd4cb103e9",
+    "recovery_state": "ACCEPTED",
+    "server_sha256": "dc0d2cb41595a9a3d953873879ccc3e0bd88db2b4dcdee4cf8aa43dd4cb103e9"
+  },
+  "permanent_mcp_tools": 10,
+  "protected_state": {
+    "accepted": true,
+    "allowed_audit_appends": [
+      {
+        "bytes_appended": 128484,
+        "path": "/var/lib/optiplex-lab/traces/events.jsonl",
+        "prefix_preserved": true
+      }
+    ],
+    "common_resource_forbidden_changes": [],
+    "newly_monitored_paths_without_earliest_baseline": [
+      "/etc/systemd/system"
+    ],
+    "note": "New paths are covered by same-schema before/after capsule results; every accepted retained capsule reported zero forbidden mutations.",
+    "version": "gen8-protected-final-comparison-r1"
+  },
+  "retained_regressions": {
+    "gen2": {
+      "artifact_sha256": "06652599077ebd4e86b549808a9c13b6e9174465f07286f3033cc29c30e218c7",
+      "capsule_ok": true,
+      "capsule_run": "cap8_20260826T161528Z_c58c31be",
+      "forbidden_mutations": [],
+      "passed": 12,
+      "total": 12
+    },
+    "gen3": {
+      "artifact_sha256": "984128f4bab00c7a3e83c208c05dd1f3b427664d3eb3423af7be01d0ea6664d0",
+      "capsule_ok": true,
+      "capsule_run": "cap8_20260826T161542Z_8d0d988a",
+      "forbidden_mutations": [],
+      "passed": 16,
+      "total": 16
+    },
+    "gen4": {
+      "artifact_sha256": "14716230aab3a90f6d9920b00c9c9a6780b1612bf888b0fa63dbbbf04415ee8f",
+      "capsule_ok": true,
+      "capsule_run": "cap8_20260826T160908Z_a0fba037",
+      "forbidden_mutations": [],
+      "passed": 18,
+      "total": 18
+    },
+    "gen5": {
+      "artifact_sha256": "cdfc36449f0f3bd7b0d4a47bf14f411fb5343a0e21b1bddc612f88e1277955ae",
+      "capsule_ok": true,
+      "capsule_run": "cap8_20260826T152539Z_a2d9178c",
+      "forbidden_mutations": [],
+      "passed": 12,
+      "total": 12
+    },
+    "gen6": {
+      "artifact_sha256": "014e2247e0c587cdd07989ce70707f680e6dbb388108cbcff426e74172925776",
+      "capsule_ok": true,
+      "capsule_run": "cap8_20260826T161608Z_7ab035c6",
+      "forbidden_mutations": [],
+      "passed": 13,
+      "total": 13
+    },
+    "gen7": {
+      "artifact_sha256": "3a1e1ab9a3a0d04dc1608d7b19b2d4f54d965e0b79da3cd7fa1ab04fb243b973",
+      "capsule_ok": true,
+      "capsule_run": "cap8_20260826T161751Z_f00491be",
+      "forbidden_mutations": [],
+      "passed": 15,
+      "total": 15
+    }
+  },
+  "scope": "Optiplex_Lab + isolated mcp-lab VM",
+  "self_hosting": {
+    "context_compiler_used_during_gen8": true,
+    "finding": "Initial self-use over-selected through exact-path plus fuzzy seeds; later benchmark found server.py high-fanout traversal. Both were fixed before acceptance.",
+    "server_restart_required": false
+  },
+  "server_modified": false,
+  "starting_gen7": {
+    "accepted_twin_graph_digest": "49ddf70f7baa2b73508e2921250cdf131805648421d96338ebd0cf84c9b4ce2c",
+    "causal_spine_sha256": "be7a798db4f7976e74deb787ad277a56f5fde719144280b8619b7e87b92124d3",
+    "generation": "gen7-self-model-r1",
+    "twin_sha256": "f5ba258ed5559b755f5b68891a74f48bdfac243638bff60cc730c0f3cbf61d8e"
+  },
+  "status": "ACCEPTED",
+  "thesis": "Compile the Right Context Before You Reason"
+}

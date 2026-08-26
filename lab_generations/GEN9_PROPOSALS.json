@@ -1,0 +1,15 @@
+{
+  "do_not_implement_without_request": true,
+  "generated_at": "2026-08-26T16:24:41.639818+00:00",
+  "generation": "gen9-proposals-from-gen8-evidence",
+  "implemented": false,
+  "proposals": [
+    {"complexity":"medium","evidence":"Gen8 achieved zero critical FNs and 1.0 required-evidence recall, but conservative critical-evidence precision was 0.6613 with 21 critical FPs. Negative controls were clean, so the next bottleneck is safe over-inclusion rather than missing evidence.","expected_benefit":"Reduce validation/dependency over-inclusion while holding critical false negatives at zero; use necessity/ablation and semantic lineage rather than generic embeddings.","kind":"context/reasoning","rank":1,"title":"Context Necessity Optimizer / semantic evidence minimization"},
+    {"complexity":"medium-large","evidence":"Gen8 now provides a reproducible disposable capsule and contained both known Gen4/Gen5 state leaks; the isolation prerequisite that previously blocked safe evaluator mutation now exists.","expected_benefit":"Measure evaluator discrimination against bounded mutants/adversarial descendants without risking accepted operational state.","kind":"verification","rank":2,"title":"Evaluator / Mutation Nursery on Experiment Capsules"},
+    {"complexity":"large","evidence":"Gen8 showed historical Gen7 evaluation must be version-pinned when Gen8 adds legitimate new evidence, and the capsule can present a historical source/evidence view safely.","expected_benefit":"Replay selected historical episodes with one controlled version difference at a time and report replay fidelity/causal uncertainty.","kind":"causal/replay","rank":3,"title":"Counterfactual Replay with version-pinned capsules"},
+    {"complexity":"medium","evidence":"Twin/memory/capability lineage continues to grow, but Gen8 measurements show context over-inclusion is currently a larger bottleneck.","expected_benefit":"Consolidate near-equivalent capabilities/memories only after attached evaluators/regressions replay successfully, preserving immutable ancestry.","kind":"retention","rank":4,"title":"Capability Consolidator with semantic lineage"},
+    {"complexity":"low-medium","evidence":"Gen8 debugging cases found the required causal lineage; broad tracing expansion remains unjustified.","expected_benefit":"Add correlation/causal edges only where future replay/debugging exposes a concrete gap.","kind":"observability","rank":5,"title":"Targeted causal enrichment"}
+  ],
+  "source_generation": "gen8-context-compiler-r1",
+  "top_recommendation": "Context Necessity Optimizer / semantic evidence minimization"
+}

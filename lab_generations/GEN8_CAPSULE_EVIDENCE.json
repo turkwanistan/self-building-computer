@@ -1,0 +1,4128 @@
+{
+  "architecture": {
+    "absolute_path_protection": "Writes to paths such as /etc/optiplex-lab/build.json land in the capsule overlay upperdir; systemctl/systemd-run are namespace-local shims and cannot restart accepted Lab systemd.",
+    "mechanism": "private mount + PID namespace with OverlayFS copy-on-write roots and virtualized service-manager entrypoints",
+    "network_namespace_inherited_for_public_internet": true,
+    "overlay_targets": [
+      "/opt/optiplex-lab",
+      "/etc/optiplex-lab",
+      "/etc/systemd/system",
+      "/var/lib/optiplex-lab",
+      "/root"
+    ],
+    "private_paths": [
+      "/tmp",
+      "/run"
+    ],
+    "service_manager_virtualized": true
+  },
+  "cases": {
+    "cap8_20260826T152539Z_a2d9178c": {
+      "manifest": {
+        "captures": [
+          "/var/lib/optiplex-lab/benchmarks/gen5-capability-forge-benchmark.json"
+        ],
+        "command": "/opt/optiplex-lab/bench/benchmark_gen5.py",
+        "created_at": "2026-08-26T15:25:40.942761+00:00",
+        "empty_paths": [
+          "/var/lib/optiplex-lab/capabilities",
+          "/var/lib/optiplex-lab/regressions"
+        ],
+        "isolation": {
+          "mount_namespace": true,
+          "overlayfs": true,
+          "pid_namespace": true,
+          "private_run": true,
+          "private_tmp": true,
+          "service_manager_virtualized": true
+        },
+        "label": "retained-gen5-known-leak-rerun",
+        "overlay_targets": [
+          "/opt/optiplex-lab",
+          "/etc/optiplex-lab",
+          "/var/lib/optiplex-lab",
+          "/root"
+        ],
+        "protected_before_digest": "6dfe0e1beab105f1885fb9a5c9b26dc3938e7e0847affd82c2c58c468093956b",
+        "recipe_digest": "75d1ec334dd5e86b4db9c4ee4f5b1066cb168a361705f647295612c4d4e58944",
+        "run_id": "cap8_20260826T152539Z_a2d9178c",
+        "schema_version": 1,
+        "source_inputs": [
+          {
+            "path": "/opt/optiplex-lab",
+            "tree_digest": "6d24fd4d20787593b26492fd7d1929cfd20b20569bfd52706c8b755d683fc533"
+          },
+          {
+            "path": "/etc/optiplex-lab",
+            "tree_digest": "ed4eaf9def409c78daa69c3455bc6ed827e23c0956efc5d54d9bf8b793c794f2"
+          },
+          {
+            "path": "/var/lib/optiplex-lab",
+            "tree_digest": "0ee2cb2714cdb0eef99942c6d5a89ed0b4a1a07dfa3f259f2aa4e7c10a750bce"
+          },
+          {
+            "path": "/root",
+            "tree_digest": "097b1f72fd2f4938b7d43cf245931a542a05b7d06736807b0d975f59b97841b7"
+          }
+        ],
+        "version": "gen8-experiment-capsule-r1",
+        "wrapper_sha256": "50fba3594bfca0c56f421677aef46508bd4813c8bf7a47a32cacaabcb990dfd7"
+      },
+      "mutation_manifest": {
+        "digest": "6b958b5f00bb4ce13144406b3d09e1c20de905e4c113727668bd1ea0c2b8c301",
+        "records": [
+          {
+            "path": "benchmarks",
+            "target_root": "/var/lib/optiplex-lab",
+            "type": "dir"
+          },
+          {
+            "bytes": 18263,
+            "path": "benchmarks/gen5-capability-forge-benchmark.json",
+            "sha256": "cdfc36449f0f3bd7b0d4a47bf14f411fb5343a0e21b1bddc612f88e1277955ae",
+            "target_root": "/var/lib/optiplex-lab",
+            "type": "file"
+          },
+          {
+            "path": "capability-runs",
+            "target_root": "/var/lib/optiplex-lab",
+            "type": "dir"
+          },
+          {
+            "path": "capability-runs/cap_20260826T152541Z_1df55219",
+            "target_root": "/var/lib/optiplex-lab",
+            "type": "dir"
+          },
+          {
+            "bytes": 47,
+            "path": "capability-runs/cap_20260826T152541Z_1df55219/input.json",
+            "sha256": "4dba24cc6e403d8bf8922187d1deec4dbc31cb68f084f4ed4691f0559c2b60a4",
+            "target_root": "/var/lib/optiplex-lab",
+            "type": "file"
+          },
+          {
+            "bytes": 316,
+            "path": "capability-runs/cap_20260826T152541Z_1df55219/result.json",
+            "sha256": "38c44ecd8ce54dacda3e8ce157a9c59b7dc031805ccaaede82f23a08f2ad5839",
+            "target_root": "/var/lib/optiplex-lab",
+            "type": "file"
+          },
+          {
+            "bytes": 25,
+            "path": "capability-runs/cap_20260826T152541Z_1df55219/stderr.bin",
+            "sha256": "39a770bef12aa7fd54725f7d08de79b13add574f65094ea90021aaece974ae87",
+            "target_root": "/var/lib/optiplex-lab",
+            "type": "file"
+          },
+          {
+            "bytes": 0,
+            "path": "capability-runs/cap_20260826T152541Z_1df55219/stdout.bin",
+            "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "target_root": "/var/lib/optiplex-lab",
+            "type": "file"
+          },
+          {
+            "path": "capability-runs/cap_20260826T152541Z_3e519959",
+            "target_root": "/var/lib/optiplex-lab",
+            "type": "dir"
+          },
+          {
+            "bytes": 60,
+            "path": "capability-runs/cap_20260826T152541Z_3e519959/input.json",
+            "sha256": "a508670626b0831aac1d3c9b38ad79542495833bce8a7f4f0e67753a9ce6ed09",
+            "target_root": "/var/lib/optiplex-lab",
+            "type": "file"
+          },
+          {
+            "bytes": 332,
+            "path": "capability-runs/cap_20260826T152541Z_3e519959/result.json",
+            "sha256": "b3ff3c197083a5c34f33a0f9e8afc3a2cd20bbbed0e4c3d48c4adab0812fa535",
+            "target_root": "/var/lib/optiplex-lab",
+            "type": "file"
+          },
+          {
+            "bytes": 0,
+            "path": "capability-runs/cap_20260826T152541Z_3e519959/stderr.bin",
+            "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "target_root": "/var/lib/optiplex-lab",
+            "type": "file"
+          },
+          {
+            "bytes": 40,
+            "path": "capability-runs/cap_20260826T152541Z_3e519959/stdout.bin",
+            "sha256": "0a4dc330ce2f2b14d119b712c05577764d37a597241da417ca41b32e3e5d7a74",
+            "target_root": "/var/lib/optiplex-lab",
+            "type": "file"
+          },
+          {
+            "path": "capability-runs/cap_20260826T152542Z_00bde784",
+            "target_root": "/var/lib/optiplex-lab",
+            "type": "dir"
+          },
+          {
+            "bytes": 87,
+            "path": "capability-runs/cap_20260826T152542Z_00bde784/input.json",
+            "sha256": "6ca006e7abc5f8449e87117c7f7ec526d972c1953398197ebeebd657a5478616",
+            "target_root": "/var/lib/optiplex-lab",
+            "type": "file"
+          },
+          {
+            "bytes": 390,
+            "path": "capability-runs/cap_20260826T152542Z_00bde784/result.json",
+            "sha256": "ba5bf82be60d900c33460634bb82d184f22016beeb09aa2a9dda114606698a4e",
+            "target_root": "/var/lib/optiplex-lab",
+            "type": "file"
+          },
+          {
+            "bytes": 0,
+            "path": "capability-runs/cap_20260826T152542Z_00bde784/stderr.bin",
+            "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "target_root": "/var/lib/optiplex-lab",
+            "type": "file"
+          },
+          {
+            "bytes": 65,
+            "path": "capability-runs/cap_20260826T152542Z_00bde784/stdout.bin",
+            "sha256": "09f2367174ce619d3c6d00c4318b341769b5418763c92a2731ad446145b5f2e8",
+            "target_root": "/var/lib/optiplex-lab",
+            "type": "file"
+          },
+          {
+            "path": "capability-runs/cap_20260826T152542Z_f09737b2",
+            "target_root": "/var/lib/optiplex-lab",
+            "type": "dir"
+          },
+          {
+            "bytes": 30,
+            "path": "capability-runs/cap_20260826T152542Z_f09737b2/input.json",
+            "sha256": "0c9a41b919bbfea48c8c4e3ece326bd5371a99a168d9119b7afb726cf2bff0ae",
+            "target_root": "/var/lib/optiplex-lab",
+            "type": "file"
+          },
+          {
+            "bytes": 738,
+            "path": "capability-runs/cap_20260826T152542Z_f09737b2/result.json",
+            "sha256": "5f61a25402d7bb2f067d1fb7dcfec6737a38e1db532180fa94c4852666f748ea",
+            "target_root": "/var/lib/optiplex-lab",
+            "type": "file"
+          },
+          {
+            "bytes": 432,
+            "path": "capability-runs/cap_20260826T152542Z_f09737b2/stderr.bin",
+            "sha256": "de1d02b9a27e39d0275086dca79c7dbd46be018dedab12ea4c34872b35589568",
+            "target_root": "/var/lib/optiplex-lab",
+            "type": "file"
+          },
+          {
+            "bytes": 0,
+            "path": "capability-runs/cap_20260826T152542Z_f09737b2/stdout.bin",
+            "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "target_root": "/var/lib/optiplex-lab",
+            "type": "file"
+          },
+          {
+            "path": "capability-runs/cap_20260826T152548Z_491cc036",
+            "target_root": "/var/lib/optiplex-lab",
+            "type": "dir"
+          },
+          {
+            "bytes": 104,
+            "path": "capability-runs/cap_20260826T152548Z_491cc036/input.json",
+            "sha256": "ff421f5afd9a8e60ac65b2090582c16bf2b90ef43bf93ba3a53efb07635bdf2a",
+            "target_root": "/var/lib/optiplex-lab",
+            "type": "file"
+          },
+          {
+            "bytes": 332,
+            "path": "capability-runs/cap_20260826T152548Z_491cc036/result.json",
+            "sha256": "624d22b98a4a8b0cee2b1a376cb67b3123839e78e81a57866ad9f0f0954553d4",
+            "target_root": "/var/lib/optiplex-lab",
+            "type": "file"
+          },
+          {
+            "bytes": 39,
+            "path": "capability-runs/cap_20260826T152548Z_491cc036/stderr.bin",
+            "sha256": "6051215ddf37e566a99c38a2546771be2de83a0cb8d4b1412b9cc3060427dc92",
+            "target_root": "/var/lib/optiplex-lab",
+            "type": "file"
+          },
+          {
+            "bytes": 0,
+            "path": "capability-runs/cap_20260826T152548Z_491cc036/stdout.bin",
+            "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "target_root": "/var/lib/optiplex-lab",
+            "type": "file"
+          },
+          {
+            "path": "capability-runs/cap_20260826T152548Z_a99f5578",
+            "target_root": "/var/lib/optiplex-lab",
+            "type": "dir"
+          },
+          {
+            "bytes": 110,
+            "path": "capability-runs/cap_20260826T152548Z_a99f5578/input.json",
+            "sha256": "ee75233ebe3d9d8f719037a04c37d688977e9435c90234855f329e3dcc86f059",
+            "target_root": "/var/lib/optiplex-lab",
+            "type": "file"
+          },
+          {
+            "bytes": 376,
+            "path": "capability-runs/cap_20260826T152548Z_a99f5578/result.json",
+            "sha256": "d746cc088c35f156e9408feca9928da9497d90e4bb111a3fe1766fec58d6b67b",
+            "target_root": "/var/lib/optiplex-lab",
+            "type": "file"
+          },
+          {
+            "bytes": 0,
+            "path": "capability-runs/cap_20260826T152548Z_a99f5578/stderr.bin",
+            "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "target_root": "/var/lib/optiplex-lab",
+            "type": "file"
+          },
+          {
+            "bytes": 92,
+            "path": "capability-runs/cap_20260826T152548Z_a99f5578/stdout.bin",
+            "sha256": "b2f4ffb333827da903f23ba62e9f007b578ffaf3737fafaf1b12ff68fa5d24e4",
+            "target_root": "/var/lib/optiplex-lab",
+            "type": "file"
+          },
+          {
+            "path": "capability-runs/cap_20260826T152549Z_3aea6d84",
+            "target_root": "/var/lib/optiplex-lab",
+            "type": "dir"
+          },
+          {
+            "bytes": 118,
+            "path": "capability-runs/cap_20260826T152549Z_3aea6d84/input.json",
+            "sha256": "406a666084a069a346c0d57d9a759ebee8e30d29199dc081a7e7e26f67eceb48",
+            "target_root": "/var/lib/optiplex-lab",
+            "type": "file"
+          },
+          {
+            "bytes": 381,
+            "path": "capability-runs/cap_20260826T152549Z_3aea6d84/result.json",
+            "sha256": "44126ac140db61a9f6ca96746188409310dbb6f19ab625226f958bba5ce7f056",
+            "target_root": "/var/lib/optiplex-lab",
+            "type": "file"
+          },
+          {
+            "bytes": 0,
+            "path": "capability-runs/cap_20260826T152549Z_3aea6d84/stderr.bin",
+            "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "target_root": "/var/lib/optiplex-lab",
+            "type": "file"
+          },
+          {
+            "bytes": 97,
+            "path": "capability-runs/cap_20260826T152549Z_3aea6d84/stdout.bin",
+            "sha256": "63d93fffd245deda62bc73b12d90b3bb41c45ef8dfa5c3c7ecabd846e1afb30e",
+            "target_root": "/var/lib/optiplex-lab",
+            "type": "file"
+          },
+          {
+            "path": "capability-runs/cap_20260826T152549Z_67b13b93",
+            "target_root": "/var/lib/optiplex-lab",
+            "type": "dir"
+          },
+          {
+            "bytes": 110,
+            "path": "capability-runs/cap_20260826T152549Z_67b13b93/input.json",
+            "sha256": "0d08fce1be4591befd8c3fe1b4ea4324e4a0231d3fb6603c3345264a6d5ba704",
+            "target_root": "/var/lib/optiplex-lab",
+            "type": "file"
+          },
+          {
+            "bytes": 1512,
+            "path": "capability-runs/cap_20260826T152549Z_67b13b93/result.json",
+            "sha256": "05f747f69d279c1c6ed8fbc70267a580a80338258772df14b5b00ae3501a8f3a",
+            "target_root": "/var/lib/optiplex-lab",
+            "type": "file"
+          },
+          {
+            "bytes": 5069,
+            "path": "capability-runs/cap_20260826T152549Z_67b13b93/stderr.bin",
+            "sha256": "1cdb31f897fe6626b2d21757c5c12c97352f551f8f53722b0b4e9ed8b1764019",
+            "target_root": "/var/lib/optiplex-lab",
+            "type": "file"
+          },
+          {
+            "bytes": 0,
+            "path": "capability-runs/cap_20260826T152549Z_67b13b93/stdout.bin",
+            "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "target_root": "/var/lib/optiplex-lab",
+            "type": "file"
+          },
+          {
+            "path": "capability-runs/cap_20260826T152549Z_954f3309",
+            "target_root": "/var/lib/optiplex-lab",
+            "type": "dir"
+          },
+          {
+            "bytes": 112,
+            "path": "capability-runs/cap_20260826T152549Z_954f3309/input.json",
+            "sha256": "2f59b19f8841e9e9d2d3fe2a6fe4f6a0f28f4497cc1a754754dff960e14d90eb",
+            "target_root": "/var/lib/optiplex-lab",
+            "type": "file"
+          },
+          {
+            "bytes": 371,
+            "path": "capability-runs/cap_20260826T152549Z_954f3309/result.json",
+            "sha256": "a78ea863691d5a158767a948801555bb3871cef0942357997bc5e8213ca1480d",
+            "target_root": "/var/lib/optiplex-lab",
+            "type": "file"
+          },
+          {
+            "bytes": 0,
+            "path": "capability-runs/cap_20260826T152549Z_954f3309/stderr.bin",
+            "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "target_root": "/var/lib/optiplex-lab",
+            "type": "file"
+          },
+          {
+            "bytes": 88,
+            "path": "capability-runs/cap_20260826T152549Z_954f3309/stdout.bin",
+            "sha256": "9d4df776214cf53a8fe2519eee7f87caa7577c48a06120650dedb9fce7f35222",
+            "target_root": "/var/lib/optiplex-lab",
+            "type": "file"
+          },
+          {
+            "path": "capability-runs/cap_20260826T152550Z_aba1fd48",
+            "target_root": "/var/lib/optiplex-lab",
+            "type": "dir"
+          },
+          {
+            "bytes": 22,
+            "path": "capability-runs/cap_20260826T152550Z_aba1fd48/input.json",
+            "sha256": "40240121e72615f201bd92f024af5c317089bd37e9c3ce0182424bad1464dc06",
+            "target_root": "/var/lib/optiplex-lab",
+            "type": "file"
+          },
+          {
+            "bytes": 311,
+            "path": "capability-runs/cap_20260826T152550Z_aba1fd48/result.json",
+            "sha256": "47da206996cefad29f414a647c215c88ed6195a35346e71ef35a03a87fc2617d",
+            "target_root": "/var/lib/optiplex-lab",
+            "type": "file"
+          },
+          {
+            "bytes": 19,
+            "path": "capability-runs/cap_20260826T152550Z_aba1fd48/stderr.bin",
+            "sha256": "d72228d3d3fe6b41a47492797fafa41b8dfc60b04da61b0a5960c4742ea8bd10",
+            "target_root": "/var/lib/optiplex-lab",
+            "type": "file"
+          },
+          {
+            "bytes": 0,
+            "path": "capability-runs/cap_20260826T152550Z_aba1fd48/stdout.bin",
+            "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "target_root": "/var/lib/optiplex-lab",
+            "type": "file"
+          },
+          {
+            "path": "capability-runs/cap_20260826T152550Z_fb41b84b",
+            "target_root": "/var/lib/optiplex-lab",
+            "type": "dir"
+          },
+          {
+            "bytes": 75,
+            "path": "capability-runs/cap_20260826T152550Z_fb41b84b/input.json",
+            "sha256": "4ce1a4069121918d3cbe096bed302b45be0bc1cebfa44f4e3c57066ebbfd62ff",
+            "target_root": "/var/lib/optiplex-lab",
+            "type": "file"
+          },
+          {
+            "bytes": 412,
+            "path": "capability-runs/cap_20260826T152550Z_fb41b84b/result.json",
+            "sha256": "9f2583d87877aa807eabd056c1043bab9c014b865f508c08673f2b9a2a1cf1ec",
+            "target_root": "/var/lib/optiplex-lab",
+            "type": "file"
+          },
+          {
+            "bytes": 0,
+            "path": "capability-runs/cap_20260826T152550Z_fb41b84b/stderr.bin",
+            "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "target_root": "/var/lib/optiplex-lab",
+            "type": "file"
+          },
+          {
+            "bytes": 87,
+            "path": "capability-runs/cap_20260826T152550Z_fb41b84b/stdout.bin",
+            "sha256": "af8f5fafd056a3615f5e4a4952dffa9cdc8888583246b287522fbce486d3bd37",
+            "target_root": "/var/lib/optiplex-lab",
+            "type": "file"
+          },
+          {
+            "path": "capability-runs/cap_20260826T152555Z_6cb775b7",
+            "target_root": "/var/lib/optiplex-lab",
+            "type": "dir"
+          },
+          {
+            "bytes": 62,
+            "path": "capability-runs/cap_20260826T152555Z_6cb775b7/input.json",
+            "sha256": "f393a98994ccbf39f76fcbbe3b67a83e6a6e0dd6ce726a24d209c25f18277f0b",
+            "target_root": "/var/lib/optiplex-lab",
+            "type": "file"
+          },
+          {
+            "bytes": 293,
+            "path": "capability-runs/cap_20260826T152555Z_6cb775b7/result.json",
+            "sha256": "4b5cfe725f3cc41c6480572364056a120cde5eeee810ef291e3edc56eed6b2e9",
+            "target_root": "/var/lib/optiplex-lab",
+            "type": "file"
+          },
+          {
+            "bytes": 0,
+            "path": "capability-runs/cap_20260826T152555Z_6cb775b7/stderr.bin",
+            "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "target_root": "/var/lib/optiplex-lab",
+            "type": "file"
+          },
+          {
+            "bytes": 18,
+            "path": "capability-runs/cap_20260826T152555Z_6cb775b7/stdout.bin",
+            "sha256": "ca09e39670f264b748d06f6102c84e3ff06cf82b162931dd5ef86cbf40aafa62",
+            "target_root": "/var/lib/optiplex-lab",
+            "type": "file"
+          },
+          {
+            "path": "capability-runs/cap_20260826T152555Z_d01fa00c",
+            "target_root": "/var/lib/optiplex-lab",
+            "type": "dir"
+          },
+          {
+            "bytes": 36,
+            "path": "capability-runs/cap_20260826T152555Z_d01fa00c/input.json",
+            "sha256": "4f2763232f90b353462443e228f56dbd6fc31875e627ac364ec831a674fd1984",
+            "target_root": "/var/lib/optiplex-lab",
+            "type": "file"
+          },
+          {
+            "bytes": 304,
+            "path": "capability-runs/cap_20260826T152555Z_d01fa00c/result.json",
+            "sha256": "d1263c42af35d6ba767bb519219cf02f5c08be45c917928cfe7f2a812b0644fd",
+            "target_root": "/var/lib/optiplex-lab",
+            "type": "file"
+          },
+          {
+            "bytes": 12,
+            "path": "capability-runs/cap_20260826T152555Z_d01fa00c/stderr.bin",
+            "sha256": "f95dc34c28e2c64be21582408e6ad3a32d776a28ddf760cea12251ebb5535513",
+            "target_root": "/var/lib/optiplex-lab",
+            "type": "file"
+          },
+          {
+            "bytes": 0,
+            "path": "capability-runs/cap_20260826T152555Z_d01fa00c/stdout.bin",
+            "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "target_root": "/var/lib/optiplex-lab",
+            "type": "file"
+          },
+          {
+            "path": "capability-runs/cap_20260826T152558Z_1905833a",
+            "target_root": "/var/lib/optiplex-lab",
+            "type": "dir"
+          },
+          {
+            "bytes": 13,
+            "path": "capability-runs/cap_20260826T152558Z_1905833a/input.json",
+            "sha256": "d1053c85c591f2e05fb603a9ac89b4fef74ca74e6e8a265148fdc6e125c6c800",
+            "target_root": "/var/lib/optiplex-lab",
+            "type": "file"
+          },
+          {
+            "bytes": 283,
+            "path": "capability-runs/cap_20260826T152558Z_1905833a/result.json",
+            "sha256": "2df86a1d253b167de9d475251dcf9d4dde1c8d06a04c87c5700bafb1bed4f1c1",
+            "target_root": "/var/lib/optiplex-lab",
+            "type": "file"
+          },
+          {
+            "bytes": 0,
+            "path": "capability-runs/cap_20260826T152558Z_1905833a/stderr.bin",
+            "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "target_root": "/var/lib/optiplex-lab",
+            "type": "file"
+          },
+          {
+            "bytes": 9,
+            "path": "capability-runs/cap_20260826T152558Z_1905833a/stdout.bin",
+            "sha256": "8df7c06ebf7159142bdbea51b309185b96c99879d0a62dd1d76513c24d3e3ab2",
+            "target_root": "/var/lib/optiplex-lab",
+            "type": "file"
+          },
+          {
+            "path": "capability-runs/cap_20260826T152559Z_19abf7c1",
+            "target_root": "/var/lib/optiplex-lab",
+            "type": "dir"
+          },
+          {
+            "bytes": 13,
+            "path": "capability-runs/cap_20260826T152559Z_19abf7c1/input.json",
+            "sha256": "80f87541849d64915ec472d59f03ddffbc6fceb5bc2fe6428a29b79b1aa0405f",
+            "target_root": "/var/lib/optiplex-lab",
+            "type": "file"
+          },
+          {
+            "bytes": 290,
+            "path": "capability-runs/cap_20260826T152559Z_19abf7c1/result.json",
+            "sha256": "6e94a8850dcfe0856116146c91ea2f76fa2ee88a3c8687a724f8d7fbed717bda",
+            "target_root": "/var/lib/optiplex-lab",
+            "type": "file"
+          },
+          {
+            "bytes": 0,
+            "path": "capability-runs/cap_20260826T152559Z_19abf7c1/stderr.bin",
+            "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "target_root": "/var/lib/optiplex-lab",
+            "type": "file"
+          },
+          {
+            "bytes": 15,
+            "path": "capability-runs/cap_20260826T152559Z_19abf7c1/stdout.bin",
+            "sha256": "6d5d430459e94f211a537bf6eb0e349cef55199d36a9fd3687dc5a766eb30c9c",
+            "target_root": "/var/lib/optiplex-lab",
+            "type": "file"
+          },
+          {
+            "path": "capability-runs/cap_20260826T152559Z_aef4797a",
+            "target_root": "/var/lib/optiplex-lab",
+            "type": "dir"
+          },
+          {
+            "bytes": 13,
+            "path": "capability-runs/cap_20260826T152559Z_aef4797a/input.json",
+            "sha256": "77bae1794e6aa5241672d68c652248ff1833c5f01ea4beb6f9b9179f8b711f9b",
+            "target_root": "/var/lib/optiplex-lab",
+            "type": "file"
+          },
+          {
+            "bytes": 291,
+            "path": "capability-runs/cap_20260826T152559Z_aef4797a/result.json",
+            "sha256": "12e674a59d73e8d6c3ae44334321ce8d3f86c7caf630c9f350a9c287d1666acd",
+            "target_root": "/var/lib/optiplex-lab",
+            "type": "file"
+          },
+          {
+            "bytes": 0,
+            "path": "capability-runs/cap_20260826T152559Z_aef4797a/stderr.bin",
+            "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "target_root": "/var/lib/optiplex-lab",
+            "type": "file"
+          },
+          {
+            "bytes": 16,
+            "path": "capability-runs/cap_20260826T152559Z_aef4797a/stdout.bin",
+            "sha256": "42bb1834f873a7e1b10f0e257e586455acf13a2ec33cd00e6f82955bbf8edaa5",
+            "target_root": "/var/lib/optiplex-lab",
+            "type": "file"
+          },
+          {
+            "path": "capability-runs/cap_20260826T152605Z_1efce13b",
+            "target_root": "/var/lib/optiplex-lab",
+            "type": "dir"
+          },
+          {
+            "bytes": 3,
+            "path": "capability-runs/cap_20260826T152605Z_1efce13b/input.json",
+            "sha256": "ca3d163bab055381827226140568f3bef7eaac187cebd76878e0b63e9e442356",
+            "target_root": "/var/lib/optiplex-lab",
+            "type": "file"
+          },
+          {
+            "bytes": 288,
+            "path": "capability-runs/cap_20260826T152605Z_1efce13b/result.json",
+            "sha256": "12a2d42106da6cb55fce3449de0a360eb3c1287ccb7889962bd67e484add23ad",
+            "target_root": "/var/lib/optiplex-lab",
+            "type": "file"
+          },
+          {
+            "path": "capability-runs/cap_20260826T152606Z_e3ab70cd",
+            "target_root": "/var/lib/optiplex-lab",
+            "type": "dir"
+          },
+          {
+            "bytes": 13,
+            "path": "capability-runs/cap_20260826T152606Z_e3ab70cd/input.json",
+            "sha256": "c5e1c113d5c75240d109ea470244fa988c5d9970f26bdbbb885876ae1da9d2d7",
+            "target_root": "/var/lib/optiplex-lab",
+            "type": "file"
+          },
+          {
+            "bytes": 288,
+            "path": "capability-runs/cap_20260826T152606Z_e3ab70cd/result.json",
+            "sha256": "d622a593d1f62d2e5a54ee95c13208bb64e7660fb25678f6af9e882658f3ab07",
+            "target_root": "/var/lib/optiplex-lab",
+            "type": "file"
+          },
+          {
+            "path": "capability-runs/cap_20260826T152609Z_6901721e",
+            "target_root": "/var/lib/optiplex-lab",
+            "type": "dir"
+          },
+          {
+            "bytes": 13,
+            "path": "capability-runs/cap_20260826T152609Z_6901721e/input.json",
+            "sha256": "c5e1c113d5c75240d109ea470244fa988c5d9970f26bdbbb885876ae1da9d2d7",
+            "target_root": "/var/lib/optiplex-lab",
+            "type": "file"
+          },
+          {
+            "bytes": 314,
+            "path": "capability-runs/cap_20260826T152609Z_6901721e/result.json",
+            "sha256": "f9986f50eaf70630897da56e2ebe19cc0aa91a945fe171d149c5a3de1e9e65ef",
+            "target_root": "/var/lib/optiplex-lab",
+            "type": "file"
+          },
+          {
+            "bytes": 0,
+            "path": "capability-runs/cap_20260826T152609Z_6901721e/stderr.bin",
+            "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "target_root": "/var/lib/optiplex-lab",
+            "type": "file"
+          },
+          {
+            "bytes": 5013,
+            "path": "capability-runs/cap_20260826T152609Z_6901721e/stdout.bin",
+            "sha256": "f532471ed6ccb4b57e2df7b07fa9f462ed75e54d5fff30b2a56d29540c9ecbe5",
+            "target_root": "/var/lib/optiplex-lab",
+            "type": "file"
+          },
+          {
+            "path": "capability-runs/cap_20260826T152609Z_be347b46",
+            "target_root": "/var/lib/optiplex-lab",
+            "type": "dir"
+          },
+          {
+            "bytes": 3,
+            "path": "capability-runs/cap_20260826T152609Z_be347b46/input.json",
+            "sha256": "ca3d163bab055381827226140568f3bef7eaac187cebd76878e0b63e9e442356",
+            "target_root": "/var/lib/optiplex-lab",
+            "type": "file"
+          },
+          {
+            "bytes": 314,
+            "path": "capability-runs/cap_20260826T152609Z_be347b46/result.json",
+            "sha256": "2fd4a85fd69b537197d31657dec899eae02052977068dd9b438eddc74bb09009",
+            "target_root": "/var/lib/optiplex-lab",
+            "type": "file"
+          },
+          {
+            "bytes": 0,
+            "path": "capability-runs/cap_20260826T152609Z_be347b46/stderr.bin",
+            "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "target_root": "/var/lib/optiplex-lab",
+            "type": "file"
+          },
+          {
+            "bytes": 5013,
+            "path": "capability-runs/cap_20260826T152609Z_be347b46/stdout.bin",
+            "sha256": "f532471ed6ccb4b57e2df7b07fa9f462ed75e54d5fff30b2a56d29540c9ecbe5",
+            "target_root": "/var/lib/optiplex-lab",
+            "type": "file"
+          },
+          {
+            "path": "capability-runs/cap_20260826T152610Z_fc13d9c2",
+            "target_root": "/var/lib/optiplex-lab",
+            "type": "dir"
+          },
+          {
+            "bytes": 15,
+            "path": "capability-runs/cap_20260826T152610Z_fc13d9c2/input.json",
+            "sha256": "28488fe913a8be374b00e107c1c55ecb4a83556ef39a8df90131e3f540f21b07",
+            "target_root": "/var/lib/optiplex-lab",
+            "type": "file"
+          },
+          {
+            "bytes": 286,
+            "path": "capability-runs/cap_20260826T152610Z_fc13d9c2/result.json",
+            "sha256": "e40e2a4d54dd3257d46be30e742946c97a823b8513ee88714dadc35878632b59",
+            "target_root": "/var/lib/optiplex-lab",
+            "type": "file"
+          },
+          {
+            "bytes": 0,
+            "path": "capability-runs/cap_20260826T152610Z_fc13d9c2/stderr.bin",
+            "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "target_root": "/var/lib/optiplex-lab",
+            "type": "file"
+          },
+          {
+            "bytes": 11,
+            "path": "capability-runs/cap_20260826T152610Z_fc13d9c2/stdout.bin",
+            "sha256": "a9c6ce6bf25d026d3952736d5b8e9da63290c8e53137660cf3cacde37119c70a",
+            "target_root": "/var/lib/optiplex-lab",
+            "type": "file"
+          },
+          {
+            "path": "capability-runs/cap_20260826T152611Z_b80d3212",
+            "target_root": "/var/lib/optiplex-lab",
+            "type": "dir"
+          },
+          {
+            "bytes": 41,
+            "path": "capability-runs/cap_20260826T152611Z_b80d3212/input.json",
+            "sha256": "19d8f0a782d74f7ae6e9770d310059112d98226151f054a7105c199d9eda7ff0",
+            "target_root": "/var/lib/optiplex-lab",
+            "type": "file"
+          },
+          {
+            "bytes": 312,
+            "path": "capability-runs/cap_20260826T152611Z_b80d3212/result.json",
+            "sha256": "f25452b96d8192b121dec8ea5b5853b05e58b1fc921070630b7a2374fe7a248f",
+            "target_root": "/var/lib/optiplex-lab",
+            "type": "file"
+          },
+          {
+            "bytes": 0,
+            "path": "capability-runs/cap_20260826T152611Z_b80d3212/stderr.bin",
+            "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "target_root": "/var/lib/optiplex-lab",
+            "type": "file"
+          },
+          {
+            "bytes": 25,
+            "path": "capability-runs/cap_20260826T152611Z_b80d3212/stdout.bin",
+            "sha256": "deb976632c084b68286a3517cf1e30a1d06c92fc048694793fb2c606606f4c10",
+            "target_root": "/var/lib/optiplex-lab",
+            "type": "file"
+          },
+          {
+            "path": "capability-runs/cap_20260826T152611Z_b89d788a",
+            "target_root": "/var/lib/optiplex-lab",
+            "type": "dir"
+          },
+          {
+            "bytes": 39,
+            "path": "capability-runs/cap_20260826T152611Z_b89d788a/input.json",
+            "sha256": "e885a3aafbbf8343f3f7682414487445ef91c0ebe43f27cb8c204e0fe1a1c5a1",
+            "target_root": "/var/lib/optiplex-lab",
+            "type": "file"
+          },
+          {
+            "bytes": 312,
+            "path": "capability-runs/cap_20260826T152611Z_b89d788a/result.json",
+            "sha256": "b3cec1f52a8c04d4fe132123b40aa4e593118d43090c02dca9a9988305b39c94",
+            "target_root": "/var/lib/optiplex-lab",
+            "type": "file"
+          },
+          {
+            "bytes": 0,
+            "path": "capability-runs/cap_20260826T152611Z_b89d788a/stderr.bin",
+            "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "target_root": "/var/lib/optiplex-lab",
+            "type": "file"
+          },
+          {
+            "bytes": 25,
+            "path": "capability-runs/cap_20260826T152611Z_b89d788a/stdout.bin",
+            "sha256": "46c8e98254cf597783e8279c65ec5c8a62dd0c09520a6bb9376060edc838aec7",
+            "target_root": "/var/lib/optiplex-lab",
+            "type": "file"
+          },
+          {
+            "path": "capability-runs/cap_20260826T152611Z_e0bf0efd",
+            "target_root": "/var/lib/optiplex-lab",
+            "type": "dir"
+          },
+          {
+            "bytes": 110,
+            "path": "capability-runs/cap_20260826T152611Z_e0bf0efd/input.json",
+            "sha256": "a007c507d334fc8ff5a5b5af7af4355a69e12b2a4f1e4e31b1573c6827d45d16",
+            "target_root": "/var/lib/optiplex-lab",
+            "type": "file"
+          },
+          {
+            "bytes": 332,
+            "path": "capability-runs/cap_20260826T152611Z_e0bf0efd/result.json",
+            "sha256": "de2961bebf4d90b16b6b8152a8c523141214b3c2542384c326666c9cc4619e64",
+            "target_root": "/var/lib/optiplex-lab",
+            "type": "file"
+          },
+          {
+            "bytes": 39,
+            "path": "capability-runs/cap_20260826T152611Z_e0bf0efd/stderr.bin",
+            "sha256": "6051215ddf37e566a99c38a2546771be2de83a0cb8d4b1412b9cc3060427dc92",
+            "target_root": "/var/lib/optiplex-lab",
+            "type": "file"
+          },
+          {
+            "bytes": 0,
+            "path": "capability-runs/cap_20260826T152611Z_e0bf0efd/stdout.bin",
+            "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "target_root": "/var/lib/optiplex-lab",
+            "type": "file"
+          },
+          {
+            "path": "capability-runs/cap_20260826T152612Z_4560fc19",
+            "target_root": "/var/lib/optiplex-lab",
+            "type": "dir"
+          },
+          {
+            "bytes": 43,
+            "path": "capability-runs/cap_20260826T152612Z_4560fc19/input.json",
+            "sha256": "255130c854dd25d7c30746a5149ff525f12b359bb29d3fecd998ec1263a01d7e",
+            "target_root": "/var/lib/optiplex-lab",
+            "type": "file"
+          },
+          {
+            "bytes": 314,
+            "path": "capability-runs/cap_20260826T152612Z_4560fc19/result.json",
+            "sha256": "6bdab718971513d2a75179ed8bbf77b4add483c0a295be6fecdff6e79f4a7716",
+            "target_root": "/var/lib/optiplex-lab",
+            "type": "file"
+          },
+          {
+            "bytes": 0,
+            "path": "capability-runs/cap_20260826T152612Z_4560fc19/stderr.bin",
+            "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "target_root": "/var/lib/optiplex-lab",
+            "type": "file"
+          },
+          {
+            "bytes": 27,
+            "path": "capability-runs/cap_20260826T152612Z_4560fc19/stdout.bin",
+            "sha256": "d0a3586af5f90f91dc3778b4e3ba1f02814199a08b4f09f3dcdeab7ead7ff007",
+            "target_root": "/var/lib/optiplex-lab",
+            "type": "file"
+          },
+          {
+            "path": "capability-runs/eval_20260826T152541Z_af016004",
+            "target_root": "/var/lib/optiplex-lab",
+            "type": "dir"
+          },
+          {
+            "bytes": 2446,
+            "path": "capability-runs/eval_20260826T152541Z_af016004/result.json",
+            "sha256": "6fc494253e6d92235dbbb67ebf5e0eb6cdf84272ace5b508f97ee3ada0d36b9d",
+            "target_root": "/var/lib/optiplex-lab",
+            "type": "file"
+          },
+          {
+            "path": "capability-runs/eval_20260826T152543Z_69e4aa0f",
+            "target_root": "/var/lib/optiplex-lab",
+            "type": "dir"
+          },
+          {
+            "bytes": 2148,
+            "path": "capability-runs/eval_20260826T152543Z_69e4aa0f/result.json",
+            "sha256": "da2b16e630fe4c9c9a3fc3b7d799175b19b9fc40493e9508d1b72aca97e2f2e9",
+            "target_root": "/var/lib/optiplex-lab",
+            "type": "file"
+          },
+          {
+            "path": "capability-runs/eval_20260826T152549Z_30a1c93b",
+            "target_root": "/var/lib/optiplex-lab",
+            "type": "dir"
+          },
+          {
+            "bytes": 2520,
+            "path": "capability-runs/eval_20260826T152549Z_30a1c93b/result.json",
+            "sha256": "31d98c625e63772017ad87c85f7bb15497c4b6a92e5edb2a33b5284109ccb0b0",
+            "target_root": "/var/lib/optiplex-lab",
+            "type": "file"
+          },
+          {
+            "path": "capability-runs/eval_20260826T152551Z_a46152c9",
+            "target_root": "/var/lib/optiplex-lab",
+            "type": "dir"
+          },
+          {
+            "bytes": 2180,
+            "path": "capability-runs/eval_20260826T152551Z_a46152c9/result.json",
+            "sha256": "3f9fb10cf7452580b7f524630233437b4deea8e1153c305482594c486b5146f4",
+            "target_root": "/var/lib/optiplex-lab",
+            "type": "file"
+          },
+          {
+            "path": "capability-runs/eval_20260826T152555Z_3926c384",
+            "target_root": "/var/lib/optiplex-lab",
+            "type": "dir"
+          },
+          {
+            "bytes": 2057,
+            "path": "capability-runs/eval_20260826T152555Z_3926c384/result.json",
+            "sha256": "842032897cd07033d169fcd3c745e7ce531f04718d2ef91cfa46d2c0e0692ecd",
+            "target_root": "/var/lib/optiplex-lab",
+            "type": "file"
+          },
+          {
+            "path": "capability-runs/eval_20260826T152557Z_7b51ef16",
+            "target_root": "/var/lib/optiplex-lab",
+            "type": "dir"
+          },
+          {
+            "bytes": 1223,
+            "path": "capability-runs/eval_20260826T152557Z_7b51ef16/result.json",
+            "sha256": "86111fe988eb92d674bad8bc3ce8297e24d1087a11dd4f1eec41a7452496c1a0",
+            "target_root": "/var/lib/optiplex-lab",
+            "type": "file"
+          },
+          {
+            "path": "capability-runs/eval_20260826T152559Z_ba3bfdff",
+            "target_root": "/var/lib/optiplex-lab",
+            "type": "dir"
+          },
+          {
+            "bytes": 2026,
+            "path": "capability-runs/eval_20260826T152559Z_ba3bfdff/result.json",
+            "sha256": "18ceb9fd8473da6d84068eaf073404faeab7e1efa2cb479e1f51744a478059c5",
+            "target_root": "/var/lib/optiplex-lab",
+            "type": "file"
+          },
+          {
+            "path": "capability-runs/eval_20260826T152600Z_60720197",
+            "target_root": "/var/lib/optiplex-lab",
+            "type": "dir"
+          },
+          {
+            "bytes": 1899,
+            "path": "capability-runs/eval_20260826T152600Z_60720197/result.json",
+            "sha256": "94059e59a3aa4dd7a61672d2dc7372f5ada27a78ec3d0ead949497e132a8d0eb",
+            "target_root": "/var/lib/optiplex-lab",
+            "type": "file"
+          },
+          {
+            "path": "capability-runs/eval_20260826T152605Z_38a9d946",
+            "target_root": "/var/lib/optiplex-lab",
+            "type": "dir"
+          },
+          {
+            "bytes": 1415,
+            "path": "capability-runs/eval_20260826T152605Z_38a9d946/result.json",
+            "sha256": "0142de5534426be547608711b649e0a477217d9fe27e8dbc088f0ed3d5388bd8",
+            "target_root": "/var/lib/optiplex-lab",
+            "type": "file"
+          },
+          {
+            "path": "capability-runs/eval_20260826T152608Z_d072103c",
+            "target_root": "/var/lib/optiplex-lab",
+            "type": "dir"
+          },
+          {
+            "bytes": 1768,
+            "path": "capability-runs/eval_20260826T152608Z_d072103c/result.json",
+            "sha256": "5833d1bb03474e63c243c9663288c30e1a38fd66b71fd01ccd362c5c08351b95",
+            "target_root": "/var/lib/optiplex-lab",
+            "type": "file"
+          },
+          {
+            "path": "capability-runs/eval_20260826T152610Z_e248734d",
+            "target_root": "/var/lib/optiplex-lab",
+            "type": "dir"
+          },
+          {
+            "bytes": 1800,
+            "path": "capability-runs/eval_20260826T152610Z_e248734d/result.json",
+            "sha256": "1a6ca952cdab577ce90b2be6090dc15d7863efdb8183108aab2043e62c80e7ab",
+            "target_root": "/var/lib/optiplex-lab",
+            "type": "file"
+          },
+          {
+            "path": "capability-runs/eval_20260826T152611Z_3334bdd0",
+            "target_root": "/var/lib/optiplex-lab",
+            "type": "dir"
+          },
+          {
+            "bytes": 2028,
+            "path": "capability-runs/eval_20260826T152611Z_3334bdd0/result.json",
+            "sha256": "d7de7b4381572a4b33db9a1977c682d163f9745ce0906ae0c20aff12bdc486e3",
+            "target_root": "/var/lib/optiplex-lab",
+            "type": "file"
+          },
+          {
+            "path": "code-runs",
+            "target_root": "/var/lib/optiplex-lab",
+            "type": "dir"
+          },
+          {
+            "path": "code-runs/cm_20260826T152612Z_45bfa8ef",
+            "target_root": "/var/lib/optiplex-lab",
+            "type": "dir"
+          },
+          {
+            "bytes": 0,
+            "path": "code-runs/cm_20260826T152612Z_45bfa8ef/invoke-a1.stderr",
+            "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "target_root": "/var/lib/optiplex-lab",
+            "type": "file"
+          },
+          {
+            "bytes": 314,
+            "path": "code-runs/cm_20260826T152612Z_45bfa8ef/invoke-a1.stdout",
+            "sha256": "6bdab718971513d2a75179ed8bbf77b4add483c0a295be6fecdff6e79f4a7716",
+            "target_root": "/var/lib/optiplex-lab",
+            "type": "file"
+          },
+          {
+            "bytes": 2637,
+            "path": "code-runs/cm_20260826T152612Z_45bfa8ef/result.json",
+            "sha256": "a1c2ebd08c887c572822e2d37b335a2de6a55284f2ccf2c120a91fb0a7a4bb7b",
+            "target_root": "/var/lib/optiplex-lab",
+            "type": "file"
+          },
+          {
+            "bytes": 1362,
+            "path": "code-runs/cm_20260826T152612Z_45bfa8ef/workflow.json",
+            "sha256": "98678c5df0ba1cab27ff64c1210865cfb9825d0bc4d1004f0486b171a0f1deac",
+            "target_root": "/var/lib/optiplex-lab",
+            "type": "file"
+          },
+          {
+            "path": "graph-runs",
+            "target_root": "/var/lib/optiplex-lab",
+            "type": "dir"
+          },
+          {
+            "path": "graph-runs/wg_20260826T152612Z_a5a4594a",
+            "target_root": "/var/lib/optiplex-lab",
+            "type": "dir"
+          },
+          {
+            "bytes": 928,
+            "path": "graph-runs/wg_20260826T152612Z_a5a4594a/graph.json",
+            "sha256": "78550a9741eea1c9e516e183d22b60e18bf7fbc48cd65cfec636b4dbeb8b53bc",
+            "target_root": "/var/lib/optiplex-lab",
+            "type": "file"
+          },
+          {
+            "bytes": 180,
+            "path": "graph-runs/wg_20260826T152612Z_a5a4594a/inputs.json",
+            "sha256": "1d782d2b75c490e012f63a1b6ef4755433b7176f46c532f6f905a7357b3c953b",
+            "target_root": "/var/lib/optiplex-lab",
+            "type": "file"
+          },
+          {
+            "bytes": 180,
+            "path": "graph-runs/wg_20260826T152612Z_a5a4594a/invoke-capability-attempt-1-params.json",
+            "sha256": "1d782d2b75c490e012f63a1b6ef4755433b7176f46c532f6f905a7357b3c953b",
+            "target_root": "/var/lib/optiplex-lab",
+            "type": "file"
+          },
+          {
+            "bytes": 4919,
+            "path": "graph-runs/wg_20260826T152612Z_a5a4594a/result.json",
+            "sha256": "955c220cb6c6a8791dc18cd6b534d265a0a0610eb03ee5a5b9eaf3c20a8aedbb",
+            "target_root": "/var/lib/optiplex-lab",
+            "type": "file"
+          },
+          {
+            "bytes": 6927,
+            "path": "graph-runs/wg_20260826T152612Z_a5a4594a/state.json",
+            "sha256": "e6dfac812c9ad68945abbb0b3d32655546fff21538c58759298c65735dc3a4fc",
+            "target_root": "/var/lib/optiplex-lab",
+            "type": "file"
+          },
+          {
+            "path": "traces",
+            "target_root": "/var/lib/optiplex-lab",
+            "type": "dir"
+          },
+          {
+            "bytes": 1623650,
+            "path": "traces/events.jsonl",
+            "sha256": "ebb2613221bc3c513858527c2269c61656b6abc8478fdcbe8d1d73f627c7f370",
+            "target_root": "/var/lib/optiplex-lab",
+            "type": "file"
+          },
+          {
+            "path": "workflow-runs",
+            "target_root": "/var/lib/optiplex-lab",
+            "type": "dir"
+          },
+          {
+            "path": "workflow-runs/ws_20260826T152612Z_c30c227b",
+            "target_root": "/var/lib/optiplex-lab",
+            "type": "dir"
+          },
+          {
+            "bytes": 1362,
+            "path": "workflow-runs/ws_20260826T152612Z_c30c227b/compiled-workflow.json",
+            "sha256": "98678c5df0ba1cab27ff64c1210865cfb9825d0bc4d1004f0486b171a0f1deac",
+            "target_root": "/var/lib/optiplex-lab",
+            "type": "file"
+          },
+          {
+            "path": ".cache",
+            "target_root": "/root",
+            "type": "dir"
+          },
+          {
+            "path": ".cache/pip",
+            "target_root": "/root",
+            "type": "dir"
+          },
+          {
+            "path": ".cache/pip/http",
+            "target_root": "/root",
+            "type": "dir"
+          },
+          {
+            "path": ".cache/pip/http/5",
+            "target_root": "/root",
+            "type": "dir"
+          },
+          {
+            "path": ".cache/pip/http/5/8",
+            "target_root": "/root",
+            "type": "dir"
+          },
+          {
+            "path": ".cache/pip/http/5/8/b",
+            "target_root": "/root",
+            "type": "dir"
+          },
+          {
+            "path": ".cache/pip/http/5/8/b/4",
+            "target_root": "/root",
+            "type": "dir"
+          },
+          {
+            "path": ".cache/pip/http/5/8/b/4/1",
+            "target_root": "/root",
+            "type": "dir"
+          },
+          {
+            "bytes": 115512,
+            "path": ".cache/pip/http/5/8/b/4/1/58b410685bb43591ca48dd0bf001f11d61faa2a5024d257837c73755",
+            "sha256": "dfb0b28135d1daadb25e670d81cc8e0c435770d3ae9fa18eb9e7c438cff57dab",
+            "target_root": "/root",
+            "type": "file"
+          },
+          {
+            "path": ".cache/pip/http/b",
+            "target_root": "/root",
+            "type": "dir"
+          },
+          {
+            "path": ".cache/pip/http/b/8",
+            "target_root": "/root",
+            "type": "dir"
+          },
+          {
+            "path": ".cache/pip/http/b/8/6",
+            "target_root": "/root",
+            "type": "dir"
+          },
+          {
+            "path": ".cache/pip/http/b/8/6/2",
+            "target_root": "/root",
+            "type": "dir"
+          },
+          {
+            "path": ".cache/pip/http/b/8/6/2/6",
+            "target_root": "/root",
+            "type": "dir"
+          },
+          {
+            "bytes": 58376,
+            "path": ".cache/pip/http/b/8/6/2/6/b862637a242a4033f1ba3be874e038f3a95ab29277da4c878f7c162d",
+            "sha256": "a33dfc888df0c52d36e0c5849610630630bfbebff76b1d8606d67090d4e0310e",
+            "target_root": "/root",
+            "type": "file"
+          },
+          {
+            "path": ".cache/pip/http/c",
+            "target_root": "/root",
+            "type": "dir"
+          },
+          {
+            "path": ".cache/pip/http/c/8",
+            "target_root": "/root",
+            "type": "dir"
+          },
+          {
+            "path": ".cache/pip/http/c/8/4",
+            "target_root": "/root",
+            "type": "dir"
+          },
+          {
+            "path": ".cache/pip/http/c/8/4/6",
+            "target_root": "/root",
+            "type": "dir"
+          },
+          {
+            "path": ".cache/pip/http/c/8/4/6/0",
+            "target_root": "/root",
+            "type": "dir"
+          },
+          {
+            "bytes": 28392,
+            "path": ".cache/pip/http/c/8/4/6/0/c84608549463ae90303a0f39c4b1e01a1717f15e0529931eee51391c",
+            "sha256": "bd169edbbf0ff01b5bd886d2aaaf170ca3767bd0000da7d8e8571f6dc3a14729",
+            "target_root": "/root",
+            "type": "file"
+          },
+          {
+            "path": "gen5",
+            "target_root": "/root",
+            "type": "dir"
+          },
+          {
+            "bytes": 180,
+            "path": "gen5/benchmark-capability-graph-params.json",
+            "sha256": "1d782d2b75c490e012f63a1b6ef4755433b7176f46c532f6f905a7357b3c953b",
+            "target_root": "/root",
+            "type": "file"
+          }
+        ]
+      },
+      "result": {
+        "accepted_state_unchanged": true,
+        "allowed_outer_audit_appends": [
+          {
+            "after_sha256": "26ab404dfe32102c0cacd0dc4cdfcdb4da0f4e6b99257a5454e5f3ca5ab07016",
+            "before_sha256": "4a95203f938650e55028f51b5a6854da91541d3311d59360dbd0a48f2468d4ba",
+            "bytes_appended": 374,
+            "kind": "append_only_outer_audit",
+            "path": "/var/lib/optiplex-lab/traces/events.jsonl"
+          }
+        ],
+        "capsule_mutation_digest": "6b958b5f00bb4ce13144406b3d09e1c20de905e4c113727668bd1ea0c2b8c301",
+        "capsule_mutation_records": 189,
+        "captured_artifacts": [
+          {
+            "bytes": 18263,
+            "export_path": "/var/tmp/optiplex-lab-capsules/cap8_20260826T152539Z_a2d9178c/export/captures/var/lib/optiplex-lab/benchmarks/gen5-capability-forge-benchmark.json",
+            "path": "/var/lib/optiplex-lab/benchmarks/gen5-capability-forge-benchmark.json",
+            "sha256": "cdfc36449f0f3bd7b0d4a47bf14f411fb5343a0e21b1bddc612f88e1277955ae"
+          }
+        ],
+        "child_exit_code": 0,
+        "duration_ms": 32116.191,
+        "forbidden_accepted_state_mutations": [],
+        "label": "retained-gen5-known-leak-rerun",
+        "manifest": "/var/tmp/optiplex-lab-capsules/cap8_20260826T152539Z_a2d9178c/manifest.json",
+        "namespace_stderr": "",
+        "namespace_stdout": "",
+        "ok": true,
+        "protected_after_digest": "c185fb1bd81c05fcfada46866f3c4a4ea7b82bacde62cb15a4ecb0000f0184b1",
+        "protected_before_digest": "6dfe0e1beab105f1885fb9a5c9b26dc3938e7e0847affd82c2c58c468093956b",
+        "recipe_digest": "75d1ec334dd5e86b4db9c4ee4f5b1066cb168a361705f647295612c4d4e58944",
+        "result_digest": "b2403570c6a92f33acc3728a264159aa0359df94eb7349306e9da9756af459d6",
+        "run_dir": "/var/tmp/optiplex-lab-capsules/cap8_20260826T152539Z_a2d9178c",
+        "run_id": "cap8_20260826T152539Z_a2d9178c",
+        "stderr": {
+          "bytes": 0,
+          "path": "/var/tmp/optiplex-lab-capsules/cap8_20260826T152539Z_a2d9178c/export/stderr.log",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "stdout": {
+          "bytes": 18439,
+          "path": "/var/tmp/optiplex-lab-capsules/cap8_20260826T152539Z_a2d9178c/export/stdout.log",
+          "sha256": "8f7757162f0910aa8bff3d35564674fc895341a9ad74f7b2e020acaa75111a7d"
+        },
+        "version": "gen8-experiment-capsule-r1"
+      }
+    },
+    "cap8_20260826T160908Z_a0fba037": {
+      "manifest": {
+        "captures": [
+          "/var/lib/optiplex-lab/benchmarks/gen4-workflow-graph-benchmark.json"
+        ],
+        "command": "/opt/optiplex-lab/venv/bin/python /opt/optiplex-lab/bench/benchmark_gen4.py",
+        "created_at": "2026-08-26T16:09:10.242696+00:00",
+        "empty_paths": [],
+        "isolation": {
+          "mount_namespace": true,
+          "overlayfs": true,
+          "pid_namespace": true,
+          "private_run": true,
+          "private_tmp": true,
+          "service_manager_virtualized": true
+        },
+        "label": "retained-gen4-absolute-build",
+        "overlay_targets": [
+          "/opt/optiplex-lab",
+          "/etc/optiplex-lab",
+          "/etc/systemd/system",
+          "/var/lib/optiplex-lab",
+          "/root"
+        ],
+        "protected_before_digest": "634e1f3968e54ee7ee202a3d9d94166806efbd5e9047768c38b8c09fc38314cb",
+        "recipe_digest": "7e6c3e877a27e73abe1304b9cbe53ae5e45d6bc5cb85f0c02593327e8ab11822",
+        "run_id": "cap8_20260826T160908Z_a0fba037",
+        "schema_version": 1,
+        "source_inputs": [
+          {
+            "path": "/opt/optiplex-lab",
+            "tree_digest": "44fb8a396472e175831ff80d52c93e329e858e8f3092b37618e8924a62dcc1cd"
+          },
+          {
+            "path": "/etc/optiplex-lab",
+            "tree_digest": "ed4eaf9def409c78daa69c3455bc6ed827e23c0956efc5d54d9bf8b793c794f2"
+          },
+          {
+            "path": "/etc/systemd/system",
+            "tree_digest": "d8d7606b6f5cc9abae38f55901a088e68f0cca6e30e1aa9e344c1f851eae6b69"
+          },
+          {
+            "path": "/var/lib/optiplex-lab",
+            "tree_digest": "7bd6c901b30ce9003c6eebd6a66b12a8159420ccc6da8ccec2f74ee1e14c4fe2"
+          },
+          {
+            "path": "/root",
+            "tree_digest": "097b1f72fd2f4938b7d43cf245931a542a05b7d06736807b0d975f59b97841b7"
+          }
+        ],
+        "version": "gen8-experiment-capsule-r1",
+        "wrapper_instance_sha256": "37c4b5f0a44a7215c427ff747fc219dd9d58f8aaa86e10e7fe809714778634b8",
+        "wrapper_sha256": "e9b1e1c071783ff76d2f2f17312669bc4a0b42761bfad07bddf99c85ee17194b"
+      },
+      "mutation_manifest": {
+        "digest": "a80c04b445762332b816327bbf3ff43fc12703821ab1c3d01e4814f3b1c98650",
+        "records": [
+          {
+            "path": "__pycache__",
+            "target_root": "/opt/optiplex-lab",
+            "type": "dir"
+          },
+          {
+            "bytes": 19651,
+            "path": "__pycache__/server.cpython-310.pyc",
+            "sha256": "168e6453e37956ad890242548a87acdbdc9f5880b50d7d1fa37044db409f7cd2",
+            "target_root": "/opt/optiplex-lab",
+            "type": "file"
+          },
+          {
+            "bytes": 21231,
+            "path": "server.py",
+            "sha256": "dc0d2cb41595a9a3d953873879ccc3e0bd88db2b4dcdee4cf8aa43dd4cb103e9",
+            "target_root": "/opt/optiplex-lab",
+            "type": "file"
+          },
+          {
+            "bytes": 469,
+            "path": "build.json",
+            "sha256": "9a3667df27583ffbc4be7972c2cc27afdfe70000c47ef1993f6385c12499e325",
+            "target_root": "/etc/optiplex-lab",
+            "type": "file"
+          },
+          {
+            "path": "benchmarks",
+            "target_root": "/var/lib/optiplex-lab",
+            "type": "dir"
+          },
+          {
+            "bytes": 9550,
+            "path": "benchmarks/gen4-workflow-graph-benchmark.json",
+            "sha256": "14716230aab3a90f6d9920b00c9c9a6780b1612bf888b0fa63dbbbf04415ee8f",
+            "target_root": "/var/lib/optiplex-lab",
+            "type": "file"
+          },
+          {
+            "path": "code-runs",
+            "target_root": "/var/lib/optiplex-lab",
+            "type": "dir"
+          },
+          {
+            "path": "code-runs/cm_20260826T160910Z_122c9dc7",
+            "target_root": "/var/lib/optiplex-lab",
+            "type": "dir"
+          },
+          {
+            "bytes": 2,
+            "path": "code-runs/cm_20260826T160910Z_122c9dc7/edit.backup",
+            "sha256": "13b30eab8afdfab285103004686b2e6140ce53aa45a4f917341c740dfdb6e956",
+            "target_root": "/var/lib/optiplex-lab",
+            "type": "file"
+          },
+          {
+            "bytes": 120,
+            "path": "code-runs/cm_20260826T160910Z_122c9dc7/edit.diff",
+            "sha256": "80a179fce9ae34bf21ab58390d3d54bbbeb68e5ee17f35a1e3a35fe38a05b102",
+            "target_root": "/var/lib/optiplex-lab",
+            "type": "file"
+          },
+          {
+            "bytes": 2266,
+            "path": "code-runs/cm_20260826T160910Z_122c9dc7/result.json",
+            "sha256": "c5d4fa11472b53e35ffec8957f560b2ffe35d7de24315ce2e44da92fa427b8e0",
+            "target_root": "/var/lib/optiplex-lab",
+            "type": "file"
+          },
+          {
+            "bytes": 1027,
+            "path": "code-runs/cm_20260826T160910Z_122c9dc7/workflow.json",
+            "sha256": "9cb19a8f1da5c09411d04cd33d5aee3da2db73ea0cdd76100edaac0eae09e489",
+            "target_root": "/var/lib/optiplex-lab",
+            "type": "file"
+          },
+          {
+            "path": "code-runs/cm_20260826T160910Z_14166b55",
+            "target_root": "/var/lib/optiplex-lab",
+            "type": "dir"
+          },
+          {
+            "bytes": 1587,
+            "path": "code-runs/cm_20260826T160910Z_14166b55/result.json",
+            "sha256": "633e75d25b4a0f72e6a3b7b1af5c5e0e6297f81460d59120233484f9fa9e5b58",
+            "target_root": "/var/lib/optiplex-lab",
+            "type": "file"
+          },
+          {
+            "bytes": 1000,
+            "path": "code-runs/cm_20260826T160910Z_14166b55/workflow.json",
+            "sha256": "062c4a25efc7229f5140214481e2db38dcd357991c16ccfb4a23e6ea2710f84c",
+            "target_root": "/var/lib/optiplex-lab",
+            "type": "file"
+          },
+          {
+            "path": "code-runs/cm_20260826T160910Z_3983c2ff",
+            "target_root": "/var/lib/optiplex-lab",
+            "type": "dir"
+          },
+          {
+            "bytes": 0,
+            "path": "code-runs/cm_20260826T160910Z_3983c2ff/accepted-build-a1.stderr",
+            "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "target_root": "/var/lib/optiplex-lab",
+            "type": "file"
+          },
+          {
+            "bytes": 83,
+            "path": "code-runs/cm_20260826T160910Z_3983c2ff/accepted-build-a1.stdout",
+            "sha256": "946cb2c930c1a52921f6158f21917141126add74a6c8a0b7c20a57de38266fbf",
+            "target_root": "/var/lib/optiplex-lab",
+            "type": "file"
+          },
+          {
+            "bytes": 0,
+            "path": "code-runs/cm_20260826T160910Z_3983c2ff/code-mode-a1.stderr",
+            "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "target_root": "/var/lib/optiplex-lab",
+            "type": "file"
+          },
+          {
+            "bytes": 424,
+            "path": "code-runs/cm_20260826T160910Z_3983c2ff/code-mode-a1.stdout",
+            "sha256": "6b6bf18c9c0d175e1144fb2d7223b19c1b639fdbaf4928c68eb1b20caadf27a6",
+            "target_root": "/var/lib/optiplex-lab",
+            "type": "file"
+          },
+          {
+            "bytes": 0,
+            "path": "code-runs/cm_20260826T160910Z_3983c2ff/containment-a1.stderr",
+            "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "target_root": "/var/lib/optiplex-lab",
+            "type": "file"
+          },
+          {
+            "bytes": 15,
+            "path": "code-runs/cm_20260826T160910Z_3983c2ff/containment-a1.stdout",
+            "sha256": "7774787d23e258d6516a9dbd2e7d120e7769643208932e3832703fa178d33c58",
+            "target_root": "/var/lib/optiplex-lab",
+            "type": "file"
+          },
+          {
+            "bytes": 0,
+            "path": "code-runs/cm_20260826T160910Z_3983c2ff/lkg-a1.stderr",
+            "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "target_root": "/var/lib/optiplex-lab",
+            "type": "file"
+          },
+          {
+            "bytes": 0,
+            "path": "code-runs/cm_20260826T160910Z_3983c2ff/lkg-a1.stdout",
+            "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "target_root": "/var/lib/optiplex-lab",
+            "type": "file"
+          },
+          {
+            "bytes": 9749,
+            "path": "code-runs/cm_20260826T160910Z_3983c2ff/result.json",
+            "sha256": "798b1a745c340fb6a90d84fcd6104ab9da34993c72429f866e326b55f4077bb8",
+            "target_root": "/var/lib/optiplex-lab",
+            "type": "file"
+          },
+          {
+            "bytes": 0,
+            "path": "code-runs/cm_20260826T160910Z_3983c2ff/selftest-a1.stderr",
+            "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "target_root": "/var/lib/optiplex-lab",
+            "type": "file"
+          },
+          {
+            "bytes": 2075,
+            "path": "code-runs/cm_20260826T160910Z_3983c2ff/selftest-a1.stdout",
+            "sha256": "65bd79853b162f232346a314cb5d9d815b5d5bbf7842eb9f3d1a1b8141e6576b",
+            "target_root": "/var/lib/optiplex-lab",
+            "type": "file"
+          },
+          {
+            "bytes": 0,
+            "path": "code-runs/cm_20260826T160910Z_3983c2ff/workflow-graphs-a1.stderr",
+            "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "target_root": "/var/lib/optiplex-lab",
+            "type": "file"
+          },
+          {
+            "bytes": 637,
+            "path": "code-runs/cm_20260826T160910Z_3983c2ff/workflow-graphs-a1.stdout",
+            "sha256": "398f3d280d5c2ae5c21068ecb75510440b5ff683e123a900a5ea285818483334",
+            "target_root": "/var/lib/optiplex-lab",
+            "type": "file"
+          },
+          {
+            "bytes": 0,
+            "path": "code-runs/cm_20260826T160910Z_3983c2ff/workflow-skills-a1.stderr",
+            "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "target_root": "/var/lib/optiplex-lab",
+            "type": "file"
+          },
+          {
+            "bytes": 354,
+            "path": "code-runs/cm_20260826T160910Z_3983c2ff/workflow-skills-a1.stdout",
+            "sha256": "a526d648fc8b545efcaa1f2adab4e6c98bbbfcc44893553d5e2edab245f726bb",
+            "target_root": "/var/lib/optiplex-lab",
+            "type": "file"
+          },
+          {
+            "bytes": 2442,
+            "path": "code-runs/cm_20260826T160910Z_3983c2ff/workflow.json",
+            "sha256": "53fd23727e1ba3be4094d6ecd8502c2de33d878de91dba9dbfce3de39a13af3d",
+            "target_root": "/var/lib/optiplex-lab",
+            "type": "file"
+          },
+          {
+            "path": "code-runs/cm_20260826T160910Z_9c6deed3",
+            "target_root": "/var/lib/optiplex-lab",
+            "type": "dir"
+          },
+          {
+            "bytes": 2,
+            "path": "code-runs/cm_20260826T160910Z_9c6deed3/edit.backup",
+            "sha256": "06f961b802bc46ee168555f066d28f4f0e9afdf3f88174c1ee6f9de004fc30a0",
+            "target_root": "/var/lib/optiplex-lab",
+            "type": "file"
+          },
+          {
+            "bytes": 94,
+            "path": "code-runs/cm_20260826T160910Z_9c6deed3/edit.diff",
+            "sha256": "fd5f2f338cb3379eb00fca1ed259b9af6cb0e1e3f3629c516437ba4a3a04991d",
+            "target_root": "/var/lib/optiplex-lab",
+            "type": "file"
+          },
+          {
+            "bytes": 2195,
+            "path": "code-runs/cm_20260826T160910Z_9c6deed3/result.json",
+            "sha256": "e45df49f9e95fc39cca5d560a67636ea7a997887a6f83880d6c439790dde8d06",
+            "target_root": "/var/lib/optiplex-lab",
+            "type": "file"
+          },
+          {
+            "bytes": 976,
+            "path": "code-runs/cm_20260826T160910Z_9c6deed3/workflow.json",
+            "sha256": "d95761dafe9507615c2a9c580e91611da2b0a79c28cd498bb8117e01eb361db8",
+            "target_root": "/var/lib/optiplex-lab",
+            "type": "file"
+          },
+          {
+            "path": "code-runs/cm_20260826T160910Z_b1276552",
+            "target_root": "/var/lib/optiplex-lab",
+            "type": "dir"
+          },
+          {
+            "bytes": 10,
+            "path": "code-runs/cm_20260826T160910Z_b1276552/edit.backup",
+            "sha256": "94ca9e919a442acdd8462987cccf2626f4179628aa12006d19f6d6eb554f5223",
+            "target_root": "/var/lib/optiplex-lab",
+            "type": "file"
+          },
+          {
+            "bytes": 110,
+            "path": "code-runs/cm_20260826T160910Z_b1276552/edit.diff",
+            "sha256": "4b653fd1f8712ee9af753797479226d6a092f21fd1ecc89f0a2424beedd0f2d1",
+            "target_root": "/var/lib/optiplex-lab",
+            "type": "file"
+          },
+          {
+            "bytes": 2227,
+            "path": "code-runs/cm_20260826T160910Z_b1276552/result.json",
+            "sha256": "1a24ffaca7f1ad6a3f6a4ce33385b57f6b0549ace85aa3302c74edee047afb0f",
+            "target_root": "/var/lib/optiplex-lab",
+            "type": "file"
+          },
+          {
+            "bytes": 1016,
+            "path": "code-runs/cm_20260826T160910Z_b1276552/workflow.json",
+            "sha256": "6b2488044719d43400a3605a138a33f913c5a08a856c179bec0408e43ae064ff",
+            "target_root": "/var/lib/optiplex-lab",
+            "type": "file"
+          },
+          {
+            "path": "code-runs/cm_20260826T160910Z_b3176b7c",
+            "target_root": "/var/lib/optiplex-lab",
+            "type": "dir"
+          },
+          {
+            "bytes": 2,
+            "path": "code-runs/cm_20260826T160910Z_b3176b7c/edit.backup",
+            "sha256": "c0cde77fa8fef97d476c10aad3d2d54fcc2f336140d073651c2dcccf1e379fd6",
+            "target_root": "/var/lib/optiplex-lab",
+            "type": "file"
+          },
+          {
+            "bytes": 90,
+            "path": "code-runs/cm_20260826T160910Z_b3176b7c/edit.diff",
+            "sha256": "49724b3a2c7d99c7aa2d418e96c2d4653459ed25b576381802f869ece41d5617",
+            "target_root": "/var/lib/optiplex-lab",
+            "type": "file"
+          },
+          {
+            "bytes": 2183,
+            "path": "code-runs/cm_20260826T160910Z_b3176b7c/result.json",
+            "sha256": "cf0c44fc9ca137898c94ac0866d171ed1e8e526dc7ec5c2aeb08ccb3e954d9ab",
+            "target_root": "/var/lib/optiplex-lab",
+            "type": "file"
+          },
+          {
+            "bytes": 970,
+            "path": "code-runs/cm_20260826T160910Z_b3176b7c/workflow.json",
+            "sha256": "b21705b5789d04309a457c82e0128269354aac5c59604ec9177548232cf2061d",
+            "target_root": "/var/lib/optiplex-lab",
+            "type": "file"
+          },
+          {
+            "path": "code-runs/cm_20260826T160910Z_dad6e4da",
+            "target_root": "/var/lib/optiplex-lab",
+            "type": "dir"
+          },
+          {
+            "bytes": 1581,
+            "path": "code-runs/cm_20260826T160910Z_dad6e4da/result.json",
+            "sha256": "32281d56d6dddf1bf112957f909b5520edda1c5865321d3a20d2392a474c030c",
+            "target_root": "/var/lib/optiplex-lab",
+            "type": "file"
+          },
+          {
+            "bytes": 979,
+            "path": "code-runs/cm_20260826T160910Z_dad6e4da/workflow.json",
+            "sha256": "a0a937092701febc25de18bb753e0dbb166ee533039ca569936f29669129b185",
+            "target_root": "/var/lib/optiplex-lab",
+            "type": "file"
+          },
+          {
+            "path": "code-runs/cm_20260826T160910Z_f231dfa8",
+            "target_root": "/var/lib/optiplex-lab",
+            "type": "dir"
+          },
+          {
+            "bytes": 700,
+            "path": "code-runs/cm_20260826T160910Z_f231dfa8/edit.backup",
+            "sha256": "7fb638fe6a8de3603d5fe85dcec0f41371f4bb55a21964244cd96e1b7466fce3",
+            "target_root": "/var/lib/optiplex-lab",
+            "type": "file"
+          },
+          {
+            "bytes": 1494,
+            "path": "code-runs/cm_20260826T160910Z_f231dfa8/edit.diff",
+            "sha256": "4c42041617c2dd44b95132bbce2d45cd9d6e328566880c991ccef169fbc2ef2f",
+            "target_root": "/var/lib/optiplex-lab",
+            "type": "file"
+          },
+          {
+            "bytes": 4704,
+            "path": "code-runs/cm_20260826T160910Z_f231dfa8/result.json",
+            "sha256": "09b1230a54adf21e60013bd916f5de594772aa9bac0d8b695278ab66b4e7532b",
+            "target_root": "/var/lib/optiplex-lab",
+            "type": "file"
+          },
+          {
+            "bytes": 4477,
+            "path": "code-runs/cm_20260826T160910Z_f231dfa8/workflow.json",
+            "sha256": "862df86b71479e60db8523d2fb143e12ff12e89def5439d76398f2ef8a7eb677",
+            "target_root": "/var/lib/optiplex-lab",
+            "type": "file"
+          },
+          {
+            "path": "code-runs/cm_20260826T160910Z_f9257f2e",
+            "target_root": "/var/lib/optiplex-lab",
+            "type": "dir"
+          },
+          {
+            "bytes": 2,
+            "path": "code-runs/cm_20260826T160910Z_f9257f2e/edit.backup",
+            "sha256": "06f961b802bc46ee168555f066d28f4f0e9afdf3f88174c1ee6f9de004fc30a0",
+            "target_root": "/var/lib/optiplex-lab",
+            "type": "file"
+          },
+          {
+            "bytes": 90,
+            "path": "code-runs/cm_20260826T160910Z_f9257f2e/edit.diff",
+            "sha256": "c1101df280dc591d49777af2a1a17d9be6f844242e201b9128b4d28f76530255",
+            "target_root": "/var/lib/optiplex-lab",
+            "type": "file"
+          },
+          {
+            "bytes": 2183,
+            "path": "code-runs/cm_20260826T160910Z_f9257f2e/result.json",
+            "sha256": "c977026e14fd9423d2e9a59621e4b0555a74403d9594a224478b8b4dd1823bba",
+            "target_root": "/var/lib/optiplex-lab",
+            "type": "file"
+          },
+          {
+            "bytes": 970,
+            "path": "code-runs/cm_20260826T160910Z_f9257f2e/workflow.json",
+            "sha256": "a5dd763fd0f6b3c4348c6b37b57b4e4df578411b40e45fd3c9ba0468f22e2124",
+            "target_root": "/var/lib/optiplex-lab",
+            "type": "file"
+          },
+          {
+            "path": "code-runs/cm_20260826T160912Z_6da11025",
+            "target_root": "/var/lib/optiplex-lab",
+            "type": "dir"
+          },
+          {
+            "bytes": 775,
+            "path": "code-runs/cm_20260826T160912Z_6da11025/result.json",
+            "sha256": "4417525868c7b96402e8f589bf59f9bb5fd200b1bc055c876f27f257f98eef50",
+            "target_root": "/var/lib/optiplex-lab",
+            "type": "file"
+          },
+          {
+            "bytes": 181,
+            "path": "code-runs/cm_20260826T160912Z_6da11025/workflow.json",
+            "sha256": "ee35d20979fea280d4bdd36e31e77417c5a5d6bf233bc5660c8899ecd06156c3",
+            "target_root": "/var/lib/optiplex-lab",
+            "type": "file"
+          },
+          {
+            "path": "code-runs/cm_20260826T160912Z_712627d1",
+            "target_root": "/var/lib/optiplex-lab",
+            "type": "dir"
+          },
+          {
+            "bytes": 0,
+            "path": "code-runs/cm_20260826T160912Z_712627d1/patch.git-after.diff",
+            "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "target_root": "/var/lib/optiplex-lab",
+            "type": "file"
+          },
+          {
+            "bytes": 0,
+            "path": "code-runs/cm_20260826T160912Z_712627d1/patch.git-before.diff",
+            "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "target_root": "/var/lib/optiplex-lab",
+            "type": "file"
+          },
+          {
+            "bytes": 103,
+            "path": "code-runs/cm_20260826T160912Z_712627d1/patch.patch",
+            "sha256": "ae4371ded32e97e6517b08d5ea2d4f8bc467acd153ff27c91aed4f67282c1381",
+            "target_root": "/var/lib/optiplex-lab",
+            "type": "file"
+          },
+          {
+            "bytes": 972,
+            "path": "code-runs/cm_20260826T160912Z_712627d1/result.json",
+            "sha256": "0332a3b87b6289f70db876a20d1e1ac6de4f767a7cf5e8baed5c602178d671a2",
+            "target_root": "/var/lib/optiplex-lab",
+            "type": "file"
+          },
+          {
+            "bytes": 278,
+            "path": "code-runs/cm_20260826T160912Z_712627d1/workflow.json",
+            "sha256": "c99848bd206351b0bfb941b814c3eb259fb4c3846f0f08114c1885cc5e33d97b",
+            "target_root": "/var/lib/optiplex-lab",
+            "type": "file"
+          },
+          {
+            "path": "code-runs/cm_20260826T160912Z_734a2c79",
+            "target_root": "/var/lib/optiplex-lab",
+            "type": "dir"
+          },
+          {
+            "bytes": 11,
+            "path": "code-runs/cm_20260826T160912Z_734a2c79/replace.backup",
+            "sha256": "e49c81e2d2f84e259d40e2fb8192f3bcd198b355184845d76d8f58807d0d78ee",
+            "target_root": "/var/lib/optiplex-lab",
+            "type": "file"
+          },
+          {
+            "bytes": 113,
+            "path": "code-runs/cm_20260826T160912Z_734a2c79/replace.diff",
+            "sha256": "357d54f210f43676291dfb5a8afb196ce0597edae99a01c5170b5a4878d69a77",
+            "target_root": "/var/lib/optiplex-lab",
+            "type": "file"
+          },
+          {
+            "bytes": 2711,
+            "path": "code-runs/cm_20260826T160912Z_734a2c79/result.json",
+            "sha256": "1e9aa8ce9f41cdf88bbeff6cf453bd7221551d52ee12b3846ab920e124fb9b90",
+            "target_root": "/var/lib/optiplex-lab",
+            "type": "file"
+          },
+          {
+            "bytes": 0,
+            "path": "code-runs/cm_20260826T160912Z_734a2c79/retry-a1.stderr",
+            "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "target_root": "/var/lib/optiplex-lab",
+            "type": "file"
+          },
+          {
+            "bytes": 0,
+            "path": "code-runs/cm_20260826T160912Z_734a2c79/retry-a1.stdout",
+            "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "target_root": "/var/lib/optiplex-lab",
+            "type": "file"
+          },
+          {
+            "bytes": 0,
+            "path": "code-runs/cm_20260826T160912Z_734a2c79/retry-a2.stderr",
+            "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "target_root": "/var/lib/optiplex-lab",
+            "type": "file"
+          },
+          {
+            "bytes": 0,
+            "path": "code-runs/cm_20260826T160912Z_734a2c79/retry-a2.stdout",
+            "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "target_root": "/var/lib/optiplex-lab",
+            "type": "file"
+          },
+          {
+            "bytes": 482,
+            "path": "code-runs/cm_20260826T160912Z_734a2c79/workflow.json",
+            "sha256": "127d606852e008d062fc7df6e7efc37cd5987b8dc2f62702e8d51f58bfe67da1",
+            "target_root": "/var/lib/optiplex-lab",
+            "type": "file"
+          },
+          {
+            "path": "code-runs/cm_20260826T160912Z_9819d94d",
+            "target_root": "/var/lib/optiplex-lab",
+            "type": "dir"
+          },
+          {
+            "bytes": 0,
+            "path": "code-runs/cm_20260826T160912Z_9819d94d/large-a1.stderr",
+            "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "target_root": "/var/lib/optiplex-lab",
+            "type": "file"
+          },
+          {
+            "bytes": 200001,
+            "path": "code-runs/cm_20260826T160912Z_9819d94d/large-a1.stdout",
+            "sha256": "d768026d20a97801841892ce5a1171b1689f34cfd7524f882a94436e5f349cc9",
+            "target_root": "/var/lib/optiplex-lab",
+            "type": "file"
+          },
+          {
+            "bytes": 2553,
+            "path": "code-runs/cm_20260826T160912Z_9819d94d/result.json",
+            "sha256": "2975c1f329a662e181623a9f1ca6f291f1f2364b2d71172d7f239780e0ac416a",
+            "target_root": "/var/lib/optiplex-lab",
+            "type": "file"
+          },
+          {
+            "bytes": 148,
+            "path": "code-runs/cm_20260826T160912Z_9819d94d/workflow.json",
+            "sha256": "59b57106bed6a8088c7fea8ada62748ea55c77726ca26835013fc0c579025cb1",
+            "target_root": "/var/lib/optiplex-lab",
+            "type": "file"
+          },
+          {
+            "path": "code-runs/cm_20260826T160913Z_2a04928c",
+            "target_root": "/var/lib/optiplex-lab",
+            "type": "dir"
+          },
+          {
+            "bytes": 0,
+            "path": "code-runs/cm_20260826T160913Z_2a04928c/argv-a1.stderr",
+            "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "target_root": "/var/lib/optiplex-lab",
+            "type": "file"
+          },
+          {
+            "bytes": 0,
+            "path": "code-runs/cm_20260826T160913Z_2a04928c/argv-a1.stdout",
+            "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "target_root": "/var/lib/optiplex-lab",
+            "type": "file"
+          },
+          {
+            "bytes": 4,
+            "path": "code-runs/cm_20260826T160913Z_2a04928c/edit.backup",
+            "sha256": "01d09d19c2139a46aebfb577780d123d7396e97201bc7ead210a2ebff8239dee",
+            "target_root": "/var/lib/optiplex-lab",
+            "type": "file"
+          },
+          {
+            "bytes": 112,
+            "path": "code-runs/cm_20260826T160913Z_2a04928c/edit.diff",
+            "sha256": "2e59241136448b1ebb5c5698224acc478ea113080e3a590b406a0d1218a171d6",
+            "target_root": "/var/lib/optiplex-lab",
+            "type": "file"
+          },
+          {
+            "bytes": 2556,
+            "path": "code-runs/cm_20260826T160913Z_2a04928c/result.json",
+            "sha256": "f3d0f39c713fc423afeb78879a1fd2393212c2d781884463c3a88e4eafb79b94",
+            "target_root": "/var/lib/optiplex-lab",
+            "type": "file"
+          },
+          {
+            "bytes": 912,
+            "path": "code-runs/cm_20260826T160913Z_2a04928c/workflow.json",
+            "sha256": "45bf204a9182362baf34e8bf2e34353fabd2a57ec8803354bf0cb4d306bd11fc",
+            "target_root": "/var/lib/optiplex-lab",
+            "type": "file"
+          },
+          {
+            "path": "code-runs/cm_20260826T160913Z_35f33130",
+            "target_root": "/var/lib/optiplex-lab",
+            "type": "dir"
+          },
+          {
+            "bytes": 0,
+            "path": "code-runs/cm_20260826T160913Z_35f33130/argv-a1.stderr",
+            "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "target_root": "/var/lib/optiplex-lab",
+            "type": "file"
+          },
+          {
+            "bytes": 0,
+            "path": "code-runs/cm_20260826T160913Z_35f33130/argv-a1.stdout",
+            "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "target_root": "/var/lib/optiplex-lab",
+            "type": "file"
+          },
+          {
+            "bytes": 1328,
+            "path": "code-runs/cm_20260826T160913Z_35f33130/result.json",
+            "sha256": "493479147b5a73a20c09d5db73d5965170cdcc3014aead9060ebc1ae0befad00",
+            "target_root": "/var/lib/optiplex-lab",
+            "type": "file"
+          },
+          {
+            "bytes": 188,
+            "path": "code-runs/cm_20260826T160913Z_35f33130/workflow.json",
+            "sha256": "c205f3d980c41a198241ed31247c9e9f4f386c24e6ef74bd7ef1f8a73d65d04a",
+            "target_root": "/var/lib/optiplex-lab",
+            "type": "file"
+          },
+          {
+            "path": "code-runs/cm_20260826T160913Z_4958bcd9",
+            "target_root": "/var/lib/optiplex-lab",
+            "type": "dir"
+          },
+          {
+            "bytes": 2,
+            "path": "code-runs/cm_20260826T160913Z_4958bcd9/edit.backup",
+            "sha256": "c0cde77fa8fef97d476c10aad3d2d54fcc2f336140d073651c2dcccf1e379fd6",
+            "target_root": "/var/lib/optiplex-lab",
+            "type": "file"
+          },
+          {
+            "bytes": 108,
+            "path": "code-runs/cm_20260826T160913Z_4958bcd9/edit.diff",
+            "sha256": "062fd2aed943a7e467bd1103d28411349463f06f31f39a81735fd5678c724110",
+            "target_root": "/var/lib/optiplex-lab",
+            "type": "file"
+          },
+          {
+            "bytes": 2238,
+            "path": "code-runs/cm_20260826T160913Z_4958bcd9/result.json",
+            "sha256": "1e78686ecacdb56e1fc60ca9f760610a62b56f4387ae69dfaf01e2abb8f32f6b",
+            "target_root": "/var/lib/optiplex-lab",
+            "type": "file"
+          },
+          {
+            "bytes": 997,
+            "path": "code-runs/cm_20260826T160913Z_4958bcd9/workflow.json",
+            "sha256": "c8c9c33049b1110ea1c184c5e7f0952bba79f28c0aaff537173cdb763a738466",
+            "target_root": "/var/lib/optiplex-lab",
+            "type": "file"
+          },
+          {
+            "path": "code-runs/cm_20260826T160913Z_8d095a53",
+            "target_root": "/var/lib/optiplex-lab",
+            "type": "dir"
+          },
+          {
+            "bytes": 2,
+            "path": "code-runs/cm_20260826T160913Z_8d095a53/edit.backup",
+            "sha256": "13b30eab8afdfab285103004686b2e6140ce53aa45a4f917341c740dfdb6e956",
+            "target_root": "/var/lib/optiplex-lab",
+            "type": "file"
+          },
+          {
+            "bytes": 121,
+            "path": "code-runs/cm_20260826T160913Z_8d095a53/edit.diff",
+            "sha256": "21579803a63079f49c170fb2516cac99ac56c5f03fa4f7791bcfc27b63fc756b",
+            "target_root": "/var/lib/optiplex-lab",
+            "type": "file"
+          },
+          {
+            "bytes": 2276,
+            "path": "code-runs/cm_20260826T160913Z_8d095a53/result.json",
+            "sha256": "7359f6465a8271f8275824e42f27805b673ba700f4922cd84ae4535885913e05",
+            "target_root": "/var/lib/optiplex-lab",
+            "type": "file"
+          },
+          {
+            "bytes": 1018,
+            "path": "code-runs/cm_20260826T160913Z_8d095a53/workflow.json",
+            "sha256": "269b2086737c9fe1acc1a71382b515596d6b3a4d06ce846ba91fe1724551234e",
+            "target_root": "/var/lib/optiplex-lab",
+            "type": "file"
+          },
+          {
+            "path": "code-runs/cm_20260826T160913Z_b09758a4",
+            "target_root": "/var/lib/optiplex-lab",
+            "type": "dir"
+          },
+          {
+            "bytes": 2,
+            "path": "code-runs/cm_20260826T160913Z_b09758a4/edit.backup",
+            "sha256": "06f961b802bc46ee168555f066d28f4f0e9afdf3f88174c1ee6f9de004fc30a0",
+            "target_root": "/var/lib/optiplex-lab",
+            "type": "file"
+          },
+          {
+            "bytes": 108,
+            "path": "code-runs/cm_20260826T160913Z_b09758a4/edit.diff",
+            "sha256": "8b50690ce3bd9cd3fb82023ed14fc3eda5564195408f07610e2228ba3e8b1a47",
+            "target_root": "/var/lib/optiplex-lab",
+            "type": "file"
+          },
+          {
+            "bytes": 2238,
+            "path": "code-runs/cm_20260826T160913Z_b09758a4/result.json",
+            "sha256": "4168e3528380a755c7eb60ae884b6c1a45e1ef9f67e8df2cc8422238cedf8488",
+            "target_root": "/var/lib/optiplex-lab",
+            "type": "file"
+          },
+          {
+            "bytes": 997,
+            "path": "code-runs/cm_20260826T160913Z_b09758a4/workflow.json",
+            "sha256": "edfe6a3305c015183482a5b009d5e576c12ebcff6e621d33ca744493002942b3",
+            "target_root": "/var/lib/optiplex-lab",
+            "type": "file"
+          },
+          {
+            "path": "code-runs/cm_20260826T160913Z_cdbf6bf1",
+            "target_root": "/var/lib/optiplex-lab",
+            "type": "dir"
+          },
+          {
+            "bytes": 1592,
+            "path": "code-runs/cm_20260826T160913Z_cdbf6bf1/result.json",
+            "sha256": "501a883391c4dbb21ed8f0f426df927dfa55c30ed1381ef9a137356dc0625f1e",
+            "target_root": "/var/lib/optiplex-lab",
+            "type": "file"
+          },
+          {
+            "bytes": 1012,
+            "path": "code-runs/cm_20260826T160913Z_cdbf6bf1/workflow.json",
+            "sha256": "4fc861e367dd4cd96fd4b052472f6822dc188f16706e05baba55e6a1d15e4998",
+            "target_root": "/var/lib/optiplex-lab",
+            "type": "file"
+          },
+          {
+            "path": "code-runs/cm_20260826T160913Z_def1d7a9",
+            "target_root": "/var/lib/optiplex-lab",
+            "type": "dir"
+          },
+          {
+            "bytes": 2,
+            "path": "code-runs/cm_20260826T160913Z_def1d7a9/edit.backup",
+            "sha256": "06f961b802bc46ee168555f066d28f4f0e9afdf3f88174c1ee6f9de004fc30a0",
+            "target_root": "/var/lib/optiplex-lab",
+            "type": "file"
+          },
+          {
+            "bytes": 108,
+            "path": "code-runs/cm_20260826T160913Z_def1d7a9/edit.diff",
+            "sha256": "8b50690ce3bd9cd3fb82023ed14fc3eda5564195408f07610e2228ba3e8b1a47",
+            "target_root": "/var/lib/optiplex-lab",
+            "type": "file"
+          },
+          {
+            "bytes": 2238,
+            "path": "code-runs/cm_20260826T160913Z_def1d7a9/result.json",
+            "sha256": "8843d27ff512cde857b62b038383c7be445686c9e483e0b699cebf4e15b981d2",
+            "target_root": "/var/lib/optiplex-lab",
+            "type": "file"
+          },
+          {
+            "bytes": 997,
+            "path": "code-runs/cm_20260826T160913Z_def1d7a9/workflow.json",
+            "sha256": "edfe6a3305c015183482a5b009d5e576c12ebcff6e621d33ca744493002942b3",
+            "target_root": "/var/lib/optiplex-lab",
+            "type": "file"
+          },
+          {
+            "path": "code-runs/cm_20260826T160913Z_ea0ed16c",
+            "target_root": "/var/lib/optiplex-lab",
+            "type": "dir"
+          },
+          {
+            "bytes": 2,
+            "path": "code-runs/cm_20260826T160913Z_ea0ed16c/edit.backup",
+            "sha256": "c0cde77fa8fef97d476c10aad3d2d54fcc2f336140d073651c2dcccf1e379fd6",
+            "target_root": "/var/lib/optiplex-lab",
+            "type": "file"
+          },
+          {
+            "bytes": 108,
+            "path": "code-runs/cm_20260826T160913Z_ea0ed16c/edit.diff",
+            "sha256": "062fd2aed943a7e467bd1103d28411349463f06f31f39a81735fd5678c724110",
+            "target_root": "/var/lib/optiplex-lab",
+            "type": "file"
+          },
+          {
+            "bytes": 2237,
+            "path": "code-runs/cm_20260826T160913Z_ea0ed16c/result.json",
+            "sha256": "ed4963697b7da7c0fe93d60244fe333ef716f2efd236c489fce4627318160de0",
+            "target_root": "/var/lib/optiplex-lab",
+            "type": "file"
+          },
+          {
+            "bytes": 997,
+            "path": "code-runs/cm_20260826T160913Z_ea0ed16c/workflow.json",
+            "sha256": "c8c9c33049b1110ea1c184c5e7f0952bba79f28c0aaff537173cdb763a738466",
+            "target_root": "/var/lib/optiplex-lab",
+            "type": "file"
+          },
+          {
+            "path": "code-runs/cm_20260826T160914Z_3b547247",
+            "target_root": "/var/lib/optiplex-lab",
+            "type": "dir"
+          },
+          {
+            "bytes": 0,
+            "path": "code-runs/cm_20260826T160914Z_3b547247/compile-a1.stderr",
+            "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "target_root": "/var/lib/optiplex-lab",
+            "type": "file"
+          },
+          {
+            "bytes": 0,
+            "path": "code-runs/cm_20260826T160914Z_3b547247/compile-a1.stdout",
+            "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "target_root": "/var/lib/optiplex-lab",
+            "type": "file"
+          },
+          {
+            "bytes": 21231,
+            "path": "code-runs/cm_20260826T160914Z_3b547247/edit.backup",
+            "sha256": "dc0d2cb41595a9a3d953873879ccc3e0bd88db2b4dcdee4cf8aa43dd4cb103e9",
+            "target_root": "/var/lib/optiplex-lab",
+            "type": "file"
+          },
+          {
+            "bytes": 0,
+            "path": "code-runs/cm_20260826T160914Z_3b547247/edit.diff",
+            "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "target_root": "/var/lib/optiplex-lab",
+            "type": "file"
+          },
+          {
+            "bytes": 5380,
+            "path": "code-runs/cm_20260826T160914Z_3b547247/result.json",
+            "sha256": "152da722805d74962b3d312c25c68c445f6d5183343cad2417099b1621f1bc73",
+            "target_root": "/var/lib/optiplex-lab",
+            "type": "file"
+          },
+          {
+            "bytes": 135,
+            "path": "code-runs/cm_20260826T160914Z_3b547247/self-update.self-update.log",
+            "sha256": "bf446866f0b7e53725971055510f4f237ebf6d62050ebc2403024442b3315f3f",
+            "target_root": "/var/lib/optiplex-lab",
+            "type": "file"
+          },
+          {
+            "bytes": 831,
+            "path": "code-runs/cm_20260826T160914Z_3b547247/startup-a1.stderr",
+            "sha256": "0056069cfd66d5c2089ff6b598bab5dabe0770efcc987a385c189d6e9191180e",
+            "target_root": "/var/lib/optiplex-lab",
+            "type": "file"
+          },
+          {
+            "bytes": 0,
+            "path": "code-runs/cm_20260826T160914Z_3b547247/startup-a1.stdout",
+            "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "target_root": "/var/lib/optiplex-lab",
+            "type": "file"
+          },
+          {
+            "bytes": 2123,
+            "path": "code-runs/cm_20260826T160914Z_3b547247/workflow.json",
+            "sha256": "6f6e0a8b6c515a5ac023eb399275ed0e78f3c8bd7a95293445e2b8d774b9059e",
+            "target_root": "/var/lib/optiplex-lab",
+            "type": "file"
+          },
+          {
+            "path": "code-runs/cm_20260826T160919Z_214045ac",
+            "target_root": "/var/lib/optiplex-lab",
+            "type": "dir"
+          },
+          {
+            "bytes": 0,
+            "path": "code-runs/cm_20260826T160919Z_214045ac/build-a1.stderr",
+            "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "target_root": "/var/lib/optiplex-lab",
+            "type": "file"
+          },
+          {
+            "bytes": 84,
+            "path": "code-runs/cm_20260826T160919Z_214045ac/build-a1.stdout",
+            "sha256": "24cc7eaa1918cea1d2d7a84d7237f673bc1411fe63a54532504741bce13a27e5",
+            "target_root": "/var/lib/optiplex-lab",
+            "type": "file"
+          },
+          {
+            "bytes": 0,
+            "path": "code-runs/cm_20260826T160919Z_214045ac/code-mode-a1.stderr",
+            "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "target_root": "/var/lib/optiplex-lab",
+            "type": "file"
+          },
+          {
+            "bytes": 424,
+            "path": "code-runs/cm_20260826T160919Z_214045ac/code-mode-a1.stdout",
+            "sha256": "6b6bf18c9c0d175e1144fb2d7223b19c1b639fdbaf4928c68eb1b20caadf27a6",
+            "target_root": "/var/lib/optiplex-lab",
+            "type": "file"
+          },
+          {
+            "bytes": 0,
+            "path": "code-runs/cm_20260826T160919Z_214045ac/containment-a1.stderr",
+            "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "target_root": "/var/lib/optiplex-lab",
+            "type": "file"
+          },
+          {
+            "bytes": 15,
+            "path": "code-runs/cm_20260826T160919Z_214045ac/containment-a1.stdout",
+            "sha256": "7774787d23e258d6516a9dbd2e7d120e7769643208932e3832703fa178d33c58",
+            "target_root": "/var/lib/optiplex-lab",
+            "type": "file"
+          },
+          {
+            "bytes": 8920,
+            "path": "code-runs/cm_20260826T160919Z_214045ac/result.json",
+            "sha256": "d829e8fca033ba633dd5f485a05b34e99af69d1cf9c698c7eec4e456a1efed33",
+            "target_root": "/var/lib/optiplex-lab",
+            "type": "file"
+          },
+          {
+            "bytes": 0,
+            "path": "code-runs/cm_20260826T160919Z_214045ac/selftest-a1.stderr",
+            "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "target_root": "/var/lib/optiplex-lab",
+            "type": "file"
+          },
+          {
+            "bytes": 2075,
+            "path": "code-runs/cm_20260826T160919Z_214045ac/selftest-a1.stdout",
+            "sha256": "63e2798cef0856a3d259c60b250a1663be31e01c1ca91dcf2cd3f704a7fa3a9c",
+            "target_root": "/var/lib/optiplex-lab",
+            "type": "file"
+          },
+          {
+            "bytes": 0,
+            "path": "code-runs/cm_20260826T160919Z_214045ac/workflow-graphs-a1.stderr",
+            "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "target_root": "/var/lib/optiplex-lab",
+            "type": "file"
+          },
+          {
+            "bytes": 637,
+            "path": "code-runs/cm_20260826T160919Z_214045ac/workflow-graphs-a1.stdout",
+            "sha256": "398f3d280d5c2ae5c21068ecb75510440b5ff683e123a900a5ea285818483334",
+            "target_root": "/var/lib/optiplex-lab",
+            "type": "file"
+          },
+          {
+            "bytes": 0,
+            "path": "code-runs/cm_20260826T160919Z_214045ac/workflow-skills-a1.stderr",
+            "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "target_root": "/var/lib/optiplex-lab",
+            "type": "file"
+          },
+          {
+            "bytes": 354,
+            "path": "code-runs/cm_20260826T160919Z_214045ac/workflow-skills-a1.stdout",
+            "sha256": "a526d648fc8b545efcaa1f2adab4e6c98bbbfcc44893553d5e2edab245f726bb",
+            "target_root": "/var/lib/optiplex-lab",
+            "type": "file"
+          },
+          {
+            "bytes": 2158,
+            "path": "code-runs/cm_20260826T160919Z_214045ac/workflow.json",
+            "sha256": "296135452cbf69a89789a20d0c6e0789d496b085ea6fd2266c808e7f4319b345",
+            "target_root": "/var/lib/optiplex-lab",
+            "type": "file"
+          },
+          {
+            "path": "code-runs/cm_20260826T160920Z_65b6927e",
+            "target_root": "/var/lib/optiplex-lab",
+            "type": "dir"
+          },
+          {
+            "bytes": 11,
+            "path": "code-runs/cm_20260826T160920Z_65b6927e/replace.backup",
+            "sha256": "e49c81e2d2f84e259d40e2fb8192f3bcd198b355184845d76d8f58807d0d78ee",
+            "target_root": "/var/lib/optiplex-lab",
+            "type": "file"
+          },
+          {
+            "bytes": 113,
+            "path": "code-runs/cm_20260826T160920Z_65b6927e/replace.diff",
+            "sha256": "f8705ded7ea716797f89ff4938946154106b4aef6ee006b8c0aa30251d7a9477",
+            "target_root": "/var/lib/optiplex-lab",
+            "type": "file"
+          },
+          {
+            "bytes": 2711,
+            "path": "code-runs/cm_20260826T160920Z_65b6927e/result.json",
+            "sha256": "9bdbc7cf339e4b6a23089554a326b453ffbd96e0a8bab7d570e563f680fa9207",
+            "target_root": "/var/lib/optiplex-lab",
+            "type": "file"
+          },
+          {
+            "bytes": 0,
+            "path": "code-runs/cm_20260826T160920Z_65b6927e/retry-a1.stderr",
+            "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "target_root": "/var/lib/optiplex-lab",
+            "type": "file"
+          },
+          {
+            "bytes": 0,
+            "path": "code-runs/cm_20260826T160920Z_65b6927e/retry-a1.stdout",
+            "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "target_root": "/var/lib/optiplex-lab",
+            "type": "file"
+          },
+          {
+            "bytes": 0,
+            "path": "code-runs/cm_20260826T160920Z_65b6927e/retry-a2.stderr",
+            "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "target_root": "/var/lib/optiplex-lab",
+            "type": "file"
+          },
+          {
+            "bytes": 0,
+            "path": "code-runs/cm_20260826T160920Z_65b6927e/retry-a2.stdout",
+            "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "target_root": "/var/lib/optiplex-lab",
+            "type": "file"
+          },
+          {
+            "bytes": 482,
+            "path": "code-runs/cm_20260826T160920Z_65b6927e/workflow.json",
+            "sha256": "c06c48282d6b66d48eeb7ef270fab924d176d267bd17a7b1a016a7bf44e9d1d7",
+            "target_root": "/var/lib/optiplex-lab",
+            "type": "file"
+          },
+          {
+            "path": "code-runs/cm_20260826T160921Z_0278ea7c",
+            "target_root": "/var/lib/optiplex-lab",
+            "type": "dir"
+          },
+          {
+            "bytes": 0,
+            "path": "code-runs/cm_20260826T160921Z_0278ea7c/large-a1.stderr",
+            "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "target_root": "/var/lib/optiplex-lab",
+            "type": "file"
+          },
+          {
+            "bytes": 200001,
+            "path": "code-runs/cm_20260826T160921Z_0278ea7c/large-a1.stdout",
+            "sha256": "d768026d20a97801841892ce5a1171b1689f34cfd7524f882a94436e5f349cc9",
+            "target_root": "/var/lib/optiplex-lab",
+            "type": "file"
+          },
+          {
+            "bytes": 2553,
+            "path": "code-runs/cm_20260826T160921Z_0278ea7c/result.json",
+            "sha256": "5f0a08796aea7f884de27caf1a06826bb0bf8a17761a2309258f5270382fcbd8",
+            "target_root": "/var/lib/optiplex-lab",
+            "type": "file"
+          },
+          {
+            "bytes": 148,
+            "path": "code-runs/cm_20260826T160921Z_0278ea7c/workflow.json",
+            "sha256": "2fb43a2843b019020840eb7e572344f045c34a0743c1d7755e796dfe7a910ce8",
+            "target_root": "/var/lib/optiplex-lab",
+            "type": "file"
+          },
+          {
+            "path": "code-runs/cm_20260826T160921Z_30534eab",
+            "target_root": "/var/lib/optiplex-lab",
+            "type": "dir"
+          },
+          {
+            "bytes": 0,
+            "path": "code-runs/cm_20260826T160921Z_30534eab/argv-a1.stderr",
+            "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "target_root": "/var/lib/optiplex-lab",
+            "type": "file"
+          },
+          {
+            "bytes": 0,
+            "path": "code-runs/cm_20260826T160921Z_30534eab/argv-a1.stdout",
+            "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "target_root": "/var/lib/optiplex-lab",
+            "type": "file"
+          },
+          {
+            "bytes": 1329,
+            "path": "code-runs/cm_20260826T160921Z_30534eab/result.json",
+            "sha256": "9450de6b2adcc4620571f5c5ecd0017d3b4180906538b3e5251b0166c9d0e751",
+            "target_root": "/var/lib/optiplex-lab",
+            "type": "file"
+          },
+          {
+            "bytes": 188,
+            "path": "code-runs/cm_20260826T160921Z_30534eab/workflow.json",
+            "sha256": "c0b97bf83e4977e9e0686a20ec908af7956f43f0bbafb6a38b308e49d94d5ee5",
+            "target_root": "/var/lib/optiplex-lab",
+            "type": "file"
+          },
+          {
+            "path": "code-runs/cm_20260826T160921Z_30c19dbe",
+            "target_root": "/var/lib/optiplex-lab",
+            "type": "dir"
+          },
+          {
+            "bytes": 2,
+            "path": "code-runs/cm_20260826T160921Z_30c19dbe/edit.backup",
+            "sha256": "13b30eab8afdfab285103004686b2e6140ce53aa45a4f917341c740dfdb6e956",
+            "target_root": "/var/lib/optiplex-lab",
+            "type": "file"
+          },
+          {
+            "bytes": 121,
+            "path": "code-runs/cm_20260826T160921Z_30c19dbe/edit.diff",
+            "sha256": "9f06c6fadf5bff8acab76d5a03459241620d64dfff9211af7d069b122e3a21b6",
+            "target_root": "/var/lib/optiplex-lab",
+            "type": "file"
+          },
+          {
+            "bytes": 2276,
+            "path": "code-runs/cm_20260826T160921Z_30c19dbe/result.json",
+            "sha256": "15b4c956c0b97449af1135aabdf2db51bdfb0b9894574c0486922c2feac0938f",
+            "target_root": "/var/lib/optiplex-lab",
+            "type": "file"
+          },
+          {
+            "bytes": 1018,
+            "path": "code-runs/cm_20260826T160921Z_30c19dbe/workflow.json",
+            "sha256": "15bf2261fea53825f70dc91e6653f734be5e975567692fb802833595861bd942",
+            "target_root": "/var/lib/optiplex-lab",
+            "type": "file"
+          },
+          {
+            "path": "code-runs/cm_20260826T160921Z_4e84cb33",
+            "target_root": "/var/lib/optiplex-lab",
+            "type": "dir"
+          },
+          {
+            "bytes": 2,
+            "path": "code-runs/cm_20260826T160921Z_4e84cb33/edit.backup",
+            "sha256": "c0cde77fa8fef97d476c10aad3d2d54fcc2f336140d073651c2dcccf1e379fd6",
+            "target_root": "/var/lib/optiplex-lab",
+            "type": "file"
+          },
+          {
+            "bytes": 108,
+            "path": "code-runs/cm_20260826T160921Z_4e84cb33/edit.diff",
+            "sha256": "8ca3bf0b2029626e8da9adb57390422b7d9737545252578dd357469c57747dea",
+            "target_root": "/var/lib/optiplex-lab",
+            "type": "file"
+          },
+          {
+            "bytes": 2238,
+            "path": "code-runs/cm_20260826T160921Z_4e84cb33/result.json",
+            "sha256": "46540ec21f24d23ab34c7f8eb482abbcc4462be098789eafb3afa85ad256286f",
+            "target_root": "/var/lib/optiplex-lab",
+            "type": "file"
+          },
+          {
+            "bytes": 997,
+            "path": "code-runs/cm_20260826T160921Z_4e84cb33/workflow.json",
+            "sha256": "b854a59074651679585a5c75ae9c8573e936eebebac2b2e2bab1dbd571df84a5",
+            "target_root": "/var/lib/optiplex-lab",
+            "type": "file"
+          },
+          {
+            "path": "code-runs/cm_20260826T160921Z_5f3da106",
+            "target_root": "/var/lib/optiplex-lab",
+            "type": "dir"
+          },
+          {
+            "bytes": 775,
+            "path": "code-runs/cm_20260826T160921Z_5f3da106/result.json",
+            "sha256": "e66db18418ac92109a5c5cce7bcadd6fe2f2bc0fa7412737700fea00fa081b32",
+            "target_root": "/var/lib/optiplex-lab",
+            "type": "file"
+          },
+          {
+            "bytes": 181,
+            "path": "code-runs/cm_20260826T160921Z_5f3da106/workflow.json",
+            "sha256": "850f1a5c09aab2b8c57f257c647724e5a86bedfad8c9c353ac6fc38c091f59ab",
+            "target_root": "/var/lib/optiplex-lab",
+            "type": "file"
+          },
+          {
+            "path": "code-runs/cm_20260826T160921Z_6856ef89",
+            "target_root": "/var/lib/optiplex-lab",
+            "type": "dir"
+          },
+          {
+            "bytes": 2,
+            "path": "code-runs/cm_20260826T160921Z_6856ef89/edit.backup",
+            "sha256": "06f961b802bc46ee168555f066d28f4f0e9afdf3f88174c1ee6f9de004fc30a0",
+            "target_root": "/var/lib/optiplex-lab",
+            "type": "file"
+          },
+          {
+            "bytes": 108,
+            "path": "code-runs/cm_20260826T160921Z_6856ef89/edit.diff",
+            "sha256": "faea29eb8ce9d789ba39e6c401bb6ad64a92e80104ae0d0be874b0ed7e6d15e7",
+            "target_root": "/var/lib/optiplex-lab",
+            "type": "file"
+          },
+          {
+            "bytes": 2238,
+            "path": "code-runs/cm_20260826T160921Z_6856ef89/result.json",
+            "sha256": "ef103cf2c0e2e59b243c3fc1f6fda8f9c72bab15ebbc69d267e8d25439a68fa3",
+            "target_root": "/var/lib/optiplex-lab",
+            "type": "file"
+          },
+          {
+            "bytes": 997,
+            "path": "code-runs/cm_20260826T160921Z_6856ef89/workflow.json",
+            "sha256": "574c710fa33ab53e192c8e2345bb4bf6e32f83d086c7ed29d58a0fbf08c6aaf0",
+            "target_root": "/var/lib/optiplex-lab",
+            "type": "file"
+          },
+          {
+            "path": "code-runs/cm_20260826T160921Z_73f80bfa",
+            "target_root": "/var/lib/optiplex-lab",
+            "type": "dir"
+          },
+          {
+            "bytes": 0,
+            "path": "code-runs/cm_20260826T160921Z_73f80bfa/argv-a1.stderr",
+            "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "target_root": "/var/lib/optiplex-lab",
+            "type": "file"
+          },
+          {
+            "bytes": 0,
+            "path": "code-runs/cm_20260826T160921Z_73f80bfa/argv-a1.stdout",
+            "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "target_root": "/var/lib/optiplex-lab",
+            "type": "file"
+          },
+          {
+            "bytes": 4,
+            "path": "code-runs/cm_20260826T160921Z_73f80bfa/edit.backup",
+            "sha256": "01d09d19c2139a46aebfb577780d123d7396e97201bc7ead210a2ebff8239dee",
+            "target_root": "/var/lib/optiplex-lab",
+            "type": "file"
+          },
+          {
+            "bytes": 112,
+            "path": "code-runs/cm_20260826T160921Z_73f80bfa/edit.diff",
+            "sha256": "3f2c32330479ec5622a30c580286fe52feee13a33f7ebde4126c63e0700263c4",
+            "target_root": "/var/lib/optiplex-lab",
+            "type": "file"
+          },
+          {
+            "bytes": 2555,
+            "path": "code-runs/cm_20260826T160921Z_73f80bfa/result.json",
+            "sha256": "442f06afbb26944b36b1cc9351c8078ae4ed04841045694f4b8f2f4e8f753d0e",
+            "target_root": "/var/lib/optiplex-lab",
+            "type": "file"
+          },
+          {
+            "bytes": 912,
+            "path": "code-runs/cm_20260826T160921Z_73f80bfa/workflow.json",
+            "sha256": "c7ce406d82c572cac188f2b0bd7a16747400ff59625d32ca12a80cb4365bfec1",
+            "target_root": "/var/lib/optiplex-lab",
+            "type": "file"
+          },
+          {
+            "path": "code-runs/cm_20260826T160921Z_98ce8470",
+            "target_root": "/var/lib/optiplex-lab",
+            "type": "dir"
+          },
+          {
+            "bytes": 1592,
+            "path": "code-runs/cm_20260826T160921Z_98ce8470/result.json",
+            "sha256": "d6abddacb050a1870ce33988652e1d8ada911ba91ad7f9c58e96b15d708a30cc",
+            "target_root": "/var/lib/optiplex-lab",
+            "type": "file"
+          },
+          {
+            "bytes": 1012,
+            "path": "code-runs/cm_20260826T160921Z_98ce8470/workflow.json",
+            "sha256": "aa476ee81b77aad943c844be5b9ead2511334e3580a0bf7e4de486386461a7b7",
+            "target_root": "/var/lib/optiplex-lab",
+            "type": "file"
+          },
+          {
+            "path": "code-runs/cm_20260826T160921Z_b9f606fa",
+            "target_root": "/var/lib/optiplex-lab",
+            "type": "dir"
+          },
+          {
+            "bytes": 2,
+            "path": "code-runs/cm_20260826T160921Z_b9f606fa/edit.backup",
+            "sha256": "06f961b802bc46ee168555f066d28f4f0e9afdf3f88174c1ee6f9de004fc30a0",
+            "target_root": "/var/lib/optiplex-lab",
+            "type": "file"
+          },
+          {
+            "bytes": 108,
+            "path": "code-runs/cm_20260826T160921Z_b9f606fa/edit.diff",
+            "sha256": "faea29eb8ce9d789ba39e6c401bb6ad64a92e80104ae0d0be874b0ed7e6d15e7",
+            "target_root": "/var/lib/optiplex-lab",
+            "type": "file"
+          },
+          {
+            "bytes": 2238,
+            "path": "code-runs/cm_20260826T160921Z_b9f606fa/result.json",
+            "sha256": "f4d10d11f2f92d7a7fa7f7cfa4c76ac7c0c62d67e9b36be2fc64ec75a2301192",
+            "target_root": "/var/lib/optiplex-lab",
+            "type": "file"
+          },
+          {
+            "bytes": 997,
+            "path": "code-runs/cm_20260826T160921Z_b9f606fa/workflow.json",
+            "sha256": "574c710fa33ab53e192c8e2345bb4bf6e32f83d086c7ed29d58a0fbf08c6aaf0",
+            "target_root": "/var/lib/optiplex-lab",
+            "type": "file"
+          },
+          {
+            "path": "code-runs/cm_20260826T160921Z_cd8f00bd",
+            "target_root": "/var/lib/optiplex-lab",
+            "type": "dir"
+          },
+          {
+            "bytes": 2,
+            "path": "code-runs/cm_20260826T160921Z_cd8f00bd/edit.backup",
+            "sha256": "c0cde77fa8fef97d476c10aad3d2d54fcc2f336140d073651c2dcccf1e379fd6",
+            "target_root": "/var/lib/optiplex-lab",
+            "type": "file"
+          },
+          {
+            "bytes": 108,
+            "path": "code-runs/cm_20260826T160921Z_cd8f00bd/edit.diff",
+            "sha256": "8ca3bf0b2029626e8da9adb57390422b7d9737545252578dd357469c57747dea",
+            "target_root": "/var/lib/optiplex-lab",
+            "type": "file"
+          },
+          {
+            "bytes": 2237,
+            "path": "code-runs/cm_20260826T160921Z_cd8f00bd/result.json",
+            "sha256": "ed5a12a20200a23ea04d180ea1c8645b10d756af9e9273d36657556356740f35",
+            "target_root": "/var/lib/optiplex-lab",
+            "type": "file"
+          },
+          {
+            "bytes": 997,
+            "path": "code-runs/cm_20260826T160921Z_cd8f00bd/workflow.json",
+            "sha256": "b854a59074651679585a5c75ae9c8573e936eebebac2b2e2bab1dbd571df84a5",
+            "target_root": "/var/lib/optiplex-lab",
+            "type": "file"
+          },
+          {
+            "path": "code-runs/cm_20260826T160921Z_d2f2218f",
+            "target_root": "/var/lib/optiplex-lab",
+            "type": "dir"
+          },
+          {
+            "bytes": 0,
+            "path": "code-runs/cm_20260826T160921Z_d2f2218f/patch.git-after.diff",
+            "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "target_root": "/var/lib/optiplex-lab",
+            "type": "file"
+          },
+          {
+            "bytes": 0,
+            "path": "code-runs/cm_20260826T160921Z_d2f2218f/patch.git-before.diff",
+            "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "target_root": "/var/lib/optiplex-lab",
+            "type": "file"
+          },
+          {
+            "bytes": 103,
+            "path": "code-runs/cm_20260826T160921Z_d2f2218f/patch.patch",
+            "sha256": "ae4371ded32e97e6517b08d5ea2d4f8bc467acd153ff27c91aed4f67282c1381",
+            "target_root": "/var/lib/optiplex-lab",
+            "type": "file"
+          },
+          {
+            "bytes": 973,
+            "path": "code-runs/cm_20260826T160921Z_d2f2218f/result.json",
+            "sha256": "896b7f00c14d179e6d6f68726298e98c8eacc5e5e13349e0e575bfee1f242434",
+            "target_root": "/var/lib/optiplex-lab",
+            "type": "file"
+          },
+          {
+            "bytes": 278,
+            "path": "code-runs/cm_20260826T160921Z_d2f2218f/workflow.json",
+            "sha256": "5bf4c5b37686aad23f50d28f155025e67b1e5933491386e2580e6eef06bb6c4c",
+            "target_root": "/var/lib/optiplex-lab",
+            "type": "file"
+          },
+          {
+            "path": "code-runs/cm_20260826T160922Z_3c46216b",
+            "target_root": "/var/lib/optiplex-lab",
+            "type": "dir"
+          },
+          {
+            "bytes": 0,
+            "path": "code-runs/cm_20260826T160922Z_3c46216b/accepted-build-a1.stderr",
+            "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "target_root": "/var/lib/optiplex-lab",
+            "type": "file"
+          },
+          {
+            "bytes": 83,
+            "path": "code-runs/cm_20260826T160922Z_3c46216b/accepted-build-a1.stdout",
+            "sha256": "946cb2c930c1a52921f6158f21917141126add74a6c8a0b7c20a57de38266fbf",
+            "target_root": "/var/lib/optiplex-lab",
+            "type": "file"
+          },
+          {
+            "bytes": 0,
+            "path": "code-runs/cm_20260826T160922Z_3c46216b/code-mode-a1.stderr",
+            "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "target_root": "/var/lib/optiplex-lab",
+            "type": "file"
+          },
+          {
+            "bytes": 424,
+            "path": "code-runs/cm_20260826T160922Z_3c46216b/code-mode-a1.stdout",
+            "sha256": "6b6bf18c9c0d175e1144fb2d7223b19c1b639fdbaf4928c68eb1b20caadf27a6",
+            "target_root": "/var/lib/optiplex-lab",
+            "type": "file"
+          },
+          {
+            "bytes": 0,
+            "path": "code-runs/cm_20260826T160922Z_3c46216b/containment-a1.stderr",
+            "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "target_root": "/var/lib/optiplex-lab",
+            "type": "file"
+          },
+          {
+            "bytes": 15,
+            "path": "code-runs/cm_20260826T160922Z_3c46216b/containment-a1.stdout",
+            "sha256": "7774787d23e258d6516a9dbd2e7d120e7769643208932e3832703fa178d33c58",
+            "target_root": "/var/lib/optiplex-lab",
+            "type": "file"
+          },
+          {
+            "bytes": 0,
+            "path": "code-runs/cm_20260826T160922Z_3c46216b/lkg-a1.stderr",
+            "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "target_root": "/var/lib/optiplex-lab",
+            "type": "file"
+          },
+          {
+            "bytes": 0,
+            "path": "code-runs/cm_20260826T160922Z_3c46216b/lkg-a1.stdout",
+            "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "target_root": "/var/lib/optiplex-lab",
+            "type": "file"
+          },
+          {
+            "bytes": 9751,
+            "path": "code-runs/cm_20260826T160922Z_3c46216b/result.json",
+            "sha256": "8fdb437c456c8e5467b8160c07e18b41c3bd35081c83d66a03b9a577a2ac8c4b",
+            "target_root": "/var/lib/optiplex-lab",
+            "type": "file"
+          },
+          {
+            "bytes": 0,
+            "path": "code-runs/cm_20260826T160922Z_3c46216b/selftest-a1.stderr",
+            "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "target_root": "/var/lib/optiplex-lab",
+            "type": "file"
+          },
+          {
+            "bytes": 2075,
+            "path": "code-runs/cm_20260826T160922Z_3c46216b/selftest-a1.stdout",
+            "sha256": "fba0b837fd9a9265c3caca4f9485d3ac92d0ec9542cbe315e47d69737f301399",
+            "target_root": "/var/lib/optiplex-lab",
+            "type": "file"
+          },
+          {
+            "bytes": 0,
+            "path": "code-runs/cm_20260826T160922Z_3c46216b/workflow-graphs-a1.stderr",
+            "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "target_root": "/var/lib/optiplex-lab",
+            "type": "file"
+          },
+          {
+            "bytes": 637,
+            "path": "code-runs/cm_20260826T160922Z_3c46216b/workflow-graphs-a1.stdout",
+            "sha256": "398f3d280d5c2ae5c21068ecb75510440b5ff683e123a900a5ea285818483334",
+            "target_root": "/var/lib/optiplex-lab",
+            "type": "file"
+          },
+          {
+            "bytes": 0,
+            "path": "code-runs/cm_20260826T160922Z_3c46216b/workflow-skills-a1.stderr",
+            "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "target_root": "/var/lib/optiplex-lab",
+            "type": "file"
+          },
+          {
+            "bytes": 354,
+            "path": "code-runs/cm_20260826T160922Z_3c46216b/workflow-skills-a1.stdout",
+            "sha256": "a526d648fc8b545efcaa1f2adab4e6c98bbbfcc44893553d5e2edab245f726bb",
+            "target_root": "/var/lib/optiplex-lab",
+            "type": "file"
+          },
+          {
+            "bytes": 2442,
+            "path": "code-runs/cm_20260826T160922Z_3c46216b/workflow.json",
+            "sha256": "53fd23727e1ba3be4094d6ecd8502c2de33d878de91dba9dbfce3de39a13af3d",
+            "target_root": "/var/lib/optiplex-lab",
+            "type": "file"
+          },
+          {
+            "path": "code-runs/cm_20260826T160922Z_712de0f9",
+            "target_root": "/var/lib/optiplex-lab",
+            "type": "dir"
+          },
+          {
+            "bytes": 0,
+            "path": "code-runs/cm_20260826T160922Z_712de0f9/mark-accepted-a1.stderr",
+            "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "target_root": "/var/lib/optiplex-lab",
+            "type": "file"
+          },
+          {
+            "bytes": 74,
+            "path": "code-runs/cm_20260826T160922Z_712de0f9/mark-accepted-a1.stdout",
+            "sha256": "e9d70b00f90374d5e698ac42075450e89f411c7531789327ccf5171bbd8c34c6",
+            "target_root": "/var/lib/optiplex-lab",
+            "type": "file"
+          },
+          {
+            "bytes": 0,
+            "path": "code-runs/cm_20260826T160922Z_712de0f9/precondition-a1.stderr",
+            "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "target_root": "/var/lib/optiplex-lab",
+            "type": "file"
+          },
+          {
+            "bytes": 65,
+            "path": "code-runs/cm_20260826T160922Z_712de0f9/precondition-a1.stdout",
+            "sha256": "5710a55bda20ca3fca5cee9415c69087aa96620a899f9e7a4f57d4909110d2b7",
+            "target_root": "/var/lib/optiplex-lab",
+            "type": "file"
+          },
+          {
+            "bytes": 3164,
+            "path": "code-runs/cm_20260826T160922Z_712de0f9/result.json",
+            "sha256": "134efd99961ad4c5ef0bbd347bb61f894cf126699abec6b029ef0c8bce25c9ef",
+            "target_root": "/var/lib/optiplex-lab",
+            "type": "file"
+          },
+          {
+            "bytes": 1697,
+            "path": "code-runs/cm_20260826T160922Z_712de0f9/workflow.json",
+            "sha256": "bb69ae7733ebba08693defc4501b04507763fa9c8f8465cf76bb283340374178",
+            "target_root": "/var/lib/optiplex-lab",
+            "type": "file"
+          },
+          {
+            "path": "code-runs/cm_20260826T160924Z_1d79bf75",
+            "target_root": "/var/lib/optiplex-lab",
+            "type": "dir"
+          },
+          {
+            "bytes": 11,
+            "path": "code-runs/cm_20260826T160924Z_1d79bf75/replace.backup",
+            "sha256": "e49c81e2d2f84e259d40e2fb8192f3bcd198b355184845d76d8f58807d0d78ee",
+            "target_root": "/var/lib/optiplex-lab",
+            "type": "file"
+          },
+          {
+            "bytes": 113,
+            "path": "code-runs/cm_20260826T160924Z_1d79bf75/replace.diff",
+            "sha256": "e4a0edd05fa7d80cbe139ba1dd7e5d5c161dc0df4c5bcf33ac1a63e9ad627758",
+            "target_root": "/var/lib/optiplex-lab",
+            "type": "file"
+          },
+          {
+            "bytes": 2710,
+            "path": "code-runs/cm_20260826T160924Z_1d79bf75/result.json",
+            "sha256": "4497da4d1314d59663f1c3668574f07b48739eef49e2770664a8a0c69f3853f6",
+            "target_root": "/var/lib/optiplex-lab",
+            "type": "file"
+          },
+          {
+            "bytes": 0,
+            "path": "code-runs/cm_20260826T160924Z_1d79bf75/retry-a1.stderr",
+            "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "target_root": "/var/lib/optiplex-lab",
+            "type": "file"
+          },
+          {
+            "bytes": 0,
+            "path": "code-runs/cm_20260826T160924Z_1d79bf75/retry-a1.stdout",
+            "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "target_root": "/var/lib/optiplex-lab",
+            "type": "file"
+          },
+          {
+            "bytes": 0,
+            "path": "code-runs/cm_20260826T160924Z_1d79bf75/retry-a2.stderr",
+            "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "target_root": "/var/lib/optiplex-lab",
+            "type": "file"
+          },
+          {
+            "bytes": 0,
+            "path": "code-runs/cm_20260826T160924Z_1d79bf75/retry-a2.stdout",
+            "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "target_root": "/var/lib/optiplex-lab",
+            "type": "file"
+          },
+          {
+            "bytes": 482,
+            "path": "code-runs/cm_20260826T160924Z_1d79bf75/workflow.json",
+            "sha256": "58b09d924f42c564624ebf2af1c32f7772f8cfae9192d36ca14c2934f0dd7ed9",
+            "target_root": "/var/lib/optiplex-lab",
+            "type": "file"
+          },
+          {
+            "path": "code-runs/cm_20260826T160924Z_590faf70",
+            "target_root": "/var/lib/optiplex-lab",
+            "type": "dir"
+          },
+          {
+            "bytes": 2,
+            "path": "code-runs/cm_20260826T160924Z_590faf70/edit.backup",
+            "sha256": "06f961b802bc46ee168555f066d28f4f0e9afdf3f88174c1ee6f9de004fc30a0",
+            "target_root": "/var/lib/optiplex-lab",
+            "type": "file"
+          },
+          {
+            "bytes": 108,
+            "path": "code-runs/cm_20260826T160924Z_590faf70/edit.diff",
+            "sha256": "a0b0b7652aa36043d055db3830d7174762505d4eaa011e850aeabb587a8bc097",
+            "target_root": "/var/lib/optiplex-lab",
+            "type": "file"
+          },
+          {
+            "bytes": 2237,
+            "path": "code-runs/cm_20260826T160924Z_590faf70/result.json",
+            "sha256": "543c28803a87ecde662ee21e05bfa866b301498242594043e3b322d6d5ba6604",
+            "target_root": "/var/lib/optiplex-lab",
+            "type": "file"
+          },
+          {
+            "bytes": 997,
+            "path": "code-runs/cm_20260826T160924Z_590faf70/workflow.json",
+            "sha256": "6fba89c08b530f3fd08efb6856c71a5319f023475956ea4f19ce8ce8e729d922",
+            "target_root": "/var/lib/optiplex-lab",
+            "type": "file"
+          },
+          {
+            "path": "code-runs/cm_20260826T160924Z_9bc6dc8a",
+            "target_root": "/var/lib/optiplex-lab",
+            "type": "dir"
+          },
+          {
+            "bytes": 2,
+            "path": "code-runs/cm_20260826T160924Z_9bc6dc8a/edit.backup",
+            "sha256": "c0cde77fa8fef97d476c10aad3d2d54fcc2f336140d073651c2dcccf1e379fd6",
+            "target_root": "/var/lib/optiplex-lab",
+            "type": "file"
+          },
+          {
+            "bytes": 108,
+            "path": "code-runs/cm_20260826T160924Z_9bc6dc8a/edit.diff",
+            "sha256": "d67ea2c951de1c4ab9a1c8bee28b5eb3090e396e32bc1d41f92cd67833032ca4",
+            "target_root": "/var/lib/optiplex-lab",
+            "type": "file"
+          },
+          {
+            "bytes": 2238,
+            "path": "code-runs/cm_20260826T160924Z_9bc6dc8a/result.json",
+            "sha256": "f99a1b7691f1593896279f75b9b2b8a54f9bdd1ba92f2269626344d842404e3a",
+            "target_root": "/var/lib/optiplex-lab",
+            "type": "file"
+          },
+          {
+            "bytes": 997,
+            "path": "code-runs/cm_20260826T160924Z_9bc6dc8a/workflow.json",
+            "sha256": "83a4fc5fc6ef7fee7388e0519abbe6790698c928662e1e2143f18ac2c3a67ec9",
+            "target_root": "/var/lib/optiplex-lab",
+            "type": "file"
+          },
+          {
+            "path": "code-runs/cm_20260826T160924Z_b6cdc67e",
+            "target_root": "/var/lib/optiplex-lab",
+            "type": "dir"
+          },
+          {
+            "bytes": 0,
+            "path": "code-runs/cm_20260826T160924Z_b6cdc67e/argv-a1.stderr",
+            "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "target_root": "/var/lib/optiplex-lab",
+            "type": "file"
+          },
+          {
+            "bytes": 0,
+            "path": "code-runs/cm_20260826T160924Z_b6cdc67e/argv-a1.stdout",
+            "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "target_root": "/var/lib/optiplex-lab",
+            "type": "file"
+          },
+          {
+            "bytes": 4,
+            "path": "code-runs/cm_20260826T160924Z_b6cdc67e/edit.backup",
+            "sha256": "01d09d19c2139a46aebfb577780d123d7396e97201bc7ead210a2ebff8239dee",
+            "target_root": "/var/lib/optiplex-lab",
+            "type": "file"
+          },
+          {
+            "bytes": 112,
+            "path": "code-runs/cm_20260826T160924Z_b6cdc67e/edit.diff",
+            "sha256": "962b516685ad87ea60b3133d5331675e2c4491c01190aadd2d7fb6ecb3e3b15b",
+            "target_root": "/var/lib/optiplex-lab",
+            "type": "file"
+          },
+          {
+            "bytes": 2558,
+            "path": "code-runs/cm_20260826T160924Z_b6cdc67e/result.json",
+            "sha256": "8ca4c170f271a05ed087acabf2c39e4dd536df96fc7796b1b0a17d8e8976696d",
+            "target_root": "/var/lib/optiplex-lab",
+            "type": "file"
+          },
+          {
+            "bytes": 912,
+            "path": "code-runs/cm_20260826T160924Z_b6cdc67e/workflow.json",
+            "sha256": "5161834b4ab9d797103e0b66e6a04af4209c9bf8b2808409f3f01aca7e34ae54",
+            "target_root": "/var/lib/optiplex-lab",
+            "type": "file"
+          },
+          {
+            "path": "code-runs/cm_20260826T160924Z_d21b2efa",
+            "target_root": "/var/lib/optiplex-lab",
+            "type": "dir"
+          },
+          {
+            "bytes": 0,
+            "path": "code-runs/cm_20260826T160924Z_d21b2efa/argv-a1.stderr",
+            "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "target_root": "/var/lib/optiplex-lab",
+            "type": "file"
+          },
+          {
+            "bytes": 0,
+            "path": "code-runs/cm_20260826T160924Z_d21b2efa/argv-a1.stdout",
+            "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "target_root": "/var/lib/optiplex-lab",
+            "type": "file"
+          },
+          {
+            "bytes": 1327,
+            "path": "code-runs/cm_20260826T160924Z_d21b2efa/result.json",
+            "sha256": "9f9fe059db5d9a4fc789d3eea4e3f615060d2acf85c789a62d1ab52da1c1ac4f",
+            "target_root": "/var/lib/optiplex-lab",
+            "type": "file"
+          },
+          {
+            "bytes": 188,
+            "path": "code-runs/cm_20260826T160924Z_d21b2efa/workflow.json",
+            "sha256": "24d3c42a9235c5229169ded36b964751cd6944a776fbcc3112275affb8d5dc92",
+            "target_root": "/var/lib/optiplex-lab",
+            "type": "file"
+          },
+          {
+            "path": "code-runs/cm_20260826T160924Z_dc33f343",
+            "target_root": "/var/lib/optiplex-lab",
+            "type": "dir"
+          },
+          {
+            "bytes": 0,
+            "path": "code-runs/cm_20260826T160924Z_dc33f343/patch.git-after.diff",
+            "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "target_root": "/var/lib/optiplex-lab",
+            "type": "file"
+          },
+          {
+            "bytes": 0,
+            "path": "code-runs/cm_20260826T160924Z_dc33f343/patch.git-before.diff",
+            "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "target_root": "/var/lib/optiplex-lab",
+            "type": "file"
+          },
+          {
+            "bytes": 103,
+            "path": "code-runs/cm_20260826T160924Z_dc33f343/patch.patch",
+            "sha256": "ae4371ded32e97e6517b08d5ea2d4f8bc467acd153ff27c91aed4f67282c1381",
+            "target_root": "/var/lib/optiplex-lab",
+            "type": "file"
+          },
+          {
+            "bytes": 974,
+            "path": "code-runs/cm_20260826T160924Z_dc33f343/result.json",
+            "sha256": "2912429d45c045dc9b4a99695789a076862fd8022133edd91882c4f4464f8f44",
+            "target_root": "/var/lib/optiplex-lab",
+            "type": "file"
+          },
+          {
+            "bytes": 278,
+            "path": "code-runs/cm_20260826T160924Z_dc33f343/workflow.json",
+            "sha256": "b970436452ed1e9fd19127ae7fff8cf6c69300e4803a404aaf38b8a7c3a74ec7",
+            "target_root": "/var/lib/optiplex-lab",
+            "type": "file"
+          },
+          {
+            "path": "code-runs/cm_20260826T160924Z_e2ae18c8",
+            "target_root": "/var/lib/optiplex-lab",
+            "type": "dir"
+          },
+          {
+            "bytes": 775,
+            "path": "code-runs/cm_20260826T160924Z_e2ae18c8/result.json",
+            "sha256": "5c4d44b625f404d05e23f61f9c4528e9d6d303befc7f85bf03262772129cf895",
+            "target_root": "/var/lib/optiplex-lab",
+            "type": "file"
+          },
+          {
+            "bytes": 181,
+            "path": "code-runs/cm_20260826T160924Z_e2ae18c8/workflow.json",
+            "sha256": "2a1b425b24ffcc3eb5f4be714ac52f27bbf5d5d12ab9f5600fa7d96cf6e4298f",
+            "target_root": "/var/lib/optiplex-lab",
+            "type": "file"
+          },
+          {
+            "path": "code-runs/cm_20260826T160924Z_fb24049b",
+            "target_root": "/var/lib/optiplex-lab",
+            "type": "dir"
+          },
+          {
+            "bytes": 0,
+            "path": "code-runs/cm_20260826T160924Z_fb24049b/large-a1.stderr",
+            "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "target_root": "/var/lib/optiplex-lab",
+            "type": "file"
+          },
+          {
+            "bytes": 200001,
+            "path": "code-runs/cm_20260826T160924Z_fb24049b/large-a1.stdout",
+            "sha256": "d768026d20a97801841892ce5a1171b1689f34cfd7524f882a94436e5f349cc9",
+            "target_root": "/var/lib/optiplex-lab",
+            "type": "file"
+          },
+          {
+            "bytes": 2554,
+            "path": "code-runs/cm_20260826T160924Z_fb24049b/result.json",
+            "sha256": "2770d28d1c94762b431bc5e55c4c57d41a1806114445801519de1b6322d99eb3",
+            "target_root": "/var/lib/optiplex-lab",
+            "type": "file"
+          },
+          {
+            "bytes": 148,
+            "path": "code-runs/cm_20260826T160924Z_fb24049b/workflow.json",
+            "sha256": "80e16adf497f49e504ec1206c8122596e069a06325f3eb89e25691c6253c8d58",
+            "target_root": "/var/lib/optiplex-lab",
+            "type": "file"
+          },
+          {
+            "path": "code-runs/cm_20260826T160925Z_a13a8f76",
+            "target_root": "/var/lib/optiplex-lab",
+            "type": "dir"
+          },
+          {
+            "bytes": 2,
+            "path": "code-runs/cm_20260826T160925Z_a13a8f76/edit.backup",
+            "sha256": "13b30eab8afdfab285103004686b2e6140ce53aa45a4f917341c740dfdb6e956",
+            "target_root": "/var/lib/optiplex-lab",
+            "type": "file"
+          },
+          {
+            "bytes": 121,
+            "path": "code-runs/cm_20260826T160925Z_a13a8f76/edit.diff",
+            "sha256": "de6f4db8e41a382003c12c68d191afdd801fb6ae3a2ead4edfeb8d32c0401c22",
+            "target_root": "/var/lib/optiplex-lab",
+            "type": "file"
+          },
+          {
+            "bytes": 2276,
+            "path": "code-runs/cm_20260826T160925Z_a13a8f76/result.json",
+            "sha256": "58b59cac37ee8b4782636e4ae2716e9aed213bb3eb9f451a9d56b12b38bf152f",
+            "target_root": "/var/lib/optiplex-lab",
+            "type": "file"
+          },
+          {
+            "bytes": 1018,
+            "path": "code-runs/cm_20260826T160925Z_a13a8f76/workflow.json",
+            "sha256": "0db868d4a096a93dd7d827470a7f0f28f681138f9b42d46596ca3428a1dd6d52",
+            "target_root": "/var/lib/optiplex-lab",
+            "type": "file"
+          },
+          {
+            "path": "code-runs/cm_20260826T160925Z_b64f40a3",
+            "target_root": "/var/lib/optiplex-lab",
+            "type": "dir"
+          },
+          {
+            "bytes": 2,
+            "path": "code-runs/cm_20260826T160925Z_b64f40a3/edit.backup",
+            "sha256": "06f961b802bc46ee168555f066d28f4f0e9afdf3f88174c1ee6f9de004fc30a0",
+            "target_root": "/var/lib/optiplex-lab",
+            "type": "file"
+          },
+          {
+            "bytes": 108,
+            "path": "code-runs/cm_20260826T160925Z_b64f40a3/edit.diff",
+            "sha256": "a0b0b7652aa36043d055db3830d7174762505d4eaa011e850aeabb587a8bc097",
+            "target_root": "/var/lib/optiplex-lab",
+            "type": "file"
+          },
+          {
+            "bytes": 2238,
+            "path": "code-runs/cm_20260826T160925Z_b64f40a3/result.json",
+            "sha256": "25e052b79a59dd2e91bd3f0cbdc3b51a51244e22f45677dc49ee8adfdf0de026",
+            "target_root": "/var/lib/optiplex-lab",
+            "type": "file"
+          },
+          {
+            "bytes": 997,
+            "path": "code-runs/cm_20260826T160925Z_b64f40a3/workflow.json",
+            "sha256": "6fba89c08b530f3fd08efb6856c71a5319f023475956ea4f19ce8ce8e729d922",
+            "target_root": "/var/lib/optiplex-lab",
+            "type": "file"
+          },
+          {
+            "path": "code-runs/cm_20260826T160925Z_e3d1a096",
+            "target_root": "/var/lib/optiplex-lab",
+            "type": "dir"
+          },
+          {
+            "bytes": 2,
+            "path": "code-runs/cm_20260826T160925Z_e3d1a096/edit.backup",
+            "sha256": "c0cde77fa8fef97d476c10aad3d2d54fcc2f336140d073651c2dcccf1e379fd6",
+            "target_root": "/var/lib/optiplex-lab",
+            "type": "file"
+          },
+          {
+            "bytes": 108,
+            "path": "code-runs/cm_20260826T160925Z_e3d1a096/edit.diff",
+            "sha256": "d67ea2c951de1c4ab9a1c8bee28b5eb3090e396e32bc1d41f92cd67833032ca4",
+            "target_root": "/var/lib/optiplex-lab",
+            "type": "file"
+          },
+          {
+            "bytes": 2238,
+            "path": "code-runs/cm_20260826T160925Z_e3d1a096/result.json",
+            "sha256": "53fda4522fbba603fa527fb00b13a31f6979f0df340428d163a45118017c6688",
+            "target_root": "/var/lib/optiplex-lab",
+            "type": "file"
+          },
+          {
+            "bytes": 997,
+            "path": "code-runs/cm_20260826T160925Z_e3d1a096/workflow.json",
+            "sha256": "83a4fc5fc6ef7fee7388e0519abbe6790698c928662e1e2143f18ac2c3a67ec9",
+            "target_root": "/var/lib/optiplex-lab",
+            "type": "file"
+          },
+          {
+            "path": "code-runs/cm_20260826T160925Z_e6742d60",
+            "target_root": "/var/lib/optiplex-lab",
+            "type": "dir"
+          },
+          {
+            "bytes": 1592,
+            "path": "code-runs/cm_20260826T160925Z_e6742d60/result.json",
+            "sha256": "fb2873d19af5576fc59ffa0c5ef32c8ac5e743793867ba89921a906e8e3dc6e3",
+            "target_root": "/var/lib/optiplex-lab",
+            "type": "file"
+          },
+          {
+            "bytes": 1012,
+            "path": "code-runs/cm_20260826T160925Z_e6742d60/workflow.json",
+            "sha256": "6c8b6ba08673d5e55dc1e442e179e8a863a07d6dfe5360a97bbbf18b22bbc62f",
+            "target_root": "/var/lib/optiplex-lab",
+            "type": "file"
+          },
+          {
+            "path": "graph-runs",
+            "target_root": "/var/lib/optiplex-lab",
+            "type": "dir"
+          },
+          {
+            "path": "graph-runs/wg_20260826T160914Z_4cbad7d8",
+            "target_root": "/var/lib/optiplex-lab",
+            "type": "dir"
+          },
+          {
+            "bytes": 3,
+            "path": "graph-runs/wg_20260826T160914Z_4cbad7d8/accept-lkg-attempt-1-params.json",
+            "sha256": "ca3d163bab055381827226140568f3bef7eaac187cebd76878e0b63e9e442356",
+            "target_root": "/var/lib/optiplex-lab",
+            "type": "file"
+          },
+          {
+            "bytes": 1979,
+            "path": "graph-runs/wg_20260826T160914Z_4cbad7d8/graph.json",
+            "sha256": "95d39d1b7d08a92ce7c483c7fb94bc3f1e9bdab98c886584d0a5b9383e834876",
+            "target_root": "/var/lib/optiplex-lab",
+            "type": "file"
+          },
+          {
+            "bytes": 247,
+            "path": "graph-runs/wg_20260826T160914Z_4cbad7d8/inputs.json",
+            "sha256": "3ab6b67da36056a044fbcbc260225f72090d15d64929798f82f13b9a1cece8df",
+            "target_root": "/var/lib/optiplex-lab",
+            "type": "file"
+          },
+          {
+            "bytes": 247,
+            "path": "graph-runs/wg_20260826T160914Z_4cbad7d8/install-candidate-attempt-1-params.json",
+            "sha256": "3ab6b67da36056a044fbcbc260225f72090d15d64929798f82f13b9a1cece8df",
+            "target_root": "/var/lib/optiplex-lab",
+            "type": "file"
+          },
+          {
+            "bytes": 3,
+            "path": "graph-runs/wg_20260826T160914Z_4cbad7d8/post-verify-attempt-1-params.json",
+            "sha256": "ca3d163bab055381827226140568f3bef7eaac187cebd76878e0b63e9e442356",
+            "target_root": "/var/lib/optiplex-lab",
+            "type": "file"
+          },
+          {
+            "bytes": 15128,
+            "path": "graph-runs/wg_20260826T160914Z_4cbad7d8/result.json",
+            "sha256": "33b82b6c9533492e6075768d035bb4305a0c972e176cf2fdfa62b2161e4e5111",
+            "target_root": "/var/lib/optiplex-lab",
+            "type": "file"
+          },
+          {
+            "bytes": 21508,
+            "path": "graph-runs/wg_20260826T160914Z_4cbad7d8/state.json",
+            "sha256": "f89d00177e16078cf8e580204c82191ef89b2990cd8eade7e5d1fbd545ea513f",
+            "target_root": "/var/lib/optiplex-lab",
+            "type": "file"
+          },
+          {
+            "bytes": 3,
+            "path": "graph-runs/wg_20260826T160914Z_4cbad7d8/verify-candidate-attempt-1-params.json",
+            "sha256": "ca3d163bab055381827226140568f3bef7eaac187cebd76878e0b63e9e442356",
+            "target_root": "/var/lib/optiplex-lab",
+            "type": "file"
+          },
+          {
+            "path": "recovery",
+            "target_root": "/var/lib/optiplex-lab",
+            "type": "dir"
+          },
+          {
+            "bytes": 21231,
+            "path": "recovery/server.last-known-good.py",
+            "sha256": "dc0d2cb41595a9a3d953873879ccc3e0bd88db2b4dcdee4cf8aa43dd4cb103e9",
+            "target_root": "/var/lib/optiplex-lab",
+            "type": "file"
+          },
+          {
+            "bytes": 21231,
+            "path": "recovery/server.previous-20260826T160918Z.py",
+            "sha256": "dc0d2cb41595a9a3d953873879ccc3e0bd88db2b4dcdee4cf8aa43dd4cb103e9",
+            "target_root": "/var/lib/optiplex-lab",
+            "type": "file"
+          },
+          {
+            "path": "spool",
+            "target_root": "/var/lib/optiplex-lab",
+            "type": "dir"
+          },
+          {
+            "path": "spool/20260826",
+            "target_root": "/var/lib/optiplex-lab",
+            "type": "dir"
+          },
+          {
+            "bytes": 200000,
+            "path": "spool/20260826/1787760551487-d11a3de8-selftest.large.log",
+            "sha256": "91e3faafd322bcdf160f3f0ce886acb092b9b9e2a1e8526b40f21a8898a8700b",
+            "target_root": "/var/lib/optiplex-lab",
+            "type": "file"
+          },
+          {
+            "bytes": 200000,
+            "path": "spool/20260826/1787760559596-e1adaee6-selftest.large.log",
+            "sha256": "91e3faafd322bcdf160f3f0ce886acb092b9b9e2a1e8526b40f21a8898a8700b",
+            "target_root": "/var/lib/optiplex-lab",
+            "type": "file"
+          },
+          {
+            "bytes": 200000,
+            "path": "spool/20260826/1787760563196-8dfbffb2-selftest.large.log",
+            "sha256": "91e3faafd322bcdf160f3f0ce886acb092b9b9e2a1e8526b40f21a8898a8700b",
+            "target_root": "/var/lib/optiplex-lab",
+            "type": "file"
+          },
+          {
+            "path": "traces",
+            "target_root": "/var/lib/optiplex-lab",
+            "type": "dir"
+          },
+          {
+            "bytes": 1806420,
+            "path": "traces/events.jsonl",
+            "sha256": "f9f9c5097e70249007c3620e1f22ece0ec3affe148a6d6e02cf1e7e5735135c2",
+            "target_root": "/var/lib/optiplex-lab",
+            "type": "file"
+          },
+          {
+            "path": "workflow-runs",
+            "target_root": "/var/lib/optiplex-lab",
+            "type": "dir"
+          },
+          {
+            "path": "workflow-runs/ws_20260826T160910Z_091acd88",
+            "target_root": "/var/lib/optiplex-lab",
+            "type": "dir"
+          },
+          {
+            "bytes": 2442,
+            "path": "workflow-runs/ws_20260826T160910Z_091acd88/compiled-workflow.json",
+            "sha256": "53fd23727e1ba3be4094d6ecd8502c2de33d878de91dba9dbfce3de39a13af3d",
+            "target_root": "/var/lib/optiplex-lab",
+            "type": "file"
+          },
+          {
+            "path": "workflow-runs/ws_20260826T160910Z_0ca8d352",
+            "target_root": "/var/lib/optiplex-lab",
+            "type": "dir"
+          },
+          {
+            "bytes": 970,
+            "path": "workflow-runs/ws_20260826T160910Z_0ca8d352/compiled-workflow.json",
+            "sha256": "b21705b5789d04309a457c82e0128269354aac5c59604ec9177548232cf2061d",
+            "target_root": "/var/lib/optiplex-lab",
+            "type": "file"
+          },
+          {
+            "path": "workflow-runs/ws_20260826T160910Z_b4e4a514",
+            "target_root": "/var/lib/optiplex-lab",
+            "type": "dir"
+          },
+          {
+            "bytes": 979,
+            "path": "workflow-runs/ws_20260826T160910Z_b4e4a514/compiled-workflow.json",
+            "sha256": "a0a937092701febc25de18bb753e0dbb166ee533039ca569936f29669129b185",
+            "target_root": "/var/lib/optiplex-lab",
+            "type": "file"
+          },
+          {
+            "path": "workflow-runs/ws_20260826T160910Z_bc56f9e7",
+            "target_root": "/var/lib/optiplex-lab",
+            "type": "dir"
+          },
+          {
+            "bytes": 1016,
+            "path": "workflow-runs/ws_20260826T160910Z_bc56f9e7/compiled-workflow.json",
+            "sha256": "6b2488044719d43400a3605a138a33f913c5a08a856c179bec0408e43ae064ff",
+            "target_root": "/var/lib/optiplex-lab",
+            "type": "file"
+          },
+          {
+            "path": "workflow-runs/ws_20260826T160910Z_bd9ea39d",
+            "target_root": "/var/lib/optiplex-lab",
+            "type": "dir"
+          },
+          {
+            "bytes": 976,
+            "path": "workflow-runs/ws_20260826T160910Z_bd9ea39d/compiled-workflow.json",
+            "sha256": "d95761dafe9507615c2a9c580e91611da2b0a79c28cd498bb8117e01eb361db8",
+            "target_root": "/var/lib/optiplex-lab",
+            "type": "file"
+          },
+          {
+            "path": "workflow-runs/ws_20260826T160910Z_c4bceb6e",
+            "target_root": "/var/lib/optiplex-lab",
+            "type": "dir"
+          },
+          {
+            "bytes": 1000,
+            "path": "workflow-runs/ws_20260826T160910Z_c4bceb6e/compiled-workflow.json",
+            "sha256": "062c4a25efc7229f5140214481e2db38dcd357991c16ccfb4a23e6ea2710f84c",
+            "target_root": "/var/lib/optiplex-lab",
+            "type": "file"
+          },
+          {
+            "path": "workflow-runs/ws_20260826T160910Z_cd569f19",
+            "target_root": "/var/lib/optiplex-lab",
+            "type": "dir"
+          },
+          {
+            "bytes": 1027,
+            "path": "workflow-runs/ws_20260826T160910Z_cd569f19/compiled-workflow.json",
+            "sha256": "9cb19a8f1da5c09411d04cd33d5aee3da2db73ea0cdd76100edaac0eae09e489",
+            "target_root": "/var/lib/optiplex-lab",
+            "type": "file"
+          },
+          {
+            "path": "workflow-runs/ws_20260826T160910Z_df7a4122",
+            "target_root": "/var/lib/optiplex-lab",
+            "type": "dir"
+          },
+          {
+            "bytes": 970,
+            "path": "workflow-runs/ws_20260826T160910Z_df7a4122/compiled-workflow.json",
+            "sha256": "a5dd763fd0f6b3c4348c6b37b57b4e4df578411b40e45fd3c9ba0468f22e2124",
+            "target_root": "/var/lib/optiplex-lab",
+            "type": "file"
+          },
+          {
+            "path": "workflow-runs/ws_20260826T160910Z_ff8b045a",
+            "target_root": "/var/lib/optiplex-lab",
+            "type": "dir"
+          },
+          {
+            "bytes": 4477,
+            "path": "workflow-runs/ws_20260826T160910Z_ff8b045a/compiled-workflow.json",
+            "sha256": "862df86b71479e60db8523d2fb143e12ff12e89def5439d76398f2ef8a7eb677",
+            "target_root": "/var/lib/optiplex-lab",
+            "type": "file"
+          },
+          {
+            "path": "workflow-runs/ws_20260826T160913Z_10f67f7a",
+            "target_root": "/var/lib/optiplex-lab",
+            "type": "dir"
+          },
+          {
+            "bytes": 1018,
+            "path": "workflow-runs/ws_20260826T160913Z_10f67f7a/compiled-workflow.json",
+            "sha256": "269b2086737c9fe1acc1a71382b515596d6b3a4d06ce846ba91fe1724551234e",
+            "target_root": "/var/lib/optiplex-lab",
+            "type": "file"
+          },
+          {
+            "path": "workflow-runs/ws_20260826T160913Z_130adb9f",
+            "target_root": "/var/lib/optiplex-lab",
+            "type": "dir"
+          },
+          {
+            "bytes": 997,
+            "path": "workflow-runs/ws_20260826T160913Z_130adb9f/compiled-workflow.json",
+            "sha256": "edfe6a3305c015183482a5b009d5e576c12ebcff6e621d33ca744493002942b3",
+            "target_root": "/var/lib/optiplex-lab",
+            "type": "file"
+          },
+          {
+            "path": "workflow-runs/ws_20260826T160913Z_4079ab10",
+            "target_root": "/var/lib/optiplex-lab",
+            "type": "dir"
+          },
+          {
+            "bytes": 1012,
+            "path": "workflow-runs/ws_20260826T160913Z_4079ab10/compiled-workflow.json",
+            "sha256": "4fc861e367dd4cd96fd4b052472f6822dc188f16706e05baba55e6a1d15e4998",
+            "target_root": "/var/lib/optiplex-lab",
+            "type": "file"
+          },
+          {
+            "path": "workflow-runs/ws_20260826T160913Z_51f2ad9c",
+            "target_root": "/var/lib/optiplex-lab",
+            "type": "dir"
+          },
+          {
+            "bytes": 997,
+            "path": "workflow-runs/ws_20260826T160913Z_51f2ad9c/compiled-workflow.json",
+            "sha256": "c8c9c33049b1110ea1c184c5e7f0952bba79f28c0aaff537173cdb763a738466",
+            "target_root": "/var/lib/optiplex-lab",
+            "type": "file"
+          },
+          {
+            "path": "workflow-runs/ws_20260826T160913Z_78718edb",
+            "target_root": "/var/lib/optiplex-lab",
+            "type": "dir"
+          },
+          {
+            "bytes": 997,
+            "path": "workflow-runs/ws_20260826T160913Z_78718edb/compiled-workflow.json",
+            "sha256": "c8c9c33049b1110ea1c184c5e7f0952bba79f28c0aaff537173cdb763a738466",
+            "target_root": "/var/lib/optiplex-lab",
+            "type": "file"
+          },
+          {
+            "path": "workflow-runs/ws_20260826T160913Z_7eca8381",
+            "target_root": "/var/lib/optiplex-lab",
+            "type": "dir"
+          },
+          {
+            "bytes": 997,
+            "path": "workflow-runs/ws_20260826T160913Z_7eca8381/compiled-workflow.json",
+            "sha256": "edfe6a3305c015183482a5b009d5e576c12ebcff6e621d33ca744493002942b3",
+            "target_root": "/var/lib/optiplex-lab",
+            "type": "file"
+          },
+          {
+            "path": "workflow-runs/ws_20260826T160914Z_da3df66f",
+            "target_root": "/var/lib/optiplex-lab",
+            "type": "dir"
+          },
+          {
+            "bytes": 2123,
+            "path": "workflow-runs/ws_20260826T160914Z_da3df66f/compiled-workflow.json",
+            "sha256": "6f6e0a8b6c515a5ac023eb399275ed0e78f3c8bd7a95293445e2b8d774b9059e",
+            "target_root": "/var/lib/optiplex-lab",
+            "type": "file"
+          },
+          {
+            "path": "workflow-runs/ws_20260826T160919Z_ba30ba8b",
+            "target_root": "/var/lib/optiplex-lab",
+            "type": "dir"
+          },
+          {
+            "bytes": 2158,
+            "path": "workflow-runs/ws_20260826T160919Z_ba30ba8b/compiled-workflow.json",
+            "sha256": "296135452cbf69a89789a20d0c6e0789d496b085ea6fd2266c808e7f4319b345",
+            "target_root": "/var/lib/optiplex-lab",
+            "type": "file"
+          },
+          {
+            "path": "workflow-runs/ws_20260826T160921Z_20ad0d67",
+            "target_root": "/var/lib/optiplex-lab",
+            "type": "dir"
+          },
+          {
+            "bytes": 997,
+            "path": "workflow-runs/ws_20260826T160921Z_20ad0d67/compiled-workflow.json",
+            "sha256": "b854a59074651679585a5c75ae9c8573e936eebebac2b2e2bab1dbd571df84a5",
+            "target_root": "/var/lib/optiplex-lab",
+            "type": "file"
+          },
+          {
+            "path": "workflow-runs/ws_20260826T160921Z_7a612be7",
+            "target_root": "/var/lib/optiplex-lab",
+            "type": "dir"
+          },
+          {
+            "bytes": 1012,
+            "path": "workflow-runs/ws_20260826T160921Z_7a612be7/compiled-workflow.json",
+            "sha256": "aa476ee81b77aad943c844be5b9ead2511334e3580a0bf7e4de486386461a7b7",
+            "target_root": "/var/lib/optiplex-lab",
+            "type": "file"
+          },
+          {
+            "path": "workflow-runs/ws_20260826T160921Z_7aa5682b",
+            "target_root": "/var/lib/optiplex-lab",
+            "type": "dir"
+          },
+          {
+            "bytes": 997,
+            "path": "workflow-runs/ws_20260826T160921Z_7aa5682b/compiled-workflow.json",
+            "sha256": "574c710fa33ab53e192c8e2345bb4bf6e32f83d086c7ed29d58a0fbf08c6aaf0",
+            "target_root": "/var/lib/optiplex-lab",
+            "type": "file"
+          },
+          {
+            "path": "workflow-runs/ws_20260826T160921Z_83f26304",
+            "target_root": "/var/lib/optiplex-lab",
+            "type": "dir"
+          },
+          {
+            "bytes": 997,
+            "path": "workflow-runs/ws_20260826T160921Z_83f26304/compiled-workflow.json",
+            "sha256": "574c710fa33ab53e192c8e2345bb4bf6e32f83d086c7ed29d58a0fbf08c6aaf0",
+            "target_root": "/var/lib/optiplex-lab",
+            "type": "file"
+          },
+          {
+            "path": "workflow-runs/ws_20260826T160921Z_9ff4754d",
+            "target_root": "/var/lib/optiplex-lab",
+            "type": "dir"
+          },
+          {
+            "bytes": 1018,
+            "path": "workflow-runs/ws_20260826T160921Z_9ff4754d/compiled-workflow.json",
+            "sha256": "15bf2261fea53825f70dc91e6653f734be5e975567692fb802833595861bd942",
+            "target_root": "/var/lib/optiplex-lab",
+            "type": "file"
+          },
+          {
+            "path": "workflow-runs/ws_20260826T160921Z_c072972c",
+            "target_root": "/var/lib/optiplex-lab",
+            "type": "dir"
+          },
+          {
+            "bytes": 997,
+            "path": "workflow-runs/ws_20260826T160921Z_c072972c/compiled-workflow.json",
+            "sha256": "b854a59074651679585a5c75ae9c8573e936eebebac2b2e2bab1dbd571df84a5",
+            "target_root": "/var/lib/optiplex-lab",
+            "type": "file"
+          },
+          {
+            "path": "workflow-runs/ws_20260826T160922Z_9e9ff40a",
+            "target_root": "/var/lib/optiplex-lab",
+            "type": "dir"
+          },
+          {
+            "bytes": 1697,
+            "path": "workflow-runs/ws_20260826T160922Z_9e9ff40a/compiled-workflow.json",
+            "sha256": "bb69ae7733ebba08693defc4501b04507763fa9c8f8465cf76bb283340374178",
+            "target_root": "/var/lib/optiplex-lab",
+            "type": "file"
+          },
+          {
+            "path": "workflow-runs/ws_20260826T160922Z_ac451a1f",
+            "target_root": "/var/lib/optiplex-lab",
+            "type": "dir"
+          },
+          {
+            "bytes": 2442,
+            "path": "workflow-runs/ws_20260826T160922Z_ac451a1f/compiled-workflow.json",
+            "sha256": "53fd23727e1ba3be4094d6ecd8502c2de33d878de91dba9dbfce3de39a13af3d",
+            "target_root": "/var/lib/optiplex-lab",
+            "type": "file"
+          },
+          {
+            "path": "workflow-runs/ws_20260826T160924Z_4e83f6be",
+            "target_root": "/var/lib/optiplex-lab",
+            "type": "dir"
+          },
+          {
+            "bytes": 997,
+            "path": "workflow-runs/ws_20260826T160924Z_4e83f6be/compiled-workflow.json",
+            "sha256": "6fba89c08b530f3fd08efb6856c71a5319f023475956ea4f19ce8ce8e729d922",
+            "target_root": "/var/lib/optiplex-lab",
+            "type": "file"
+          },
+          {
+            "path": "workflow-runs/ws_20260826T160924Z_cf1c3fb2",
+            "target_root": "/var/lib/optiplex-lab",
+            "type": "dir"
+          },
+          {
+            "bytes": 997,
+            "path": "workflow-runs/ws_20260826T160924Z_cf1c3fb2/compiled-workflow.json",
+            "sha256": "83a4fc5fc6ef7fee7388e0519abbe6790698c928662e1e2143f18ac2c3a67ec9",
+            "target_root": "/var/lib/optiplex-lab",
+            "type": "file"
+          },
+          {
+            "path": "workflow-runs/ws_20260826T160925Z_1b8de7d9",
+            "target_root": "/var/lib/optiplex-lab",
+            "type": "dir"
+          },
+          {
+            "bytes": 1018,
+            "path": "workflow-runs/ws_20260826T160925Z_1b8de7d9/compiled-workflow.json",
+            "sha256": "0db868d4a096a93dd7d827470a7f0f28f681138f9b42d46596ca3428a1dd6d52",
+            "target_root": "/var/lib/optiplex-lab",
+            "type": "file"
+          },
+          {
+            "path": "workflow-runs/ws_20260826T160925Z_29965978",
+            "target_root": "/var/lib/optiplex-lab",
+            "type": "dir"
+          },
+          {
+            "bytes": 997,
+            "path": "workflow-runs/ws_20260826T160925Z_29965978/compiled-workflow.json",
+            "sha256": "83a4fc5fc6ef7fee7388e0519abbe6790698c928662e1e2143f18ac2c3a67ec9",
+            "target_root": "/var/lib/optiplex-lab",
+            "type": "file"
+          },
+          {
+            "path": "workflow-runs/ws_20260826T160925Z_2bf71398",
+            "target_root": "/var/lib/optiplex-lab",
+            "type": "dir"
+          },
+          {
+            "bytes": 997,
+            "path": "workflow-runs/ws_20260826T160925Z_2bf71398/compiled-workflow.json",
+            "sha256": "6fba89c08b530f3fd08efb6856c71a5319f023475956ea4f19ce8ce8e729d922",
+            "target_root": "/var/lib/optiplex-lab",
+            "type": "file"
+          },
+          {
+            "path": "workflow-runs/ws_20260826T160925Z_52caadad",
+            "target_root": "/var/lib/optiplex-lab",
+            "type": "dir"
+          },
+          {
+            "bytes": 1012,
+            "path": "workflow-runs/ws_20260826T160925Z_52caadad/compiled-workflow.json",
+            "sha256": "6c8b6ba08673d5e55dc1e442e179e8a863a07d6dfe5360a97bbbf18b22bbc62f",
+            "target_root": "/var/lib/optiplex-lab",
+            "type": "file"
+          },
+          {
+            "path": "__pycache__",
+            "target_root": "/root",
+            "type": "dir"
+          },
+          {
+            "bytes": 19653,
+            "path": "__pycache__/gen4-benchmark-reuse.cpython-310.pyc",
+            "sha256": "7c41ce43d23d2ef2eed901b1f1d50ac61e698e0285b4aa168aa455fe4e931bcb",
+            "target_root": "/root",
+            "type": "file"
+          },
+          {
+            "bytes": 21231,
+            "path": "gen4-benchmark-reuse.py",
+            "sha256": "dc0d2cb41595a9a3d953873879ccc3e0bd88db2b4dcdee4cf8aa43dd4cb103e9",
+            "target_root": "/root",
+            "type": "file"
+          }
+        ]
+      },
+      "result": {
+        "accepted_state_unchanged": true,
+        "allowed_outer_audit_appends": [
+          {
+            "after_sha256": "849a449aa2f81daec4c2c276d5f42d689a2341b6f8439485e05874b70755bee4",
+            "before_sha256": "e8bbe1f9bf3fe09aa3d4264e30a9018cff73902d01c0c00d55b3ed62ab3d379f",
+            "bytes_appended": 621,
+            "kind": "append_only_outer_audit",
+            "path": "/var/lib/optiplex-lab/traces/events.jsonl"
+          }
+        ],
+        "capsule_mutation_digest": "a80c04b445762332b816327bbf3ff43fc12703821ab1c3d01e4814f3b1c98650",
+        "capsule_mutation_records": 384,
+        "captured_artifacts": [
+          {
+            "bytes": 9550,
+            "export_path": "/var/tmp/optiplex-lab-capsules/cap8_20260826T160908Z_a0fba037/export/captures/var/lib/optiplex-lab/benchmarks/gen4-workflow-graph-benchmark.json",
+            "path": "/var/lib/optiplex-lab/benchmarks/gen4-workflow-graph-benchmark.json",
+            "sha256": "14716230aab3a90f6d9920b00c9c9a6780b1612bf888b0fa63dbbbf04415ee8f"
+          }
+        ],
+        "child_exit_code": 0,
+        "duration_ms": 15841.764,
+        "forbidden_accepted_state_mutations": [],
+        "label": "retained-gen4-absolute-build",
+        "manifest": "/var/tmp/optiplex-lab-capsules/cap8_20260826T160908Z_a0fba037/manifest.json",
+        "namespace_stderr": "",
+        "namespace_stdout": "",
+        "ok": true,
+        "protected_after_digest": "360c6cb22e684d8ca288484a0311b7573da4f7030b43f74bdb1c2ae19062b1f3",
+        "protected_before_digest": "634e1f3968e54ee7ee202a3d9d94166806efbd5e9047768c38b8c09fc38314cb",
+        "recipe_digest": "7e6c3e877a27e73abe1304b9cbe53ae5e45d6bc5cb85f0c02593327e8ab11822",
+        "result_digest": "31a3f12d4330d73ecda2360262a7b813fed5c2eab97260f517fcb7d11a3526e5",
+        "run_dir": "/var/tmp/optiplex-lab-capsules/cap8_20260826T160908Z_a0fba037",
+        "run_id": "cap8_20260826T160908Z_a0fba037",
+        "stderr": {
+          "bytes": 0,
+          "path": "/var/tmp/optiplex-lab-capsules/cap8_20260826T160908Z_a0fba037/export/stderr.log",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "stdout": {
+          "bytes": 2159,
+          "path": "/var/tmp/optiplex-lab-capsules/cap8_20260826T160908Z_a0fba037/export/stdout.log",
+          "sha256": "cc771e0a89141314a0c297de2f42a537f23a6f6a02c5c8f8dfb790e13794bc08"
+        },
+        "version": "gen8-experiment-capsule-r1"
+      }
+    },
+    "cap8_20260826T162324Z_21fe7bed": {
+      "manifest": {
+        "captures": [],
+        "command": "printf 'GEN8_REPRO_OK\\n'",
+        "created_at": "2026-08-26T16:23:26.802504+00:00",
+        "empty_paths": [],
+        "isolation": {
+          "mount_namespace": true,
+          "overlayfs": true,
+          "pid_namespace": true,
+          "private_run": true,
+          "private_tmp": true,
+          "service_manager_virtualized": true
+        },
+        "label": "gen8-repro-control",
+        "overlay_targets": [
+          "/opt/optiplex-lab",
+          "/etc/optiplex-lab",
+          "/etc/systemd/system",
+          "/var/lib/optiplex-lab",
+          "/root"
+        ],
+        "protected_before_digest": "c2327ef0acbc4a02df22fbc98c885f0662512f48bfc255165090715d56ed5fcb",
+        "recipe_digest": "ddae4383dd64da507bd67d0273d46bb4438bf6f8fd1ebae50900aaabbca74f70",
+        "run_id": "cap8_20260826T162324Z_21fe7bed",
+        "schema_version": 1,
+        "source_inputs": [
+          {
+            "path": "/opt/optiplex-lab",
+            "tree_digest": "e03fd8bc93495f7ebfbde53c7f00310bc66625648f86451873e922d9b9d67eb8"
+          },
+          {
+            "path": "/etc/optiplex-lab",
+            "tree_digest": "ed4eaf9def409c78daa69c3455bc6ed827e23c0956efc5d54d9bf8b793c794f2"
+          },
+          {
+            "path": "/etc/systemd/system",
+            "tree_digest": "d8d7606b6f5cc9abae38f55901a088e68f0cca6e30e1aa9e344c1f851eae6b69"
+          },
+          {
+            "path": "/var/lib/optiplex-lab",
+            "tree_digest": "c02a2b82641504802440290a12b191bdbccfa1ff183705048ef157997e76ce82"
+          },
+          {
+            "path": "/root",
+            "tree_digest": "097b1f72fd2f4938b7d43cf245931a542a05b7d06736807b0d975f59b97841b7"
+          }
+        ],
+        "version": "gen8-experiment-capsule-r1",
+        "wrapper_instance_sha256": "4730fb4a1c32b1f01438e08319cca07075422e163255ff5f9c46e4a449cca258",
+        "wrapper_sha256": "e9b1e1c071783ff76d2f2f17312669bc4a0b42761bfad07bddf99c85ee17194b"
+      },
+      "mutation_manifest": {
+        "digest": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+        "records": []
+      },
+      "result": {
+        "accepted_state_unchanged": true,
+        "allowed_outer_audit_appends": [],
+        "capsule_mutation_digest": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+        "capsule_mutation_records": 0,
+        "captured_artifacts": [],
+        "child_exit_code": 0,
+        "duration_ms": 98.965,
+        "forbidden_accepted_state_mutations": [],
+        "label": "gen8-repro-control",
+        "manifest": "/var/tmp/optiplex-lab-capsules/cap8_20260826T162324Z_21fe7bed/manifest.json",
+        "namespace_stderr": "",
+        "namespace_stdout": "",
+        "ok": true,
+        "protected_after_digest": "c2327ef0acbc4a02df22fbc98c885f0662512f48bfc255165090715d56ed5fcb",
+        "protected_before_digest": "c2327ef0acbc4a02df22fbc98c885f0662512f48bfc255165090715d56ed5fcb",
+        "recipe_digest": "ddae4383dd64da507bd67d0273d46bb4438bf6f8fd1ebae50900aaabbca74f70",
+        "result_digest": "1fc30fb1ac8088c2d117edbb52bb40af15048caf9bd30247f03aaa9f016b1baf",
+        "run_dir": "/var/tmp/optiplex-lab-capsules/cap8_20260826T162324Z_21fe7bed",
+        "run_id": "cap8_20260826T162324Z_21fe7bed",
+        "stderr": {
+          "bytes": 0,
+          "path": "/var/tmp/optiplex-lab-capsules/cap8_20260826T162324Z_21fe7bed/export/stderr.log",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "stdout": {
+          "bytes": 14,
+          "path": "/var/tmp/optiplex-lab-capsules/cap8_20260826T162324Z_21fe7bed/export/stdout.log",
+          "sha256": "d0843cce202a3fd30dcfff339e0dd7d8d920f761d8c65a3bcf3fb3973b8e7518"
+        },
+        "version": "gen8-experiment-capsule-r1"
+      }
+    },
+    "cap8_20260826T162326Z_29f28f96": {
+      "manifest": {
+        "captures": [],
+        "command": "printf 'GEN8_REPRO_OK\\n'",
+        "created_at": "2026-08-26T16:23:28.791730+00:00",
+        "empty_paths": [],
+        "isolation": {
+          "mount_namespace": true,
+          "overlayfs": true,
+          "pid_namespace": true,
+          "private_run": true,
+          "private_tmp": true,
+          "service_manager_virtualized": true
+        },
+        "label": "gen8-repro-control",
+        "overlay_targets": [
+          "/opt/optiplex-lab",
+          "/etc/optiplex-lab",
+          "/etc/systemd/system",
+          "/var/lib/optiplex-lab",
+          "/root"
+        ],
+        "protected_before_digest": "c2327ef0acbc4a02df22fbc98c885f0662512f48bfc255165090715d56ed5fcb",
+        "recipe_digest": "ddae4383dd64da507bd67d0273d46bb4438bf6f8fd1ebae50900aaabbca74f70",
+        "run_id": "cap8_20260826T162326Z_29f28f96",
+        "schema_version": 1,
+        "source_inputs": [
+          {
+            "path": "/opt/optiplex-lab",
+            "tree_digest": "e03fd8bc93495f7ebfbde53c7f00310bc66625648f86451873e922d9b9d67eb8"
+          },
+          {
+            "path": "/etc/optiplex-lab",
+            "tree_digest": "ed4eaf9def409c78daa69c3455bc6ed827e23c0956efc5d54d9bf8b793c794f2"
+          },
+          {
+            "path": "/etc/systemd/system",
+            "tree_digest": "d8d7606b6f5cc9abae38f55901a088e68f0cca6e30e1aa9e344c1f851eae6b69"
+          },
+          {
+            "path": "/var/lib/optiplex-lab",
+            "tree_digest": "c02a2b82641504802440290a12b191bdbccfa1ff183705048ef157997e76ce82"
+          },
+          {
+            "path": "/root",
+            "tree_digest": "097b1f72fd2f4938b7d43cf245931a542a05b7d06736807b0d975f59b97841b7"
+          }
+        ],
+        "version": "gen8-experiment-capsule-r1",
+        "wrapper_instance_sha256": "6b27c9ccfef39bcc1eaba8a432febcac03a81e67c343a88206809b78a43f020f",
+        "wrapper_sha256": "e9b1e1c071783ff76d2f2f17312669bc4a0b42761bfad07bddf99c85ee17194b"
+      },
+      "mutation_manifest": {
+        "digest": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+        "records": []
+      },
+      "result": {
+        "accepted_state_unchanged": true,
+        "allowed_outer_audit_appends": [],
+        "capsule_mutation_digest": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+        "capsule_mutation_records": 0,
+        "captured_artifacts": [],
+        "child_exit_code": 0,
+        "duration_ms": 62.451,
+        "forbidden_accepted_state_mutations": [],
+        "label": "gen8-repro-control",
+        "manifest": "/var/tmp/optiplex-lab-capsules/cap8_20260826T162326Z_29f28f96/manifest.json",
+        "namespace_stderr": "",
+        "namespace_stdout": "",
+        "ok": true,
+        "protected_after_digest": "c2327ef0acbc4a02df22fbc98c885f0662512f48bfc255165090715d56ed5fcb",
+        "protected_before_digest": "c2327ef0acbc4a02df22fbc98c885f0662512f48bfc255165090715d56ed5fcb",
+        "recipe_digest": "ddae4383dd64da507bd67d0273d46bb4438bf6f8fd1ebae50900aaabbca74f70",
+        "result_digest": "d9b13bea899e0e6534929d193db4455ab8497efb88ca02b926897d4d4be72622",
+        "run_dir": "/var/tmp/optiplex-lab-capsules/cap8_20260826T162326Z_29f28f96",
+        "run_id": "cap8_20260826T162326Z_29f28f96",
+        "stderr": {
+          "bytes": 0,
+          "path": "/var/tmp/optiplex-lab-capsules/cap8_20260826T162326Z_29f28f96/export/stderr.log",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "stdout": {
+          "bytes": 14,
+          "path": "/var/tmp/optiplex-lab-capsules/cap8_20260826T162326Z_29f28f96/export/stdout.log",
+          "sha256": "d0843cce202a3fd30dcfff339e0dd7d8d920f761d8c65a3bcf3fb3973b8e7518"
+        },
+        "version": "gen8-experiment-capsule-r1"
+      }
+    }
+  },
+  "known_gen4": "18/18 PASS including lifecycle restart/recovery path; accepted build metadata unchanged",
+  "known_gen5": "12/12 PASS with empty capsule-local Forge state; accepted Forge unchanged",
+  "protected_final_comparison": {
+    "accepted": true,
+    "allowed_audit_appends": [
+      {
+        "bytes_appended": 128484,
+        "path": "/var/lib/optiplex-lab/traces/events.jsonl",
+        "prefix_preserved": true
+      }
+    ],
+    "common_resource_forbidden_changes": [],
+    "newly_monitored_paths_without_earliest_baseline": [
+      "/etc/systemd/system"
+    ],
+    "note": "New paths are covered by same-schema before/after capsule results; every accepted retained capsule reported zero forbidden mutations.",
+    "version": "gen8-protected-final-comparison-r1"
+  },
+  "version": "gen8-capsule-evidence-r1"
+}

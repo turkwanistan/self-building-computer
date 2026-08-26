@@ -1,0 +1,53 @@
+{
+  "captures": [
+    "/var/lib/optiplex-lab/benchmarks/gen4-workflow-graph-benchmark.json"
+  ],
+  "command": "/opt/optiplex-lab/venv/bin/python /opt/optiplex-lab/bench/benchmark_gen4.py",
+  "created_at": "2026-08-26T16:09:10.242696+00:00",
+  "empty_paths": [],
+  "isolation": {
+    "mount_namespace": true,
+    "overlayfs": true,
+    "pid_namespace": true,
+    "private_run": true,
+    "private_tmp": true,
+    "service_manager_virtualized": true
+  },
+  "label": "retained-gen4-absolute-build",
+  "overlay_targets": [
+    "/opt/optiplex-lab",
+    "/etc/optiplex-lab",
+    "/etc/systemd/system",
+    "/var/lib/optiplex-lab",
+    "/root"
+  ],
+  "protected_before_digest": "634e1f3968e54ee7ee202a3d9d94166806efbd5e9047768c38b8c09fc38314cb",
+  "recipe_digest": "7e6c3e877a27e73abe1304b9cbe53ae5e45d6bc5cb85f0c02593327e8ab11822",
+  "run_id": "cap8_20260826T160908Z_a0fba037",
+  "schema_version": 1,
+  "source_inputs": [
+    {
+      "path": "/opt/optiplex-lab",
+      "tree_digest": "44fb8a396472e175831ff80d52c93e329e858e8f3092b37618e8924a62dcc1cd"
+    },
+    {
+      "path": "/etc/optiplex-lab",
+      "tree_digest": "ed4eaf9def409c78daa69c3455bc6ed827e23c0956efc5d54d9bf8b793c794f2"
+    },
+    {
+      "path": "/etc/systemd/system",
+      "tree_digest": "d8d7606b6f5cc9abae38f55901a088e68f0cca6e30e1aa9e344c1f851eae6b69"
+    },
+    {
+      "path": "/var/lib/optiplex-lab",
+      "tree_digest": "7bd6c901b30ce9003c6eebd6a66b12a8159420ccc6da8ccec2f74ee1e14c4fe2"
+    },
+    {
+      "path": "/root",
+      "tree_digest": "097b1f72fd2f4938b7d43cf245931a542a05b7d06736807b0d975f59b97841b7"
+    }
+  ],
+  "version": "gen8-experiment-capsule-r1",
+  "wrapper_instance_sha256": "37c4b5f0a44a7215c427ff747fc219dd9d58f8aaa86e10e7fe809714778634b8",
+  "wrapper_sha256": "e9b1e1c071783ff76d2f2f17312669bc4a0b42761bfad07bddf99c85ee17194b"
+}

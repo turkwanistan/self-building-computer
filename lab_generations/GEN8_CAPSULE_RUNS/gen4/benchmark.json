@@ -1,0 +1,312 @@
+{
+  "timestamp": "2026-08-26T16:09:26.047801+00:00",
+  "generation": "gen4-workflow-graphs-r1",
+  "tasks": [
+    {
+      "name": "register_create_composite_workflow",
+      "ok": true,
+      "elapsed_ms": 19.0,
+      "detail": {
+        "identity": {
+          "name": "bench-simple",
+          "version": "1",
+          "sha256": "dd5133e12290dd707039512a311a02d51b27784d5b854905f87ed65f496be881",
+          "runner_version": "gen4-workflow-graphs-r1",
+          "state": "registered",
+          "path": "/tmp/gen4bench-h0px9moh/graph-registry/bench-simple/1.json",
+          "active": true
+        },
+        "listed": 1
+      }
+    },
+    {
+      "name": "invoke_child_reusable_workflow",
+      "ok": true,
+      "elapsed_ms": 60.08,
+      "detail": {
+        "run": "wg_20260826T160910Z_4d8c85d2",
+        "child": {
+          "name": "exact-replace",
+          "version": "1",
+          "sha256": "93eddcd911455e1d89a5d2b4a74f0dc5da2d380c42aa0a72e323524e12b10f30",
+          "compiler_version": "gen3-workflow-skills-r1"
+        }
+      }
+    },
+    {
+      "name": "typed_parent_to_child_parameter_mapping",
+      "ok": true,
+      "elapsed_ms": 59.42,
+      "detail": {
+        "run": "wg_20260826T160910Z_7f0b56d0",
+        "preflight_parameters": {
+          "new": {
+            "type": "str",
+            "value": "typed-new"
+          },
+          "old": {
+            "type": "str",
+            "value": "typed-old"
+          },
+          "path": {
+            "type": "path",
+            "value": "/tmp/gen4bench-h0px9moh/typed.txt"
+          }
+        }
+      }
+    },
+    {
+      "name": "reject_missing_child_parameter_before_destructive_execution",
+      "ok": true,
+      "elapsed_ms": 1.04,
+      "detail": {
+        "error": "missing required parameter: old",
+        "file_unchanged": true
+      }
+    },
+    {
+      "name": "reject_unknown_child_workflow_version",
+      "ok": true,
+      "elapsed_ms": 1.05,
+      "detail": {
+        "error": "workflow not found: definitely-missing@999"
+      }
+    },
+    {
+      "name": "detect_workflow_cycle",
+      "ok": true,
+      "elapsed_ms": 0.22,
+      "detail": {
+        "error": "workflow graph cycle detected"
+      }
+    },
+    {
+      "name": "enforce_nesting_and_invocation_bounds",
+      "ok": true,
+      "elapsed_ms": 0.42,
+      "detail": {
+        "errors": [
+          "worst-case child invocations 2 exceeds max_invocations=1",
+          "nested graph calls are not supported in Gen-4"
+        ]
+      }
+    },
+    {
+      "name": "execute_multi_child_sequential_graph",
+      "ok": true,
+      "elapsed_ms": 115.7,
+      "detail": {
+        "run": "wg_20260826T160910Z_a0d5fe0f",
+        "child_invocations": 2
+      }
+    },
+    {
+      "name": "child_failure_propagates_to_parent",
+      "ok": true,
+      "elapsed_ms": 60.98,
+      "detail": {
+        "run": "wg_20260826T160910Z_3fd55553",
+        "status": "FAIL",
+        "node": "FAILED"
+      }
+    },
+    {
+      "name": "explicit_recovery_branch",
+      "ok": true,
+      "elapsed_ms": 125.04,
+      "detail": {
+        "run": "wg_20260826T160910Z_2e0ddeeb",
+        "status": "RECOVERED",
+        "recovered_failures": {
+          "fail": "recover"
+        }
+      }
+    },
+    {
+      "name": "child_provenance_hash_version_audit",
+      "ok": true,
+      "elapsed_ms": 0.03,
+      "detail": {
+        "parent": {
+          "name": "bench-simple",
+          "version": "1",
+          "sha256": "dd5133e12290dd707039512a311a02d51b27784d5b854905f87ed65f496be881",
+          "runner_version": "gen4-workflow-graphs-r1"
+        },
+        "child": {
+          "name": "exact-replace",
+          "version": "1",
+          "sha256": "93eddcd911455e1d89a5d2b4a74f0dc5da2d380c42aa0a72e323524e12b10f30",
+          "compiler_version": "gen3-workflow-skills-r1"
+        },
+        "code_run": "cm_20260826T160910Z_b1276552"
+      }
+    },
+    {
+      "name": "compact_parent_result_with_child_artifacts_retained",
+      "ok": true,
+      "elapsed_ms": 77.51,
+      "detail": {
+        "run": "wg_20260826T160910Z_bdc86c71",
+        "parent_value": {
+          "type": "str",
+          "hashed": true,
+          "sha256": "575eda6c2ba44666b2dea3d1a2fecc4d16b74f48923616fe55461249a079206e",
+          "bytes": 702
+        },
+        "child_value": {
+          "type": "str",
+          "hashed": true,
+          "sha256": "575eda6c2ba44666b2dea3d1a2fecc4d16b74f48923616fe55461249a079206e",
+          "bytes": 702
+        },
+        "result_bytes": 5409,
+        "child_artifacts_retained": true
+      }
+    },
+    {
+      "name": "restart_safe_composite_operation",
+      "ok": true,
+      "elapsed_ms": 0.0,
+      "detail": {
+        "run": "wg_20260826T143225Z_c5b9612c",
+        "checkpoint": {
+          "confirmed": true,
+          "confirmed_at": "2026-08-26T14:32:32.182161+00:00",
+          "node": "install-candidate",
+          "ok": true,
+          "pid_after": 27624,
+          "pid_before": 27260,
+          "ready": true,
+          "required": true,
+          "seen_down": true
+        }
+      }
+    },
+    {
+      "name": "composite_lab_candidate_validation",
+      "ok": true,
+      "elapsed_ms": 0.0,
+      "detail": {
+        "run": "wg_20260826T143225Z_c5b9612c",
+        "node_status": "SUCCEEDED",
+        "child": {
+          "compiler_version": "gen3-workflow-skills-r1",
+          "name": "lab-candidate-verify",
+          "sha256": "9b0901513db738547f53110e23fba95b4412e339bab52fb0c0b0aff23a1f0af3",
+          "version": "2"
+        }
+      }
+    },
+    {
+      "name": "composite_lab_self_update_restart_verify_accept",
+      "ok": true,
+      "elapsed_ms": 0.27,
+      "detail": {
+        "run": "wg_20260826T143225Z_c5b9612c",
+        "node_order": [
+          "install-candidate",
+          "verify-candidate",
+          "accept-lkg",
+          "post-verify"
+        ],
+        "recovery_state": "ACCEPTED",
+        "live_sha256": "dc0d2cb41595a9a3d953873879ccc3e0bd88db2b4dcdee4cf8aa43dd4cb103e9",
+        "lkg_sha256": "dc0d2cb41595a9a3d953873879ccc3e0bd88db2b4dcdee4cf8aa43dd4cb103e9"
+      }
+    },
+    {
+      "name": "bad_candidate_recovery_transaction",
+      "ok": true,
+      "elapsed_ms": 0.18,
+      "detail": {
+        "run": "wg_20260826T122635Z_5b1c349a",
+        "node_order": [
+          "bad-candidate-recovery",
+          "reaccept-lkg",
+          "post-recovery-verify"
+        ],
+        "recovery_state": "ACCEPTED",
+        "retries": 3
+      }
+    },
+    {
+      "name": "containment_invariants",
+      "ok": true,
+      "elapsed_ms": 3470.22,
+      "detail": {
+        "run": "wg_20260826T160910Z_035ffb87",
+        "code_runs": [
+          "cm_20260826T160910Z_3983c2ff"
+        ]
+      }
+    },
+    {
+      "name": "reuse_same_composite_without_regenerating_sequence",
+      "ok": true,
+      "elapsed_ms": 11712.14,
+      "detail": {
+        "run": "wg_20260826T160914Z_4cbad7d8",
+        "graph_sha256": "e516a1db5e06ca97de814851c3d3cdc5f891f08b156aad208effc7adf6a69bee",
+        "child_invocations": 4,
+        "output_bytes": 1233,
+        "checkpoint": {
+          "confirmed": true,
+          "confirmed_at": "2026-08-26T16:09:18.975962+00:00",
+          "node": "install-candidate",
+          "ok": true,
+          "pid_after": 50002,
+          "pid_before": 50001,
+          "ready": true,
+          "required": true,
+          "seen_down": false
+        }
+      }
+    }
+  ],
+  "summary": {
+    "passed": 18,
+    "total": 18,
+    "elapsed_ms": 15703.3,
+    "gen3_benchmark_passed": 16,
+    "gen3_benchmark_total": 16,
+    "gen3_reusable_workflow_invocations": 18,
+    "gen3_invocation_authoring_bytes_proxy": 1829,
+    "gen3_underlying_code_mode_steps": 64,
+    "gen3_raw_shell_step_share": 0.203,
+    "normal_lifecycle_top_level_invocations_gen3": 4,
+    "normal_lifecycle_top_level_invocations_gen4": 1,
+    "normal_lifecycle_invocation_reduction": 0.75,
+    "bad_recovery_top_level_invocations_gen3": 3,
+    "bad_recovery_top_level_invocations_gen4": 1,
+    "bad_recovery_invocation_reduction": 0.667,
+    "combined_lifecycle_top_level_invocations_gen3": 7,
+    "combined_lifecycle_top_level_invocations_gen4": 2,
+    "combined_lifecycle_invocation_reduction": 0.714,
+    "normal_lifecycle_authoring_bytes_gen3_proxy": 4591,
+    "normal_lifecycle_authoring_bytes_gen4_proxy": 4449,
+    "normal_lifecycle_authoring_byte_reduction": 0.031,
+    "bad_recovery_authoring_bytes_gen3_proxy": 153,
+    "bad_recovery_authoring_bytes_gen4_proxy": 50,
+    "bad_recovery_authoring_byte_reduction": 0.673,
+    "new_procedural_steps_authored_for_composite_reuse": 0,
+    "local_graph_child_invocations": 9,
+    "local_graph_code_mode_invocations": 9,
+    "local_graph_retries": 0,
+    "local_graph_underlying_code_mode_steps": 23,
+    "local_graph_raw_shell_command_steps": 2,
+    "local_graph_raw_shell_step_share": 0.087,
+    "parent_cli_output_bytes_proxy": 1233,
+    "self_host_upgrade_run": "wg_20260826T143225Z_c5b9612c",
+    "reused_upgrade_run": "wg_20260826T160914Z_4cbad7d8",
+    "bad_recovery_run": "wg_20260826T122635Z_5b1c349a",
+    "restart_resume_success": true,
+    "recovery_success": true,
+    "final_recovery_state": "ACCEPTED",
+    "final_live_sha256": "dc0d2cb41595a9a3d953873879ccc3e0bd88db2b4dcdee4cf8aa43dd4cb103e9",
+    "final_lkg_sha256": "dc0d2cb41595a9a3d953873879ccc3e0bd88db2b4dcdee4cf8aa43dd4cb103e9",
+    "final_live_equals_lkg": true,
+    "upgrade_graph_sha256": "e516a1db5e06ca97de814851c3d3cdc5f891f08b156aad208effc7adf6a69bee",
+    "recovery_graph_sha256": "1c1c43529d507a0c972205aef347c9134d4d153a15af04cbfc1bf24d253f9ac7"
+  }
+}

@@ -1,0 +1,828 @@
+{
+  "cases": [
+    {
+      "bytes": 21489,
+      "fail_closed": false,
+      "forbidden_present": [],
+      "id": "architecture-experience-loop",
+      "missing": [],
+      "ok": true,
+      "packet_digest": "ea103dac3ad8823bd2f5487e9a727322198f4478aa4ec18506e56746ce4c1c07",
+      "packet_id": "ctx_8e031a2bb426043fbcea",
+      "required": [
+        "authority:guest-security-boundary",
+        "operational:accepted-identity",
+        "source:/opt/optiplex-lab/capability_forge.py",
+        "source:/opt/optiplex-lab/experience_loop.py",
+        "source:/opt/optiplex-lab/experience_memory.py",
+        "source:/opt/optiplex-lab/regression_compiler.py",
+        "validation:benchmark:benchmark_gen6",
+        "validation:benchmark:benchmark_gen7",
+        "validation:selftest:experience_loop"
+      ],
+      "required_any_ok": true,
+      "required_kinds_ok": true,
+      "selected": [
+        "authority:guest-security-boundary",
+        "generation:gen6-experience-memory-r1",
+        "operational:accepted-identity",
+        "regression:e500767cc7827fb03a19b91c4f00dbcca1aeeddee72a63dea4b311ff3f48805a",
+        "source:/opt/optiplex-lab/capability_forge.py",
+        "source:/opt/optiplex-lab/experience_loop.py",
+        "source:/opt/optiplex-lab/experience_memory.py",
+        "source:/opt/optiplex-lab/regression_compiler.py",
+        "validation:benchmark:benchmark_gen6",
+        "validation:benchmark:benchmark_gen7",
+        "validation:benchmark:benchmark_gen8",
+        "validation:selftest:experience_loop",
+        "validation:selftest:experience_memory",
+        "validation:selftest:regression_compiler"
+      ],
+      "task_kind": "explanation_architecture",
+      "tokens": 5373
+    },
+    {
+      "bytes": 11295,
+      "fail_closed": false,
+      "forbidden_present": [],
+      "id": "change-context-compiler",
+      "missing": [],
+      "ok": true,
+      "packet_digest": "943cd9ccda868e54f24ae27d6341357eb735726dd23ead2fb4fbe2fd333af967",
+      "packet_id": "ctx_c65f74b38c3896c9c251",
+      "required": [
+        "authority:guest-security-boundary",
+        "operational:accepted-identity",
+        "source:/opt/optiplex-lab/context_compiler.py",
+        "validation:benchmark:benchmark_gen8",
+        "validation:selftest:context_compiler"
+      ],
+      "required_any_ok": true,
+      "required_kinds_ok": true,
+      "selected": [
+        "authority:guest-security-boundary",
+        "operational:accepted-identity",
+        "source:/opt/optiplex-lab/context_compiler.py",
+        "validation:benchmark:benchmark_gen8",
+        "validation:selftest:context_compiler"
+      ],
+      "task_kind": "code_change_planning",
+      "tokens": 2824
+    },
+    {
+      "bytes": 14254,
+      "fail_closed": false,
+      "forbidden_present": [],
+      "id": "change-experiment-capsule",
+      "missing": [],
+      "ok": true,
+      "packet_digest": "96900d31abfb18a3faf3728102c2ea6205ed10e84866d767526aafd9f224dbe9",
+      "packet_id": "ctx_951dbbc37ad6190ae14c",
+      "required": [
+        "authority:guest-security-boundary",
+        "operational:accepted-identity",
+        "source:/opt/optiplex-lab/experiment_capsule.py",
+        "source:/opt/optiplex-lab/server.py",
+        "validation:benchmark:benchmark_gen8",
+        "validation:selftest:experiment_capsule"
+      ],
+      "required_any_ok": true,
+      "required_kinds_ok": true,
+      "selected": [
+        "authority:guest-security-boundary",
+        "operational:accepted-identity",
+        "source:/opt/optiplex-lab/experiment_capsule.py",
+        "source:/opt/optiplex-lab/server.py",
+        "validation:benchmark:benchmark_gen8",
+        "validation:selftest:experiment_capsule"
+      ],
+      "task_kind": "code_change_planning",
+      "tokens": 3564
+    },
+    {
+      "bytes": 43667,
+      "fail_closed": false,
+      "forbidden_present": [],
+      "id": "evaluation-gen7",
+      "missing": [],
+      "ok": true,
+      "packet_digest": "44ccb37c3635141797d5e876f3518ff5107426b9f2dfdda6278f7956bfad8cb3",
+      "packet_id": "ctx_5611635b678f04be109d",
+      "required": [
+        "authority:guest-security-boundary",
+        "benchmark_artifact:gen7-architectural-twin-benchmark",
+        "benchmark_artifact:gen7-proposals",
+        "operational:accepted-identity",
+        "source:/opt/optiplex-lab/architecture_twin.py",
+        "source:/opt/optiplex-lab/bench/benchmark_gen7.py",
+        "source:/opt/optiplex-lab/causal_spine.py"
+      ],
+      "required_any_ok": true,
+      "required_kinds_ok": true,
+      "selected": [
+        "authority:guest-security-boundary",
+        "benchmark_artifact:gen7-architectural-twin-benchmark",
+        "benchmark_artifact:gen7-proposals",
+        "generation:gen4-workflow-graphs-r1",
+        "generation:gen6-experience-memory-r1",
+        "generation:gen7-self-model-r1",
+        "operational:accepted-identity",
+        "source:/opt/optiplex-lab/architecture_twin.py",
+        "source:/opt/optiplex-lab/bench/benchmark_gen7.py",
+        "source:/opt/optiplex-lab/capability_forge.py",
+        "source:/opt/optiplex-lab/causal_spine.py",
+        "source:/opt/optiplex-lab/code_mode.py",
+        "source:/opt/optiplex-lab/experience_loop.py",
+        "source:/opt/optiplex-lab/experience_memory.py",
+        "source:/opt/optiplex-lab/regression_compiler.py",
+        "source:/opt/optiplex-lab/server.py",
+        "source:/opt/optiplex-lab/workflow_graphs.py",
+        "source:/opt/optiplex-lab/workflow_skills.py",
+        "validation:benchmark:benchmark_gen7",
+        "validation:selftest:architecture_twin",
+        "validation:selftest:causal_spine",
+        "validation:selftest:experience_loop",
+        "validation:selftest:experience_memory",
+        "validation:selftest:regression_compiler",
+        "validation:selftest:workflow_graphs",
+        "workflow:lab-candidate-verify@2",
+        "workflow:lab-post-update-verify@2"
+      ],
+      "task_kind": "evaluation",
+      "tokens": 10917
+    },
+    {
+      "bytes": 44140,
+      "fail_closed": false,
+      "forbidden_present": [],
+      "id": "lifecycle-server",
+      "missing": [],
+      "ok": true,
+      "packet_digest": "b53ddfa5bb444fb35d850daa5200672d6420731559fa02dab7ed385e1ac2ad63",
+      "packet_id": "ctx_ec143b7f4f54fe0038a4",
+      "required": [
+        "authority:guest-security-boundary",
+        "build_state:current",
+        "operational:accepted-identity",
+        "recovery:last-known-good",
+        "service:optiplex-lab-mcp.service",
+        "source:/opt/optiplex-lab/server.py"
+      ],
+      "required_any_ok": true,
+      "required_kinds_ok": true,
+      "selected": [
+        "authority:guest-security-boundary",
+        "build_state:current",
+        "causal:f1a1c91ab7c7d4d7",
+        "generation:gen1-self-hosted-lab-r2",
+        "generation:gen4-workflow-graphs-r1",
+        "generation:gen6-experience-memory-r1",
+        "operational:accepted-identity",
+        "recovery:last-known-good",
+        "registry:workflows",
+        "service:optiplex-lab-mcp.service",
+        "source:/opt/optiplex-lab/server.py",
+        "validation:benchmark:benchmark",
+        "validation:benchmark:benchmark_gen2",
+        "validation:benchmark:benchmark_gen4",
+        "validation:benchmark:benchmark_gen6",
+        "validation:benchmark:benchmark_gen7",
+        "validation:benchmark:benchmark_gen8",
+        "validation:benchmark:failure_miner",
+        "validation:benchmark:semantic_edit_experiment_gen5",
+        "validation:lab-selftest",
+        "validation:selftest:experience_loop",
+        "validation:selftest:experience_memory",
+        "validation:selftest:regression_compiler",
+        "validation:selftest:workflow_graphs",
+        "workflow:lab-accept-current@1",
+        "workflow:lab-accept-current@2",
+        "workflow:lab-bad-candidate-recovery@1",
+        "workflow:lab-candidate-verify@1",
+        "workflow:lab-candidate-verify@2",
+        "workflow:lab-post-update-verify@1",
+        "workflow:lab-post-update-verify@2",
+        "workflow_graph:lab-recovery-transaction@1",
+        "workflow_graph:lab-upgrade-transaction@1"
+      ],
+      "task_kind": "lifecycle_recovery",
+      "tokens": 11035
+    },
+    {
+      "bytes": 14670,
+      "fail_closed": false,
+      "forbidden_present": [],
+      "id": "memory-repeat-normalizer",
+      "missing": [],
+      "ok": true,
+      "packet_digest": "5bf70320671159871d023c8f6375eeebf3d7d8e6dbf99d645f721ce759730105",
+      "packet_id": "ctx_ea968c9151cc2d096a1e",
+      "required": [
+        "authority:guest-security-boundary",
+        "capability:170256b4f65fc109c9fc80f55afbcdea049c733adc78f815f211056cccc70548",
+        "evaluator:6db22ad1e27c874bc9a35d1c2964628bcae957c9b0ba6eb235aec5a93ac847f4",
+        "memory:dee53db47c22a5b338924a9828d95e6cc38319dbaeadf74083e752dc892f0ea5",
+        "operational:accepted-identity"
+      ],
+      "required_any_ok": true,
+      "required_kinds_ok": true,
+      "selected": [
+        "artifact:/var/lib/optiplex-lab/capabilities/objects/170256b4f65fc109c9fc80f55afbcdea049c733adc78f815f211056cccc70548",
+        "authority:guest-security-boundary",
+        "capability:170256b4f65fc109c9fc80f55afbcdea049c733adc78f815f211056cccc70548",
+        "evaluator:6db22ad1e27c874bc9a35d1c2964628bcae957c9b0ba6eb235aec5a93ac847f4",
+        "memory:dee53db47c22a5b338924a9828d95e6cc38319dbaeadf74083e752dc892f0ea5",
+        "operational:accepted-identity",
+        "registry:capabilities",
+        "registry:memory"
+      ],
+      "task_kind": "explanation_architecture",
+      "tokens": 3668
+    },
+    {
+      "bytes": 12002,
+      "fail_closed": false,
+      "forbidden_present": [],
+      "id": "debug-active-regression",
+      "missing": [],
+      "ok": true,
+      "packet_digest": "9e91f15bd1d6ef6d37eb8b189f0774d8f6fb424306ad2f7750852bcc343f93c6",
+      "packet_id": "ctx_1d365bc229819ee235e8",
+      "required": [
+        "authority:guest-security-boundary",
+        "operational:accepted-identity",
+        "regression:e500767cc7827fb03a19b91c4f00dbcca1aeeddee72a63dea4b311ff3f48805a"
+      ],
+      "required_any_ok": true,
+      "required_kinds_ok": true,
+      "selected": [
+        "authority:guest-security-boundary",
+        "capability:75d79696ac1fa3107d958cb5a1638c1e19e679e262ac7c9cdeb5c6ad722b404a",
+        "capability:a943e6310bf3fb3bd023d8f3066d2dd10c2d23cf9614e9f5e9a04643f02c92ea",
+        "causal:49459d02b4090c8b",
+        "operational:accepted-identity",
+        "registry:regressions",
+        "regression:e500767cc7827fb03a19b91c4f00dbcca1aeeddee72a63dea4b311ff3f48805a"
+      ],
+      "task_kind": "debugging",
+      "tokens": 3001
+    }
+  ],
+  "checks": [
+    {
+      "detail": {
+        "bytes": 21489,
+        "fail_closed": false,
+        "forbidden_present": [],
+        "id": "architecture-experience-loop",
+        "missing": [],
+        "ok": true,
+        "packet_digest": "ea103dac3ad8823bd2f5487e9a727322198f4478aa4ec18506e56746ce4c1c07",
+        "packet_id": "ctx_8e031a2bb426043fbcea",
+        "required": [
+          "authority:guest-security-boundary",
+          "operational:accepted-identity",
+          "source:/opt/optiplex-lab/capability_forge.py",
+          "source:/opt/optiplex-lab/experience_loop.py",
+          "source:/opt/optiplex-lab/experience_memory.py",
+          "source:/opt/optiplex-lab/regression_compiler.py",
+          "validation:benchmark:benchmark_gen6",
+          "validation:benchmark:benchmark_gen7",
+          "validation:selftest:experience_loop"
+        ],
+        "required_any_ok": true,
+        "required_kinds_ok": true,
+        "selected": [
+          "authority:guest-security-boundary",
+          "generation:gen6-experience-memory-r1",
+          "operational:accepted-identity",
+          "regression:e500767cc7827fb03a19b91c4f00dbcca1aeeddee72a63dea4b311ff3f48805a",
+          "source:/opt/optiplex-lab/capability_forge.py",
+          "source:/opt/optiplex-lab/experience_loop.py",
+          "source:/opt/optiplex-lab/experience_memory.py",
+          "source:/opt/optiplex-lab/regression_compiler.py",
+          "validation:benchmark:benchmark_gen6",
+          "validation:benchmark:benchmark_gen7",
+          "validation:benchmark:benchmark_gen8",
+          "validation:selftest:experience_loop",
+          "validation:selftest:experience_memory",
+          "validation:selftest:regression_compiler"
+        ],
+        "task_kind": "explanation_architecture",
+        "tokens": 5373
+      },
+      "name": "gold_architecture-experience-loop",
+      "ok": true
+    },
+    {
+      "detail": {
+        "bytes": 11295,
+        "fail_closed": false,
+        "forbidden_present": [],
+        "id": "change-context-compiler",
+        "missing": [],
+        "ok": true,
+        "packet_digest": "943cd9ccda868e54f24ae27d6341357eb735726dd23ead2fb4fbe2fd333af967",
+        "packet_id": "ctx_c65f74b38c3896c9c251",
+        "required": [
+          "authority:guest-security-boundary",
+          "operational:accepted-identity",
+          "source:/opt/optiplex-lab/context_compiler.py",
+          "validation:benchmark:benchmark_gen8",
+          "validation:selftest:context_compiler"
+        ],
+        "required_any_ok": true,
+        "required_kinds_ok": true,
+        "selected": [
+          "authority:guest-security-boundary",
+          "operational:accepted-identity",
+          "source:/opt/optiplex-lab/context_compiler.py",
+          "validation:benchmark:benchmark_gen8",
+          "validation:selftest:context_compiler"
+        ],
+        "task_kind": "code_change_planning",
+        "tokens": 2824
+      },
+      "name": "gold_change-context-compiler",
+      "ok": true
+    },
+    {
+      "detail": {
+        "bytes": 14254,
+        "fail_closed": false,
+        "forbidden_present": [],
+        "id": "change-experiment-capsule",
+        "missing": [],
+        "ok": true,
+        "packet_digest": "96900d31abfb18a3faf3728102c2ea6205ed10e84866d767526aafd9f224dbe9",
+        "packet_id": "ctx_951dbbc37ad6190ae14c",
+        "required": [
+          "authority:guest-security-boundary",
+          "operational:accepted-identity",
+          "source:/opt/optiplex-lab/experiment_capsule.py",
+          "source:/opt/optiplex-lab/server.py",
+          "validation:benchmark:benchmark_gen8",
+          "validation:selftest:experiment_capsule"
+        ],
+        "required_any_ok": true,
+        "required_kinds_ok": true,
+        "selected": [
+          "authority:guest-security-boundary",
+          "operational:accepted-identity",
+          "source:/opt/optiplex-lab/experiment_capsule.py",
+          "source:/opt/optiplex-lab/server.py",
+          "validation:benchmark:benchmark_gen8",
+          "validation:selftest:experiment_capsule"
+        ],
+        "task_kind": "code_change_planning",
+        "tokens": 3564
+      },
+      "name": "gold_change-experiment-capsule",
+      "ok": true
+    },
+    {
+      "detail": {
+        "bytes": 43667,
+        "fail_closed": false,
+        "forbidden_present": [],
+        "id": "evaluation-gen7",
+        "missing": [],
+        "ok": true,
+        "packet_digest": "44ccb37c3635141797d5e876f3518ff5107426b9f2dfdda6278f7956bfad8cb3",
+        "packet_id": "ctx_5611635b678f04be109d",
+        "required": [
+          "authority:guest-security-boundary",
+          "benchmark_artifact:gen7-architectural-twin-benchmark",
+          "benchmark_artifact:gen7-proposals",
+          "operational:accepted-identity",
+          "source:/opt/optiplex-lab/architecture_twin.py",
+          "source:/opt/optiplex-lab/bench/benchmark_gen7.py",
+          "source:/opt/optiplex-lab/causal_spine.py"
+        ],
+        "required_any_ok": true,
+        "required_kinds_ok": true,
+        "selected": [
+          "authority:guest-security-boundary",
+          "benchmark_artifact:gen7-architectural-twin-benchmark",
+          "benchmark_artifact:gen7-proposals",
+          "generation:gen4-workflow-graphs-r1",
+          "generation:gen6-experience-memory-r1",
+          "generation:gen7-self-model-r1",
+          "operational:accepted-identity",
+          "source:/opt/optiplex-lab/architecture_twin.py",
+          "source:/opt/optiplex-lab/bench/benchmark_gen7.py",
+          "source:/opt/optiplex-lab/capability_forge.py",
+          "source:/opt/optiplex-lab/causal_spine.py",
+          "source:/opt/optiplex-lab/code_mode.py",
+          "source:/opt/optiplex-lab/experience_loop.py",
+          "source:/opt/optiplex-lab/experience_memory.py",
+          "source:/opt/optiplex-lab/regression_compiler.py",
+          "source:/opt/optiplex-lab/server.py",
+          "source:/opt/optiplex-lab/workflow_graphs.py",
+          "source:/opt/optiplex-lab/workflow_skills.py",
+          "validation:benchmark:benchmark_gen7",
+          "validation:selftest:architecture_twin",
+          "validation:selftest:causal_spine",
+          "validation:selftest:experience_loop",
+          "validation:selftest:experience_memory",
+          "validation:selftest:regression_compiler",
+          "validation:selftest:workflow_graphs",
+          "workflow:lab-candidate-verify@2",
+          "workflow:lab-post-update-verify@2"
+        ],
+        "task_kind": "evaluation",
+        "tokens": 10917
+      },
+      "name": "gold_evaluation-gen7",
+      "ok": true
+    },
+    {
+      "detail": {
+        "bytes": 44140,
+        "fail_closed": false,
+        "forbidden_present": [],
+        "id": "lifecycle-server",
+        "missing": [],
+        "ok": true,
+        "packet_digest": "b53ddfa5bb444fb35d850daa5200672d6420731559fa02dab7ed385e1ac2ad63",
+        "packet_id": "ctx_ec143b7f4f54fe0038a4",
+        "required": [
+          "authority:guest-security-boundary",
+          "build_state:current",
+          "operational:accepted-identity",
+          "recovery:last-known-good",
+          "service:optiplex-lab-mcp.service",
+          "source:/opt/optiplex-lab/server.py"
+        ],
+        "required_any_ok": true,
+        "required_kinds_ok": true,
+        "selected": [
+          "authority:guest-security-boundary",
+          "build_state:current",
+          "causal:f1a1c91ab7c7d4d7",
+          "generation:gen1-self-hosted-lab-r2",
+          "generation:gen4-workflow-graphs-r1",
+          "generation:gen6-experience-memory-r1",
+          "operational:accepted-identity",
+          "recovery:last-known-good",
+          "registry:workflows",
+          "service:optiplex-lab-mcp.service",
+          "source:/opt/optiplex-lab/server.py",
+          "validation:benchmark:benchmark",
+          "validation:benchmark:benchmark_gen2",
+          "validation:benchmark:benchmark_gen4",
+          "validation:benchmark:benchmark_gen6",
+          "validation:benchmark:benchmark_gen7",
+          "validation:benchmark:benchmark_gen8",
+          "validation:benchmark:failure_miner",
+          "validation:benchmark:semantic_edit_experiment_gen5",
+          "validation:lab-selftest",
+          "validation:selftest:experience_loop",
+          "validation:selftest:experience_memory",
+          "validation:selftest:regression_compiler",
+          "validation:selftest:workflow_graphs",
+          "workflow:lab-accept-current@1",
+          "workflow:lab-accept-current@2",
+          "workflow:lab-bad-candidate-recovery@1",
+          "workflow:lab-candidate-verify@1",
+          "workflow:lab-candidate-verify@2",
+          "workflow:lab-post-update-verify@1",
+          "workflow:lab-post-update-verify@2",
+          "workflow_graph:lab-recovery-transaction@1",
+          "workflow_graph:lab-upgrade-transaction@1"
+        ],
+        "task_kind": "lifecycle_recovery",
+        "tokens": 11035
+      },
+      "name": "gold_lifecycle-server",
+      "ok": true
+    },
+    {
+      "detail": {
+        "bytes": 14670,
+        "fail_closed": false,
+        "forbidden_present": [],
+        "id": "memory-repeat-normalizer",
+        "missing": [],
+        "ok": true,
+        "packet_digest": "5bf70320671159871d023c8f6375eeebf3d7d8e6dbf99d645f721ce759730105",
+        "packet_id": "ctx_ea968c9151cc2d096a1e",
+        "required": [
+          "authority:guest-security-boundary",
+          "capability:170256b4f65fc109c9fc80f55afbcdea049c733adc78f815f211056cccc70548",
+          "evaluator:6db22ad1e27c874bc9a35d1c2964628bcae957c9b0ba6eb235aec5a93ac847f4",
+          "memory:dee53db47c22a5b338924a9828d95e6cc38319dbaeadf74083e752dc892f0ea5",
+          "operational:accepted-identity"
+        ],
+        "required_any_ok": true,
+        "required_kinds_ok": true,
+        "selected": [
+          "artifact:/var/lib/optiplex-lab/capabilities/objects/170256b4f65fc109c9fc80f55afbcdea049c733adc78f815f211056cccc70548",
+          "authority:guest-security-boundary",
+          "capability:170256b4f65fc109c9fc80f55afbcdea049c733adc78f815f211056cccc70548",
+          "evaluator:6db22ad1e27c874bc9a35d1c2964628bcae957c9b0ba6eb235aec5a93ac847f4",
+          "memory:dee53db47c22a5b338924a9828d95e6cc38319dbaeadf74083e752dc892f0ea5",
+          "operational:accepted-identity",
+          "registry:capabilities",
+          "registry:memory"
+        ],
+        "task_kind": "explanation_architecture",
+        "tokens": 3668
+      },
+      "name": "gold_memory-repeat-normalizer",
+      "ok": true
+    },
+    {
+      "detail": {
+        "bytes": 12002,
+        "fail_closed": false,
+        "forbidden_present": [],
+        "id": "debug-active-regression",
+        "missing": [],
+        "ok": true,
+        "packet_digest": "9e91f15bd1d6ef6d37eb8b189f0774d8f6fb424306ad2f7750852bcc343f93c6",
+        "packet_id": "ctx_1d365bc229819ee235e8",
+        "required": [
+          "authority:guest-security-boundary",
+          "operational:accepted-identity",
+          "regression:e500767cc7827fb03a19b91c4f00dbcca1aeeddee72a63dea4b311ff3f48805a"
+        ],
+        "required_any_ok": true,
+        "required_kinds_ok": true,
+        "selected": [
+          "authority:guest-security-boundary",
+          "capability:75d79696ac1fa3107d958cb5a1638c1e19e679e262ac7c9cdeb5c6ad722b404a",
+          "capability:a943e6310bf3fb3bd023d8f3066d2dd10c2d23cf9614e9f5e9a04643f02c92ea",
+          "causal:49459d02b4090c8b",
+          "operational:accepted-identity",
+          "registry:regressions",
+          "regression:e500767cc7827fb03a19b91c4f00dbcca1aeeddee72a63dea4b311ff3f48805a"
+        ],
+        "task_kind": "debugging",
+        "tokens": 3001
+      },
+      "name": "gold_debug-active-regression",
+      "ok": true
+    },
+    {
+      "detail": {
+        "fail_closed": true,
+        "fallback": true,
+        "uncertainties": [
+          {
+            "critical": true,
+            "evidence_id": "source:/opt/optiplex-lab/experience_loop.py",
+            "freshness": {
+              "expected_sha256": "854d7e95fd412777137a330384ef236b25efdb794f9c98aac59ad2ce62e8c60c",
+              "path": "/tmp/gen8-benchmark-missing-critical.py",
+              "state": "missing"
+            }
+          }
+        ]
+      },
+      "name": "stale_missing_fails_closed_or_broadens",
+      "ok": true
+    },
+    {
+      "detail": {
+        "contradictions": [
+          {
+            "identity": "/etc/optiplex-lab/build.json",
+            "nodes": [
+              "build_state:current",
+              "build_state:gen8-contradiction-control"
+            ],
+            "reason": "Multiple authoritative records make materially different claims for the same identity."
+          }
+        ],
+        "fail_closed": true
+      },
+      "name": "contradiction_surfaced_not_collapsed",
+      "ok": true
+    },
+    {
+      "detail": {
+        "high_bytes": 21489,
+        "high_critical": 10,
+        "high_optional": 4,
+        "low": {
+          "budget": {
+            "bytes_used": 18211,
+            "effective_bytes": 18489,
+            "expanded": false,
+            "policy": "Tier 0 and required Tier 1 are never budget-pruned; Tier 2 then Tier 3 are pruned first.",
+            "requested_bytes": 18489,
+            "token_estimate": 4553
+          },
+          "optional_retained": 2,
+          "selected": 12
+        }
+      },
+      "name": "budget_prunes_optional_before_critical",
+      "ok": true
+    },
+    {
+      "detail": {
+        "digest": "943cd9ccda868e54f24ae27d6341357eb735726dd23ead2fb4fbe2fd333af967",
+        "packet_id": "ctx_c65f74b38c3896c9c251"
+      },
+      "name": "deterministic_unchanged_inputs",
+      "ok": true
+    },
+    {
+      "detail": {
+        "architecture_answer": {
+          "owner_present": true,
+          "validators": [
+            "validation:benchmark:benchmark_gen6",
+            "validation:benchmark:benchmark_gen7",
+            "validation:benchmark:benchmark_gen8",
+            "validation:selftest:experience_loop",
+            "validation:selftest:experience_memory",
+            "validation:selftest:regression_compiler"
+          ]
+        },
+        "causal": [
+          "causal:49459d02b4090c8b"
+        ],
+        "lifecycle_tools": 10,
+        "memory": [
+          "memory:dee53db47c22a5b338924a9828d95e6cc38319dbaeadf74083e752dc892f0ea5"
+        ],
+        "recovery": [
+          "build_state:current",
+          "recovery:last-known-good",
+          "service:optiplex-lab-mcp.service"
+        ]
+      },
+      "name": "task_correctness_from_compiled_context_only",
+      "ok": true
+    },
+    {
+      "detail": {
+        "baseline": true,
+        "without_optional": true,
+        "without_owner": false
+      },
+      "name": "critical_evidence_ablation",
+      "ok": true
+    },
+    {
+      "detail": {
+        "audit": [
+          {
+            "after_sha256": "26ab404dfe32102c0cacd0dc4cdfcdb4da0f4e6b99257a5454e5f3ca5ab07016",
+            "before_sha256": "4a95203f938650e55028f51b5a6854da91541d3311d59360dbd0a48f2468d4ba",
+            "bytes_appended": 374,
+            "kind": "append_only_outer_audit",
+            "path": "/var/lib/optiplex-lab/traces/events.jsonl"
+          }
+        ],
+        "capsule_run": "cap8_20260826T152539Z_a2d9178c",
+        "forbidden": [],
+        "passed": 12,
+        "total": 12
+      },
+      "name": "gen5_forge_leak_contained",
+      "ok": true
+    },
+    {
+      "detail": {
+        "audit": [
+          {
+            "after_sha256": "849a449aa2f81daec4c2c276d5f42d689a2341b6f8439485e05874b70755bee4",
+            "before_sha256": "e8bbe1f9bf3fe09aa3d4264e30a9018cff73902d01c0c00d55b3ed62ab3d379f",
+            "bytes_appended": 621,
+            "kind": "append_only_outer_audit",
+            "path": "/var/lib/optiplex-lab/traces/events.jsonl"
+          }
+        ],
+        "capsule_run": "cap8_20260826T160908Z_a0fba037",
+        "forbidden": [],
+        "summary": {
+          "bad_recovery_authoring_byte_reduction": 0.673,
+          "bad_recovery_authoring_bytes_gen3_proxy": 153,
+          "bad_recovery_authoring_bytes_gen4_proxy": 50,
+          "bad_recovery_invocation_reduction": 0.667,
+          "bad_recovery_run": "wg_20260826T122635Z_5b1c349a",
+          "bad_recovery_top_level_invocations_gen3": 3,
+          "combined_lifecycle_invocation_reduction": 0.714,
+          "combined_lifecycle_top_level_invocations_gen3": 7,
+          "combined_lifecycle_top_level_invocations_gen4": 2,
+          "elapsed_ms": 15703.3,
+          "final_live_equals_lkg": true,
+          "final_live_sha256": "dc0d2cb41595a9a3d953873879ccc3e0bd88db2b4dcdee4cf8aa43dd4cb103e9",
+          "final_lkg_sha256": "dc0d2cb41595a9a3d953873879ccc3e0bd88db2b4dcdee4cf8aa43dd4cb103e9",
+          "final_recovery_state": "ACCEPTED",
+          "gen3_benchmark_passed": 16,
+          "gen3_benchmark_total": 16,
+          "gen3_invocation_authoring_bytes_proxy": 1829,
+          "gen3_raw_shell_step_share": 0.203,
+          "gen3_reusable_workflow_invocations": 18,
+          "gen3_underlying_code_mode_steps": 64,
+          "local_graph_child_invocations": 9,
+          "local_graph_code_mode_invocations": 9,
+          "local_graph_raw_shell_command_steps": 2,
+          "local_graph_raw_shell_step_share": 0.087,
+          "local_graph_retries": 0,
+          "local_graph_underlying_code_mode_steps": 23,
+          "new_procedural_steps_authored_for_composite_reuse": 0,
+          "normal_lifecycle_authoring_byte_reduction": 0.031,
+          "normal_lifecycle_authoring_bytes_gen3_proxy": 4591,
+          "normal_lifecycle_authoring_bytes_gen4_proxy": 4449,
+          "normal_lifecycle_invocation_reduction": 0.75,
+          "normal_lifecycle_top_level_invocations_gen3": 4,
+          "normal_lifecycle_top_level_invocations_gen4": 1,
+          "parent_cli_output_bytes_proxy": 1233,
+          "passed": 18,
+          "recovery_graph_sha256": "1c1c43529d507a0c972205aef347c9134d4d153a15af04cbfc1bf24d253f9ac7",
+          "recovery_success": true,
+          "restart_resume_success": true,
+          "reused_upgrade_run": "wg_20260826T160914Z_4cbad7d8",
+          "self_host_upgrade_run": "wg_20260826T143225Z_c5b9612c",
+          "total": 18,
+          "upgrade_graph_sha256": "e516a1db5e06ca97de814851c3d3cdc5f891f08b156aad208effc7adf6a69bee"
+        }
+      },
+      "name": "gen4_absolute_build_leak_contained",
+      "ok": true
+    },
+    {
+      "detail": {
+        "mutation_digests": [
+          "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+          "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+        ],
+        "recipe_digests": [
+          "ddae4383dd64da507bd67d0273d46bb4438bf6f8fd1ebae50900aaabbca74f70",
+          "ddae4383dd64da507bd67d0273d46bb4438bf6f8fd1ebae50900aaabbca74f70"
+        ],
+        "runs": [
+          "cap8_20260826T162324Z_21fe7bed",
+          "cap8_20260826T162326Z_29f28f96"
+        ],
+        "stdout_sha256": [
+          "d0843cce202a3fd30dcfff339e0dd7d8d920f761d8c65a3bcf3fb3973b8e7518",
+          "d0843cce202a3fd30dcfff339e0dd7d8d920f761d8c65a3bcf3fb3973b8e7518"
+        ]
+      },
+      "name": "capsule_reproducible_identical_recipe",
+      "ok": true
+    },
+    {
+      "detail": {
+        "average_packet_bytes": 23073.86,
+        "broad_baseline_bytes": 474597,
+        "broad_reduction": 0.951,
+        "median_packet_bytes": 14670,
+        "permanent_mcp_tools": 10,
+        "practical_baseline_bytes": 276200,
+        "practical_reduction": 0.916
+      },
+      "name": "context_reduction_and_permanent_tool_surface",
+      "ok": true
+    }
+  ],
+  "gold_frozen_before_evaluation": true,
+  "gold_sha256": "f7fc1835e2fd65f99f52945533c6d709614302bab9ce79f9c4ef5f40c01d840d",
+  "metrics": {
+    "compile_latency_ms": {
+      "max": 266.939,
+      "median": 110.09,
+      "p95": 208.652
+    },
+    "context_reduction": {
+      "average_packet_bytes": 23073.86,
+      "broad_baseline_bytes": 474597,
+      "broad_reduction": 0.951,
+      "median_packet_bytes": 14670,
+      "practical_baseline_bytes": 276200,
+      "practical_reduction": 0.916
+    },
+    "context_selection_precision": 0.6613,
+    "critical_evidence_fn": 0,
+    "critical_evidence_fp": 21,
+    "critical_evidence_tp": 41,
+    "gen4_capsule_run": "cap8_20260826T160908Z_a0fba037",
+    "gen5_capsule_run": "cap8_20260826T152539Z_a2d9178c",
+    "gold_sha256": "f7fc1835e2fd65f99f52945533c6d709614302bab9ce79f9c4ef5f40c01d840d",
+    "packet_bytes": {
+      "average": 23073.86,
+      "max": 44140,
+      "median": 14670,
+      "min": 11295
+    },
+    "permanent_mcp_tools": 10,
+    "repro_capsule_runs": [
+      "cap8_20260826T162324Z_21fe7bed",
+      "cap8_20260826T162326Z_29f28f96"
+    ],
+    "required_evidence_recall": 1.0,
+    "task_kind_classification_ok": true,
+    "unrelated_context_negative_controls_ok": true
+  },
+  "passed": 17,
+  "timestamp": "2026-08-26T16:23:28.869310+00:00",
+  "total": 17,
+  "version": "gen8-context-capsule-benchmark-r1"
+}

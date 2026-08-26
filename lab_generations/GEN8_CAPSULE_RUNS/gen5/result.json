@@ -1,0 +1,47 @@
+{
+  "accepted_state_unchanged": true,
+  "allowed_outer_audit_appends": [
+    {
+      "after_sha256": "26ab404dfe32102c0cacd0dc4cdfcdb4da0f4e6b99257a5454e5f3ca5ab07016",
+      "before_sha256": "4a95203f938650e55028f51b5a6854da91541d3311d59360dbd0a48f2468d4ba",
+      "bytes_appended": 374,
+      "kind": "append_only_outer_audit",
+      "path": "/var/lib/optiplex-lab/traces/events.jsonl"
+    }
+  ],
+  "capsule_mutation_digest": "6b958b5f00bb4ce13144406b3d09e1c20de905e4c113727668bd1ea0c2b8c301",
+  "capsule_mutation_records": 189,
+  "captured_artifacts": [
+    {
+      "bytes": 18263,
+      "export_path": "/var/tmp/optiplex-lab-capsules/cap8_20260826T152539Z_a2d9178c/export/captures/var/lib/optiplex-lab/benchmarks/gen5-capability-forge-benchmark.json",
+      "path": "/var/lib/optiplex-lab/benchmarks/gen5-capability-forge-benchmark.json",
+      "sha256": "cdfc36449f0f3bd7b0d4a47bf14f411fb5343a0e21b1bddc612f88e1277955ae"
+    }
+  ],
+  "child_exit_code": 0,
+  "duration_ms": 32116.191,
+  "forbidden_accepted_state_mutations": [],
+  "label": "retained-gen5-known-leak-rerun",
+  "manifest": "/var/tmp/optiplex-lab-capsules/cap8_20260826T152539Z_a2d9178c/manifest.json",
+  "namespace_stderr": "",
+  "namespace_stdout": "",
+  "ok": true,
+  "protected_after_digest": "c185fb1bd81c05fcfada46866f3c4a4ea7b82bacde62cb15a4ecb0000f0184b1",
+  "protected_before_digest": "6dfe0e1beab105f1885fb9a5c9b26dc3938e7e0847affd82c2c58c468093956b",
+  "recipe_digest": "75d1ec334dd5e86b4db9c4ee4f5b1066cb168a361705f647295612c4d4e58944",
+  "result_digest": "b2403570c6a92f33acc3728a264159aa0359df94eb7349306e9da9756af459d6",
+  "run_dir": "/var/tmp/optiplex-lab-capsules/cap8_20260826T152539Z_a2d9178c",
+  "run_id": "cap8_20260826T152539Z_a2d9178c",
+  "stderr": {
+    "bytes": 0,
+    "path": "/var/tmp/optiplex-lab-capsules/cap8_20260826T152539Z_a2d9178c/export/stderr.log",
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "stdout": {
+    "bytes": 18439,
+    "path": "/var/tmp/optiplex-lab-capsules/cap8_20260826T152539Z_a2d9178c/export/stdout.log",
+    "sha256": "8f7757162f0910aa8bff3d35564674fc895341a9ad74f7b2e020acaa75111a7d"
+  },
+  "version": "gen8-experiment-capsule-r1"
+}

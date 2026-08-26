@@ -1,0 +1,50 @@
+{
+  "captures": [
+    "/var/lib/optiplex-lab/benchmarks/gen5-capability-forge-benchmark.json"
+  ],
+  "command": "/opt/optiplex-lab/bench/benchmark_gen5.py",
+  "created_at": "2026-08-26T15:25:40.942761+00:00",
+  "empty_paths": [
+    "/var/lib/optiplex-lab/capabilities",
+    "/var/lib/optiplex-lab/regressions"
+  ],
+  "isolation": {
+    "mount_namespace": true,
+    "overlayfs": true,
+    "pid_namespace": true,
+    "private_run": true,
+    "private_tmp": true,
+    "service_manager_virtualized": true
+  },
+  "label": "retained-gen5-known-leak-rerun",
+  "overlay_targets": [
+    "/opt/optiplex-lab",
+    "/etc/optiplex-lab",
+    "/var/lib/optiplex-lab",
+    "/root"
+  ],
+  "protected_before_digest": "6dfe0e1beab105f1885fb9a5c9b26dc3938e7e0847affd82c2c58c468093956b",
+  "recipe_digest": "75d1ec334dd5e86b4db9c4ee4f5b1066cb168a361705f647295612c4d4e58944",
+  "run_id": "cap8_20260826T152539Z_a2d9178c",
+  "schema_version": 1,
+  "source_inputs": [
+    {
+      "path": "/opt/optiplex-lab",
+      "tree_digest": "6d24fd4d20787593b26492fd7d1929cfd20b20569bfd52706c8b755d683fc533"
+    },
+    {
+      "path": "/etc/optiplex-lab",
+      "tree_digest": "ed4eaf9def409c78daa69c3455bc6ed827e23c0956efc5d54d9bf8b793c794f2"
+    },
+    {
+      "path": "/var/lib/optiplex-lab",
+      "tree_digest": "0ee2cb2714cdb0eef99942c6d5a89ed0b4a1a07dfa3f259f2aa4e7c10a750bce"
+    },
+    {
+      "path": "/root",
+      "tree_digest": "097b1f72fd2f4938b7d43cf245931a542a05b7d06736807b0d975f59b97841b7"
+    }
+  ],
+  "version": "gen8-experiment-capsule-r1",
+  "wrapper_sha256": "50fba3594bfca0c56f421677aef46508bd4813c8bf7a47a32cacaabcb990dfd7"
+}

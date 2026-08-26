@@ -1,0 +1,530 @@
+{
+  "benchmark": "gen5-capability-forge-benchmark",
+  "checks": [
+    {
+      "detail": {
+        "eval": "3/3",
+        "hash": "170256b4f65fc109c9fc80f55afbcdea049c733adc78f815f211056cccc70548"
+      },
+      "name": "typed_data_transform",
+      "ok": true
+    },
+    {
+      "detail": {
+        "hash": "3e7c1599e64b7cbab7f6649ab7350571e2de3ff2c5f17e01f4a9dd3c0eaa5be9"
+      },
+      "name": "source_analysis_helper",
+      "ok": true
+    },
+    {
+      "detail": {
+        "dependency": {
+          "dependency_count": 1,
+          "duration_ms": 4294.22,
+          "env": "/var/lib/optiplex-lab/capabilities/envs/3a6062a4ea23663c8824f66b98f5fc876fc34f3749bcaec20b4063003b96e936",
+          "installed": true,
+          "ok": true,
+          "python": "/var/lib/optiplex-lab/capabilities/envs/3a6062a4ea23663c8824f66b98f5fc876fc34f3749bcaec20b4063003b96e936/bin/python"
+        },
+        "hash": "3a6062a4ea23663c8824f66b98f5fc876fc34f3749bcaec20b4063003b96e936"
+      },
+      "name": "semantic_structured_editor",
+      "ok": true
+    },
+    {
+      "detail": {
+        "hash": "4a73a98fb2ed467d9ca11785f6ca16d49d5780b04b9f11f8acfecf75fa73d334"
+      },
+      "name": "structured_artifact_parser",
+      "ok": true
+    },
+    {
+      "detail": {
+        "dependency": {
+          "dependency_count": 1,
+          "duration_ms": 3618.6,
+          "env": "/var/lib/optiplex-lab/capabilities/envs/5ea3f63dc3b9146808efcc747a36d733db5c376e405db1b66f67603d539dd665",
+          "installed": true,
+          "ok": true,
+          "python": "/var/lib/optiplex-lab/capabilities/envs/5ea3f63dc3b9146808efcc747a36d733db5c376e405db1b66f67603d539dd665/bin/python"
+        },
+        "hash": "5ea3f63dc3b9146808efcc747a36d733db5c376e405db1b66f67603d539dd665"
+      },
+      "name": "small_dependency_install",
+      "ok": true
+    },
+    {
+      "detail": {
+        "content_hash": "170256b4f65fc109c9fc80f55afbcdea049c733adc78f815f211056cccc70548",
+        "object": "/var/lib/optiplex-lab/capabilities/objects/170256b4f65fc109c9fc80f55afbcdea049c733adc78f815f211056cccc70548",
+        "record": {
+          "applicability": [
+            "json",
+            "transform",
+            "normalization"
+          ],
+          "content_hash": "170256b4f65fc109c9fc80f55afbcdea049c733adc78f815f211056cccc70548",
+          "created_at": "2026-08-26T15:25:41.112758+00:00",
+          "creator": "ChatGPT",
+          "creator_episode": "generation-5-capability-forge-benchmark",
+          "dependencies": {
+            "pip": []
+          },
+          "duplicate_reuse_count": 1,
+          "evaluation_passes": 1,
+          "evaluation_runs": 1,
+          "evaluator_hash": "6db22ad1e27c874bc9a35d1c2964628bcae957c9b0ba6eb235aec5a93ac847f4",
+          "evaluator_version": "gen5-nursery-r1",
+          "expired_object_removed": false,
+          "gap_hash": "82d43272e74d91be63370ede956a4de2e562378e924bb025b7755cf0ca8a07ea",
+          "governor_decisions": [],
+          "last_evaluation": {
+            "evaluator_hash": "6db22ad1e27c874bc9a35d1c2964628bcae957c9b0ba6eb235aec5a93ac847f4",
+            "ok": true,
+            "passed_cases": 3,
+            "result_path": "/var/lib/optiplex-lab/capability-runs/eval_20260826T152541Z_af016004/result.json",
+            "total_cases": 3
+          },
+          "last_seen_at": "2026-08-26T15:25:55.910479+00:00",
+          "name": "gen5-record-normalizer",
+          "object": "/var/lib/optiplex-lab/capabilities/objects/170256b4f65fc109c9fc80f55afbcdea049c733adc78f815f211056cccc70548",
+          "purpose": "Normalize object keys and trim string values with a typed JSON contract.",
+          "real_task_attempts": 0,
+          "real_task_successes": 0,
+          "reuse_count": 0,
+          "side_effects": [],
+          "source_bytes": 1387,
+          "source_files": [
+            {
+              "bytes": 1116,
+              "path": "capability.json",
+              "sha256": "967105194583391bab9755d9793556443e07cbf066d9ff5df53e3ad8d27e77c5"
+            },
+            {
+              "bytes": 271,
+              "path": "main.py",
+              "sha256": "3d557b9fdb8925f28b8dabc0fe4337dfa767a3e272305cbf1f5d21de9cd2e8b9"
+            }
+          ],
+          "source_hashes": {
+            "capability.json": "967105194583391bab9755d9793556443e07cbf066d9ff5df53e3ad8d27e77c5",
+            "main.py": "3d557b9fdb8925f28b8dabc0fe4337dfa767a3e272305cbf1f5d21de9cd2e8b9"
+          },
+          "state": "CANDIDATE",
+          "version": "1"
+        },
+        "state": "DUPLICATE_REUSED"
+      },
+      "name": "duplicate_content_avoided",
+      "ok": true
+    },
+    {
+      "detail": "contract missing fields: ['output_schema']",
+      "name": "malformed_contract_rejected",
+      "ok": true
+    },
+    {
+      "detail": [
+        [
+          "syntax_broken",
+          true,
+          "5d7528d5696f0449c58d6272f34b91f1d3dfe0a2845eba38de2256b6ddacfb68"
+        ],
+        [
+          "test_broken",
+          true,
+          "d5d489b7655209bc218aeeb67ab7538b4a8b881673153446488229b50da93c56"
+        ],
+        [
+          "adversarial_rejected",
+          true,
+          "e2dd28e808576b9fa758bc0f9ca885f4681d0e6e436aebd7d8fe6dc147bd2745"
+        ],
+        [
+          "missing_dependency",
+          true,
+          "3c5f67425880eb30b153af609adef3a1e853a790d88521b22a1cba17f286e159"
+        ],
+        [
+          "timeout",
+          true,
+          "7a615a3f98a7a3be8babdf6376f38be2025543618af8dfff638ce2f028c8c708"
+        ],
+        [
+          "excessive_output",
+          true,
+          "87ca9c570607434f75f62406ddc1a50b71769acb67498b13390bc83135a84f18"
+        ]
+      ],
+      "name": "broken_descendants_rejected",
+      "ok": true
+    },
+    {
+      "detail": "forbidden/unknown side effects: ['host_mounts']",
+      "name": "forbidden_authority_rejected",
+      "ok": true
+    },
+    {
+      "detail": {
+        "expiry": {
+          "content_hash": "c601998968ff6d0843dd77f83b6701c887d9c6ced5b6055f30b36b253b50057a",
+          "object_removed": true,
+          "previous_state": "EPHEMERAL",
+          "provenance_retained": true,
+          "source_hashes_retained": true,
+          "state": "EXPIRED"
+        },
+        "hash": "c601998968ff6d0843dd77f83b6701c887d9c6ced5b6055f30b36b253b50057a"
+      },
+      "name": "ephemeral_expiry_provenance",
+      "ok": true
+    },
+    {
+      "detail": {
+        "governor": {
+          "content_hash": "170256b4f65fc109c9fc80f55afbcdea049c733adc78f815f211056cccc70548",
+          "decision": "PROMOTE",
+          "evidence": {
+            "dependency_cost": {
+              "pip_dependencies": 0
+            },
+            "generality": {
+              "applicability_tags": 3
+            },
+            "maintenance": {
+              "source_bytes": 1387,
+              "source_files": 2
+            },
+            "overlap": {
+              "same_name_active": 0
+            },
+            "recurrence_reuse": {
+              "duplicate_reuse_count": 1,
+              "reuse_count": 1
+            },
+            "regressions": {
+              "failed": 0,
+              "ok": true,
+              "passed": 0,
+              "relevant": 0,
+              "results": [],
+              "version": "gen6-failure-regression-r1"
+            },
+            "side_effects": {
+              "count": 0,
+              "declared": []
+            },
+            "task_success": {
+              "attempts": 2,
+              "successes": 2
+            },
+            "tests": {
+              "cases_passed": 3,
+              "cases_total": 3,
+              "evaluation_passes": 1,
+              "evaluation_runs": 1
+            }
+          },
+          "governor_version": "gen6-promotion-governor-r2",
+          "hard_gates": {
+            "authority_contract_valid": true,
+            "evaluation_passed": true,
+            "evaluator_identity_matches": true,
+            "not_rejected_or_expired": true,
+            "object_available": true,
+            "regressions_passed": true
+          },
+          "state": "PROMOTED"
+        },
+        "hash": "170256b4f65fc109c9fc80f55afbcdea049c733adc78f815f211056cccc70548",
+        "runs": [
+          "cap_20260826T152611Z_b80d3212",
+          "cap_20260826T152611Z_b89d788a"
+        ]
+      },
+      "name": "successful_reuse_without_regeneration",
+      "ok": true
+    },
+    {
+      "detail": {
+        "code_mode_invocations": 1,
+        "graph_run": "wg_20260826T152612Z_a5a4594a",
+        "raw_shell_share": 0.0,
+        "returncode": 0,
+        "underlying_steps": 1
+      },
+      "name": "workflow_graph_invokes_forged_capability",
+      "ok": true
+    }
+  ],
+  "created_hashes": [
+    "170256b4f65fc109c9fc80f55afbcdea049c733adc78f815f211056cccc70548",
+    "3e7c1599e64b7cbab7f6649ab7350571e2de3ff2c5f17e01f4a9dd3c0eaa5be9",
+    "3a6062a4ea23663c8824f66b98f5fc876fc34f3749bcaec20b4063003b96e936",
+    "4a73a98fb2ed467d9ca11785f6ca16d49d5780b04b9f11f8acfecf75fa73d334",
+    "5ea3f63dc3b9146808efcc747a36d733db5c376e405db1b66f67603d539dd665",
+    "5d7528d5696f0449c58d6272f34b91f1d3dfe0a2845eba38de2256b6ddacfb68",
+    "d5d489b7655209bc218aeeb67ab7538b4a8b881673153446488229b50da93c56",
+    "e2dd28e808576b9fa758bc0f9ca885f4681d0e6e436aebd7d8fe6dc147bd2745",
+    "3c5f67425880eb30b153af609adef3a1e853a790d88521b22a1cba17f286e159",
+    "7a615a3f98a7a3be8babdf6376f38be2025543618af8dfff638ce2f028c8c708",
+    "87ca9c570607434f75f62406ddc1a50b71769acb67498b13390bc83135a84f18",
+    "c601998968ff6d0843dd77f83b6701c887d9c6ced5b6055f30b36b253b50057a"
+  ],
+  "ended_at": "2026-08-26T15:26:13.007279+00:00",
+  "expired_hashes": [
+    "c601998968ff6d0843dd77f83b6701c887d9c6ced5b6055f30b36b253b50057a"
+  ],
+  "generation": "gen5-capability-forge-r1",
+  "initial_registry_names": [],
+  "metrics": {
+    "blind_capability_tasks_attempted": 12,
+    "blind_tasks_passed": 12,
+    "broken_candidates_rejected": 6,
+    "capabilities_reused": 2,
+    "capabilities_successfully_forged": 6,
+    "chatgpt_authored_helper_source_bytes": 15585,
+    "code_mode_steps": 1,
+    "containment": {
+      "blocked": [
+        "192.168.127.1:8790",
+        "10.0.0.1:22",
+        "172.16.0.1:22",
+        "100.64.0.1:22"
+      ],
+      "host_control_sockets": [],
+      "host_repository_present": false,
+      "ok": true,
+      "unexpected_reachable": []
+    },
+    "creation_latency_ms": {
+      "dependency_capability_create_ms": 4713.25,
+      "duplicate_reuse_ms": 18.85,
+      "semantic_editor_create_ms": 6211.01,
+      "source_analysis_create_ms": 1652.7,
+      "structured_parser_create_ms": 1121.21,
+      "subsequent_reuse_ms": 44.28,
+      "typed_transform_create_ms": 635.74
+    },
+    "dependency_footprint": {
+      "170256b4f65fc109c9fc80f55afbcdea049c733adc78f815f211056cccc70548": 0,
+      "3a6062a4ea23663c8824f66b98f5fc876fc34f3749bcaec20b4063003b96e936": 1,
+      "3c5f67425880eb30b153af609adef3a1e853a790d88521b22a1cba17f286e159": 1,
+      "3e7c1599e64b7cbab7f6649ab7350571e2de3ff2c5f17e01f4a9dd3c0eaa5be9": 0,
+      "4a73a98fb2ed467d9ca11785f6ca16d49d5780b04b9f11f8acfecf75fa73d334": 0,
+      "5d7528d5696f0449c58d6272f34b91f1d3dfe0a2845eba38de2256b6ddacfb68": 0,
+      "5ea3f63dc3b9146808efcc747a36d733db5c376e405db1b66f67603d539dd665": 1,
+      "7a615a3f98a7a3be8babdf6376f38be2025543618af8dfff638ce2f028c8c708": 0,
+      "87ca9c570607434f75f62406ddc1a50b71769acb67498b13390bc83135a84f18": 0,
+      "c601998968ff6d0843dd77f83b6701c887d9c6ced5b6055f30b36b253b50057a": 0,
+      "d5d489b7655209bc218aeeb67ab7538b4a8b881673153446488229b50da93c56": 0,
+      "e2dd28e808576b9fa758bc0f9ca885f4681d0e6e436aebd7d8fe6dc147bd2745": 0
+    },
+    "duplicate_capabilities_avoided": 1,
+    "ephemeral_capabilities_expired": 1,
+    "forbidden_authority_manifests_rejected": 1,
+    "graph_invocations": 1,
+    "graph_run_id": "wg_20260826T152612Z_a5a4594a",
+    "malformed_contracts_rejected": 1,
+    "permanent_mcp_tools_after": 10,
+    "permanent_mcp_tools_before": 10,
+    "promoted_capabilities": 2,
+    "provenance_complete_records": 12,
+    "raw_shell_usage": 0,
+    "real_task_failure_recorded": true,
+    "retries": 0,
+    "semantic_editor_failed_self_edit_fixture_rejected": true,
+    "semantic_editor_governor": {
+      "content_hash": "3a6062a4ea23663c8824f66b98f5fc876fc34f3749bcaec20b4063003b96e936",
+      "decision": "PROMOTE",
+      "evidence": {
+        "dependency_cost": {
+          "pip_dependencies": 1
+        },
+        "generality": {
+          "applicability_tags": 4
+        },
+        "maintenance": {
+          "source_bytes": 3519,
+          "source_files": 2
+        },
+        "overlap": {
+          "same_name_active": 0
+        },
+        "recurrence_reuse": {
+          "duplicate_reuse_count": 0,
+          "reuse_count": 1
+        },
+        "regressions": {
+          "failed": 0,
+          "ok": true,
+          "passed": 0,
+          "relevant": 0,
+          "results": [],
+          "version": "gen6-failure-regression-r1"
+        },
+        "side_effects": {
+          "count": 2,
+          "declared": [
+            "read_files",
+            "write_workspace"
+          ]
+        },
+        "task_success": {
+          "attempts": 2,
+          "successes": 2
+        },
+        "tests": {
+          "cases_passed": 3,
+          "cases_total": 3,
+          "evaluation_passes": 1,
+          "evaluation_runs": 1
+        }
+      },
+      "governor_version": "gen6-promotion-governor-r2",
+      "hard_gates": {
+        "authority_contract_valid": true,
+        "evaluation_passed": true,
+        "evaluator_identity_matches": true,
+        "not_rejected_or_expired": true,
+        "object_available": true,
+        "regressions_passed": true
+      },
+      "state": "PROMOTED"
+    },
+    "semantic_editor_hash": "3a6062a4ea23663c8824f66b98f5fc876fc34f3749bcaec20b4063003b96e936",
+    "semantic_editor_real_successes_before_self_host": 2,
+    "subsequent_reuse_latency_ms": 44.28,
+    "task_success_rate": 1.0,
+    "test_evaluator_pass_rate": 0.5,
+    "workflow_invocations": 1
+  },
+  "passed": 12,
+  "passing_hashes": [
+    "170256b4f65fc109c9fc80f55afbcdea049c733adc78f815f211056cccc70548",
+    "3e7c1599e64b7cbab7f6649ab7350571e2de3ff2c5f17e01f4a9dd3c0eaa5be9",
+    "3a6062a4ea23663c8824f66b98f5fc876fc34f3749bcaec20b4063003b96e936",
+    "4a73a98fb2ed467d9ca11785f6ca16d49d5780b04b9f11f8acfecf75fa73d334",
+    "5ea3f63dc3b9146808efcc747a36d733db5c376e405db1b66f67603d539dd665",
+    "c601998968ff6d0843dd77f83b6701c887d9c6ced5b6055f30b36b253b50057a"
+  ],
+  "promoted_hashes": [
+    "170256b4f65fc109c9fc80f55afbcdea049c733adc78f815f211056cccc70548",
+    "3a6062a4ea23663c8824f66b98f5fc876fc34f3749bcaec20b4063003b96e936"
+  ],
+  "rejected_hashes": [
+    "3c5f67425880eb30b153af609adef3a1e853a790d88521b22a1cba17f286e159",
+    "5d7528d5696f0449c58d6272f34b91f1d3dfe0a2845eba38de2256b6ddacfb68",
+    "7a615a3f98a7a3be8babdf6376f38be2025543618af8dfff638ce2f028c8c708",
+    "87ca9c570607434f75f62406ddc1a50b71769acb67498b13390bc83135a84f18",
+    "d5d489b7655209bc218aeeb67ab7538b4a8b881673153446488229b50da93c56",
+    "e2dd28e808576b9fa758bc0f9ca885f4681d0e6e436aebd7d8fe6dc147bd2745"
+  ],
+  "required_capabilities_absent_at_start": true,
+  "semantic_editor": {
+    "benchmark_real_runs": [
+      "cap_20260826T152549Z_954f3309",
+      "cap_20260826T152549Z_3aea6d84"
+    ],
+    "evaluation_ok": true,
+    "failed_fixture": {
+      "duration_ms": 209.96,
+      "error": "entrypoint exit 1",
+      "exit_code": 1,
+      "ok": false,
+      "phase": "execute",
+      "run_dir": "/var/lib/optiplex-lab/capability-runs/cap_20260826T152611Z_e0bf0efd",
+      "run_id": "cap_20260826T152611Z_e0bf0efd",
+      "stderr_preview": "expected exactly one function, found 0\n",
+      "stdout_preview": ""
+    },
+    "governor": {
+      "content_hash": "3a6062a4ea23663c8824f66b98f5fc876fc34f3749bcaec20b4063003b96e936",
+      "decision": "PROMOTE",
+      "evidence": {
+        "dependency_cost": {
+          "pip_dependencies": 1
+        },
+        "generality": {
+          "applicability_tags": 4
+        },
+        "maintenance": {
+          "source_bytes": 3519,
+          "source_files": 2
+        },
+        "overlap": {
+          "same_name_active": 0
+        },
+        "recurrence_reuse": {
+          "duplicate_reuse_count": 0,
+          "reuse_count": 1
+        },
+        "regressions": {
+          "failed": 0,
+          "ok": true,
+          "passed": 0,
+          "relevant": 0,
+          "results": [],
+          "version": "gen6-failure-regression-r1"
+        },
+        "side_effects": {
+          "count": 2,
+          "declared": [
+            "read_files",
+            "write_workspace"
+          ]
+        },
+        "task_success": {
+          "attempts": 2,
+          "successes": 2
+        },
+        "tests": {
+          "cases_passed": 3,
+          "cases_total": 3,
+          "evaluation_passes": 1,
+          "evaluation_runs": 1
+        }
+      },
+      "governor_version": "gen6-promotion-governor-r2",
+      "hard_gates": {
+        "authority_contract_valid": true,
+        "evaluation_passed": true,
+        "evaluator_identity_matches": true,
+        "not_rejected_or_expired": true,
+        "object_available": true,
+        "regressions_passed": true
+      },
+      "state": "PROMOTED"
+    },
+    "hash": "3a6062a4ea23663c8824f66b98f5fc876fc34f3749bcaec20b4063003b96e936"
+  },
+  "started_at": "2026-08-26T15:25:41.093559+00:00",
+  "total": 12,
+  "workflow_graph_integration": {
+    "changed_files": [],
+    "child_invocations": 1,
+    "code_mode_invocations": 1,
+    "duration_ms": 206.16,
+    "graph": {
+      "name": "capability-use-transaction",
+      "runner_version": "gen4-workflow-graphs-r1",
+      "sha256": "56a3074c6120de2f21464449f873530e235ec853b7d712b3d580d968c4065c15",
+      "version": "1"
+    },
+    "nodes_total": 1,
+    "ok": true,
+    "raw_shell_command_steps": 0,
+    "raw_shell_step_share": 0.0,
+    "recovered_failures": {},
+    "restart_checkpoints": [],
+    "result_path": "/var/lib/optiplex-lab/graph-runs/wg_20260826T152612Z_a5a4594a/result.json",
+    "resume_count": 0,
+    "retries": 0,
+    "rolled_back": [],
+    "run_id": "wg_20260826T152612Z_a5a4594a",
+    "state_path": "/var/lib/optiplex-lab/graph-runs/wg_20260826T152612Z_a5a4594a/state.json",
+    "status": "PASS",
+    "underlying_code_mode_steps": 1,
+    "version": "gen4-workflow-graphs-r1"
+  }
+}

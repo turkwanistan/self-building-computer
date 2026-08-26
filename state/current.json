@@ -1,13 +1,16 @@
 {
   "lab": {
-    "accepted_at": "2026-08-26T14:51:25.077246+00:00",
-    "build_id": "gen7-self-model-r1-f5ba258ed555",
+    "accepted_at": "2026-08-26T17:57:05.716800+00:00",
+    "build_id": "gen8-context-compiler-r1-39b7f040fca1",
     "features_add": [
       "architectural_digital_twin",
       "causal_observability_spine",
       "bounded_change_impact_analysis",
       "provenance_backed_staleness_detection",
-      "mutation_safe_retained_regression_strategy"
+      "mutation_safe_retained_regression_strategy",
+      "deterministic_provenance_backed_context_compiler",
+      "reproducible_experiment_capsule",
+      "version_pinned_historical_regression_views"
     ],
     "gen5_validation": {
       "accepted_guest_identity": {
@@ -557,36 +560,116 @@
       "status": "ACCEPTED",
       "validated_at": "2026-08-26T14:51:25.077246+00:00"
     },
-    "generation": "gen7-self-model-r1",
-    "generation_source_sha256": "f5ba258ed5559b755f5b68891a74f48bdfac243638bff60cc730c0f3cbf61d8e",
+    "gen8_validation": {
+      "benchmark": {
+        "broad_context_reduction": 0.951,
+        "context_selection_precision": 0.6613,
+        "critical_evidence_fn": 0,
+        "critical_evidence_fp": 21,
+        "critical_evidence_tp": 41,
+        "median_compile_latency_ms": 110.09,
+        "passed": 17,
+        "practical_context_reduction": 0.916,
+        "required_evidence_recall": 1.0,
+        "total": 17
+      },
+      "benchmark_source_sha256": "5ab33dc21de64f88b60ee4ec404051e669fbe754fafadfe5d88ec2486ce207e7",
+      "capability_build": "gen8-context-compiler-r1-39b7f040fca1",
+      "commit_or_push_performed": false,
+      "context_compiler_sha256": "39b7f040fca1afb2332b5dd902e186b710ea4d1d5a2cd0351aa307f6d8f786c3",
+      "experiment_capsule_sha256": "69d66ecaec546f08ea6079c5446254bc1704c791f77bf76ce472d1f4907f7415",
+      "final_twin": {
+        "edges": 242,
+        "file_sha256": "f1299fa23330944c734377203c4769fb4e8e27a9ac104f64397299a277ba9eea",
+        "graph_digest": "ceab9a44188706a209b23066217de4e8991b44d067d6c21f9018d56861c182eb",
+        "inputs": 85,
+        "nodes": 173,
+        "version": "gen7-architectural-twin-r1"
+      },
+      "generation": "gen8-context-compiler-r1",
+      "gold_sha256": "f7fc1835e2fd65f99f52945533c6d709614302bab9ce79f9c4ef5f40c01d840d",
+      "historical_gen7_view_note": {
+        "gen7_current_view_first_run": "14/15 because Gen8 legitimately introduced validation:benchmark:benchmark_gen8, producing one extra change-impact validation relative to Gen7-era gold.",
+        "principle": "Historical retained regressions must be version-pinned; future valid evidence must not be misclassified as historical regression failure.",
+        "resolution": "Rerun unmodified Gen7 benchmark in a capsule-local Gen7-era source/evidence view by hiding Gen8-only files/artifacts; result 15/15."
+      },
+      "operational_server": {
+        "build_id": "gen6-experience-memory-r1-dc0d2cb41595",
+        "generation": "gen6-experience-memory-r1",
+        "lkg_sha256": "dc0d2cb41595a9a3d953873879ccc3e0bd88db2b4dcdee4cf8aa43dd4cb103e9",
+        "recovery_state": "ACCEPTED",
+        "server_sha256": "dc0d2cb41595a9a3d953873879ccc3e0bd88db2b4dcdee4cf8aa43dd4cb103e9"
+      },
+      "permanent_mcp_tools": 10,
+      "protected_state": {
+        "accepted": true,
+        "allowed_audit_appends": [
+          {
+            "bytes_appended": 128484,
+            "path": "/var/lib/optiplex-lab/traces/events.jsonl",
+            "prefix_preserved": true
+          }
+        ],
+        "common_resource_forbidden_changes": [],
+        "newly_monitored_paths_without_earliest_baseline": [
+          "/etc/systemd/system"
+        ],
+        "note": "New paths are covered by same-schema before/after capsule results; every accepted retained capsule reported zero forbidden mutations.",
+        "version": "gen8-protected-final-comparison-r1"
+      },
+      "retained_regressions": {
+        "gen2": "12/12 PASS",
+        "gen3": "16/16 PASS",
+        "gen4": "18/18 PASS",
+        "gen5": "12/12 PASS",
+        "gen6": "13/13 PASS",
+        "gen7": "15/15 PASS"
+      },
+      "scope": "Optiplex_Lab + isolated mcp-lab VM",
+      "server_modified": false,
+      "status": "ACCEPTED",
+      "validation": {
+        "canonical_project_tests": "PASS_13",
+        "containment": "PASS",
+        "final_lab_identity": "PASS_GEN8_CAPABILITY_OVER_GEN6_SERVER_UNCHANGED",
+        "frozen_safe_mcp": "PASS_UNCHANGED",
+        "git_diff_check": "PASS",
+        "json_jsonl": "PASS",
+        "python_syntax": "PASS_MUTATION_FREE",
+        "secret_credential_scan": "PASS",
+        "validated_at": "2026-08-26T17:57:05.716800+00:00"
+      }
+    },
+    "generation": "gen8-context-compiler-r1",
+    "generation_source_sha256": "39b7f040fca1afb2332b5dd902e186b710ea4d1d5a2cd0351aa307f6d8f786c3",
     "live_server_identity": {
       "build_id": "gen6-experience-memory-r1-dc0d2cb41595",
       "generation": "gen6-experience-memory-r1",
       "last_known_good_sha256": "dc0d2cb41595a9a3d953873879ccc3e0bd88db2b4dcdee4cf8aa43dd4cb103e9",
-      "note": "Gen7 is guest-local infrastructure and intentionally does not modify server.py; lab_status therefore remains the accepted Gen6 server build.",
+      "note": "Gen8 is guest-local capability infrastructure and intentionally does not modify server.py; operational lab_status remains the accepted Gen6 server build.",
       "recovery_state": "ACCEPTED",
       "server_sha256": "dc0d2cb41595a9a3d953873879ccc3e0bd88db2b4dcdee4cf8aa43dd4cb103e9",
       "tool_surface": 10
     },
     "recovery_state": "ACCEPTED",
     "source_sha256": "dc0d2cb41595a9a3d953873879ccc3e0bd88db2b4dcdee4cf8aa43dd4cb103e9",
-    "state": "GEN7_ACCEPTED_SELF_MODEL",
+    "state": "GEN8_ACCEPTED_CONTEXT_COMPILER",
     "tool_count": 10
   },
   "next_iteration": {
-    "cycle_id": "gen8-context-compiler-001",
-    "proposals_artifact": "lab_generations/GEN8_PROPOSALS.json",
-    "required_stop": "DO_NOT_IMPLEMENT_GEN8_WITHOUT_USER_REQUEST",
+    "cycle_id": "gen9-context-necessity-001",
+    "proposals_artifact": "lab_generations/GEN9_PROPOSALS.json",
+    "required_stop": "DO_NOT_IMPLEMENT_GEN9_WITHOUT_USER_REQUEST",
     "safe_mcp_policy": "FROZEN_NO_CHANGES",
     "status": "PROPOSED_NOT_STARTED",
     "target": "Optiplex_Lab + mcp-lab VM",
-    "top_recommendation": "Context Compiler on top of the Architectural Twin"
+    "top_recommendation": "Context Necessity Optimizer / semantic evidence minimization"
   },
-  "resume_instruction": "Repository/live state is authoritative. Target remains **Optiplex_Lab + isolated `mcp-lab` VM**; `Optiplex_MCP` remains frozen. Canonical accepted capability generation is `gen7-self-model-r1`, but Gen7 did not modify `server.py`: live `lab_status` must therefore still report server generation `gen6-experience-memory-r1`, build `gen6-experience-memory-r1-dc0d2cb41595`, server/LKG `dc0d2cb41595a9a3d953873879ccc3e0bd88db2b4dcdee4cf8aa43dd4cb103e9`, recovery `ACCEPTED`, and exactly 10 tools. Before Lab shell, discover the exact 10-tool connector and call `lab_status`. Verify frozen Optiplex_MCP release `frontend-a5c1c5be8b22`, guardrail `guardrail-gen0-c51a9161a95d`, 51 tools, schema `195c410b85d40f4cfe65ef7eb8baa0463a32e93882fd9d39c0045e6518cd2913`, policy `authority-v1`. Read `START_HERE.md`, `state/current.json`, `STATUS.md`, `lab_generations/GEN7_RESULT.json`, `lab_generations/GEN8_PROPOSALS.json`, and the Gen7 plan. Top evidence-backed Gen8 direction is **Context Compiler on top of the Architectural Twin**. Do not implement Gen8 without explicit user request. Never run `mcp_probe.py` synchronously through Lab shell.",
-  "state": "LIFECYCLE_ACCEPTED_GEN7_SELF_MODEL",
+  "resume_instruction": "Repository/live state is authoritative. Target remains **Optiplex_Lab + isolated `mcp-lab` VM**; `Optiplex_MCP` remains frozen. Canonical accepted capability generation is `gen8-context-compiler-r1` / build `gen8-context-compiler-r1-39b7f040fca1`, while operational `server.py` intentionally remains Gen6: `lab_status` must report generation `gen6-experience-memory-r1`, build `gen6-experience-memory-r1-dc0d2cb41595`, server/LKG `dc0d2cb41595a9a3d953873879ccc3e0bd88db2b4dcdee4cf8aa43dd4cb103e9`, recovery `ACCEPTED`, exactly 10 tools. Final Gen8 Twin is 173 nodes / 242 edges / 85 inputs, graph digest `ceab9a44188706a209b23066217de4e8991b44d067d6c21f9018d56861c182eb`, file SHA `f1299fa23330944c734377203c4769fb4e8e27a9ac104f64397299a277ba9eea`. Verify frozen Optiplex_MCP release `frontend-a5c1c5be8b22`, guardrail `guardrail-gen0-c51a9161a95d`, 51 tools, schema `195c410b85d40f4cfe65ef7eb8baa0463a32e93882fd9d39c0045e6518cd2913`, policy `authority-v1`. Read `START_HERE.md`, `state/current.json`, `STATUS.md`, `lab_generations/GEN8_RESULT.json`, `lab_generations/GEN9_PROPOSALS.json`, and the Gen8 plan. Top Gen9 recommendation is **Context Necessity Optimizer / semantic evidence minimization**. Do not implement Gen9 without explicit user request. Never run `mcp_probe.py` synchronously through Lab shell.",
+  "state": "LIFECYCLE_ACCEPTED_GEN8_CONTEXT_COMPILER",
   "validation": {
     "containment": "PASS",
-    "final_lab_identity": "PASS_GEN7_OVERLAY_GEN6_SERVER_UNCHANGED",
+    "final_lab_identity": "PASS_GEN8_CAPABILITY_OVER_GEN6_SERVER_UNCHANGED",
     "final_live_equals_lkg": true,
     "frozen_safe_mcp": "PASS_UNCHANGED",
     "git_diff_check": "PASS",
@@ -594,6 +677,6 @@
     "project_tests": "PASS_13",
     "python_syntax": "PASS_MUTATION_FREE",
     "secret_credential_scan": "PASS",
-    "validated_at": "2026-08-26T14:51:25.077246+00:00"
+    "validated_at": "2026-08-26T17:57:05.716800+00:00"
   }
 }
