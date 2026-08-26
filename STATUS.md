@@ -1,57 +1,48 @@
 # Status
 
-Lifecycle phase: `LIFECYCLE_ACCEPTED_GEN4_WORKFLOW_GRAPHS`
+Lifecycle phase: `LIFECYCLE_ACCEPTED_GEN5_CAPABILITY_FORGE`
 
-Generation 4 evolved **Optiplex_Lab + the isolated `mcp-lab` VM**. `Optiplex_MCP` and the legacy `optiplex-mcp-agent` remained frozen.
+Generation 5 evolved **Optiplex_Lab + the isolated `mcp-lab` VM** into an evidence-gated capability forge. `Optiplex_MCP` and the legacy `optiplex-mcp-agent` remained frozen.
 
-## Accepted Gen-4 Lab
-- generation: `gen4-workflow-graphs-r1`
-- build: `gen4-workflow-graphs-r1-4558bdb23e52`
-- server SHA256: `4558bdb23e52572c6a13978a6ed10f9dc6fef26d1ae27abd0bd560c9fd1d63ac`
-- workflow graph runner: `gen4-workflow-graphs-r1`
-- graph runner SHA256: `178896ec0c9bc2115baaee9f7da88d73709fdfaacb93f577661e447d6d831e12`
+## Accepted Gen-5 Lab
+- generation: `gen5-capability-forge-r1`
+- build: `gen5-capability-forge-r1-d752f3cb4470`
+- server SHA256: `d752f3cb447067296e275296fd02a3b8f4ec3609377568c21391fbd0e8cb2447`
+- Capability Forge SHA256: `85ca609c4f2c7e89e0f1b39a261beb3477da89c42773ba682c197ef029adea4c`
 - Code Mode SHA256: `d6c1b55e4152a66dc9732ed333853f22bea1442c163be5e3082c36a860fa1264`
 - reusable workflow SHA256: `895bcc0a76fb82959a79bd445b11354bd4be22db88443521ccb280cc47cfbea4`
-- recovery: `ACCEPTED`
-- live SHA == LKG SHA == `4558bdb23e52572c6a13978a6ed10f9dc6fef26d1ae27abd0bd560c9fd1d63ac`
-- MCP surface: unchanged at exactly 10 tools
-- connector refresh/new chat required: **NO**
+- workflow graph SHA256: `178896ec0c9bc2115baaee9f7da88d73709fdfaacb93f577661e447d6d831e12`
+- recovery: `ACCEPTED`; live == LKG
+- permanent MCP surface: **10 before / 10 after**
+- connector refresh/new chat required for schema: **NO**
 
-## What Gen 4 added
-Guest-local `/opt/optiplex-lab/workflow_graphs.py` composes immutable reusable `name@version` workflows into bounded DAG/transaction definitions. It validates parent and child parameters before execution, records child hashes/provenance, detects cycles, bounds depth/nodes/invocations/retries/timeouts, persists run state, supports explicit recovery branches, and verifies restart checkpoints before continuing. Underlying Code Mode traces/artifacts remain authoritative.
+## What Gen 5 added
+The guest-local Forge uses content-addressed capability capsules with typed contracts, declared side effects, dependency manifests, independent evaluators, append-only provenance, lifecycle/TTL state, duplicate avoidance, and an evidence-gated Promotion Governor. A generic `capability-invoke@1` reusable workflow and `capability-use-transaction@1` graph let Gen3/Gen4 machinery invoke forged capabilities without adding an MCP tool per capability.
 
-Accepted composites:
-- `lab-upgrade-transaction@1` `e516a1db5e06ca97de814851c3d3cdc5f891f08b156aad208effc7adf6a69bee`
-- `lab-recovery-transaction@1` `1c1c43529d507a0c972205aef347c9134d4d153a15af04cbfc1bf24d253f9ac7`
+Final registry: **12 total — 2 promoted, 3 candidates, 6 rejected, 1 expired**. Creation remains cheap; promotion requires passing hard authority/evaluator/task/reuse gates.
 
-## Gen-4 evidence
-- Gen-4 benchmark: **18/18 PASS**, 17662.29 ms
-- normal lifecycle top-level calls: **4 -> 1 (75% reduction)**
-- bad recovery calls: **3 -> 1 (66.7% reduction)**
-- combined lifecycle calls: **7 -> 2 (71.4% reduction)**
-- normal edit-heavy authoring proxy: **4591 -> 4449 bytes (3.1%)**
-- bad recovery authoring proxy: **153 -> 50 bytes (67.3%)**
-- newly authored procedural steps for composite reuse: **0**
-- benchmark-local raw-shell step share: **8.7%**
-- restart/resume: PASS
-- deliberate bad-candidate LKG recovery + explicit reacceptance: PASS
+## Gen-5 evidence
+- Capability Forge self-test: **8/8 PASS**
+- blind capability benchmark: **12/12 PASS**
+- useful passing capabilities forged: **6**
+- deliberately broken descendants rejected: **6**
+- malformed contract: rejected
+- forbidden-authority manifest: rejected
+- exact duplicate: avoided/reused
+- ephemeral helper: expired while provenance survived
+- successful forged capability reuse: PASS
+- invocation through Gen3 workflow + Gen4 graph: PASS
+- semantic editing experiment: exact text **1/5** vs semantic **5/5** formatting variants
+- real semantic-edit authoring payload: **1862 B -> 549 B (70.5% reduction)**
+- self-host upgrade graph: `wg_20260826T110630Z_f13776e0` PASS
+- deliberate bad-candidate recovery graph: `wg_20260826T110756Z_be85be28` PASS
+- final guest regressions: Lab 12/12, Code Mode 5/5, workflows 4/4, graphs 8/8, Forge 8/8
+- containment: PASS
 
-Finalization used one `lab-upgrade-transaction@1` parent run `wg_20260826T100041Z_ebde386c` to restore canonical Gen-4 metadata after the Gen-3 compatibility benchmark's intentional no-op self-update relabeled the build. Candidate verification remained distinct from acceptance.
+Canonical evidence includes the capability registry, append-only provenance, Gen5 benchmark, semantic-edit experiment, Forge source/skill, workflow/graph adapters, and `GEN5_RESULT.json`.
 
-## Regressions / containment
-- Lab self-test: **12/12**
-- Code Mode: **5/5**
-- reusable workflows: **4/4**
-- workflow graphs: **8/8**
-- legacy benchmark: **17/17**
-- Gen-2 benchmark: **12/12**
-- Gen-3 benchmark: **16/16**
-- repository tests: **13 passed**
-- secret scan: **PASS**
-- public internet: available; host/private/RFC1918/Tailscale targets remain blocked; host control sockets/mounts/credentials absent.
-
-## Generation 5
-Top evidence-backed proposal: **Structured transactional / AST editing**. Composition removed residual sequencing, but real source evolution still carries large exact `old/new` code strings; normal lifecycle authoring bytes fell only 3.1%. See `lab_generations/GEN5_PROPOSALS.json`.
+## Generation 6
+Actual Gen5 evidence ranks **Procedural Memory Distiller** first and **Failure-to-Regression Compiler** second. See `lab_generations/GEN6_PROPOSALS.json`. Do not implement Generation 6 without a new explicit implementation request.
 
 ## Recursive MCP rule
-Never run `/opt/optiplex-lab/mcp_probe.py` synchronously through `Optiplex_Lab.shell`; use connector schema discovery or detached/out-of-band probing.
+Never run `/opt/optiplex-lab/mcp_probe.py` synchronously through `Optiplex_Lab.shell`; recursive MCP self-calls can deadlock.

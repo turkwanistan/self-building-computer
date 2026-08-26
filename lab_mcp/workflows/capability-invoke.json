@@ -1,0 +1,50 @@
+{
+  "description": "Invoke one content-addressed Gen5 forged capability through the evidence registry while preserving Code Mode provenance.",
+  "name": "capability-invoke",
+  "parameters": {
+    "capability": {
+      "pattern": "[0-9a-f]{64}",
+      "required": true,
+      "type": "str"
+    },
+    "context": {
+      "default": "workflow-invocation",
+      "type": "str"
+    },
+    "input_json": {
+      "required": true,
+      "type": "str"
+    }
+  },
+  "provenance": {
+    "generation": "gen5-capability-forge-r1",
+    "purpose": "generic workflow adapter for dynamic guest-local capabilities"
+  },
+  "version": "1",
+  "workflow": {
+    "name": "capability-invoke",
+    "steps": [
+      {
+        "argv": [
+          "/opt/optiplex-lab/capability_forge.py",
+          "invoke",
+          {
+            "$param": "capability"
+          },
+          "--input-json",
+          {
+            "$param": "input_json"
+          },
+          "--real-task",
+          "--context",
+          {
+            "$param": "context"
+          }
+        ],
+        "id": "invoke",
+        "op": "command",
+        "timeout": 60
+      }
+    ]
+  }
+}

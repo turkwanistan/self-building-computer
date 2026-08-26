@@ -7,104 +7,102 @@ import pathlib
 from datetime import datetime, timezone
 
 TRACE = pathlib.Path('/var/lib/optiplex-lab/traces/events.jsonl')
-BENCH = pathlib.Path('/var/lib/optiplex-lab/benchmarks/gen4-workflow-graph-benchmark.json')
-OUT = pathlib.Path('/var/lib/optiplex-lab/benchmarks/gen5-proposals.json')
+BENCH = pathlib.Path('/var/lib/optiplex-lab/benchmarks/gen5-capability-forge-benchmark.json')
+SEMANTIC = pathlib.Path('/var/lib/optiplex-lab/benchmarks/gen5-semantic-edit-experiment.json')
+REGISTRY = pathlib.Path('/var/lib/optiplex-lab/capabilities/registry.json')
+PROVENANCE = pathlib.Path('/var/lib/optiplex-lab/capabilities/provenance.jsonl')
+OUT = pathlib.Path('/var/lib/optiplex-lab/benchmarks/gen6-proposals.json')
 
 
 def load_json(path: pathlib.Path):
     return json.loads(path.read_text()) if path.exists() else {}
 
 
+def load_jsonl(path: pathlib.Path):
+    out=[]
+    if not path.exists(): return out
+    for line in path.read_text(errors='replace').splitlines():
+        try: out.append(json.loads(line))
+        except Exception: pass
+    return out
+
+
 def main() -> None:
-    bench = load_json(BENCH)
-    summary = bench.get('summary', {})
-    tasks = bench.get('tasks', [])
-    events = []
-    if TRACE.exists():
-        for line in TRACE.read_text(errors='replace').splitlines():
-            try:
-                events.append(json.loads(line))
-            except Exception:
-                pass
-
-    graph_events = [e for e in events if e.get('tool') == 'workflow_graphs']
-    graph_ends = [e for e in graph_events if e.get('event') == 'graph_run_end']
-    node_ends = [e for e in graph_events if e.get('event') == 'node_end']
-    workflow_ends = [e for e in events if e.get('tool') == 'workflow_skills' and e.get('event') == 'invoke_end']
-    code_steps = [e for e in events if e.get('tool') == 'code_mode' and e.get('event') == 'step_end']
-    ops = collections.Counter(e.get('op') for e in code_steps)
-    failures = collections.Counter(e.get('op') for e in code_steps if not e.get('ok'))
-    slow = sorted(tasks, key=lambda x: float(x.get('elapsed_ms', 0) or 0), reverse=True)
-    slow_text = ', '.join(str(x.get('name')) + '=' + str(x.get('elapsed_ms')) + 'ms' for x in slow[:3])
-
-    proposals = []
-    def add(title: str, kind: str, evidence: str, benefit: str, complexity: str) -> None:
-        proposals.append({
-            'rank': len(proposals) + 1,
-            'title': title,
-            'kind': kind,
-            'evidence': evidence,
-            'expected_benefit': benefit,
-            'complexity': complexity,
-        })
+    bench=load_json(BENCH); metrics=bench.get('metrics',{}); semantic=load_json(SEMANTIC)
+    registry=(load_json(REGISTRY).get('capabilities') or {})
+    events=load_jsonl(TRACE); provenance=load_jsonl(PROVENANCE)
+    forge_events=[e for e in events if e.get('tool')=='capability_forge']
+    forge_counts=collections.Counter(e.get('event') for e in forge_events)
+    prov_counts=collections.Counter(e.get('event') for e in provenance)
+    states=collections.Counter(r.get('state') for r in registry.values())
+    promoted=[(h,r) for h,r in registry.items() if r.get('state')=='PROMOTED']
+    candidates=[(h,r) for h,r in registry.items() if r.get('state')=='CANDIDATE']
+    rejected=[(h,r) for h,r in registry.items() if r.get('state')=='REJECTED']
+    real_failures=sum(1 for e in provenance if e.get('event')=='real_task_evidence' and not e.get('ok'))
+    proposals=[]
+    def add(title,kind,evidence,benefit,complexity):
+        proposals.append({'rank':len(proposals)+1,'title':title,'kind':kind,'evidence':evidence,'expected_benefit':benefit,'complexity':complexity})
 
     add(
-        'Structured transactional / AST editing',
-        'editing/context',
-        f"Gen4 reduced normal lifecycle top-level sequencing from {summary.get('normal_lifecycle_top_level_invocations_gen3')} to {summary.get('normal_lifecycle_top_level_invocations_gen4')} calls ({summary.get('normal_lifecycle_invocation_reduction')} reduction), but the real edit-heavy authoring proxy only fell from {summary.get('normal_lifecycle_authoring_bytes_gen3_proxy')}B to {summary.get('normal_lifecycle_authoring_bytes_gen4_proxy')}B ({summary.get('normal_lifecycle_authoring_byte_reduction')} reduction). The remaining 4.4KB payload was dominated by exact old/new source text rather than orchestration.",
-        'Replace large exact-string edit payloads with audited symbol/AST/structured transformations, deterministic preconditions, previews, rollback, and provenance. This attacks the largest residual ChatGPT-authored context after graph composition solved sequencing.',
+        'Procedural Memory Distiller',
+        'memory/retrieval',
+        f"Gen5 can now forge and govern abilities, but the benchmark still required {metrics.get('chatgpt_authored_helper_source_bytes')} ChatGPT-authored helper/contract bytes to create them. Only {len(promoted)} capabilities reached PROMOTED while {len(candidates)} useful passing capabilities remain CANDIDATE, and current gap retrieval is deliberately shallow name/tag/purpose overlap. Reuse itself averaged {metrics.get('subsequent_reuse_latency_ms')} ms, so the expensive part has moved from execution to recognizing and retrieving prior experience.",
+        'Distill successful capability/workflow/graph episodes into compact applicability memories with evidence links, then retrieve only the relevant procedures/capabilities for a new gap. Preserve immutable source-of-truth artifacts; memory is an index and hypothesis, not authority.',
         'medium',
     )
     add(
-        'Automatic composite/skill synthesis from successful traces',
-        'synthesis/reuse',
-        f"Gen4 proved that a registered graph can be reused with zero newly authored procedural steps and cut combined lifecycle calls from {summary.get('combined_lifecycle_top_level_invocations_gen3')} to {summary.get('combined_lifecycle_top_level_invocations_gen4')}, but the two accepted lifecycle graphs were still designed and registered manually. {len(graph_ends)} graph completions and {len(node_ends)} node completions are now available as synthesis evidence.",
-        'Mine repeated successful workflow sequences, propose a bounded immutable composite definition, statically validate it, and require explicit acceptance before activation. This removes the next layer of ChatGPT reasoning: recognizing and encoding reusable sequences.',
+        'Failure-to-Regression Compiler',
+        'memory/verification',
+        f"Gen5 intentionally rejected {metrics.get('broken_candidates_rejected')} broken descendants, recorded {real_failures} real-task failures in Forge provenance, and exercised a failed semantic self-edit plus bad-candidate LKG recovery. Those failures produced rich hashes/results, but their durable regression cases were still hand-authored in benchmark code.",
+        'Convert a failed capability run, evaluator miss, self-edit failure, or recovery incident into a minimized immutable regression fixture tied to the responsible capability/evaluator/version. Future descendants must replay relevant regressions before promotion.',
         'medium',
     )
     add(
-        'Adaptive bounded recovery policies',
-        'recovery',
-        f"The bad-candidate recovery transaction succeeded but recorded {summary.get('recovery_success')} recovery with bounded underlying retries; benchmark-local graph retries were {summary.get('local_graph_retries')}. Code Mode step failures observed in the trace are {dict(failures)}. Gen4 recovery branches remain static and hand-authored.",
-        'Let transactions select among a small declared set of inspect/retry/rollback actions using explicit budgets and state predicates, while never converting an unrecovered failed child into success.',
+        'Evaluator / Mutation Distiller',
+        'verification/synthesis',
+        f"The Gen5 nursery achieved {bench.get('passed')}/{bench.get('total')} task checks and proved independent adversarial evidence can reject candidates that pass ordinary cases. But positive/negative/adversarial fixtures were authored externally for each new capability; evaluator generation remains a major reasoning step after capability source generation.",
+        'Infer candidate invariants from contract examples and observed failures, generate bounded mutations/negative cases, and prove evaluator discrimination before a capability can be promoted. Keep evaluator identity/hash separate from implementation identity.',
+        'medium',
+    )
+    add(
+        'Capability Consolidator + Supersession Memory',
+        'retention/maintenance',
+        f"Gen5 avoided {metrics.get('duplicate_capabilities_avoided')} exact duplicate and supports explicit SUPERSEDED state, but semantic overlap beyond exact content is still a simple heuristic. Registry states are {dict(states)} and every passing helper can otherwise accumulate as a distinct candidate/environment.",
+        'Cluster near-equivalent capabilities using contract/applicability/evidence fingerprints, propose merges or supersession, replay both evaluators/regressions, and retain lineage so the registry grows in quality rather than only size.',
         'low-medium',
     )
     add(
-        'Static analysis + property fuzzing for workflows and graphs',
-        'verification',
-        f"Gen4 now has typed mappings, immutable child hashes, cycle checks, invocation bounds, restart checkpoints, and an 18/18 benchmark. The benchmark exercises failures, but the combinatorial graph/schema surface is larger than Gen3 and currently relies on example-based tests. Observed Code Mode op mix is {dict(ops)}.",
-        'Generate bounded malformed definitions, dependency graphs, parameter mappings, restart-state fixtures, and interruption states to prove fail-closed behavior and catch edge cases before a self-update transaction.',
-        'medium',
-    )
-    add(
-        'Parallel execution of independent DAG nodes',
-        'performance/orchestration',
-        f"The accepted Gen4 runner models dependencies as a DAG but executes topological nodes sequentially. The slowest benchmark cases were {slow_text}; wall-clock was not the Gen4 objective, so concurrency was intentionally deferred.",
-        'Run only dependency-independent, resource-compatible children concurrently with explicit fan-out limits and deterministic join/failure semantics, preserving child provenance and containment.',
+        'Experience-Based Recovery Policy Distiller',
+        'recovery/memory',
+        f"Gen5 preserved Gen4 restart/LKG recovery and the deliberate bad-candidate transaction passed, but recovery actions remain hand-declared graphs. Forge provenance now records candidate failures, dependency failures, timeouts, excessive output, and real-task failures that can identify which bounded recovery action worked in which context.",
+        'Learn applicability rules over an explicitly allowed recovery action set (inspect, retry, expire, rollback, re-evaluate) from prior incidents, while keeping budgets and fail-closed graph semantics unchanged.',
         'medium',
     )
 
-    out = {
-        'generated_at': datetime.now(timezone.utc).isoformat(),
-        'generation': 'gen5-proposals-from-gen4-evidence',
-        'implemented': False,
-        'question': 'What still requires excessive ChatGPT reasoning/tool orchestration after reusable workflows can compose?',
-        'benchmark_summary': summary,
-        'trace_summary': {
-            'workflow_graph_completions_seen': len(graph_ends),
-            'workflow_graph_node_completions_seen': len(node_ends),
-            'reusable_workflow_completions_seen': len(workflow_ends),
-            'code_mode_steps_seen': len(code_steps),
-            'ops': dict(ops),
-            'step_failures': dict(failures),
+    out={
+        'generated_at':datetime.now(timezone.utc).isoformat(),
+        'generation':'gen6-proposals-from-gen5-evidence',
+        'implemented':False,
+        'question':'What still requires excessive ChatGPT reasoning/tool orchestration after the Lab can forge and govern new capabilities?',
+        'gen5_benchmark':{
+            'artifact':str(BENCH),
+            'passed':bench.get('passed'),'total':bench.get('total'),
+            'artifact_sha256':bench.get('artifact_sha256'),
+            'metrics':metrics,
         },
-        'top_recommendation': proposals[0]['title'],
-        'proposals': proposals,
+        'semantic_edit_evidence':{
+            'artifact':str(SEMANTIC),
+            'exact_successes':semantic.get('exact_successes'),
+            'semantic_successes':semantic.get('semantic_successes'),
+            'variants_total':semantic.get('variants_total'),
+            'authoring_proxy':semantic.get('actual_server_authoring_proxy'),
+        },
+        'registry_summary':{'states':dict(states),'total':len(registry),'promoted':len(promoted),'candidates':len(candidates),'rejected':len(rejected)},
+        'trace_summary':{'forge_events':len(forge_events),'forge_event_counts':dict(forge_counts),'provenance_events':len(provenance),'provenance_event_counts':dict(prov_counts),'real_task_failures':real_failures},
+        'top_recommendation':proposals[0]['title'],
+        'proposals':proposals,
     }
-    OUT.parent.mkdir(parents=True, exist_ok=True)
-    OUT.write_text(json.dumps(out, indent=2) + '\n')
-    print(json.dumps(out, indent=2))
+    OUT.parent.mkdir(parents=True,exist_ok=True); OUT.write_text(json.dumps(out,indent=2)+'\n')
+    print(json.dumps(out,indent=2))
 
-
-if __name__ == '__main__':
-    main()
+if __name__=='__main__': main()

@@ -1,0 +1,44 @@
+{
+  "description": "Invoke a content-addressed Gen5 forged capability through the accepted Gen3 workflow and Gen4 graph stack.",
+  "limits": {
+    "child_timeout_s": 90,
+    "max_depth": 1,
+    "max_invocations": 4,
+    "max_nodes": 4
+  },
+  "name": "capability-use-transaction",
+  "nodes": [
+    {
+      "depends_on": [],
+      "id": "invoke-capability",
+      "params": {
+        "capability": {
+          "$param": "capability"
+        },
+        "context": {
+          "$param": "context"
+        },
+        "input_json": {
+          "$param": "input_json"
+        }
+      },
+      "workflow": "capability-invoke@1"
+    }
+  ],
+  "parameters": {
+    "capability": {
+      "pattern": "[0-9a-f]{64}",
+      "required": true,
+      "type": "str"
+    },
+    "context": {
+      "default": "graph-invocation",
+      "type": "str"
+    },
+    "input_json": {
+      "required": true,
+      "type": "str"
+    }
+  },
+  "version": "1"
+}

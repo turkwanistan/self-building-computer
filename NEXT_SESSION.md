@@ -1,27 +1,28 @@
-# Next Session — Generation 5 Entry Gate
+# Next Session — Generation 6 Entry Gate
 
-Repository/live state is authoritative over this file, prior chats, and ChatGPT memory. Target: **Optiplex_Lab + isolated `mcp-lab` VM**. `Optiplex_MCP` remains frozen.
+Repository/live state is authoritative. Target remains **Optiplex_Lab + isolated `mcp-lab` VM**. `Optiplex_MCP` is frozen.
 
 ## Hard connector gate
 Before Lab shell, discover exactly these 10 `Optiplex_Lab` tools: `shell`, `read_file`, `read_range`, `write_file`, `list_files`, `job`, `service`, `lab_status`, `self_restart`, `reboot`. Then call `lab_status`.
 
-Expected accepted Gen-4 identity:
-- generation `gen4-workflow-graphs-r1`
-- build `gen4-workflow-graphs-r1-4558bdb23e52`
-- server `4558bdb23e52572c6a13978a6ed10f9dc6fef26d1ae27abd0bd560c9fd1d63ac`
-- graph runner `178896ec0c9bc2115baaee9f7da88d73709fdfaacb93f577661e447d6d831e12`
-- Code Mode `d6c1b55e4152a66dc9732ed333853f22bea1442c163be5e3082c36a860fa1264`
-- reusable workflows `895bcc0a76fb82959a79bd445b11354bd4be22db88443521ccb280cc47cfbea4`
+Expected accepted Gen-5 identity:
+- generation `gen5-capability-forge-r1`
+- build `gen5-capability-forge-r1-d752f3cb4470`
+- server SHA256 `d752f3cb447067296e275296fd02a3b8f4ec3609377568c21391fbd0e8cb2447`
+- Capability Forge SHA256 `85ca609c4f2c7e89e0f1b39a261beb3477da89c42773ba682c197ef029adea4c`
+- Code Mode SHA256 `d6c1b55e4152a66dc9732ed333853f22bea1442c163be5e3082c36a860fa1264`
+- reusable workflow SHA256 `895bcc0a76fb82959a79bd445b11354bd4be22db88443521ccb280cc47cfbea4`
+- workflow graph SHA256 `178896ec0c9bc2115baaee9f7da88d73709fdfaacb93f577661e447d6d831e12`
 - tool surface 10
-- recovery `ACCEPTED`; live SHA == LKG SHA == `4558bdb23e52572c6a13978a6ed10f9dc6fef26d1ae27abd0bd560c9fd1d63ac`
+- recovery `ACCEPTED`; live SHA == LKG SHA == expected server SHA
 
-Then inspect Git status and read `START_HERE.md`, `state/current.json`, `STATUS.md`, `lab_generations/GEN4_RESULT.json`, `lab_generations/GEN5_PROPOSALS.json`, `plans/GEN4_COMPOSABLE_WORKFLOW_GRAPHS.md`, and the workflow-graphs skill. Preserve all work.
+Verify frozen `Optiplex_MCP` remains release `frontend-a5c1c5be8b22`, guardrail `guardrail-gen0-c51a9161a95d`, 51 tools, schema `195c410b85d40f4cfe65ef7eb8baa0463a32e93882fd9d39c0045e6518cd2913`, policy `authority-v1`.
 
-Verify frozen `Optiplex_MCP`: release `frontend-a5c1c5be8b22`, guardrail `guardrail-gen0-c51a9161a95d`, 51 tools, schema `195c410b85d40f4cfe65ef7eb8baa0463a32e93882fd9d39c0045e6518cd2913`, policy `authority-v1`.
+Read `START_HERE.md`, `state/current.json`, `STATUS.md`, `lab_generations/GEN5_RESULT.json`, `lab_generations/GEN6_PROPOSALS.json`, `plans/GEN5_CAPABILITY_FORGE.md`, and the capability-forge skill before designing anything.
 
-Run lightweight accepted-state checks before Gen 5: Lab 12/12, Code Mode 5/5, reusable workflows 4/4, workflow graphs 8/8, recovery ACCEPTED, live=LKG, containment intact, no abandoned generation jobs. Use retained benchmark evidence unless a destructive rerun is materially required.
+## Gen-6 hypothesis
+Top evidence-backed proposal: **Procedural Memory Distiller**. Second: **Failure-to-Regression Compiler**. Gen5 shows reuse is cheap once a capability exists; the residual reasoning cost is recognizing relevant prior experience, distilling applicability, and turning failures into durable regressions.
 
-## Gen-5 leading hypothesis
-**Structured transactional / AST editing.** Gen4 solved lifecycle sequencing (4->1 calls) but normal edit-heavy authoring bytes improved only 4591->4449 (3.1%) because exact old/new source payloads dominate. Treat this as the leading hypothesis, not an immutable specification.
+Do **not** implement Generation 6 without a new explicit implementation request.
 
-Do not run `/opt/optiplex-lab/mcp_probe.py` synchronously through Lab shell. No connector refresh is required for accepted Gen 4 because the MCP surface stayed at 10 tools.
+Never run `/opt/optiplex-lab/mcp_probe.py` synchronously through Lab shell. No connector refresh/new session is required merely to use accepted Gen5 because the permanent MCP surface stayed at 10 tools.

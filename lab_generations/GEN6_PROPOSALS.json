@@ -1,0 +1,211 @@
+{
+  "generated_at": "2026-08-26T11:10:14.976154+00:00",
+  "generation": "gen6-proposals-from-gen5-evidence",
+  "implemented": false,
+  "question": "What still requires excessive ChatGPT reasoning/tool orchestration after the Lab can forge and govern new capabilities?",
+  "gen5_benchmark": {
+    "artifact": "/var/lib/optiplex-lab/benchmarks/gen5-capability-forge-benchmark.json",
+    "passed": 12,
+    "total": 12,
+    "artifact_sha256": null,
+    "metrics": {
+      "blind_capability_tasks_attempted": 12,
+      "blind_tasks_passed": 12,
+      "broken_candidates_rejected": 6,
+      "capabilities_reused": 2,
+      "capabilities_successfully_forged": 6,
+      "chatgpt_authored_helper_source_bytes": 15585,
+      "code_mode_steps": 1,
+      "containment": {
+        "blocked": [
+          "192.168.127.1:8790",
+          "10.0.0.1:22",
+          "172.16.0.1:22",
+          "100.64.0.1:22"
+        ],
+        "host_control_sockets": [],
+        "host_repository_present": false,
+        "ok": true,
+        "unexpected_reachable": []
+      },
+      "creation_latency_ms": {
+        "dependency_capability_create_ms": 4982.5,
+        "duplicate_reuse_ms": 19.39,
+        "semantic_editor_create_ms": 7989.01,
+        "source_analysis_create_ms": 1888.14,
+        "structured_parser_create_ms": 1116.47,
+        "subsequent_reuse_ms": 42.91,
+        "typed_transform_create_ms": 628.47
+      },
+      "dependency_footprint": {
+        "170256b4f65fc109c9fc80f55afbcdea049c733adc78f815f211056cccc70548": 0,
+        "3a6062a4ea23663c8824f66b98f5fc876fc34f3749bcaec20b4063003b96e936": 1,
+        "3c5f67425880eb30b153af609adef3a1e853a790d88521b22a1cba17f286e159": 1,
+        "3e7c1599e64b7cbab7f6649ab7350571e2de3ff2c5f17e01f4a9dd3c0eaa5be9": 0,
+        "4a73a98fb2ed467d9ca11785f6ca16d49d5780b04b9f11f8acfecf75fa73d334": 0,
+        "5d7528d5696f0449c58d6272f34b91f1d3dfe0a2845eba38de2256b6ddacfb68": 0,
+        "5ea3f63dc3b9146808efcc747a36d733db5c376e405db1b66f67603d539dd665": 1,
+        "7a615a3f98a7a3be8babdf6376f38be2025543618af8dfff638ce2f028c8c708": 0,
+        "87ca9c570607434f75f62406ddc1a50b71769acb67498b13390bc83135a84f18": 0,
+        "c601998968ff6d0843dd77f83b6701c887d9c6ced5b6055f30b36b253b50057a": 0,
+        "d5d489b7655209bc218aeeb67ab7538b4a8b881673153446488229b50da93c56": 0,
+        "e2dd28e808576b9fa758bc0f9ca885f4681d0e6e436aebd7d8fe6dc147bd2745": 0
+      },
+      "duplicate_capabilities_avoided": 1,
+      "ephemeral_capabilities_expired": 1,
+      "forbidden_authority_manifests_rejected": 1,
+      "graph_invocations": 1,
+      "graph_run_id": "wg_20260826T110458Z_4962c97d",
+      "malformed_contracts_rejected": 1,
+      "permanent_mcp_tools_after": 10,
+      "permanent_mcp_tools_before": 10,
+      "promoted_capabilities": 2,
+      "provenance_complete_records": 12,
+      "raw_shell_usage": 0,
+      "real_task_failure_recorded": true,
+      "retries": 0,
+      "semantic_editor_failed_self_edit_fixture_rejected": true,
+      "semantic_editor_governor": {
+        "content_hash": "3a6062a4ea23663c8824f66b98f5fc876fc34f3749bcaec20b4063003b96e936",
+        "decision": "PROMOTE",
+        "evidence": {
+          "dependency_cost": {
+            "pip_dependencies": 1
+          },
+          "generality": {
+            "applicability_tags": 4
+          },
+          "maintenance": {
+            "source_bytes": 3519,
+            "source_files": 2
+          },
+          "overlap": {
+            "same_name_active": 0
+          },
+          "recurrence_reuse": {
+            "duplicate_reuse_count": 0,
+            "reuse_count": 1
+          },
+          "side_effects": {
+            "count": 2,
+            "declared": [
+              "read_files",
+              "write_workspace"
+            ]
+          },
+          "task_success": {
+            "attempts": 2,
+            "successes": 2
+          },
+          "tests": {
+            "cases_passed": 3,
+            "cases_total": 3,
+            "evaluation_passes": 1,
+            "evaluation_runs": 1
+          }
+        },
+        "governor_version": "gen5-promotion-governor-r1",
+        "hard_gates": {
+          "authority_contract_valid": true,
+          "evaluation_passed": true,
+          "evaluator_identity_matches": true,
+          "not_rejected_or_expired": true,
+          "object_available": true
+        },
+        "state": "PROMOTED"
+      },
+      "semantic_editor_hash": "3a6062a4ea23663c8824f66b98f5fc876fc34f3749bcaec20b4063003b96e936",
+      "semantic_editor_real_successes_before_self_host": 2,
+      "subsequent_reuse_latency_ms": 42.91,
+      "task_success_rate": 1.0,
+      "test_evaluator_pass_rate": 0.5,
+      "workflow_invocations": 1
+    }
+  },
+  "semantic_edit_evidence": {
+    "artifact": "/var/lib/optiplex-lab/benchmarks/gen5-semantic-edit-experiment.json",
+    "exact_successes": 1,
+    "semantic_successes": 5,
+    "variants_total": 5,
+    "authoring_proxy": {
+      "exact_anchor_matches_in_gen4_source": 1,
+      "exact_replace_payload_bytes": 1862,
+      "gen4_source_used": "/var/lib/optiplex-lab/recovery/server.previous-20260826T100045Z.py",
+      "reduction": 0.705,
+      "semantic_payload_bytes": 549
+    }
+  },
+  "registry_summary": {
+    "states": {
+      "PROMOTED": 2,
+      "REJECTED": 6,
+      "CANDIDATE": 3,
+      "EXPIRED": 1
+    },
+    "total": 12,
+    "promoted": 2,
+    "candidates": 3,
+    "rejected": 6
+  },
+  "trace_summary": {
+    "forge_events": 5,
+    "forge_event_counts": {
+      "invoke": 5
+    },
+    "provenance_events": 82,
+    "provenance_event_counts": {
+      "gap_workspace_created": 13,
+      "sealed": 12,
+      "invoke": 32,
+      "evaluation": 12,
+      "real_task_evidence": 9,
+      "governor_decision": 2,
+      "duplicate_reused": 1,
+      "expired": 1
+    },
+    "real_task_failures": 3
+  },
+  "top_recommendation": "Procedural Memory Distiller",
+  "proposals": [
+    {
+      "rank": 1,
+      "title": "Procedural Memory Distiller",
+      "kind": "memory/retrieval",
+      "evidence": "Gen5 can now forge and govern abilities, but the benchmark still required 15585 ChatGPT-authored helper/contract bytes to create them. Only 2 capabilities reached PROMOTED while 3 useful passing capabilities remain CANDIDATE, and current gap retrieval is deliberately shallow name/tag/purpose overlap. Reuse itself averaged 42.91 ms, so the expensive part has moved from execution to recognizing and retrieving prior experience.",
+      "expected_benefit": "Distill successful capability/workflow/graph episodes into compact applicability memories with evidence links, then retrieve only the relevant procedures/capabilities for a new gap. Preserve immutable source-of-truth artifacts; memory is an index and hypothesis, not authority.",
+      "complexity": "medium"
+    },
+    {
+      "rank": 2,
+      "title": "Failure-to-Regression Compiler",
+      "kind": "memory/verification",
+      "evidence": "Gen5 intentionally rejected 6 broken descendants, recorded 3 real-task failures in Forge provenance, and exercised a failed semantic self-edit plus bad-candidate LKG recovery. Those failures produced rich hashes/results, but their durable regression cases were still hand-authored in benchmark code.",
+      "expected_benefit": "Convert a failed capability run, evaluator miss, self-edit failure, or recovery incident into a minimized immutable regression fixture tied to the responsible capability/evaluator/version. Future descendants must replay relevant regressions before promotion.",
+      "complexity": "medium"
+    },
+    {
+      "rank": 3,
+      "title": "Evaluator / Mutation Distiller",
+      "kind": "verification/synthesis",
+      "evidence": "The Gen5 nursery achieved 12/12 task checks and proved independent adversarial evidence can reject candidates that pass ordinary cases. But positive/negative/adversarial fixtures were authored externally for each new capability; evaluator generation remains a major reasoning step after capability source generation.",
+      "expected_benefit": "Infer candidate invariants from contract examples and observed failures, generate bounded mutations/negative cases, and prove evaluator discrimination before a capability can be promoted. Keep evaluator identity/hash separate from implementation identity.",
+      "complexity": "medium"
+    },
+    {
+      "rank": 4,
+      "title": "Capability Consolidator + Supersession Memory",
+      "kind": "retention/maintenance",
+      "evidence": "Gen5 avoided 1 exact duplicate and supports explicit SUPERSEDED state, but semantic overlap beyond exact content is still a simple heuristic. Registry states are {'PROMOTED': 2, 'REJECTED': 6, 'CANDIDATE': 3, 'EXPIRED': 1} and every passing helper can otherwise accumulate as a distinct candidate/environment.",
+      "expected_benefit": "Cluster near-equivalent capabilities using contract/applicability/evidence fingerprints, propose merges or supersession, replay both evaluators/regressions, and retain lineage so the registry grows in quality rather than only size.",
+      "complexity": "low-medium"
+    },
+    {
+      "rank": 5,
+      "title": "Experience-Based Recovery Policy Distiller",
+      "kind": "recovery/memory",
+      "evidence": "Gen5 preserved Gen4 restart/LKG recovery and the deliberate bad-candidate transaction passed, but recovery actions remain hand-declared graphs. Forge provenance now records candidate failures, dependency failures, timeouts, excessive output, and real-task failures that can identify which bounded recovery action worked in which context.",
+      "expected_benefit": "Learn applicability rules over an explicitly allowed recovery action set (inspect, retry, expire, rollback, re-evaluate) from prior incidents, while keeping budgets and fail-closed graph semantics unchanged.",
+      "complexity": "medium"
+    }
+  ]
+}

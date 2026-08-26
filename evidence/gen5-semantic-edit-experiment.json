@@ -1,0 +1,51 @@
+{
+  "actual_server_authoring_proxy": {
+    "exact_anchor_matches_in_gen4_source": 1,
+    "exact_replace_payload_bytes": 1862,
+    "gen4_source_used": "/var/lib/optiplex-lab/recovery/server.previous-20260826T100045Z.py",
+    "reduction": 0.705,
+    "semantic_payload_bytes": 549
+  },
+  "capability_hash": "3a6062a4ea23663c8824f66b98f5fc876fc34f3749bcaec20b4063003b96e936",
+  "exact_successes": 1,
+  "experiment": "gen5-semantic-edit-vs-exact-replace",
+  "format_variants": [
+    {
+      "exact_matches": 1,
+      "exact_ok": true,
+      "semantic_ok": true,
+      "semantic_run_id": "cap_20260826T110740Z_1a1c7c46",
+      "variant": 1
+    },
+    {
+      "exact_matches": 0,
+      "exact_ok": false,
+      "semantic_ok": true,
+      "semantic_run_id": "cap_20260826T110741Z_17213fc8",
+      "variant": 2
+    },
+    {
+      "exact_matches": 0,
+      "exact_ok": false,
+      "semantic_ok": true,
+      "semantic_run_id": "cap_20260826T110741Z_c4e72d28",
+      "variant": 3
+    },
+    {
+      "exact_matches": 0,
+      "exact_ok": false,
+      "semantic_ok": true,
+      "semantic_run_id": "cap_20260826T110741Z_a0f8741e",
+      "variant": 4
+    },
+    {
+      "exact_matches": 0,
+      "exact_ok": false,
+      "semantic_ok": true,
+      "semantic_run_id": "cap_20260826T110741Z_7ec38922",
+      "variant": 5
+    }
+  ],
+  "semantic_successes": 5,
+  "variants_total": 5
+}

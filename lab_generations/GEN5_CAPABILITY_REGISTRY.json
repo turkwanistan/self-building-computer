@@ -1,0 +1,788 @@
+{
+  "capabilities": {
+    "170256b4f65fc109c9fc80f55afbcdea049c733adc78f815f211056cccc70548": {
+      "applicability": [
+        "json",
+        "transform",
+        "normalization"
+      ],
+      "content_hash": "170256b4f65fc109c9fc80f55afbcdea049c733adc78f815f211056cccc70548",
+      "created_at": "2026-08-26T11:04:25.194432+00:00",
+      "creator": "ChatGPT",
+      "creator_episode": "generation-5-capability-forge-benchmark",
+      "dependencies": {
+        "pip": []
+      },
+      "duplicate_reuse_count": 1,
+      "evaluation_passes": 1,
+      "evaluation_runs": 1,
+      "evaluator_hash": "6db22ad1e27c874bc9a35d1c2964628bcae957c9b0ba6eb235aec5a93ac847f4",
+      "evaluator_version": "gen5-nursery-r1",
+      "expired_object_removed": false,
+      "gap_hash": "82d43272e74d91be63370ede956a4de2e562378e924bb025b7755cf0ca8a07ea",
+      "governor_decisions": [
+        {
+          "at": "2026-08-26T11:04:58.509310+00:00",
+          "decision": "PROMOTE",
+          "evidence": {
+            "dependency_cost": {
+              "pip_dependencies": 0
+            },
+            "generality": {
+              "applicability_tags": 3
+            },
+            "maintenance": {
+              "source_bytes": 1387,
+              "source_files": 2
+            },
+            "overlap": {
+              "same_name_active": 0
+            },
+            "recurrence_reuse": {
+              "duplicate_reuse_count": 1,
+              "reuse_count": 1
+            },
+            "side_effects": {
+              "count": 0,
+              "declared": []
+            },
+            "task_success": {
+              "attempts": 2,
+              "successes": 2
+            },
+            "tests": {
+              "cases_passed": 3,
+              "cases_total": 3,
+              "evaluation_passes": 1,
+              "evaluation_runs": 1
+            }
+          },
+          "governor_version": "gen5-promotion-governor-r1",
+          "hard_gates": {
+            "authority_contract_valid": true,
+            "evaluation_passed": true,
+            "evaluator_identity_matches": true,
+            "not_rejected_or_expired": true,
+            "object_available": true
+          }
+        }
+      ],
+      "last_evaluation": {
+        "evaluator_hash": "6db22ad1e27c874bc9a35d1c2964628bcae957c9b0ba6eb235aec5a93ac847f4",
+        "ok": true,
+        "passed_cases": 3,
+        "result_path": "/var/lib/optiplex-lab/capability-runs/eval_20260826T110425Z_6afcb267/result.json",
+        "total_cases": 3
+      },
+      "last_real_task": {
+        "context_hash": "9f9e54424a9974cf283c3af02ea69431d905e82816d24b8c0188d4b6cdc8ba92",
+        "ok": true,
+        "run_id": "cap_20260826T110458Z_7cc091d5"
+      },
+      "last_real_task_at": "2026-08-26T11:04:58.976806+00:00",
+      "last_seen_at": "2026-08-26T11:04:58.976812+00:00",
+      "name": "gen5-record-normalizer",
+      "object": "/var/lib/optiplex-lab/capabilities/objects/170256b4f65fc109c9fc80f55afbcdea049c733adc78f815f211056cccc70548",
+      "purpose": "Normalize object keys and trim string values with a typed JSON contract.",
+      "real_task_attempts": 4,
+      "real_task_successes": 3,
+      "reuse_count": 2,
+      "side_effects": [],
+      "source_bytes": 1387,
+      "source_files": [
+        {
+          "bytes": 1116,
+          "path": "capability.json",
+          "sha256": "967105194583391bab9755d9793556443e07cbf066d9ff5df53e3ad8d27e77c5"
+        },
+        {
+          "bytes": 271,
+          "path": "main.py",
+          "sha256": "3d557b9fdb8925f28b8dabc0fe4337dfa767a3e272305cbf1f5d21de9cd2e8b9"
+        }
+      ],
+      "source_hashes": {
+        "capability.json": "967105194583391bab9755d9793556443e07cbf066d9ff5df53e3ad8d27e77c5",
+        "main.py": "3d557b9fdb8925f28b8dabc0fe4337dfa767a3e272305cbf1f5d21de9cd2e8b9"
+      },
+      "state": "PROMOTED",
+      "version": "1"
+    },
+    "3a6062a4ea23663c8824f66b98f5fc876fc34f3749bcaec20b4063003b96e936": {
+      "applicability": [
+        "python",
+        "source-editing",
+        "semantic-edit",
+        "libcst"
+      ],
+      "content_hash": "3a6062a4ea23663c8824f66b98f5fc876fc34f3749bcaec20b4063003b96e936",
+      "created_at": "2026-08-26T11:04:27.739343+00:00",
+      "creator": "ChatGPT",
+      "creator_episode": "generation-5-capability-forge-benchmark",
+      "dependencies": {
+        "pip": [
+          "libcst==1.8.2"
+        ]
+      },
+      "duplicate_reuse_count": 0,
+      "evaluation_passes": 1,
+      "evaluation_runs": 1,
+      "evaluator_hash": "7f31eb1eb30db355e1069feebd8db6049a40bbd73d96f6719382a5710c2c7a6c",
+      "evaluator_version": "gen5-nursery-r1",
+      "expired_object_removed": false,
+      "gap_hash": "0fa85fbcf9cbf0a7791f06043caada7f573c3ea5dbbe328e7a313b751357d215",
+      "governor_decisions": [
+        {
+          "at": "2026-08-26T11:04:36.157403+00:00",
+          "decision": "PROMOTE",
+          "evidence": {
+            "dependency_cost": {
+              "pip_dependencies": 1
+            },
+            "generality": {
+              "applicability_tags": 4
+            },
+            "maintenance": {
+              "source_bytes": 3519,
+              "source_files": 2
+            },
+            "overlap": {
+              "same_name_active": 0
+            },
+            "recurrence_reuse": {
+              "duplicate_reuse_count": 0,
+              "reuse_count": 1
+            },
+            "side_effects": {
+              "count": 2,
+              "declared": [
+                "read_files",
+                "write_workspace"
+              ]
+            },
+            "task_success": {
+              "attempts": 2,
+              "successes": 2
+            },
+            "tests": {
+              "cases_passed": 3,
+              "cases_total": 3,
+              "evaluation_passes": 1,
+              "evaluation_runs": 1
+            }
+          },
+          "governor_version": "gen5-promotion-governor-r1",
+          "hard_gates": {
+            "authority_contract_valid": true,
+            "evaluation_passed": true,
+            "evaluator_identity_matches": true,
+            "not_rejected_or_expired": true,
+            "object_available": true
+          }
+        }
+      ],
+      "last_evaluation": {
+        "evaluator_hash": "7f31eb1eb30db355e1069feebd8db6049a40bbd73d96f6719382a5710c2c7a6c",
+        "ok": true,
+        "passed_cases": 3,
+        "result_path": "/var/lib/optiplex-lab/capability-runs/eval_20260826T110435Z_9638e68d/result.json",
+        "total_cases": 3
+      },
+      "last_real_task": {
+        "context_hash": "cc68b60b0a9822cb93e6b1fba5866c0969c0762c8590b2621d241b680a2b5ded",
+        "ok": true,
+        "run_id": "cap_20260826T110611Z_dc94d117"
+      },
+      "last_real_task_at": "2026-08-26T11:06:12.279749+00:00",
+      "last_seen_at": "2026-08-26T11:06:12.279755+00:00",
+      "name": "gen5-python-cst-editor",
+      "object": "/var/lib/optiplex-lab/capabilities/objects/3a6062a4ea23663c8824f66b98f5fc876fc34f3749bcaec20b4063003b96e936",
+      "purpose": "Add one key/value expression to the dictionary returned by a named Python function while preserving concrete syntax.",
+      "real_task_attempts": 5,
+      "real_task_successes": 3,
+      "reuse_count": 2,
+      "side_effects": [
+        "read_files",
+        "write_workspace"
+      ],
+      "source_bytes": 3519,
+      "source_files": [
+        {
+          "bytes": 1855,
+          "path": "capability.json",
+          "sha256": "9ce2427c256da6e12d966853bc19842305196c456629305cd6b65a05a766b526"
+        },
+        {
+          "bytes": 1664,
+          "path": "main.py",
+          "sha256": "0198140ed85f218c15a34a03764312009d3aa4289c779e66d7580a0708706725"
+        }
+      ],
+      "source_hashes": {
+        "capability.json": "9ce2427c256da6e12d966853bc19842305196c456629305cd6b65a05a766b526",
+        "main.py": "0198140ed85f218c15a34a03764312009d3aa4289c779e66d7580a0708706725"
+      },
+      "state": "PROMOTED",
+      "version": "1"
+    },
+    "3c5f67425880eb30b153af609adef3a1e853a790d88521b22a1cba17f286e159": {
+      "applicability": [
+        "failure-fixture"
+      ],
+      "content_hash": "3c5f67425880eb30b153af609adef3a1e853a790d88521b22a1cba17f286e159",
+      "created_at": "2026-08-26T11:04:47.027459+00:00",
+      "creator": "ChatGPT",
+      "creator_episode": "generation-5-capability-forge-benchmark",
+      "dependencies": {
+        "pip": [
+          "file:///definitely-missing-optiplex-gen5"
+        ]
+      },
+      "duplicate_reuse_count": 0,
+      "evaluation_passes": 0,
+      "evaluation_runs": 1,
+      "evaluator_hash": "0afc804570e13b9fc7a03377543eeb09bc1cb81ce35301f33db1cc2a9c910780",
+      "evaluator_version": "gen5-nursery-r1",
+      "expired_object_removed": false,
+      "gap_hash": "cb5de438714b8e5d2911249522dc60f5fe7dda832b8390f76b0e1d91456f8e6b",
+      "governor_decisions": [],
+      "last_evaluation": {
+        "evaluator_hash": "0afc804570e13b9fc7a03377543eeb09bc1cb81ce35301f33db1cc2a9c910780",
+        "ok": false,
+        "passed_cases": 0,
+        "result_path": "/var/lib/optiplex-lab/capability-runs/eval_20260826T110451Z_1bae47f4/result.json",
+        "total_cases": 0
+      },
+      "last_seen_at": "2026-08-26T11:04:51.827946+00:00",
+      "name": "gen5-missing-dependency",
+      "object": "/var/lib/optiplex-lab/capabilities/objects/3c5f67425880eb30b153af609adef3a1e853a790d88521b22a1cba17f286e159",
+      "purpose": "Dependency setup must fail closed.",
+      "real_task_attempts": 0,
+      "real_task_successes": 0,
+      "rejection_reason": "evaluation_failed",
+      "reuse_count": 0,
+      "side_effects": [],
+      "source_bytes": 767,
+      "source_files": [
+        {
+          "bytes": 743,
+          "path": "capability.json",
+          "sha256": "0dce2cd90cd9b4046552d50ab2c44f6a53040de27582ecc4c0eba3f296649e31"
+        },
+        {
+          "bytes": 24,
+          "path": "main.py",
+          "sha256": "a1e25d2bf379039a9043e84e79ad22b9a7bf6329c04adaff0c1a62cc78250981"
+        }
+      ],
+      "source_hashes": {
+        "capability.json": "0dce2cd90cd9b4046552d50ab2c44f6a53040de27582ecc4c0eba3f296649e31",
+        "main.py": "a1e25d2bf379039a9043e84e79ad22b9a7bf6329c04adaff0c1a62cc78250981"
+      },
+      "state": "REJECTED",
+      "version": "1"
+    },
+    "3e7c1599e64b7cbab7f6649ab7350571e2de3ff2c5f17e01f4a9dd3c0eaa5be9": {
+      "applicability": [
+        "python",
+        "source-analysis",
+        "ast"
+      ],
+      "content_hash": "3e7c1599e64b7cbab7f6649ab7350571e2de3ff2c5f17e01f4a9dd3c0eaa5be9",
+      "created_at": "2026-08-26T11:04:25.825926+00:00",
+      "creator": "ChatGPT",
+      "creator_episode": "generation-5-capability-forge-benchmark",
+      "dependencies": {
+        "pip": []
+      },
+      "duplicate_reuse_count": 0,
+      "evaluation_passes": 1,
+      "evaluation_runs": 1,
+      "evaluator_hash": "7c0e99cc3c257c5726f7012fc49b950f1e8dc6d7ce62c3becf59929219330691",
+      "evaluator_version": "gen5-nursery-r1",
+      "expired_object_removed": false,
+      "gap_hash": "fdb74fbc96a43c43aba4188ced151ec39d00e805fb1d2cfd579b959212e650d3",
+      "governor_decisions": [],
+      "last_evaluation": {
+        "evaluator_hash": "7c0e99cc3c257c5726f7012fc49b950f1e8dc6d7ce62c3becf59929219330691",
+        "ok": true,
+        "passed_cases": 2,
+        "result_path": "/var/lib/optiplex-lab/capability-runs/eval_20260826T110427Z_871eabb1/result.json",
+        "total_cases": 2
+      },
+      "last_seen_at": "2026-08-26T11:04:27.703563+00:00",
+      "name": "gen5-python-symbol-index",
+      "object": "/var/lib/optiplex-lab/capabilities/objects/3e7c1599e64b7cbab7f6649ab7350571e2de3ff2c5f17e01f4a9dd3c0eaa5be9",
+      "purpose": "Extract Python functions, classes, and imports without executing source.",
+      "real_task_attempts": 0,
+      "real_task_successes": 0,
+      "reuse_count": 0,
+      "side_effects": [],
+      "source_bytes": 1804,
+      "source_files": [
+        {
+          "bytes": 1262,
+          "path": "capability.json",
+          "sha256": "289dc557ba5d920cc34b55be8f709bc941b358887171f9810d858a0a9e46697d"
+        },
+        {
+          "bytes": 542,
+          "path": "main.py",
+          "sha256": "cf04fab3a5c76d04279d88c8a1c35ede6b8fe7e14dae2269e81c29b39bc60086"
+        }
+      ],
+      "source_hashes": {
+        "capability.json": "289dc557ba5d920cc34b55be8f709bc941b358887171f9810d858a0a9e46697d",
+        "main.py": "cf04fab3a5c76d04279d88c8a1c35ede6b8fe7e14dae2269e81c29b39bc60086"
+      },
+      "state": "CANDIDATE",
+      "version": "1"
+    },
+    "4a73a98fb2ed467d9ca11785f6ca16d49d5780b04b9f11f8acfecf75fa73d334": {
+      "applicability": [
+        "parser",
+        "systemd",
+        "structured-artifact"
+      ],
+      "content_hash": "4a73a98fb2ed467d9ca11785f6ca16d49d5780b04b9f11f8acfecf75fa73d334",
+      "created_at": "2026-08-26T11:04:36.162343+00:00",
+      "creator": "ChatGPT",
+      "creator_episode": "generation-5-capability-forge-benchmark",
+      "dependencies": {
+        "pip": []
+      },
+      "duplicate_reuse_count": 0,
+      "evaluation_passes": 1,
+      "evaluation_runs": 1,
+      "evaluator_hash": "a908f0ff631f51399851c89c54e5f1ac94c06910e7d44a7cae3c5a367a3f9348",
+      "evaluator_version": "gen5-nursery-r1",
+      "expired_object_removed": false,
+      "gap_hash": "4997da88e0fca42bedd79744c2e1e276d9c53d15ffd0ca20e1de9b905d889c09",
+      "governor_decisions": [],
+      "last_evaluation": {
+        "evaluator_hash": "a908f0ff631f51399851c89c54e5f1ac94c06910e7d44a7cae3c5a367a3f9348",
+        "ok": true,
+        "passed_cases": 2,
+        "result_path": "/var/lib/optiplex-lab/capability-runs/eval_20260826T110437Z_0635ac15/result.json",
+        "total_cases": 2
+      },
+      "last_seen_at": "2026-08-26T11:04:37.273731+00:00",
+      "name": "gen5-systemd-unit-parser",
+      "object": "/var/lib/optiplex-lab/capabilities/objects/4a73a98fb2ed467d9ca11785f6ca16d49d5780b04b9f11f8acfecf75fa73d334",
+      "purpose": "Parse basic systemd INI-style unit text into section/key mappings.",
+      "real_task_attempts": 0,
+      "real_task_successes": 0,
+      "reuse_count": 0,
+      "side_effects": [],
+      "source_bytes": 1631,
+      "source_files": [
+        {
+          "bytes": 1121,
+          "path": "capability.json",
+          "sha256": "d6b8c68017f23f0fc30798c2ed64fde003d4c904e7671f9681af04e912034f0b"
+        },
+        {
+          "bytes": 510,
+          "path": "main.py",
+          "sha256": "f56b087ca8faef684d1c3a1c3f7db8beb5cc38b64c16f2298340dcbedbe37805"
+        }
+      ],
+      "source_hashes": {
+        "capability.json": "d6b8c68017f23f0fc30798c2ed64fde003d4c904e7671f9681af04e912034f0b",
+        "main.py": "f56b087ca8faef684d1c3a1c3f7db8beb5cc38b64c16f2298340dcbedbe37805"
+      },
+      "state": "CANDIDATE",
+      "version": "1"
+    },
+    "5d7528d5696f0449c58d6272f34b91f1d3dfe0a2845eba38de2256b6ddacfb68": {
+      "applicability": [
+        "failure-fixture"
+      ],
+      "content_hash": "5d7528d5696f0449c58d6272f34b91f1d3dfe0a2845eba38de2256b6ddacfb68",
+      "created_at": "2026-08-26T11:04:42.285102+00:00",
+      "creator": "ChatGPT",
+      "creator_episode": "generation-5-capability-forge-benchmark",
+      "dependencies": {
+        "pip": []
+      },
+      "duplicate_reuse_count": 0,
+      "evaluation_passes": 0,
+      "evaluation_runs": 1,
+      "evaluator_hash": "0afc804570e13b9fc7a03377543eeb09bc1cb81ce35301f33db1cc2a9c910780",
+      "evaluator_version": "gen5-nursery-r1",
+      "expired_object_removed": false,
+      "gap_hash": "f066c972a697c0f3a76950ef6be6a3a45373c80c90121df2197152319da7f714",
+      "governor_decisions": [],
+      "last_evaluation": {
+        "evaluator_hash": "0afc804570e13b9fc7a03377543eeb09bc1cb81ce35301f33db1cc2a9c910780",
+        "ok": false,
+        "passed_cases": 0,
+        "result_path": "/var/lib/optiplex-lab/capability-runs/eval_20260826T110443Z_2eece3b0/result.json",
+        "total_cases": 0
+      },
+      "last_seen_at": "2026-08-26T11:04:43.799242+00:00",
+      "name": "gen5-bad-syntax",
+      "object": "/var/lib/optiplex-lab/capabilities/objects/5d7528d5696f0449c58d6272f34b91f1d3dfe0a2845eba38de2256b6ddacfb68",
+      "purpose": "Deliberately syntax-broken descendant.",
+      "real_task_attempts": 0,
+      "real_task_successes": 0,
+      "rejection_reason": "evaluation_failed",
+      "reuse_count": 0,
+      "side_effects": [],
+      "source_bytes": 710,
+      "source_files": [
+        {
+          "bytes": 697,
+          "path": "capability.json",
+          "sha256": "bd739b37fd0ae30ab134a1c75255c0f62d9bac49b502b951f1de8d4dc21cc9ac"
+        },
+        {
+          "bytes": 13,
+          "path": "main.py",
+          "sha256": "e5c39b5d9e483c96898f2970978fee4d8e5a3814e685d9ab37365a5aa333b5ad"
+        }
+      ],
+      "source_hashes": {
+        "capability.json": "bd739b37fd0ae30ab134a1c75255c0f62d9bac49b502b951f1de8d4dc21cc9ac",
+        "main.py": "e5c39b5d9e483c96898f2970978fee4d8e5a3814e685d9ab37365a5aa333b5ad"
+      },
+      "state": "REJECTED",
+      "version": "1"
+    },
+    "5ea3f63dc3b9146808efcc747a36d733db5c376e405db1b66f67603d539dd665": {
+      "applicability": [
+        "toml",
+        "parser",
+        "dependency"
+      ],
+      "content_hash": "5ea3f63dc3b9146808efcc747a36d733db5c376e405db1b66f67603d539dd665",
+      "created_at": "2026-08-26T11:04:37.280314+00:00",
+      "creator": "ChatGPT",
+      "creator_episode": "generation-5-capability-forge-benchmark",
+      "dependencies": {
+        "pip": [
+          "tomli==2.2.1"
+        ]
+      },
+      "duplicate_reuse_count": 0,
+      "evaluation_passes": 1,
+      "evaluation_runs": 1,
+      "evaluator_hash": "c19d98f642680d927626e7d74c40c8ccff0acbde2f92fe9c9738ee363c7eca77",
+      "evaluator_version": "gen5-nursery-r1",
+      "expired_object_removed": false,
+      "gap_hash": "f7cbf837962de48e3f42c66a8aafdc652fb5fff663741d0d734215986423cab6",
+      "governor_decisions": [],
+      "last_evaluation": {
+        "evaluator_hash": "c19d98f642680d927626e7d74c40c8ccff0acbde2f92fe9c9738ee363c7eca77",
+        "ok": true,
+        "passed_cases": 2,
+        "result_path": "/var/lib/optiplex-lab/capability-runs/eval_20260826T110442Z_73585142/result.json",
+        "total_cases": 2
+      },
+      "last_seen_at": "2026-08-26T11:04:42.254169+00:00",
+      "name": "gen5-toml-query",
+      "object": "/var/lib/optiplex-lab/capabilities/objects/5ea3f63dc3b9146808efcc747a36d733db5c376e405db1b66f67603d539dd665",
+      "purpose": "Read a TOML document and return a dotted-key value using a small installed dependency.",
+      "real_task_attempts": 0,
+      "real_task_successes": 0,
+      "reuse_count": 0,
+      "side_effects": [],
+      "source_bytes": 1302,
+      "source_files": [
+        {
+          "bytes": 1061,
+          "path": "capability.json",
+          "sha256": "5ecc2ef8d8ea4a184674768f598d8bf975c0eb13b0167bc8539d44746c029604"
+        },
+        {
+          "bytes": 241,
+          "path": "main.py",
+          "sha256": "f47852bc2ccd02ebe7e2e040d0e83c56a8f1c58e97364bc999ecb1decb93f1ec"
+        }
+      ],
+      "source_hashes": {
+        "capability.json": "5ecc2ef8d8ea4a184674768f598d8bf975c0eb13b0167bc8539d44746c029604",
+        "main.py": "f47852bc2ccd02ebe7e2e040d0e83c56a8f1c58e97364bc999ecb1decb93f1ec"
+      },
+      "state": "CANDIDATE",
+      "version": "1"
+    },
+    "7a615a3f98a7a3be8babdf6376f38be2025543618af8dfff638ce2f028c8c708": {
+      "applicability": [
+        "failure-fixture"
+      ],
+      "content_hash": "7a615a3f98a7a3be8babdf6376f38be2025543618af8dfff638ce2f028c8c708",
+      "created_at": "2026-08-26T11:04:51.847653+00:00",
+      "creator": "ChatGPT",
+      "creator_episode": "generation-5-capability-forge-benchmark",
+      "dependencies": {
+        "pip": []
+      },
+      "duplicate_reuse_count": 0,
+      "evaluation_passes": 0,
+      "evaluation_runs": 1,
+      "evaluator_hash": "0afc804570e13b9fc7a03377543eeb09bc1cb81ce35301f33db1cc2a9c910780",
+      "evaluator_version": "gen5-nursery-r1",
+      "expired_object_removed": false,
+      "gap_hash": "d0c8adcde2d8333fe94e5bd495f546e581308ed5a0a74df56cf75fd0b6f83e3f",
+      "governor_decisions": [],
+      "last_evaluation": {
+        "evaluator_hash": "0afc804570e13b9fc7a03377543eeb09bc1cb81ce35301f33db1cc2a9c910780",
+        "ok": false,
+        "passed_cases": 1,
+        "result_path": "/var/lib/optiplex-lab/capability-runs/eval_20260826T110454Z_a007e498/result.json",
+        "total_cases": 2
+      },
+      "last_seen_at": "2026-08-26T11:04:54.898378+00:00",
+      "name": "gen5-timeout",
+      "object": "/var/lib/optiplex-lab/capabilities/objects/7a615a3f98a7a3be8babdf6376f38be2025543618af8dfff638ce2f028c8c708",
+      "purpose": "Timeout fixture.",
+      "real_task_attempts": 0,
+      "real_task_successes": 0,
+      "rejection_reason": "evaluation_failed",
+      "reuse_count": 0,
+      "side_effects": [],
+      "source_bytes": 710,
+      "source_files": [
+        {
+          "bytes": 672,
+          "path": "capability.json",
+          "sha256": "76a6182f5ec9cba30be6e31ed9cecc89a79d0e4ef084dc8d3ba4e3b93fadfc11"
+        },
+        {
+          "bytes": 38,
+          "path": "main.py",
+          "sha256": "2fbc05aa28944c8e97087d3f404db745f718f5a52d5003e1be461ab2d4ca96f3"
+        }
+      ],
+      "source_hashes": {
+        "capability.json": "76a6182f5ec9cba30be6e31ed9cecc89a79d0e4ef084dc8d3ba4e3b93fadfc11",
+        "main.py": "2fbc05aa28944c8e97087d3f404db745f718f5a52d5003e1be461ab2d4ca96f3"
+      },
+      "state": "REJECTED",
+      "version": "1"
+    },
+    "87ca9c570607434f75f62406ddc1a50b71769acb67498b13390bc83135a84f18": {
+      "applicability": [
+        "failure-fixture"
+      ],
+      "content_hash": "87ca9c570607434f75f62406ddc1a50b71769acb67498b13390bc83135a84f18",
+      "created_at": "2026-08-26T11:04:54.921082+00:00",
+      "creator": "ChatGPT",
+      "creator_episode": "generation-5-capability-forge-benchmark",
+      "dependencies": {
+        "pip": []
+      },
+      "duplicate_reuse_count": 0,
+      "evaluation_passes": 0,
+      "evaluation_runs": 1,
+      "evaluator_hash": "6c93ebc0f3de1c7c4a5c7aba0d42f7114879c4daa9bddaee699ae33677ae27ff",
+      "evaluator_version": "gen5-nursery-r1",
+      "expired_object_removed": false,
+      "gap_hash": "23f97c9dd2137375d3d9d93bbded73adcfcd0006797f54b96c96cad40277e51f",
+      "governor_decisions": [],
+      "last_evaluation": {
+        "evaluator_hash": "6c93ebc0f3de1c7c4a5c7aba0d42f7114879c4daa9bddaee699ae33677ae27ff",
+        "ok": false,
+        "passed_cases": 1,
+        "result_path": "/var/lib/optiplex-lab/capability-runs/eval_20260826T110456Z_b93352b2/result.json",
+        "total_cases": 2
+      },
+      "last_seen_at": "2026-08-26T11:04:56.781515+00:00",
+      "name": "gen5-excessive-output",
+      "object": "/var/lib/optiplex-lab/capabilities/objects/87ca9c570607434f75f62406ddc1a50b71769acb67498b13390bc83135a84f18",
+      "purpose": "Output bound fixture.",
+      "real_task_attempts": 0,
+      "real_task_successes": 0,
+      "rejection_reason": "evaluation_failed",
+      "reuse_count": 0,
+      "side_effects": [],
+      "source_bytes": 833,
+      "source_files": [
+        {
+          "bytes": 784,
+          "path": "capability.json",
+          "sha256": "a017361f9d5431c7204eb3f88bcdb82d9daf3b0786d4f51d659cc0cfa22c1ca4"
+        },
+        {
+          "bytes": 49,
+          "path": "main.py",
+          "sha256": "d589e3f5d241d915b0c055a50462ed6a915eaee384bc9d6a7663f8f4706ff631"
+        }
+      ],
+      "source_hashes": {
+        "capability.json": "a017361f9d5431c7204eb3f88bcdb82d9daf3b0786d4f51d659cc0cfa22c1ca4",
+        "main.py": "d589e3f5d241d915b0c055a50462ed6a915eaee384bc9d6a7663f8f4706ff631"
+      },
+      "state": "REJECTED",
+      "version": "1"
+    },
+    "c601998968ff6d0843dd77f83b6701c887d9c6ced5b6055f30b36b253b50057a": {
+      "applicability": [
+        "temporary"
+      ],
+      "content_hash": "c601998968ff6d0843dd77f83b6701c887d9c6ced5b6055f30b36b253b50057a",
+      "created_at": "2026-08-26T11:04:56.800525+00:00",
+      "creator": "ChatGPT",
+      "creator_episode": "generation-5-capability-forge-benchmark",
+      "dependencies": {
+        "pip": []
+      },
+      "duplicate_reuse_count": 0,
+      "evaluation_passes": 1,
+      "evaluation_runs": 1,
+      "evaluator_hash": "fab7b056d0503b770617e8b6394cfe4b65a12be64c063e39235f61a8c0a774ef",
+      "evaluator_version": "gen5-nursery-r1",
+      "expired_at": "2026-08-26T11:04:58.409121+00:00",
+      "expired_object_removed": true,
+      "expiry_reason": "Gen5 benchmark useless one-off cleanup",
+      "gap_hash": "818ab3a0df212890348fb1067f63442fcefb5a16c0d48b78765a4bfcc81d17b6",
+      "governor_decisions": [],
+      "last_evaluation": {
+        "evaluator_hash": "fab7b056d0503b770617e8b6394cfe4b65a12be64c063e39235f61a8c0a774ef",
+        "ok": true,
+        "passed_cases": 2,
+        "result_path": "/var/lib/optiplex-lab/capability-runs/eval_20260826T110458Z_84d0561b/result.json",
+        "total_cases": 2
+      },
+      "last_seen_at": "2026-08-26T11:04:58.409156+00:00",
+      "name": "gen5-ephemeral-helper",
+      "object": "/var/lib/optiplex-lab/capabilities/objects/c601998968ff6d0843dd77f83b6701c887d9c6ced5b6055f30b36b253b50057a",
+      "purpose": "One-off helper expected to expire after evidence capture.",
+      "real_task_attempts": 0,
+      "real_task_successes": 0,
+      "reuse_count": 0,
+      "side_effects": [],
+      "source_bytes": 950,
+      "source_files": [
+        {
+          "bytes": 890,
+          "path": "capability.json",
+          "sha256": "6432d54071aeafa567e59bd4492c968591d2b7a204a4d4c11d3dc20e7454f766"
+        },
+        {
+          "bytes": 60,
+          "path": "main.py",
+          "sha256": "3f1d54cfe1b6c3e4674b81d4ea973d4d1f2dcb503ef5c38a8d17eae548cd5c32"
+        }
+      ],
+      "source_hashes": {
+        "capability.json": "6432d54071aeafa567e59bd4492c968591d2b7a204a4d4c11d3dc20e7454f766",
+        "main.py": "3f1d54cfe1b6c3e4674b81d4ea973d4d1f2dcb503ef5c38a8d17eae548cd5c32"
+      },
+      "state": "EXPIRED",
+      "version": "1"
+    },
+    "d5d489b7655209bc218aeeb67ab7538b4a8b881673153446488229b50da93c56": {
+      "applicability": [
+        "failure-fixture"
+      ],
+      "content_hash": "d5d489b7655209bc218aeeb67ab7538b4a8b881673153446488229b50da93c56",
+      "created_at": "2026-08-26T11:04:43.811725+00:00",
+      "creator": "ChatGPT",
+      "creator_episode": "generation-5-capability-forge-benchmark",
+      "dependencies": {
+        "pip": []
+      },
+      "duplicate_reuse_count": 0,
+      "evaluation_passes": 0,
+      "evaluation_runs": 1,
+      "evaluator_hash": "023d8a03bc26d326b86788cd050ac5bfe8b2e9f1f4499aae5919d97635e7b93a",
+      "evaluator_version": "gen5-nursery-r1",
+      "expired_object_removed": false,
+      "gap_hash": "c9272d811b07b55a76f8bd577ef3d3ee7e1252ba1e9c07e4e30fcab9163f7a34",
+      "governor_decisions": [],
+      "last_evaluation": {
+        "evaluator_hash": "023d8a03bc26d326b86788cd050ac5bfe8b2e9f1f4499aae5919d97635e7b93a",
+        "ok": false,
+        "passed_cases": 1,
+        "result_path": "/var/lib/optiplex-lab/capability-runs/eval_20260826T110445Z_f0a8e054/result.json",
+        "total_cases": 2
+      },
+      "last_seen_at": "2026-08-26T11:04:45.365702+00:00",
+      "name": "gen5-bad-output",
+      "object": "/var/lib/optiplex-lab/capabilities/objects/d5d489b7655209bc218aeeb67ab7538b4a8b881673153446488229b50da93c56",
+      "purpose": "Deliberately wrong implementation.",
+      "real_task_attempts": 0,
+      "real_task_successes": 0,
+      "rejection_reason": "evaluation_failed",
+      "reuse_count": 0,
+      "side_effects": [],
+      "source_bytes": 939,
+      "source_files": [
+        {
+          "bytes": 866,
+          "path": "capability.json",
+          "sha256": "fc2ba1141fe8594a06fefa9aedd678ba1a9774fd8005949adef0d987afbc99d7"
+        },
+        {
+          "bytes": 73,
+          "path": "main.py",
+          "sha256": "fce742d72b7e51039e61ffbce3f895d27eb916f6a7cc1056c611427ee73137c3"
+        }
+      ],
+      "source_hashes": {
+        "capability.json": "fc2ba1141fe8594a06fefa9aedd678ba1a9774fd8005949adef0d987afbc99d7",
+        "main.py": "fce742d72b7e51039e61ffbce3f895d27eb916f6a7cc1056c611427ee73137c3"
+      },
+      "state": "REJECTED",
+      "version": "1"
+    },
+    "e2dd28e808576b9fa758bc0f9ca885f4681d0e6e436aebd7d8fe6dc147bd2745": {
+      "applicability": [
+        "failure-fixture"
+      ],
+      "content_hash": "e2dd28e808576b9fa758bc0f9ca885f4681d0e6e436aebd7d8fe6dc147bd2745",
+      "created_at": "2026-08-26T11:04:45.390955+00:00",
+      "creator": "ChatGPT",
+      "creator_episode": "generation-5-capability-forge-benchmark",
+      "dependencies": {
+        "pip": []
+      },
+      "duplicate_reuse_count": 0,
+      "evaluation_passes": 0,
+      "evaluation_runs": 1,
+      "evaluator_hash": "754a431eba5f250e5abd0ed6a7a1e26c521d9ff9d4655c01b405b796afaeef7e",
+      "evaluator_version": "gen5-nursery-r1",
+      "expired_object_removed": false,
+      "gap_hash": "3fdbc0079ea23daed51572247d1c1810a2584574abe84d22774a17ef7864ec09",
+      "governor_decisions": [],
+      "last_evaluation": {
+        "evaluator_hash": "754a431eba5f250e5abd0ed6a7a1e26c521d9ff9d4655c01b405b796afaeef7e",
+        "ok": false,
+        "passed_cases": 1,
+        "result_path": "/var/lib/optiplex-lab/capability-runs/eval_20260826T110447Z_adf7df41/result.json",
+        "total_cases": 2
+      },
+      "last_seen_at": "2026-08-26T11:04:47.009267+00:00",
+      "name": "gen5-bad-adversarial",
+      "object": "/var/lib/optiplex-lab/capabilities/objects/e2dd28e808576b9fa758bc0f9ca885f4681d0e6e436aebd7d8fe6dc147bd2745",
+      "purpose": "Passes ordinary case but fails an independent adversarial edge.",
+      "real_task_attempts": 0,
+      "real_task_successes": 0,
+      "rejection_reason": "evaluation_failed",
+      "reuse_count": 0,
+      "side_effects": [],
+      "source_bytes": 1033,
+      "source_files": [
+        {
+          "bytes": 945,
+          "path": "capability.json",
+          "sha256": "81b747ea18589ca73ef7ed9d7921175cdb1f44af9169d7ec92e2bf09dbfcf870"
+        },
+        {
+          "bytes": 88,
+          "path": "main.py",
+          "sha256": "3f51777ce943fd2007778c89a899c07fe531c17ed4c9bff9c25f8a17b8a96154"
+        }
+      ],
+      "source_hashes": {
+        "capability.json": "81b747ea18589ca73ef7ed9d7921175cdb1f44af9169d7ec92e2bf09dbfcf870",
+        "main.py": "3f51777ce943fd2007778c89a899c07fe531c17ed4c9bff9c25f8a17b8a96154"
+      },
+      "state": "REJECTED",
+      "version": "1"
+    }
+  },
+  "version": "gen5-capability-forge-r1"
+}
