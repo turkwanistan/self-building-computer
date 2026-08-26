@@ -1,23 +1,35 @@
 # NEXT SESSION
 
-Fresh-session objective: publish this repository, then begin the separately authorized blue/green lifecycle work.
+Fresh-session objective: begin the root-owned immutable release / blue-green safe-MCP lifecycle stage. Publication and ChatGPT lab acceptance are complete.
+
+Read first, in order:
+
+1. `START_HERE.md`
+2. `state/current.json`
+3. `STATUS.md`
+4. `docs/AUTHORITY_BOUNDARY.md`
+5. the relevant implementation plan/spec before changing lifecycle code
 
 Authoritative setup already complete:
 
-- Existing production connector `Optiplex_MCP` remains active.
+- Existing production connector `Optiplex_MCP` remains active and is the stable/guardrail release.
 - `mcp-lab` is accepted and recoverable from the host (`known-good` snapshot, SSH, serial console).
 - Lab MCP endpoint: `http://192.168.127.10:8890/mcp`.
 - Lab MCP exposes exactly seven tools: `shell`, `read_file`, `write_file`, `list_files`, `job`, `service`, `reboot`.
 - Separate host-side Secure MCP Tunnel is active as profile `optiplex-lab` / service `mcp-lab-tunnel.service`.
-- Tunnel ID: `tunnel_6a8e3523aa748191a0d03f232393a557`.
-- `tunnel-client doctor` passed; production tunnel remains active.
+- Do not trust a cached tunnel ID: verify it live from `/home/mcp/.config/tunnel-client/optiplex-lab.yaml` if needed.
 - A fresh ChatGPT session exposed exactly the seven expected `Optiplex_Lab` tools and completed the harmless smoke test.
-- `CHATGPT_LAB_ACCEPTED` is recorded in `STATUS.md`, `state/current.json`, and `history/events.jsonl`.
+- `CHATGPT_LAB_ACCEPTED` is recorded.
+- Repository tests, secret scan, and state validation passed.
+- Bootstrap commit `40c5624` was published to `git@github.com:turkwanistan/self-building-computer.git` on `main`.
 
-Do this first:
+Next stage:
 
-1. Verify the first commit and current test/secret-scan results.
-2. Set a GitHub origin under `turkwanistan` only if the target repository is known/created; never overwrite another repo.
-3. Push `main`. If MCP-side push credentials are not provisioned, provide the minimal `wan` command needed to push using the already configured GitHub SSH identity.
+1. inspect current repository/live host state and preserve all existing work;
+2. implement root-owned immutable stable/candidate/previous release state and blue/green activation without replacing the current production MCP in place;
+3. build a no-op candidate first;
+4. validate schema/tool parity, regression tests, service health, browser acceptance where applicable, and rollback;
+5. require explicit promotion and preserve host security authority;
+6. only after lifecycle acceptance, start the first real capability/superpower iteration.
 
-Do not begin blue/green safe-MCP evolution until repository publication is complete.
+Never reconstruct mutable technical state from ChatGPT memory. Repository state and live verification outrank prior chats and remembered values.

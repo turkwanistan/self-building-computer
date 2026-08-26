@@ -1,6 +1,6 @@
 {
   "cycle_id": "bootstrap-20260825",
-  "state": "PUBLICATION_READY",
+  "state": "PUBLISHED_READY_FOR_BLUE_GREEN",
   "stable_release": "gen0-optiplex-mcp-agent",
   "candidate_release": null,
   "previous_release": null,
@@ -9,6 +9,12 @@
   "expected_tool_schema_sha256": "195c410b85d40f4cfe65ef7eb8baa0463a32e93882fd9d39c0045e6518cd2913",
   "security_authority_delta": "NONE",
   "context_policy": "REPO_AND_ROOT_STATE_AUTHORITATIVE_CHATGPT_MEMORY_ADVISORY",
+  "publication": {
+    "repository": "git@github.com:turkwanistan/self-building-computer.git",
+    "branch": "main",
+    "bootstrap_commit": "40c5624",
+    "state": "PUBLISHED"
+  },
   "lab": {
     "name": "mcp-lab",
     "network": "mcp-lab-net",
@@ -25,11 +31,12 @@
     "host_docker_socket": false,
     "host_libvirt_socket": false,
     "tailscale_client": false,
-    "tunnel_id": "tunnel_6a8e3523aa748191a0d03f232393a557",
     "tunnel_profile": "optiplex-lab",
     "tunnel_service": "mcp-lab-tunnel.service",
     "tunnel_health": "http://127.0.0.1:8794/healthz",
     "tunnel_state": "ACTIVE_READY",
+    "tunnel_id_policy": "VERIFY_LIVE_FROM_HOST_PROFILE_DO_NOT_CACHE",
+    "tunnel_id_source": "/home/mcp/.config/tunnel-client/optiplex-lab.yaml",
     "chatgpt_connector_acceptance": "ACCEPTED",
     "chatgpt_connector_accepted_at": "2026-08-26T01:30:14Z",
     "chatgpt_connector_tools": [
@@ -49,7 +56,7 @@
     }
   },
   "original_objective": "Implement the approved Self-Building Computer architecture, including safe evolvable MCP lifecycle and isolated unrestricted mcp-lab VM.",
-  "resume_instruction": "Create the first commit and publish the repository after the GitHub target is known/created. Do not begin safe-MCP blue/green evolution until publication is complete.",
+  "resume_instruction": "Publication and ChatGPT lab acceptance are complete. Begin the root-owned immutable release / blue-green safe-MCP lifecycle stage from repository authority. Preserve the current production MCP and do not widen host security authority without explicit user approval.",
   "validation": {
     "project_tests": "PASS",
     "test_command": "python -m pytest -q",

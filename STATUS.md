@@ -1,6 +1,6 @@
 # Status
 
-Lifecycle phase: `PUBLICATION_READY`
+Lifecycle phase: `PUBLISHED_READY_FOR_BLUE_GREEN`
 
 Implemented and verified:
 
@@ -13,16 +13,18 @@ Implemented and verified:
 - `mcp-lab` created with 2 vCPU, 2 GiB RAM, 30 GiB disk, autostart, SSH recovery, serial console, and host-owned `known-good` snapshot;
 - full lab acceptance passed: root execution, public internet, exactly 7 MCP tools; private/LAN/Tailscale/Docker/libvirt/host-service access blocked; no host mounts/control sockets;
 - guest bootstrap includes Python/venv/pip, Git, curl, build-essential, SSH, and unrestricted root shell; additional guest software can be installed from the public internet;
-- separate Secure MCP Tunnel identity `tunnel_6a8e3523aa748191a0d03f232393a557` configured as host profile `optiplex-lab` targeting `http://192.168.127.10:8890/mcp`;
-- `tunnel-client doctor` passed, MCP target reachable, health listener configured at `127.0.0.1:8794`;
-- separate `mcp-lab-tunnel.service` is active and ready;
-- existing production `mcp-tunnel.service` remains active and unchanged;
+- separate host-side Secure MCP Tunnel is active as profile `optiplex-lab`, service `mcp-lab-tunnel.service`, targeting `http://192.168.127.10:8890/mcp`;
+- exact tunnel ID is intentionally not cached in repository state; verify it live from `/home/mcp/.config/tunnel-client/optiplex-lab.yaml` when needed;
 - fresh ChatGPT session exposed exactly the seven expected `Optiplex_Lab` tools: `shell`, `read_file`, `write_file`, `list_files`, `job`, `service`, and `reboot`;
 - ChatGPT-side lab smoke acceptance passed: root shell, public HTTPS, exact write/read-back, cleanup, and blocked access to host service `192.168.127.1:8790`;
+- `CHATGPT_LAB_ACCEPTED` recorded in repository state/history;
 - ChatGPT memory/handoff policy implemented in `docs/CHATGPT_MEMORY_AND_HANDOFF.md`; repository/root-owned state explicitly outranks ChatGPT memory and old chats;
-- project-native test suite passed after ChatGPT lab acceptance (`python -m pytest -q`);\n- high-confidence repository secret/credential scan passed;\n- acceptance JSON and JSONL records validate.
+- project-native tests, secret/credential scan, and JSON/JSONL validation passed;
+- first bootstrap commit `40c5624` created;
+- repository published to `git@github.com:turkwanistan/self-building-computer.git` on branch `main`;
+- local tracking repaired to `main...origin/main` after publication.
 
-What the lab can do once its ChatGPT connector is active:
+What the lab can do:
 
 - execute arbitrary commands as root inside the guest;
 - install packages/tools from the public internet;
@@ -33,12 +35,12 @@ What the lab can do once its ChatGPT connector is active:
 
 This is intentionally powerful **inside the VM only**. It does not possess host credentials, host mounts, Docker/libvirt sockets, Tailscale access, or private-network access.
 
-Current gate:
+Current gate / next stage:
 
-1. run project tests and a secret/credential scan;
-2. create the first commit and prepare this `self-building-computer` repository for GitHub publication;
-3. only after repository publication, continue root-owned immutable release / blue-green safe-MCP lifecycle machinery.
+1. implement the root-owned immutable release and blue/green safe-MCP lifecycle defined by repository authority;
+2. preserve the existing production MCP as the stable/guardrail release while candidates are built and validated separately;
+3. validate a no-op candidate before any real capability evolution;
+4. retain explicit promotion/rollback gates and never widen host security authority without explicit user approval;
+5. once lifecycle controls pass, begin the first deliberate self-evolution/superpower iteration.
 
-Important distinction: the lab is ready to self-modify and build capabilities inside the isolated guest, but the automatic **candidate → validate → promote/rollback** lifecycle for the safe production MCP is not implemented yet.
-
-Do not place tunnel credentials inside the unrestricted guest and do not replace the existing production MCP/tunnel.
+Important distinction: the lab is already capable of self-modifying inside the isolated guest. The remaining work is the controlled **candidate → validate → activate → promote/rollback** path for the safe production MCP.
