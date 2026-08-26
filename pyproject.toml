@@ -1,0 +1,16 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "self-building-computer"
+version = "0.1.0"
+requires-python = ">=3.10"
+dependencies = ["mcp[cli]>=1.3.0,<2"]
+
+[project.scripts]
+self-building-mcp = "mcp_frontend.server:main"
+lab-mcp = "lab_mcp.server:main"
+
+[tool.setuptools]
+packages = ["mcp_frontend", "lab_mcp"]

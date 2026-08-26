@@ -1,0 +1,61 @@
+{
+  "cycle_id": "bootstrap-20260825",
+  "state": "PUBLICATION_READY",
+  "stable_release": "gen0-optiplex-mcp-agent",
+  "candidate_release": null,
+  "previous_release": null,
+  "guardrail_release": "gen0-optiplex-mcp-agent",
+  "expected_tool_count": 51,
+  "expected_tool_schema_sha256": "195c410b85d40f4cfe65ef7eb8baa0463a32e93882fd9d39c0045e6518cd2913",
+  "security_authority_delta": "NONE",
+  "context_policy": "REPO_AND_ROOT_STATE_AUTHORITATIVE_CHATGPT_MEMORY_ADVISORY",
+  "lab": {
+    "name": "mcp-lab",
+    "network": "mcp-lab-net",
+    "subnet": "192.168.127.0/24",
+    "ip": "192.168.127.10",
+    "snapshot": "known-good",
+    "tool_count": 7,
+    "state": "ACCEPTED",
+    "root": true,
+    "public_internet": true,
+    "private_network_access": false,
+    "host_service_access": false,
+    "host_mounts": false,
+    "host_docker_socket": false,
+    "host_libvirt_socket": false,
+    "tailscale_client": false,
+    "tunnel_id": "tunnel_6a8e3523aa748191a0d03f232393a557",
+    "tunnel_profile": "optiplex-lab",
+    "tunnel_service": "mcp-lab-tunnel.service",
+    "tunnel_health": "http://127.0.0.1:8794/healthz",
+    "tunnel_state": "ACTIVE_READY",
+    "chatgpt_connector_acceptance": "ACCEPTED",
+    "chatgpt_connector_accepted_at": "2026-08-26T01:30:14Z",
+    "chatgpt_connector_tools": [
+      "shell",
+      "read_file",
+      "write_file",
+      "list_files",
+      "job",
+      "service",
+      "reboot"
+    ],
+    "chatgpt_smoke": {
+      "root_shell": true,
+      "public_https": true,
+      "write_read_cleanup": true,
+      "host_service_192_168_127_1_8790_blocked": true
+    }
+  },
+  "original_objective": "Implement the approved Self-Building Computer architecture, including safe evolvable MCP lifecycle and isolated unrestricted mcp-lab VM.",
+  "resume_instruction": "Create the first commit and publish the repository after the GitHub target is known/created. Do not begin safe-MCP blue/green evolution until publication is complete.",
+  "validation": {
+    "project_tests": "PASS",
+    "test_command": "python -m pytest -q",
+    "secret_credential_scan": "PASS",
+    "state_json_validation": "PASS",
+    "events_jsonl_validation": "PASS",
+    "validated_at": "2026-08-26T01:30:14Z"
+  }
+}
