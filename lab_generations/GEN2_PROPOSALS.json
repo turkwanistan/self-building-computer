@@ -1,0 +1,53 @@
+{
+  "generation": "gen2-proposals-from-gen1-evidence",
+  "implemented": false,
+  "trace_summary": {
+    "tool_calls": 36,
+    "shell_calls": 16,
+    "shell_share": 0.444,
+    "spooled_calls": 5,
+    "logical_shell_failures": 5
+  },
+  "proposals": [
+    {
+      "rank": 1,
+      "title": "Lab-native Code Mode / orchestration runner",
+      "kind": "local orchestration / temporary synthesized tools",
+      "evidence": "16/36 traced Gen1 tool calls were shell; self-hosting still composes multi-step procedures manually.",
+      "expected_benefit": "Collapse repeated inspect/edit/test/restart sequences into auditable guest-local programs while retaining broad primitives.",
+      "complexity": "medium"
+    },
+    {
+      "rank": 2,
+      "title": "Structured patch/diff editing workflow",
+      "kind": "skill or Lab MCP improvement",
+      "evidence": "Current write primitive replaces whole files; self-modification still depends on source rewrites.",
+      "expected_benefit": "Smaller safer edits, diff preview, rollback points, lower context use.",
+      "complexity": "low-medium"
+    },
+    {
+      "rank": 3,
+      "title": "Guest-local browser automation",
+      "kind": "guest package + skill/local service",
+      "evidence": "HTTPS/download works, but the Lab has no rendered-browser/DOM interaction primitive.",
+      "expected_benefit": "Richer research and web testing without host authority.",
+      "complexity": "medium"
+    },
+    {
+      "rank": 4,
+      "title": "Persistent toolchain/cache profiles",
+      "kind": "guest environment change",
+      "evidence": "Slowest after-benchmark tasks remained package setup and Python venv creation.",
+      "expected_benefit": "Reduce repeated setup/download cost.",
+      "complexity": "low"
+    },
+    {
+      "rank": 5,
+      "title": "Failure-specific recovery recipes",
+      "kind": "skill/benchmark improvement",
+      "evidence": "Five traced shell calls had exceptions/non-zero outcomes during Gen1, including restart races and a nested MCP deadlock experiment.",
+      "expected_benefit": "Turn recurring errors into reusable diagnosis and regression fixtures.",
+      "complexity": "low"
+    }
+  ]
+}

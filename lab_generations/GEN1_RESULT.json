@@ -1,0 +1,64 @@
+{
+  "timestamp": "2026-08-26T03:52:18.260223+00:00",
+  "status": "ACCEPTED",
+  "milestone": "SELF_HOSTED_LAB",
+  "generation": "gen1-self-hosted-lab-r2",
+  "build_id": "gen1-self-hosted-lab-r2-f3bb6eb79d33",
+  "source_sha256": "f3bb6eb79d3370e7bf1d1ea15525b8e4ab496767454e6c1f5f05a9b3bd480b16",
+  "tools": [
+    "shell",
+    "read_file",
+    "read_range",
+    "write_file",
+    "list_files",
+    "job",
+    "service",
+    "lab_status",
+    "self_restart",
+    "reboot"
+  ],
+  "selftest": {
+    "passed": 12,
+    "total": 12
+  },
+  "benchmark": {
+    "before": {
+      "passed": 17,
+      "total": 17,
+      "elapsed_ms": 20066.44,
+      "feature_coverage": "0/5"
+    },
+    "after": {
+      "passed": 17,
+      "total": 17,
+      "elapsed_ms": 7368.28,
+      "feature_coverage": "5/5"
+    }
+  },
+  "durable_job_restart": "PASS: DURABLE_JOB_R2_OK",
+  "auto_rollback": "PASS: intentional invalid source restored accepted SHA after 0.012s startup failure",
+  "containment": {
+    "public_internet": true,
+    "host_service_192_168_127_1_8790_blocked": true,
+    "representative_private_and_tailscale_probes_blocked": true,
+    "host_control_sockets": [],
+    "private_key_hits": [],
+    "host_mount_markers_present": false
+  },
+  "skills": [
+    "self-modify-mcp",
+    "benchmark-candidate",
+    "public-repo-investigation",
+    "service-ops"
+  ],
+  "packages_added": [
+    "jq",
+    "ripgrep",
+    "sqlite3",
+    "lsof",
+    "strace",
+    "tree"
+  ],
+  "guest_artifact": "/var/lib/optiplex-lab/results/generation1-result.json",
+  "connector_note": "Live local MCP probe verified 10 tools; current ChatGPT session remained cached at Gen0 7 tools, so fresh-session schema refresh is required."
+}

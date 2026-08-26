@@ -6,7 +6,7 @@
   "expected_tool_schema_sha256": "195c410b85d40f4cfe65ef7eb8baa0463a32e93882fd9d39c0045e6518cd2913",
   "guardrail_release": "guardrail-gen0-c51a9161a95d",
   "lab": {
-    "chatgpt_connector_acceptance": "ACCEPTED",
+    "chatgpt_connector_acceptance": "GEN1_LIVE_LOCAL_VERIFIED_FRESH_SESSION_SCHEMA_REFRESH_PENDING",
     "chatgpt_connector_accepted_at": "2026-08-26T01:30:14Z",
     "chatgpt_connector_tools": [
       "shell",
@@ -34,16 +34,80 @@
     "public_internet": true,
     "root": true,
     "snapshot": "known-good",
-    "state": "ACCEPTED",
+    "state": "GEN1_ACCEPTED_SELF_HOSTED_LAB",
     "subnet": "192.168.127.0/24",
     "tailscale_client": false,
-    "tool_count": 7,
+    "tool_count": 10,
     "tunnel_health": "http://127.0.0.1:8794/healthz",
     "tunnel_id_policy": "VERIFY_LIVE_FROM_HOST_PROFILE_DO_NOT_CACHE",
     "tunnel_id_source": "/home/mcp/.config/tunnel-client/optiplex-lab.yaml",
     "tunnel_profile": "optiplex-lab",
     "tunnel_service": "mcp-lab-tunnel.service",
-    "tunnel_state": "ACTIVE_READY"
+    "tunnel_state": "ACTIVE_READY",
+    "generation": "gen1-self-hosted-lab-r2",
+    "build_id": "gen1-self-hosted-lab-r2-f3bb6eb79d33",
+    "source_sha256": "f3bb6eb79d3370e7bf1d1ea15525b8e4ab496767454e6c1f5f05a9b3bd480b16",
+    "accepted_at": "2026-08-26T03:52:18.204345+00:00",
+    "self_hosted_lab": true,
+    "tools": [
+      "shell",
+      "read_file",
+      "read_range",
+      "write_file",
+      "list_files",
+      "job",
+      "service",
+      "lab_status",
+      "self_restart",
+      "reboot"
+    ],
+    "chatgpt_connector_tools_last_seen_current_session": [
+      "shell",
+      "read_file",
+      "write_file",
+      "list_files",
+      "job",
+      "service",
+      "reboot"
+    ],
+    "chatgpt_connector_schema_state": "CURRENT_SESSION_CACHED_GEN0_7_REFRESH_REQUIRED",
+    "live_local_mcp_probe_tools": [
+      "shell",
+      "read_file",
+      "read_range",
+      "write_file",
+      "list_files",
+      "job",
+      "service",
+      "lab_status",
+      "self_restart",
+      "reboot"
+    ],
+    "features": {
+      "sanitized_trace_ledger": true,
+      "large_output_spooling": true,
+      "range_read": true,
+      "durable_jobs_across_mcp_restart": true,
+      "build_identity": true,
+      "safe_async_self_restart": true,
+      "self_update_validation": true,
+      "guest_local_auto_rollback": true,
+      "failure_miner": true,
+      "skills": true
+    },
+    "gen1_validation": {
+      "selftest": "12/12 PASS",
+      "benchmark_before": "17/17 PASS, 20066.44 ms",
+      "benchmark_after": "17/17 PASS, 7368.28 ms",
+      "feature_coverage_before": "0/5",
+      "feature_coverage_after": "5/5",
+      "durable_job_restart": "PASS: DURABLE_JOB_R2_OK",
+      "intentional_corruption_auto_rollback": "PASS",
+      "containment": "PASS",
+      "public_internet": true
+    },
+    "guest_result_path": "/var/lib/optiplex-lab/results/generation1-result.json",
+    "guest_recovery_path": "/var/lib/optiplex-lab/recovery/server.last-known-good.py"
   },
   "lifecycle_implementation": {
     "accepted_stable_release": "frontend-a5c1c5be8b22",
@@ -116,6 +180,16 @@
     "stable_slot": "green",
     "verification_state": "ACCEPTED"
   },
+  "next_iteration": {
+    "cycle_id": "gen2-lab-code-mode-001",
+    "target": "Optiplex_Lab and mcp-lab VM",
+    "safe_mcp_policy": "FROZEN_NO_CHANGES",
+    "status": "PROPOSED_NOT_STARTED",
+    "top_recommendation": "Lab-native Code Mode / orchestration runner",
+    "evidence": "16/36 traced Gen1 tool calls were shell; multi-step self-hosting is still manually composed.",
+    "proposals_artifact": "lab_generations/GEN2_PROPOSALS.json",
+    "required_stop": "DO_NOT_IMPLEMENT_GEN2_WITHOUT_USER_REQUEST"
+  },
   "original_objective": "Implement the approved Self-Building Computer architecture, including safe evolvable MCP lifecycle and isolated unrestricted mcp-lab VM.",
   "previous_release": "frontend-baseline-91db2634c80d",
   "publication": {
@@ -124,10 +198,10 @@
     "repository": "git@github.com:turkwanistan/self-building-computer.git",
     "state": "PUBLISHED"
   },
-  "resume_instruction": "The pre-looping lifecycle is accepted. Before the first real iteration, read START_HERE.md and define one real limitation/capability goal. Use the accepted candidate -> gates -> human activation -> fresh-session verification -> promote/rollback lifecycle. Do not widen safe/production authority without explicit approval.",
+  "resume_instruction": "Start from START_HERE.md. Optiplex_MCP remains frozen. Refresh/new ChatGPT session so Optiplex_Lab schema is rediscovered; expect 10 tools and build gen1-self-hosted-lab-r2-f3bb6eb79d33. Verify lab_status, selftest, benchmark/containment as needed, then review Gen2 proposals. Do not implement Generation 2 unless explicitly requested.",
   "security_authority_delta": "NONE",
   "stable_release": "frontend-a5c1c5be8b22",
-  "state": "LIFECYCLE_ACCEPTED_READY_FOR_FIRST_ITERATION",
+  "state": "LIFECYCLE_ACCEPTED_GEN1_LAB_ACCEPTED_SELF_HOSTED_LAB",
   "validation": {
     "events_jsonl_validation": "PASS",
     "project_tests": "PASS",
