@@ -1,0 +1,640 @@
+{
+  "authority_examples": {
+    "ambiguous_safety": "conservative lifecycle primary with implementation + security secondary and all safety authority retained",
+    "design_security_vocabulary": "architecture authority only; no live lifecycle/security escalation",
+    "implementation_recovery_vocabulary": "source + validation authority; no lifecycle escalation",
+    "mixed_debug_lifecycle": "lifecycle primary plus debugging secondary; lifecycle/recovery/security and failure/source authority all retained"
+  },
+  "captured_at": "2026-08-26T20:53:43.632164+00:00",
+  "context_quality": {
+    "context_payload_reduction_vs_gen8": 0.447958,
+    "critical_fn": 0,
+    "critical_fp": 0,
+    "critical_tp": 50,
+    "gen11_routed_minimized_average_bytes": 11729,
+    "gen8_baseline_average_bytes": 21246.57,
+    "necessity_aware_precision": 1.0,
+    "required_evidence_recall": 1.0
+  },
+  "epoch_binding": {
+    "epoch_digest": "8a75bac11b6fed694e4fde7bf59995d9446d1ba2a2b420af377672356c62de29",
+    "epoch_id": "ep10_8a75bac11b6fed694e4fde7bf59995d9446d1ba2a2b420af377672356c62de29",
+    "ok": true,
+    "routing_digest": "7c77f58e9400b09102edde1299bcd54a89b03c4287eaa7056f3e7212022668f7",
+    "transaction_digest": "297b782bcfc898050bb267287bc7d9a5de68c8f6927d8b7c629fd5f5facd64cb"
+  },
+  "freshness_self_use": {
+    "expected_sha256": "f0c2d869a8722ca70230a52761cce3a5c0fc06aa427eb961eaa0eafb06e60eab",
+    "observation": "After retained Gen10 rewrote its indexed Tier-1 benchmark artifact, Gen11 epoch creation refused the stale Twin before reasoning. A Twin rebuild advanced the evidence view; Gen11 then passed 39/39.",
+    "observed_sha256": "85d4109a6036f361619a732e7d258388945315146867b1ca2173dd7d1e2c9af7",
+    "result": "PASS_FAIL_CLOSED_THEN_REFRESHED",
+    "stale_path": "/var/lib/optiplex-lab/benchmarks/gen10-evidence-epoch-benchmark.json"
+  },
+  "raw_guest_evidence": {
+    "path": "/var/lib/optiplex-lab/benchmarks/gen11-routing-context-epoch-evidence.json",
+    "sha256": "c8b6f7b30db349725b2140ad3fb6dee355dceafcc7d682124961fb551e3cdd4b"
+  },
+  "representative_routing_proofs": {
+    "ambiguous-safety-relevant": {
+      "ambiguity_conflict_state": {
+        "ambiguous": true,
+        "conflicts": [
+          "text does not distinguish source repair from live lifecycle/security remediation"
+        ],
+        "conservative_route": true,
+        "safety_relevant": true
+      },
+      "compiler_task_kind": "lifecycle_recovery",
+      "decisive_evidence_features": [
+        {
+          "evidence": "fix ... live ... as needed",
+          "feature": "conservative_ambiguous_fix",
+          "intent": "implementation_change"
+        },
+        {
+          "evidence": "live recovery issue",
+          "feature": "conservative_live_recovery",
+          "intent": "lifecycle_recovery"
+        },
+        {
+          "evidence": "live security issue",
+          "feature": "conservative_live_security",
+          "intent": "security_containment"
+        }
+      ],
+      "detected_intents": [
+        "implementation_change",
+        "lifecycle_recovery",
+        "security_containment"
+      ],
+      "detected_primary_intent": "lifecycle_recovery",
+      "evidence_explicitly_not_required": [
+        "architecture_source",
+        "benchmark_evaluator",
+        "causal_history",
+        "failure_lineage",
+        "historical_version_scope"
+      ],
+      "fail_closed": false,
+      "historical_scope": null,
+      "mandatory_evidence_obligations": [
+        {
+          "authority_class": "guest_security_boundary",
+          "evidence_requirement": "authority_security",
+          "safety_critical": true
+        },
+        {
+          "authority_class": "lifecycle_state",
+          "evidence_requirement": "build_state_recovery_or_service",
+          "safety_critical": true
+        },
+        {
+          "authority_class": "operational_identity",
+          "evidence_requirement": "operational_identity",
+          "safety_critical": true
+        },
+        {
+          "authority_class": "recovery_lkg",
+          "evidence_requirement": "recovery_build_or_operational_identity",
+          "safety_critical": true
+        },
+        {
+          "authority_class": "security_containment",
+          "evidence_requirement": "authority_security",
+          "safety_critical": true
+        },
+        {
+          "authority_class": "source_implementation",
+          "evidence_requirement": "source",
+          "safety_critical": false
+        },
+        {
+          "authority_class": "validation_regression",
+          "evidence_requirement": "validation_regression_evaluator",
+          "safety_critical": false
+        }
+      ],
+      "precedence_rules_applied": [
+        "explicit/conservative live lifecycle effect outranks lower-authority actions"
+      ],
+      "required_authority_classes": [
+        "guest_security_boundary",
+        "lifecycle_state",
+        "operational_identity",
+        "recovery_lkg",
+        "security_containment",
+        "source_implementation",
+        "validation_regression"
+      ],
+      "router_version": "gen11-intent-authority-routing-r1",
+      "routing_digest": "54cb9fc8e73d7c762cd57b11c544f26286dd1158424f98867e6a4f90ffc48aa0",
+      "schema_version": 1,
+      "secondary_intents": [
+        "implementation_change",
+        "security_containment"
+      ],
+      "suppressed_by_explicit_negation": [],
+      "task_hash": "2c602ab64f0ab0e930856e224488f82dc438fd6900a3598f5d5d2dc49d5a8f07",
+      "task_text": "Fix the recovery and security issue in the live Lab as needed so it is safe again."
+    },
+    "debug-with-benchmark-language": {
+      "ambiguity_conflict_state": {
+        "ambiguous": false,
+        "conflicts": [],
+        "conservative_route": false,
+        "safety_relevant": false
+      },
+      "compiler_task_kind": "debugging",
+      "decisive_evidence_features": [
+        {
+          "evidence": "debug",
+          "feature": "diagnosis_action",
+          "intent": "debugging_diagnosis"
+        },
+        {
+          "evidence": "do not rerun or score the benchmark",
+          "feature": "explicit_negation",
+          "intent": "evaluation_benchmarking"
+        }
+      ],
+      "detected_intents": [
+        "debugging_diagnosis"
+      ],
+      "detected_primary_intent": "debugging_diagnosis",
+      "evidence_explicitly_not_required": [
+        "architecture_source",
+        "benchmark_evaluator",
+        "causal_history",
+        "historical_version_scope",
+        "lifecycle_state",
+        "recovery_lkg",
+        "security_containment",
+        "validation_regression"
+      ],
+      "fail_closed": false,
+      "historical_scope": null,
+      "mandatory_evidence_obligations": [
+        {
+          "authority_class": "failure_lineage",
+          "evidence_requirement": "regression_or_causal_evidence",
+          "safety_critical": false
+        },
+        {
+          "authority_class": "guest_security_boundary",
+          "evidence_requirement": "authority_security",
+          "safety_critical": true
+        },
+        {
+          "authority_class": "operational_identity",
+          "evidence_requirement": "operational_identity",
+          "safety_critical": true
+        },
+        {
+          "authority_class": "source_implementation",
+          "evidence_requirement": "source",
+          "safety_critical": false
+        }
+      ],
+      "precedence_rules_applied": [
+        "explicit diagnosis outranks incidental benchmark/design/history vocabulary"
+      ],
+      "required_authority_classes": [
+        "failure_lineage",
+        "guest_security_boundary",
+        "operational_identity",
+        "source_implementation"
+      ],
+      "router_version": "gen11-intent-authority-routing-r1",
+      "routing_digest": "ea204aaa2d097696a13c55e82f49c32bc5f6ef59aacd3c633773531447f72d4a",
+      "schema_version": 1,
+      "secondary_intents": [],
+      "suppressed_by_explicit_negation": [
+        "evaluation_benchmarking"
+      ],
+      "task_hash": "599e203d6fa36a42f3f8c45173f5712b960c744c0680e6fb692c8b54fb6362d4",
+      "task_text": "Debug why benchmark_gen9.py failed after a Tier-1 artifact changed; identify the root cause. Do not rerun or score the benchmark."
+    },
+    "design-with-security-vocabulary": {
+      "ambiguity_conflict_state": {
+        "ambiguous": false,
+        "conflicts": [],
+        "conservative_route": false,
+        "safety_relevant": false
+      },
+      "compiler_task_kind": "explanation_architecture",
+      "decisive_evidence_features": [
+        {
+          "evidence": "design",
+          "feature": "design_action",
+          "intent": "architecture_design"
+        },
+        {
+          "evidence": "do not change live policy, containment, recovery state, or restart anything",
+          "feature": "explicit_negation",
+          "intent": "lifecycle_recovery"
+        },
+        {
+          "evidence": "do not change live policy, containment, recovery state, or restart anything",
+          "feature": "explicit_negation",
+          "intent": "security_containment"
+        }
+      ],
+      "detected_intents": [
+        "architecture_design"
+      ],
+      "detected_primary_intent": "architecture_design",
+      "evidence_explicitly_not_required": [
+        "benchmark_evaluator",
+        "causal_history",
+        "failure_lineage",
+        "historical_version_scope",
+        "lifecycle_state",
+        "recovery_lkg",
+        "security_containment",
+        "source_implementation",
+        "validation_regression"
+      ],
+      "fail_closed": false,
+      "historical_scope": null,
+      "mandatory_evidence_obligations": [
+        {
+          "authority_class": "architecture_source",
+          "evidence_requirement": "source_or_generation",
+          "safety_critical": false
+        },
+        {
+          "authority_class": "guest_security_boundary",
+          "evidence_requirement": "authority_security",
+          "safety_critical": true
+        },
+        {
+          "authority_class": "operational_identity",
+          "evidence_requirement": "operational_identity",
+          "safety_critical": true
+        }
+      ],
+      "precedence_rules_applied": [
+        "explicit design/explanation action selected"
+      ],
+      "required_authority_classes": [
+        "architecture_source",
+        "guest_security_boundary",
+        "operational_identity"
+      ],
+      "router_version": "gen11-intent-authority-routing-r1",
+      "routing_digest": "3c1d1775e7bc9db693f30e3c7afb05183dc38d93b03543b65b4a8f5bc64a3d20",
+      "schema_version": 1,
+      "secondary_intents": [],
+      "suppressed_by_explicit_negation": [
+        "lifecycle_recovery",
+        "security_containment"
+      ],
+      "task_hash": "3f9f269ca3f8a8d8a5c8629dcb82a868add32e3a35d6d2a324d0fa8dc18e4e75",
+      "task_text": "Design a security-aware routing architecture that documents containment and recovery invariants. Do not change live policy, containment, recovery state, or restart anything."
+    },
+    "gen11-self-use": {
+      "ambiguity_conflict_state": {
+        "ambiguous": false,
+        "conflicts": [],
+        "conservative_route": false,
+        "safety_relevant": false
+      },
+      "compiler_task_kind": "code_change_planning",
+      "decisive_evidence_features": [
+        {
+          "evidence": "design",
+          "feature": "design_action",
+          "intent": "architecture_design"
+        },
+        {
+          "evidence": "evaluate",
+          "feature": "evaluation_action",
+          "intent": "evaluation_benchmarking"
+        },
+        {
+          "evidence": "implement",
+          "feature": "source_mutation_action",
+          "intent": "implementation_change"
+        },
+        {
+          "evidence": "do not restart the lab or change containment",
+          "feature": "explicit_negation",
+          "intent": "lifecycle_recovery"
+        },
+        {
+          "evidence": "do not restart the lab or change containment",
+          "feature": "explicit_negation",
+          "intent": "security_containment"
+        }
+      ],
+      "detected_intents": [
+        "architecture_design",
+        "evaluation_benchmarking",
+        "implementation_change"
+      ],
+      "detected_primary_intent": "implementation_change",
+      "evidence_explicitly_not_required": [
+        "causal_history",
+        "failure_lineage",
+        "historical_version_scope",
+        "lifecycle_state",
+        "recovery_lkg",
+        "security_containment"
+      ],
+      "fail_closed": false,
+      "historical_scope": null,
+      "mandatory_evidence_obligations": [
+        {
+          "authority_class": "architecture_source",
+          "evidence_requirement": "source_or_generation",
+          "safety_critical": false
+        },
+        {
+          "authority_class": "benchmark_evaluator",
+          "evidence_requirement": "benchmark_validation_or_evaluator",
+          "safety_critical": false
+        },
+        {
+          "authority_class": "guest_security_boundary",
+          "evidence_requirement": "authority_security",
+          "safety_critical": true
+        },
+        {
+          "authority_class": "operational_identity",
+          "evidence_requirement": "operational_identity",
+          "safety_critical": true
+        },
+        {
+          "authority_class": "source_implementation",
+          "evidence_requirement": "source",
+          "safety_critical": false
+        },
+        {
+          "authority_class": "validation_regression",
+          "evidence_requirement": "validation_regression_evaluator",
+          "safety_critical": false
+        }
+      ],
+      "precedence_rules_applied": [
+        "explicit source mutation is terminal action over motivating design/evaluation/failure vocabulary"
+      ],
+      "required_authority_classes": [
+        "architecture_source",
+        "benchmark_evaluator",
+        "guest_security_boundary",
+        "operational_identity",
+        "source_implementation",
+        "validation_regression"
+      ],
+      "router_version": "gen11-intent-authority-routing-r1",
+      "routing_digest": "7c77f58e9400b09102edde1299bcd54a89b03c4287eaa7056f3e7212022668f7",
+      "schema_version": 1,
+      "secondary_intents": [
+        "architecture_design",
+        "evaluation_benchmarking"
+      ],
+      "suppressed_by_explicit_negation": [
+        "lifecycle_recovery",
+        "security_containment"
+      ],
+      "task_hash": "7d4444609ed590c71ddfebfe5a8c14a5abfd02900adc28bb1d98edfe4119cee7",
+      "task_text": "Design and implement Gen11 task intent routing, then evaluate its frozen benchmark; do not restart the Lab or change containment."
+    },
+    "implementation-discusses-recovery": {
+      "ambiguity_conflict_state": {
+        "ambiguous": false,
+        "conflicts": [],
+        "conservative_route": false,
+        "safety_relevant": false
+      },
+      "compiler_task_kind": "code_change_planning",
+      "decisive_evidence_features": [
+        {
+          "evidence": "patch",
+          "feature": "source_mutation_action",
+          "intent": "implementation_change"
+        },
+        {
+          "evidence": "do not restart, roll back, promote, or change accepted state",
+          "feature": "explicit_negation",
+          "intent": "lifecycle_recovery"
+        }
+      ],
+      "detected_intents": [
+        "implementation_change"
+      ],
+      "detected_primary_intent": "implementation_change",
+      "evidence_explicitly_not_required": [
+        "architecture_source",
+        "benchmark_evaluator",
+        "causal_history",
+        "failure_lineage",
+        "historical_version_scope",
+        "lifecycle_state",
+        "recovery_lkg",
+        "security_containment"
+      ],
+      "fail_closed": false,
+      "historical_scope": null,
+      "mandatory_evidence_obligations": [
+        {
+          "authority_class": "guest_security_boundary",
+          "evidence_requirement": "authority_security",
+          "safety_critical": true
+        },
+        {
+          "authority_class": "operational_identity",
+          "evidence_requirement": "operational_identity",
+          "safety_critical": true
+        },
+        {
+          "authority_class": "source_implementation",
+          "evidence_requirement": "source",
+          "safety_critical": false
+        },
+        {
+          "authority_class": "validation_regression",
+          "evidence_requirement": "validation_regression_evaluator",
+          "safety_critical": false
+        }
+      ],
+      "precedence_rules_applied": [
+        "explicit source mutation is terminal action over motivating design/evaluation/failure vocabulary"
+      ],
+      "required_authority_classes": [
+        "guest_security_boundary",
+        "operational_identity",
+        "source_implementation",
+        "validation_regression"
+      ],
+      "router_version": "gen11-intent-authority-routing-r1",
+      "routing_digest": "c3792b3870d8e1485e924b9802cdcd5583df953cc3a244e201d5f9b0bf56fed2",
+      "schema_version": 1,
+      "secondary_intents": [],
+      "suppressed_by_explicit_negation": [
+        "lifecycle_recovery"
+      ],
+      "task_hash": "3f630a7bd8ca60b89c40841d305eb166bc2f166d15c9b9673807296e1a425852",
+      "task_text": "Patch the recovery-handling code in evidence_epoch.py so rollback metadata is parsed correctly; do not restart, roll back, promote, or change accepted state."
+    },
+    "mixed-debug-lifecycle": {
+      "ambiguity_conflict_state": {
+        "ambiguous": false,
+        "conflicts": [],
+        "conservative_route": false,
+        "safety_relevant": false
+      },
+      "compiler_task_kind": "lifecycle_recovery",
+      "decisive_evidence_features": [
+        {
+          "evidence": "debug",
+          "feature": "diagnosis_action",
+          "intent": "debugging_diagnosis"
+        },
+        {
+          "evidence": "restart",
+          "feature": "live_lifecycle_action",
+          "intent": "lifecycle_recovery"
+        }
+      ],
+      "detected_intents": [
+        "debugging_diagnosis",
+        "lifecycle_recovery"
+      ],
+      "detected_primary_intent": "lifecycle_recovery",
+      "evidence_explicitly_not_required": [
+        "architecture_source",
+        "benchmark_evaluator",
+        "causal_history",
+        "historical_version_scope",
+        "validation_regression"
+      ],
+      "fail_closed": false,
+      "historical_scope": null,
+      "mandatory_evidence_obligations": [
+        {
+          "authority_class": "failure_lineage",
+          "evidence_requirement": "regression_or_causal_evidence",
+          "safety_critical": false
+        },
+        {
+          "authority_class": "guest_security_boundary",
+          "evidence_requirement": "authority_security",
+          "safety_critical": true
+        },
+        {
+          "authority_class": "lifecycle_state",
+          "evidence_requirement": "build_state_recovery_or_service",
+          "safety_critical": true
+        },
+        {
+          "authority_class": "operational_identity",
+          "evidence_requirement": "operational_identity",
+          "safety_critical": true
+        },
+        {
+          "authority_class": "recovery_lkg",
+          "evidence_requirement": "recovery_build_or_operational_identity",
+          "safety_critical": true
+        },
+        {
+          "authority_class": "security_containment",
+          "evidence_requirement": "authority_security",
+          "safety_critical": true
+        },
+        {
+          "authority_class": "source_implementation",
+          "evidence_requirement": "source",
+          "safety_critical": false
+        }
+      ],
+      "precedence_rules_applied": [
+        "explicit/conservative live lifecycle effect outranks lower-authority actions"
+      ],
+      "required_authority_classes": [
+        "failure_lineage",
+        "guest_security_boundary",
+        "lifecycle_state",
+        "operational_identity",
+        "recovery_lkg",
+        "security_containment",
+        "source_implementation"
+      ],
+      "router_version": "gen11-intent-authority-routing-r1",
+      "routing_digest": "9e6efabd82d917a98103a7b7d773ddcf4111c6ab4b898683bee54672b11dfd10",
+      "schema_version": 1,
+      "secondary_intents": [
+        "debugging_diagnosis"
+      ],
+      "suppressed_by_explicit_negation": [],
+      "task_hash": "6738cdbe19d2ce94fa91c3883661f4302722b65b8fbaf348b8e2f20d83bfe1d6",
+      "task_text": "Debug why the Lab service failed to start, then restart it and restore last-known-good if the failure persists."
+    },
+    "security-with-design-vocabulary": {
+      "ambiguity_conflict_state": {
+        "ambiguous": false,
+        "conflicts": [],
+        "conservative_route": false,
+        "safety_relevant": false
+      },
+      "compiler_task_kind": "lifecycle_recovery",
+      "decisive_evidence_features": [
+        {
+          "evidence": "inspect",
+          "feature": "live_security_action",
+          "intent": "security_containment"
+        }
+      ],
+      "detected_intents": [
+        "security_containment"
+      ],
+      "detected_primary_intent": "security_containment",
+      "evidence_explicitly_not_required": [
+        "architecture_source",
+        "benchmark_evaluator",
+        "causal_history",
+        "failure_lineage",
+        "historical_version_scope",
+        "lifecycle_state",
+        "recovery_lkg",
+        "source_implementation",
+        "validation_regression"
+      ],
+      "fail_closed": false,
+      "historical_scope": null,
+      "mandatory_evidence_obligations": [
+        {
+          "authority_class": "guest_security_boundary",
+          "evidence_requirement": "authority_security",
+          "safety_critical": true
+        },
+        {
+          "authority_class": "operational_identity",
+          "evidence_requirement": "operational_identity",
+          "safety_critical": true
+        },
+        {
+          "authority_class": "security_containment",
+          "evidence_requirement": "authority_security",
+          "safety_critical": true
+        }
+      ],
+      "precedence_rules_applied": [
+        "explicit live containment effect outranks design/debug/source context"
+      ],
+      "required_authority_classes": [
+        "guest_security_boundary",
+        "operational_identity",
+        "security_containment"
+      ],
+      "router_version": "gen11-intent-authority-routing-r1",
+      "routing_digest": "38b13db7a4e9fd132164e85a80061679ca201ca8901cdf1a0809671f10d71546",
+      "schema_version": 1,
+      "secondary_intents": [],
+      "suppressed_by_explicit_negation": [],
+      "task_hash": "5cc832ec90f04991cd837180022fe25bdd9ff038884f6afc8064eab16e4c4e4d",
+      "task_text": "Using the documented security design as reference, inspect current containment and revoke any live rule that could expose a host control socket."
+    }
+  },
+  "version": "gen11-routing-context-epoch-evidence-canonical-r1"
+}

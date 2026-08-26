@@ -1,0 +1,94 @@
+{
+  "captured_at": "2026-08-26T20:53:43.632164+00:00",
+  "gold_rewritten": false,
+  "matrix": "Gen2 12/12; Gen3 16/16; Gen4 18/18; Gen5 12/12; Gen6 13/13; Gen7 15/15 version-pinned; Gen8 17/17; Gen9 20/20; Gen10 24/24",
+  "mutation_safe": true,
+  "ok": true,
+  "retained": {
+    "gen10": {
+      "forbidden_mutations": 0,
+      "initial_outer_capsule_run": {
+        "cause": "third nested OverlayFS mount rejected in Gen9 protected-state ablation",
+        "innermost_exit_code": 32,
+        "innermost_run": "cap8_20260826T202509Z_1401dd9c",
+        "passed": 23,
+        "run_id": "cap8_20260826T202430Z_61da324c",
+        "semantic_regression": false,
+        "total": 24
+      },
+      "isolation": "direct retained benchmark using its built-in Experiment Capsules, bracketed by independent protected manifests",
+      "passed": 24,
+      "protected_after_digest": "4ff4ad56264a5b60eeeb8253690356cd24b89511e2714e11123948b3acbba125",
+      "protected_before_digest": "4ff4ad56264a5b60eeeb8253690356cd24b89511e2714e11123948b3acbba125",
+      "total": 24
+    },
+    "gen2": {
+      "accepted_state_unchanged": true,
+      "isolation": "Experiment Capsule",
+      "passed": 12,
+      "run_id": "cap8_20260826T201859Z_6178decd",
+      "total": 12
+    },
+    "gen3": {
+      "accepted_state_unchanged": true,
+      "isolation": "Experiment Capsule",
+      "passed": 16,
+      "run_id": "cap8_20260826T201927Z_060ad0bd",
+      "total": 16
+    },
+    "gen4": {
+      "accepted_state_unchanged": true,
+      "isolation": "Experiment Capsule",
+      "passed": 18,
+      "run_id": "cap8_20260826T201954Z_e3190d28",
+      "total": 18
+    },
+    "gen5": {
+      "accepted_state_unchanged": true,
+      "initial_contaminated_run": {
+        "passed": 6,
+        "reason": "current Forge registry violated historical required-capabilities-absent fixture",
+        "run_id": "cap8_20260826T202020Z_20d3e65f",
+        "semantic_regression": false,
+        "total": 12
+      },
+      "isolation": "Experiment Capsule + historical empty capability-state view",
+      "passed": 12,
+      "run_id": "cap8_20260826T202103Z_6444f8e6",
+      "total": 12
+    },
+    "gen6": {
+      "accepted_state_unchanged": true,
+      "isolation": "Experiment Capsule",
+      "passed": 13,
+      "run_id": "cap8_20260826T202025Z_4037966d",
+      "total": 13
+    },
+    "gen7": {
+      "accepted_state_unchanged": true,
+      "isolation": "version-pinned historical Experiment Capsule",
+      "passed": 15,
+      "run_id": "cap8_20260826T202331Z_d838c465",
+      "total": 15
+    },
+    "gen8": {
+      "accepted_state_unchanged": true,
+      "isolation": "Experiment Capsule",
+      "passed": 17,
+      "run_id": "cap8_20260826T202348Z_02906777",
+      "total": 17
+    },
+    "gen9": {
+      "accepted_state_unchanged": true,
+      "context_reduction_vs_gen8": 0.454512,
+      "critical_fn": 0,
+      "isolation": "quiescent Experiment Capsule",
+      "necessity_precision": 1.0,
+      "passed": 20,
+      "required_recall": 1.0,
+      "run_id": "cap8_20260826T202409Z_8c533382",
+      "total": 20
+    }
+  },
+  "version": "gen11-retained-regressions-r1"
+}

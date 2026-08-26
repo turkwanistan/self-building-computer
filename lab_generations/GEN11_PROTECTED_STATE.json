@@ -1,0 +1,76 @@
+{
+  "accepted": true,
+  "append_only": {
+    "capability_provenance": {
+      "bytes_appended": 0,
+      "prefix_preserved": true
+    },
+    "launcher_events": {
+      "bytes_appended": 0,
+      "prefix_preserved": true
+    },
+    "memory_provenance": {
+      "bytes_appended": 0,
+      "prefix_preserved": true
+    },
+    "regression_provenance": {
+      "bytes_appended": 0,
+      "prefix_preserved": true
+    },
+    "traces": {
+      "baseline_bytes": 1825736,
+      "baseline_prefix_sha256": "262d43c18a6d88f08e95194a0a518a27d3e30a62ab5153cb8c3757545d4c23db",
+      "bytes_appended": 20239,
+      "checkpoint_bytes": 1845975,
+      "prefix_preserved": true
+    }
+  },
+  "captured_at": "2026-08-26T20:53:43.632164+00:00",
+  "checkpoint_note": "Comparison was captured inside the final Lab shell after all guest-side validation and final Twin rebuild. The traced outer shell appends one audit event only after returning; this is valid next-epoch append-only evidence and not a protected mutation.",
+  "common_resource_forbidden_changes": [],
+  "containment": {
+    "host_control_sockets_present": false,
+    "host_repository_present": false,
+    "private_network_targets_blocked": true,
+    "protected_host_endpoint_blocked": true,
+    "public_internet": true,
+    "result": "PASS"
+  },
+  "operational": {
+    "build_id": "gen6-experience-memory-r1-dc0d2cb41595",
+    "generation": "gen6-experience-memory-r1",
+    "live_equals_lkg": true,
+    "recovery_state": "ACCEPTED",
+    "service_state": "active"
+  },
+  "permanent_mcp_tools": {
+    "count": 10,
+    "names": [
+      "shell",
+      "read_file",
+      "read_range",
+      "write_file",
+      "list_files",
+      "job",
+      "service",
+      "lab_status",
+      "self_restart",
+      "reboot"
+    ]
+  },
+  "protected_before_digest": "f45ccb4bdb99fe334381061e5f85286bdb426f50c96bf897c06c28e6f89ee737",
+  "protected_checkpoint_digest": "01a1882b24d26e1fad71b0d5fc70ea9ab70ba2077bdb72da9498490a7a57fa71",
+  "static_protected": {
+    "build_sha256": "4199c2f68000bb2f39a19acc4b87ba22f78679a3140568baff2753938a8124b6",
+    "capability_registry_sha256": "650e46636eda0b06fd40927d1ee174ea59c38abfe008b1d6a757e028cb61fba3",
+    "lkg_sha256": "dc0d2cb41595a9a3d953873879ccc3e0bd88db2b4dcdee4cf8aa43dd4cb103e9",
+    "memory_registry_sha256": "2788ca0ef95cea8ff8112651700a611e2ba335cbeefca18b681521a703e953be",
+    "regression_registry_sha256": "2c3d7b83754e1748909e3e52e43a617a134223917faa4e3baf48eba9cf555894",
+    "server_sha256": "dc0d2cb41595a9a3d953873879ccc3e0bd88db2b4dcdee4cf8aa43dd4cb103e9",
+    "systemd_tree_digest": "d8d7606b6f5cc9abae38f55901a088e68f0cca6e30e1aa9e344c1f851eae6b69",
+    "unchanged": true,
+    "workflow_graph_tree_digest": "97d9762de473c4d50372ce41146e3228773d5d25dbb4f370f90cd14fc82c3d4e",
+    "workflow_tree_digest": "427af4f69f9d0a960471db598f068033a4c63c51d003d8c3a83fd8221c2f49f3"
+  },
+  "version": "gen11-protected-final-comparison-r1"
+}

@@ -1,0 +1,165 @@
+{
+  "captured_at": "2026-08-26T20:53:43.632164+00:00",
+  "epoch_binding": {
+    "epoch_digest": "8a75bac11b6fed694e4fde7bf59995d9446d1ba2a2b420af377672356c62de29",
+    "epoch_id": "ep10_8a75bac11b6fed694e4fde7bf59995d9446d1ba2a2b420af377672356c62de29",
+    "ok": true,
+    "routing_digest": "7c77f58e9400b09102edde1299bcd54a89b03c4287eaa7056f3e7212022668f7",
+    "transaction_digest": "297b782bcfc898050bb267287bc7d9a5de68c8f6927d8b7c629fd5f5facd64cb"
+  },
+  "findings": [
+    {
+      "after": "29/29",
+      "before": "28/29",
+      "finding": "Security action using documented security design as reference was initially mistaken for a design action; action-frame recognition was tightened. Frozen gold remained unchanged.",
+      "phase": "frozen_gold_first_pass",
+      "result": "FIXED_IMPLEMENTATION_GOLD_UNCHANGED"
+    },
+    {
+      "finding": "Plan a safe code change wording initially fell back to architecture because it lacked implement; explicit code/source-change frames restored Gen8/Gen9 task-kind compatibility.",
+      "phase": "gen9_compatibility",
+      "result": "FIXED_IMPLEMENTATION_GOLD_UNCHANGED"
+    },
+    {
+      "finding": "Current populated Forge state contaminated Gen5 initial-state assumptions. The unmodified Gen5 benchmark was rerun in an Experiment Capsule with an empty capability-state view and passed 12/12; historical gold was not changed.",
+      "phase": "retained_gen5",
+      "result": "FIXED_HARNESS_HISTORY_VIEW"
+    },
+    {
+      "finding": "Wrapping Gen10 in an outer Experiment Capsule caused Gen10->Gen9->protected-ablation triple OverlayFS nesting; Linux rejected the innermost mount with exit 32. Gen10 was rerun directly with its own built-in capsules and independently bracketed protected manifests; 24/24 passed with identical protected digests.",
+      "phase": "retained_gen10",
+      "result": "FIXED_HARNESS_NESTING"
+    },
+    {
+      "finding": "Gen10 regenerated Tier-1 benchmark evidence after the prior Twin. Gen11 epoch creation failed closed on the stale SHA, then succeeded only after the Twin was refreshed.",
+      "phase": "freshness_after_gen10",
+      "result": "SAFETY_PASS"
+    },
+    {
+      "finding": "Security/recovery/benchmark/failure nouns no longer dominate design or implementation tasks without an operative action frame.",
+      "phase": "overrouting",
+      "result": "PASS"
+    },
+    {
+      "finding": "Frozen gold authority recall 1.0, critical FN 0, unsafe routing errors 0; ambiguous safety task conservatively retained lifecycle/recovery/security plus implementation validation authority.",
+      "phase": "critical_authority",
+      "result": "PASS"
+    },
+    {
+      "finding": "Routing proof is sealed into the Evidence Epoch and the same routing digest appears in raw/minimized packets; compiling a different task against the epoch fails closed.",
+      "phase": "epoch_provenance",
+      "result": "PASS"
+    }
+  ],
+  "ok": true,
+  "self_route": {
+    "ambiguity_conflict_state": {
+      "ambiguous": false,
+      "conflicts": [],
+      "conservative_route": false,
+      "safety_relevant": false
+    },
+    "compiler_task_kind": "code_change_planning",
+    "decisive_evidence_features": [
+      {
+        "evidence": "design",
+        "feature": "design_action",
+        "intent": "architecture_design"
+      },
+      {
+        "evidence": "evaluate",
+        "feature": "evaluation_action",
+        "intent": "evaluation_benchmarking"
+      },
+      {
+        "evidence": "implement",
+        "feature": "source_mutation_action",
+        "intent": "implementation_change"
+      },
+      {
+        "evidence": "do not restart the lab or change containment",
+        "feature": "explicit_negation",
+        "intent": "lifecycle_recovery"
+      },
+      {
+        "evidence": "do not restart the lab or change containment",
+        "feature": "explicit_negation",
+        "intent": "security_containment"
+      }
+    ],
+    "detected_intents": [
+      "architecture_design",
+      "evaluation_benchmarking",
+      "implementation_change"
+    ],
+    "detected_primary_intent": "implementation_change",
+    "evidence_explicitly_not_required": [
+      "causal_history",
+      "failure_lineage",
+      "historical_version_scope",
+      "lifecycle_state",
+      "recovery_lkg",
+      "security_containment"
+    ],
+    "fail_closed": false,
+    "historical_scope": null,
+    "mandatory_evidence_obligations": [
+      {
+        "authority_class": "architecture_source",
+        "evidence_requirement": "source_or_generation",
+        "safety_critical": false
+      },
+      {
+        "authority_class": "benchmark_evaluator",
+        "evidence_requirement": "benchmark_validation_or_evaluator",
+        "safety_critical": false
+      },
+      {
+        "authority_class": "guest_security_boundary",
+        "evidence_requirement": "authority_security",
+        "safety_critical": true
+      },
+      {
+        "authority_class": "operational_identity",
+        "evidence_requirement": "operational_identity",
+        "safety_critical": true
+      },
+      {
+        "authority_class": "source_implementation",
+        "evidence_requirement": "source",
+        "safety_critical": false
+      },
+      {
+        "authority_class": "validation_regression",
+        "evidence_requirement": "validation_regression_evaluator",
+        "safety_critical": false
+      }
+    ],
+    "precedence_rules_applied": [
+      "explicit source mutation is terminal action over motivating design/evaluation/failure vocabulary"
+    ],
+    "required_authority_classes": [
+      "architecture_source",
+      "benchmark_evaluator",
+      "guest_security_boundary",
+      "operational_identity",
+      "source_implementation",
+      "validation_regression"
+    ],
+    "router_version": "gen11-intent-authority-routing-r1",
+    "routing_digest": "7c77f58e9400b09102edde1299bcd54a89b03c4287eaa7056f3e7212022668f7",
+    "schema_version": 1,
+    "secondary_intents": [
+      "architecture_design",
+      "evaluation_benchmarking"
+    ],
+    "suppressed_by_explicit_negation": [
+      "lifecycle_recovery",
+      "security_containment"
+    ],
+    "task_hash": "7d4444609ed590c71ddfebfe5a8c14a5abfd02900adc28bb1d98edfe4119cee7",
+    "task_text": "Design and implement Gen11 task intent routing, then evaluate its frozen benchmark; do not restart the Lab or change containment."
+  },
+  "self_task": "Design and implement Gen11 task intent routing, then evaluate its frozen benchmark; do not restart the Lab or change containment.",
+  "version": "gen11-self-use-r1"
+}

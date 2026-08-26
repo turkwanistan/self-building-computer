@@ -1,0 +1,194 @@
+{
+  "accepted_at": "2026-08-26T20:56:12.534208+00:00",
+  "architectures_considered": [
+    "fixed deterministic task-kind rules",
+    "hierarchical intent classifier",
+    "multi-label intent + precedence graph",
+    "authority-first routing independent of labels",
+    "compiler-integrated scoring changes",
+    "proof-carrying deterministic routing layer before Gen8",
+    "hybrid action-frame + multi-label + authority-first proof routing (chosen)"
+  ],
+  "benchmark": {
+    "artifact": "lab_generations/GEN11_BENCHMARK.json",
+    "artifact_sha256": "6ecbf8a3a4c2382ea3733b57e1e4620aa6e1ed09ef2091ec54c3a705bc72c2f3",
+    "metrics": {
+      "benchmark": "39/39",
+      "context_payload_reduction_vs_gen8": 0.447958,
+      "critical_authority_fn": 0,
+      "critical_authority_recall": 1.0,
+      "deterministic_routing": 1.0,
+      "mixed_intent_precedence": 1.0,
+      "necessity_precision": 1.0,
+      "required_evidence_recall": 1.0,
+      "routing_gold": "29/29",
+      "routing_latency_median_ms": 0.168258,
+      "routing_latency_p95_ms": 0.288811,
+      "safety_ambiguity_conservative": 1.0,
+      "unsafe_routing_errors": 0
+    },
+    "passed": 39,
+    "routing_gold": "29/29",
+    "total": 39
+  },
+  "canonical_files_changed_or_added": [
+    "plans/GEN11_TASK_INTENT_AUTHORITY_ROUTING.md",
+    "lab_mcp/task_routing.py",
+    "lab_mcp/evidence_epoch.py",
+    "lab_mcp/bench/benchmark_gen11.py",
+    "lab_generations/GEN11_GOLD.json",
+    "lab_generations/GEN11_BENCHMARK.json",
+    "lab_generations/GEN11_ROUTING_EVIDENCE.json",
+    "lab_generations/GEN11_SELF_USE.json",
+    "lab_generations/GEN11_RETAINED_REGRESSIONS.json",
+    "lab_generations/GEN11_PROTECTED_STATE.json",
+    "lab_generations/GEN11_RESULT.json",
+    "lab_generations/GEN12_PROPOSALS.json",
+    "STATUS.md",
+    "NEXT_SESSION.md",
+    "state/current.json",
+    "history/events.jsonl"
+  ],
+  "capability_build": "gen11-intent-authority-routing-r1-59a1bef513c7",
+  "chosen_design": "Deterministic proof-carrying action-frame router before Gen8; multi-label intents with safety-aware precedence; authority obligations derived independently from all detected operative intents; explicit negation/quoted-literal controls; route bound into Gen10 epoch manifest and verified on compile.",
+  "commit_or_push_performed": false,
+  "failure_modes_reconstructed": [
+    "keyword vocabulary could dominate operative task action",
+    "security/recovery nouns over-routed design/change work",
+    "benchmark/failure nouns could over-select evaluation/debug evidence",
+    "mixed intent lost secondary authority",
+    "historical scope was not first-class",
+    "same nouns can imply different authority depending on requested action"
+  ],
+  "final_twin": {
+    "causal_digest": "a7bf1dab8422b8c8e84afc994d3e5d6239e1713323f9173a540fdf426718a489",
+    "causal_edges": 4985,
+    "causal_events": 4849,
+    "causal_index_sha256": "49df2ac2b093c18d9019a4728e1c521b95e92ab3a471987245a4a5b15e3afd05",
+    "edges": 288,
+    "graph_digest": "0e40f143fe7934b722a707d5bceda6e83ce8931feef557e75c0cc0913b6cfcd3",
+    "inputs": 98,
+    "nodes": 192,
+    "post_checkpoint_note": "The traced outer Lab shell appended one ordinary audit event only after the final build/verify returned. It is valid append-only next-epoch evidence; the recorded checkpoint itself was fully fresh.",
+    "snapshot_sha256": "45f8fed7de7ec3b611693813139ddbc8ae9feba1790c036862a5eb4d652d518a",
+    "verify": "PASS_ZERO_ISSUES_AT_SEALED_CHECKPOINT"
+  },
+  "frozen_optiplex_mcp": {
+    "guardrail": "guardrail-gen0-c51a9161a95d",
+    "modified": false,
+    "policy": "authority-v1",
+    "release": "frontend-a5c1c5be8b22",
+    "schema_sha256": "195c410b85d40f4cfe65ef7eb8baa0463a32e93882fd9d39c0045e6518cd2913",
+    "source_sha256": "a5c1c5be8b22f0268211fad81d42fefa5b1a3da46cb3582377c378f4b78260c7",
+    "tool_count": 51
+  },
+  "gen12_proposals": "lab_generations/GEN12_PROPOSALS.json",
+  "gen12_top_proposal": "Counterfactual Replay over Intent-Routed Evidence Epochs",
+  "generation": "gen11-intent-authority-routing-r1",
+  "implementation": {
+    "benchmark": "lab_mcp/bench/benchmark_gen11.py",
+    "benchmark_sha256": "2b6add943de02db35a963929fb28ffdc8cd9c0b4b43c04dcc9442ef63fdd63f4",
+    "gold_sha256": "34ef066fa3e67ab8768789241461e2796882f95ead5f4ca9d5f0ae29503b28e3",
+    "permanent_mcp_tools": 10,
+    "plan_sha256": "032dee72049508a4a503c9336c2e945135ab3dc5bd835d67ee244d89b97831ac",
+    "route_aware_epoch": "lab_mcp/evidence_epoch.py",
+    "route_aware_epoch_sha256": "24e9542919ff9aa781c33c534d012d82af91a9bf418be9a102fb7ba30b40b481",
+    "router": "lab_mcp/task_routing.py",
+    "router_sha256": "59a1bef513c7d12b1411f78dfd9b5a4c007368d1c5e9e9e7f431f0bfedf2575b",
+    "server_modified": false
+  },
+  "operational_server": {
+    "build_id": "gen6-experience-memory-r1-dc0d2cb41595",
+    "generation": "gen6-experience-memory-r1",
+    "live_equals_lkg": true,
+    "lkg_sha256": "dc0d2cb41595a9a3d953873879ccc3e0bd88db2b4dcdee4cf8aa43dd4cb103e9",
+    "recovery_state": "ACCEPTED",
+    "server_sha256": "dc0d2cb41595a9a3d953873879ccc3e0bd88db2b4dcdee4cf8aa43dd4cb103e9",
+    "service_state": "active",
+    "tool_surface": 10
+  },
+  "precedence_semantics": [
+    "live lifecycle effects conservatively outrank lower-authority actions",
+    "live security effects outrank design/debug/source context when lifecycle is absent",
+    "explicit source mutation outranks motivating design/evaluation/failure vocabulary",
+    "explicit diagnosis outranks incidental benchmark/design/history vocabulary",
+    "explicit evaluation outranks incidental failure vocabulary",
+    "historical reconstruction applies when no stronger current action exists",
+    "explicit negation suppresses non-operative actions"
+  ],
+  "protected_state": {
+    "accepted": true,
+    "artifact": "lab_generations/GEN11_PROTECTED_STATE.json",
+    "artifact_sha256": "0e31a703c68efd50b19eab3b5bde4d9ed71299756fc01d1b0106f78459001d84",
+    "containment": "PASS",
+    "forbidden_changes": 0,
+    "trace_prefix_preserved": true
+  },
+  "quality_preservation": {
+    "context_payload_reduction_vs_gen8": 0.447958,
+    "critical_fn": 0,
+    "freshness_fail_closed_then_refresh": "PASS",
+    "gen10_epoch_binding": "PASS",
+    "gen9_necessity_precision": 1.0,
+    "required_evidence_recall": 1.0
+  },
+  "retained_regressions": {
+    "gen10": "24/24 direct with built-in capsules + protected bracketing",
+    "gen2": "12/12",
+    "gen3": "16/16",
+    "gen4": "18/18",
+    "gen5": "12/12 historical empty-state capsule",
+    "gen6": "13/13",
+    "gen7": "15/15 version-pinned",
+    "gen8": "17/17",
+    "gen9": "20/20 quiescent capsule",
+    "mutation_safe": true
+  },
+  "routing_taxonomy": [
+    "architecture_design",
+    "implementation_change",
+    "debugging_diagnosis",
+    "evaluation_benchmarking",
+    "lifecycle_recovery",
+    "security_containment",
+    "historical_replay"
+  ],
+  "scope": "Optiplex_Lab + isolated mcp-lab VM",
+  "self_use": {
+    "artifact": "lab_generations/GEN11_SELF_USE.json",
+    "artifact_sha256": "929ef739d921f4fa6ada1b5053faa06c9e034f349ac9101eb567c9a48c034ecc",
+    "defects_fixed": 4,
+    "freshness_self_use": "PASS",
+    "routed_epoch": "ep10_8a75bac11b6fed694e4fde7bf59995d9446d1ba2a2b420af377672356c62de29",
+    "routing_digest": "7c77f58e9400b09102edde1299bcd54a89b03c4287eaa7056f3e7212022668f7",
+    "transaction_digest": "297b782bcfc898050bb267287bc7d9a5de68c8f6927d8b7c629fd5f5facd64cb"
+  },
+  "starting_gen10": {
+    "benchmark": "24/24",
+    "capability_build": "gen10-evidence-epoch-r1-9418201f1401",
+    "coordinator_sha256": "9418201f1401e56a6dd62f8cb696b3bf947f822073b83d07fa57b028f3ba035f",
+    "generation": "gen10-evidence-epoch-r1",
+    "twin_graph_digest": "947181e319337fac733ca7482b8b14e967a8c99a54d22bc6dde368df67ca3b09"
+  },
+  "state": "LIFECYCLE_ACCEPTED_GEN11_INTENT_AUTHORITY_ROUTING",
+  "status": "ACCEPTED",
+  "suggested_commit_message": "gen11: add deterministic intent authority routing",
+  "thesis": "Classify Intent Before Routing Authority",
+  "unrelated_work_preserved": [
+    "ideas.md (pre-existing/concurrent tracked modification; not modified or claimed by Gen11)",
+    "host/check_chatgpt_ui_staleness.sh (pre-existing untracked user work; not modified or claimed by Gen11)"
+  ],
+  "validation": {
+    "accepted_core_diff": "PASS_ZERO_DIFF_SERVER_COMPILER_OPTIMIZER_CAPSULE_TWIN_CAUSAL",
+    "canonical_project_tests": "PASS_13_13",
+    "containment": "PASS",
+    "final_lab_identity": "PASS_GEN11_CAPABILITY_OVER_GEN6_SERVER_UNCHANGED",
+    "frozen_safe_mcp": "PASS_UNCHANGED_51_TOOLS",
+    "git_diff_check": "PASS",
+    "json_jsonl": "PASS_81_JSON_2_JSONL_114_RECORDS",
+    "python_syntax": "PASS_38_FILES_MUTATION_FREE",
+    "secret_credential_scan": "PASS_GEN11_OWNED_FILES",
+    "temp_archive_cleanup": "PASS_NO_GEN11_TRANSFER_ARCHIVES",
+    "validated_at": "2026-08-26T20:56:12.534208+00:00"
+  }
+}

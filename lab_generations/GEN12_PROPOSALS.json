@@ -1,0 +1,48 @@
+{
+  "generated_at": "2026-08-26T20:53:43.632164+00:00",
+  "generation_source": "gen11-intent-authority-routing-r1",
+  "ranked_proposals": [
+    {
+      "evidence": "Gen10 provides immutable coherent epochs and Gen11 now proves which authority obligations belong to the task; together they create the missing substrate for meaningful counterfactual comparisons.",
+      "expected_benefit": "Ask what would have happened under another implementation, routing rule, evaluator, or authority choice while keeping evidence epoch and historical scope fixed.",
+      "name": "Counterfactual Replay over Intent-Routed Evidence Epochs",
+      "rank": 1,
+      "scope_guard": "Do not turn replay into autonomous promotion or weaken fail-closed authority.",
+      "thesis": "Replay alternate decisions against sealed, route-provenance-bound evidence without mutating current accepted state."
+    },
+    {
+      "evidence": "Gen11 retained Gen10 exposed a real three-level Gen10 -> Gen9 -> protected-ablation capsule failure with Linux OverlayFS exit 32 even though semantic metrics were all green.",
+      "expected_benefit": "Allow higher-generation evaluators to delegate destructive child tests to an existing isolation owner without unsafe nesting or false regression failures.",
+      "name": "Hierarchical Experiment Isolation / Nested Evaluation Delegation",
+      "rank": 2,
+      "scope_guard": "No new host authority and no permanent MCP tools required.",
+      "thesis": "Make nested benchmark/capsule composition explicit instead of accidentally stacking OverlayFS namespaces."
+    },
+    {
+      "evidence": "Gen11 frozen adversarial gold found two real classifier defects before acceptance; Gen8 capsules and Gen10 epochs provide safe test isolation/provenance.",
+      "expected_benefit": "Increase confidence that routing, freshness and evaluator rules reject plausible regressions rather than merely passing curated positive cases.",
+      "name": "Evaluator Mutation Nursery",
+      "rank": 3,
+      "scope_guard": "Mutation testing only; no production self-mutation/promotion automation.",
+      "thesis": "Systematically mutate intent/routing/evaluator implementations and prove frozen gold rejects unsafe or semantically wrong descendants."
+    },
+    {
+      "evidence": "Gen9 can prove evidence necessity, Gen10 stabilizes temporal provenance, and Gen11 distinguishes task authority; these reduce risk of merging things that only share vocabulary.",
+      "expected_benefit": "Reduce accumulated capability/context surface while preserving lineage and recovery.",
+      "name": "Capability Consolidation + Supersession Proofs",
+      "rank": 4,
+      "thesis": "Identify semantically overlapping retained capabilities/memories and consolidate only with evaluator, regression, routing and epoch provenance proofs."
+    },
+    {
+      "evidence": "The core now has stable tooling, memory, Twin, context compilation/minimization, epochs and intent routing.",
+      "expected_benefit": "Make the eventual fork evidence-driven without prematurely implementing full project onboarding in Gen12.",
+      "name": "Project Onboarding Readiness Gate",
+      "rank": 5,
+      "scope_guard": "Readiness only unless a future generation explicitly authorizes the branch.",
+      "thesis": "Define readiness criteria and a thin adapter contract for the planned outward project/domain branch around Gen13."
+    }
+  ],
+  "roadmap_note": "Reassess the outward Project Onboarding + Domain Capability Expansion fork around Gen13. Gen12 should preferably strengthen replay/evaluation composition first unless new evidence changes the ordering.",
+  "status": "PROPOSALS_ONLY_NOT_AUTHORIZATION",
+  "version": "gen12-proposals-r1"
+}

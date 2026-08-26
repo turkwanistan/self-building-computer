@@ -41,6 +41,7 @@ DERIVED_PINNED = {
     "/var/lib/optiplex-lab/twin/twin.sqlite3",
 }
 DEFAULT_MODULES = (
+    "/opt/optiplex-lab/task_routing.py",
     "/opt/optiplex-lab/context_compiler.py",
     "/opt/optiplex-lab/context_necessity.py",
     "/opt/optiplex-lab/evidence_epoch.py",
@@ -262,7 +263,7 @@ def _capture_entry(path: pathlib.Path, *, expected_sha: str | None, expected_byt
 
 def _manifest_core(snapshot: dict[str, Any], entries: list[dict[str, Any]], expected_outputs: list[str],
                    evaluators: list[str], authority_overrides: dict[str, str], live_verifiers: dict[str, str],
-                   historical_scope: str | None) -> dict[str, Any]:
+                   historical_scope: str | None, routing_proof: dict[str, Any] | None = None) -> dict[str, Any]:
     return {
         "schema_version": SCHEMA_VERSION,
         "coordinator_version": VERSION,
@@ -274,18 +275,30 @@ def _manifest_core(snapshot: dict[str, Any], entries: list[dict[str, Any]], expe
         "authority_overrides": dict(sorted(authority_overrides.items())),
         "live_verifiers": dict(sorted(live_verifiers.items())),
         "historical_scope": historical_scope,
+        "routing_proof": routing_proof,
     }
 
 
 def begin_epoch(*, expected_outputs: list[str] | None = None, evaluator_paths: list[str] | None = None,
                 extra_paths: list[str] | None = None, authority_overrides: dict[str, str] | None = None,
                 live_verifiers: dict[str, str] | None = None, snapshot_override: dict[str, Any] | None = None,
-                historical_scope: str | None = None) -> dict[str, Any]:
+                historical_scope: str | None = None, task: str | None = None) -> dict[str, Any]:
     started = time.monotonic()
     expected_outputs = sorted(set(expected_outputs or []))
     evaluator_paths = sorted(set(evaluator_paths or []))
     authority_overrides = dict(authority_overrides or {})
     live_verifiers = dict(live_verifiers or {})
+    routing_proof: dict[str, Any] | None = None
+    if task is not None:
+        router_path = SOURCE_ROOT / "task_routing.py"
+        if not router_path.is_file():
+            raise RuntimeError(f"Gen11 routed epoch requires task router: {router_path}")
+        router = load_module(router_path, "gen11_epoch_route_begin")
+        routing_proof = router.route_task(task)
+        if routing_proof.get("fail_closed"):
+            raise RuntimeError("Gen11 routing failed closed before epoch seal")
+        if routing_proof.get("historical_scope") and historical_scope is None:
+            historical_scope = str(routing_proof["historical_scope"])
     for path, policy in authority_overrides.items():
         if policy not in {"pinned_hash", "append_only_prefix", "pinned_plus_live_revalidate", "live_revalidate_only"}:
             raise ValueError(f"unknown epoch authority policy {policy}: {path}")
@@ -339,7 +352,7 @@ def begin_epoch(*, expected_outputs: list[str] | None = None, evaluator_paths: l
             entries.append(_capture_entry(path, expected_sha=spec["expected_sha"], expected_bytes=spec["expected_bytes"],
                                           freshness_mode=spec["mode"], policy=policy, stage_view=stage_view,
                                           critical=bool(spec.get("critical")), created_blobs=created_blobs))
-        core = _manifest_core(snapshot, entries, expected_outputs, evaluator_paths, authority_overrides, live_verifiers, historical_scope)
+        core = _manifest_core(snapshot, entries, expected_outputs, evaluator_paths, authority_overrides, live_verifiers, historical_scope, routing_proof)
         digest = sha_bytes(canonical(core))
         epoch_id = "ep10_" + digest
         manifest = {
@@ -379,6 +392,8 @@ def begin_epoch(*, expected_outputs: list[str] | None = None, evaluator_paths: l
             "append_only_newer_at_begin": verify["append_only_growth"],
             "creation_seal_latency_ms": round((time.monotonic() - started) * 1000, 3),
             "manifest": str((EPOCHS_ROOT / epoch_id / "manifest.json")),
+            "routing_digest": routing_proof.get("routing_digest") if routing_proof else None,
+            "routing_primary_intent": routing_proof.get("detected_primary_intent") if routing_proof else None,
         }
     except Exception:
         shutil.rmtree(stage, ignore_errors=True)
@@ -562,15 +577,29 @@ def compile_minimized(epoch_id: str, task: str, *, budget_bytes: int = 48000) ->
     view = root / "view"
     cc = load_module(view / "opt/optiplex-lab/context_compiler.py", "gen10_epoch_cc_" + manifest["epoch_digest"][:12])
     opt = load_module(view / "opt/optiplex-lab/context_necessity.py", "gen10_epoch_opt_" + manifest["epoch_digest"][:12])
+    routing_proof = manifest["core"].get("routing_proof")
+    router = None
+    if isinstance(routing_proof, dict):
+        router_path = view / "opt/optiplex-lab/task_routing.py"
+        if not router_path.is_file():
+            return {"ok": False, "fail_closed": True, "epoch_id": epoch_id, "reason": "sealed Gen11 route lacks immutable router source"}
+        router = load_module(router_path, "gen11_epoch_route_compile_" + manifest["epoch_digest"][:12])
+        actual_route = router.route_task(task)
+        if actual_route.get("routing_digest") != routing_proof.get("routing_digest"):
+            return {"ok": False, "fail_closed": True, "epoch_id": epoch_id, "epoch_digest": manifest["epoch_digest"], "reason": "task/routing digest differs from sealed epoch route", "sealed_routing_digest": routing_proof.get("routing_digest"), "actual_routing_digest": actual_route.get("routing_digest")}
+        cc.classify = lambda _text: str(routing_proof["compiler_task_kind"])
     _patch_compiler(cc, root); _patch_optimizer(opt, root)
     snapshot = safe_json(view / "var/lib/optiplex-lab/twin/twin-current.json")
     if not isinstance(snapshot, dict):
         raise RuntimeError("epoch Twin missing")
     redirected = _redirect_snapshot(snapshot, root, manifest["core"]["entries"])
     raw = cc.build_packet(task, budget_bytes=budget_bytes, snapshot_override=redirected)
+    if router is not None and isinstance(routing_proof, dict):
+        raw = router.apply_route_to_packet(raw, routing_proof)
     minimized = opt.minimize_packet(raw)
     material = {
         "epoch_digest": manifest["epoch_digest"],
+        "routing_digest": routing_proof.get("routing_digest") if isinstance(routing_proof, dict) else None,
         "compiler_packet_digest": raw.get("packet_digest"),
         "optimizer_packet_digest": minimized.get("packet_digest"),
         "task_hash": raw.get("task_hash"),
@@ -581,6 +610,8 @@ def compile_minimized(epoch_id: str, task: str, *, budget_bytes: int = 48000) ->
         "epoch_id": manifest["epoch_id"], "epoch_digest": manifest["epoch_digest"],
         "twin_graph_digest": manifest["core"].get("twin_graph_digest"),
         "compiler_packet": raw, "minimized_packet": minimized,
+        "routing_proof": routing_proof,
+        "routing_digest": routing_proof.get("routing_digest") if isinstance(routing_proof, dict) else None,
         "transaction_digest": sha_bytes(canonical(material)), "verification": verification,
     }
 
@@ -678,7 +709,7 @@ def selftest() -> dict[str, Any]:
     checks: list[dict[str, Any]] = []
     def ck(name: str, ok: bool, detail: Any = None) -> None:
         checks.append({"name": name, "ok": bool(ok), "detail": detail})
-    base = {"schema_version": 1, "coordinator_version": VERSION, "twin_graph_digest": "g", "twin_version": "t", "entries": [], "expected_outputs": [], "evaluator_paths": [], "authority_overrides": {}, "live_verifiers": {}, "historical_scope": None}
+    base = {"schema_version": 1, "coordinator_version": VERSION, "twin_graph_digest": "g", "twin_version": "t", "entries": [], "expected_outputs": [], "evaluator_paths": [], "authority_overrides": {}, "live_verifiers": {}, "historical_scope": None, "routing_proof": None}
     ck("canonical_digest_deterministic", sha_bytes(canonical(base)) == sha_bytes(canonical(copy.deepcopy(base))))
     try:
         begin_epoch(extra_paths=["/tmp/gen10-no-such-authority"], authority_overrides={"/tmp/gen10-no-such-authority": "live_revalidate_only"})
@@ -709,7 +740,7 @@ def main() -> None:
     ap = argparse.ArgumentParser(description="Gen10 deterministic Evidence Epoch / Snapshot Freshness Coordinator")
     ap.add_argument("--selftest", action="store_true")
     sub = ap.add_subparsers(dest="cmd")
-    p = sub.add_parser("begin"); p.add_argument("--expect-output", action="append", default=[]); p.add_argument("--evaluator", action="append", default=[]); p.add_argument("--extra-path", action="append", default=[]); p.add_argument("--historical-scope")
+    p = sub.add_parser("begin"); p.add_argument("--expect-output", action="append", default=[]); p.add_argument("--evaluator", action="append", default=[]); p.add_argument("--extra-path", action="append", default=[]); p.add_argument("--historical-scope"); p.add_argument("--task")
     p = sub.add_parser("verify"); p.add_argument("epoch")
     p = sub.add_parser("compile"); p.add_argument("epoch"); p.add_argument("task"); p.add_argument("--budget-bytes", type=int, default=48000)
     p = sub.add_parser("finalize"); p.add_argument("epoch")
@@ -718,7 +749,7 @@ def main() -> None:
     args = ap.parse_args()
     if args.selftest:
         out = selftest(); print(json.dumps(out, indent=2, sort_keys=True)); raise SystemExit(0 if out["passed"] == out["total"] else 1)
-    if args.cmd == "begin": out = begin_epoch(expected_outputs=args.expect_output, evaluator_paths=args.evaluator, extra_paths=args.extra_path, historical_scope=args.historical_scope)
+    if args.cmd == "begin": out = begin_epoch(expected_outputs=args.expect_output, evaluator_paths=args.evaluator, extra_paths=args.extra_path, historical_scope=args.historical_scope, task=args.task)
     elif args.cmd == "verify": out = verify_epoch(args.epoch)
     elif args.cmd == "compile": out = compile_minimized(args.epoch, args.task, budget_bytes=max(1024, args.budget_bytes))
     elif args.cmd == "finalize": out = finalize_epoch(args.epoch)

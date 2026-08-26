@@ -1,0 +1,545 @@
+{
+  "captured_at": "2026-08-26T20:53:43.632164+00:00",
+  "frozen_gold": {
+    "frozen_before_implementation": true,
+    "path": "lab_generations/GEN11_GOLD.json",
+    "sha256": "34ef066fa3e67ab8768789241461e2796882f95ead5f4ca9d5f0ae29503b28e3"
+  },
+  "implementation": {
+    "benchmark_source": "lab_mcp/bench/benchmark_gen11.py",
+    "benchmark_source_sha256": "2b6add943de02db35a963929fb28ffdc8cd9c0b4b43c04dcc9442ef63fdd63f4",
+    "evidence_epoch": "lab_mcp/evidence_epoch.py",
+    "evidence_epoch_sha256": "24e9542919ff9aa781c33c534d012d82af91a9bf418be9a102fb7ba30b40b481",
+    "router": "lab_mcp/task_routing.py",
+    "router_sha256": "59a1bef513c7d12b1411f78dfd9b5a4c007368d1c5e9e9e7f431f0bfedf2575b"
+  },
+  "metrics": {
+    "critical_authority": {
+      "fn": 0,
+      "recall": 1.0,
+      "tp": 127,
+      "unsafe_routing_errors": 0
+    },
+    "deterministic_routing_rate": 1.0,
+    "epoch_binding": {
+      "epoch_digest": "8a75bac11b6fed694e4fde7bf59995d9446d1ba2a2b420af377672356c62de29",
+      "epoch_id": "ep10_8a75bac11b6fed694e4fde7bf59995d9446d1ba2a2b420af377672356c62de29",
+      "ok": true,
+      "routing_digest": "7c77f58e9400b09102edde1299bcd54a89b03c4287eaa7056f3e7212022668f7",
+      "transaction_digest": "297b782bcfc898050bb267287bc7d9a5de68c8f6927d8b7c629fd5f5facd64cb"
+    },
+    "gen9_quality_preservation": {
+      "context_payload_reduction_vs_gen8": 0.447958,
+      "critical_fn": 0,
+      "critical_fp": 0,
+      "critical_tp": 50,
+      "gen11_routed_minimized_average_bytes": 11729,
+      "gen8_baseline_average_bytes": 21246.57,
+      "necessity_aware_precision": 1.0,
+      "required_evidence_recall": 1.0
+    },
+    "mixed_intent_precedence_correct_rate": 1.0,
+    "paraphrase_semantics_ok": true,
+    "permanent_mcp_tools": 10,
+    "routing_latency_ms": {
+      "max": 3.392317,
+      "median": 0.168258,
+      "p95": 0.288811
+    },
+    "routing_proof_bytes": {
+      "max": 2585,
+      "median": 1980
+    },
+    "safety_ambiguity_conservative_rate": 1.0
+  },
+  "passed": 39,
+  "raw_guest_artifact": {
+    "path": "/var/lib/optiplex-lab/benchmarks/gen11-intent-authority-routing-benchmark.json",
+    "sha256": "215f95bcc8e5bf9047414f354b8dd921f39b6b625ead9174b4579cefc16227a0"
+  },
+  "routing_gold_cases": {
+    "cases": [
+      {
+        "authority_classes": [
+          "architecture_source",
+          "guest_security_boundary",
+          "operational_identity"
+        ],
+        "conservative_route": false,
+        "family": "clear design task",
+        "id": "clear-design",
+        "ok": true,
+        "primary": "architecture_design",
+        "routing_digest": "af1ca08de96851c3602fc805fa0ec4b989c0b0c0f0921bca429aa06b0e8d5329",
+        "secondary": []
+      },
+      {
+        "authority_classes": [
+          "guest_security_boundary",
+          "operational_identity",
+          "source_implementation",
+          "validation_regression"
+        ],
+        "conservative_route": false,
+        "family": "clear implementation task",
+        "id": "clear-implementation",
+        "ok": true,
+        "primary": "implementation_change",
+        "routing_digest": "394f353ac24330861c55f3d27dd2c0ddb8cba6ae284470f54d1444c267000f68",
+        "secondary": []
+      },
+      {
+        "authority_classes": [
+          "failure_lineage",
+          "guest_security_boundary",
+          "operational_identity",
+          "source_implementation"
+        ],
+        "conservative_route": false,
+        "family": "clear debugging task",
+        "id": "clear-debugging",
+        "ok": true,
+        "primary": "debugging_diagnosis",
+        "routing_digest": "aaa909193cadb69cf6a9e41424d7a05c9c33c2e2e25fc9bc55e29161155fd0dd",
+        "secondary": []
+      },
+      {
+        "authority_classes": [
+          "benchmark_evaluator",
+          "guest_security_boundary",
+          "operational_identity",
+          "validation_regression"
+        ],
+        "conservative_route": false,
+        "family": "clear evaluation task",
+        "id": "clear-evaluation",
+        "ok": true,
+        "primary": "evaluation_benchmarking",
+        "routing_digest": "7c780cb36aa5cd3c4fb6b65c778a480f778d0c27f04461c92cd676302ce5f17d",
+        "secondary": []
+      },
+      {
+        "authority_classes": [
+          "guest_security_boundary",
+          "lifecycle_state",
+          "operational_identity",
+          "recovery_lkg",
+          "security_containment"
+        ],
+        "conservative_route": false,
+        "family": "clear lifecycle/recovery task",
+        "id": "clear-lifecycle",
+        "ok": true,
+        "primary": "lifecycle_recovery",
+        "routing_digest": "fe8f393a54172c356529f59ab7bef4715bf9a5acdb36abedbc18893810d73388",
+        "secondary": []
+      },
+      {
+        "authority_classes": [
+          "guest_security_boundary",
+          "operational_identity",
+          "security_containment"
+        ],
+        "conservative_route": false,
+        "family": "clear security task",
+        "id": "clear-security",
+        "ok": true,
+        "primary": "security_containment",
+        "routing_digest": "c18975d919bd8f75cfb71c7c20d3e7ff50c3d74827ea1b6fa34a5f53349c1fd6",
+        "secondary": []
+      },
+      {
+        "authority_classes": [
+          "architecture_source",
+          "guest_security_boundary",
+          "operational_identity"
+        ],
+        "conservative_route": false,
+        "family": "design prompt containing security vocabulary",
+        "id": "design-with-security-vocabulary",
+        "ok": true,
+        "primary": "architecture_design",
+        "routing_digest": "3c1d1775e7bc9db693f30e3c7afb05183dc38d93b03543b65b4a8f5bc64a3d20",
+        "secondary": []
+      },
+      {
+        "authority_classes": [
+          "guest_security_boundary",
+          "operational_identity",
+          "security_containment"
+        ],
+        "conservative_route": false,
+        "family": "security prompt containing design vocabulary",
+        "id": "security-with-design-vocabulary",
+        "ok": true,
+        "primary": "security_containment",
+        "routing_digest": "38b13db7a4e9fd132164e85a80061679ca201ca8901cdf1a0809671f10d71546",
+        "secondary": []
+      },
+      {
+        "authority_classes": [
+          "failure_lineage",
+          "guest_security_boundary",
+          "operational_identity",
+          "source_implementation"
+        ],
+        "conservative_route": false,
+        "family": "debugging prompt containing benchmark language",
+        "id": "debug-with-benchmark-language",
+        "ok": true,
+        "primary": "debugging_diagnosis",
+        "routing_digest": "ea204aaa2d097696a13c55e82f49c32bc5f6ef59aacd3c633773531447f72d4a",
+        "secondary": []
+      },
+      {
+        "authority_classes": [
+          "guest_security_boundary",
+          "operational_identity",
+          "source_implementation",
+          "validation_regression"
+        ],
+        "conservative_route": false,
+        "family": "implementation prompt discussing recovery code but not executing lifecycle",
+        "id": "implementation-discusses-recovery",
+        "ok": true,
+        "primary": "implementation_change",
+        "routing_digest": "c3792b3870d8e1485e924b9802cdcd5583df953cc3a244e201d5f9b0bf56fed2",
+        "secondary": []
+      },
+      {
+        "authority_classes": [
+          "guest_security_boundary",
+          "lifecycle_state",
+          "operational_identity",
+          "recovery_lkg",
+          "security_containment"
+        ],
+        "conservative_route": false,
+        "family": "actual lifecycle change where recovery/security evidence is mandatory",
+        "id": "actual-lifecycle-change",
+        "ok": true,
+        "primary": "lifecycle_recovery",
+        "routing_digest": "361ea5faedbff0198f58c9c7f0b2028782557d40d6d04ad41f538f6e2b5aa428",
+        "secondary": []
+      },
+      {
+        "authority_classes": [
+          "architecture_source",
+          "guest_security_boundary",
+          "operational_identity",
+          "source_implementation",
+          "validation_regression"
+        ],
+        "conservative_route": false,
+        "family": "mixed design + implementation",
+        "id": "mixed-design-implementation",
+        "ok": true,
+        "primary": "implementation_change",
+        "routing_digest": "ce40c93ac059ef640b562c17dca27903bda88a74ffa05240f2731a45dabf74bb",
+        "secondary": [
+          "architecture_design"
+        ]
+      },
+      {
+        "authority_classes": [
+          "failure_lineage",
+          "guest_security_boundary",
+          "lifecycle_state",
+          "operational_identity",
+          "recovery_lkg",
+          "security_containment",
+          "source_implementation"
+        ],
+        "conservative_route": false,
+        "family": "mixed debugging + lifecycle",
+        "id": "mixed-debug-lifecycle",
+        "ok": true,
+        "primary": "lifecycle_recovery",
+        "routing_digest": "9e6efabd82d917a98103a7b7d773ddcf4111c6ab4b898683bee54672b11dfd10",
+        "secondary": [
+          "debugging_diagnosis"
+        ]
+      },
+      {
+        "authority_classes": [
+          "benchmark_evaluator",
+          "guest_security_boundary",
+          "operational_identity",
+          "source_implementation",
+          "validation_regression"
+        ],
+        "conservative_route": false,
+        "family": "mixed evaluation + implementation",
+        "id": "mixed-evaluation-implementation",
+        "ok": true,
+        "primary": "implementation_change",
+        "routing_digest": "7c2c5b668dea5515814c1e3fb2959a49ee0512237af633f6b7e4d3cd2cf763e3",
+        "secondary": [
+          "evaluation_benchmarking"
+        ]
+      },
+      {
+        "authority_classes": [
+          "guest_security_boundary",
+          "lifecycle_state",
+          "operational_identity",
+          "recovery_lkg",
+          "security_containment",
+          "source_implementation",
+          "validation_regression"
+        ],
+        "conservative_route": true,
+        "family": "ambiguous safety-relevant task",
+        "id": "ambiguous-safety-relevant",
+        "ok": true,
+        "primary": "lifecycle_recovery",
+        "routing_digest": "54cb9fc8e73d7c762cd57b11c544f26286dd1158424f98867e6a4f90ffc48aa0",
+        "secondary": [
+          "implementation_change",
+          "security_containment"
+        ]
+      },
+      {
+        "authority_classes": [
+          "architecture_source",
+          "guest_security_boundary",
+          "operational_identity"
+        ],
+        "conservative_route": false,
+        "family": "paraphrase determinism",
+        "id": "paraphrase-design-a",
+        "ok": true,
+        "primary": "architecture_design",
+        "routing_digest": "6f6db836d9b4ff1d72b3ab28447eebfd5dd7954316fd3ce011f3000c4208cab9",
+        "secondary": []
+      },
+      {
+        "authority_classes": [
+          "architecture_source",
+          "guest_security_boundary",
+          "operational_identity"
+        ],
+        "conservative_route": false,
+        "family": "paraphrase determinism",
+        "id": "paraphrase-design-b",
+        "ok": true,
+        "primary": "architecture_design",
+        "routing_digest": "e0ffcb49b1f0fc157fb696d199bbb20ab29954d8cbc6b14daabda892d2e8cd86",
+        "secondary": []
+      },
+      {
+        "authority_classes": [
+          "guest_security_boundary",
+          "operational_identity",
+          "source_implementation",
+          "validation_regression"
+        ],
+        "conservative_route": false,
+        "family": "irrelevant-word injection negative control",
+        "id": "irrelevant-word-injection",
+        "ok": true,
+        "primary": "implementation_change",
+        "routing_digest": "f44637d86c7c6e42adf4d857314f240e22debf5f66bece7e1d3ecb418bac15b9",
+        "secondary": []
+      },
+      {
+        "authority_classes": [
+          "guest_security_boundary",
+          "operational_identity",
+          "source_implementation",
+          "validation_regression"
+        ],
+        "conservative_route": false,
+        "family": "conflicting-intent precedence",
+        "id": "conflicting-intent-precedence",
+        "ok": true,
+        "primary": "implementation_change",
+        "routing_digest": "c9e87f86d3203a8d2a19834b21558d210713265cf392707ebc92a13922c0cdcf",
+        "secondary": []
+      },
+      {
+        "authority_classes": [
+          "causal_history",
+          "guest_security_boundary",
+          "historical_version_scope",
+          "operational_identity"
+        ],
+        "conservative_route": false,
+        "family": "historical/version-pinned intent",
+        "id": "historical-version-pinned",
+        "ok": true,
+        "primary": "historical_replay",
+        "routing_digest": "845e87794737bc2706644a6153d8ecbca9e1b196314facf62e0b79a315084513",
+        "secondary": []
+      },
+      {
+        "authority_classes": [
+          "architecture_source",
+          "benchmark_evaluator",
+          "guest_security_boundary",
+          "operational_identity",
+          "source_implementation",
+          "validation_regression"
+        ],
+        "conservative_route": false,
+        "family": "Gen11 self-use on its own implementation",
+        "id": "gen11-self-use",
+        "ok": true,
+        "primary": "implementation_change",
+        "routing_digest": "7c77f58e9400b09102edde1299bcd54a89b03c4287eaa7056f3e7212022668f7",
+        "secondary": [
+          "architecture_design",
+          "evaluation_benchmarking"
+        ]
+      },
+      {
+        "authority_classes": [
+          "benchmark_evaluator",
+          "guest_security_boundary",
+          "operational_identity",
+          "validation_regression"
+        ],
+        "conservative_route": false,
+        "family": "evaluation keyword adversary",
+        "id": "evaluation-containing-failure-words",
+        "ok": true,
+        "primary": "evaluation_benchmarking",
+        "routing_digest": "dd79991bfd70a850f90ed9204985e4860633acbed3d990e3f7fca4428c08269c",
+        "secondary": []
+      },
+      {
+        "authority_classes": [
+          "architecture_source",
+          "guest_security_boundary",
+          "operational_identity"
+        ],
+        "conservative_route": false,
+        "family": "design/explanation with lifecycle nouns",
+        "id": "explain-recovery-architecture",
+        "ok": true,
+        "primary": "architecture_design",
+        "routing_digest": "66249a0e3fdd17db3229e317e1e44757a91bf2865cbca5915b1e9cb98f05ff0c",
+        "secondary": []
+      },
+      {
+        "authority_classes": [
+          "guest_security_boundary",
+          "operational_identity",
+          "source_implementation",
+          "validation_regression"
+        ],
+        "conservative_route": false,
+        "family": "implementation with security nouns",
+        "id": "implementation-security-module",
+        "ok": true,
+        "primary": "implementation_change",
+        "routing_digest": "60e012a492b02aadba179d88baa7bf187bf21a45a81107959178381230e97800",
+        "secondary": []
+      },
+      {
+        "authority_classes": [
+          "failure_lineage",
+          "guest_security_boundary",
+          "operational_identity",
+          "security_containment",
+          "source_implementation"
+        ],
+        "conservative_route": false,
+        "family": "security + debugging mixed action",
+        "id": "security-investigate-and-contain",
+        "ok": true,
+        "primary": "security_containment",
+        "routing_digest": "1944d7fd5f154176f3e8bd1634308da38221c178f3e204ce1dc35e4fe7568814",
+        "secondary": [
+          "debugging_diagnosis"
+        ]
+      },
+      {
+        "authority_classes": [
+          "causal_history",
+          "failure_lineage",
+          "guest_security_boundary",
+          "historical_version_scope",
+          "operational_identity",
+          "source_implementation"
+        ],
+        "conservative_route": false,
+        "family": "historical + debugging mixed action",
+        "id": "historical-debugging",
+        "ok": true,
+        "primary": "debugging_diagnosis",
+        "routing_digest": "66a614751d301e6b79c786bd4b752c03b3e2b6c5bf14bad31b188503b33f0efd",
+        "secondary": [
+          "historical_replay"
+        ]
+      },
+      {
+        "authority_classes": [
+          "benchmark_evaluator",
+          "causal_history",
+          "guest_security_boundary",
+          "historical_version_scope",
+          "operational_identity",
+          "validation_regression"
+        ],
+        "conservative_route": false,
+        "family": "historical + evaluation mixed action",
+        "id": "historical-evaluation",
+        "ok": true,
+        "primary": "evaluation_benchmarking",
+        "routing_digest": "d87ac3d2f8eed43e6d2a2d134fd2c6231d6932ebfbf11b8bfc5e6128272ec172",
+        "secondary": [
+          "historical_replay"
+        ]
+      },
+      {
+        "authority_classes": [
+          "guest_security_boundary",
+          "operational_identity",
+          "source_implementation",
+          "validation_regression"
+        ],
+        "conservative_route": false,
+        "family": "quoted/mentioned vocabulary negative control",
+        "id": "quoted-misleading-vocabulary",
+        "ok": true,
+        "primary": "implementation_change",
+        "routing_digest": "bf7622b0cee350c8a908a792dcc90214bc3b1c0b881481ad9e4540ede756b7d0",
+        "secondary": []
+      },
+      {
+        "authority_classes": [
+          "guest_security_boundary",
+          "lifecycle_state",
+          "operational_identity",
+          "recovery_lkg",
+          "security_containment"
+        ],
+        "conservative_route": false,
+        "family": "lifecycle action containing implementation vocabulary",
+        "id": "lifecycle-with-source-background",
+        "ok": true,
+        "primary": "lifecycle_recovery",
+        "routing_digest": "116639e2bd55aca034eb72684a2dd072d6ae8e07093413dd3d498731a42648c8",
+        "secondary": []
+      }
+    ],
+    "passed": 29,
+    "total": 29
+  },
+  "success_criteria": {
+    "context_reduction_vs_gen8": true,
+    "critical_authority_fn": true,
+    "critical_authority_recall": true,
+    "deterministic_routing": true,
+    "gen10_epoch_coherence": true,
+    "mixed_intent_precedence": true,
+    "necessity_precision": true,
+    "permanent_mcp_tools": true,
+    "required_evidence_recall": true,
+    "safety_ambiguity": true,
+    "unsafe_routing_errors": true
+  },
+  "total": 39,
+  "version": "gen11-intent-authority-routing-benchmark-canonical-r1"
+}

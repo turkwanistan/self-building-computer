@@ -1,7 +1,7 @@
 {
   "lab": {
-    "accepted_at": "2026-08-26T19:50:26.806938+00:00",
-    "build_id": "gen10-evidence-epoch-r1-9418201f1401",
+    "accepted_at": "2026-08-26T20:56:12.534208+00:00",
+    "build_id": "gen11-intent-authority-routing-r1-59a1bef513c7",
     "features_add": [
       "architectural_digital_twin",
       "causal_observability_spine",
@@ -19,7 +19,13 @@
       "transaction_bound_context_reasoning",
       "append_only_prefix_epoch_semantics",
       "next_epoch_freshness_handoff",
-      "live_authority_revalidation"
+      "live_authority_revalidation",
+      "deterministic_task_intent_routing",
+      "proof_carrying_authority_routing",
+      "multi_label_intent_precedence",
+      "safety_conservative_ambiguity_routing",
+      "route_bound_evidence_epochs",
+      "historical_intent_scope"
     ],
     "gen10_validation": {
       "benchmark": {
@@ -82,6 +88,91 @@
         "python_syntax": "PASS_36_FILES_MUTATION_FREE",
         "secret_scan": "PASS",
         "validated_at": "2026-08-26T19:50:54.252978+00:00"
+      }
+    },
+    "gen11_validation": {
+      "benchmark": {
+        "benchmark": "39/39",
+        "context_payload_reduction_vs_gen8": 0.447958,
+        "critical_authority_fn": 0,
+        "critical_authority_recall": 1.0,
+        "deterministic_routing": 1.0,
+        "mixed_intent_precedence": 1.0,
+        "necessity_precision": 1.0,
+        "passed": 39,
+        "required_evidence_recall": 1.0,
+        "routing_gold": "29/29",
+        "routing_latency_median_ms": 0.168258,
+        "routing_latency_p95_ms": 0.288811,
+        "safety_ambiguity_conservative": 1.0,
+        "total": 39,
+        "unsafe_routing_errors": 0
+      },
+      "capability_build": "gen11-intent-authority-routing-r1-59a1bef513c7",
+      "commit_or_push_performed": false,
+      "evidence_epoch_sha256": "24e9542919ff9aa781c33c534d012d82af91a9bf418be9a102fb7ba30b40b481",
+      "final_twin": {
+        "causal_digest": "a7bf1dab8422b8c8e84afc994d3e5d6239e1713323f9173a540fdf426718a489",
+        "causal_edges": 4985,
+        "causal_events": 4849,
+        "causal_index_sha256": "49df2ac2b093c18d9019a4728e1c521b95e92ab3a471987245a4a5b15e3afd05",
+        "edges": 288,
+        "graph_digest": "0e40f143fe7934b722a707d5bceda6e83ce8931feef557e75c0cc0913b6cfcd3",
+        "inputs": 98,
+        "nodes": 192,
+        "post_checkpoint_note": "The traced outer Lab shell appended one ordinary audit event only after the final build/verify returned. It is valid append-only next-epoch evidence; the recorded checkpoint itself was fully fresh.",
+        "snapshot_sha256": "45f8fed7de7ec3b611693813139ddbc8ae9feba1790c036862a5eb4d652d518a",
+        "verify": "PASS_ZERO_ISSUES_AT_SEALED_CHECKPOINT"
+      },
+      "frozen_safe_mcp": {
+        "guardrail": "guardrail-gen0-c51a9161a95d",
+        "modified": false,
+        "policy": "authority-v1",
+        "release": "frontend-a5c1c5be8b22",
+        "schema_sha256": "195c410b85d40f4cfe65ef7eb8baa0463a32e93882fd9d39c0045e6518cd2913",
+        "source_sha256": "a5c1c5be8b22f0268211fad81d42fefa5b1a3da46cb3582377c378f4b78260c7",
+        "tool_count": 51
+      },
+      "generation": "gen11-intent-authority-routing-r1",
+      "gold_sha256": "34ef066fa3e67ab8768789241461e2796882f95ead5f4ca9d5f0ae29503b28e3",
+      "operational_server": {
+        "build_id": "gen6-experience-memory-r1-dc0d2cb41595",
+        "generation": "gen6-experience-memory-r1",
+        "live_equals_lkg": true,
+        "lkg_sha256": "dc0d2cb41595a9a3d953873879ccc3e0bd88db2b4dcdee4cf8aa43dd4cb103e9",
+        "recovery_state": "ACCEPTED",
+        "server_sha256": "dc0d2cb41595a9a3d953873879ccc3e0bd88db2b4dcdee4cf8aa43dd4cb103e9",
+        "service_state": "active",
+        "tool_surface": 10
+      },
+      "protected_state": "PASS_ZERO_FORBIDDEN_TRACE_PREFIX_APPEND_ONLY",
+      "retained_regressions": {
+        "gen10": "24/24 direct with built-in capsules + protected bracketing",
+        "gen2": "12/12",
+        "gen3": "16/16",
+        "gen4": "18/18",
+        "gen5": "12/12 historical empty-state capsule",
+        "gen6": "13/13",
+        "gen7": "15/15 version-pinned",
+        "gen8": "17/17",
+        "gen9": "20/20 quiescent capsule",
+        "mutation_safe": true
+      },
+      "router_sha256": "59a1bef513c7d12b1411f78dfd9b5a4c007368d1c5e9e9e7f431f0bfedf2575b",
+      "server_modified": false,
+      "status": "ACCEPTED",
+      "validation": {
+        "accepted_core_diff": "PASS_ZERO_DIFF_SERVER_COMPILER_OPTIMIZER_CAPSULE_TWIN_CAUSAL",
+        "canonical_project_tests": "PASS_13_13",
+        "containment": "PASS",
+        "final_lab_identity": "PASS_GEN11_CAPABILITY_OVER_GEN6_SERVER_UNCHANGED",
+        "frozen_safe_mcp": "PASS_UNCHANGED_51_TOOLS",
+        "git_diff_check": "PASS",
+        "json_jsonl": "PASS_81_JSON_2_JSONL_114_RECORDS",
+        "python_syntax": "PASS_38_FILES_MUTATION_FREE",
+        "secret_credential_scan": "PASS_GEN11_OWNED_FILES",
+        "temp_archive_cleanup": "PASS_NO_GEN11_TRANSFER_ARCHIVES",
+        "validated_at": "2026-08-26T20:56:12.534208+00:00"
       }
     },
     "gen5_validation": {
@@ -770,44 +861,46 @@
         "validated_at": "2026-08-26T18:55:07.088888+00:00"
       }
     },
-    "generation": "gen10-evidence-epoch-r1",
-    "generation_source_sha256": "9418201f1401e56a6dd62f8cb696b3bf947f822073b83d07fa57b028f3ba035f",
+    "generation": "gen11-intent-authority-routing-r1",
+    "generation_source_sha256": "59a1bef513c7d12b1411f78dfd9b5a4c007368d1c5e9e9e7f431f0bfedf2575b",
     "live_server_identity": {
       "build_id": "gen6-experience-memory-r1-dc0d2cb41595",
       "generation": "gen6-experience-memory-r1",
-      "last_known_good_sha256": "dc0d2cb41595a9a3d953873879ccc3e0bd88db2b4dcdee4cf8aa43dd4cb103e9",
-      "note": "Gen9 is additive guest-local capability infrastructure; operational MCP server intentionally remains accepted Gen6.",
+      "live_equals_lkg": true,
+      "lkg_sha256": "dc0d2cb41595a9a3d953873879ccc3e0bd88db2b4dcdee4cf8aa43dd4cb103e9",
+      "note": "Gen11 is additive guest-local capability infrastructure; operational MCP server intentionally remains accepted Gen6.",
       "recovery_state": "ACCEPTED",
       "server_sha256": "dc0d2cb41595a9a3d953873879ccc3e0bd88db2b4dcdee4cf8aa43dd4cb103e9",
+      "service_state": "active",
       "tool_surface": 10
     },
     "recovery_state": "ACCEPTED",
     "source_sha256": "dc0d2cb41595a9a3d953873879ccc3e0bd88db2b4dcdee4cf8aa43dd4cb103e9",
-    "state": "GEN10_ACCEPTED_EVIDENCE_EPOCH",
+    "state": "GEN11_ACCEPTED_INTENT_AUTHORITY_ROUTING",
     "tool_count": 10
   },
   "next_iteration": {
-    "cycle_id": "gen11-intent-authority-routing-001",
-    "proposals_artifact": "lab_generations/GEN11_PROPOSALS.json",
-    "required_stop": "DO_NOT_IMPLEMENT_GEN11_WITHOUT_USER_REQUEST",
+    "cycle_id": "gen12-counterfactual-replay-001",
+    "proposals_artifact": "lab_generations/GEN12_PROPOSALS.json",
+    "required_stop": "DO_NOT_IMPLEMENT_GEN12_WITHOUT_USER_REQUEST",
     "safe_mcp_policy": "FROZEN_NO_CHANGES",
     "status": "PROPOSED_NOT_STARTED",
     "target": "Optiplex_Lab + mcp-lab VM",
-    "top_recommendation": "Task Intent Classification + Authority Routing Hardening"
+    "top_recommendation": "Counterfactual Replay over Intent-Routed Evidence Epochs"
   },
-  "resume_instruction": "Repository/live state is authoritative. Canonical accepted capability is gen10-evidence-epoch-r1 / build gen10-evidence-epoch-r1-9418201f1401, coordinator SHA 9418201f1401e56a6dd62f8cb696b3bf947f822073b83d07fa57b028f3ba035f. Operational Lab intentionally remains Gen6 build gen6-experience-memory-r1-dc0d2cb41595, server/LKG dc0d2cb41595a9a3d953873879ccc3e0bd88db2b4dcdee4cf8aa43dd4cb103e9, recovery ACCEPTED, exactly 10 tools. Gen10 benchmark 24/24, recall 1.0, critical FN 0, necessity precision 1.0, context reduction vs Gen8 45.6605%, unsafe fail-close 5/5, avoidable same-transaction self-invalidation 0/1, next-epoch freshness 1/1. Final Twin checkpoint 186 nodes / 279 edges / 94 inputs, graph 947181e319337fac733ca7482b8b14e967a8c99a54d22bc6dde368df67ca3b09, snapshot 1129f3d9039eaadb800d36dd6aa97198a7bf5ee60f460c6be9a385a6e4fcb336. Retained Gen2 12/12; Gen3 16/16; Gen4 18/18; Gen5 12/12; Gen6 13/13; Gen7 15/15 version-pinned; Gen8 17/17; Gen9 20/20. Top Gen11 proposal is Task Intent Classification + Authority Routing Hardening. Preserve unrelated Git work and never run mcp_probe.py synchronously through Lab shell.",
-  "state": "LIFECYCLE_ACCEPTED_GEN10_EVIDENCE_EPOCH",
+  "resume_instruction": "Repository/live state is authoritative. Accepted Gen11 capability is gen11-intent-authority-routing-r1 / build gen11-intent-authority-routing-r1-59a1bef513c7, router SHA 59a1bef513c7d12b1411f78dfd9b5a4c007368d1c5e9e9e7f431f0bfedf2575b, route-aware epoch SHA 24e9542919ff9aa781c33c534d012d82af91a9bf418be9a102fb7ba30b40b481. Operational Lab intentionally remains Gen6 build gen6-experience-memory-r1-dc0d2cb41595, server/LKG dc0d2cb41595a9a3d953873879ccc3e0bd88db2b4dcdee4cf8aa43dd4cb103e9, recovery ACCEPTED, exactly 10 tools. Gen11 benchmark 39/39 and routing gold 29/29; critical authority recall 1.0, FN 0, unsafe errors 0, mixed precedence 100%, safety ambiguity 100%, precision/recall 1.0/1.0, context reduction vs Gen8 44.7958%. Final sealed Twin checkpoint 192/288/98, graph 0e40f143fe7934b722a707d5bceda6e83ce8931feef557e75c0cc0913b6cfcd3, snapshot 45f8fed7de7ec3b611693813139ddbc8ae9feba1790c036862a5eb4d652d518a. Retained Gen2-Gen10 all pass. Top Gen12 proposal is Counterfactual Replay over Intent-Routed Evidence Epochs. Preserve unrelated Git work and never run mcp_probe.py synchronously through Lab shell.",
+  "state": "LIFECYCLE_ACCEPTED_GEN11_INTENT_AUTHORITY_ROUTING",
   "validation": {
-    "accepted_core_diff": "PASS_ZERO_DIFF",
+    "accepted_core_diff": "PASS_ZERO_DIFF_SERVER_COMPILER_OPTIMIZER_CAPSULE_TWIN_CAUSAL",
     "canonical_project_tests": "PASS_13_13",
     "containment": "PASS",
-    "final_lab_identity": "PASS_GEN10_CAPABILITY_OVER_GEN6_SERVER_UNCHANGED",
-    "frozen_safe_mcp": "PASS_UNCHANGED",
+    "final_lab_identity": "PASS_GEN11_CAPABILITY_OVER_GEN6_SERVER_UNCHANGED",
+    "frozen_safe_mcp": "PASS_UNCHANGED_51_TOOLS",
     "git_diff_check": "PASS",
-    "json_jsonl": "PASS_73_JSON_2_JSONL_113_RECORDS",
-    "python_syntax": "PASS_36_FILES_MUTATION_FREE",
-    "secret_credential_scan": "PASS",
-    "temp_archive_cleanup": "PASS_NO_OBVIOUS_PROJECT_TRANSFER_FILES",
-    "validated_at": "2026-08-26T19:50:54.252978+00:00"
+    "json_jsonl": "PASS_81_JSON_2_JSONL_114_RECORDS",
+    "python_syntax": "PASS_38_FILES_MUTATION_FREE",
+    "secret_credential_scan": "PASS_GEN11_OWNED_FILES",
+    "temp_archive_cleanup": "PASS_NO_GEN11_TRANSFER_ARCHIVES",
+    "validated_at": "2026-08-26T20:56:12.534208+00:00"
   }
 }
