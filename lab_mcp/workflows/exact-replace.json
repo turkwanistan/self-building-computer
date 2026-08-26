@@ -1,0 +1,48 @@
+{
+  "description": "Perform one deterministic exact-string replacement and assert the new literal is present.",
+  "name": "exact-replace",
+  "parameters": {
+    "new": {
+      "required": true,
+      "type": "str"
+    },
+    "old": {
+      "required": true,
+      "type": "str"
+    },
+    "path": {
+      "absolute": true,
+      "required": true,
+      "type": "path"
+    }
+  },
+  "version": "1",
+  "workflow": {
+    "name": "exact-replace",
+    "steps": [
+      {
+        "id": "edit",
+        "new": {
+          "$param": "new"
+        },
+        "old": {
+          "$param": "old"
+        },
+        "op": "exact_replace",
+        "path": {
+          "$param": "path"
+        }
+      },
+      {
+        "contains": {
+          "$param": "new"
+        },
+        "id": "assert",
+        "op": "assert_file",
+        "path": {
+          "$param": "path"
+        }
+      }
+    ]
+  }
+}

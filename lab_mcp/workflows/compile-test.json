@@ -1,0 +1,55 @@
+{
+  "description": "Compile a C source file with strict warnings and execute the resulting binary.",
+  "name": "compile-test",
+  "parameters": {
+    "cwd": {
+      "absolute": true,
+      "required": true,
+      "type": "path"
+    },
+    "output": {
+      "absolute": true,
+      "required": true,
+      "type": "path"
+    },
+    "source": {
+      "absolute": true,
+      "required": true,
+      "type": "path"
+    }
+  },
+  "version": "1",
+  "workflow": {
+    "cwd": {
+      "$param": "cwd"
+    },
+    "name": "compile-test",
+    "steps": [
+      {
+        "argv": [
+          "gcc",
+          "-Wall",
+          "-Werror",
+          {
+            "$param": "source"
+          },
+          "-o",
+          {
+            "$param": "output"
+          }
+        ],
+        "id": "compile",
+        "op": "command"
+      },
+      {
+        "argv": [
+          {
+            "$param": "output"
+          }
+        ],
+        "id": "run",
+        "op": "command"
+      }
+    ]
+  }
+}

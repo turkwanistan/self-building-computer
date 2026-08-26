@@ -1,0 +1,41 @@
+{
+  "description": "Start a named systemd service and run a bounded durable echo job with a literal parameter.",
+  "name": "service-job",
+  "parameters": {
+    "message": {
+      "default": "WORKFLOW_JOB_OK",
+      "type": "str"
+    },
+    "service": {
+      "pattern": "[A-Za-z0-9_.@:-]+\\.service",
+      "required": true,
+      "type": "str"
+    }
+  },
+  "version": "1",
+  "workflow": {
+    "name": "service-job",
+    "steps": [
+      {
+        "action": "start",
+        "id": "service",
+        "name": {
+          "$param": "service"
+        },
+        "op": "service"
+      },
+      {
+        "argv": [
+          "/bin/echo",
+          {
+            "$param": "message"
+          }
+        ],
+        "id": "job",
+        "op": "job",
+        "timeout": 10,
+        "wait": true
+      }
+    ]
+  }
+}

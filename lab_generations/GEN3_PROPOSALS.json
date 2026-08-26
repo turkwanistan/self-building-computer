@@ -1,0 +1,83 @@
+{
+  "generation": "gen3-proposals-from-gen2-evidence",
+  "implemented": false,
+  "since": "2026-08-26T04:37:07Z",
+  "trace_summary": {
+    "outer_tool_calls": {
+      "lab_status": 4,
+      "shell": 5,
+      "write_file": 6,
+      "job": 5,
+      "read_file": 2
+    },
+    "outer_failures": {
+      "shell": 1
+    },
+    "code_mode_runs": 18,
+    "code_mode_steps": 38,
+    "code_mode_ops": {
+      "exact_replace": 7,
+      "assert_file": 1,
+      "command": 20,
+      "git_patch": 2,
+      "copy": 3,
+      "inspect": 1,
+      "service": 3,
+      "job": 1
+    },
+    "code_mode_step_failures": {
+      "exact_replace": 2
+    },
+    "code_mode_retries": 4
+  },
+  "benchmark_summary": {
+    "passed": 12,
+    "total": 12,
+    "elapsed_ms": 15733.52,
+    "manual_interactive_calls_estimate": 44,
+    "code_mode_invocations": 12,
+    "mechanical_call_reduction_proxy": 0.727
+  },
+  "proposals": [
+    {
+      "rank": 1,
+      "title": "Reusable workflow synthesis + skill compiler",
+      "kind": "orchestration/skills",
+      "evidence": "Gen2 benchmark reduced the mechanical-call proxy from 44 to 12 (0.727 reduction), but still required 12 separate Code Mode runs; observed Code Mode runs=18, steps=38.",
+      "expected_benefit": "Turn successful audited workflows into parameterized reusable skills so ChatGPT authors less JSON and repeated engineering procedures become one compact invocation.",
+      "complexity": "medium"
+    },
+    {
+      "rank": 2,
+      "title": "Guest-local browser automation",
+      "kind": "guest browser/service + skill",
+      "evidence": "Public-repo investigation passed, but Gen2 still has no rendered browser/DOM workflow; web work is limited to HTTP/git/CLI.",
+      "expected_benefit": "Enable rendered-site research and web testing entirely inside the isolated VM without widening host authority.",
+      "complexity": "medium"
+    },
+    {
+      "rank": 3,
+      "title": "Richer transactional edit engine",
+      "kind": "Code Mode editing",
+      "evidence": "Gen2 exact replacement and git patch operations passed, including deterministic mismatch rollback, but arbitrary source transforms still fall back to command/copy composition.",
+      "expected_benefit": "Add AST-aware edits, multi-file transactions, preview/accept semantics, and stronger rollback without adding narrow MCP tools.",
+      "complexity": "medium"
+    },
+    {
+      "rank": 4,
+      "title": "Parallel candidate experiment harness",
+      "kind": "benchmark/orchestration",
+      "evidence": "The slowest Gen2 tasks were containment, bad-candidate recovery, restart verification, and candidate validation; current workflows execute sequentially.",
+      "expected_benefit": "Run independent candidate/build/research experiments concurrently while preserving per-run audit and containment gates.",
+      "complexity": "medium"
+    },
+    {
+      "rank": 5,
+      "title": "Failure recipe library + adaptive bounded retry",
+      "kind": "orchestration recovery",
+      "evidence": "Gen2 recorded visible exact-replace failures and four bounded retries, while the only outer shell failure was the expected service-restart interruption.",
+      "expected_benefit": "Promote recurring, well-understood transient failures into named bounded recovery recipes while keeping retries visible and finite.",
+      "complexity": "low-medium"
+    }
+  ]
+}

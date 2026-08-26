@@ -1,0 +1,46 @@
+{
+  "description": "Apply one checked Git patch across files and verify the resulting diff is whitespace-clean.",
+  "name": "multi-file-patch",
+  "parameters": {
+    "cwd": {
+      "absolute": true,
+      "required": true,
+      "type": "path"
+    },
+    "patch": {
+      "required": true,
+      "type": "str"
+    }
+  },
+  "version": "1",
+  "workflow": {
+    "cwd": {
+      "$param": "cwd"
+    },
+    "name": "multi-file-patch",
+    "steps": [
+      {
+        "cwd": {
+          "$param": "cwd"
+        },
+        "id": "patch",
+        "op": "git_patch",
+        "patch": {
+          "$param": "patch"
+        }
+      },
+      {
+        "argv": [
+          "git",
+          "diff",
+          "--check"
+        ],
+        "cwd": {
+          "$param": "cwd"
+        },
+        "id": "verify",
+        "op": "command"
+      }
+    ]
+  }
+}

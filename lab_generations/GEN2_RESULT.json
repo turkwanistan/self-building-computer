@@ -1,0 +1,73 @@
+{
+  "timestamp": "2026-08-26T04:42:01.275818+00:00",
+  "status": "ACCEPTED",
+  "milestone": "LAB_NATIVE_CODE_MODE",
+  "generation": "gen2-code-mode-r1",
+  "build_id": "gen2-code-mode-r1-154492ee9972",
+  "source_sha256": "154492ee997227a4bc61b733d4e1724bc7689ead22ebc0173fce51e97a5814b5",
+  "code_mode": {
+    "version": "gen2-code-mode-r1",
+    "sha256": "2e0ea4e97541dcc48bbda3542be1e195d8fad2971931d1b7ae48cdb33202df77",
+    "path": "/opt/optiplex-lab/code_mode.py"
+  },
+  "tool_surface_before": 10,
+  "tool_surface_after": 10,
+  "permanent_tools_added": [],
+  "legacy_benchmark": {
+    "passed": 17,
+    "total": 17,
+    "elapsed_ms": 7322.43
+  },
+  "orchestration_benchmark": {
+    "passed": 12,
+    "total": 12,
+    "elapsed_ms": 15733.52,
+    "manual_interactive_calls_estimate": 44,
+    "code_mode_invocations": 12,
+    "mechanical_call_reduction_proxy": 0.727
+  },
+  "trace_since_install": {
+    "outer_tool_calls": {
+      "lab_status": 4,
+      "shell": 6,
+      "write_file": 7,
+      "job": 5,
+      "read_file": 3
+    },
+    "outer_total": 25,
+    "shell_calls": 6,
+    "shell_share": 0.24,
+    "code_mode_runs": 19,
+    "code_mode_steps": 39
+  },
+  "self_hosting": {
+    "self_evolution_run": "cm_20260826T043702Z_6e82b806",
+    "workflow_steps": 7,
+    "restart_verified": true,
+    "bad_candidate_auto_rollback": true,
+    "last_known_good_sha256": "154492ee997227a4bc61b733d4e1724bc7689ead22ebc0173fce51e97a5814b5"
+  },
+  "containment": {
+    "public_internet": true,
+    "host_service_192_168_127_1_8790_blocked": true,
+    "representative_private_and_tailscale_probes_blocked": true,
+    "host_control_sockets": [],
+    "host_mount_markers_present": false
+  },
+  "design_decision": {
+    "chosen": "declarative JSON workflow runner",
+    "alternative": "ad-hoc generated shell/Python scripts",
+    "reason": "Gen1 raw shell composition had no uniform step audit/rollback; Gen2 runner produced structured run/step traces, bounded retries, diff artifacts, rollback, jobs/services, and compact results while keeping the MCP surface at 10."
+  },
+  "connector_refresh_required": false,
+  "recursive_probe_rule": "Never run /opt/optiplex-lab/mcp_probe.py synchronously through Optiplex_Lab.shell; prefer connector schema or detached/out-of-band probing.",
+  "generation3_top": {
+    "title": "Reusable workflow synthesis + skill compiler",
+    "kind": "orchestration/skills",
+    "evidence": "Gen2 benchmark reduced the mechanical-call proxy from 44 to 12 (0.727 reduction), but still required 12 separate Code Mode runs; observed Code Mode runs=18, steps=38.",
+    "expected_benefit": "Turn successful audited workflows into parameterized reusable skills so ChatGPT authors less JSON and repeated engineering procedures become one compact invocation.",
+    "complexity": "medium",
+    "rank": 1
+  },
+  "guest_artifact": "/var/lib/optiplex-lab/results/generation2-result.json"
+}

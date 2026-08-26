@@ -1,0 +1,130 @@
+{
+  "generation": "gen4-workflow-graphs-r1",
+  "status": "ACCEPTED",
+  "accepted_at": "2026-08-26T10:03:31.933507+00:00",
+  "scope": "Optiplex_Lab + isolated mcp-lab VM",
+  "session_start_gate": {
+    "required_tool_count": 10,
+    "confirmed_exact_gen3_surface_before_lab_shell": true,
+    "lab_status_called_before_lab_shell": true,
+    "starting_generation": "gen3-workflow-skills-r1",
+    "starting_build_id": "gen3-workflow-skills-r1-c52574577095",
+    "starting_server_sha256": "c52574577095157eb824d2958fd4beeaceff46fe5d1d27e38ecd58940e15e7cf"
+  },
+  "accepted_identity": {
+    "generation": "gen4-workflow-graphs-r1",
+    "build_id": "gen4-workflow-graphs-r1-4558bdb23e52",
+    "server_sha256": "4558bdb23e52572c6a13978a6ed10f9dc6fef26d1ae27abd0bd560c9fd1d63ac",
+    "workflow_graphs_version": "gen4-workflow-graphs-r1",
+    "workflow_graphs_sha256": "178896ec0c9bc2115baaee9f7da88d73709fdfaacb93f577661e447d6d831e12",
+    "code_mode_version": "gen3-code-mode-r1",
+    "code_mode_sha256": "d6c1b55e4152a66dc9732ed333853f22bea1442c163be5e3082c36a860fa1264",
+    "reusable_workflows_version": "gen3-workflow-skills-r1",
+    "reusable_workflows_sha256": "895bcc0a76fb82959a79bd445b11354bd4be22db88443521ccb280cc47cfbea4",
+    "mcp_tool_surface_before": 10,
+    "mcp_tool_surface_after": 10,
+    "new_permanent_mcp_tools": 0,
+    "recovery_state": "ACCEPTED",
+    "last_known_good_sha256": "4558bdb23e52572c6a13978a6ed10f9dc6fef26d1ae27abd0bd560c9fd1d63ac"
+  },
+  "frozen_safe_mcp": {
+    "modified": false,
+    "release": "frontend-a5c1c5be8b22",
+    "guardrail": "guardrail-gen0-c51a9161a95d",
+    "tool_count": 51,
+    "schema_sha256": "195c410b85d40f4cfe65ef7eb8baa0463a32e93882fd9d39c0045e6518cd2913",
+    "policy": "authority-v1"
+  },
+  "design": {
+    "chosen": "guest-local explicit workflow DAG / lifecycle transaction runner",
+    "alternative": "nested declarative workflow call node inside reusable workflow compiler",
+    "why": "A nested in-process caller is sufficient for ordinary composition but has no durable independent checkpoint state across the MCP restart caused by self_update. The separate graph runner persists state outside the MCP process, observes restart/ready checkpoints, then continues verification and explicit acceptance without adding MCP tools."
+  },
+  "capabilities": [
+    "immutable parent graph name@version + SHA256 identity",
+    "immutable child reusable workflow name@version/hash binding",
+    "typed parent-to-child parameter mapping and preflight",
+    "dependency DAG with cycle detection",
+    "max depth/node/invocation/retry/timeout bounds",
+    "child failure propagation and explicit recovery branches",
+    "persistent run state and fail-closed resume",
+    "restart checkpoint with PID/port transition evidence",
+    "compact parent results with hashed oversized parameters",
+    "child Code Mode provenance/artifacts/diffs/retries/rollback retained",
+    "discoverable reusable lifecycle transaction graphs"
+  ],
+  "graphs": {
+    "lab-upgrade-transaction@1": "e516a1db5e06ca97de814851c3d3cdc5f891f08b156aad208effc7adf6a69bee",
+    "lab-recovery-transaction@1": "1c1c43529d507a0c972205aef347c9134d4d153a15af04cbfc1bf24d253f9ac7"
+  },
+  "self_hosting": {
+    "finalization_run": "wg_20260826T100041Z_ebde386c",
+    "result": "PASS",
+    "normal_sequence": [
+      "lab-self-evolve@1",
+      "lab-candidate-verify@2",
+      "lab-accept-current@2",
+      "lab-post-update-verify@2"
+    ],
+    "top_level_parent_invocations": 1,
+    "restart_confirmed": true,
+    "candidate_verification_before_acceptance": true,
+    "final_recovery_state": "ACCEPTED"
+  },
+  "benchmark": {
+    "artifact": "/var/lib/optiplex-lab/benchmarks/gen4-workflow-graph-benchmark.json",
+    "artifact_sha256": "943058ab2af320ebf0dee280f5559cdc893c9ef1b2148b9f0a0d5d79ea329d40",
+    "passed": 18,
+    "total": 18,
+    "elapsed_ms": 17662.29,
+    "normal_lifecycle_top_level_invocations_gen3": 4,
+    "normal_lifecycle_top_level_invocations_gen4": 1,
+    "normal_lifecycle_invocation_reduction": 0.75,
+    "bad_recovery_top_level_invocations_gen3": 3,
+    "bad_recovery_top_level_invocations_gen4": 1,
+    "bad_recovery_invocation_reduction": 0.667,
+    "combined_lifecycle_top_level_invocations_gen3": 7,
+    "combined_lifecycle_top_level_invocations_gen4": 2,
+    "combined_lifecycle_invocation_reduction": 0.714,
+    "normal_lifecycle_authoring_bytes_gen3_proxy": 4591,
+    "normal_lifecycle_authoring_bytes_gen4_proxy": 4449,
+    "normal_lifecycle_authoring_byte_reduction": 0.031,
+    "bad_recovery_authoring_bytes_gen3_proxy": 153,
+    "bad_recovery_authoring_bytes_gen4_proxy": 50,
+    "bad_recovery_authoring_byte_reduction": 0.673,
+    "new_procedural_steps_authored_for_composite_reuse": 0,
+    "local_graph_raw_shell_step_share": 0.087,
+    "parent_cli_output_bytes_proxy": 1232,
+    "restart_resume_success": true,
+    "recovery_success": true
+  },
+  "regressions": {
+    "lab_selftest": "12/12 PASS",
+    "code_mode_selftest": "5/5 PASS",
+    "workflow_skills_selftest": "4/4 PASS",
+    "workflow_graphs_selftest": "8/8 PASS",
+    "legacy_benchmark": "17/17 PASS",
+    "gen2_orchestration_benchmark": "12/12 PASS",
+    "gen3_workflow_benchmark": "16/16 PASS",
+    "canonical_repo_tests": "13 passed",
+    "canonical_secret_scan": "PASS"
+  },
+  "containment": {
+    "result": "PASS",
+    "public_internet": true,
+    "private_rfc1918_tailscale_targets_blocked": true,
+    "host_control_sockets_present": false,
+    "host_mounts_present": false,
+    "host_credentials_found": false
+  },
+  "gen5": {
+    "proposals_artifact": "lab_generations/GEN5_PROPOSALS.json",
+    "guest_artifact_sha256": "b23190deed1b823e18a0b303091d0654cf369fde2010622ed38f069ddffd92f2",
+    "top_recommendation": "Structured transactional / AST editing"
+  },
+  "connector_refresh_required": false,
+  "new_chat_required": false,
+  "reason_no_refresh": "Permanent Optiplex_Lab MCP schema remained exactly 10 tools.",
+  "recursive_mcp_rule": "Never run /opt/optiplex-lab/mcp_probe.py synchronously through Optiplex_Lab.shell.",
+  "commit_or_push_performed_at_result_write": false
+}

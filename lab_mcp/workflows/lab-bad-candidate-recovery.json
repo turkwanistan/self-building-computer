@@ -1,0 +1,68 @@
+{
+  "description": "Inject the standard fast-crash fixture into the live Lab server, restart it, and verify launcher restoration from LKG.",
+  "name": "lab-bad-candidate-recovery",
+  "parameters": {
+    "live": {
+      "absolute": true,
+      "default": "/opt/optiplex-lab/server.py",
+      "type": "path"
+    },
+    "lkg": {
+      "absolute": true,
+      "default": "/var/lib/optiplex-lab/recovery/server.last-known-good.py",
+      "type": "path"
+    }
+  },
+  "version": "1",
+  "workflow": {
+    "name": "lab-bad-candidate-recovery",
+    "rollback_on_failure": false,
+    "steps": [
+      {
+        "id": "corrupt",
+        "new": "from mcp.server.fastmcp import FastMCP\nraise RuntimeError(\"GEN3_RECOVERY_FIXTURE\")\n",
+        "old": "from mcp.server.fastmcp import FastMCP\n",
+        "op": "exact_replace",
+        "path": {
+          "$param": "live"
+        }
+      },
+      {
+        "action": "restart",
+        "id": "restart",
+        "name": "optiplex-lab-mcp.service",
+        "op": "service"
+      },
+      {
+        "argv": [
+          "cmp",
+          "-s",
+          {
+            "$param": "live"
+          },
+          {
+            "$param": "lkg"
+          }
+        ],
+        "id": "lkg",
+        "op": "command",
+        "retries": 5,
+        "retry_delay_s": 1
+      },
+      {
+        "command": "python3 - <<'PY2'\nimport socket\ns=socket.create_connection(('127.0.0.1',8890),1);s.close()\nPY2",
+        "id": "ready",
+        "op": "command",
+        "retries": 5,
+        "retry_delay_s": 0.5
+      },
+      {
+        "argv": [
+          "/opt/optiplex-lab/selftest.py"
+        ],
+        "id": "selftest",
+        "op": "command"
+      }
+    ]
+  }
+}

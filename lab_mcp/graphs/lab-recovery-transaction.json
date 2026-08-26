@@ -1,0 +1,40 @@
+{
+  "name": "lab-recovery-transaction",
+  "version": "1",
+  "description": "Deliberate bad-candidate injection followed by automatic LKG recovery, explicit re-acceptance, and post-recovery verification.",
+  "parameters": {
+    "live": {"type": "path", "default": "/opt/optiplex-lab/server.py", "absolute": true},
+    "lkg": {"type": "path", "default": "/var/lib/optiplex-lab/recovery/server.last-known-good.py", "absolute": true}
+  },
+  "limits": {
+    "max_nodes": 6,
+    "max_invocations": 6,
+    "max_depth": 1,
+    "child_timeout_s": 240
+  },
+  "nodes": [
+    {
+      "id": "bad-candidate-recovery",
+      "workflow": "lab-bad-candidate-recovery@1",
+      "depends_on": [],
+      "restart_boundary": true,
+      "restart_timeout_s": 40,
+      "params": {
+        "live": {"$param": "live"},
+        "lkg": {"$param": "lkg"}
+      }
+    },
+    {
+      "id": "reaccept-lkg",
+      "workflow": "lab-accept-current@2",
+      "depends_on": ["bad-candidate-recovery"],
+      "params": {}
+    },
+    {
+      "id": "post-recovery-verify",
+      "workflow": "lab-post-update-verify@2",
+      "depends_on": ["reaccept-lkg"],
+      "params": {}
+    }
+  ]
+}

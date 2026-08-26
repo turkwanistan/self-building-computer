@@ -1,0 +1,28 @@
+{
+  "description": "Promote a verified installed Lab candidate to the last-known-good recovery baseline and mark the build accepted.",
+  "name": "lab-accept-current",
+  "parameters": {},
+  "version": "2",
+  "workflow": {
+    "name": "lab-accept-current",
+    "rollback_on_failure": true,
+    "steps": [
+      {
+        "command": "python3 - <<'PY2'\nimport hashlib,json,pathlib\nb=json.loads(pathlib.Path('/etc/optiplex-lab/build.json').read_text()); s=pathlib.Path('/opt/optiplex-lab/server.py'); h=hashlib.sha256(s.read_bytes()).hexdigest(); assert b.get('recovery_state') in {'CANDIDATE_INSTALLED','AUTO_ROLLED_BACK'}; assert b.get('source_sha256')==h; print(h)\nPY2",
+        "id": "precondition",
+        "op": "command"
+      },
+      {
+        "dst": "/var/lib/optiplex-lab/recovery/server.last-known-good.py",
+        "id": "promote-lkg",
+        "op": "copy",
+        "src": "/opt/optiplex-lab/server.py"
+      },
+      {
+        "command": "python3 - <<'PY2'\nimport datetime,hashlib,json,pathlib\np=pathlib.Path('/etc/optiplex-lab/build.json'); b=json.loads(p.read_text()); h=hashlib.sha256(pathlib.Path('/opt/optiplex-lab/server.py').read_bytes()).hexdigest(); b.update({'recovery_state':'ACCEPTED','accepted_at':datetime.datetime.now(datetime.timezone.utc).isoformat(),'last_known_good_sha256':h}); t=p.with_suffix('.tmp'); t.write_text(json.dumps(b,indent=2)+'\\n'); t.replace(p); print('ACCEPTED',h)\nPY2",
+        "id": "mark-accepted",
+        "op": "command"
+      }
+    ]
+  }
+}

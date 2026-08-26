@@ -1,0 +1,30 @@
+{
+  "description": "Generate bounded test output while retaining the full Code Mode artifact and returning only a compact preview.",
+  "name": "large-output",
+  "parameters": {
+    "bytes": {
+      "default": 300000,
+      "max": 2000000,
+      "min": 1,
+      "type": "int"
+    }
+  },
+  "version": "1",
+  "workflow": {
+    "name": "large-output",
+    "steps": [
+      {
+        "argv": [
+          "python3",
+          "-c",
+          "import sys; print('z'*int(sys.argv[1]))",
+          {
+            "$param": "bytes"
+          }
+        ],
+        "id": "large",
+        "op": "command"
+      }
+    ]
+  }
+}

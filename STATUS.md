@@ -1,67 +1,57 @@
 # Status
 
-Lifecycle phase: `LIFECYCLE_ACCEPTED_GEN1_LAB_ACCEPTED_SELF_HOSTED_LAB`
+Lifecycle phase: `LIFECYCLE_ACCEPTED_GEN4_WORKFLOW_GRAPHS`
 
-Generation 1 evolved **Optiplex_Lab + the isolated `mcp-lab` VM**. `Optiplex_MCP` remained frozen and unchanged.
+Generation 4 evolved **Optiplex_Lab + the isolated `mcp-lab` VM**. `Optiplex_MCP` and the legacy `optiplex-mcp-agent` remained frozen.
 
-## Frozen safe control plane
+## Accepted Gen-4 Lab
+- generation: `gen4-workflow-graphs-r1`
+- build: `gen4-workflow-graphs-r1-4558bdb23e52`
+- server SHA256: `4558bdb23e52572c6a13978a6ed10f9dc6fef26d1ae27abd0bd560c9fd1d63ac`
+- workflow graph runner: `gen4-workflow-graphs-r1`
+- graph runner SHA256: `178896ec0c9bc2115baaee9f7da88d73709fdfaacb93f577661e447d6d831e12`
+- Code Mode SHA256: `d6c1b55e4152a66dc9732ed333853f22bea1442c163be5e3082c36a860fa1264`
+- reusable workflow SHA256: `895bcc0a76fb82959a79bd445b11354bd4be22db88443521ccb280cc47cfbea4`
+- recovery: `ACCEPTED`
+- live SHA == LKG SHA == `4558bdb23e52572c6a13978a6ed10f9dc6fef26d1ae27abd0bd560c9fd1d63ac`
+- MCP surface: unchanged at exactly 10 tools
+- connector refresh/new chat required: **NO**
 
-Final live verification still matches the accepted anchor:
+## What Gen 4 added
+Guest-local `/opt/optiplex-lab/workflow_graphs.py` composes immutable reusable `name@version` workflows into bounded DAG/transaction definitions. It validates parent and child parameters before execution, records child hashes/provenance, detects cycles, bounds depth/nodes/invocations/retries/timeouts, persists run state, supports explicit recovery branches, and verifies restart checkpoints before continuing. Underlying Code Mode traces/artifacts remain authoritative.
 
-- release: `frontend-a5c1c5be8b22`;
-- guardrail: `guardrail-gen0-c51a9161a95d`;
-- exactly 51 tools;
-- schema SHA256: `195c410b85d40f4cfe65ef7eb8baa0463a32e93882fd9d39c0045e6518cd2913`;
-- policy: `authority-v1`.
+Accepted composites:
+- `lab-upgrade-transaction@1` `e516a1db5e06ca97de814851c3d3cdc5f891f08b156aad208effc7adf6a69bee`
+- `lab-recovery-transaction@1` `1c1c43529d507a0c972205aef347c9134d4d153a15af04cbfc1bf24d253f9ac7`
 
-Do not modify the safe MCP, legacy `optiplex-mcp-agent`, guardrail, blue/green lifecycle, or host authority as part of Lab evolution.
+## Gen-4 evidence
+- Gen-4 benchmark: **18/18 PASS**, 17662.29 ms
+- normal lifecycle top-level calls: **4 -> 1 (75% reduction)**
+- bad recovery calls: **3 -> 1 (66.7% reduction)**
+- combined lifecycle calls: **7 -> 2 (71.4% reduction)**
+- normal edit-heavy authoring proxy: **4591 -> 4449 bytes (3.1%)**
+- bad recovery authoring proxy: **153 -> 50 bytes (67.3%)**
+- newly authored procedural steps for composite reuse: **0**
+- benchmark-local raw-shell step share: **8.7%**
+- restart/resume: PASS
+- deliberate bad-candidate LKG recovery + explicit reacceptance: PASS
 
-Abandoned safe-MCP Generation 1 work was observed earlier in the session and was not continued or modified. The final working-tree status no longer lists those `mcp_frontend`/benchmark/test remnants; the Lab generation described here is the authoritative Generation 1 implementation.
+Finalization used one `lab-upgrade-transaction@1` parent run `wg_20260826T100041Z_ebde386c` to restore canonical Gen-4 metadata after the Gen-3 compatibility benchmark's intentional no-op self-update relabeled the build. Candidate verification remained distinct from acceptance.
 
-## Generation 1 accepted Lab
+## Regressions / containment
+- Lab self-test: **12/12**
+- Code Mode: **5/5**
+- reusable workflows: **4/4**
+- workflow graphs: **8/8**
+- legacy benchmark: **17/17**
+- Gen-2 benchmark: **12/12**
+- Gen-3 benchmark: **16/16**
+- repository tests: **13 passed**
+- secret scan: **PASS**
+- public internet: available; host/private/RFC1918/Tailscale targets remain blocked; host control sockets/mounts/credentials absent.
 
-Milestone: **`SELF_HOSTED_LAB` reached.**
+## Generation 5
+Top evidence-backed proposal: **Structured transactional / AST editing**. Composition removed residual sequencing, but real source evolution still carries large exact `old/new` code strings; normal lifecycle authoring bytes fell only 3.1%. See `lab_generations/GEN5_PROPOSALS.json`.
 
-Accepted guest build:
-
-- generation: `gen1-self-hosted-lab-r2`;
-- build ID: `gen1-self-hosted-lab-r2-f3bb6eb79d33`;
-- source SHA256: `f3bb6eb79d3370e7bf1d1ea15525b8e4ab496767454e6c1f5f05a9b3bd480b16`;
-- live tool surface: 10 tools — `shell`, `read_file`, `read_range`, `write_file`, `list_files`, `job`, `service`, `lab_status`, `self_restart`, `reboot`.
-
-Capabilities added inside the VM:
-
-- sanitized, bounded JSONL tracing with command/content hashes rather than bodies;
-- explicit episode outcomes via `lab-outcome`;
-- automatic large-output spooling with previews, SHA256 metadata, retention bounds, and sensitive-pattern suppression;
-- `read_range` for large artifacts;
-- durable jobs implemented as independent transient systemd units so they survive MCP restarts;
-- `lab_status` build/source/trace/spool/skills identity;
-- `self_restart` that schedules restart after the requesting call returns;
-- candidate validation + guest-local self-update utility;
-- recovery launcher + last-known-good automatic rollback;
-- 17-task benchmark, self-test, failure miner, and four reusable Lab skills;
-- guest utilities: `jq`, `ripgrep`, `sqlite3`, `lsof`, `strace`, `tree`.
-
-## Evidence
-
-- self-test: **12/12 PASS**;
-- benchmark before: **17/17 PASS**, 20066.44 ms, target feature coverage **0/5**;
-- benchmark after: **17/17 PASS**, 7368.28 ms, target feature coverage **5/5**;
-- durable job across MCP restart: **PASS** (`DURABLE_JOB_R2_OK`);
-- intentional syntax-corruption recovery: **PASS** — launcher observed a 0.012 s failed child, restored the accepted SHA, and the recovered MCP returned to 12/12 self-test;
-- containment: **PASS** — public HTTPS works; `192.168.127.1:8790`, representative RFC1918/Tailscale probes remain blocked; no host Docker/libvirt/Tailscale sockets, host mount markers, or private-key material detected.
-
-The timing improvement is not treated as intrinsic performance evidence because package/cache warm-up explains much of it. Correctness, containment, feature coverage, restart durability, and recovery are the acceptance signal.
-
-Guest evidence: `/var/lib/optiplex-lab/results/generation1-result.json`. Repository mirror: `lab_generations/GEN1_RESULT.json`.
-
-## Connector refresh boundary
-
-The already-open ChatGPT session retained the original seven-tool connector schema even after the live MCP evolved. A guest-local MCP client verified the live 10-tool surface. A **fresh ChatGPT session / connector refresh is required** to expose `read_range`, `lab_status`, and `self_restart` directly in ChatGPT.
-
-## Generation 2 — proposed, not started
-
-The failure miner ranked **Lab-native Code Mode / orchestration runner** first because 16/36 traced Gen1 tool calls were still raw `shell`; self-hosting works, but multi-step inspect/edit/test/restart sequences remain manually composed. See `lab_generations/GEN2_PROPOSALS.json`.
-
-Do not implement Generation 2 automatically.
+## Recursive MCP rule
+Never run `/opt/optiplex-lab/mcp_probe.py` synchronously through `Optiplex_Lab.shell`; use connector schema discovery or detached/out-of-band probing.

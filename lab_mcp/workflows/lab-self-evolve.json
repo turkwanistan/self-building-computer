@@ -1,0 +1,111 @@
+{
+  "description": "Create, edit, validate, and install an Optiplex_Lab server candidate through the accepted self-update/LKG path.",
+  "name": "lab-self-evolve",
+  "parameters": {
+    "candidate": {
+      "absolute": true,
+      "required": true,
+      "type": "path"
+    },
+    "generation": {
+      "pattern": "[A-Za-z0-9._-]+",
+      "required": true,
+      "type": "str"
+    },
+    "new": {
+      "required": true,
+      "type": "str"
+    },
+    "old": {
+      "required": true,
+      "type": "str"
+    },
+    "port": {
+      "default": 8891,
+      "max": 65535,
+      "min": 1024,
+      "type": "int"
+    },
+    "source": {
+      "absolute": true,
+      "default": "/opt/optiplex-lab/server.py",
+      "type": "path"
+    }
+  },
+  "version": "1",
+  "workflow": {
+    "name": "lab-self-evolve",
+    "rollback_on_failure": true,
+    "steps": [
+      {
+        "dst": {
+          "$param": "candidate"
+        },
+        "id": "copy",
+        "op": "copy",
+        "src": {
+          "$param": "source"
+        }
+      },
+      {
+        "id": "edit",
+        "new": {
+          "$param": "new"
+        },
+        "old": {
+          "$param": "old"
+        },
+        "op": "exact_replace",
+        "path": {
+          "$param": "candidate"
+        }
+      },
+      {
+        "argv": [
+          "/opt/optiplex-lab/venv/bin/python",
+          "-m",
+          "py_compile",
+          {
+            "$param": "candidate"
+          }
+        ],
+        "id": "compile",
+        "op": "command"
+      },
+      {
+        "argv": [
+          "/usr/bin/timeout",
+          "2",
+          "/usr/bin/env",
+          "LAB_MCP_HOST=127.0.0.1",
+          {
+            "$concat": [
+              "LAB_MCP_PORT=",
+              {
+                "$param": "port"
+              }
+            ]
+          },
+          "/opt/optiplex-lab/venv/bin/python",
+          {
+            "$param": "candidate"
+          }
+        ],
+        "expect_exit": 124,
+        "id": "startup",
+        "op": "command",
+        "timeout": 5
+      },
+      {
+        "candidate": {
+          "$param": "candidate"
+        },
+        "generation": {
+          "$param": "generation"
+        },
+        "id": "self-update",
+        "op": "self_update"
+      }
+    ]
+  }
+}

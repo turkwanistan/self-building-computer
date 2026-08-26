@@ -1,0 +1,141 @@
+{
+  "generation": "gen3-workflow-skills-r1",
+  "status": "ACCEPTED",
+  "accepted_at": "2026-08-26T05:19:10.392150+00:00",
+  "scope": "Optiplex_Lab + isolated mcp-lab VM",
+  "session_start_gate": {
+    "exact_expected_tools": [
+      "shell",
+      "read_file",
+      "read_range",
+      "write_file",
+      "list_files",
+      "job",
+      "service",
+      "lab_status",
+      "self_restart",
+      "reboot"
+    ],
+    "tool_count": 10,
+    "confirmed_before_lab_shell": true,
+    "lab_status_called_before_lab_shell": true,
+    "starting_generation": "gen2-code-mode-r1",
+    "starting_build_id": "gen2-code-mode-r1-154492ee9972",
+    "starting_server_sha256": "154492ee997227a4bc61b733d4e1724bc7689ead22ebc0173fce51e97a5814b5",
+    "starting_code_mode_sha256": "2e0ea4e97541dcc48bbda3542be1e195d8fad2971931d1b7ae48cdb33202df77"
+  },
+  "accepted_identity": {
+    "generation": "gen3-workflow-skills-r1",
+    "build_id": "gen3-workflow-skills-r1-c52574577095",
+    "server_sha256": "c52574577095157eb824d2958fd4beeaceff46fe5d1d27e38ecd58940e15e7cf",
+    "code_mode_version": "gen3-code-mode-r1",
+    "code_mode_sha256": "d6c1b55e4152a66dc9732ed333853f22bea1442c163be5e3082c36a860fa1264",
+    "workflow_system_version": "gen3-workflow-skills-r1",
+    "workflow_system_sha256": "895bcc0a76fb82959a79bd445b11354bd4be22db88443521ccb280cc47cfbea4",
+    "mcp_tool_surface_before": 10,
+    "mcp_tool_surface_after": 10,
+    "new_permanent_mcp_tools": 0,
+    "recovery_state": "ACCEPTED",
+    "last_known_good_sha256": "c52574577095157eb824d2958fd4beeaceff46fe5d1d27e38ecd58940e15e7cf",
+    "live_registered_workflow_versions": 14,
+    "canonical_workflow_definitions": 12
+  },
+  "frozen_safe_mcp": {
+    "modified": false,
+    "release": "frontend-a5c1c5be8b22",
+    "guardrail": "guardrail-gen0-c51a9161a95d",
+    "tool_count": 51,
+    "schema_sha256": "195c410b85d40f4cfe65ef7eb8baa0463a32e93882fd9d39c0045e6518cd2913",
+    "policy": "authority-v1"
+  },
+  "design": {
+    "chosen": "declarative reusable workflow registry/compiler over Code Mode",
+    "alternative": "generated procedural wrapper/script per workflow",
+    "why": "The declarative compiler reuses Code Mode's typed execution, traces, artifacts, retries, diffs, rollback and self-update semantics instead of duplicating them in generated scripts. Structured parameter nodes and literal argv also make parameter handling safer and more auditable.",
+    "new_mcp_primitive_required": false
+  },
+  "capabilities": [
+    "immutable name@version workflow definitions with SHA256 identity",
+    "typed required/default/min/max/pattern/absolute-path parameters",
+    "structured $param/$path_join/$concat compilation",
+    "literal argv execution for parameterized commands/jobs",
+    "pre-execution missing/unknown/invalid parameter rejection",
+    "workflow discovery/show/register/compile/run",
+    "promotion of successful Code Mode runs into parameterized reusable workflows with provenance",
+    "workflow-level traces plus retained concrete Code Mode workflow and step trace",
+    "explicit reusable Lab candidate verification/acceptance/post-verification lifecycle",
+    "reusable bad-candidate rollback verification"
+  ],
+  "self_hosting": {
+    "workflow": "lab-self-evolve@1",
+    "workflow_sha256": "9513a265b2b9e06664cbe134ba5eb745d31688418b009c771fc97b0428b0ae50",
+    "code_run": "cm_20260826T050951Z_5b36f51e",
+    "durable_job": "job_ab7e9cf52335",
+    "steps": 5,
+    "result": "PASS",
+    "restart_survived": true,
+    "effect": "The new reusable mechanism modified the Lab server so lab_status advertises Gen-3 Code Mode and reusable-workflow identity without changing the MCP schema."
+  },
+  "implementation_findings": [
+    {
+      "finding": "Self-update correctly preserves the previous LKG while a new build is only CANDIDATE_INSTALLED.",
+      "response": "Added distinct lab-candidate-verify, lab-accept-current and lab-post-update-verify workflows instead of weakening LKG verification."
+    },
+    {
+      "finding": "Reusable workflow CLI initially exited 0 even when the underlying Code Mode run failed.",
+      "response": "Patched workflow_skills.py using the reusable exact-replace workflow; failed workflow runs now exit 1."
+    }
+  ],
+  "benchmark": {
+    "durable_job": "job_8704c80c1138",
+    "passed": 16,
+    "total": 16,
+    "elapsed_ms": 24767.96,
+    "gen2_manual_interactive_calls_estimate": 44,
+    "gen2_code_mode_invocations": 12,
+    "gen2_mechanical_call_reduction_proxy": 0.727,
+    "gen2_authored_workflow_bytes_proxy": 5611,
+    "gen3_reusable_workflow_invocations": 18,
+    "gen3_invocation_authoring_bytes_proxy": 1829,
+    "authoring_byte_reduction_proxy": 0.674,
+    "new_procedural_steps_authored_for_reuse": 0,
+    "underlying_code_mode_steps": 57,
+    "raw_shell_command_steps": 10,
+    "raw_shell_step_share": 0.175,
+    "retries": 2,
+    "bad_candidate_recovery": "PASS",
+    "containment": "PASS",
+    "durable_job_survived_mcp_restarts": true
+  },
+  "final_regression": {
+    "durable_job": "job_381c4db094b5",
+    "lab_selftest": "12/12 PASS",
+    "code_mode_selftest": "5/5 PASS",
+    "workflow_skills_selftest": "4/4 PASS",
+    "legacy_benchmark": "17/17 PASS",
+    "gen2_orchestration_benchmark": "12/12 PASS",
+    "final_reaccept_run": "cm_20260826T051910Z_57d752f6",
+    "final_post_verify_run": "cm_20260826T051910Z_18847dd6"
+  },
+  "containment": {
+    "result": "PASS",
+    "public_internet": true,
+    "blocked_targets": [
+      "192.168.127.1:8790",
+      "representative RFC1918 targets",
+      "Tailscale-range targets"
+    ],
+    "host_control_sockets_present": false,
+    "host_mounts_present": false,
+    "host_credentials_found": false
+  },
+  "gen4_top_recommendation": {
+    "title": "Composable workflow graphs + lifecycle transactions",
+    "evidence": "Generation 3 reduced authored workflow bytes by 67.4%, but 8 of the 18 benchmark reusable invocations were lifecycle/recovery invocations. Normal self-update still sequences four named workflows and bad recovery three."
+  },
+  "connector_refresh_required": false,
+  "new_chat_required": false,
+  "reason_no_refresh": "The permanent Optiplex_Lab MCP tool schema remained exactly the accepted 10-tool surface.",
+  "recursive_mcp_rule": "Never run /opt/optiplex-lab/mcp_probe.py synchronously through Optiplex_Lab.shell; use connector schema discovery or detached/out-of-band probing.",
+  "commit_or_push_performed": false
+}

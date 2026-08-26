@@ -1,0 +1,84 @@
+{
+  "generated_at": "2026-08-26T05:18:06.314117+00:00",
+  "generation": "gen4-proposals-from-gen3-evidence",
+  "implemented": false,
+  "question": "What still requires excessive ChatGPT reasoning/tool orchestration after reusable workflows exist?",
+  "benchmark_summary": {
+    "passed": 16,
+    "total": 16,
+    "elapsed_ms": 24767.96,
+    "gen2_manual_interactive_calls_estimate": 44,
+    "gen2_code_mode_invocations": 12,
+    "reusable_workflow_invocations": 18,
+    "gen2_authored_workflow_bytes_proxy": 5611,
+    "gen3_invocation_authoring_bytes_proxy": 1829,
+    "authoring_byte_reduction_proxy": 0.674,
+    "new_procedural_steps_authored_for_reuse": 0,
+    "underlying_code_mode_steps": 57,
+    "raw_shell_command_steps": 10,
+    "raw_shell_step_share": 0.175,
+    "retries": 2
+  },
+  "trace_summary": {
+    "since": "2026-08-26T05:08:56.126873+00:00",
+    "workflow_invocations_seen": 35,
+    "code_mode_steps_seen": 154,
+    "ops": {
+      "exact_replace": 34,
+      "command": 85,
+      "copy": 6,
+      "self_update": 2,
+      "assert_file": 15,
+      "git_patch": 8,
+      "service": 2,
+      "job": 1,
+      "inspect": 1
+    },
+    "step_failures": {
+      "exact_replace": 7,
+      "command": 1
+    }
+  },
+  "proposals": [
+    {
+      "rank": 1,
+      "title": "Composable workflow graphs + lifecycle transactions",
+      "kind": "orchestration/composition",
+      "evidence": "Gen3 cut authored workflow bytes by 0.674 but the benchmark still needed 18 reusable invocations; 8 were lifecycle/recovery invocations, with self-update requiring four named workflows and bad recovery three.",
+      "expected_benefit": "Let one auditable reusable workflow call other versioned workflows with explicit dependencies/acceptance gates, reducing residual ChatGPT sequencing without hiding underlying Code Mode traces.",
+      "complexity": "medium"
+    },
+    {
+      "rank": 2,
+      "title": "Richer transactional/AST editing",
+      "kind": "editing",
+      "evidence": "The largest compact invocations still carried procedure-specific edit material: multi-file-patch=245B, lab-self-evolve=231B, compile-test=170B, public-repo-investigation=154B; observed Code Mode ops={'exact_replace': 34, 'command': 85, 'copy': 6, 'self_update': 2, 'assert_file': 15, 'git_patch': 8, 'service': 2, 'job': 1, 'inspect': 1}.",
+      "expected_benefit": "Reduce the reasoning needed to manufacture exact old/new strings or patches while preserving preview, deterministic checks, rollback, and provenance.",
+      "complexity": "medium"
+    },
+    {
+      "rank": 3,
+      "title": "Guest-local browser automation skill",
+      "kind": "browser/research",
+      "evidence": "The public-repo reusable workflow passed, but it still uses Git/HTTP/CLI only; Gen3 added no rendered DOM/browser primitive inside the isolated guest.",
+      "expected_benefit": "Make dynamic-site investigation and browser-based testing reusable without widening host authority.",
+      "complexity": "medium"
+    },
+    {
+      "rank": 4,
+      "title": "Adaptive bounded recovery policies",
+      "kind": "recovery",
+      "evidence": "Gen3 benchmark used 2 bounded retries; trace step failures by op={'exact_replace': 7, 'command': 1}. During implementation, candidate-vs-LKG acceptance semantics and a reusable-workflow CLI exit-code bug required explicit diagnosis before the clean benchmark.",
+      "expected_benefit": "Encode known transient/recovery state machines as inspectable policies so repeated failure diagnosis becomes local and bounded rather than ChatGPT-authored.",
+      "complexity": "low-medium"
+    },
+    {
+      "rank": 5,
+      "title": "Parallel independent workflow experiments",
+      "kind": "performance/orchestration",
+      "evidence": "The two slowest benchmark tasks consumed 17514.79 ms of 24767.96 ms (0.707): reusable_lab_self_update_restart_verification=10662.42ms, bad_candidate_recovery_through_reusable_workflow=6852.37ms.",
+      "expected_benefit": "Run independent research/build/candidate checks concurrently while retaining per-workflow audit, resource bounds, and containment.",
+      "complexity": "medium"
+    }
+  ]
+}

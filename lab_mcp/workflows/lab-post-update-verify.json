@@ -1,0 +1,47 @@
+{
+  "description": "Verify accepted Lab self-tests, Code Mode, reusable workflows, Gen-4 workflow graphs, LKG equality, and containment after an MCP update.",
+  "name": "lab-post-update-verify",
+  "parameters": {},
+  "version": "2",
+  "workflow": {
+    "name": "lab-post-update-verify",
+    "steps": [
+      {
+        "argv": ["/opt/optiplex-lab/selftest.py"],
+        "id": "selftest",
+        "op": "command"
+      },
+      {
+        "argv": ["/opt/optiplex-lab/code_mode.py", "--selftest"],
+        "id": "code-mode",
+        "op": "command"
+      },
+      {
+        "argv": ["/opt/optiplex-lab/workflow_skills.py", "--selftest"],
+        "id": "workflow-skills",
+        "op": "command"
+      },
+      {
+        "argv": ["/opt/optiplex-lab/workflow_graphs.py", "--selftest"],
+        "id": "workflow-graphs",
+        "op": "command"
+      },
+      {
+        "argv": ["cmp", "-s", "/opt/optiplex-lab/server.py", "/var/lib/optiplex-lab/recovery/server.last-known-good.py"],
+        "id": "lkg",
+        "op": "command"
+      },
+      {
+        "command": "python3 - <<'PY2'\nimport hashlib,json,pathlib\nb=json.loads(pathlib.Path('/etc/optiplex-lab/build.json').read_text()); h=hashlib.sha256(pathlib.Path('/opt/optiplex-lab/server.py').read_bytes()).hexdigest(); assert b.get('recovery_state')=='ACCEPTED'; assert b.get('source_sha256')==h; assert b.get('last_known_good_sha256')==h; print('ACCEPTED_BUILD_OK',h)\nPY2",
+        "id": "accepted-build",
+        "op": "command"
+      },
+      {
+        "command": "python3 - <<'PY2'\nimport pathlib,socket,sys\nfor h,p in [('192.168.127.1',8790),('10.0.0.1',22),('172.16.0.1',22),('100.64.0.1',22)]:\n s=socket.socket();s.settimeout(0.6)\n try:\n  s.connect((h,p));sys.exit(7)\n except OSError: pass\n finally:s.close()\nfor p in ['/var/run/docker.sock','/run/docker.sock','/var/run/libvirt/libvirt-sock','/run/libvirt/libvirt-sock','/var/run/tailscale/tailscaled.sock']:\n if pathlib.Path(p).exists():sys.exit(8)\nprint('CONTAINMENT_OK')\nPY2\ncurl -fsS --max-time 8 https://example.com >/dev/null",
+        "id": "containment",
+        "op": "command",
+        "timeout": 20
+      }
+    ]
+  }
+}

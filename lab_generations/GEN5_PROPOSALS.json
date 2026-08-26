@@ -1,0 +1,98 @@
+{
+  "generated_at": "2026-08-26T10:03:31.933507+00:00",
+  "generation": "gen5-proposals-from-gen4-evidence",
+  "implemented": false,
+  "question": "What still requires excessive ChatGPT reasoning/tool orchestration after reusable workflows can compose?",
+  "benchmark_summary": {
+    "artifact": "/var/lib/optiplex-lab/benchmarks/gen4-workflow-graph-benchmark.json",
+    "artifact_sha256": "943058ab2af320ebf0dee280f5559cdc893c9ef1b2148b9f0a0d5d79ea329d40",
+    "passed": 18,
+    "total": 18,
+    "elapsed_ms": 17662.29,
+    "normal_lifecycle_top_level_invocations_gen3": 4,
+    "normal_lifecycle_top_level_invocations_gen4": 1,
+    "normal_lifecycle_invocation_reduction": 0.75,
+    "bad_recovery_top_level_invocations_gen3": 3,
+    "bad_recovery_top_level_invocations_gen4": 1,
+    "bad_recovery_invocation_reduction": 0.667,
+    "combined_lifecycle_top_level_invocations_gen3": 7,
+    "combined_lifecycle_top_level_invocations_gen4": 2,
+    "combined_lifecycle_invocation_reduction": 0.714,
+    "normal_lifecycle_authoring_bytes_gen3_proxy": 4591,
+    "normal_lifecycle_authoring_bytes_gen4_proxy": 4449,
+    "normal_lifecycle_authoring_byte_reduction": 0.031,
+    "bad_recovery_authoring_bytes_gen3_proxy": 153,
+    "bad_recovery_authoring_bytes_gen4_proxy": 50,
+    "bad_recovery_authoring_byte_reduction": 0.673,
+    "new_procedural_steps_authored_for_composite_reuse": 0,
+    "local_graph_raw_shell_step_share": 0.087,
+    "parent_cli_output_bytes_proxy": 1232,
+    "restart_resume_success": true,
+    "recovery_success": true
+  },
+  "top_recommendation": "Structured transactional / AST editing",
+  "guest_artifact_sha256": "b23190deed1b823e18a0b303091d0654cf369fde2010622ed38f069ddffd92f2",
+  "trace_summary": {
+    "workflow_graph_completions_seen": 86,
+    "workflow_graph_node_completions_seen": 166,
+    "reusable_workflow_completions_seen": 241,
+    "code_mode_steps_seen": 1014,
+    "ops": {
+      "exact_replace": 297,
+      "assert_file": 164,
+      "command": 432,
+      "git_patch": 42,
+      "inspect": 10,
+      "copy": 30,
+      "self_update": 8,
+      "service": 22,
+      "job": 9
+    },
+    "step_failures": {
+      "exact_replace": 66,
+      "command": 1
+    }
+  },
+  "proposals": [
+    {
+      "rank": 1,
+      "title": "Structured transactional / AST editing",
+      "kind": "editing/context",
+      "evidence": "Gen4 reduced normal lifecycle top-level sequencing from 4 to 1 calls (75%), but the real edit-heavy authoring proxy only fell from 4591B to 4449B (3.1%). The remaining payload was dominated by exact old/new source text rather than orchestration.",
+      "expected_benefit": "Replace large exact-string edit payloads with audited symbol/AST/structured transformations, deterministic preconditions, previews, rollback, and provenance.",
+      "complexity": "medium"
+    },
+    {
+      "rank": 2,
+      "title": "Automatic composite/skill synthesis from successful traces",
+      "kind": "synthesis/reuse",
+      "evidence": "Registered graphs can now be reused with zero newly authored procedural steps and combined lifecycle calls fell 7 to 2, but accepted composites are still designed and registered manually.",
+      "expected_benefit": "Mine repeated successful workflow sequences and propose bounded immutable composites requiring explicit acceptance.",
+      "complexity": "medium"
+    },
+    {
+      "rank": 3,
+      "title": "Adaptive bounded recovery policies",
+      "kind": "recovery",
+      "evidence": "Recovery succeeds with bounded retries, but graph recovery branches remain static and hand-authored.",
+      "expected_benefit": "Select among a declared bounded set of inspect/retry/rollback actions using explicit budgets and state predicates.",
+      "complexity": "low-medium"
+    },
+    {
+      "rank": 4,
+      "title": "Static analysis + property fuzzing for workflows and graphs",
+      "kind": "verification",
+      "evidence": "Gen4 enlarged the graph/schema surface beyond example-based tests despite typed mappings, cycles, bounds and restart checkpoints.",
+      "expected_benefit": "Generate bounded malformed definitions, mappings, restart fixtures and interruption states to prove fail-closed behavior.",
+      "complexity": "medium"
+    },
+    {
+      "rank": 5,
+      "title": "Parallel execution of independent DAG nodes",
+      "kind": "performance/orchestration",
+      "evidence": "The accepted DAG runner executes independent topological nodes sequentially; concurrency was intentionally deferred because wall-clock was not Gen4's objective.",
+      "expected_benefit": "Run dependency-independent resource-compatible children concurrently with explicit fan-out and deterministic join/failure semantics.",
+      "complexity": "medium"
+    }
+  ]
+}

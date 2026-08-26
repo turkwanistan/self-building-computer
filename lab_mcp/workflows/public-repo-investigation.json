@@ -1,0 +1,68 @@
+{
+  "description": "Clone a public Git repository shallowly and record its HEAD plus README presence using literal argv parameters.",
+  "name": "public-repo-investigation",
+  "parameters": {
+    "destination": {
+      "absolute": true,
+      "required": true,
+      "type": "path"
+    },
+    "url": {
+      "pattern": "https://[^\\s]+",
+      "required": true,
+      "type": "str"
+    }
+  },
+  "version": "1",
+  "workflow": {
+    "name": "public-repo-investigation",
+    "steps": [
+      {
+        "argv": [
+          "git",
+          "clone",
+          "--depth",
+          "1",
+          "-q",
+          {
+            "$param": "url"
+          },
+          {
+            "$param": "destination"
+          }
+        ],
+        "id": "clone",
+        "op": "command",
+        "retries": 1,
+        "retry_delay_s": 1,
+        "timeout": 90
+      },
+      {
+        "argv": [
+          "git",
+          "-C",
+          {
+            "$param": "destination"
+          },
+          "rev-parse",
+          "HEAD"
+        ],
+        "id": "head",
+        "op": "command"
+      },
+      {
+        "id": "readme",
+        "op": "inspect",
+        "path": {
+          "$path_join": [
+            {
+              "$param": "destination"
+            },
+            "README"
+          ]
+        },
+        "preview_bytes": 400
+      }
+    ]
+  }
+}

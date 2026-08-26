@@ -1,0 +1,74 @@
+{
+  "description": "Validate an Optiplex_Lab Python server candidate with compile and isolated startup smoke checks.",
+  "name": "candidate-validation",
+  "parameters": {
+    "candidate": {
+      "absolute": true,
+      "required": true,
+      "type": "path"
+    },
+    "port": {
+      "default": 8891,
+      "max": 65535,
+      "min": 1024,
+      "type": "int"
+    },
+    "source": {
+      "absolute": true,
+      "default": "/opt/optiplex-lab/server.py",
+      "type": "path"
+    }
+  },
+  "version": "1",
+  "workflow": {
+    "name": "candidate-validation",
+    "steps": [
+      {
+        "dst": {
+          "$param": "candidate"
+        },
+        "id": "copy",
+        "op": "copy",
+        "src": {
+          "$param": "source"
+        }
+      },
+      {
+        "argv": [
+          "/opt/optiplex-lab/venv/bin/python",
+          "-m",
+          "py_compile",
+          {
+            "$param": "candidate"
+          }
+        ],
+        "id": "compile",
+        "op": "command"
+      },
+      {
+        "argv": [
+          "/usr/bin/timeout",
+          "2",
+          "/usr/bin/env",
+          "LAB_MCP_HOST=127.0.0.1",
+          {
+            "$concat": [
+              "LAB_MCP_PORT=",
+              {
+                "$param": "port"
+              }
+            ]
+          },
+          "/opt/optiplex-lab/venv/bin/python",
+          {
+            "$param": "candidate"
+          }
+        ],
+        "expect_exit": 124,
+        "id": "startup",
+        "op": "command",
+        "timeout": 5
+      }
+    ]
+  }
+}
