@@ -1,0 +1,171 @@
+{
+  "accepted_guest_identity": {
+    "build_id": "gen6-experience-memory-r1-dc0d2cb41595",
+    "experience_loop_sha256": "854d7e95fd412777137a330384ef236b25efdb794f9c98aac59ad2ce62e8c60c",
+    "forge_sha256": "309e25ec374956125459b6cf26815f916534d7a4520dfc6ddce8bb62e8755f26",
+    "forge_version": "gen6-capability-forge-r2",
+    "generation": "gen6-experience-memory-r1",
+    "last_known_good_sha256": "dc0d2cb41595a9a3d953873879ccc3e0bd88db2b4dcdee4cf8aa43dd4cb103e9",
+    "memory_sha256": "c0cd4076393bbd214590f7644bab9c7c7c3df548863d2bb64ffb2209ae6e6a39",
+    "memory_version": "gen6-procedural-memory-r1",
+    "recovery_state": "ACCEPTED",
+    "regression_sha256": "e1b2a84c18ce56f1209797e0b812e89df851af524c74cf268e3535f3eb1660fe",
+    "regression_version": "gen6-failure-regression-r1",
+    "server_sha256": "dc0d2cb41595a9a3d953873879ccc3e0bd88db2b4dcdee4cf8aa43dd4cb103e9",
+    "tool_surface_after": 10,
+    "tool_surface_before": 10
+  },
+  "artifacts": {
+    "gen7_proposals": "lab_generations/GEN7_PROPOSALS.json",
+    "gen7_proposals_sha256": "498409daf5cac873457a0a120a49bef224b5c224f2b5d9139d45848d16d006b7",
+    "memory_registry": "lab_generations/GEN6_MEMORY_REGISTRY.json",
+    "memory_registry_sha256": "2788ca0ef95cea8ff8112651700a611e2ba335cbeefca18b681521a703e953be",
+    "regression_registry": "lab_generations/GEN6_REGRESSION_REGISTRY.json",
+    "regression_registry_sha256": "2c3d7b83754e1748909e3e52e43a617a134223917faa4e3baf48eba9cf555894"
+  },
+  "benchmark": {
+    "artifact": "lab_generations/GEN6_BENCHMARK.json",
+    "artifact_sha256": "497ff880f30b5210290e5fc1aa5b9d0bb6201126881f9b086730d3eb690edf27",
+    "metrics": {
+      "authoring_proxy": {
+        "avoided_bytes": 4161,
+        "definition": "Counterfactual source-authoring proxy only; actual Gen6 reuse authored zero replacement capability source for the repeated tasks.",
+        "no_memory_reauthor_selected_capability_source_bytes": 4161,
+        "with_memory_new_capability_source_bytes": 0
+      },
+      "benchmark_mutated_live_capability_registry": false,
+      "cloned_gen5_registry_for_benchmark": true,
+      "containment": {
+        "blocked": [
+          "192.168.127.1:8790",
+          "10.0.0.1:22",
+          "172.16.0.1:22",
+          "100.64.0.1:22"
+        ],
+        "host_control_sockets": [],
+        "host_repository_present": false,
+        "ok": true,
+        "unexpected_reachable": []
+      },
+      "context_packet_proxy": {
+        "definition": "Serialized payload proxy: all active Forge records an external reasoner would scan vs the selected inspectable memory retrieval packet.",
+        "no_memory_active_capability_registry_bytes": 10765,
+        "reduction": 0.834,
+        "with_memory_selected_packet_bytes": 1787
+      },
+      "correct_memory_retrieval_rate": 1.0,
+      "failure_to_regression": {
+        "accepted_known_good_false_positive_rate": 0.0,
+        "active_conversions": 1,
+        "actual_gen6_failure_regression_active": true,
+        "candidate_uncertain": 1,
+        "known_bad_detection": true,
+        "later_bad_caught": true
+      },
+      "forge_creations_avoided_due_memory": 3,
+      "memory_distillation": {
+        "active": 1,
+        "active_success": 1,
+        "candidate_rejection_or_hold": 1,
+        "registry_total": 3,
+        "retired": 1,
+        "superseded": 0
+      },
+      "memory_retrieval_latency_ms": {
+        "max": 7.768,
+        "median": 0.515,
+        "samples": 5
+      },
+      "newly_authored_procedural_steps_for_repeated_tasks": 0,
+      "permanent_mcp_tools_after": 10,
+      "permanent_mcp_tools_before": 10,
+      "retrieval_cases": 5,
+      "task_success": {
+        "passed": 13,
+        "rate": 1.0,
+        "total": 13
+      },
+      "wrong_memory_invocation_rate": 0.0
+    },
+    "passed": 13,
+    "total": 13
+  },
+  "canonical_sync": {
+    "commit_or_push_performed": false,
+    "completed": true,
+    "completed_at": "2026-08-26T13:00:18.251357+00:00"
+  },
+  "containment": {
+    "blocked": [
+      "192.168.127.1:8790",
+      "10.0.0.1:22",
+      "172.16.0.1:22",
+      "100.64.0.1:22"
+    ],
+    "host_control_sockets": [],
+    "host_repository_present": false,
+    "ok": true,
+    "unexpected_reachable": []
+  },
+  "design": {
+    "alternatives": [
+      "merge memory/regressions into Forge registry",
+      "separate content-addressed experience layer + narrow Forge regression gate"
+    ],
+    "authority_rule": "memory is index/hypothesis; immutable source/evaluator/workflow/trace artifacts remain authority",
+    "chosen": "separate experience layer + regression-gated Forge promotion"
+  },
+  "frozen_safe_mcp": {
+    "guardrail": "guardrail-gen0-c51a9161a95d",
+    "modified": false,
+    "policy": "authority-v1",
+    "release": "frontend-a5c1c5be8b22",
+    "schema_sha256": "195c410b85d40f4cfe65ef7eb8baa0463a32e93882fd9d39c0045e6518cd2913",
+    "tool_count": 51
+  },
+  "gen7": {
+    "assessment": null,
+    "top_recommendation": "Architectural Digital Twin + Causal Observability Spine"
+  },
+  "generation": "gen6-experience-memory-r1",
+  "implementation_failures": [
+    {
+      "kind": "experience-loop evaluator false positive",
+      "learned": "compiled actual bad/corrected versions into ACTIVE command regression"
+    },
+    {
+      "kind": "retrieval morphology recall miss",
+      "learned": "added inspectable morphology normalization; final retrieval 100%, wrong invocation 0%"
+    },
+    {
+      "kind": "secret scan detector-literal false positive",
+      "learned": "scan credential-shaped values/PEM starts rather than detector vocabulary"
+    }
+  ],
+  "permanent_mcp_tools": {
+    "after": 10,
+    "before": 10
+  },
+  "scope": "Optiplex_Lab + isolated mcp-lab VM",
+  "self_hosting": {
+    "actual_gen6_failure_became_active_regression": true,
+    "bad_candidate_recovery": "PASS",
+    "memory_reused_during_gen6": true,
+    "recovery_graph_run": "wg_20260826T122635Z_5b1c349a",
+    "upgrade_graph_run": "wg_20260826T122541Z_75a268d2"
+  },
+  "status": "ACCEPTED",
+  "validation": {
+    "canonical_project_tests": "PASS_13",
+    "containment": "PASS",
+    "final_lab_identity": "PASS",
+    "final_live_equals_lkg": true,
+    "frozen_safe_mcp": "PASS_UNCHANGED",
+    "git_diff_check": "PASS",
+    "guest": "PASS",
+    "json_jsonl": "PASS",
+    "python_syntax": "PASS_MUTATION_FREE",
+    "secret_scan": "PASS",
+    "validated_at": "2026-08-26T13:01:22.484014+00:00"
+  }
+}

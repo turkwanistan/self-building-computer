@@ -24,10 +24,10 @@ try:
 except Exception as exc:  # pragma: no cover
     raise SystemExit(f"jsonschema is required: {exc}")
 
-VERSION = "gen5-capability-forge-r1"
+VERSION = "gen6-capability-forge-r2"
 CONTRACT_VERSION = "capability-contract-v1"
 EVALUATOR_VERSION = "gen5-nursery-r1"
-GOVERNOR_VERSION = "gen5-promotion-governor-r1"
+GOVERNOR_VERSION = "gen6-promotion-governor-r2"
 ROOT = pathlib.Path(os.environ.get("OPTIPLEX_FORGE_ROOT", "/var/lib/optiplex-lab/capabilities"))
 OBJECTS = ROOT / "objects"
 WORKSPACES = ROOT / "workspaces"
@@ -48,6 +48,7 @@ MAX_SOURCE_BYTES = 512 * 1024
 MAX_OUTPUT_BYTES = 256 * 1024
 MAX_TIMEOUT_S = 30
 MAX_PIP_DEPS = 16
+REGRESSION_COMPILER_PATH = pathlib.Path(os.environ.get("OPTIPLEX_REGRESSION_COMPILER_PATH", "/opt/optiplex-lab/regression_compiler.py"))
 
 
 class ForgeError(RuntimeError):
@@ -589,6 +590,19 @@ def evaluate(content_hash: str) -> dict[str, Any]:
     return result
 
 
+def _regression_gate(content_hash: str, rec: dict[str, Any]) -> dict[str, Any]:
+    if not REGRESSION_COMPILER_PATH.is_file():
+        return {"ok": True, "version": None, "relevant": 0, "passed": 0, "failed": 0, "results": [], "status": "compiler_unavailable"}
+    try:
+        import importlib.util
+        spec = importlib.util.spec_from_file_location(f"gen6_regression_{uuid.uuid4().hex}", REGRESSION_COMPILER_PATH)
+        if spec is None or spec.loader is None:
+            raise RuntimeError("cannot load regression compiler")
+        module = importlib.util.module_from_spec(spec); spec.loader.exec_module(module)
+        return module.promotion_gate_for_record(rec, lambda inp: invoke_raw(content_hash, inp, mutate_registry=False))
+    except Exception as exc:
+        return {"ok": False, "version": None, "relevant": 0, "passed": 0, "failed": 1, "results": [], "status": "compiler_error", "error": f"{type(exc).__name__}: {exc}"}
+
 def govern(content_hash: str) -> dict[str, Any]:
     reg = load_registry(); rec = registry_record(reg, content_hash)
     last = rec.get("last_evaluation") or {}
@@ -604,7 +618,10 @@ def govern(content_hash: str) -> dict[str, Any]:
     except Exception:
         hard_gates["authority_contract_valid"] = False
         contract = {}
+    regression_gate = _regression_gate(content_hash, rec)
+    hard_gates["regressions_passed"] = bool(regression_gate.get("ok"))
     evidence = {
+        "regressions": regression_gate,
         "task_success": {"attempts": int(rec.get("real_task_attempts", 0)), "successes": int(rec.get("real_task_successes", 0))},
         "tests": {"evaluation_runs": int(rec.get("evaluation_runs", 0)), "evaluation_passes": int(rec.get("evaluation_passes", 0)), "cases_passed": last.get("passed_cases"), "cases_total": last.get("total_cases")},
         "recurrence_reuse": {"reuse_count": int(rec.get("reuse_count", 0)), "duplicate_reuse_count": int(rec.get("duplicate_reuse_count", 0))},

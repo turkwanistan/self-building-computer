@@ -1,0 +1,23 @@
+{
+  "memories": {
+    "dee53db47c22a5b338924a9828d95e6cc38319dbaeadf74083e752dc892f0ea5": {
+      "created_at": "2026-08-26T12:27:22.055625+00:00",
+      "failed_retrievals": 0,
+      "last_retrieved_at": "2026-08-26T12:27:23.474551+00:00",
+      "memory_hash": "dee53db47c22a5b338924a9828d95e6cc38319dbaeadf74083e752dc892f0ea5",
+      "object": "/var/lib/optiplex-lab/memory/objects/dee53db47c22a5b338924a9828d95e6cc38319dbaeadf74083e752dc892f0ea5.json",
+      "procedure": {
+        "capability_hash": "170256b4f65fc109c9fc80f55afbcdea049c733adc78f815f211056cccc70548",
+        "capability_name": "gen5-record-normalizer",
+        "evaluator_hash": "6db22ad1e27c874bc9a35d1c2964628bcae957c9b0ba6eb235aec5a93ac847f4"
+      },
+      "procedure_fingerprint": "3e7f5dc282c8326febb4da5642db9308d82edd066af87caaf286e2bca23ee9c4",
+      "retired_at": null,
+      "retrievals": 1,
+      "state": "ACTIVE",
+      "successful_retrievals": 0,
+      "superseded_by": null
+    }
+  },
+  "version": "gen6-procedural-memory-r1"
+}

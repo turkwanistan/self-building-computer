@@ -1,108 +1,22 @@
-#!/usr/bin/env python3
+#!/opt/optiplex-lab/venv/bin/python
 from __future__ import annotations
+import hashlib,json,pathlib
+from datetime import datetime,timezone
 
-import collections
-import json
-import pathlib
-from datetime import datetime, timezone
+BENCH=pathlib.Path('/var/lib/optiplex-lab/benchmarks/gen6-experience-memory-benchmark.json')
+OUT=pathlib.Path('/var/lib/optiplex-lab/benchmarks/gen7-proposals.json')
 
-TRACE = pathlib.Path('/var/lib/optiplex-lab/traces/events.jsonl')
-BENCH = pathlib.Path('/var/lib/optiplex-lab/benchmarks/gen5-capability-forge-benchmark.json')
-SEMANTIC = pathlib.Path('/var/lib/optiplex-lab/benchmarks/gen5-semantic-edit-experiment.json')
-REGISTRY = pathlib.Path('/var/lib/optiplex-lab/capabilities/registry.json')
-PROVENANCE = pathlib.Path('/var/lib/optiplex-lab/capabilities/provenance.jsonl')
-OUT = pathlib.Path('/var/lib/optiplex-lab/benchmarks/gen6-proposals.json')
+def sha(p): return hashlib.sha256(p.read_bytes()).hexdigest() if p.exists() else None
 
-
-def load_json(path: pathlib.Path):
-    return json.loads(path.read_text()) if path.exists() else {}
-
-
-def load_jsonl(path: pathlib.Path):
-    out=[]
-    if not path.exists(): return out
-    for line in path.read_text(errors='replace').splitlines():
-        try: out.append(json.loads(line))
-        except Exception: pass
-    return out
-
-
-def main() -> None:
-    bench=load_json(BENCH); metrics=bench.get('metrics',{}); semantic=load_json(SEMANTIC)
-    registry=(load_json(REGISTRY).get('capabilities') or {})
-    events=load_jsonl(TRACE); provenance=load_jsonl(PROVENANCE)
-    forge_events=[e for e in events if e.get('tool')=='capability_forge']
-    forge_counts=collections.Counter(e.get('event') for e in forge_events)
-    prov_counts=collections.Counter(e.get('event') for e in provenance)
-    states=collections.Counter(r.get('state') for r in registry.values())
-    promoted=[(h,r) for h,r in registry.items() if r.get('state')=='PROMOTED']
-    candidates=[(h,r) for h,r in registry.items() if r.get('state')=='CANDIDATE']
-    rejected=[(h,r) for h,r in registry.items() if r.get('state')=='REJECTED']
-    real_failures=sum(1 for e in provenance if e.get('event')=='real_task_evidence' and not e.get('ok'))
-    proposals=[]
-    def add(title,kind,evidence,benefit,complexity):
-        proposals.append({'rank':len(proposals)+1,'title':title,'kind':kind,'evidence':evidence,'expected_benefit':benefit,'complexity':complexity})
-
-    add(
-        'Procedural Memory Distiller',
-        'memory/retrieval',
-        f"Gen5 can now forge and govern abilities, but the benchmark still required {metrics.get('chatgpt_authored_helper_source_bytes')} ChatGPT-authored helper/contract bytes to create them. Only {len(promoted)} capabilities reached PROMOTED while {len(candidates)} useful passing capabilities remain CANDIDATE, and current gap retrieval is deliberately shallow name/tag/purpose overlap. Reuse itself averaged {metrics.get('subsequent_reuse_latency_ms')} ms, so the expensive part has moved from execution to recognizing and retrieving prior experience.",
-        'Distill successful capability/workflow/graph episodes into compact applicability memories with evidence links, then retrieve only the relevant procedures/capabilities for a new gap. Preserve immutable source-of-truth artifacts; memory is an index and hypothesis, not authority.',
-        'medium',
-    )
-    add(
-        'Failure-to-Regression Compiler',
-        'memory/verification',
-        f"Gen5 intentionally rejected {metrics.get('broken_candidates_rejected')} broken descendants, recorded {real_failures} real-task failures in Forge provenance, and exercised a failed semantic self-edit plus bad-candidate LKG recovery. Those failures produced rich hashes/results, but their durable regression cases were still hand-authored in benchmark code.",
-        'Convert a failed capability run, evaluator miss, self-edit failure, or recovery incident into a minimized immutable regression fixture tied to the responsible capability/evaluator/version. Future descendants must replay relevant regressions before promotion.',
-        'medium',
-    )
-    add(
-        'Evaluator / Mutation Distiller',
-        'verification/synthesis',
-        f"The Gen5 nursery achieved {bench.get('passed')}/{bench.get('total')} task checks and proved independent adversarial evidence can reject candidates that pass ordinary cases. But positive/negative/adversarial fixtures were authored externally for each new capability; evaluator generation remains a major reasoning step after capability source generation.",
-        'Infer candidate invariants from contract examples and observed failures, generate bounded mutations/negative cases, and prove evaluator discrimination before a capability can be promoted. Keep evaluator identity/hash separate from implementation identity.',
-        'medium',
-    )
-    add(
-        'Capability Consolidator + Supersession Memory',
-        'retention/maintenance',
-        f"Gen5 avoided {metrics.get('duplicate_capabilities_avoided')} exact duplicate and supports explicit SUPERSEDED state, but semantic overlap beyond exact content is still a simple heuristic. Registry states are {dict(states)} and every passing helper can otherwise accumulate as a distinct candidate/environment.",
-        'Cluster near-equivalent capabilities using contract/applicability/evidence fingerprints, propose merges or supersession, replay both evaluators/regressions, and retain lineage so the registry grows in quality rather than only size.',
-        'low-medium',
-    )
-    add(
-        'Experience-Based Recovery Policy Distiller',
-        'recovery/memory',
-        f"Gen5 preserved Gen4 restart/LKG recovery and the deliberate bad-candidate transaction passed, but recovery actions remain hand-declared graphs. Forge provenance now records candidate failures, dependency failures, timeouts, excessive output, and real-task failures that can identify which bounded recovery action worked in which context.",
-        'Learn applicability rules over an explicitly allowed recovery action set (inspect, retry, expire, rollback, re-evaluate) from prior incidents, while keeping budgets and fail-closed graph semantics unchanged.',
-        'medium',
-    )
-
-    out={
-        'generated_at':datetime.now(timezone.utc).isoformat(),
-        'generation':'gen6-proposals-from-gen5-evidence',
-        'implemented':False,
-        'question':'What still requires excessive ChatGPT reasoning/tool orchestration after the Lab can forge and govern new capabilities?',
-        'gen5_benchmark':{
-            'artifact':str(BENCH),
-            'passed':bench.get('passed'),'total':bench.get('total'),
-            'artifact_sha256':bench.get('artifact_sha256'),
-            'metrics':metrics,
-        },
-        'semantic_edit_evidence':{
-            'artifact':str(SEMANTIC),
-            'exact_successes':semantic.get('exact_successes'),
-            'semantic_successes':semantic.get('semantic_successes'),
-            'variants_total':semantic.get('variants_total'),
-            'authoring_proxy':semantic.get('actual_server_authoring_proxy'),
-        },
-        'registry_summary':{'states':dict(states),'total':len(registry),'promoted':len(promoted),'candidates':len(candidates),'rejected':len(rejected)},
-        'trace_summary':{'forge_events':len(forge_events),'forge_event_counts':dict(forge_counts),'provenance_events':len(provenance),'provenance_event_counts':dict(prov_counts),'real_task_failures':real_failures},
-        'top_recommendation':proposals[0]['title'],
-        'proposals':proposals,
-    }
-    OUT.parent.mkdir(parents=True,exist_ok=True); OUT.write_text(json.dumps(out,indent=2)+'\n')
-    print(json.dumps(out,indent=2))
-
+def main():
+ b=json.loads(BENCH.read_text()); m=b['metrics']; ctx=m['context_packet_proxy']; ft=m['failure_to_regression']; md=m['memory_distillation']; lat=m['memory_retrieval_latency_ms']
+ proposals=[]
+ def add(title,kind,evidence,benefit,complexity): proposals.append({'rank':len(proposals)+1,'title':title,'kind':kind,'evidence':evidence,'expected_benefit':benefit,'complexity':complexity})
+ add('Architectural Digital Twin + Causal Observability Spine','self-model/observability',f"Gen6 memory retrieval reached {m['correct_memory_retrieval_rate']:.0%} correct retrieval and {m['wrong_memory_invocation_rate']:.0%} wrong-memory invocation at median {lat['median']} ms, so procedure selection is no longer the dominant measured gap. Failure compilation produced {ft['active_conversions']} active capability regression but also {ft['candidate_uncertain']} uncertainty-retained regression; the compiler explicitly cannot claim causal minimality. A provenance-backed architecture/dependency model plus parent/child causal spans would improve impact analysis and failure attribution without replacing source authority.",'Make the Lab queryably understand component→capability→workflow→evaluator→regression→runtime dependencies and provide better causal evidence for future regression synthesis. Keep all model facts derived and hash-linked to authoritative artifacts.','medium')
+ add('Context Compiler on top of the Digital Twin','context/retrieval',f"Gen6 already reduced the measured repeated-task selection-context proxy from {ctx['no_memory_active_capability_registry_bytes']} B to {ctx['with_memory_selected_packet_bytes']} B ({ctx['reduction']:.1%}) using procedural memory alone. That is strong evidence to avoid building a context system first; once an architectural twin exists, a compiler can extend the same progressive-disclosure principle to source/invariants/history without reloading the whole repository.",'Compile bounded task-specific context packets containing mandatory containment invariants, relevant architecture, memories, regressions, and exact source pointers, with freshness/hash checks.','medium')
+ add('Evaluator / Mutation Nursery','verification',f"An intentionally weak later evaluator passed its local cases, while the automatically generated regression caught the bad descendant; accepted-known-good false-positive rate was {ft['accepted_known_good_false_positive_rate']:.0%}. This shows regression replay works, but also that evaluator breadth remains a source of candidate risk.",'Generate bounded mutants/property/adversarial cases and test evaluator discrimination before promotion, using regression lineage as seed evidence.','medium')
+ add('Capability Consolidator with semantic lineage','retention',f"Gen6 demonstrated active memory supersession/retirement and ended with {md['registry_total']} memory records ({md['active']} active, {md['retired']} retired, {md['candidate_rejection_or_hold']} held candidate). Registry growth is currently controlled, so semantic consolidation is useful but not yet the top bottleneck.",'Consolidate near-equivalent capability/memory lineages while replaying all attached evaluators/regressions and preserving immutable ancestry.','low-medium')
+ add('Counterfactual Replay','replay',f"Gen6 could replay immutable capability I/O failures and command-exit failures, but timeout conversion remained uncertainty-gated without a known-good reference. Historical replay fidelity would make more failures safely promotable as regressions.",'Reconstruct replayable historical episodes in disposable workspaces and swap one capability/evaluator version at a time with explicit replay-fidelity labels.','large')
+ out={'generated_at':datetime.now(timezone.utc).isoformat(),'generation':'gen7-proposals-from-gen6-evidence','implemented':False,'source_benchmark':str(BENCH),'source_benchmark_sha256':sha(BENCH),'headline_question':'What remains after successful and failed experience now compounds into inspectable procedural memory and regressions?','gen6_metrics':m,'top_recommendation':proposals[0]['title'],'roadmap_assessment':'The existing Gen7 direction remains broadly correct, but Gen6 evidence changes the ordering: build the provenance-backed Architectural Digital Twin together with richer causal observability first; layer the Context Compiler on top because procedural memory already delivered substantial context reduction for repeated tasks.','proposals':proposals}
+ OUT.parent.mkdir(parents=True,exist_ok=True); OUT.write_text(json.dumps(out,indent=2,sort_keys=True)+'\n'); print(json.dumps(out,indent=2,sort_keys=True))
 if __name__=='__main__': main()

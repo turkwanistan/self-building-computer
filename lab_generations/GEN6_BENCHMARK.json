@@ -1,0 +1,699 @@
+{
+  "artifacts": {
+    "actual_failure_regression": "/root/gen6/evidence/actual-failure-regression.json",
+    "benchmark_state": "/root/gen6/bench-state"
+  },
+  "benchmark": "gen6-experience-memory-benchmark",
+  "checks": [
+    {
+      "detail": {
+        "distill": {
+          "failure_count": 1,
+          "memory_hash": "f31417619843fe3f825332e6f71d231d585294eec9274af6e4896551d0dbe524",
+          "object": "/root/gen6/bench-state/memory/objects/f31417619843fe3f825332e6f71d231d585294eec9274af6e4896551d0dbe524.json",
+          "ok": true,
+          "state": "ACTIVE",
+          "success_count": 3,
+          "superseded": [],
+          "validation": {
+            "checks": [
+              {
+                "applicability": {
+                  "eligible": true,
+                  "intent_overlap": 1.0,
+                  "mismatches": [],
+                  "normalized_task": {
+                    "environment": {
+                      "input_schema_hash": "4850ec958e00127f5cfb8ed31095cca566b41f7c0b2008ab9c605d3c73d2a654",
+                      "runtime": "mcp-lab"
+                    },
+                    "input_keys": [
+                      "record"
+                    ],
+                    "intent": "Normalize object keys and trim string values with a typed JSON contract.",
+                    "intent_tokens": [
+                      "contract",
+                      "key",
+                      "normalize",
+                      "object",
+                      "str",
+                      "trim",
+                      "value"
+                    ],
+                    "parameter_names": [],
+                    "tags": [
+                      "json",
+                      "normalization",
+                      "transform"
+                    ],
+                    "task_kind": "capability:gen5-record-normalizer"
+                  },
+                  "reasons": [
+                    "intent_overlap=1.000",
+                    "tag_overlap=1.000",
+                    "task_kind_match"
+                  ],
+                  "score": 1.0,
+                  "tag_overlap": 1.0
+                },
+                "episode_id": "ep_48c3712ce7e8319978d8",
+                "expected": true
+              }
+            ],
+            "decision": "ACTIVE",
+            "heldout_count": 1,
+            "heldout_passed": true,
+            "heldout_required": true
+          }
+        },
+        "import": {
+          "content_hash": "170256b4f65fc109c9fc80f55afbcdea049c733adc78f815f211056cccc70548",
+          "episodes": [
+            "ep_e04b42a399e5f6bafbe4",
+            "ep_5353a7c901f9e59e9090",
+            "ep_1d3e6f77b3b85e90d52e",
+            "ep_48c3712ce7e8319978d8"
+          ],
+          "imported": 4,
+          "skipped_existing": 0
+        }
+      },
+      "name": "actual_gen5_experience_distills_active",
+      "ok": true
+    },
+    {
+      "detail": [
+        {
+          "episode_id": "ep_6a9cd99f660c424dbaa3",
+          "execute_ok": true,
+          "plan": {
+            "action": "MEMORY_REUSE",
+            "capability_hash": "170256b4f65fc109c9fc80f55afbcdea049c733adc78f815f211056cccc70548",
+            "forge_gap_opened": false,
+            "memory": {
+              "authoritative_refs": {
+                "capability_hash": "170256b4f65fc109c9fc80f55afbcdea049c733adc78f815f211056cccc70548",
+                "evaluator_hash": "6db22ad1e27c874bc9a35d1c2964628bcae957c9b0ba6eb235aec5a93ac847f4"
+              },
+              "memory_hash": "f31417619843fe3f825332e6f71d231d585294eec9274af6e4896551d0dbe524",
+              "mismatches": [],
+              "object": "/root/gen6/bench-state/memory/objects/f31417619843fe3f825332e6f71d231d585294eec9274af6e4896551d0dbe524.json",
+              "procedure": {
+                "capability_hash": "170256b4f65fc109c9fc80f55afbcdea049c733adc78f815f211056cccc70548",
+                "capability_name": "gen5-record-normalizer",
+                "evaluator_hash": "6db22ad1e27c874bc9a35d1c2964628bcae957c9b0ba6eb235aec5a93ac847f4"
+              },
+              "reasons": [
+                "intent_overlap=0.857",
+                "tag_overlap=1.000",
+                "task_kind_match"
+              ],
+              "score": 0.9,
+              "semantic_intent": "Normalize object keys and trim string values with a typed JSON contract.",
+              "source_episode_count": 4,
+              "state": "ACTIVE"
+            },
+            "reason": "applicable active memory points to an available authoritative capability",
+            "regressions": []
+          }
+        },
+        {
+          "episode_id": "ep_d3baa581c185874387d2",
+          "execute_ok": true,
+          "plan": {
+            "action": "MEMORY_REUSE",
+            "capability_hash": "170256b4f65fc109c9fc80f55afbcdea049c733adc78f815f211056cccc70548",
+            "forge_gap_opened": false,
+            "memory": {
+              "authoritative_refs": {
+                "capability_hash": "170256b4f65fc109c9fc80f55afbcdea049c733adc78f815f211056cccc70548",
+                "evaluator_hash": "6db22ad1e27c874bc9a35d1c2964628bcae957c9b0ba6eb235aec5a93ac847f4"
+              },
+              "memory_hash": "f31417619843fe3f825332e6f71d231d585294eec9274af6e4896551d0dbe524",
+              "mismatches": [],
+              "object": "/root/gen6/bench-state/memory/objects/f31417619843fe3f825332e6f71d231d585294eec9274af6e4896551d0dbe524.json",
+              "procedure": {
+                "capability_hash": "170256b4f65fc109c9fc80f55afbcdea049c733adc78f815f211056cccc70548",
+                "capability_name": "gen5-record-normalizer",
+                "evaluator_hash": "6db22ad1e27c874bc9a35d1c2964628bcae957c9b0ba6eb235aec5a93ac847f4"
+              },
+              "reasons": [
+                "intent_overlap=0.444",
+                "tag_overlap=1.000",
+                "task_kind_match"
+              ],
+              "score": 0.6111,
+              "semantic_intent": "Normalize object keys and trim string values with a typed JSON contract.",
+              "source_episode_count": 4,
+              "state": "ACTIVE"
+            },
+            "reason": "applicable active memory points to an available authoritative capability",
+            "regressions": []
+          }
+        },
+        {
+          "episode_id": "ep_142f90d3cff5313b8fac",
+          "execute_ok": true,
+          "plan": {
+            "action": "MEMORY_REUSE",
+            "capability_hash": "170256b4f65fc109c9fc80f55afbcdea049c733adc78f815f211056cccc70548",
+            "forge_gap_opened": false,
+            "memory": {
+              "authoritative_refs": {
+                "capability_hash": "170256b4f65fc109c9fc80f55afbcdea049c733adc78f815f211056cccc70548",
+                "evaluator_hash": "6db22ad1e27c874bc9a35d1c2964628bcae957c9b0ba6eb235aec5a93ac847f4"
+              },
+              "memory_hash": "f31417619843fe3f825332e6f71d231d585294eec9274af6e4896551d0dbe524",
+              "mismatches": [],
+              "object": "/root/gen6/bench-state/memory/objects/f31417619843fe3f825332e6f71d231d585294eec9274af6e4896551d0dbe524.json",
+              "procedure": {
+                "capability_hash": "170256b4f65fc109c9fc80f55afbcdea049c733adc78f815f211056cccc70548",
+                "capability_name": "gen5-record-normalizer",
+                "evaluator_hash": "6db22ad1e27c874bc9a35d1c2964628bcae957c9b0ba6eb235aec5a93ac847f4"
+              },
+              "reasons": [
+                "intent_overlap=0.556",
+                "tag_overlap=1.000",
+                "task_kind_match"
+              ],
+              "score": 0.6889,
+              "semantic_intent": "Normalize object keys and trim string values with a typed JSON contract.",
+              "source_episode_count": 4,
+              "state": "ACTIVE"
+            },
+            "reason": "applicable active memory points to an available authoritative capability",
+            "regressions": []
+          }
+        }
+      ],
+      "name": "repeated_tasks_reuse_memory",
+      "ok": true
+    },
+    {
+      "detail": {
+        "action": "NO_MEMORY",
+        "latency_ms": 0.227,
+        "matches": [],
+        "retrieval_version": "gen6-procedural-memory-r1",
+        "selected": null
+      },
+      "name": "superficial_incompatible_memory_rejected",
+      "ok": true
+    },
+    {
+      "detail": {
+        "action": "NO_MEMORY",
+        "latency_ms": 0.219,
+        "matches": [],
+        "retrieval_version": "gen6-procedural-memory-r1",
+        "selected": null
+      },
+      "name": "precondition_input_mismatch_rejected",
+      "ok": true
+    },
+    {
+      "detail": {
+        "failure_count": 1,
+        "memory_hash": "110b239b3548084e6dd390eb596a029085baa0f0c4e49ab24bdad3f7691313ea",
+        "object": "/root/gen6/bench-state/memory/objects/110b239b3548084e6dd390eb596a029085baa0f0c4e49ab24bdad3f7691313ea.json",
+        "ok": true,
+        "state": "ACTIVE",
+        "success_count": 6,
+        "superseded": [
+          "f31417619843fe3f825332e6f71d231d585294eec9274af6e4896551d0dbe524"
+        ],
+        "validation": {
+          "checks": [
+            {
+              "applicability": {
+                "eligible": true,
+                "intent_overlap": 0.5556,
+                "mismatches": [],
+                "normalized_task": {
+                  "environment": {
+                    "input_schema_hash": "4850ec958e00127f5cfb8ed31095cca566b41f7c0b2008ab9c605d3c73d2a654",
+                    "runtime": "mcp-lab"
+                  },
+                  "input_keys": [
+                    "record"
+                  ],
+                  "intent": "normalize record object keys; trim textual values",
+                  "intent_tokens": [
+                    "key",
+                    "normalize",
+                    "object",
+                    "record",
+                    "textual",
+                    "trim",
+                    "value"
+                  ],
+                  "parameter_names": [],
+                  "tags": [
+                    "json",
+                    "normalization",
+                    "transform"
+                  ],
+                  "task_kind": "capability:gen5-record-normalizer"
+                },
+                "reasons": [
+                  "intent_overlap=0.556",
+                  "tag_overlap=1.000",
+                  "task_kind_match"
+                ],
+                "score": 0.6889,
+                "tag_overlap": 1.0
+              },
+              "episode_id": "ep_142f90d3cff5313b8fac",
+              "expected": true
+            }
+          ],
+          "decision": "ACTIVE",
+          "heldout_count": 1,
+          "heldout_passed": true,
+          "heldout_required": true
+        }
+      },
+      "name": "memory_consolidation_supersession",
+      "ok": true
+    },
+    {
+      "detail": {
+        "memory_hash": "f31417619843fe3f825332e6f71d231d585294eec9274af6e4896551d0dbe524",
+        "object_retained": true,
+        "previous_state": "SUPERSEDED",
+        "provenance_retained": true,
+        "state": "RETIRED"
+      },
+      "name": "safe_memory_retirement",
+      "ok": true
+    },
+    {
+      "detail": {
+        "failure_count": 0,
+        "memory_hash": "77b7fd29b026a9aff2f5ece35b10dc6c091f4fff77e95fbfbe55f9e1a197f19e",
+        "object": "/root/gen6/bench-state/memory/objects/77b7fd29b026a9aff2f5ece35b10dc6c091f4fff77e95fbfbe55f9e1a197f19e.json",
+        "ok": true,
+        "state": "CANDIDATE",
+        "success_count": 2,
+        "superseded": [],
+        "validation": {
+          "checks": [],
+          "decision": "CANDIDATE",
+          "heldout_count": 0,
+          "heldout_passed": false,
+          "heldout_required": true
+        }
+      },
+      "name": "brittle_memory_not_activated",
+      "ok": true
+    },
+    {
+      "detail": {
+        "action": "MEMORY_REUSE",
+        "episode_id": "ep_3544ae16f4a86dabf171"
+      },
+      "name": "gen6_memory_self_hosted",
+      "ok": true
+    },
+    {
+      "detail": {
+        "content_hash": "491f02c22528527f7a14f57d25860dbf45055fd3f24eb967e037f528b58f3e80",
+        "decision": "PROMOTE",
+        "evidence": {
+          "dependency_cost": {
+            "pip_dependencies": 0
+          },
+          "generality": {
+            "applicability_tags": 3
+          },
+          "maintenance": {
+            "source_bytes": 941,
+            "source_files": 2
+          },
+          "overlap": {
+            "same_name_active": 0
+          },
+          "recurrence_reuse": {
+            "duplicate_reuse_count": 0,
+            "reuse_count": 1
+          },
+          "regressions": {
+            "failed": 0,
+            "ok": true,
+            "passed": 0,
+            "relevant": 0,
+            "results": [],
+            "version": "gen6-failure-regression-r1"
+          },
+          "side_effects": {
+            "count": 0,
+            "declared": []
+          },
+          "task_success": {
+            "attempts": 2,
+            "successes": 2
+          },
+          "tests": {
+            "cases_passed": 2,
+            "cases_total": 2,
+            "evaluation_passes": 1,
+            "evaluation_runs": 1
+          }
+        },
+        "governor_version": "gen6-promotion-governor-r2",
+        "hard_gates": {
+          "authority_contract_valid": true,
+          "evaluation_passed": true,
+          "evaluator_identity_matches": true,
+          "not_rejected_or_expired": true,
+          "object_available": true,
+          "regressions_passed": true
+        },
+        "state": "PROMOTED"
+      },
+      "name": "known_good_descendant_promoted",
+      "ok": true
+    },
+    {
+      "detail": {
+        "compiled": {
+          "fixture": {
+            "failure_evidence": {
+              "capability_state": "REJECTED",
+              "evaluation_result": "/var/lib/optiplex-lab/capability-runs/eval_20260826T110445Z_f0a8e054/result.json",
+              "evaluator_hash": "023d8a03bc26d326b86788cd050ac5bfe8b2e9f1f4499aae5919d97635e7b93a",
+              "source_hashes": {
+                "capability.json": "fc2ba1141fe8594a06fefa9aedd678ba1a9774fd8005949adef0d987afbc99d7",
+                "main.py": "fce742d72b7e51039e61ffbce3f895d27eb916f6a7cc1056c611427ee73137c3"
+              }
+            },
+            "fixture_type": "capability_io",
+            "input": {
+              "x": 2
+            },
+            "known_bad_hash": "d5d489b7655209bc218aeeb67ab7538b4a8b881673153446488229b50da93c56",
+            "known_good_hash": "491f02c22528527f7a14f57d25860dbf45055fd3f24eb967e037f528b58f3e80",
+            "minimization": {
+              "accepted": 0,
+              "attempted": 1,
+              "method": "greedy-structure-reduction",
+              "uncertainty": "Best-effort structural minimization only; causal minimality is not claimed."
+            },
+            "oracle": {
+              "expected": {
+                "y": 4
+              }
+            },
+            "selector": {
+              "name": "gen5-bad-output"
+            },
+            "source_case": "p",
+            "verification": {
+              "compiled_at": "2026-08-26T12:28:09.132931+00:00",
+              "known_bad_detected": true,
+              "known_good_passed": true
+            }
+          },
+          "known_bad_detected": true,
+          "known_good_passed": true,
+          "minimization": {
+            "accepted": 0,
+            "attempted": 1,
+            "method": "greedy-structure-reduction",
+            "uncertainty": "Best-effort structural minimization only; causal minimality is not claimed."
+          },
+          "ok": true,
+          "regression_hash": "f63ee9e9e04f5227b84ade5ce9be7e440f5e0e299ee8619da16d3db7aa247dba",
+          "state": "ACTIVE"
+        },
+        "good_gate": {
+          "failed": 0,
+          "ok": true,
+          "passed": 1,
+          "relevant": 1,
+          "results": [
+            {
+              "duration_ms": 24.496,
+              "observed_ok": true,
+              "ok": true,
+              "phase": "complete",
+              "regression_hash": "f63ee9e9e04f5227b84ade5ce9be7e440f5e0e299ee8619da16d3db7aa247dba",
+              "run_id": "cap_20260826T122809Z_3fea724b",
+              "supported": true
+            }
+          ],
+          "version": "gen6-failure-regression-r1"
+        }
+      },
+      "name": "historical_failure_compiled_to_active_regression",
+      "ok": true
+    },
+    {
+      "detail": {
+        "governor": {
+          "content_hash": "d6bfbf05248e04a24f54fe6b52f4d954950877bc44af29d4e44e73a1be6d2d58",
+          "decision": "REJECT",
+          "evidence": {
+            "dependency_cost": {
+              "pip_dependencies": 0
+            },
+            "generality": {
+              "applicability_tags": 3
+            },
+            "maintenance": {
+              "source_bytes": 946,
+              "source_files": 2
+            },
+            "overlap": {
+              "same_name_active": 1
+            },
+            "recurrence_reuse": {
+              "duplicate_reuse_count": 0,
+              "reuse_count": 1
+            },
+            "regressions": {
+              "failed": 1,
+              "ok": false,
+              "passed": 0,
+              "relevant": 1,
+              "results": [
+                {
+                  "duration_ms": 26.053,
+                  "observed_ok": true,
+                  "ok": false,
+                  "phase": "complete",
+                  "regression_hash": "f63ee9e9e04f5227b84ade5ce9be7e440f5e0e299ee8619da16d3db7aa247dba",
+                  "run_id": "cap_20260826T122811Z_8d99e1af",
+                  "supported": true
+                }
+              ],
+              "version": "gen6-failure-regression-r1"
+            },
+            "side_effects": {
+              "count": 0,
+              "declared": []
+            },
+            "task_success": {
+              "attempts": 2,
+              "successes": 2
+            },
+            "tests": {
+              "cases_passed": 2,
+              "cases_total": 2,
+              "evaluation_passes": 1,
+              "evaluation_runs": 1
+            }
+          },
+          "governor_version": "gen6-promotion-governor-r2",
+          "hard_gates": {
+            "authority_contract_valid": true,
+            "evaluation_passed": true,
+            "evaluator_identity_matches": true,
+            "not_rejected_or_expired": true,
+            "object_available": true,
+            "regressions_passed": false
+          },
+          "state": "REJECTED"
+        },
+        "hash": "d6bfbf05248e04a24f54fe6b52f4d954950877bc44af29d4e44e73a1be6d2d58"
+      },
+      "name": "automatic_regression_catches_later_bad_descendant",
+      "ok": true
+    },
+    {
+      "detail": {
+        "fixture": {
+          "failure_evidence": {
+            "capability_state": "REJECTED",
+            "evaluation_result": "/var/lib/optiplex-lab/capability-runs/eval_20260826T110454Z_a007e498/result.json",
+            "evaluator_hash": "0afc804570e13b9fc7a03377543eeb09bc1cb81ce35301f33db1cc2a9c910780",
+            "source_hashes": {
+              "capability.json": "76a6182f5ec9cba30be6e31ed9cecc89a79d0e4ef084dc8d3ba4e3b93fadfc11",
+              "main.py": "2fbc05aa28944c8e97087d3f404db745f718f5a52d5003e1be461ab2d4ca96f3"
+            }
+          },
+          "fixture_type": "capability_io",
+          "input": {},
+          "known_bad_hash": "7a615a3f98a7a3be8babdf6376f38be2025543618af8dfff638ce2f028c8c708",
+          "known_good_hash": null,
+          "minimization": {
+            "accepted": 0,
+            "attempted": 0,
+            "method": "greedy-structure-reduction",
+            "uncertainty": "Best-effort structural minimization only; causal minimality is not claimed."
+          },
+          "oracle": {
+            "expected": {}
+          },
+          "selector": {
+            "name": "gen5-timeout"
+          },
+          "source_case": "p",
+          "uncertainty": "No accepted known-good reference supplied; fixture is retained but not used as a promotion hard gate.",
+          "verification": {
+            "compiled_at": "2026-08-26T12:28:12.155617+00:00",
+            "known_bad_detected": true,
+            "known_good_passed": null
+          }
+        },
+        "known_bad_detected": true,
+        "known_good_passed": null,
+        "minimization": {
+          "accepted": 0,
+          "attempted": 0,
+          "method": "greedy-structure-reduction",
+          "uncertainty": "Best-effort structural minimization only; causal minimality is not claimed."
+        },
+        "ok": true,
+        "regression_hash": "bdd98c81e5c8be9877457e096b103fa5e03d7128e12bb52b31fed418b47f043f",
+        "state": "CANDIDATE"
+      },
+      "name": "uncertain_failure_not_overclaimed",
+      "ok": true
+    },
+    {
+      "detail": {
+        "bad_gate": {
+          "expected_exit": 0,
+          "ok": false,
+          "regression_hash": "8b19e2079efe82d9c0447e25f9e5986276282eada957e9a63ddd69f5d7bc76fa",
+          "result": {
+            "duration_ms": 78.14,
+            "exit_code": 1,
+            "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "stdout_sha256": "85ac490042ba7056423761bcc682379627aaf6cd19b3adc0a306d7b6ca132434"
+          }
+        },
+        "compiled": {
+          "known_bad_detected": true,
+          "known_good_passed": true,
+          "ok": true,
+          "regression_hash": "8b19e2079efe82d9c0447e25f9e5986276282eada957e9a63ddd69f5d7bc76fa",
+          "state": "ACTIVE",
+          "verification": {
+            "bad_result": {
+              "duration_ms": 41.63,
+              "exit_code": 1,
+              "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+              "stdout_sha256": "85ac490042ba7056423761bcc682379627aaf6cd19b3adc0a306d7b6ca132434"
+            },
+            "compiled_at": "2026-08-26T12:20:08.658502+00:00",
+            "good_result": {
+              "duration_ms": 51.68,
+              "exit_code": 0,
+              "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+              "stdout_sha256": "a7b07543db8ba27e082f02668ae92f42ee9686a7e1adf342535d172ef6770224"
+            },
+            "known_bad_detected": true,
+            "known_good_passed": true
+          }
+        },
+        "corrected_gate": {
+          "expected_exit": 0,
+          "ok": true,
+          "regression_hash": "8b19e2079efe82d9c0447e25f9e5986276282eada957e9a63ddd69f5d7bc76fa",
+          "result": {
+            "duration_ms": 53.219,
+            "exit_code": 0,
+            "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "stdout_sha256": "a7b07543db8ba27e082f02668ae92f42ee9686a7e1adf342535d172ef6770224"
+          }
+        }
+      },
+      "name": "actual_gen6_failure_became_regression",
+      "ok": true
+    }
+  ],
+  "ended_at": "2026-08-26T12:28:12.798063+00:00",
+  "generation": "gen6-experience-memory-r1",
+  "hashes": {
+    "experience_loop_source": "854d7e95fd412777137a330384ef236b25efdb794f9c98aac59ad2ce62e8c60c",
+    "forge_source": "309e25ec374956125459b6cf26815f916534d7a4520dfc6ddce8bb62e8755f26",
+    "memory_source": "c0cd4076393bbd214590f7644bab9c7c7c3df548863d2bb64ffb2209ae6e6a39",
+    "regression_source": "e1b2a84c18ce56f1209797e0b812e89df851af524c74cf268e3535f3eb1660fe"
+  },
+  "metrics": {
+    "authoring_proxy": {
+      "avoided_bytes": 4161,
+      "definition": "Counterfactual source-authoring proxy only; actual Gen6 reuse authored zero replacement capability source for the repeated tasks.",
+      "no_memory_reauthor_selected_capability_source_bytes": 4161,
+      "with_memory_new_capability_source_bytes": 0
+    },
+    "benchmark_mutated_live_capability_registry": false,
+    "cloned_gen5_registry_for_benchmark": true,
+    "containment": {
+      "blocked": [
+        "192.168.127.1:8790",
+        "10.0.0.1:22",
+        "172.16.0.1:22",
+        "100.64.0.1:22"
+      ],
+      "host_control_sockets": [],
+      "host_repository_present": false,
+      "ok": true,
+      "unexpected_reachable": []
+    },
+    "context_packet_proxy": {
+      "definition": "Serialized payload proxy: all active Forge records an external reasoner would scan vs the selected inspectable memory retrieval packet.",
+      "no_memory_active_capability_registry_bytes": 10765,
+      "reduction": 0.834,
+      "with_memory_selected_packet_bytes": 1787
+    },
+    "correct_memory_retrieval_rate": 1.0,
+    "failure_to_regression": {
+      "accepted_known_good_false_positive_rate": 0.0,
+      "active_conversions": 1,
+      "actual_gen6_failure_regression_active": true,
+      "candidate_uncertain": 1,
+      "known_bad_detection": true,
+      "later_bad_caught": true
+    },
+    "forge_creations_avoided_due_memory": 3,
+    "memory_distillation": {
+      "active": 1,
+      "active_success": 1,
+      "candidate_rejection_or_hold": 1,
+      "registry_total": 3,
+      "retired": 1,
+      "superseded": 0
+    },
+    "memory_retrieval_latency_ms": {
+      "max": 7.768,
+      "median": 0.515,
+      "samples": 5
+    },
+    "newly_authored_procedural_steps_for_repeated_tasks": 0,
+    "permanent_mcp_tools_after": 10,
+    "permanent_mcp_tools_before": 10,
+    "retrieval_cases": 5,
+    "task_success": {
+      "passed": 13,
+      "rate": 1.0,
+      "total": 13
+    },
+    "wrong_memory_invocation_rate": 0.0
+  },
+  "passed": 13,
+  "started_at": "2026-08-26T12:28:07.127337+00:00",
+  "total": 13
+}

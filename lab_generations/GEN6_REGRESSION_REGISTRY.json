@@ -1,0 +1,41 @@
+{
+  "regressions": {
+    "5be7002dfbe9b489445fcc2009b0c9d79af6baaee1cc308b6dd8e9cf64e75436": {
+      "created_at": "2026-08-26T12:27:23.313093+00:00",
+      "failure_count": 0,
+      "failure_evidence": {
+        "capability_state": "REJECTED",
+        "evaluation_result": "/var/lib/optiplex-lab/capability-runs/eval_20260826T110454Z_a007e498/result.json",
+        "evaluator_hash": "0afc804570e13b9fc7a03377543eeb09bc1cb81ce35301f33db1cc2a9c910780",
+        "source_hashes": {
+          "capability.json": "76a6182f5ec9cba30be6e31ed9cecc89a79d0e4ef084dc8d3ba4e3b93fadfc11",
+          "main.py": "2fbc05aa28944c8e97087d3f404db745f718f5a52d5003e1be461ab2d4ca96f3"
+        }
+      },
+      "known_bad_hash": "7a615a3f98a7a3be8babdf6376f38be2025543618af8dfff638ce2f028c8c708",
+      "known_good_hash": null,
+      "object": "/var/lib/optiplex-lab/regressions/objects/5be7002dfbe9b489445fcc2009b0c9d79af6baaee1cc308b6dd8e9cf64e75436.json",
+      "regression_hash": "5be7002dfbe9b489445fcc2009b0c9d79af6baaee1cc308b6dd8e9cf64e75436",
+      "replay_count": 0,
+      "selector": {
+        "name": "gen5-timeout"
+      },
+      "state": "CANDIDATE"
+    },
+    "e500767cc7827fb03a19b91c4f00dbcca1aeeddee72a63dea4b311ff3f48805a": {
+      "created_at": "2026-08-26T12:27:22.199568+00:00",
+      "failure_count": 0,
+      "failure_evidence": {},
+      "known_bad_hash": "a943e6310bf3fb3bd023d8f3066d2dd10c2d23cf9614e9f5e9a04643f02c92ea",
+      "known_good_hash": "75d79696ac1fa3107d958cb5a1638c1e19e679e262ac7c9cdeb5c6ad722b404a",
+      "object": "/var/lib/optiplex-lab/regressions/objects/e500767cc7827fb03a19b91c4f00dbcca1aeeddee72a63dea4b311ff3f48805a.json",
+      "regression_hash": "e500767cc7827fb03a19b91c4f00dbcca1aeeddee72a63dea4b311ff3f48805a",
+      "replay_count": 0,
+      "selector": {
+        "name": "experience-loop-selftest"
+      },
+      "state": "ACTIVE"
+    }
+  },
+  "version": "gen6-failure-regression-r1"
+}
