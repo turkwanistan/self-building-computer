@@ -1,5 +1,5 @@
 {
-  "candidate_release": "frontend-a5c1c5be8b22",
+  "candidate_release": null,
   "context_policy": "REPO_AND_ROOT_STATE_AUTHORITATIVE_CHATGPT_MEMORY_ADVISORY",
   "cycle_id": "noop-lifecycle-001",
   "expected_tool_count": 51,
@@ -46,12 +46,14 @@
     "tunnel_state": "ACTIVE_READY"
   },
   "lifecycle_implementation": {
+    "accepted_stable_release": "frontend-a5c1c5be8b22",
     "activated_at": "2026-08-26T02:48:32.026032Z",
     "active_slot": "green",
     "authority_delta": "NONE",
     "bootstrap_verified_at": "2026-08-26T02:30:29Z",
-    "candidate_slot": "green",
+    "candidate_slot": null,
     "candidate_source_sha256": "a5c1c5be8b22f0268211fad81d42fefa5b1a3da46cb3582377c378f4b78260c7",
+    "fresh_session_accepted_at": "2026-08-26T02:59:59.867360Z",
     "gates": {
       "candidate_tests": "PASS",
       "confinement": "PASS",
@@ -93,11 +95,15 @@
       }
     },
     "post_activation_verified_at": "2026-08-26T02:57:09.253852Z",
-    "rollback_drill_passed": false,
+    "previous_release": "frontend-baseline-91db2634c80d",
+    "previous_slot": "blue",
+    "promoted_at": "2026-08-26T02:59:59.925944Z",
+    "rollback_drill_at": "2026-08-26T03:00:02.693416Z",
+    "rollback_drill_passed": true,
     "root_bootstrap_script": "host/bootstrap-evolution.sh",
     "root_events_path": "/var/lib/mcp-evolution/events.jsonl",
     "root_lifecycle_cli_source": "host/evolutionctl.py",
-    "root_state": "FRESH_SESSION_VERIFY",
+    "root_state": "LIFECYCLE_ACCEPTED",
     "root_state_path": "/var/lib/mcp-evolution/current.json",
     "self_building_tests": "13 passed",
     "services": {
@@ -107,21 +113,21 @@
       "mcp-evolution-green.service": "active",
       "mcp-evolution-guardrail.service": "active"
     },
-    "stable_slot": "blue",
-    "verification_state": "PROMOTE_READY"
+    "stable_slot": "green",
+    "verification_state": "ACCEPTED"
   },
   "original_objective": "Implement the approved Self-Building Computer architecture, including safe evolvable MCP lifecycle and isolated unrestricted mcp-lab VM.",
-  "previous_release": null,
+  "previous_release": "frontend-baseline-91db2634c80d",
   "publication": {
     "bootstrap_commit": "40c5624",
     "branch": "main",
     "repository": "git@github.com:turkwanistan/self-building-computer.git",
     "state": "PUBLISHED"
   },
-  "resume_instruction": "Human may now run: sudo mcp-evolution accept noop-lifecycle-001; sudo mcp-evolution promote noop-lifecycle-001; sudo mcp-evolution rollback --drill; then verify root state reaches LIFECYCLE_ACCEPTED. Do not begin real capability evolution before that final state.",
+  "resume_instruction": "The pre-looping lifecycle is accepted. Before the first real iteration, read START_HERE.md and define one real limitation/capability goal. Use the accepted candidate -> gates -> human activation -> fresh-session verification -> promote/rollback lifecycle. Do not widen safe/production authority without explicit approval.",
   "security_authority_delta": "NONE",
-  "stable_release": "frontend-baseline-91db2634c80d",
-  "state": "NOOP_PROMOTE_READY",
+  "stable_release": "frontend-a5c1c5be8b22",
+  "state": "LIFECYCLE_ACCEPTED_READY_FOR_FIRST_ITERATION",
   "validation": {
     "events_jsonl_validation": "PASS",
     "project_tests": "PASS",

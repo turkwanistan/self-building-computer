@@ -1,41 +1,43 @@
 # Status
 
-Lifecycle phase: `NOOP_PROMOTE_READY`
+Lifecycle phase: `LIFECYCLE_ACCEPTED_READY_FOR_FIRST_ITERATION`
 
-The no-op blue/green candidate `frontend-a5c1c5be8b22` is active on green and remains unpromoted. Stable `frontend-baseline-91db2634c80d` remains available on blue for rollback.
+The full pre-looping Self-Building Computer foundation is accepted.
 
-## Post-activation verification
+## Accepted production lifecycle
 
-Fresh ChatGPT session PASS:
+- stable release: `frontend-a5c1c5be8b22` on green;
+- previous rollback release: `frontend-baseline-91db2634c80d` on blue;
+- guardrail release: `guardrail-gen0-c51a9161a95d`;
+- exact safe MCP surface: 51 tools;
+- schema SHA256: `195c410b85d40f4cfe65ef7eb8baa0463a32e93882fd9d39c0045e6518cd2913`;
+- policy: `authority-v1`;
+- authority delta for the no-op lifecycle: `NONE`;
+- root state: `LIFECYCLE_ACCEPTED`;
+- rollback drill: PASS;
+- emergency generation-0 `mcp-agent.service` remains installed but inactive.
 
-- release identity `frontend-a5c1c5be8b22`;
-- guardrail `guardrail-gen0-c51a9161a95d`;
-- exactly 51 tools;
-- schema SHA256 `195c410b85d40f4cfe65ef7eb8baa0463a32e93882fd9d39c0045e6518cd2913`;
-- policy `authority-v1`;
-- exact exposed tool surface with no additions/removals;
-- browser mediation healthy;
-- unauthorized Git push rejected.
+No-op cycle `noop-lifecycle-001` completed the entire lifecycle:
 
-The fresh chat's platform safety layer blocked several ordinary MCP calls before they reached MCP. Those non-refresh-sensitive backend gates were completed against the same active candidate from the existing session and PASS:
+`stage -> pre-activation gates -> activate -> fresh-session verification -> accept -> promote -> rollback drill`
 
-- read-only project operation;
-- `project_preflight`;
-- harmless networkless sandbox command;
-- direct outside-project read rejected with `path outside project`;
-- generic sandbox public internet blocked by network isolation.
+All pre-activation gates passed: candidate tests, confinement, guardrail regression, inactive-slot smoke, and secret scan. Post-activation product-boundary checks and supplemental backend security checks also passed.
 
-This evidence split is intentional: the fresh session proves the post-refresh product boundary; the supplemental calls prove backend security behavior. No failed MCP acceptance result was waived.
+## Accepted lab
 
-## Next human gate
+`Optiplex_Lab` remains the isolated high-power experiment zone with exactly seven tools: `shell`, `read_file`, `write_file`, `list_files`, `job`, `service`, and `reboot`. It has guest root and public internet, but no host filesystem, credentials, Docker/libvirt sockets, Tailscale, LAN/private-network, or protected host-service access. Host-owned snapshot/SSH/console recovery remains available.
 
-Run, in order:
+## What is now allowed
 
-```bash
-sudo mcp-evolution accept noop-lifecycle-001
-sudo mcp-evolution promote noop-lifecycle-001
-sudo mcp-evolution rollback --drill
-sudo mcp-evolution status
-```
+A future session may begin the first real capability-evolution cycle. It must use the accepted lifecycle and preserve the authority boundary:
 
-Do not begin real capability evolution until final root state is `LIFECYCLE_ACCEPTED`.
+1. record the real limitation/original objective;
+2. classify the change as normal capability evolution, `GUARDRAIL_GAP`, or `PERMISSION_REQUIRED`;
+3. build and stage an immutable candidate;
+4. pass functional/security/regression/confinement gates;
+5. require human activation;
+6. verify from a fresh ChatGPT session;
+7. promote or roll back;
+8. resume the original objective and record first real use.
+
+No safe/production authority expansion may be self-approved. Root-owned lifecycle state remains authoritative over repository state, and repository/live state remains authoritative over ChatGPT memory.
