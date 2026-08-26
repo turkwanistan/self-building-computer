@@ -1,0 +1,39 @@
+{
+  "generated_from": "accepted Gen13 hierarchical experiment isolation evidence",
+  "guardrails": [
+    "Frozen Optiplex_MCP remains unchanged",
+    "Permanent Lab MCP surface remains 10 by default",
+    "No autonomous production promotion",
+    "All evaluator mutations remain isolated and provenance-backed",
+    "Retain Gen2-Gen13 matrix as acceptance gate"
+  ],
+  "ranked_proposals": [
+    {
+      "goal": "Systematically mutate evaluator assumptions, thresholds, fixtures, and decision rules inside hierarchical isolated experiments to detect brittle judges, false confidence, and hidden coupling before outward project onboarding.",
+      "name": "Evaluator Mutation Nursery / Benchmark Hardening",
+      "rank": 1
+    },
+    {
+      "goal": "Onboard one real external project/domain using the mature Twin/context/epoch/routing/replay/delegation substrate; discover and expose bounded guest-local domain capabilities without growing the permanent MCP surface.",
+      "name": "Project Onboarding + Domain Capability Expansion Pilot",
+      "rank": 2
+    },
+    {
+      "goal": "Use retained evidence and the Twin to merge or retire redundant guest-local capability paths while preserving full benchmark coverage.",
+      "name": "Capability Consolidation / Interface Simplification",
+      "rank": 3
+    },
+    {
+      "goal": "Combine Counterfactual Replay with evaluator mutation evidence to localize which judge assumption or evidence edge causes a bad accept/reject decision.",
+      "name": "Replay-Guided Evaluator Debugging",
+      "rank": 4
+    },
+    {
+      "goal": "Generalize the Gen13 parent-child evaluation protocol into reusable domain benchmark compositions for future media/code/data capability experiments without changing permanent MCP tools.",
+      "name": "Delegated Domain Benchmark Orchestration",
+      "rank": 5
+    }
+  ],
+  "strategic_sequence": "Gen14 evaluator hardening, then Gen15 bounded project onboarding/domain capability expansion unless new evidence reveals a stronger prerequisite",
+  "version": "gen14-proposals-r1"
+}

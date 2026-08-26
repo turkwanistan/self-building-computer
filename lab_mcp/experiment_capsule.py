@@ -275,6 +275,7 @@ def namespace_script(run_dir: pathlib.Path, command: str, empty_paths: list[path
     lines += [
         f"export PATH={shell_quote(str(run_dir/'bin'))}:$PATH",
         "export OPTIPLEX_EXPERIMENT_CAPSULE=1",
+        f"export OPTIPLEX_CAPSULE_RUN_ID={shell_quote(run_dir.name)}",
         f"export OPTIPLEX_CAPSULE_RUN_DIR={shell_quote(str(run_dir))}",
         f"export OPTIPLEX_CAPSULE_EXPORT={shell_quote(str(export))}",
         f"mkdir -p {shell_quote(str(export/'captures'))}",
@@ -321,6 +322,8 @@ def capture_manifest(run_dir: pathlib.Path) -> list[dict[str, Any]]:
 
 
 def run_capsule(command: str, *, empty_paths: list[str] | None=None, captures: list[str] | None=None, label: str="experiment") -> dict[str, Any]:
+    if os.environ.get("OPTIPLEX_EXPERIMENT_CAPSULE") == "1":
+        raise RuntimeError("NESTED_CAPSULE_SAME_BOUNDARY_REFUSED: an active Capsule already owns this mutable state boundary")
     empty=[pathlib.Path(x) for x in (empty_paths or [])]; caps=[pathlib.Path(x) for x in (captures or [])]
     for p in [*empty,*caps]:
         if not p.is_absolute(): raise ValueError(f"capsule path must be absolute: {p}")

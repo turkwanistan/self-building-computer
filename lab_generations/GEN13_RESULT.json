@@ -1,0 +1,247 @@
+{
+  "accepted_at": "2026-08-26T23:39:07.489050+00:00",
+  "architecture": {
+    "chosen": "single top-level Gen8 Capsule physical owner + explicit parent-owned delegated child contexts/scopes/tokens; no same-boundary recursive OverlayFS",
+    "compatibility": "Gen8 callers remain compatible; Gen12 delegated mutation enabled only with valid Gen13 context",
+    "grandchild_support": "supported under same physical owner"
+  },
+  "benchmark": {
+    "ambiguous_isolation_ownership_accepted": 0,
+    "authority_monotonicity": 1.0,
+    "cleanup_failures": 0,
+    "declared_mutation_attribution_correctness": 1.0,
+    "deterministic_semantic_composition": 1.0,
+    "forbidden_accepted_state_mutations": 0,
+    "historical_evidence_leakage": 0,
+    "parent_child_composition_success": 1.0,
+    "permanent_mcp_tool_growth": 0,
+    "result": "37/37 PASS",
+    "standalone_gen12_compatibility": 1.0,
+    "standalone_gen8_compatibility": 1.0,
+    "undeclared_mutation_detection": 1.0,
+    "unsafe_authority_expansion_accepted": 0,
+    "unsafe_cases_rejected": 17,
+    "unsafe_cases_total": 17,
+    "valid_delegated_gen12_replay_success": 1.0
+  },
+  "capability_build": "gen13-hierarchical-experiment-isolation-r1-9a32955b79c6",
+  "commit_or_push_performed": false,
+  "defects_found_and_fixed": {
+    "harness_or_fixture": 3,
+    "implementation": 1
+  },
+  "final_twin": {
+    "causal_digest": "1224672e1c5d899a4754ea55736d46b4d6b2923679e49ce9ba42d016b1646c10",
+    "causal_edges": 4985,
+    "causal_events": 4950,
+    "causal_index_sha256": "5505220f7b79903b9e8c8298e14e65ddcc66071063755facdbf1450dba478971",
+    "edges": 311,
+    "graph_digest": "42ca8780f3c379115a6613cdad526767d17d59f95d0aad3d34e0d36f0a32ecd9",
+    "inputs": 104,
+    "nodes": 202,
+    "snapshot_sha256": "7145b9b2ef4b0df93981d260cfc8ad6fdfd00799652d4d3b6a0e834b1e24b126",
+    "verify": "PASS_ZERO_ISSUES_AT_CHECKPOINT"
+  },
+  "frozen_safe_mcp": {
+    "guardrail": "guardrail-gen0-c51a9161a95d",
+    "modified": false,
+    "policy": "authority-v1",
+    "release": "frontend-a5c1c5be8b22",
+    "schema_sha256": "195c410b85d40f4cfe65ef7eb8baa0463a32e93882fd9d39c0045e6518cd2913",
+    "tool_count": 51
+  },
+  "generation": "gen13-hierarchical-experiment-isolation-r1",
+  "identities": {
+    "benchmark_artifact_sha256": "fc54ee92b50fc3aeb70dcefd66f642dc44b3cd79fe323ba19fa514d1b79141fe",
+    "benchmark_source_sha256": "e6dce8fe8c3858c9fa8e425d06ef2a7838b6341b2d5dab6d78f47d89dc1e1b1e",
+    "counterfactual_replay_sha256": "6d7f32a86ce73501feecffd21ba6ca319de548f9b29044c9e737baba824dbac0",
+    "experiment_capsule_sha256": "e1276653cde8c0fd9df2a0ebddc5ca5fb148e939ea182996a80563b6b60c05a8",
+    "gold_sha256": "93f0976bfc47542105252cc288b093cb453341ca623f6757cfdd032c4676e785",
+    "hierarchy_sha256": "9a32955b79c63efd1023ca1741bff61ab2b0ed5dfb3eaea0aa817b777421a372"
+  },
+  "next_generation": "Evaluator Mutation Nursery / Benchmark Hardening",
+  "operational_server": {
+    "build_id": "gen6-experience-memory-r1-dc0d2cb41595",
+    "generation": "gen6-experience-memory-r1",
+    "live_equals_lkg": true,
+    "lkg_sha256": "dc0d2cb41595a9a3d953873879ccc3e0bd88db2b4dcdee4cf8aa43dd4cb103e9",
+    "recovery_state": "ACCEPTED",
+    "server_sha256": "dc0d2cb41595a9a3d953873879ccc3e0bd88db2b4dcdee4cf8aa43dd4cb103e9",
+    "service": "active",
+    "tool_surface": 10
+  },
+  "permanent_mcp_tools": 10,
+  "protected_state": {
+    "allowed_audit_growth": [
+      {
+        "bytes_appended_at_checkpoint": 13475,
+        "kind": "append_only_outer_audit",
+        "path": "/var/lib/optiplex-lab/traces/events.jsonl"
+      }
+    ],
+    "baseline_digest": "a4f5b7066930236d91def00e35ea7fd01dc039392ad6c818c0f0f5dcf2b117a3",
+    "cleanup": {
+      "gen13_transfer_temp_archive_debris": 0,
+      "historical_gen8_capsule_fixtures_preserved": true,
+      "session_capsules_removed": 39,
+      "unexpected_child_processes": 0,
+      "unexpected_child_units": 0
+    },
+    "comparison_checkpoint_digest": "301d9070e5112ca78f77dccafbaddd9c54fefbc6f1daaaa741691d8571e75ce2",
+    "containment": {
+      "blocked": [
+        "192.168.127.1:8790",
+        "10.0.0.1:22",
+        "172.16.0.1:22",
+        "100.64.0.1:22"
+      ],
+      "host_control_sockets": [],
+      "host_repo_visible": false,
+      "result": "PASS",
+      "unexpected_reachable": []
+    },
+    "final_checkpoint_validated_at": "2026-08-26T23:39:07.489050+00:00",
+    "forbidden_changes": [],
+    "note": "Subsequent read-only validation calls may append ordinary Lab trace events after this comparison checkpoint; this is expected next-epoch audit evidence.",
+    "operational": {
+      "build_id": "gen6-experience-memory-r1-dc0d2cb41595",
+      "generation": "gen6-experience-memory-r1",
+      "live_equals_lkg": true,
+      "lkg_sha256": "dc0d2cb41595a9a3d953873879ccc3e0bd88db2b4dcdee4cf8aa43dd4cb103e9",
+      "recovery_state": "ACCEPTED",
+      "server_sha256": "dc0d2cb41595a9a3d953873879ccc3e0bd88db2b4dcdee4cf8aa43dd4cb103e9",
+      "service": "active",
+      "tool_surface": 10
+    },
+    "server_modified": false,
+    "status": "PASS",
+    "version": "gen13-protected-state-r1"
+  },
+  "retained_regressions": {
+    "gen10": {
+      "context_payload_reduction_vs_gen8": 0.455246,
+      "critical_fn": 0,
+      "necessity_precision": 1.0,
+      "required_evidence_recall": 1.0,
+      "result": "24/24",
+      "strategy": "direct; owns its built-in isolation"
+    },
+    "gen11": {
+      "critical_authority_recall": 1.0,
+      "critical_fn": 0,
+      "result": "39/39",
+      "routing_gold": "29/29",
+      "strategy": "direct after fresh Twin",
+      "unsafe_routing_errors": 0
+    },
+    "gen12": {
+      "baseline_reproduction_rate": 1.0,
+      "declared_delta_attribution_correctness": 1.0,
+      "deterministic_replay_rate": 1.0,
+      "forbidden_accepted_state_mutations": 0,
+      "historical_evidence_leakage": 0,
+      "result": "30/30",
+      "strategy": "direct native replay/Capsule semantics",
+      "unsafe_cases_rejected": "10/10"
+    },
+    "gen2": {
+      "result": "12/12",
+      "strategy": "Experiment Capsule"
+    },
+    "gen3": {
+      "result": "16/16",
+      "strategy": "Experiment Capsule"
+    },
+    "gen4": {
+      "result": "18/18",
+      "strategy": "Experiment Capsule"
+    },
+    "gen5": {
+      "result": "12/12",
+      "strategy": "historical empty capability/regression state Capsule"
+    },
+    "gen6": {
+      "result": "13/13",
+      "strategy": "Experiment Capsule"
+    },
+    "gen7": {
+      "result": "15/15",
+      "strategy": "version-pinned historical Capsule"
+    },
+    "gen8": {
+      "result": "17/17",
+      "strategy": "quiescent native Capsule semantics"
+    },
+    "gen9": {
+      "required_evidence_recall": 1.0,
+      "result": "20/20",
+      "strategy": "mutation-safe native isolation"
+    }
+  },
+  "self_use": {
+    "final": {
+      "benchmark": "37/37",
+      "declared_mutation_attribution_correctness": 1.0,
+      "deterministic_semantic_composition": 1.0,
+      "unsafe_cases_rejected": "17/17",
+      "valid_delegated_gen12_replay_success": 1.0
+    },
+    "first_frozen_run": {
+      "delegated_gen12_replay_success": 1.0,
+      "guest_preserved_artifact": "/var/lib/optiplex-lab/gen13/GEN13_FIRST_FAILURE.json",
+      "parent_child_composition_metric": 0.0,
+      "result": "36/37",
+      "sha256": "2965292b17177d00c7b251a2f9419c8e6053b7e80408c11f8238a5bc11d34841",
+      "unsafe_cases_rejected": "17/17"
+    },
+    "generation": "gen13-hierarchical-experiment-isolation-r1",
+    "gold_changed_after_failure": false,
+    "gold_sha256": "93f0976bfc47542105252cc288b093cb453341ca623f6757cfdd032c4676e785",
+    "harness_findings": [
+      {
+        "finding": "tee-created /root/gen13-benchmark-run.log matched the frozen debris glob",
+        "phase": "first Gen13 benchmark",
+        "resolution": "remove harness log and rerun without tee; gold unchanged"
+      },
+      {
+        "finding": "Evidence Epoch correctly refused to seal because Twin referenced the earlier 36/37 Gen13 artifact after it had become 37/37",
+        "phase": "retained Gen10",
+        "resolution": "refresh Twin, rerun unchanged Gen10 benchmark; 24/24"
+      },
+      {
+        "finding": "prior Gen12 future-evidence fixture remained present before the retained epoch, violating its historical-leakage test precondition",
+        "phase": "retained Gen12",
+        "resolution": "remove the fixture before sealing; unchanged Gen12 benchmark reran 30/30"
+      }
+    ],
+    "implementation_defect": {
+      "finding": "OverlayFS copy-up can emit ancestor-directory metadata for an exact delegated file; the initial reconciler treated that structural directory record as an undeclared child mutation.",
+      "fix": "classify only structurally implied ancestor-directory records as non-semantic overlay metadata; continue rejecting undeclared file/symlink/special mutations",
+      "gold_changed": false,
+      "impact": "parent composition invalidated even though the delegated Gen12 replay itself succeeded and accepted state stayed unchanged",
+      "regression_result": "same frozen benchmark 37/37"
+    },
+    "meaningful_self_use": "Gen13 root experiment -> delegated Gen12 mutating replay/evaluator -> scoped mutation -> parent reconciliation under one physical Capsule owner",
+    "status": "PASS_AFTER_DEFECT_FIX",
+    "version": "gen13-self-use-r1"
+  },
+  "server_modified": false,
+  "status": "ACCEPTED",
+  "validation": {
+    "canonical_project_tests": "PASS_13_13",
+    "commit_or_push_performed": false,
+    "containment": "PASS",
+    "final_lab_identity": "PASS_GEN13_CAPABILITY_OVER_GEN6_SERVER_UNCHANGED_10_TOOLS",
+    "frozen_safe_mcp": "PASS_UNCHANGED_51_TOOLS",
+    "git_diff_check": "PASS_TRACKED_PLUS_12_NEW_GEN13_FILES",
+    "json_jsonl": "PASS_97_JSON_2_JSONL_118_RECORDS",
+    "protected_state": "PASS_ZERO_FORBIDDEN_TRACE_PREFIX_APPEND_ONLY",
+    "python_syntax": "PASS_42_FILES_MUTATION_FREE_AST",
+    "secret_credential_scan": "PASS_17_GEN13_OWNED_FILES",
+    "server_modified": false,
+    "status": "PASS_FINAL_CANONICAL_VALIDATION",
+    "temp_archive_cleanup": "PASS_ZERO_GEN13_DEBRIS",
+    "validated_at": "2026-08-26T23:39:07.489050+00:00"
+  },
+  "version": "gen13-result-r1"
+}

@@ -1,0 +1,58 @@
+{
+  "ambiguous_isolation_ownership_accepted": 0,
+  "architecture": {
+    "accepted_state_delegation_forbidden": true,
+    "authority_rule": "child authority and mutation scope are monotonic subsets of parent",
+    "child_model": "explicit parent-owned delegated context",
+    "grandchild_supported": true,
+    "physical_isolation_owner": "one Gen8 Experiment Capsule per mutable state boundary",
+    "recursive_overlay_same_boundary": false
+  },
+  "authority_monotonicity": 1.0,
+  "capability_build": "gen13-hierarchical-experiment-isolation-r1-9a32955b79c6",
+  "delegated_gen12": {
+    "accepted_state_unchanged": true,
+    "context_id": "hx13_89d4e1cb5c853cb8e4299aef",
+    "declared_paths": [
+      "/opt/optiplex-lab/counterfactual_replay.py",
+      "/root/gen12-counterfactual-result.json"
+    ],
+    "observed_mutation_digest": "06b9cc0a839433db22a85d272e6257de2c389dc392d65c40e6ff6ef4efcad752",
+    "parent_context_id": "hx13_c47676d224496322c7ca1968",
+    "physical_owner": "single parent Capsule",
+    "result_digest": "1d6bcd578682ae5d4c7e0ea612c4d56870c47a5d6855f25189c6fbd8c43f6627",
+    "status": "PASS",
+    "unexpected_mutations": []
+  },
+  "forbidden_accepted_state_mutations": 0,
+  "generation": "gen13-hierarchical-experiment-isolation-r1",
+  "gold_sha256": "93f0976bfc47542105252cc288b093cb453341ca623f6757cfdd032c4676e785",
+  "grandchild": {
+    "context_id": "hx13_307a517a545351440e0b2788",
+    "delegated_path": "/root/gen13-grand.txt",
+    "observed_mutation_digest": "30c26db4e7406299140b8fc78bb8f6e31c6fb900f982dc799e4969b58a9b92e2",
+    "same_physical_owner": true,
+    "status": "PASS"
+  },
+  "hierarchy_sha256": "9a32955b79c63efd1023ca1741bff61ab2b0ed5dfb3eaea0aa817b777421a372",
+  "mutable_child": {
+    "context_id": "hx13_0df1e673df2a0b2653c32393",
+    "delegated_path": "/root/gen13-allowed.txt",
+    "observed_mutation_digest": "d0d371f6b7a0c84944c936e0b6faa57073d53921c6ce3c452f02464572357d1b",
+    "same_physical_owner": true,
+    "status": "PASS"
+  },
+  "mutation_attribution_correctness": 1.0,
+  "read_only_child": {
+    "context_id": "hx13_ec0739f52f6fd17f48f6f15c",
+    "observed_mutations": 0,
+    "same_physical_owner": true,
+    "status": "PASS"
+  },
+  "unsafe_cases_rejected": "17/17",
+  "unsafe_nested_gen12": {
+    "error_code": "ISOLATION_DELEGATION_UNSUPPORTED_FOR_MUTATION",
+    "status": "REJECTED"
+  },
+  "version": "gen13-delegation-evidence-r1"
+}

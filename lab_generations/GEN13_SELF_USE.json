@@ -1,0 +1,47 @@
+{
+  "final": {
+    "benchmark": "37/37",
+    "declared_mutation_attribution_correctness": 1.0,
+    "deterministic_semantic_composition": 1.0,
+    "unsafe_cases_rejected": "17/17",
+    "valid_delegated_gen12_replay_success": 1.0
+  },
+  "first_frozen_run": {
+    "delegated_gen12_replay_success": 1.0,
+    "guest_preserved_artifact": "/var/lib/optiplex-lab/gen13/GEN13_FIRST_FAILURE.json",
+    "parent_child_composition_metric": 0.0,
+    "result": "36/37",
+    "sha256": "2965292b17177d00c7b251a2f9419c8e6053b7e80408c11f8238a5bc11d34841",
+    "unsafe_cases_rejected": "17/17"
+  },
+  "generation": "gen13-hierarchical-experiment-isolation-r1",
+  "gold_changed_after_failure": false,
+  "gold_sha256": "93f0976bfc47542105252cc288b093cb453341ca623f6757cfdd032c4676e785",
+  "harness_findings": [
+    {
+      "finding": "tee-created /root/gen13-benchmark-run.log matched the frozen debris glob",
+      "phase": "first Gen13 benchmark",
+      "resolution": "remove harness log and rerun without tee; gold unchanged"
+    },
+    {
+      "finding": "Evidence Epoch correctly refused to seal because Twin referenced the earlier 36/37 Gen13 artifact after it had become 37/37",
+      "phase": "retained Gen10",
+      "resolution": "refresh Twin, rerun unchanged Gen10 benchmark; 24/24"
+    },
+    {
+      "finding": "prior Gen12 future-evidence fixture remained present before the retained epoch, violating its historical-leakage test precondition",
+      "phase": "retained Gen12",
+      "resolution": "remove the fixture before sealing; unchanged Gen12 benchmark reran 30/30"
+    }
+  ],
+  "implementation_defect": {
+    "finding": "OverlayFS copy-up can emit ancestor-directory metadata for an exact delegated file; the initial reconciler treated that structural directory record as an undeclared child mutation.",
+    "fix": "classify only structurally implied ancestor-directory records as non-semantic overlay metadata; continue rejecting undeclared file/symlink/special mutations",
+    "gold_changed": false,
+    "impact": "parent composition invalidated even though the delegated Gen12 replay itself succeeded and accepted state stayed unchanged",
+    "regression_result": "same frozen benchmark 37/37"
+  },
+  "meaningful_self_use": "Gen13 root experiment -> delegated Gen12 mutating replay/evaluator -> scoped mutation -> parent reconciliation under one physical Capsule owner",
+  "status": "PASS_AFTER_DEFECT_FIX",
+  "version": "gen13-self-use-r1"
+}

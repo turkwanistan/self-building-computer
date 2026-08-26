@@ -1,0 +1,70 @@
+{
+  "matrix": {
+    "gen10": {
+      "context_payload_reduction_vs_gen8": 0.455246,
+      "critical_fn": 0,
+      "necessity_precision": 1.0,
+      "required_evidence_recall": 1.0,
+      "result": "24/24",
+      "strategy": "direct; owns its built-in isolation"
+    },
+    "gen11": {
+      "critical_authority_recall": 1.0,
+      "critical_fn": 0,
+      "result": "39/39",
+      "routing_gold": "29/29",
+      "strategy": "direct after fresh Twin",
+      "unsafe_routing_errors": 0
+    },
+    "gen12": {
+      "baseline_reproduction_rate": 1.0,
+      "declared_delta_attribution_correctness": 1.0,
+      "deterministic_replay_rate": 1.0,
+      "forbidden_accepted_state_mutations": 0,
+      "historical_evidence_leakage": 0,
+      "result": "30/30",
+      "strategy": "direct native replay/Capsule semantics",
+      "unsafe_cases_rejected": "10/10"
+    },
+    "gen2": {
+      "result": "12/12",
+      "strategy": "Experiment Capsule"
+    },
+    "gen3": {
+      "result": "16/16",
+      "strategy": "Experiment Capsule"
+    },
+    "gen4": {
+      "result": "18/18",
+      "strategy": "Experiment Capsule"
+    },
+    "gen5": {
+      "result": "12/12",
+      "strategy": "historical empty capability/regression state Capsule"
+    },
+    "gen6": {
+      "result": "13/13",
+      "strategy": "Experiment Capsule"
+    },
+    "gen7": {
+      "result": "15/15",
+      "strategy": "version-pinned historical Capsule"
+    },
+    "gen8": {
+      "result": "17/17",
+      "strategy": "quiescent native Capsule semantics"
+    },
+    "gen9": {
+      "required_evidence_recall": 1.0,
+      "result": "20/20",
+      "strategy": "mutation-safe native isolation"
+    }
+  },
+  "notes": [
+    "Gen10 first retained attempt failed closed on stale Twin evidence; identical benchmark passed 24/24 after required refresh.",
+    "Gen12 first retained attempt was 28/30 because its future-evidence fixture existed before sealing; after restoring the benchmark precondition, unchanged benchmark passed 30/30.",
+    "No benchmark result was reclassified silently."
+  ],
+  "status": "PASS",
+  "version": "gen13-retained-regressions-r1"
+}

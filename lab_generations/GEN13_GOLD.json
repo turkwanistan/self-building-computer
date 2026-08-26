@@ -1,0 +1,248 @@
+{
+  "architecture_contract": "single Gen8 physical Capsule owner + explicit hierarchical delegated contexts + sequential observed mutation reconciliation",
+  "checks": [
+    {
+      "expectation": "Existing standalone Gen8 Capsule behavior passes.",
+      "id": "G01",
+      "name": "standalone_gen8_capsule_unchanged",
+      "required": true
+    },
+    {
+      "expectation": "Root experiment establishes exactly one physical isolation owner.",
+      "id": "G02",
+      "name": "root_single_physical_owner",
+      "required": true
+    },
+    {
+      "expectation": "Read-only child executes under parent owner without second Capsule and causes no mutations.",
+      "id": "G03",
+      "name": "readonly_delegated_child",
+      "required": true
+    },
+    {
+      "expectation": "Parent delegates one allowed mutable path; child writes only experimental state.",
+      "id": "G04",
+      "name": "mutable_delegated_child",
+      "required": true
+    },
+    {
+      "expectation": "Second-level delegation works sequentially under the same physical owner.",
+      "id": "G05",
+      "name": "grandchild_same_owner",
+      "required": true
+    },
+    {
+      "expectation": "Child write outside delegated scope is detected from observed mutations and invalidates child.",
+      "id": "G06",
+      "name": "undelegated_write_rejected",
+      "required": true
+    },
+    {
+      "expectation": "Child cannot request authority absent from parent.",
+      "id": "G07",
+      "name": "authority_broader_than_parent_rejected",
+      "required": true
+    },
+    {
+      "expectation": "Composed experiments never mutate accepted/current live state.",
+      "id": "G08",
+      "name": "accepted_state_unchanged",
+      "required": true
+    },
+    {
+      "expectation": "Parent attribution is based on actual Capsule mutation evidence, not child declarations.",
+      "id": "G09",
+      "name": "observed_mutation_attribution",
+      "required": true
+    },
+    {
+      "expectation": "Nonzero child result fails deterministically and stays contained.",
+      "id": "G10",
+      "name": "child_nonzero_deterministic_failure",
+      "required": true
+    },
+    {
+      "expectation": "Timeout terminates child and leaves no unexpected descendant process.",
+      "id": "G11",
+      "name": "child_timeout_cleanup",
+      "required": true
+    },
+    {
+      "expectation": "Malformed child result fails closed.",
+      "id": "G12",
+      "name": "malformed_child_result_rejected",
+      "required": true
+    },
+    {
+      "expectation": "Unexpected child descendants are detected/terminated and reported.",
+      "id": "G13",
+      "name": "detached_process_cleanup",
+      "required": true
+    },
+    {
+      "expectation": "Unsupported service/systemctl escape cannot create a real accepted service.",
+      "id": "G14",
+      "name": "service_escape_rejected",
+      "required": true
+    },
+    {
+      "expectation": "Equivalent composed experiments have identical semantic result/provenance identity.",
+      "id": "G15",
+      "name": "deterministic_semantic_identity",
+      "required": true
+    },
+    {
+      "expectation": "No-op/read-only child does not perturb parent semantic result.",
+      "id": "G16",
+      "name": "noop_semantic_nonperturbation",
+      "required": true
+    },
+    {
+      "expectation": "Gen12 mutating replay succeeds under a valid compatible Gen13 delegation.",
+      "id": "G17",
+      "name": "gen12_valid_delegated_mutating_replay",
+      "required": true
+    },
+    {
+      "expectation": "Gen12 ambiguous/unsafe nested isolation still fails closed.",
+      "id": "G18",
+      "name": "gen12_ambiguous_nested_rejected",
+      "required": true
+    },
+    {
+      "expectation": "Standalone Gen12 replay preserves accepted behavior.",
+      "id": "G19",
+      "name": "gen12_standalone_unchanged",
+      "required": true
+    },
+    {
+      "expectation": "Forged or modified context/token digest is rejected.",
+      "id": "G20",
+      "name": "forged_context_digest_rejected",
+      "required": true
+    },
+    {
+      "expectation": "Mismatched parent identity is rejected.",
+      "id": "G21",
+      "name": "mismatched_parent_id_rejected",
+      "required": true
+    },
+    {
+      "expectation": "Delegation bound to another/stale Capsule owner run is rejected.",
+      "id": "G22",
+      "name": "stale_owner_binding_rejected",
+      "required": true
+    },
+    {
+      "expectation": "Ambiguous dual isolation-owner declaration is rejected.",
+      "id": "G23",
+      "name": "dual_owner_ambiguity_rejected",
+      "required": true
+    },
+    {
+      "expectation": "Child cannot independently create another Capsule for same protected boundary.",
+      "id": "G24",
+      "name": "independent_same_boundary_capsule_rejected",
+      "required": true
+    },
+    {
+      "expectation": "Child cannot hide an observed mutation by lying in output.",
+      "id": "G25",
+      "name": "lying_mutation_report_detected",
+      "required": true
+    },
+    {
+      "expectation": "Crash after mutation still yields observed mutation attribution and containment.",
+      "id": "G26",
+      "name": "crash_after_mutation_attributed",
+      "required": true
+    },
+    {
+      "expectation": "Traversal/non-absolute/ambiguous delegated paths are rejected before execution.",
+      "id": "G27",
+      "name": "path_traversal_rejected",
+      "required": true
+    },
+    {
+      "expectation": "Symlink-mediated write outside delegated scope is detected from observed target mutation.",
+      "id": "G28",
+      "name": "symlink_escape_detected",
+      "required": true
+    },
+    {
+      "expectation": "Child cannot replace parent-bound evidence/input identity with incompatible evidence.",
+      "id": "G29",
+      "name": "evidence_binding_mismatch_rejected",
+      "required": true
+    },
+    {
+      "expectation": "Root cleanup leaves no unexpected Gen13 temp/archive debris.",
+      "id": "G30",
+      "name": "cleanup_no_gen13_debris",
+      "required": true
+    },
+    {
+      "expectation": "Every child/grandchild authority set is a subset of its parent.",
+      "id": "G31",
+      "name": "authority_monotonic_lineage",
+      "required": true
+    },
+    {
+      "expectation": "Results identify root/parent/child/owner/scope/evidence/evaluator/mutations/status with deterministic lineage.",
+      "id": "G32",
+      "name": "deterministic_provenance_tree",
+      "required": true
+    },
+    {
+      "expectation": "Parent result distinguishes successful, failed, invalid, and cleanup-failed child outcomes.",
+      "id": "G33",
+      "name": "result_propagation_explicit",
+      "required": true
+    },
+    {
+      "expectation": "Gen8 Experiment Capsule selftest remains passing.",
+      "id": "G34",
+      "name": "gen8_selftest_compatibility",
+      "required": true
+    },
+    {
+      "expectation": "Gen13 introduces zero historical/future evidence leakage into Gen12 replay.",
+      "id": "G35",
+      "name": "historical_evidence_leakage_zero",
+      "required": true
+    },
+    {
+      "expectation": "Permanent Optiplex_Lab MCP surface remains exactly 10 tools.",
+      "id": "G36",
+      "name": "permanent_tool_surface_zero_growth",
+      "required": true
+    },
+    {
+      "expectation": "Capability/memory/regression registry mutation without explicit delegated scope is rejected.",
+      "id": "G37",
+      "name": "forbidden_registry_without_delegation",
+      "required": true
+    }
+  ],
+  "frozen_before_primary_implementation": true,
+  "generation": "gen13-hierarchical-experiment-isolation-r1",
+  "later_generation_scope_excluded": [
+    "evaluator_mutation_nursery",
+    "project_onboarding",
+    "domain_capability_expansion",
+    "autonomous_promotion",
+    "production_self_mutation"
+  ],
+  "thesis": "Compose Experiments Without Losing Isolation",
+  "thresholds": {
+    "ambiguous_isolation_ownership_accepted": 0,
+    "declared_mutation_attribution_correctness": 1.0,
+    "deterministic_semantic_composition": 1.0,
+    "forbidden_accepted_state_mutations": 0,
+    "historical_evidence_leakage": 0,
+    "permanent_mcp_tool_growth": 0,
+    "required_checks_pass_rate": 1.0,
+    "unsafe_authority_expansion_accepted": 0
+  },
+  "version": "gen13-gold-r1"
+}

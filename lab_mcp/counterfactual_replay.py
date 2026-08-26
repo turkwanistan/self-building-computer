@@ -21,6 +21,7 @@ EPOCH_ROOT = pathlib.Path(os.environ.get("OPTIPLEX_REPLAY_EPOCH_ROOT", str(STATE
 EPOCHS_ROOT = EPOCH_ROOT / "epochs"
 BLOB_ROOT = EPOCH_ROOT / "blobs"
 CAPSULE_PATH = SOURCE_ROOT / "experiment_capsule.py"
+HIERARCHY_PATH = SOURCE_ROOT / "hierarchical_experiment.py"
 ROUTER_PATH = SOURCE_ROOT / "task_routing.py"
 SAFETY_CRITICAL_AUTHORITIES = {
     "guest_security_boundary", "operational_identity", "lifecycle_state", "recovery_lkg", "security_containment"
@@ -342,6 +343,64 @@ def _evaluate_implementation(base: dict[str, Any], ops: list[dict[str, Any]], ev
     return _json_safe(alt_result), provenance
 
 
+def _evaluate_implementation_delegated(base: dict[str, Any], ops: list[dict[str, Any]], evaluator: dict[str, Any], proof: Any) -> tuple[dict[str, Any], dict[str, Any]]:
+    if os.environ.get("OPTIPLEX_EXPERIMENT_CAPSULE") != "1":
+        raise ReplayError("ISOLATION_DELEGATION_UNSUPPORTED_FOR_MUTATION", "Gen12 delegated mutation requires an active compatible Gen13 parent isolation context")
+    if not HIERARCHY_PATH.is_file():
+        raise ReplayError("ISOLATION_DELEGATION_UNSUPPORTED_FOR_MUTATION", "Gen13 hierarchical delegation module is unavailable")
+    hier = load_module(HIERARCHY_PATH, "gen12_hierarchical_delegation")
+    try:
+        ctx = hier.load_current_context()
+    except Exception as exc:
+        code = getattr(exc, "code", None)
+        if code:
+            raise ReplayError("ISOLATION_DELEGATION_INVALID", f"Gen13 delegation context rejected: {code}", {"error_code": code, "error": str(exc)})
+        raise ReplayError("ISOLATION_DELEGATION_INVALID", f"Gen13 delegation context rejected: {exc}")
+    proof_context_id = str(proof.get("context_id") or "") if isinstance(proof, dict) else str(proof or "")
+    proof_binding = str(proof.get("binding_digest") or "") if isinstance(proof, dict) else ""
+    if proof_context_id != str(ctx.get("context_id")):
+        raise ReplayError("ISOLATION_DELEGATION_UNPROVEN", "child isolation proof does not identify the active delegated context")
+    if proof_binding and proof_binding != str(ctx.get("binding_digest")):
+        raise ReplayError("ISOLATION_DELEGATION_UNPROVEN", "child isolation proof binding digest mismatches active context")
+    if str(ctx.get("mode")) not in {"delegated", "owner"}:
+        raise ReplayError("ISOLATION_DELEGATION_INVALID", "mutating replay requires mutable delegated context")
+    cmd, result_path = _capsule_command(base["root"], ops, evaluator)
+    required_paths = sorted({str(x.get("path")) for x in ops} | {result_path})
+    try:
+        if not hier.paths_allowed(required_paths, ctx.get("mutation_scope") or []):
+            raise ReplayError("ISOLATION_DELEGATION_SCOPE_MISMATCH", "delegated context does not cover all replay mutation paths", {"required": required_paths, "scope": ctx.get("mutation_scope") or []})
+        execution = hier.execute_current(ctx, cmd, required_paths=required_paths, timeout=3600.0)
+    except ReplayError:
+        raise
+    except Exception as exc:
+        code = getattr(exc, "code", None)
+        raise ReplayError("ISOLATION_DELEGATION_INVALID", f"delegated execution setup failed: {code or type(exc).__name__}: {exc}")
+    if not execution.get("ok"):
+        raise ReplayError("DELEGATED_EXECUTION_FAILED", "delegated Gen12 implementation replay failed or violated child scope", execution)
+    try:
+        alt_result = json.loads(pathlib.Path(result_path).read_text(encoding="utf-8"))
+    except Exception as exc:
+        raise ReplayError("EVALUATOR_RESULT_INVALID", f"delegated evaluator result invalid: {exc}")
+    observed = execution.get("observed_mutations") or []
+    provenance = {
+        "isolation_owner": "parent_delegated",
+        "physical_isolation_owner": ctx.get("isolation_owner"),
+        "capsule_run_id": ctx.get("owner_run_id"),
+        "hierarchy_context_id": ctx.get("context_id"),
+        "hierarchy_parent_context_id": ctx.get("parent_context_id"),
+        "hierarchy_root_context_id": ctx.get("root_context_id"),
+        "hierarchy_context_semantic_digest": ctx.get("semantic_digest"),
+        "delegated_scope": ctx.get("mutation_scope") or [],
+        "observed_mutation_digest": execution.get("observed_mutation_digest"),
+        "capsule_mutation_records": len(observed),
+        "unexpected_mutations": execution.get("unexpected_mutations") or [],
+        "accepted_state_unchanged": True,
+        "accepted_state_protection": "parent_capsule_cow_boundary",
+        "forbidden_accepted_state_mutations": 0,
+    }
+    return _json_safe(alt_result), provenance
+
+
 def _authority_assertions(alt: dict[str, Any]) -> dict[str, bool]:
     seen: dict[str, bool] = {}
     for rec in alt.get("authority_assertions") or []:
@@ -465,12 +524,16 @@ def replay(spec: dict[str, Any]) -> dict[str, Any]:
             ops = _validate_implementation_overlay(alt, base["entries"])
             isolation_owner = str(alt.get("isolation_owner") or "replay")
             if isolation_owner == "child":
-                if not alt.get("child_isolation_proof"):
+                proof = alt.get("child_isolation_proof")
+                if not proof:
                     raise ReplayError("ISOLATION_DELEGATION_UNPROVEN", "child isolation ownership requires explicit proof")
-                raise ReplayError("ISOLATION_DELEGATION_UNSUPPORTED_FOR_MUTATION", "Gen12 refuses to guess a child mutation-isolation protocol; evaluator must expose a compatible delegated runner")
-            if isolation_owner != "replay":
-                raise ReplayError("ISOLATION_OWNER_INVALID", "implementation replay must have exactly one isolation owner")
-            alternative, execution = _evaluate_implementation(base, ops, evaluator)
+                if os.environ.get("OPTIPLEX_EXPERIMENT_CAPSULE") != "1" or not os.environ.get("OPTIPLEX_GEN13_CONTEXT_B64"):
+                    raise ReplayError("ISOLATION_DELEGATION_UNSUPPORTED_FOR_MUTATION", "Gen12 refuses delegated mutation without a valid compatible Gen13 parent context")
+                alternative, execution = _evaluate_implementation_delegated(base, ops, evaluator, proof)
+            else:
+                if isolation_owner != "replay":
+                    raise ReplayError("ISOLATION_OWNER_INVALID", "implementation replay must have exactly one isolation owner")
+                alternative, execution = _evaluate_implementation(base, ops, evaluator)
             comparison_meta["overlay_digest"] = _overlay_digest(ops)
             comparison_meta["declared_effect_paths"] = sorted({str(x.get("path")) for x in ops})
         elif alt_type == "intent_routing":

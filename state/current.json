@@ -1,7 +1,7 @@
 {
   "lab": {
-    "accepted_at": "2026-08-26T21:43:04.694230+00:00",
-    "build_id": "gen12-counterfactual-replay-r1-5a0fa7b8e62f",
+    "accepted_at": "2026-08-26T23:39:07.489050+00:00",
+    "build_id": "gen13-hierarchical-experiment-isolation-r1-9a32955b79c6",
     "features_add": [
       "architectural_digital_twin",
       "causal_observability_spine",
@@ -33,7 +33,16 @@
       "historical_evidence_leakage_prevention",
       "authority_monotonic_counterfactuals",
       "single_owner_replay_isolation",
-      "replay_self_use"
+      "replay_self_use",
+      "hierarchical_experiment_isolation",
+      "single_physical_isolation_owner",
+      "delegated_experiment_contexts",
+      "monotonic_child_mutation_scopes",
+      "hierarchical_provenance_lineage",
+      "observed_child_mutation_reconciliation",
+      "delegated_gen12_mutating_replay",
+      "child_process_cleanup_enforcement",
+      "nested_evaluation_delegation"
     ],
     "gen10_validation": {
       "benchmark": {
@@ -324,6 +333,85 @@
         "status": "PASS_FINAL_CANONICAL_VALIDATION",
         "temp_archive_cleanup": "PASS_ZERO_GEN12_VAR_TMP_AND_REPO_DEBRIS",
         "validated_at": "2026-08-26T21:43:34.360938+00:00"
+      }
+    },
+    "gen13_validation": {
+      "benchmark": {
+        "ambiguous_isolation_ownership_accepted": 0,
+        "authority_monotonicity": 1.0,
+        "cleanup_failures": 0,
+        "declared_mutation_attribution_correctness": 1.0,
+        "deterministic_semantic_composition": 1.0,
+        "forbidden_accepted_state_mutations": 0,
+        "historical_evidence_leakage": 0,
+        "parent_child_composition_success": 1.0,
+        "permanent_mcp_tool_growth": 0,
+        "result": "37/37 PASS",
+        "standalone_gen12_compatibility": 1.0,
+        "standalone_gen8_compatibility": 1.0,
+        "undeclared_mutation_detection": 1.0,
+        "unsafe_authority_expansion_accepted": 0,
+        "unsafe_cases_rejected": 17,
+        "unsafe_cases_total": 17,
+        "valid_delegated_gen12_replay_success": 1.0
+      },
+      "benchmark_source_sha256": "e6dce8fe8c3858c9fa8e425d06ef2a7838b6341b2d5dab6d78f47d89dc1e1b1e",
+      "capability_build": "gen13-hierarchical-experiment-isolation-r1-9a32955b79c6",
+      "commit_or_push_performed": false,
+      "counterfactual_replay_sha256": "6d7f32a86ce73501feecffd21ba6ca319de548f9b29044c9e737baba824dbac0",
+      "experiment_capsule_sha256": "e1276653cde8c0fd9df2a0ebddc5ca5fb148e939ea182996a80563b6b60c05a8",
+      "final_twin": {
+        "causal_digest": "1224672e1c5d899a4754ea55736d46b4d6b2923679e49ce9ba42d016b1646c10",
+        "causal_edges": 4985,
+        "causal_events": 4950,
+        "causal_index_sha256": "5505220f7b79903b9e8c8298e14e65ddcc66071063755facdbf1450dba478971",
+        "edges": 311,
+        "graph_digest": "42ca8780f3c379115a6613cdad526767d17d59f95d0aad3d34e0d36f0a32ecd9",
+        "inputs": 104,
+        "nodes": 202,
+        "snapshot_sha256": "7145b9b2ef4b0df93981d260cfc8ad6fdfd00799652d4d3b6a0e834b1e24b126",
+        "verify": "PASS_ZERO_ISSUES_AT_CHECKPOINT"
+      },
+      "generation": "gen13-hierarchical-experiment-isolation-r1",
+      "gold_sha256": "93f0976bfc47542105252cc288b093cb453341ca623f6757cfdd032c4676e785",
+      "hierarchy_sha256": "9a32955b79c63efd1023ca1741bff61ab2b0ed5dfb3eaea0aa817b777421a372",
+      "protected_state": "PASS_ZERO_FORBIDDEN_TRACE_PREFIX_APPEND_ONLY",
+      "retained_regressions": {
+        "gen10": "24/24",
+        "gen11": "39/39",
+        "gen12": "30/30",
+        "gen2": "12/12",
+        "gen3": "16/16",
+        "gen4": "18/18",
+        "gen5": "12/12",
+        "gen6": "13/13",
+        "gen7": "15/15",
+        "gen8": "17/17",
+        "gen9": "20/20"
+      },
+      "self_use": {
+        "final_run": "37/37",
+        "first_run": "36/37",
+        "gold_changed": false,
+        "status": "PASS_AFTER_DEFECT_FIX"
+      },
+      "server_modified": false,
+      "status": "ACCEPTED",
+      "validation": {
+        "canonical_project_tests": "PASS_13_13",
+        "commit_or_push_performed": false,
+        "containment": "PASS",
+        "final_lab_identity": "PASS_GEN13_CAPABILITY_OVER_GEN6_SERVER_UNCHANGED_10_TOOLS",
+        "frozen_safe_mcp": "PASS_UNCHANGED_51_TOOLS",
+        "git_diff_check": "PASS_TRACKED_PLUS_12_NEW_GEN13_FILES",
+        "json_jsonl": "PASS_97_JSON_2_JSONL_118_RECORDS",
+        "protected_state": "PASS_ZERO_FORBIDDEN_TRACE_PREFIX_APPEND_ONLY",
+        "python_syntax": "PASS_42_FILES_MUTATION_FREE_AST",
+        "secret_credential_scan": "PASS_17_GEN13_OWNED_FILES",
+        "server_modified": false,
+        "status": "PASS_FINAL_CANONICAL_VALIDATION",
+        "temp_archive_cleanup": "PASS_ZERO_GEN13_DEBRIS",
+        "validated_at": "2026-08-26T23:39:07.489050+00:00"
       }
     },
     "gen5_validation": {
@@ -1012,14 +1100,14 @@
         "validated_at": "2026-08-26T18:55:07.088888+00:00"
       }
     },
-    "generation": "gen11-intent-authority-routing-r1",
-    "generation_source_sha256": "59a1bef513c7d12b1411f78dfd9b5a4c007368d1c5e9e9e7f431f0bfedf2575b",
+    "generation": "gen13-hierarchical-experiment-isolation-r1",
+    "generation_source_sha256": "9a32955b79c63efd1023ca1741bff61ab2b0ed5dfb3eaea0aa817b777421a372",
     "live_server_identity": {
       "build_id": "gen6-experience-memory-r1-dc0d2cb41595",
       "generation": "gen6-experience-memory-r1",
       "live_equals_lkg": true,
       "lkg_sha256": "dc0d2cb41595a9a3d953873879ccc3e0bd88db2b4dcdee4cf8aa43dd4cb103e9",
-      "note": "Gen11 is additive guest-local capability infrastructure; operational MCP server intentionally remains accepted Gen6.",
+      "note": "Gen13 is additive guest-local capability infrastructure; operational MCP server intentionally remains accepted Gen6.",
       "recovery_state": "ACCEPTED",
       "server_sha256": "dc0d2cb41595a9a3d953873879ccc3e0bd88db2b4dcdee4cf8aa43dd4cb103e9",
       "service_state": "active",
@@ -1031,27 +1119,30 @@
     "tool_count": 10
   },
   "next_iteration": {
-    "cycle_id": "gen12-counterfactual-replay-001",
-    "proposals_artifact": "lab_generations/GEN12_PROPOSALS.json",
-    "required_stop": "DO_NOT_IMPLEMENT_GEN12_WITHOUT_USER_REQUEST",
+    "cycle_id": "gen14-evaluator-mutation-nursery-001",
+    "proposals_artifact": "lab_generations/GEN14_PROPOSALS.json",
+    "required_stop": "DO_NOT_IMPLEMENT_GEN14_WITHOUT_USER_REQUEST",
     "safe_mcp_policy": "FROZEN_NO_CHANGES",
     "status": "PROPOSED_NOT_STARTED",
     "target": "Optiplex_Lab + mcp-lab VM",
-    "top_recommendation": "Counterfactual Replay over Intent-Routed Evidence Epochs"
+    "top_recommendation": "Evaluator Mutation Nursery / Benchmark Hardening"
   },
-  "resume_instruction": "Repository/live state is authoritative. Accepted Gen11 capability is gen11-intent-authority-routing-r1 / build gen11-intent-authority-routing-r1-59a1bef513c7, router SHA 59a1bef513c7d12b1411f78dfd9b5a4c007368d1c5e9e9e7f431f0bfedf2575b, route-aware epoch SHA 24e9542919ff9aa781c33c534d012d82af91a9bf418be9a102fb7ba30b40b481. Operational Lab intentionally remains Gen6 build gen6-experience-memory-r1-dc0d2cb41595, server/LKG dc0d2cb41595a9a3d953873879ccc3e0bd88db2b4dcdee4cf8aa43dd4cb103e9, recovery ACCEPTED, exactly 10 tools. Gen11 benchmark 39/39 and routing gold 29/29; critical authority recall 1.0, FN 0, unsafe errors 0, mixed precedence 100%, safety ambiguity 100%, precision/recall 1.0/1.0, context reduction vs Gen8 44.7958%. Final sealed Twin checkpoint 192/288/98, graph 0e40f143fe7934b722a707d5bceda6e83ce8931feef557e75c0cc0913b6cfcd3, snapshot 45f8fed7de7ec3b611693813139ddbc8ae9feba1790c036862a5eb4d652d518a. Retained Gen2-Gen10 all pass. Top Gen12 proposal is Counterfactual Replay over Intent-Routed Evidence Epochs. Preserve unrelated Git work and never run mcp_probe.py synchronously through Lab shell.",
-  "state": "LIFECYCLE_ACCEPTED_GEN11_INTENT_AUTHORITY_ROUTING",
+  "resume_instruction": "Repository/live state is authoritative. Accepted Gen13 capability is gen13-hierarchical-experiment-isolation-r1 / build gen13-hierarchical-experiment-isolation-r1-9a32955b79c6, hierarchy SHA 9a32955b79c63efd1023ca1741bff61ab2b0ed5dfb3eaea0aa817b777421a372, gold 93f0976bfc47542105252cc288b093cb453341ca623f6757cfdd032c4676e785, benchmark 37/37, unsafe 17/17 rejected, valid delegated Gen12 replay 100%, zero forbidden accepted-state mutations. Operational Lab intentionally remains Gen6 build gen6-experience-memory-r1-dc0d2cb41595 with server/LKG dc0d2cb41595a9a3d953873879ccc3e0bd88db2b4dcdee4cf8aa43dd4cb103e9, recovery ACCEPTED and exactly 10 tools. Final Twin checkpoint 202/311/104 graph 42ca8780f3c379115a6613cdad526767d17d59f95d0aad3d34e0d36f0a32ecd9. Retained Gen2-Gen12 all pass. Top Gen14 proposal is Evaluator Mutation Nursery / Benchmark Hardening, then bounded Project Onboarding + Domain Capability Expansion Pilot. Preserve unrelated Git work and never run mcp_probe.py synchronously through Lab shell.",
+  "state": "LIFECYCLE_ACCEPTED_GEN13_HIERARCHICAL_EXPERIMENT_ISOLATION",
   "validation": {
-    "accepted_core_diff": "PASS_ZERO_DIFF_SERVER_COMPILER_OPTIMIZER_CAPSULE_TWIN_CAUSAL",
     "canonical_project_tests": "PASS_13_13",
+    "commit_or_push_performed": false,
     "containment": "PASS",
-    "final_lab_identity": "PASS_GEN11_CAPABILITY_OVER_GEN6_SERVER_UNCHANGED",
+    "final_lab_identity": "PASS_GEN13_CAPABILITY_OVER_GEN6_SERVER_UNCHANGED_10_TOOLS",
     "frozen_safe_mcp": "PASS_UNCHANGED_51_TOOLS",
-    "git_diff_check": "PASS",
-    "json_jsonl": "PASS_81_JSON_2_JSONL_114_RECORDS",
-    "python_syntax": "PASS_38_FILES_MUTATION_FREE",
-    "secret_credential_scan": "PASS_GEN11_OWNED_FILES",
-    "temp_archive_cleanup": "PASS_NO_GEN11_TRANSFER_ARCHIVES",
-    "validated_at": "2026-08-26T20:56:12.534208+00:00"
+    "git_diff_check": "PASS_TRACKED_PLUS_12_NEW_GEN13_FILES",
+    "json_jsonl": "PASS_97_JSON_2_JSONL_118_RECORDS",
+    "protected_state": "PASS_ZERO_FORBIDDEN_TRACE_PREFIX_APPEND_ONLY",
+    "python_syntax": "PASS_42_FILES_MUTATION_FREE_AST",
+    "secret_credential_scan": "PASS_17_GEN13_OWNED_FILES",
+    "server_modified": false,
+    "status": "PASS_FINAL_CANONICAL_VALIDATION",
+    "temp_archive_cleanup": "PASS_ZERO_GEN13_DEBRIS",
+    "validated_at": "2026-08-26T23:39:07.489050+00:00"
   }
 }

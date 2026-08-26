@@ -1,0 +1,224 @@
+{
+  "base_epoch": {
+    "entry_count": 126,
+    "epoch_digest": "1954c70fe91ee4283859e83a3d76ffd0e5c4e40dec8a4e02a2012c5a93cca05f",
+    "epoch_id": "ep10_1954c70fe91ee4283859e83a3d76ffd0e5c4e40dec8a4e02a2012c5a93cca05f",
+    "routing_digest": "95ab650cb18c0ae5a1b89fbd54e429f463cb8ed29cc0e393a1854c4925b2a498",
+    "twin_graph_digest": "18aa544729cdea5998b3ecd4d395934072626e37c3e28ba38dc467212be3b297"
+  },
+  "benchmark_source_sha256": "e6dce8fe8c3858c9fa8e425d06ef2a7838b6341b2d5dab6d78f47d89dc1e1b1e",
+  "canonicalized_at": "2026-08-26T23:37:35.496243+00:00",
+  "checks": [
+    {
+      "id": "G01",
+      "pass": true
+    },
+    {
+      "id": "G02",
+      "pass": true
+    },
+    {
+      "id": "G03",
+      "pass": true
+    },
+    {
+      "id": "G04",
+      "pass": true
+    },
+    {
+      "id": "G05",
+      "pass": true
+    },
+    {
+      "id": "G06",
+      "pass": true
+    },
+    {
+      "id": "G07",
+      "pass": true
+    },
+    {
+      "id": "G08",
+      "pass": true
+    },
+    {
+      "id": "G09",
+      "pass": true
+    },
+    {
+      "id": "G10",
+      "pass": true
+    },
+    {
+      "id": "G11",
+      "pass": true
+    },
+    {
+      "id": "G12",
+      "pass": true
+    },
+    {
+      "id": "G13",
+      "pass": true
+    },
+    {
+      "id": "G14",
+      "pass": true
+    },
+    {
+      "id": "G15",
+      "pass": true
+    },
+    {
+      "id": "G16",
+      "pass": true
+    },
+    {
+      "id": "G17",
+      "pass": true
+    },
+    {
+      "id": "G18",
+      "pass": true
+    },
+    {
+      "id": "G19",
+      "pass": true
+    },
+    {
+      "id": "G20",
+      "pass": true
+    },
+    {
+      "id": "G21",
+      "pass": true
+    },
+    {
+      "id": "G22",
+      "pass": true
+    },
+    {
+      "id": "G23",
+      "pass": true
+    },
+    {
+      "id": "G24",
+      "pass": true
+    },
+    {
+      "id": "G25",
+      "pass": true
+    },
+    {
+      "id": "G26",
+      "pass": true
+    },
+    {
+      "id": "G27",
+      "pass": true
+    },
+    {
+      "id": "G28",
+      "pass": true
+    },
+    {
+      "id": "G29",
+      "pass": true
+    },
+    {
+      "id": "G30",
+      "pass": true
+    },
+    {
+      "id": "G31",
+      "pass": true
+    },
+    {
+      "id": "G32",
+      "pass": true
+    },
+    {
+      "id": "G33",
+      "pass": true
+    },
+    {
+      "id": "G34",
+      "pass": true
+    },
+    {
+      "id": "G35",
+      "pass": true
+    },
+    {
+      "id": "G36",
+      "pass": true
+    },
+    {
+      "id": "G37",
+      "pass": true
+    }
+  ],
+  "entry_twin": {
+    "edges": 312,
+    "graph_digest": "18aa544729cdea5998b3ecd4d395934072626e37c3e28ba38dc467212be3b297",
+    "inputs": 105,
+    "nodes": 203
+  },
+  "generated_at": "2026-08-26T23:06:18.824035+00:00",
+  "gold_frozen_before_primary_implementation": true,
+  "gold_sha256": "93f0976bfc47542105252cc288b093cb453341ca623f6757cfdd032c4676e785",
+  "guest_artifact": "/var/lib/optiplex-lab/benchmarks/gen13-hierarchical-experiment-benchmark.json",
+  "guest_artifact_sha256": "fc54ee92b50fc3aeb70dcefd66f642dc44b3cd79fe323ba19fa514d1b79141fe",
+  "identities": {
+    "benchmark_sha256": "e6dce8fe8c3858c9fa8e425d06ef2a7838b6341b2d5dab6d78f47d89dc1e1b1e",
+    "counterfactual_replay_sha256": "6d7f32a86ce73501feecffd21ba6ca319de548f9b29044c9e737baba824dbac0",
+    "experiment_capsule_sha256": "e1276653cde8c0fd9df2a0ebddc5ca5fb148e939ea182996a80563b6b60c05a8",
+    "gold_sha256": "93f0976bfc47542105252cc288b093cb453341ca623f6757cfdd032c4676e785",
+    "hierarchy_sha256": "9a32955b79c63efd1023ca1741bff61ab2b0ed5dfb3eaea0aa817b777421a372"
+  },
+  "metrics": {
+    "ambiguous_isolation_ownership_accepted": 0,
+    "authority_monotonicity": 1.0,
+    "cleanup_failures": 0,
+    "declared_mutation_attribution_correctness": 1.0,
+    "deterministic_semantic_composition": 1.0,
+    "forbidden_accepted_state_mutations": 0,
+    "historical_evidence_leakage": 0,
+    "parent_child_composition_success": 1.0,
+    "permanent_mcp_tool_growth": 0,
+    "standalone_gen12_compatibility": 1.0,
+    "standalone_gen8_compatibility": 1.0,
+    "undeclared_mutation_detection": 1.0,
+    "unsafe_authority_expansion_accepted": 0,
+    "unsafe_cases_rejected": 17,
+    "unsafe_cases_total": 17,
+    "valid_delegated_gen12_replay_success": 1.0
+  },
+  "ok": true,
+  "passed": 37,
+  "selected_evidence": {
+    "composed_semantic_result_digest": "400260e91db0ad3d7d8a493f85ec50d7aa536748015f3afc713c01fdcea68e54",
+    "delegated_gen12_context_id": "hx13_89d4e1cb5c853cb8e4299aef",
+    "delegated_gen12_observed_mutation_digest": "06b9cc0a839433db22a85d272e6257de2c389dc392d65c40e6ff6ef4efcad752",
+    "delegated_gen12_parent_context_id": "hx13_c47676d224496322c7ca1968",
+    "delegated_gen12_result_digest": "1d6bcd578682ae5d4c7e0ea612c4d56870c47a5d6855f25189c6fbd8c43f6627",
+    "physical_isolation_owner_count": 1,
+    "unsafe_codes": [
+      "DELEGATED_AUTHORITY_EXPANSION",
+      "ACCEPTED_STATE_DELEGATION_FORBIDDEN",
+      "PATH_SCOPE_INVALID",
+      "EVIDENCE_BINDING_MISMATCH",
+      "INCOMPATIBLE_NESTED_ISOLATION",
+      "AMBIGUOUS_DUAL_ISOLATION_OWNER",
+      "FORGED_DELEGATION_BINDING",
+      "PARENT_ID_MISMATCH",
+      "STALE_DELEGATION_CONTEXT",
+      "UNDECLARED_CHILD_MUTATION",
+      "CHILD_MUTATION_REPORT_MISMATCH",
+      "ISOLATION_DELEGATION_UNSUPPORTED_FOR_MUTATION"
+    ],
+    "unsafe_nested_gen12_error": "ISOLATION_DELEGATION_UNSUPPORTED_FOR_MUTATION"
+  },
+  "total": 37,
+  "version": "gen13-hierarchical-experiment-benchmark-r1"
+}
