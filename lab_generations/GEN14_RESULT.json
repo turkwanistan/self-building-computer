@@ -1,0 +1,150 @@
+{
+  "accepted_at": "2026-08-27T00:32:17.357000+00:00",
+  "adversarial": {
+    "accepted_state_write_contained": true,
+    "artifact": "lab_generations/GEN14_ADVERSARIAL.json",
+    "authority_expansion_rejected": true,
+    "forged_parent_rejected": true,
+    "frozen_gold_write_contained": true,
+    "independent_nested_capsule_rejected": true,
+    "lying_evaluator_rejected": true,
+    "scope_expansion_rejected": true,
+    "skipped_check_pass_rejected": true,
+    "stale_context_rejected": true,
+    "status": "PASS"
+  },
+  "benchmark": {
+    "attempted_mutants": 14,
+    "dangerous_killed": 13,
+    "dangerous_mutants": 13,
+    "dangerous_mutation_kill_rate": 1.0,
+    "killed": 13,
+    "overall_mutation_kill_rate": 0.928571,
+    "passed": 52,
+    "redundant_or_equivalent_candidates": [
+      "score_weight"
+    ],
+    "result": "52/52 PASS",
+    "surviving_dangerous_mutations": [],
+    "total": 52,
+    "unique_check_contribution": [
+      "evaluator_crash",
+      "evaluator_timeout",
+      "evidence",
+      "evidence_required",
+      "fail_closed",
+      "freshness",
+      "malformed_evaluator_result",
+      "negative_control",
+      "negative_control_fixture",
+      "observed_state",
+      "threshold",
+      "twin_stale_fail_closed"
+    ]
+  },
+  "capability_build": "gen14-evaluator-mutation-nursery-r1-fe5f9d8fbb3c",
+  "design": {
+    "mutation_spec": "deterministic content-addressed exact evaluator-copy mutations with lineage/evidence/authority bindings",
+    "permanent_mcp_growth": 0,
+    "physical_isolation": "one Gen8 Experiment Capsule owner via Gen13 hierarchy",
+    "promotion": "NONE_AUTOMATIC"
+  },
+  "final_twin": {
+    "causal_digest": "e310699b7e40933f283ff6c7e0747913dfba84fb0bd3ce4aa59a88b1ac36b418",
+    "causal_edges": 4985,
+    "causal_events": 5025,
+    "causal_index_sha256": "bc0a4001d917e76e3aba641e31563be64596fb04b3200fcdc1f0aede12a14589",
+    "edges": 330,
+    "graph_digest": "0375f6d6ad59df98dfb3ce7dc3332a9d4a0e3a46c26860e04baf15b10d7e1664",
+    "inputs": 114,
+    "nodes": 215,
+    "post_checkpoint_note": "The outer Lab call and final lab_status append ordinary trace audit evidence only after build/verify; the recorded checkpoint was fully fresh.",
+    "snapshot_sha256": "56bb5a6b84d2efda08e61c28b4a303a0c910e6d103c87bd4de04dc964cb863e2",
+    "verify": "PASS_ZERO_ISSUES_AT_CHECKPOINT"
+  },
+  "generation": "gen14-evaluator-mutation-nursery-r1",
+  "identities": {
+    "adversarial_sha256": "355004c64e908e030208ce5662d1e16d5affad2c565147fd62699ada6617ae56",
+    "benchmark_artifact_sha256": "d3a3c387e18efb59fe9516e52697342b1b6d5f4e2c5c4cab2c2cb829bbd76141",
+    "benchmark_source_sha256": "db8678ce1247f8fc9f139f68b17f4e0b53c87dfc34148cc6ed5e02272725e491",
+    "evaluator_mutation_nursery_sha256": "fe5f9d8fbb3ce1aa7b7a9d8ee84536fead62c3246337644c76b037d196b2c87d",
+    "fixture_evaluator_sha256": "d0634a12bb0a92a697d96765ffa8756c60d75425f93af5cf3f4bfb2d6c1e8810",
+    "frozen_gold_sha256": "1a30b31a8f87c82428d157c20ddfd7c380289d6dae7447e01d573f2fb499483a",
+    "mutation_evidence_sha256": "572814ac40a1573a09f241b2bb33edddef3299940758aeb41896ce5458260211",
+    "protected_state_sha256": "b58c5fcc1f32d008315ac78e20d5778f9d56880c47dd7ae8a5274a46c676e096",
+    "retained_regressions_sha256": "744dc285e251df9951c7cee2084e91b8d1dbd9be90415b353b6bdf39d2b41722",
+    "self_use_sha256": "d8126eb1fba774ef5c11b6c36af9c532a6531ac41c85818bec869b3052684182"
+  },
+  "next": "Project Onboarding + Domain Capability Expansion Pilot",
+  "operational_server": {
+    "build_id": "gen6-experience-memory-r1-dc0d2cb41595",
+    "generation": "gen6-experience-memory-r1",
+    "live_equals_lkg": true,
+    "lkg_sha256": "dc0d2cb41595a9a3d953873879ccc3e0bd88db2b4dcdee4cf8aa43dd4cb103e9",
+    "recovery_state": "ACCEPTED",
+    "server_modified": false,
+    "server_sha256": "dc0d2cb41595a9a3d953873879ccc3e0bd88db2b4dcdee4cf8aa43dd4cb103e9",
+    "tool_surface": 10
+  },
+  "protected_state": {
+    "allowed_audit_growth": [
+      {
+        "after_sha256": "0a45bac8381c70bcd267246bed49938f56fb105bba75a6605bcbe2702e3ed279",
+        "before_sha256": "99d318ff31f5356cbe6fede2062b91f155bf0091f1758204968e8233a817715f",
+        "bytes_appended": 15958,
+        "kind": "append_only_outer_audit",
+        "path": "/var/lib/optiplex-lab/traces/events.jsonl"
+      }
+    ],
+    "baseline_digest": "541ff30f1a6b8ad3597da00fc49ce0eab582153a1bbca0fd354f8f99eb506886",
+    "comparison_digest": "faa808cd1170e5fb120a618df2a52c0fd985776206e8b272f2b7555f3c4f19e1",
+    "final_recheck": {
+      "allowed_trace_bytes_appended_from_entry_baseline": 22779,
+      "forbidden_changes": [],
+      "status": "PASS"
+    },
+    "forbidden_changes": [],
+    "status": "PASS"
+  },
+  "retained_regressions": {
+    "gen10": "24/24",
+    "gen11": "39/39",
+    "gen12": "30/30",
+    "gen13": "37/37",
+    "gen2": "12/12",
+    "gen3": "16/16",
+    "gen4": "18/18",
+    "gen5": "12/12",
+    "gen6": "13/13",
+    "gen7": "15/15",
+    "gen8": "17/17",
+    "gen9": "20/20"
+  },
+  "scope": "Optiplex_Lab + isolated mcp-lab VM",
+  "self_use": {
+    "evidence_artifact": "lab_generations/GEN14_SELF_USE.json",
+    "forbidden_accepted_state_mutations": 0,
+    "real_evaluator": "architecture_twin.verify",
+    "real_mutant_killed": true,
+    "real_mutation_class": "fail_open_change",
+    "single_physical_isolation_owner": true,
+    "status": "PASS"
+  },
+  "status": "ACCEPTED",
+  "validation": {
+    "canonical_project_tests": "PASS_13_13",
+    "commit_or_push_performed": false,
+    "containment": "PASS",
+    "final_lab_identity": "PASS_GEN14_CAPABILITY_OVER_GEN6_SERVER_UNCHANGED_10_TOOLS",
+    "git_diff_check": "PASS",
+    "json_jsonl": "PASS_106_JSON_2_JSONL_119_RECORDS",
+    "protected_state": "PASS_ZERO_FORBIDDEN_TRACE_PREFIX_APPEND_ONLY",
+    "python_syntax": "PASS_45_FILES_MUTATION_FREE_AST",
+    "secret_credential_scan": "PASS_17_GEN14_OWNED_AND_LIFECYCLE_FILES",
+    "server_modified": false,
+    "status": "PASS_FINAL_CANONICAL_VALIDATION",
+    "temp_archive_cleanup": "PASS_ZERO_GEN14_DEBRIS",
+    "validated_at": "2026-08-27T00:32:17.357000+00:00"
+  },
+  "version": "gen14-result-r1"
+}

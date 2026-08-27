@@ -1,0 +1,384 @@
+{
+  "architecture_contract": "one Gen13 root experiment / one Gen8 physical Capsule owner + sequential delegated evaluator mutation/evaluation children over copied evaluator/fixtures",
+  "checks": [
+    {
+      "expectation": "Mutation specifications are typed, canonical, deterministic, and reject unknown/ambiguous fields.",
+      "id": "G01",
+      "name": "mutation_spec_schema",
+      "required": true
+    },
+    {
+      "expectation": "Equivalent semantic mutation specs produce identical mutation IDs; meaningful spec/evaluator/evidence changes change identity.",
+      "id": "G02",
+      "name": "content_addressed_mutation_identity",
+      "required": true
+    },
+    {
+      "expectation": "Evaluator source lineage is bound by path + SHA256 and mismatches fail closed.",
+      "id": "G03",
+      "name": "evaluator_lineage_pinned",
+      "required": true
+    },
+    {
+      "expectation": "All ten declared safe evaluator mutation classes are represented and validated.",
+      "id": "G04",
+      "name": "safe_mutation_classes_complete",
+      "required": true
+    },
+    {
+      "expectation": "Mutations can target only copied evaluator/fixture material under the delegated nursery workspace.",
+      "id": "G05",
+      "name": "mutation_target_workspace_only",
+      "required": true
+    },
+    {
+      "expectation": "Each mutating nursery run uses Gen13 with exactly one physical Gen8 Capsule owner.",
+      "id": "G06",
+      "name": "gen13_single_physical_owner",
+      "required": true
+    },
+    {
+      "expectation": "Nursery child authority and mutation scope are strict subsets of the parent context.",
+      "id": "G07",
+      "name": "authority_scope_monotonic",
+      "required": true
+    },
+    {
+      "expectation": "Baseline and mutant evaluator execute against the same pinned candidate/evidence case bindings.",
+      "id": "G08",
+      "name": "baseline_mutant_same_cases",
+      "required": true
+    },
+    {
+      "expectation": "Result contains baseline -> mutant -> independent oracle comparison per case.",
+      "id": "G09",
+      "name": "baseline_mutant_candidate_comparison",
+      "required": true
+    },
+    {
+      "expectation": "Every attempted mutation is explicitly classified KILLED, SURVIVED_REDUNDANT_OR_EQUIVALENT, SURVIVED_DANGEROUS, or INVALID_FAIL_CLOSED.",
+      "id": "G10",
+      "name": "mutation_kill_survival_classification",
+      "required": true
+    },
+    {
+      "expectation": "Threshold weakening/strengthening mutation is deterministic and bounded.",
+      "id": "G11",
+      "name": "threshold_change_supported",
+      "required": true
+    },
+    {
+      "expectation": "Assertion/check deletion mutation is deterministic and bounded.",
+      "id": "G12",
+      "name": "assertion_delete_supported",
+      "required": true
+    },
+    {
+      "expectation": "Assertion/check inversion mutation is deterministic and bounded.",
+      "id": "G13",
+      "name": "assertion_invert_supported",
+      "required": true
+    },
+    {
+      "expectation": "Fixture substitution mutation is deterministic and evidence-bound.",
+      "id": "G14",
+      "name": "fixture_substitution_supported",
+      "required": true
+    },
+    {
+      "expectation": "Evidence omission mutation is deterministic and evidence-bound.",
+      "id": "G15",
+      "name": "evidence_omission_supported",
+      "required": true
+    },
+    {
+      "expectation": "Stale-evidence injection mutation is deterministic and cannot escape declared fixtures.",
+      "id": "G16",
+      "name": "stale_evidence_injection_supported",
+      "required": true
+    },
+    {
+      "expectation": "Declared-vs-observed-state trust mutation is represented and challengeable.",
+      "id": "G17",
+      "name": "declared_vs_observed_trust_supported",
+      "required": true
+    },
+    {
+      "expectation": "Scoring-weight mutation is deterministic and critical failures cannot be hidden by aggregate score alone.",
+      "id": "G18",
+      "name": "scoring_weight_change_supported",
+      "required": true
+    },
+    {
+      "expectation": "Fail-open/fail-closed mutation is deterministic and critical fail-open behavior is detectable.",
+      "id": "G19",
+      "name": "fail_open_fail_closed_supported",
+      "required": true
+    },
+    {
+      "expectation": "Negative-control corruption mutation is deterministic and inconsistency is detectable.",
+      "id": "G20",
+      "name": "negative_control_corruption_supported",
+      "required": true
+    },
+    {
+      "expectation": "Evaluator mutation outside delegated scope fails closed before accepted-state mutation.",
+      "id": "G21",
+      "name": "outside_delegated_scope_rejected",
+      "required": true
+    },
+    {
+      "expectation": "Mutant/evaluator child cannot expand authority beyond parent.",
+      "id": "G22",
+      "name": "authority_expansion_rejected",
+      "required": true
+    },
+    {
+      "expectation": "Forged parent/delegation context is rejected.",
+      "id": "G23",
+      "name": "forged_parent_context_rejected",
+      "required": true
+    },
+    {
+      "expectation": "Stale owner/evidence context binding is rejected.",
+      "id": "G24",
+      "name": "stale_context_binding_rejected",
+      "required": true
+    },
+    {
+      "expectation": "Mutant cannot create an independent same-boundary Capsule under an active owner.",
+      "id": "G25",
+      "name": "independent_nested_capsule_rejected",
+      "required": true
+    },
+    {
+      "expectation": "Mutation that disables or skips its own detection is rejected or classified dangerous.",
+      "id": "G26",
+      "name": "self_detection_disable_detected",
+      "required": true
+    },
+    {
+      "expectation": "Malformed evaluator result fails closed.",
+      "id": "G27",
+      "name": "malformed_evaluator_result_fail_closed",
+      "required": true
+    },
+    {
+      "expectation": "Evaluator crash fails closed with provenance.",
+      "id": "G28",
+      "name": "evaluator_crash_fail_closed",
+      "required": true
+    },
+    {
+      "expectation": "Evaluator timeout fails closed and descendants are cleaned.",
+      "id": "G29",
+      "name": "evaluator_timeout_fail_closed",
+      "required": true
+    },
+    {
+      "expectation": "Evaluator lying about which checks ran is detected from protocol/evidence mismatch.",
+      "id": "G30",
+      "name": "lying_checks_run_detected",
+      "required": true
+    },
+    {
+      "expectation": "Fixture mutation outside declared evidence binding is rejected.",
+      "id": "G31",
+      "name": "fixture_outside_declared_evidence_rejected",
+      "required": true
+    },
+    {
+      "expectation": "Mutation attempting accepted/current state writes is rejected/contained and accepted state remains unchanged.",
+      "id": "G32",
+      "name": "accepted_state_write_rejected",
+      "required": true
+    },
+    {
+      "expectation": "Mutation attempting to alter frozen Gen14 gold is rejected and gold SHA remains unchanged.",
+      "id": "G33",
+      "name": "frozen_gold_write_rejected",
+      "required": true
+    },
+    {
+      "expectation": "Benchmark/evaluator claiming PASS with skipped required checks fails closed.",
+      "id": "G34",
+      "name": "pass_with_skipped_checks_rejected",
+      "required": true
+    },
+    {
+      "expectation": "Scoring mutation cannot hide an independently observed critical failure.",
+      "id": "G35",
+      "name": "critical_failure_not_hidden_by_score",
+      "required": true
+    },
+    {
+      "expectation": "Nursery is used against at least one real Gen8\u2013Gen13 evaluator with pinned lineage.",
+      "id": "G36",
+      "name": "real_prior_evaluator_self_use",
+      "required": true
+    },
+    {
+      "expectation": "At least one mutation of a real prior-generation evaluator is killed by independent cases.",
+      "id": "G37",
+      "name": "self_use_kills_real_mutation",
+      "required": true
+    },
+    {
+      "expectation": "Final designated dangerous suite has zero unexplained surviving dangerous mutations.",
+      "id": "G38",
+      "name": "dangerous_survivors_zero_or_resolved",
+      "required": true
+    },
+    {
+      "expectation": "Overall mutation kill rate meets frozen minimum and dangerous kill rate is complete.",
+      "id": "G39",
+      "name": "mutation_kill_rate_threshold",
+      "required": true
+    },
+    {
+      "expectation": "Report includes kill rates, surviving dangerous mutations, class breakdown, and invalid/protocol failures.",
+      "id": "G40",
+      "name": "detection_power_report",
+      "required": true
+    },
+    {
+      "expectation": "Unique check contribution is computed where practical from isolated check mutations.",
+      "id": "G41",
+      "name": "unique_check_contribution_report",
+      "required": true
+    },
+    {
+      "expectation": "Potential redundant/equivalent checks are reported separately from dangerous survivors.",
+      "id": "G42",
+      "name": "redundant_check_report",
+      "required": true
+    },
+    {
+      "expectation": "Equivalent nursery runs have identical semantic mutation/result identities despite different physical Capsule runs.",
+      "id": "G43",
+      "name": "deterministic_semantic_rerun",
+      "required": true
+    },
+    {
+      "expectation": "Nursery never writes accepted evaluator source or automatically promotes evaluator changes.",
+      "id": "G44",
+      "name": "no_automatic_promotion",
+      "required": true
+    },
+    {
+      "expectation": "Gen13 retained benchmark remains exactly 37/37.",
+      "id": "G45",
+      "name": "gen13_retained_37_37",
+      "required": true
+    },
+    {
+      "expectation": "Full Gen2\u2013Gen12 retained regression matrix passes using established mutation-safe/version-pinned strategies.",
+      "id": "G46",
+      "name": "gen2_gen12_retained_matrix",
+      "required": true
+    },
+    {
+      "expectation": "Protected-state comparison shows zero forbidden accepted-state mutations; only allowed append-only audit growth may differ.",
+      "id": "G47",
+      "name": "protected_state_preserved",
+      "required": true
+    },
+    {
+      "expectation": "Guest containment remains intact: host repo/control sockets unavailable and protected private targets blocked.",
+      "id": "G48",
+      "name": "containment_preserved",
+      "required": true
+    },
+    {
+      "expectation": "Operational Lab permanent MCP surface remains exactly 10 tools; no Gen14 tool growth.",
+      "id": "G49",
+      "name": "permanent_tool_surface_10",
+      "required": true
+    },
+    {
+      "expectation": "Operational Gen6 server, LKG SHA, build identity, service and recovery ACCEPTED remain unchanged.",
+      "id": "G50",
+      "name": "operational_gen6_unchanged",
+      "required": true
+    },
+    {
+      "expectation": "Final Architectural Twin is rebuilt after Gen14 evidence and verifies with zero issues at checkpoint.",
+      "id": "G51",
+      "name": "final_twin_fresh_zero_issues",
+      "required": true
+    },
+    {
+      "expectation": "Canonical project tests pass.",
+      "id": "G52",
+      "name": "canonical_project_tests",
+      "required": true
+    },
+    {
+      "expectation": "All canonical Python sources pass mutation-free AST/compile validation.",
+      "id": "G53",
+      "name": "mutation_free_python_syntax",
+      "required": true
+    },
+    {
+      "expectation": "All canonical JSON/JSONL artifacts validate.",
+      "id": "G54",
+      "name": "json_jsonl_validation",
+      "required": true
+    },
+    {
+      "expectation": "Gen14-owned canonical files pass high-confidence secret/credential scan.",
+      "id": "G55",
+      "name": "high_confidence_secret_scan",
+      "required": true
+    },
+    {
+      "expectation": "git diff --check and new-file whitespace/final-newline checks pass without modifying unrelated work.",
+      "id": "G56",
+      "name": "git_diff_check",
+      "required": true
+    },
+    {
+      "expectation": "No temporary Gen14 Capsule/process/service/archive/transfer debris remains after final cleanup.",
+      "id": "G57",
+      "name": "no_temp_process_service_archive_debris",
+      "required": true
+    }
+  ],
+  "frozen_before_primary_implementation": true,
+  "generation": "gen14-evaluator-mutation-nursery-r1",
+  "later_generation_scope_excluded": [
+    "project_onboarding",
+    "domain_capability_expansion",
+    "capability_consolidation",
+    "autonomous_evaluator_promotion",
+    "production_self_mutation",
+    "permanent_mcp_tool_growth"
+  ],
+  "safe_mutation_classes": [
+    "threshold_change",
+    "assertion_delete",
+    "assertion_invert",
+    "fixture_substitute",
+    "evidence_omit",
+    "stale_evidence_inject",
+    "trust_declared_state",
+    "scoring_weight_change",
+    "fail_open_change",
+    "negative_control_corrupt"
+  ],
+  "thesis": "Test the Testers",
+  "thresholds": {
+    "dangerous_mutation_kill_rate_min": 1.0,
+    "forbidden_accepted_state_mutations": 0,
+    "gen13_retained_passed": 37,
+    "gen13_retained_total": 37,
+    "overall_mutation_kill_rate_min": 0.75,
+    "permanent_mcp_tool_growth": 0,
+    "real_evaluator_mutations_killed_min": 1,
+    "real_prior_evaluator_self_use_min": 1,
+    "required_checks_pass_rate": 1.0,
+    "surviving_dangerous_mutations_max": 0,
+    "unsafe_cases_fail_closed_rate_min": 1.0
+  },
+  "version": "gen14-gold-r1"
+}

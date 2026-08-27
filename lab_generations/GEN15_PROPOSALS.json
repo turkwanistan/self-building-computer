@@ -1,0 +1,39 @@
+{
+  "generated_from": "accepted Gen14 Evaluator Mutation Nursery + retained Gen2-Gen13 evidence",
+  "guardrails": [
+    "Frozen Optiplex_MCP remains unchanged",
+    "Permanent Lab MCP surface remains 10 by default",
+    "No autonomous production promotion",
+    "Use Gen13 isolation + Gen14 evaluator hardening for hazardous domain experiments",
+    "Retain Gen2-Gen14 matrix as acceptance gate"
+  ],
+  "ranked_proposals": [
+    {
+      "goal": "Onboard one real external project/domain and discover, build, evaluate, and expose useful guest-local domain capabilities using the mature Twin/context/epoch/routing/replay/isolation/mutation substrate without permanent MCP growth.",
+      "name": "Project Onboarding + Domain Capability Expansion Pilot",
+      "rank": 1
+    },
+    {
+      "goal": "Use Twin, retained evidence, and Gen14 mutation power to merge or retire redundant internal capability paths without losing unique detection or task coverage.",
+      "name": "Capability Consolidation / Interface Simplification",
+      "rank": 2
+    },
+    {
+      "goal": "Combine Gen12 Counterfactual Replay and Gen14 mutation evidence to localize which judge assumption, evidence binding, or scoring edge caused a bad accept/reject decision.",
+      "name": "Replay-Guided Evaluator Debugging",
+      "rank": 3
+    },
+    {
+      "goal": "Generalize Gen13 parent-child evaluation composition into reusable domain benchmark suites for code, data, media, and other future capability experiments.",
+      "name": "Delegated Domain Benchmark Orchestration",
+      "rank": 4
+    },
+    {
+      "goal": "Broaden mutation operators and higher-order evaluator interactions only where real onboarded domains reveal missing defect classes; avoid mutation complexity for its own sake.",
+      "name": "Evaluator Mutation Portfolio Expansion",
+      "rank": 5
+    }
+  ],
+  "strategic_sequence": "Gen15 bounded Project Onboarding + Domain Capability Expansion Pilot; later consolidation/debugging priorities remain evidence-driven",
+  "version": "gen15-proposals-r1"
+}

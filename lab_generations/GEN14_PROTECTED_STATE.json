@@ -1,0 +1,18 @@
+{
+  "allowed_audit_growth": [
+    {
+      "after_sha256": "0a45bac8381c70bcd267246bed49938f56fb105bba75a6605bcbe2702e3ed279",
+      "before_sha256": "99d318ff31f5356cbe6fede2062b91f155bf0091f1758204968e8233a817715f",
+      "bytes_appended": 15958,
+      "kind": "append_only_outer_audit",
+      "path": "/var/lib/optiplex-lab/traces/events.jsonl"
+    }
+  ],
+  "baseline_digest": "541ff30f1a6b8ad3597da00fc49ce0eab582153a1bbca0fd354f8f99eb506886",
+  "comparison_digest": "faa808cd1170e5fb120a618df2a52c0fd985776206e8b272f2b7555f3c4f19e1",
+  "forbidden_changes": [],
+  "lkg_sha256": "dc0d2cb41595a9a3d953873879ccc3e0bd88db2b4dcdee4cf8aa43dd4cb103e9",
+  "server_sha256": "dc0d2cb41595a9a3d953873879ccc3e0bd88db2b4dcdee4cf8aa43dd4cb103e9",
+  "status": "PASS",
+  "version": "gen14-protected-state-r1"
+}

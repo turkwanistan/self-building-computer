@@ -1,0 +1,183 @@
+{
+  "capsule_cleanup": {
+    "removed": true,
+    "run_id": "cap8_20260827T000933Z_6db2e3ac"
+  },
+  "direct_gen13": {
+    "accepted_state_write_status": [
+      "INVALID",
+      "UNDECLARED_CHILD_MUTATION"
+    ],
+    "authority_expansion": "DELEGATED_AUTHORITY_EXPANSION",
+    "fixture_outside_evidence_status": [
+      "INVALID",
+      "UNDECLARED_CHILD_MUTATION"
+    ],
+    "forged_parent_context": "FORGED_DELEGATION_CONTEXT",
+    "frozen_gold_write_status": [
+      "INVALID",
+      "UNDECLARED_CHILD_MUTATION"
+    ],
+    "independent_nested_capsule": "INCOMPATIBLE_NESTED_ISOLATION",
+    "scope_expansion": "DELEGATED_SCOPE_EXPANSION",
+    "stale_context_binding": "STALE_DELEGATION_CONTEXT"
+  },
+  "protocol_checks": {
+    "lying_decision": {
+      "derived_decision": "FAIL",
+      "errors": [
+        "DECLARED_DECISION_MISMATCH"
+      ],
+      "ok": false
+    },
+    "malformed": {
+      "derived_decision": "FAIL",
+      "errors": [
+        "ENVELOPE_NOT_OBJECT"
+      ],
+      "ok": false
+    },
+    "skipped": {
+      "derived_decision": "FAIL",
+      "errors": [
+        "CASE_RESULTS_MISMATCH",
+        "CHECKS_RUN_MISMATCH",
+        "DECLARED_DECISION_MISMATCH",
+        "SKIPPED_REQUIRED_CHECKS"
+      ],
+      "ok": false
+    }
+  },
+  "root_accepted_state_unchanged": true,
+  "root_forbidden": [],
+  "spec_rejections": {
+    "ambiguous_mutation_match": {
+      "capsule_cleanup": {
+        "removed": true,
+        "run_id": "cap8_20260827T000930Z_c8838172"
+      },
+      "check_id": null,
+      "classification": "INVALID_FAIL_CLOSED",
+      "dangerous": null,
+      "failure_reason": "MUTANT_PREPARATION_FAILED",
+      "kill_reason": null,
+      "mutation_class": null,
+      "mutation_id": "mu14_713e34f3571f512bb7335016",
+      "ok": false,
+      "root_proof": {
+        "accepted_state_unchanged": true,
+        "final_mutation_paths": [],
+        "forbidden_accepted_state_mutations": 0,
+        "physical_isolation_owner_count": 1,
+        "root_semantic_result_digest": "3a7fda060950bbc06a8719e1c6010bf7f833d179c56bd82064a07b691ac014ec",
+        "unexpected_final_mutations": []
+      },
+      "semantic_result_digest": null
+    },
+    "authority_expansion_rejected": {
+      "capsule_cleanup": null,
+      "check_id": null,
+      "classification": "INVALID_FAIL_CLOSED",
+      "dangerous": null,
+      "failure_reason": "MUTATION_AUTHORITY_INVALID",
+      "kill_reason": null,
+      "mutation_class": null,
+      "mutation_id": null,
+      "ok": false,
+      "root_proof": null,
+      "semantic_result_digest": null
+    },
+    "forged_evaluator_lineage_rejected": {
+      "capsule_cleanup": null,
+      "check_id": null,
+      "classification": "INVALID_FAIL_CLOSED",
+      "dangerous": null,
+      "failure_reason": "EVALUATOR_LINEAGE_MISMATCH",
+      "kill_reason": null,
+      "mutation_class": null,
+      "mutation_id": null,
+      "ok": false,
+      "root_proof": null,
+      "semantic_result_digest": null
+    },
+    "frozen_gold_binding_rejected": {
+      "capsule_cleanup": null,
+      "check_id": null,
+      "classification": "INVALID_FAIL_CLOSED",
+      "dangerous": null,
+      "failure_reason": "GOLD_BINDING_INVALID",
+      "kill_reason": null,
+      "mutation_class": null,
+      "mutation_id": null,
+      "ok": false,
+      "root_proof": null,
+      "semantic_result_digest": null
+    },
+    "outside_evaluator_root_rejected": {
+      "capsule_cleanup": null,
+      "check_id": null,
+      "classification": "INVALID_FAIL_CLOSED",
+      "dangerous": null,
+      "failure_reason": "EVALUATOR_PATH_INVALID",
+      "kill_reason": null,
+      "mutation_class": null,
+      "mutation_id": null,
+      "ok": false,
+      "root_proof": null,
+      "semantic_result_digest": null
+    },
+    "self_detection_target_rejected": {
+      "capsule_cleanup": null,
+      "check_id": null,
+      "classification": "INVALID_FAIL_CLOSED",
+      "dangerous": null,
+      "failure_reason": "EVALUATOR_TARGET_FORBIDDEN",
+      "kill_reason": null,
+      "mutation_class": null,
+      "mutation_id": null,
+      "ok": false,
+      "root_proof": null,
+      "semantic_result_digest": null
+    },
+    "stale_case_binding_rejected": {
+      "capsule_cleanup": null,
+      "check_id": null,
+      "classification": "INVALID_FAIL_CLOSED",
+      "dangerous": null,
+      "failure_reason": "CASE_BINDING_INVALID",
+      "kill_reason": null,
+      "mutation_class": null,
+      "mutation_id": null,
+      "ok": false,
+      "root_proof": null,
+      "semantic_result_digest": null
+    },
+    "unknown_spec_field_rejected": {
+      "capsule_cleanup": null,
+      "check_id": null,
+      "classification": "INVALID_FAIL_CLOSED",
+      "dangerous": null,
+      "failure_reason": "SPEC_UNKNOWN_FIELD",
+      "kill_reason": null,
+      "mutation_class": null,
+      "mutation_id": null,
+      "ok": false,
+      "root_proof": null,
+      "semantic_result_digest": null
+    },
+    "unsafe_mutation_class_rejected": {
+      "capsule_cleanup": null,
+      "check_id": null,
+      "classification": "INVALID_FAIL_CLOSED",
+      "dangerous": null,
+      "failure_reason": "MUTATION_CLASS_UNSAFE",
+      "kill_reason": null,
+      "mutation_class": null,
+      "mutation_id": null,
+      "ok": false,
+      "root_proof": null,
+      "semantic_result_digest": null
+    }
+  },
+  "version": "gen14-adversarial-r1"
+}

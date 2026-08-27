@@ -1,0 +1,223 @@
+{
+  "generated_at": "2026-08-27T00:14:23.887219+00:00",
+  "matrix": {
+    "gen10": {
+      "detail": {
+        "stdout_tail": "digest\": \"8a532548be3490bf6416130f15eac33a207705bb62e12d83938d5be8c36df1df\",\n      \"transaction_digest\": \"9903a66eae16ba28d5659640cd31dab1f560ac164e5c46d53407425f8d86ec4b\"\n    },\n    \"epoch_latency_ms\": {\n      \"creation_samples\": 6,\n      \"creation_seal_median\": 202.231,\n      \"creation_seal_p95\": 314.642,\n      \"finalize_median\": 81.817,\n      \"verify_median\": 80.015,\n      \"verify_p95\": 84.526,\n      \"verify_samples\": 13\n    },\n    \"gen9_quality\": {\n      \"context_payload_reduction_vs_gen8\": 0.455603,\n      \"critical_fn\": 0,\n      \"necessity_aware_precision\": 1.0,\n      \"required_recall\": 1.0\n    },\n    \"next_epoch\": {\n      \"fresh\": 1,\n      \"freshness_rate\": 1.0,\n      \"trials\": 1\n    },\n    \"permanent_mcp_tools\": 10,\n    \"safety\": {\n      \"avoidable_same_transaction_fail_closed\": 0,\n      \"avoidable_same_transaction_fail_closed_trials\": 1,\n      \"unsafe_blocked\": 5,\n      \"unsafe_fail_closed_rate\": 1.0,\n      \"unsafe_trials\": 5\n    },\n    \"storage\": {\n      \"entries\": 132,\n      \"epoch_manifest_bytes\": 62333,\n      \"materialized_bytes\": 9340240,\n      \"unique_blob_bytes\": 183535350\n    }\n  },\n  \"passed\": 24,\n  \"started_at\": \"2026-08-27T00:12:58.804357+00:00\",\n  \"total\": 24\n}\n"
+      },
+      "expected": "24/24",
+      "ok": true,
+      "passed": 24,
+      "result": "24/24",
+      "strategy": "direct; owns built-in isolation",
+      "total": 24
+    },
+    "gen11": {
+      "detail": {
+        "stdout_tail": "t\": \"e2f3290dd7c5242dbc00f826e18a09a328084dc8bc66422f9c47500f239e1f28\",\n      \"epoch_id\": \"ep10_e2f3290dd7c5242dbc00f826e18a09a328084dc8bc66422f9c47500f239e1f28\",\n      \"ok\": true,\n      \"routing_digest\": \"7c77f58e9400b09102edde1299bcd54a89b03c4287eaa7056f3e7212022668f7\",\n      \"transaction_digest\": \"e1f3fab356e701f6c3865b9c9f7f3c6ce43106d7f7cc14a1abf32bc8a8a718de\"\n    },\n    \"gen9_quality_preservation\": {\n      \"context_payload_reduction_vs_gen8\": 0.448789,\n      \"critical_fn\": 0,\n      \"critical_fp\": 0,\n      \"critical_tp\": 53,\n      \"gen11_routed_minimized_average_bytes\": 12037.57,\n      \"gen8_baseline_average_bytes\": 21838.43,\n      \"necessity_aware_precision\": 1.0,\n      \"required_evidence_recall\": 1.0\n    },\n    \"mixed_intent_precedence_correct_rate\": 1.0,\n    \"paraphrase_semantics_ok\": true,\n    \"permanent_mcp_tools\": 10,\n    \"routing_latency_ms\": {\n      \"max\": 4.352607,\n      \"median\": 0.181591,\n      \"p95\": 0.327373\n    },\n    \"routing_proof_bytes\": {\n      \"max\": 2585,\n      \"median\": 1980\n    },\n    \"safety_ambiguity_conservative_rate\": 1.0\n  },\n  \"output\": \"/var/lib/optiplex-lab/benchmarks/gen11-intent-authority-routing-benchmark.json\",\n  \"passed\": 39,\n  \"total\": 39\n}\n"
+      },
+      "expected": "39/39",
+      "ok": true,
+      "passed": 39,
+      "result": "39/39",
+      "strategy": "direct after fresh Twin",
+      "total": 39
+    },
+    "gen12": {
+      "detail": {
+        "stdout_tail": "fbf6a\",\n    \"routing_digest\": \"dd4b8e36e56fadf2433ada6d0face390ea8634de11a46f854b0992d2d68e9d05\",\n    \"routing_primary\": \"implementation_change\",\n    \"routing_secondary\": [\n      \"evaluation_benchmarking\"\n    ],\n    \"twin_graph_digest\": \"4d109ed62d0d8134f053d41e647a7cd7502402923edcd336d911ba7eb9874561\"\n  },\n  \"benchmark_sha256\": \"8b748b9f75a6556e5158535f57930063c6e762e765da911444ea605dc2963f46\",\n  \"duration_ms\": 12987.651,\n  \"engine_sha256\": \"6d7f32a86ce73501feecffd21ba6ca319de548f9b29044c9e737baba824dbac0\",\n  \"entry_twin\": {\n    \"edges\": 327,\n    \"graph_digest\": \"4d109ed62d0d8134f053d41e647a7cd7502402923edcd336d911ba7eb9874561\",\n    \"inputs\": 111,\n    \"nodes\": 212\n  },\n  \"metrics\": {\n    \"baseline_reproduction_rate\": 1.0,\n    \"declared_delta_attribution_correctness\": 1.0,\n    \"deterministic_replay_rate\": 1.0,\n    \"forbidden_accepted_state_mutations\": 0,\n    \"historical_evidence_leakage\": 0,\n    \"implementation_replay_semantic_delta\": true,\n    \"negative_control_semantic_delta\": false,\n    \"single_isolation_owner\": \"replay\",\n    \"unsafe_authority_weakening_accepted\": 0,\n    \"unsafe_cases_rejected\": 10,\n    \"unsafe_cases_total\": 10\n  },\n  \"ok\": true,\n  \"passed\": 30,\n  \"total\": 30\n}\n"
+      },
+      "expected": "30/30",
+      "ok": true,
+      "passed": 30,
+      "result": "30/30",
+      "strategy": "direct native replay/Capsule semantics",
+      "total": 30
+    },
+    "gen13": {
+      "detail": {
+        "stdout_tail": "enchmark_sha256\": \"e6dce8fe8c3858c9fa8e425d06ef2a7838b6341b2d5dab6d78f47d89dc1e1b1e\",\n    \"counterfactual_replay_sha256\": \"6d7f32a86ce73501feecffd21ba6ca319de548f9b29044c9e737baba824dbac0\",\n    \"experiment_capsule_sha256\": \"e1276653cde8c0fd9df2a0ebddc5ca5fb148e939ea182996a80563b6b60c05a8\",\n    \"gold_sha256\": \"93f0976bfc47542105252cc288b093cb453341ca623f6757cfdd032c4676e785\",\n    \"hierarchy_sha256\": \"9a32955b79c63efd1023ca1741bff61ab2b0ed5dfb3eaea0aa817b777421a372\"\n  },\n  \"metrics\": {\n    \"ambiguous_isolation_ownership_accepted\": 0,\n    \"authority_monotonicity\": 1.0,\n    \"cleanup_failures\": 0,\n    \"declared_mutation_attribution_correctness\": 1.0,\n    \"deterministic_semantic_composition\": 1.0,\n    \"forbidden_accepted_state_mutations\": 0,\n    \"historical_evidence_leakage\": 0,\n    \"parent_child_composition_success\": 1.0,\n    \"permanent_mcp_tool_growth\": 0,\n    \"standalone_gen12_compatibility\": 1.0,\n    \"standalone_gen8_compatibility\": 1.0,\n    \"undeclared_mutation_detection\": 1.0,\n    \"unsafe_authority_expansion_accepted\": 0,\n    \"unsafe_cases_rejected\": 17,\n    \"unsafe_cases_total\": 17,\n    \"valid_delegated_gen12_replay_success\": 1.0\n  },\n  \"ok\": true,\n  \"passed\": 37,\n  \"total\": 37\n}\n"
+      },
+      "expected": "37/37",
+      "ok": true,
+      "passed": 37,
+      "result": "37/37",
+      "strategy": "direct native hierarchical/Capsule semantics",
+      "total": 37
+    },
+    "gen2": {
+      "detail": {
+        "expected": "12/12"
+      },
+      "expected": "12/12",
+      "ok": true,
+      "passed": 12,
+      "result": "12/12",
+      "strategy": "shared historical Experiment Capsule",
+      "total": 12
+    },
+    "gen3": {
+      "detail": {
+        "expected": "16/16"
+      },
+      "expected": "16/16",
+      "ok": true,
+      "passed": 16,
+      "result": "16/16",
+      "strategy": "shared historical Experiment Capsule",
+      "total": 16
+    },
+    "gen4": {
+      "detail": {
+        "expected": "18/18"
+      },
+      "expected": "18/18",
+      "ok": true,
+      "passed": 18,
+      "result": "18/18",
+      "strategy": "shared historical Experiment Capsule",
+      "total": 18
+    },
+    "gen5": {
+      "detail": null,
+      "expected": "12/12",
+      "ok": true,
+      "passed": 12,
+      "result": "12/12",
+      "strategy": "historical empty capability/regression state Capsule",
+      "total": 12
+    },
+    "gen6": {
+      "detail": null,
+      "expected": "13/13",
+      "ok": true,
+      "passed": 13,
+      "result": "13/13",
+      "strategy": "Experiment Capsule",
+      "total": 13
+    },
+    "gen7": {
+      "detail": null,
+      "expected": "15/15",
+      "ok": true,
+      "passed": 15,
+      "result": "15/15",
+      "strategy": "version-pinned historical Capsule",
+      "total": 15
+    },
+    "gen8": {
+      "detail": {
+        "stdout_tail": "s\": {\n      \"max\": 259.846,\n      \"median\": 117.486,\n      \"p95\": 215.449\n    },\n    \"context_reduction\": {\n      \"average_packet_bytes\": 24092.86,\n      \"broad_baseline_bytes\": 796211,\n      \"broad_reduction\": 0.97,\n      \"median_packet_bytes\": 17619,\n      \"practical_baseline_bytes\": 276200,\n      \"practical_reduction\": 0.913\n    },\n    \"context_selection_precision\": 0.5467,\n    \"critical_evidence_fn\": 0,\n    \"critical_evidence_fp\": 34,\n    \"critical_evidence_tp\": 41,\n    \"gen4_capsule_run\": \"cap8_20260826T160908Z_a0fba037\",\n    \"gen5_capsule_run\": \"cap8_20260826T152539Z_a2d9178c\",\n    \"gold_sha256\": \"f7fc1835e2fd65f99f52945533c6d709614302bab9ce79f9c4ef5f40c01d840d\",\n    \"packet_bytes\": {\n      \"average\": 24092.86,\n      \"max\": 46032,\n      \"median\": 17619,\n      \"min\": 12002\n    },\n    \"permanent_mcp_tools\": 10,\n    \"repro_capsule_runs\": [\n      \"cap8_20260827T001244Z_c0e03a9e\",\n      \"cap8_20260827T001247Z_02564c41\"\n    ],\n    \"required_evidence_recall\": 1.0,\n    \"task_kind_classification_ok\": true,\n    \"unrelated_context_negative_controls_ok\": true\n  },\n  \"output\": \"/var/lib/optiplex-lab/benchmarks/gen8-context-compiler-capsule-benchmark.json\",\n  \"passed\": 17,\n  \"total\": 17\n}\n"
+      },
+      "expected": "17/17",
+      "ok": true,
+      "passed": 17,
+      "result": "17/17",
+      "strategy": "quiescent native Capsule semantics",
+      "total": 17
+    },
+    "gen9": {
+      "detail": {
+        "stdout_tail": "permanent_mcp_tools\": 10,\n    \"post_gold_current_validations\": {\n      \"architecture-experience-loop-current\": [\n        \"validation:benchmark:benchmark_gen9\"\n      ],\n      \"change-context-compiler\": [\n        \"validation:benchmark:benchmark_gen10\",\n        \"validation:benchmark:benchmark_gen11\",\n        \"validation:benchmark:benchmark_gen9\"\n      ],\n      \"change-experiment-capsule\": [\n        \"validation:benchmark:benchmark_gen10\",\n        \"validation:benchmark:benchmark_gen12\",\n        \"validation:benchmark:benchmark_gen13\",\n        \"validation:benchmark:benchmark_gen14\",\n        \"validation:benchmark:benchmark_gen9\"\n      ],\n      \"debug-active-regression\": [],\n      \"evaluation-gen7-version-scoped\": [],\n      \"lifecycle-server-proof-witness\": [],\n      \"memory-repeat-normalizer\": []\n    },\n    \"task_kind_classification_ok\": true,\n    \"twin_graph_digest\": \"aab2be1db552d1c6897e6d7f0fcd024dc80d22b85bab8c6d283020a3ddd8947a\",\n    \"unrelated_context_negative_controls_ok\": true\n  },\n  \"output\": \"/var/lib/optiplex-lab/benchmarks/gen9-context-necessity-benchmark.json\",\n  \"packets\": \"/var/lib/optiplex-lab/benchmarks/gen9-context-necessity-packets.json\",\n  \"passed\": 20,\n  \"total\": 20\n}\n"
+      },
+      "expected": "20/20",
+      "ok": true,
+      "passed": 20,
+      "result": "20/20",
+      "strategy": "mutation-safe native isolation",
+      "total": 20
+    }
+  },
+  "metrics": {
+    "gen10_required_evidence_recall": null,
+    "gen12_forbidden_accepted_state_mutations": 0,
+    "gen13_passed": 37,
+    "gen13_total": 37,
+    "gen9_required_evidence_recall": null
+  },
+  "new_capsule_dirs_cleaned": [
+    {
+      "removed": true,
+      "run_id": "cap8_20260827T001244Z_c0e03a9e"
+    },
+    {
+      "removed": true,
+      "run_id": "cap8_20260827T001247Z_02564c41"
+    },
+    {
+      "removed": true,
+      "run_id": "cap8_20260827T001254Z_a00f6685"
+    },
+    {
+      "removed": true,
+      "run_id": "cap8_20260827T001259Z_27a02010"
+    },
+    {
+      "removed": true,
+      "run_id": "cap8_20260827T001305Z_887ec3ce"
+    },
+    {
+      "removed": true,
+      "run_id": "cap8_20260827T001309Z_1a9a5b72"
+    },
+    {
+      "removed": true,
+      "run_id": "cap8_20260827T001313Z_757cfbe9"
+    },
+    {
+      "removed": true,
+      "run_id": "cap8_20260827T001317Z_686dd86e"
+    },
+    {
+      "removed": true,
+      "run_id": "cap8_20260827T001322Z_8c42c4c4"
+    },
+    {
+      "removed": true,
+      "run_id": "cap8_20260827T001326Z_7cc2a5c8"
+    },
+    {
+      "removed": true,
+      "run_id": "cap8_20260827T001334Z_cbad31dc"
+    },
+    {
+      "removed": true,
+      "run_id": "cap8_20260827T001348Z_a77eb1c0"
+    },
+    {
+      "removed": true,
+      "run_id": "cap8_20260827T001351Z_20e88c78"
+    },
+    {
+      "removed": true,
+      "run_id": "cap8_20260827T001355Z_789cd1a9"
+    },
+    {
+      "removed": true,
+      "run_id": "cap8_20260827T001401Z_87ffaa77"
+    },
+    {
+      "removed": true,
+      "run_id": "cap8_20260827T001405Z_226c44ea"
+    },
+    {
+      "removed": true,
+      "run_id": "cap8_20260827T001408Z_4aa4b91b"
+    },
+    {
+      "removed": true,
+      "run_id": "cap8_20260827T001412Z_8f5f6ce4"
+    },
+    {
+      "removed": true,
+      "run_id": "cap8_20260827T001415Z_2e96c69e"
+    },
+    {
+      "removed": true,
+      "run_id": "cap8_20260827T001420Z_6d1d2865"
+    }
+  ],
+  "notes": [],
+  "status": "PASS",
+  "version": "gen14-retained-regressions-r1"
+}

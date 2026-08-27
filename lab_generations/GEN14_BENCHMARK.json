@@ -1,0 +1,1391 @@
+{
+  "artifacts": {
+    "adversarial": "/var/lib/optiplex-lab/benchmarks/gen14-adversarial.json",
+    "mutation_evidence": "/var/lib/optiplex-lab/benchmarks/gen14-mutation-evidence.json",
+    "self_use": "/var/lib/optiplex-lab/benchmarks/gen14-self-use.json"
+  },
+  "checks": [
+    {
+      "detail": {
+        "actual": "1a30b31a8f87c82428d157c20ddfd7c380289d6dae7447e01d573f2fb499483a",
+        "expected": "1a30b31a8f87c82428d157c20ddfd7c380289d6dae7447e01d573f2fb499483a"
+      },
+      "name": "frozen_gold_integrity",
+      "ok": true
+    },
+    {
+      "detail": [
+        "threshold_change",
+        "assertion_delete",
+        "assertion_invert",
+        "fixture_substitute",
+        "evidence_omit",
+        "stale_evidence_inject",
+        "trust_declared_state",
+        "scoring_weight_change",
+        "fail_open_change",
+        "negative_control_corrupt"
+      ],
+      "name": "safe_mutation_class_contract",
+      "ok": true
+    },
+    {
+      "detail": {
+        "checks": [
+          {
+            "detail": null,
+            "name": "safe_classes_10",
+            "ok": true
+          },
+          {
+            "detail": null,
+            "name": "runner_digest_stable",
+            "ok": true
+          },
+          {
+            "detail": null,
+            "name": "skipped_check_pass_rejected",
+            "ok": true
+          },
+          {
+            "detail": null,
+            "name": "runner_forgery_rejected",
+            "ok": true
+          },
+          {
+            "detail": {
+              "attempted": 2,
+              "by_class": {
+                "scoring_weight_change": {
+                  "killed": 0,
+                  "survived_dangerous": 0,
+                  "survived_redundant_or_equivalent": 1,
+                  "total": 1
+                },
+                "threshold_change": {
+                  "killed": 1,
+                  "survived_dangerous": 0,
+                  "survived_redundant_or_equivalent": 0,
+                  "total": 1
+                }
+              },
+              "dangerous_killed": 1,
+              "dangerous_mutants": 1,
+              "dangerous_mutation_kill_rate": 1.0,
+              "invalid_fail_closed": 0,
+              "killed": 1,
+              "overall_mutation_kill_rate": 0.5,
+              "redundant_or_equivalent_candidates": [
+                "score"
+              ],
+              "semantic_digest": "e397274e71cb89a9e726056510262625ef084284f6f8bcf38cb9dbcc92692ba4",
+              "surviving_dangerous_mutations": [],
+              "unique_check_contribution": [
+                "threshold"
+              ],
+              "valid_mutants": 2,
+              "version": "gen14-detection-power-r1"
+            },
+            "name": "detection_power_metrics",
+            "ok": true
+          }
+        ],
+        "passed": 5,
+        "total": 5,
+        "version": "gen14-evaluator-mutation-nursery-r1"
+      },
+      "name": "nursery_selftest",
+      "ok": true
+    },
+    {
+      "detail": {
+        "fixture": "d0634a12bb0a92a697d96765ffa8756c60d75425f93af5cf3f4bfb2d6c1e8810",
+        "twin": "f5ba258ed5559b755f5b68891a74f48bdfac243638bff60cc730c0f3cbf61d8e"
+      },
+      "name": "fixture_and_real_evaluator_lineage_available",
+      "ok": true
+    },
+    {
+      "detail": {
+        "capsule_cleanup": {
+          "removed": true,
+          "run_id": "cap8_20260827T000834Z_2c77779c"
+        },
+        "check_id": "threshold",
+        "classification": "KILLED",
+        "dangerous": true,
+        "failure_reason": null,
+        "kill_reason": "INDEPENDENT_ORACLE_MISMATCH",
+        "mutation_class": "threshold_change",
+        "mutation_id": "mu14_7f3aab779ed32f998486458c",
+        "ok": true,
+        "root_proof": {
+          "accepted_state_unchanged": true,
+          "final_mutation_paths": [
+            "/root/gen14-nursery/mu14_7f3aab779ed32f998486458c/baseline.py",
+            "/root/gen14-nursery/mu14_7f3aab779ed32f998486458c/cases.json",
+            "/root/gen14-nursery/mu14_7f3aab779ed32f998486458c/mutant-cases.json",
+            "/root/gen14-nursery/mu14_7f3aab779ed32f998486458c/mutant.py"
+          ],
+          "forbidden_accepted_state_mutations": 0,
+          "physical_isolation_owner_count": 1,
+          "root_semantic_result_digest": "d6dd5ff6010c6f8463a426677c20d39b9ccacbe32d7995a03eb867dd0912321b",
+          "unexpected_final_mutations": []
+        },
+        "semantic_result_digest": "236260b361cd53d779bcc2c44b4958b48cc98cc7096064d24a598e41063e21e9"
+      },
+      "name": "mutation_class_threshold_change",
+      "ok": true
+    },
+    {
+      "detail": {
+        "capsule_cleanup": {
+          "removed": true,
+          "run_id": "cap8_20260827T000838Z_d48f0ef5"
+        },
+        "check_id": "negative_control",
+        "classification": "KILLED",
+        "dangerous": true,
+        "failure_reason": null,
+        "kill_reason": "MUTANT_EXECUTION_OR_PROTOCOL_FAILURE",
+        "mutation_class": "assertion_delete",
+        "mutation_id": "mu14_c28557aacbccdf7789a1af88",
+        "ok": true,
+        "root_proof": {
+          "accepted_state_unchanged": true,
+          "final_mutation_paths": [
+            "/root/gen14-nursery/mu14_c28557aacbccdf7789a1af88/baseline.py",
+            "/root/gen14-nursery/mu14_c28557aacbccdf7789a1af88/cases.json",
+            "/root/gen14-nursery/mu14_c28557aacbccdf7789a1af88/mutant-cases.json",
+            "/root/gen14-nursery/mu14_c28557aacbccdf7789a1af88/mutant.py"
+          ],
+          "forbidden_accepted_state_mutations": 0,
+          "physical_isolation_owner_count": 1,
+          "root_semantic_result_digest": "997930e96f79dac3b35f7a0793e975243741114d68ae50b35d542139c38b7af7",
+          "unexpected_final_mutations": []
+        },
+        "semantic_result_digest": "b5e76bb5b16bbbcfc0c767e27ee67505ffe6600209406b6720ca8dfaa84883f4"
+      },
+      "name": "mutation_class_assertion_delete",
+      "ok": true
+    },
+    {
+      "detail": {
+        "capsule_cleanup": {
+          "removed": true,
+          "run_id": "cap8_20260827T000841Z_32e92181"
+        },
+        "check_id": "evidence",
+        "classification": "KILLED",
+        "dangerous": true,
+        "failure_reason": null,
+        "kill_reason": "INDEPENDENT_ORACLE_MISMATCH",
+        "mutation_class": "assertion_invert",
+        "mutation_id": "mu14_765dc6a95f4e4d6873f3014b",
+        "ok": true,
+        "root_proof": {
+          "accepted_state_unchanged": true,
+          "final_mutation_paths": [
+            "/root/gen14-nursery/mu14_765dc6a95f4e4d6873f3014b/baseline.py",
+            "/root/gen14-nursery/mu14_765dc6a95f4e4d6873f3014b/cases.json",
+            "/root/gen14-nursery/mu14_765dc6a95f4e4d6873f3014b/mutant-cases.json",
+            "/root/gen14-nursery/mu14_765dc6a95f4e4d6873f3014b/mutant.py"
+          ],
+          "forbidden_accepted_state_mutations": 0,
+          "physical_isolation_owner_count": 1,
+          "root_semantic_result_digest": "2e6b0450d03d4e1ad5898e166e431cd5c3cb3500f22fda6f4289e34e20bf2219",
+          "unexpected_final_mutations": []
+        },
+        "semantic_result_digest": "6a008807d79d1575a6b2f230f9145af95606ddf2a501187cf8be34c227952ab7"
+      },
+      "name": "mutation_class_assertion_invert",
+      "ok": true
+    },
+    {
+      "detail": {
+        "capsule_cleanup": {
+          "removed": true,
+          "run_id": "cap8_20260827T000845Z_d9fbb8dc"
+        },
+        "check_id": "negative_control_fixture",
+        "classification": "KILLED",
+        "dangerous": true,
+        "failure_reason": null,
+        "kill_reason": "INDEPENDENT_ORACLE_MISMATCH",
+        "mutation_class": "fixture_substitute",
+        "mutation_id": "mu14_e050e04906968562901d3a41",
+        "ok": true,
+        "root_proof": {
+          "accepted_state_unchanged": true,
+          "final_mutation_paths": [
+            "/root/gen14-nursery/mu14_e050e04906968562901d3a41/baseline.py",
+            "/root/gen14-nursery/mu14_e050e04906968562901d3a41/cases.json",
+            "/root/gen14-nursery/mu14_e050e04906968562901d3a41/mutant-cases.json",
+            "/root/gen14-nursery/mu14_e050e04906968562901d3a41/mutant.py"
+          ],
+          "forbidden_accepted_state_mutations": 0,
+          "physical_isolation_owner_count": 1,
+          "root_semantic_result_digest": "e077acd44fe1236609d2561ef6108d2b1b901a47022a6b2c0fb98f3392262237",
+          "unexpected_final_mutations": []
+        },
+        "semantic_result_digest": "1503d457c5335dee2c5ad177a40cbbf949f4fb7f25119afca42bb261bcace45c"
+      },
+      "name": "mutation_class_fixture_substitute",
+      "ok": true
+    },
+    {
+      "detail": {
+        "capsule_cleanup": {
+          "removed": true,
+          "run_id": "cap8_20260827T000848Z_12dc3cb6"
+        },
+        "check_id": "evidence_required",
+        "classification": "KILLED",
+        "dangerous": true,
+        "failure_reason": null,
+        "kill_reason": "INDEPENDENT_ORACLE_MISMATCH",
+        "mutation_class": "evidence_omit",
+        "mutation_id": "mu14_5cabc7c93c11758ece840f20",
+        "ok": true,
+        "root_proof": {
+          "accepted_state_unchanged": true,
+          "final_mutation_paths": [
+            "/root/gen14-nursery/mu14_5cabc7c93c11758ece840f20/baseline.py",
+            "/root/gen14-nursery/mu14_5cabc7c93c11758ece840f20/cases.json",
+            "/root/gen14-nursery/mu14_5cabc7c93c11758ece840f20/mutant-cases.json",
+            "/root/gen14-nursery/mu14_5cabc7c93c11758ece840f20/mutant.py"
+          ],
+          "forbidden_accepted_state_mutations": 0,
+          "physical_isolation_owner_count": 1,
+          "root_semantic_result_digest": "ef9b119d811d3355f219d43e7e3060a17e2fa1681df4af9af39b95bd33de6f68",
+          "unexpected_final_mutations": []
+        },
+        "semantic_result_digest": "e8864f3de471afa9be86ebef46474cf2cb04e220b7244464fc064f8f9d9eaaa8"
+      },
+      "name": "mutation_class_evidence_omit",
+      "ok": true
+    },
+    {
+      "detail": {
+        "capsule_cleanup": {
+          "removed": true,
+          "run_id": "cap8_20260827T000851Z_8534767b"
+        },
+        "check_id": "freshness",
+        "classification": "KILLED",
+        "dangerous": true,
+        "failure_reason": null,
+        "kill_reason": "INDEPENDENT_ORACLE_MISMATCH",
+        "mutation_class": "stale_evidence_inject",
+        "mutation_id": "mu14_2d9b40750f390b6b12dc395b",
+        "ok": true,
+        "root_proof": {
+          "accepted_state_unchanged": true,
+          "final_mutation_paths": [
+            "/root/gen14-nursery/mu14_2d9b40750f390b6b12dc395b/baseline.py",
+            "/root/gen14-nursery/mu14_2d9b40750f390b6b12dc395b/cases.json",
+            "/root/gen14-nursery/mu14_2d9b40750f390b6b12dc395b/mutant-cases.json",
+            "/root/gen14-nursery/mu14_2d9b40750f390b6b12dc395b/mutant.py"
+          ],
+          "forbidden_accepted_state_mutations": 0,
+          "physical_isolation_owner_count": 1,
+          "root_semantic_result_digest": "ec6f6732fb97e654dee4c874412426e8f1025416af2b2d2a8b980c2e17a60c6d",
+          "unexpected_final_mutations": []
+        },
+        "semantic_result_digest": "20013879d00e9448fc99f6468acc4016e410ccaf56f5e7f81a3ccd991ffbece8"
+      },
+      "name": "mutation_class_stale_evidence_inject",
+      "ok": true
+    },
+    {
+      "detail": {
+        "capsule_cleanup": {
+          "removed": true,
+          "run_id": "cap8_20260827T000855Z_29806959"
+        },
+        "check_id": "observed_state",
+        "classification": "KILLED",
+        "dangerous": true,
+        "failure_reason": null,
+        "kill_reason": "INDEPENDENT_ORACLE_MISMATCH",
+        "mutation_class": "trust_declared_state",
+        "mutation_id": "mu14_91939dd623a9473a956ea65f",
+        "ok": true,
+        "root_proof": {
+          "accepted_state_unchanged": true,
+          "final_mutation_paths": [
+            "/root/gen14-nursery/mu14_91939dd623a9473a956ea65f/baseline.py",
+            "/root/gen14-nursery/mu14_91939dd623a9473a956ea65f/cases.json",
+            "/root/gen14-nursery/mu14_91939dd623a9473a956ea65f/mutant-cases.json",
+            "/root/gen14-nursery/mu14_91939dd623a9473a956ea65f/mutant.py"
+          ],
+          "forbidden_accepted_state_mutations": 0,
+          "physical_isolation_owner_count": 1,
+          "root_semantic_result_digest": "09bae330fa91afaa3eb2d6d09f039cefc4728be1e015820221d6407cb3a90cdb",
+          "unexpected_final_mutations": []
+        },
+        "semantic_result_digest": "2d054451b8fbd0ddfe80921e29708802dce4f1a574cc8e0d49c45ce31790a3fc"
+      },
+      "name": "mutation_class_trust_declared_state",
+      "ok": true
+    },
+    {
+      "detail": {
+        "capsule_cleanup": {
+          "removed": true,
+          "run_id": "cap8_20260827T000858Z_36b5c152"
+        },
+        "check_id": "score_weight",
+        "classification": "SURVIVED_REDUNDANT_OR_EQUIVALENT",
+        "dangerous": false,
+        "failure_reason": null,
+        "kill_reason": null,
+        "mutation_class": "scoring_weight_change",
+        "mutation_id": "mu14_e821040d405764c3169d3cd9",
+        "ok": true,
+        "root_proof": {
+          "accepted_state_unchanged": true,
+          "final_mutation_paths": [
+            "/root/gen14-nursery/mu14_e821040d405764c3169d3cd9/baseline.py",
+            "/root/gen14-nursery/mu14_e821040d405764c3169d3cd9/cases.json",
+            "/root/gen14-nursery/mu14_e821040d405764c3169d3cd9/mutant-cases.json",
+            "/root/gen14-nursery/mu14_e821040d405764c3169d3cd9/mutant.py"
+          ],
+          "forbidden_accepted_state_mutations": 0,
+          "physical_isolation_owner_count": 1,
+          "root_semantic_result_digest": "cc1d5c20c5df7e0c5c4ecfbddb68924797d98d71754ba4b67f3c115de5b23cf8",
+          "unexpected_final_mutations": []
+        },
+        "semantic_result_digest": "c041ab15c57baf05f5a166dfba1ce93d090d8b5e129ed8507e89636194c97cab"
+      },
+      "name": "mutation_class_scoring_weight_change",
+      "ok": true
+    },
+    {
+      "detail": {
+        "capsule_cleanup": {
+          "removed": true,
+          "run_id": "cap8_20260827T000902Z_b9998a83"
+        },
+        "check_id": "fail_closed",
+        "classification": "KILLED",
+        "dangerous": true,
+        "failure_reason": null,
+        "kill_reason": "MUTANT_EXECUTION_OR_PROTOCOL_FAILURE",
+        "mutation_class": "fail_open_change",
+        "mutation_id": "mu14_8b65be95abaa5e704a662b15",
+        "ok": true,
+        "root_proof": {
+          "accepted_state_unchanged": true,
+          "final_mutation_paths": [
+            "/root/gen14-nursery/mu14_8b65be95abaa5e704a662b15/baseline.py",
+            "/root/gen14-nursery/mu14_8b65be95abaa5e704a662b15/cases.json",
+            "/root/gen14-nursery/mu14_8b65be95abaa5e704a662b15/mutant-cases.json",
+            "/root/gen14-nursery/mu14_8b65be95abaa5e704a662b15/mutant.py"
+          ],
+          "forbidden_accepted_state_mutations": 0,
+          "physical_isolation_owner_count": 1,
+          "root_semantic_result_digest": "34b3ac0d70f22951314138cbfd9233b2c9662606c2f1011b511321c088ddb8b7",
+          "unexpected_final_mutations": []
+        },
+        "semantic_result_digest": "d2c7e51a2855057094cd6b650d14a117f4a7aa2560c2db3d3b968161c8f85b34"
+      },
+      "name": "mutation_class_fail_open_change",
+      "ok": true
+    },
+    {
+      "detail": {
+        "capsule_cleanup": {
+          "removed": true,
+          "run_id": "cap8_20260827T000905Z_d29638f8"
+        },
+        "check_id": "negative_control",
+        "classification": "KILLED",
+        "dangerous": true,
+        "failure_reason": null,
+        "kill_reason": "INDEPENDENT_ORACLE_MISMATCH",
+        "mutation_class": "negative_control_corrupt",
+        "mutation_id": "mu14_95ed5878c3439ace71d99c3f",
+        "ok": true,
+        "root_proof": {
+          "accepted_state_unchanged": true,
+          "final_mutation_paths": [
+            "/root/gen14-nursery/mu14_95ed5878c3439ace71d99c3f/baseline.py",
+            "/root/gen14-nursery/mu14_95ed5878c3439ace71d99c3f/cases.json",
+            "/root/gen14-nursery/mu14_95ed5878c3439ace71d99c3f/mutant-cases.json",
+            "/root/gen14-nursery/mu14_95ed5878c3439ace71d99c3f/mutant.py"
+          ],
+          "forbidden_accepted_state_mutations": 0,
+          "physical_isolation_owner_count": 1,
+          "root_semantic_result_digest": "cffdb8e3ce7e50f641cd1228272d5a2c7883653bf10f97d39efd1a66ea7feb2b",
+          "unexpected_final_mutations": []
+        },
+        "semantic_result_digest": "3b896bd351a6c7941c523cb777288bb45b25af6254e1edb531090c3f7fed1eac"
+      },
+      "name": "mutation_class_negative_control_corrupt",
+      "ok": true
+    },
+    {
+      "detail": {
+        "capsule_cleanup": {
+          "removed": true,
+          "run_id": "cap8_20260827T000909Z_d8cdf1af"
+        },
+        "check_id": "evaluator_crash",
+        "classification": "KILLED",
+        "dangerous": true,
+        "failure_reason": null,
+        "kill_reason": "MUTANT_EXECUTION_OR_PROTOCOL_FAILURE",
+        "mutation_class": "assertion_delete",
+        "mutation_id": "mu14_56514ba845e9577c84e6bb14",
+        "ok": true,
+        "root_proof": {
+          "accepted_state_unchanged": true,
+          "final_mutation_paths": [
+            "/root/gen14-nursery/mu14_56514ba845e9577c84e6bb14/baseline.py",
+            "/root/gen14-nursery/mu14_56514ba845e9577c84e6bb14/cases.json",
+            "/root/gen14-nursery/mu14_56514ba845e9577c84e6bb14/mutant-cases.json",
+            "/root/gen14-nursery/mu14_56514ba845e9577c84e6bb14/mutant.py"
+          ],
+          "forbidden_accepted_state_mutations": 0,
+          "physical_isolation_owner_count": 1,
+          "root_semantic_result_digest": "038daab3af6e62d746029a27602eb976b6c9015b509e9e25a54946795fa2fda6",
+          "unexpected_final_mutations": []
+        },
+        "semantic_result_digest": "9130951442b9acce1a1d614ec23b0d0c4be8302eae2e1af750477beb893909a7"
+      },
+      "name": "evaluator_crash_fail_closed",
+      "ok": true
+    },
+    {
+      "detail": {
+        "capsule_cleanup": {
+          "removed": true,
+          "run_id": "cap8_20260827T000912Z_90a83557"
+        },
+        "check_id": "evaluator_timeout",
+        "classification": "KILLED",
+        "dangerous": true,
+        "failure_reason": null,
+        "kill_reason": "MUTANT_EXECUTION_OR_PROTOCOL_FAILURE",
+        "mutation_class": "assertion_delete",
+        "mutation_id": "mu14_8d78fd7030c4a5f74e72c498",
+        "ok": true,
+        "root_proof": {
+          "accepted_state_unchanged": true,
+          "final_mutation_paths": [
+            "/root/gen14-nursery/mu14_8d78fd7030c4a5f74e72c498/baseline.py",
+            "/root/gen14-nursery/mu14_8d78fd7030c4a5f74e72c498/cases.json",
+            "/root/gen14-nursery/mu14_8d78fd7030c4a5f74e72c498/mutant-cases.json",
+            "/root/gen14-nursery/mu14_8d78fd7030c4a5f74e72c498/mutant.py"
+          ],
+          "forbidden_accepted_state_mutations": 0,
+          "physical_isolation_owner_count": 1,
+          "root_semantic_result_digest": "1587268a52991278b3a6dde0c75303a1efe44b8c1eead4d72100f57b5219adf4",
+          "unexpected_final_mutations": []
+        },
+        "semantic_result_digest": "37df846fa06d50977d1eeb3e7e2f42c4b2e8808f21f283cbb459d378a8500a57"
+      },
+      "name": "evaluator_timeout_fail_closed",
+      "ok": true
+    },
+    {
+      "detail": {
+        "capsule_cleanup": {
+          "removed": true,
+          "run_id": "cap8_20260827T000916Z_ebe796e4"
+        },
+        "check_id": "malformed_evaluator_result",
+        "classification": "KILLED",
+        "dangerous": true,
+        "failure_reason": null,
+        "kill_reason": "MUTANT_EXECUTION_OR_PROTOCOL_FAILURE",
+        "mutation_class": "assertion_delete",
+        "mutation_id": "mu14_8d50597bfea8c5b663df7e22",
+        "ok": true,
+        "root_proof": {
+          "accepted_state_unchanged": true,
+          "final_mutation_paths": [
+            "/root/gen14-nursery/mu14_8d50597bfea8c5b663df7e22/baseline.py",
+            "/root/gen14-nursery/mu14_8d50597bfea8c5b663df7e22/cases.json",
+            "/root/gen14-nursery/mu14_8d50597bfea8c5b663df7e22/mutant-cases.json",
+            "/root/gen14-nursery/mu14_8d50597bfea8c5b663df7e22/mutant.py"
+          ],
+          "forbidden_accepted_state_mutations": 0,
+          "physical_isolation_owner_count": 1,
+          "root_semantic_result_digest": "c0bf89087338eda71d2c716dc901171ac5c55ab56b7000e8fde4c440753824b5",
+          "unexpected_final_mutations": []
+        },
+        "semantic_result_digest": "13c4ec1a94125d045ea96e5dd4de2f2d9f999bff7fb9196143a359207ed3dc5f"
+      },
+      "name": "malformed_evaluator_result_fail_closed",
+      "ok": true
+    },
+    {
+      "detail": {
+        "capsule_cleanup": {
+          "removed": true,
+          "run_id": "cap8_20260827T000919Z_afe42d54"
+        },
+        "check_id": "twin_stale_fail_closed",
+        "classification": "KILLED",
+        "dangerous": true,
+        "failure_reason": null,
+        "kill_reason": "INDEPENDENT_ORACLE_MISMATCH",
+        "mutation_class": "fail_open_change",
+        "mutation_id": "mu14_9a17ba4a721d208e4dad09f2",
+        "ok": true,
+        "root_proof": {
+          "accepted_state_unchanged": true,
+          "final_mutation_paths": [
+            "/root/gen14-nursery/mu14_9a17ba4a721d208e4dad09f2/baseline.py",
+            "/root/gen14-nursery/mu14_9a17ba4a721d208e4dad09f2/cases.json",
+            "/root/gen14-nursery/mu14_9a17ba4a721d208e4dad09f2/mutant-cases.json",
+            "/root/gen14-nursery/mu14_9a17ba4a721d208e4dad09f2/mutant.py"
+          ],
+          "forbidden_accepted_state_mutations": 0,
+          "physical_isolation_owner_count": 1,
+          "root_semantic_result_digest": "1d6508110e86d46639131994c143f2e20e054c1fba70f54f4b198a5b51511de4",
+          "unexpected_final_mutations": []
+        },
+        "semantic_result_digest": "529554358822156a583e89c03fc145d744f3112c61cc58d8c57a447f70d18750"
+      },
+      "name": "real_prior_evaluator_self_use_killed",
+      "ok": true
+    },
+    {
+      "detail": {
+        "accepted_state_unchanged": true,
+        "final_mutation_paths": [
+          "/root/gen14-nursery/mu14_9a17ba4a721d208e4dad09f2/baseline.py",
+          "/root/gen14-nursery/mu14_9a17ba4a721d208e4dad09f2/cases.json",
+          "/root/gen14-nursery/mu14_9a17ba4a721d208e4dad09f2/mutant-cases.json",
+          "/root/gen14-nursery/mu14_9a17ba4a721d208e4dad09f2/mutant.py"
+        ],
+        "forbidden_accepted_state_mutations": 0,
+        "physical_isolation_owner_count": 1,
+        "root_semantic_result_digest": "1d6508110e86d46639131994c143f2e20e054c1fba70f54f4b198a5b51511de4",
+        "unexpected_final_mutations": []
+      },
+      "name": "real_self_use_single_owner_and_protected",
+      "ok": true
+    },
+    {
+      "detail": {
+        "attempted": 14,
+        "by_class": {
+          "assertion_delete": {
+            "killed": 4,
+            "survived_dangerous": 0,
+            "survived_redundant_or_equivalent": 0,
+            "total": 4
+          },
+          "assertion_invert": {
+            "killed": 1,
+            "survived_dangerous": 0,
+            "survived_redundant_or_equivalent": 0,
+            "total": 1
+          },
+          "evidence_omit": {
+            "killed": 1,
+            "survived_dangerous": 0,
+            "survived_redundant_or_equivalent": 0,
+            "total": 1
+          },
+          "fail_open_change": {
+            "killed": 2,
+            "survived_dangerous": 0,
+            "survived_redundant_or_equivalent": 0,
+            "total": 2
+          },
+          "fixture_substitute": {
+            "killed": 1,
+            "survived_dangerous": 0,
+            "survived_redundant_or_equivalent": 0,
+            "total": 1
+          },
+          "negative_control_corrupt": {
+            "killed": 1,
+            "survived_dangerous": 0,
+            "survived_redundant_or_equivalent": 0,
+            "total": 1
+          },
+          "scoring_weight_change": {
+            "killed": 0,
+            "survived_dangerous": 0,
+            "survived_redundant_or_equivalent": 1,
+            "total": 1
+          },
+          "stale_evidence_inject": {
+            "killed": 1,
+            "survived_dangerous": 0,
+            "survived_redundant_or_equivalent": 0,
+            "total": 1
+          },
+          "threshold_change": {
+            "killed": 1,
+            "survived_dangerous": 0,
+            "survived_redundant_or_equivalent": 0,
+            "total": 1
+          },
+          "trust_declared_state": {
+            "killed": 1,
+            "survived_dangerous": 0,
+            "survived_redundant_or_equivalent": 0,
+            "total": 1
+          }
+        },
+        "dangerous_killed": 13,
+        "dangerous_mutants": 13,
+        "dangerous_mutation_kill_rate": 1.0,
+        "invalid_fail_closed": 0,
+        "killed": 13,
+        "overall_mutation_kill_rate": 0.928571,
+        "redundant_or_equivalent_candidates": [
+          "score_weight"
+        ],
+        "semantic_digest": "5cb0258d8f4d972bae4adde128012fd71b29ec0b223731e3f5fca9f0c8b10f2a",
+        "surviving_dangerous_mutations": [],
+        "unique_check_contribution": [
+          "evaluator_crash",
+          "evaluator_timeout",
+          "evidence",
+          "evidence_required",
+          "fail_closed",
+          "freshness",
+          "malformed_evaluator_result",
+          "negative_control",
+          "negative_control_fixture",
+          "observed_state",
+          "threshold",
+          "twin_stale_fail_closed"
+        ],
+        "valid_mutants": 14,
+        "version": "gen14-detection-power-r1"
+      },
+      "name": "overall_mutation_kill_rate",
+      "ok": true
+    },
+    {
+      "detail": {
+        "attempted": 14,
+        "by_class": {
+          "assertion_delete": {
+            "killed": 4,
+            "survived_dangerous": 0,
+            "survived_redundant_or_equivalent": 0,
+            "total": 4
+          },
+          "assertion_invert": {
+            "killed": 1,
+            "survived_dangerous": 0,
+            "survived_redundant_or_equivalent": 0,
+            "total": 1
+          },
+          "evidence_omit": {
+            "killed": 1,
+            "survived_dangerous": 0,
+            "survived_redundant_or_equivalent": 0,
+            "total": 1
+          },
+          "fail_open_change": {
+            "killed": 2,
+            "survived_dangerous": 0,
+            "survived_redundant_or_equivalent": 0,
+            "total": 2
+          },
+          "fixture_substitute": {
+            "killed": 1,
+            "survived_dangerous": 0,
+            "survived_redundant_or_equivalent": 0,
+            "total": 1
+          },
+          "negative_control_corrupt": {
+            "killed": 1,
+            "survived_dangerous": 0,
+            "survived_redundant_or_equivalent": 0,
+            "total": 1
+          },
+          "scoring_weight_change": {
+            "killed": 0,
+            "survived_dangerous": 0,
+            "survived_redundant_or_equivalent": 1,
+            "total": 1
+          },
+          "stale_evidence_inject": {
+            "killed": 1,
+            "survived_dangerous": 0,
+            "survived_redundant_or_equivalent": 0,
+            "total": 1
+          },
+          "threshold_change": {
+            "killed": 1,
+            "survived_dangerous": 0,
+            "survived_redundant_or_equivalent": 0,
+            "total": 1
+          },
+          "trust_declared_state": {
+            "killed": 1,
+            "survived_dangerous": 0,
+            "survived_redundant_or_equivalent": 0,
+            "total": 1
+          }
+        },
+        "dangerous_killed": 13,
+        "dangerous_mutants": 13,
+        "dangerous_mutation_kill_rate": 1.0,
+        "invalid_fail_closed": 0,
+        "killed": 13,
+        "overall_mutation_kill_rate": 0.928571,
+        "redundant_or_equivalent_candidates": [
+          "score_weight"
+        ],
+        "semantic_digest": "5cb0258d8f4d972bae4adde128012fd71b29ec0b223731e3f5fca9f0c8b10f2a",
+        "surviving_dangerous_mutations": [],
+        "unique_check_contribution": [
+          "evaluator_crash",
+          "evaluator_timeout",
+          "evidence",
+          "evidence_required",
+          "fail_closed",
+          "freshness",
+          "malformed_evaluator_result",
+          "negative_control",
+          "negative_control_fixture",
+          "observed_state",
+          "threshold",
+          "twin_stale_fail_closed"
+        ],
+        "valid_mutants": 14,
+        "version": "gen14-detection-power-r1"
+      },
+      "name": "dangerous_mutation_kill_rate",
+      "ok": true
+    },
+    {
+      "detail": [],
+      "name": "surviving_dangerous_zero",
+      "ok": true
+    },
+    {
+      "detail": [
+        "evaluator_crash",
+        "evaluator_timeout",
+        "evidence",
+        "evidence_required",
+        "fail_closed",
+        "freshness",
+        "malformed_evaluator_result",
+        "negative_control",
+        "negative_control_fixture",
+        "observed_state",
+        "threshold",
+        "twin_stale_fail_closed"
+      ],
+      "name": "unique_check_contribution_reported",
+      "ok": true
+    },
+    {
+      "detail": [
+        "score_weight"
+      ],
+      "name": "redundant_equivalent_reported",
+      "ok": true
+    },
+    {
+      "detail": {
+        "first": {
+          "capsule_cleanup": {
+            "removed": true,
+            "run_id": "cap8_20260827T000923Z_aa7182d4"
+          },
+          "check_id": "threshold",
+          "classification": "KILLED",
+          "dangerous": true,
+          "failure_reason": null,
+          "kill_reason": "INDEPENDENT_ORACLE_MISMATCH",
+          "mutation_class": "threshold_change",
+          "mutation_id": "mu14_7f3aab779ed32f998486458c",
+          "ok": true,
+          "root_proof": {
+            "accepted_state_unchanged": true,
+            "final_mutation_paths": [
+              "/root/gen14-nursery/mu14_7f3aab779ed32f998486458c/baseline.py",
+              "/root/gen14-nursery/mu14_7f3aab779ed32f998486458c/cases.json",
+              "/root/gen14-nursery/mu14_7f3aab779ed32f998486458c/mutant-cases.json",
+              "/root/gen14-nursery/mu14_7f3aab779ed32f998486458c/mutant.py"
+            ],
+            "forbidden_accepted_state_mutations": 0,
+            "physical_isolation_owner_count": 1,
+            "root_semantic_result_digest": "d6dd5ff6010c6f8463a426677c20d39b9ccacbe32d7995a03eb867dd0912321b",
+            "unexpected_final_mutations": []
+          },
+          "semantic_result_digest": "236260b361cd53d779bcc2c44b4958b48cc98cc7096064d24a598e41063e21e9"
+        },
+        "second": {
+          "capsule_cleanup": {
+            "removed": true,
+            "run_id": "cap8_20260827T000926Z_c3b223e5"
+          },
+          "check_id": "threshold",
+          "classification": "KILLED",
+          "dangerous": true,
+          "failure_reason": null,
+          "kill_reason": "INDEPENDENT_ORACLE_MISMATCH",
+          "mutation_class": "threshold_change",
+          "mutation_id": "mu14_7f3aab779ed32f998486458c",
+          "ok": true,
+          "root_proof": {
+            "accepted_state_unchanged": true,
+            "final_mutation_paths": [
+              "/root/gen14-nursery/mu14_7f3aab779ed32f998486458c/baseline.py",
+              "/root/gen14-nursery/mu14_7f3aab779ed32f998486458c/cases.json",
+              "/root/gen14-nursery/mu14_7f3aab779ed32f998486458c/mutant-cases.json",
+              "/root/gen14-nursery/mu14_7f3aab779ed32f998486458c/mutant.py"
+            ],
+            "forbidden_accepted_state_mutations": 0,
+            "physical_isolation_owner_count": 1,
+            "root_semantic_result_digest": "d6dd5ff6010c6f8463a426677c20d39b9ccacbe32d7995a03eb867dd0912321b",
+            "unexpected_final_mutations": []
+          },
+          "semantic_result_digest": "236260b361cd53d779bcc2c44b4958b48cc98cc7096064d24a598e41063e21e9"
+        }
+      },
+      "name": "deterministic_mutation_identity",
+      "ok": true
+    },
+    {
+      "detail": null,
+      "name": "deterministic_runs_cleaned",
+      "ok": true
+    },
+    {
+      "detail": {
+        "capsule_cleanup": null,
+        "check_id": null,
+        "classification": "INVALID_FAIL_CLOSED",
+        "dangerous": null,
+        "failure_reason": "MUTATION_CLASS_UNSAFE",
+        "kill_reason": null,
+        "mutation_class": null,
+        "mutation_id": null,
+        "ok": false,
+        "root_proof": null,
+        "semantic_result_digest": null
+      },
+      "name": "unsafe_mutation_class_rejected",
+      "ok": true
+    },
+    {
+      "detail": {
+        "capsule_cleanup": null,
+        "check_id": null,
+        "classification": "INVALID_FAIL_CLOSED",
+        "dangerous": null,
+        "failure_reason": "MUTATION_AUTHORITY_INVALID",
+        "kill_reason": null,
+        "mutation_class": null,
+        "mutation_id": null,
+        "ok": false,
+        "root_proof": null,
+        "semantic_result_digest": null
+      },
+      "name": "authority_expansion_rejected",
+      "ok": true
+    },
+    {
+      "detail": {
+        "capsule_cleanup": null,
+        "check_id": null,
+        "classification": "INVALID_FAIL_CLOSED",
+        "dangerous": null,
+        "failure_reason": "EVALUATOR_LINEAGE_MISMATCH",
+        "kill_reason": null,
+        "mutation_class": null,
+        "mutation_id": null,
+        "ok": false,
+        "root_proof": null,
+        "semantic_result_digest": null
+      },
+      "name": "forged_evaluator_lineage_rejected",
+      "ok": true
+    },
+    {
+      "detail": {
+        "capsule_cleanup": null,
+        "check_id": null,
+        "classification": "INVALID_FAIL_CLOSED",
+        "dangerous": null,
+        "failure_reason": "CASE_BINDING_INVALID",
+        "kill_reason": null,
+        "mutation_class": null,
+        "mutation_id": null,
+        "ok": false,
+        "root_proof": null,
+        "semantic_result_digest": null
+      },
+      "name": "stale_case_binding_rejected",
+      "ok": true
+    },
+    {
+      "detail": {
+        "capsule_cleanup": null,
+        "check_id": null,
+        "classification": "INVALID_FAIL_CLOSED",
+        "dangerous": null,
+        "failure_reason": "GOLD_BINDING_INVALID",
+        "kill_reason": null,
+        "mutation_class": null,
+        "mutation_id": null,
+        "ok": false,
+        "root_proof": null,
+        "semantic_result_digest": null
+      },
+      "name": "frozen_gold_binding_rejected",
+      "ok": true
+    },
+    {
+      "detail": {
+        "capsule_cleanup": null,
+        "check_id": null,
+        "classification": "INVALID_FAIL_CLOSED",
+        "dangerous": null,
+        "failure_reason": "EVALUATOR_TARGET_FORBIDDEN",
+        "kill_reason": null,
+        "mutation_class": null,
+        "mutation_id": null,
+        "ok": false,
+        "root_proof": null,
+        "semantic_result_digest": null
+      },
+      "name": "self_detection_target_rejected",
+      "ok": true
+    },
+    {
+      "detail": {
+        "capsule_cleanup": null,
+        "check_id": null,
+        "classification": "INVALID_FAIL_CLOSED",
+        "dangerous": null,
+        "failure_reason": "EVALUATOR_PATH_INVALID",
+        "kill_reason": null,
+        "mutation_class": null,
+        "mutation_id": null,
+        "ok": false,
+        "root_proof": null,
+        "semantic_result_digest": null
+      },
+      "name": "outside_evaluator_root_rejected",
+      "ok": true
+    },
+    {
+      "detail": {
+        "capsule_cleanup": null,
+        "check_id": null,
+        "classification": "INVALID_FAIL_CLOSED",
+        "dangerous": null,
+        "failure_reason": "SPEC_UNKNOWN_FIELD",
+        "kill_reason": null,
+        "mutation_class": null,
+        "mutation_id": null,
+        "ok": false,
+        "root_proof": null,
+        "semantic_result_digest": null
+      },
+      "name": "unknown_spec_field_rejected",
+      "ok": true
+    },
+    {
+      "detail": {
+        "capsule_cleanup": {
+          "removed": true,
+          "run_id": "cap8_20260827T000930Z_c8838172"
+        },
+        "check_id": null,
+        "classification": "INVALID_FAIL_CLOSED",
+        "dangerous": null,
+        "failure_reason": "MUTANT_PREPARATION_FAILED",
+        "kill_reason": null,
+        "mutation_class": null,
+        "mutation_id": "mu14_713e34f3571f512bb7335016",
+        "ok": false,
+        "root_proof": {
+          "accepted_state_unchanged": true,
+          "final_mutation_paths": [],
+          "forbidden_accepted_state_mutations": 0,
+          "physical_isolation_owner_count": 1,
+          "root_semantic_result_digest": "3a7fda060950bbc06a8719e1c6010bf7f833d179c56bd82064a07b691ac014ec",
+          "unexpected_final_mutations": []
+        },
+        "semantic_result_digest": null
+      },
+      "name": "ambiguous_mutation_match_fail_closed",
+      "ok": true
+    },
+    {
+      "detail": {
+        "derived_decision": "FAIL",
+        "errors": [
+          "CASE_RESULTS_MISMATCH",
+          "CHECKS_RUN_MISMATCH",
+          "DECLARED_DECISION_MISMATCH",
+          "SKIPPED_REQUIRED_CHECKS"
+        ],
+        "ok": false
+      },
+      "name": "pass_with_skipped_checks_rejected",
+      "ok": true
+    },
+    {
+      "detail": {
+        "derived_decision": "FAIL",
+        "errors": [
+          "DECLARED_DECISION_MISMATCH"
+        ],
+        "ok": false
+      },
+      "name": "lying_evaluator_decision_rejected",
+      "ok": true
+    },
+    {
+      "detail": {
+        "derived_decision": "FAIL",
+        "errors": [
+          "ENVELOPE_NOT_OBJECT"
+        ],
+        "ok": false
+      },
+      "name": "malformed_envelope_rejected",
+      "ok": true
+    },
+    {
+      "detail": {
+        "accepted_state_write_status": [
+          "INVALID",
+          "UNDECLARED_CHILD_MUTATION"
+        ],
+        "authority_expansion": "DELEGATED_AUTHORITY_EXPANSION",
+        "fixture_outside_evidence_status": [
+          "INVALID",
+          "UNDECLARED_CHILD_MUTATION"
+        ],
+        "forged_parent_context": "FORGED_DELEGATION_CONTEXT",
+        "frozen_gold_write_status": [
+          "INVALID",
+          "UNDECLARED_CHILD_MUTATION"
+        ],
+        "independent_nested_capsule": "INCOMPATIBLE_NESTED_ISOLATION",
+        "scope_expansion": "DELEGATED_SCOPE_EXPANSION",
+        "stale_context_binding": "STALE_DELEGATION_CONTEXT"
+      },
+      "name": "direct_scope_expansion_rejected",
+      "ok": true
+    },
+    {
+      "detail": {
+        "accepted_state_write_status": [
+          "INVALID",
+          "UNDECLARED_CHILD_MUTATION"
+        ],
+        "authority_expansion": "DELEGATED_AUTHORITY_EXPANSION",
+        "fixture_outside_evidence_status": [
+          "INVALID",
+          "UNDECLARED_CHILD_MUTATION"
+        ],
+        "forged_parent_context": "FORGED_DELEGATION_CONTEXT",
+        "frozen_gold_write_status": [
+          "INVALID",
+          "UNDECLARED_CHILD_MUTATION"
+        ],
+        "independent_nested_capsule": "INCOMPATIBLE_NESTED_ISOLATION",
+        "scope_expansion": "DELEGATED_SCOPE_EXPANSION",
+        "stale_context_binding": "STALE_DELEGATION_CONTEXT"
+      },
+      "name": "direct_authority_expansion_rejected",
+      "ok": true
+    },
+    {
+      "detail": {
+        "accepted_state_write_status": [
+          "INVALID",
+          "UNDECLARED_CHILD_MUTATION"
+        ],
+        "authority_expansion": "DELEGATED_AUTHORITY_EXPANSION",
+        "fixture_outside_evidence_status": [
+          "INVALID",
+          "UNDECLARED_CHILD_MUTATION"
+        ],
+        "forged_parent_context": "FORGED_DELEGATION_CONTEXT",
+        "frozen_gold_write_status": [
+          "INVALID",
+          "UNDECLARED_CHILD_MUTATION"
+        ],
+        "independent_nested_capsule": "INCOMPATIBLE_NESTED_ISOLATION",
+        "scope_expansion": "DELEGATED_SCOPE_EXPANSION",
+        "stale_context_binding": "STALE_DELEGATION_CONTEXT"
+      },
+      "name": "forged_parent_context_rejected",
+      "ok": true
+    },
+    {
+      "detail": {
+        "accepted_state_write_status": [
+          "INVALID",
+          "UNDECLARED_CHILD_MUTATION"
+        ],
+        "authority_expansion": "DELEGATED_AUTHORITY_EXPANSION",
+        "fixture_outside_evidence_status": [
+          "INVALID",
+          "UNDECLARED_CHILD_MUTATION"
+        ],
+        "forged_parent_context": "FORGED_DELEGATION_CONTEXT",
+        "frozen_gold_write_status": [
+          "INVALID",
+          "UNDECLARED_CHILD_MUTATION"
+        ],
+        "independent_nested_capsule": "INCOMPATIBLE_NESTED_ISOLATION",
+        "scope_expansion": "DELEGATED_SCOPE_EXPANSION",
+        "stale_context_binding": "STALE_DELEGATION_CONTEXT"
+      },
+      "name": "stale_context_binding_rejected",
+      "ok": true
+    },
+    {
+      "detail": {
+        "accepted_state_write_status": [
+          "INVALID",
+          "UNDECLARED_CHILD_MUTATION"
+        ],
+        "authority_expansion": "DELEGATED_AUTHORITY_EXPANSION",
+        "fixture_outside_evidence_status": [
+          "INVALID",
+          "UNDECLARED_CHILD_MUTATION"
+        ],
+        "forged_parent_context": "FORGED_DELEGATION_CONTEXT",
+        "frozen_gold_write_status": [
+          "INVALID",
+          "UNDECLARED_CHILD_MUTATION"
+        ],
+        "independent_nested_capsule": "INCOMPATIBLE_NESTED_ISOLATION",
+        "scope_expansion": "DELEGATED_SCOPE_EXPANSION",
+        "stale_context_binding": "STALE_DELEGATION_CONTEXT"
+      },
+      "name": "independent_nested_capsule_rejected",
+      "ok": true
+    },
+    {
+      "detail": {
+        "adv": {
+          "accepted_state_write_status": [
+            "INVALID",
+            "UNDECLARED_CHILD_MUTATION"
+          ],
+          "authority_expansion": "DELEGATED_AUTHORITY_EXPANSION",
+          "fixture_outside_evidence_status": [
+            "INVALID",
+            "UNDECLARED_CHILD_MUTATION"
+          ],
+          "forged_parent_context": "FORGED_DELEGATION_CONTEXT",
+          "frozen_gold_write_status": [
+            "INVALID",
+            "UNDECLARED_CHILD_MUTATION"
+          ],
+          "independent_nested_capsule": "INCOMPATIBLE_NESTED_ISOLATION",
+          "scope_expansion": "DELEGATED_SCOPE_EXPANSION",
+          "stale_context_binding": "STALE_DELEGATION_CONTEXT"
+        },
+        "root_accepted": true
+      },
+      "name": "accepted_state_write_contained",
+      "ok": true
+    },
+    {
+      "detail": {
+        "adv": {
+          "accepted_state_write_status": [
+            "INVALID",
+            "UNDECLARED_CHILD_MUTATION"
+          ],
+          "authority_expansion": "DELEGATED_AUTHORITY_EXPANSION",
+          "fixture_outside_evidence_status": [
+            "INVALID",
+            "UNDECLARED_CHILD_MUTATION"
+          ],
+          "forged_parent_context": "FORGED_DELEGATION_CONTEXT",
+          "frozen_gold_write_status": [
+            "INVALID",
+            "UNDECLARED_CHILD_MUTATION"
+          ],
+          "independent_nested_capsule": "INCOMPATIBLE_NESTED_ISOLATION",
+          "scope_expansion": "DELEGATED_SCOPE_EXPANSION",
+          "stale_context_binding": "STALE_DELEGATION_CONTEXT"
+        },
+        "gold_sha": "1a30b31a8f87c82428d157c20ddfd7c380289d6dae7447e01d573f2fb499483a"
+      },
+      "name": "frozen_gold_write_contained",
+      "ok": true
+    },
+    {
+      "detail": {
+        "accepted_state_write_status": [
+          "INVALID",
+          "UNDECLARED_CHILD_MUTATION"
+        ],
+        "authority_expansion": "DELEGATED_AUTHORITY_EXPANSION",
+        "fixture_outside_evidence_status": [
+          "INVALID",
+          "UNDECLARED_CHILD_MUTATION"
+        ],
+        "forged_parent_context": "FORGED_DELEGATION_CONTEXT",
+        "frozen_gold_write_status": [
+          "INVALID",
+          "UNDECLARED_CHILD_MUTATION"
+        ],
+        "independent_nested_capsule": "INCOMPATIBLE_NESTED_ISOLATION",
+        "scope_expansion": "DELEGATED_SCOPE_EXPANSION",
+        "stale_context_binding": "STALE_DELEGATION_CONTEXT"
+      },
+      "name": "fixture_outside_evidence_contained",
+      "ok": true
+    },
+    {
+      "detail": {
+        "removed": true,
+        "run_id": "cap8_20260827T000933Z_6db2e3ac"
+      },
+      "name": "direct_adversarial_capsule_cleaned",
+      "ok": true
+    },
+    {
+      "detail": {
+        "build": "gen6-experience-memory-r1-dc0d2cb41595",
+        "lkg": "dc0d2cb41595a9a3d953873879ccc3e0bd88db2b4dcdee4cf8aa43dd4cb103e9",
+        "server": "dc0d2cb41595a9a3d953873879ccc3e0bd88db2b4dcdee4cf8aa43dd4cb103e9"
+      },
+      "name": "operational_gen6_server_lkg_unchanged",
+      "ok": true
+    },
+    {
+      "detail": {
+        "decorators": 10
+      },
+      "name": "permanent_mcp_surface_static_10",
+      "ok": true
+    },
+    {
+      "detail": null,
+      "name": "no_automatic_promotion_path",
+      "ok": true
+    },
+    {
+      "detail": null,
+      "name": "host_repo_not_mounted",
+      "ok": true
+    },
+    {
+      "detail": "1a30b31a8f87c82428d157c20ddfd7c380289d6dae7447e01d573f2fb499483a",
+      "name": "frozen_gold_unchanged_after_benchmark",
+      "ok": true
+    }
+  ],
+  "detection_power": {
+    "attempted": 14,
+    "by_class": {
+      "assertion_delete": {
+        "killed": 4,
+        "survived_dangerous": 0,
+        "survived_redundant_or_equivalent": 0,
+        "total": 4
+      },
+      "assertion_invert": {
+        "killed": 1,
+        "survived_dangerous": 0,
+        "survived_redundant_or_equivalent": 0,
+        "total": 1
+      },
+      "evidence_omit": {
+        "killed": 1,
+        "survived_dangerous": 0,
+        "survived_redundant_or_equivalent": 0,
+        "total": 1
+      },
+      "fail_open_change": {
+        "killed": 2,
+        "survived_dangerous": 0,
+        "survived_redundant_or_equivalent": 0,
+        "total": 2
+      },
+      "fixture_substitute": {
+        "killed": 1,
+        "survived_dangerous": 0,
+        "survived_redundant_or_equivalent": 0,
+        "total": 1
+      },
+      "negative_control_corrupt": {
+        "killed": 1,
+        "survived_dangerous": 0,
+        "survived_redundant_or_equivalent": 0,
+        "total": 1
+      },
+      "scoring_weight_change": {
+        "killed": 0,
+        "survived_dangerous": 0,
+        "survived_redundant_or_equivalent": 1,
+        "total": 1
+      },
+      "stale_evidence_inject": {
+        "killed": 1,
+        "survived_dangerous": 0,
+        "survived_redundant_or_equivalent": 0,
+        "total": 1
+      },
+      "threshold_change": {
+        "killed": 1,
+        "survived_dangerous": 0,
+        "survived_redundant_or_equivalent": 0,
+        "total": 1
+      },
+      "trust_declared_state": {
+        "killed": 1,
+        "survived_dangerous": 0,
+        "survived_redundant_or_equivalent": 0,
+        "total": 1
+      }
+    },
+    "dangerous_killed": 13,
+    "dangerous_mutants": 13,
+    "dangerous_mutation_kill_rate": 1.0,
+    "invalid_fail_closed": 0,
+    "killed": 13,
+    "overall_mutation_kill_rate": 0.928571,
+    "redundant_or_equivalent_candidates": [
+      "score_weight"
+    ],
+    "semantic_digest": "5cb0258d8f4d972bae4adde128012fd71b29ec0b223731e3f5fca9f0c8b10f2a",
+    "surviving_dangerous_mutations": [],
+    "unique_check_contribution": [
+      "evaluator_crash",
+      "evaluator_timeout",
+      "evidence",
+      "evidence_required",
+      "fail_closed",
+      "freshness",
+      "malformed_evaluator_result",
+      "negative_control",
+      "negative_control_fixture",
+      "observed_state",
+      "threshold",
+      "twin_stale_fail_closed"
+    ],
+    "valid_mutants": 14,
+    "version": "gen14-detection-power-r1"
+  },
+  "engine_sha256": "fe5f9d8fbb3ce1aa7b7a9d8ee84536fead62c3246337644c76b037d196b2c87d",
+  "fixture_sha256": "d0634a12bb0a92a697d96765ffa8756c60d75425f93af5cf3f4bfb2d6c1e8810",
+  "gold_sha256": "1a30b31a8f87c82428d157c20ddfd7c380289d6dae7447e01d573f2fb499483a",
+  "ok": true,
+  "passed": 52,
+  "total": 52,
+  "twin_sha256": "f5ba258ed5559b755f5b68891a74f48bdfac243638bff60cc730c0f3cbf61d8e",
+  "version": "gen14-benchmark-r1"
+}

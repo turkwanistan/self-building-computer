@@ -1,0 +1,294 @@
+{
+  "mutation": "remove stale/missing issue aggregation (fail-open)",
+  "result": {
+    "baseline_result": {
+      "case_results": [
+        {
+          "id": "fresh_twin_node",
+          "internal_checks_run": [],
+          "oracle_details": [
+            {
+              "actual": true,
+              "exists": true,
+              "expected": true,
+              "op": "equals",
+              "pass": true,
+              "path": "ok"
+            },
+            {
+              "actual": [],
+              "exists": true,
+              "expected": null,
+              "op": "empty",
+              "pass": true,
+              "path": "issues"
+            }
+          ],
+          "oracle_pass": true,
+          "raw_result": {
+            "issues": [],
+            "newer_evidence_available": 0,
+            "ok": true,
+            "states": {
+              "fresh": 1
+            }
+          }
+        },
+        {
+          "id": "stale_twin_node",
+          "internal_checks_run": [],
+          "oracle_details": [
+            {
+              "actual": false,
+              "exists": true,
+              "expected": false,
+              "op": "equals",
+              "pass": true,
+              "path": "ok"
+            },
+            {
+              "actual": [
+                {
+                  "freshness": {
+                    "current_sha256": "f5ba258ed5559b755f5b68891a74f48bdfac243638bff60cc730c0f3cbf61d8e",
+                    "expected_sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+                    "path": "/opt/optiplex-lab/architecture_twin.py",
+                    "state": "stale"
+                  },
+                  "node": "real-twin"
+                }
+              ],
+              "exists": true,
+              "expected": null,
+              "op": "nonempty",
+              "pass": true,
+              "path": "issues"
+            }
+          ],
+          "oracle_pass": true,
+          "raw_result": {
+            "issues": [
+              {
+                "freshness": {
+                  "current_sha256": "f5ba258ed5559b755f5b68891a74f48bdfac243638bff60cc730c0f3cbf61d8e",
+                  "expected_sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+                  "path": "/opt/optiplex-lab/architecture_twin.py",
+                  "state": "stale"
+                },
+                "node": "real-twin"
+              }
+            ],
+            "newer_evidence_available": 0,
+            "ok": false,
+            "states": {
+              "stale": 1
+            }
+          }
+        }
+      ],
+      "checks_run": [
+        "fresh_twin_node",
+        "stale_twin_node"
+      ],
+      "decision": "PASS",
+      "evaluator_digest": "f5ba258ed5559b755f5b68891a74f48bdfac243638bff60cc730c0f3cbf61d8e",
+      "expected_case_ids": [
+        "fresh_twin_node",
+        "stale_twin_node"
+      ],
+      "protocol_violations": [],
+      "runner_digest": "08f150fe82ecfa3928fd4ec421d1d8ddbf3466327e46c9112ab4812d46f7b980",
+      "skipped_checks": [],
+      "version": "gen14-evaluator-envelope-r1"
+    },
+    "baseline_validation": {
+      "derived_decision": "PASS",
+      "errors": [],
+      "ok": true
+    },
+    "candidate_binding": {
+      "baseline_mutant_same_cases": true,
+      "case_digest": "b932ac1f7d07da68c2e768c571863cbd56703bf3b7f4cca08a9b263f930e2588",
+      "case_ids": [
+        "fresh_twin_node",
+        "stale_twin_node"
+      ]
+    },
+    "capsule_cleanup": {
+      "removed": true,
+      "run_id": "cap8_20260827T000919Z_afe42d54"
+    },
+    "check_id": "twin_stale_fail_closed",
+    "classification": "KILLED",
+    "dangerous": true,
+    "kill_reason": "INDEPENDENT_ORACLE_MISMATCH",
+    "mutant_result": {
+      "case_results": [
+        {
+          "id": "fresh_twin_node",
+          "internal_checks_run": [],
+          "oracle_details": [
+            {
+              "actual": true,
+              "exists": true,
+              "expected": true,
+              "op": "equals",
+              "pass": true,
+              "path": "ok"
+            },
+            {
+              "actual": [],
+              "exists": true,
+              "expected": null,
+              "op": "empty",
+              "pass": true,
+              "path": "issues"
+            }
+          ],
+          "oracle_pass": true,
+          "raw_result": {
+            "issues": [],
+            "newer_evidence_available": 0,
+            "ok": true,
+            "states": {
+              "fresh": 1
+            }
+          }
+        },
+        {
+          "id": "stale_twin_node",
+          "internal_checks_run": [],
+          "oracle_details": [
+            {
+              "actual": true,
+              "exists": true,
+              "expected": false,
+              "op": "equals",
+              "pass": false,
+              "path": "ok"
+            },
+            {
+              "actual": [],
+              "exists": true,
+              "expected": null,
+              "op": "nonempty",
+              "pass": false,
+              "path": "issues"
+            }
+          ],
+          "oracle_pass": false,
+          "raw_result": {
+            "issues": [],
+            "newer_evidence_available": 0,
+            "ok": true,
+            "states": {
+              "stale": 1
+            }
+          }
+        }
+      ],
+      "checks_run": [
+        "fresh_twin_node",
+        "stale_twin_node"
+      ],
+      "decision": "FAIL",
+      "evaluator_digest": "38ff0aa676962680c750dd1bfb3324b20d17a1539f6185f94c0544f29410b656",
+      "expected_case_ids": [
+        "fresh_twin_node",
+        "stale_twin_node"
+      ],
+      "protocol_violations": [],
+      "runner_digest": "08f150fe82ecfa3928fd4ec421d1d8ddbf3466327e46c9112ab4812d46f7b980",
+      "skipped_checks": [],
+      "version": "gen14-evaluator-envelope-r1"
+    },
+    "mutant_validation": {
+      "derived_decision": "FAIL",
+      "errors": [],
+      "ok": true
+    },
+    "mutation_class": "fail_open_change",
+    "mutation_id": "mu14_9a17ba4a721d208e4dad09f2",
+    "ok": true,
+    "provenance": {
+      "authorities": [
+        "evaluation",
+        "evidence_read"
+      ],
+      "baseline_context_id": "hx13_fad8f6b9667e10a6ee53112e",
+      "mutant_context_id": "hx13_6a229aef8fb3a5861ce6fa81",
+      "mutant_observed_mutations": [],
+      "physical_isolation_owner": "capsule:cap8_20260827T000919Z_afe42d54",
+      "prepare_context_id": "hx13_bfd21916cd2f21b09ca030a5",
+      "prepare_observed_mutations": [
+        {
+          "bytes": null,
+          "change": "created",
+          "path": "/root/gen14-nursery",
+          "sha256": null,
+          "symlink_target": null,
+          "type": "dir"
+        },
+        {
+          "bytes": null,
+          "change": "created",
+          "path": "/root/gen14-nursery/mu14_9a17ba4a721d208e4dad09f2",
+          "sha256": null,
+          "symlink_target": null,
+          "type": "dir"
+        },
+        {
+          "bytes": 53980,
+          "change": "created",
+          "path": "/root/gen14-nursery/mu14_9a17ba4a721d208e4dad09f2/baseline.py",
+          "sha256": "f5ba258ed5559b755f5b68891a74f48bdfac243638bff60cc730c0f3cbf61d8e",
+          "symlink_target": null,
+          "type": "file"
+        },
+        {
+          "bytes": 917,
+          "change": "created",
+          "path": "/root/gen14-nursery/mu14_9a17ba4a721d208e4dad09f2/cases.json",
+          "sha256": "321d2aa3af3feecd848153f13efc987df3a3b58393574e328054354755b183f4",
+          "symlink_target": null,
+          "type": "file"
+        },
+        {
+          "bytes": 53970,
+          "change": "created",
+          "path": "/root/gen14-nursery/mu14_9a17ba4a721d208e4dad09f2/mutant.py",
+          "sha256": "38ff0aa676962680c750dd1bfb3324b20d17a1539f6185f94c0544f29410b656",
+          "symlink_target": null,
+          "type": "file"
+        }
+      ],
+      "root_context_id": "hx13_e67c70827ed1d0a812607f43",
+      "workspace_scope": "/root/gen14-nursery/mu14_9a17ba4a721d208e4dad09f2/**"
+    },
+    "redundancy_candidate": false,
+    "root_proof": {
+      "accepted_state_unchanged": true,
+      "final_mutation_paths": [
+        "/root/gen14-nursery/mu14_9a17ba4a721d208e4dad09f2/baseline.py",
+        "/root/gen14-nursery/mu14_9a17ba4a721d208e4dad09f2/cases.json",
+        "/root/gen14-nursery/mu14_9a17ba4a721d208e4dad09f2/mutant-cases.json",
+        "/root/gen14-nursery/mu14_9a17ba4a721d208e4dad09f2/mutant.py"
+      ],
+      "forbidden_accepted_state_mutations": 0,
+      "physical_isolation_owner_count": 1,
+      "root_semantic_result_digest": "1d6508110e86d46639131994c143f2e20e054c1fba70f54f4b198a5b51511de4",
+      "unexpected_final_mutations": []
+    },
+    "semantic_result_digest": "529554358822156a583e89c03fc145d744f3112c61cc58d8c57a447f70d18750",
+    "source": {
+      "accepted_sha256": "f5ba258ed5559b755f5b68891a74f48bdfac243638bff60cc730c0f3cbf61d8e",
+      "baseline_sha256": "f5ba258ed5559b755f5b68891a74f48bdfac243638bff60cc730c0f3cbf61d8e",
+      "mutant_sha256": "38ff0aa676962680c750dd1bfb3324b20d17a1539f6185f94c0544f29410b656"
+    },
+    "spec_semantic_digest": "9a17ba4a721d208e4dad09f24ebffa8f9f286835be4ac01dddf376bb11f4866d",
+    "version": "gen14-mutation-result-r1"
+  },
+  "target": "architecture_twin.verify",
+  "target_sha256": "f5ba258ed5559b755f5b68891a74f48bdfac243638bff60cc730c0f3cbf61d8e",
+  "version": "gen14-self-use-r1"
+}
