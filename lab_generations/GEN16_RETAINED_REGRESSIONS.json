@@ -1,0 +1,37 @@
+{
+  "generated_at": "2026-08-27T02:57:33.469611Z",
+  "matrix": {
+    "gen2": {"result": "12/12", "passed": 12, "total": 12, "ok": true, "strategy": "shared historical Experiment Capsule; Gen2 -> Gen3 -> Gen4 dependency order"},
+    "gen3": {"result": "16/16", "passed": 16, "total": 16, "ok": true, "strategy": "shared historical Experiment Capsule; Gen2 baseline reproduced first"},
+    "gen4": {"result": "18/18", "passed": 18, "total": 18, "ok": true, "strategy": "shared historical Experiment Capsule"},
+    "gen5": {"result": "12/12", "passed": 12, "total": 12, "ok": true, "strategy": "historical empty capability/regression state Experiment Capsule"},
+    "gen6": {"result": "13/13", "passed": 13, "total": 13, "ok": true, "strategy": "Experiment Capsule with cloned Forge state"},
+    "gen7": {"result": "15/15", "passed": 15, "total": 15, "ok": true, "artifact_sha256": "8e4aa92d12bd3ac534f1554829d25bc0cf34b0c14b0958fb16e57568c0bbbb05", "strategy": "version-pinned historical Capsule; post-Gen7 Gen8-Gen10 benchmark validators hidden in overlay"},
+    "gen8": {"result": "17/17", "passed": 17, "total": 17, "ok": true, "artifact_sha256": "8b8c97d86aabebe46491a381706791ad3904f91ef376b7da0159b5cf34fb96d8", "strategy": "native Capsule semantics with freshly reconstructed historical Gen4/Gen5 evidence"},
+    "gen9": {"result": "20/20", "passed": 20, "total": 20, "ok": true, "artifact_sha256": "0ff589b827f8ac4c38d46cf94b7c73840582a6b7c9811bb81627fee6311682b7", "strategy": "mutation-safe native isolation"},
+    "gen10": {"result": "24/24", "passed": 24, "total": 24, "ok": true, "artifact_sha256": "1615201543d0dd82bc86383a9ae9bcb089089665facdbb790e02036c38d9d0f2", "strategy": "direct after fresh Twin; native isolation"},
+    "gen11": {"result": "39/39", "passed": 39, "total": 39, "ok": true, "artifact_sha256": "376a94c53c596e10fcbe8561a697ae5aa07af0a413c583191674144d918ca09b", "strategy": "direct after refreshing Twin for newly-written Gen10 Tier-1 evidence"},
+    "gen12": {"result": "30/30", "passed": 30, "total": 30, "ok": true, "artifact_sha256": "5405e0b14f98fb6d30d94db4b465364767173ebd00ace2123b97520cbde18710", "strategy": "native replay/Capsule semantics after deleting only prior derived future-evidence fixture and refreshing Twin"},
+    "gen13": {"result": "37/37", "passed": 37, "total": 37, "ok": true, "artifact_sha256": "61aac05eb4a9a5b9a4ec401e8854c76dcd49dbc4d159c6fdf60856b506ada844", "strategy": "direct native hierarchical experiment isolation"},
+    "gen14": {"result": "52/52", "passed": 52, "total": 52, "ok": true, "artifact_sha256": "ba55856113c5b3d946ad5f99bc6a9aeb9f5d3628eea0b3c6276c1b093118002e", "strategy": "direct evaluator mutation nursery; 13/13 dangerous mutants killed"},
+    "gen15": {"result": "40/40", "passed": 40, "total": 40, "ok": true, "artifact_sha256": "fea603013378cf578e135fbe7683368bb0495cff246d18a185e7d9b1439c17f8", "strategy": "direct retained project-onboarding benchmark after Gen16 source deployment"}
+  },
+  "metrics": {
+    "all_generations_pass": true,
+    "gen13_exact": "37/37",
+    "gen14_exact": "52/52",
+    "gen14_dangerous_mutation_kill_rate": 1.0,
+    "gen14_dangerous_survivors": 0,
+    "gen15_exact": "40/40",
+    "temporary_capsules_remaining": 0,
+    "temporary_capsules_removed_final_cleanup": 27
+  },
+  "notes": [
+    "Gen7 direct current-state diagnostic produced the documented 14/15 impact-precision result because Gen8-Gen10 validators legitimately exist now; the version-pinned historical rerun reproduced accepted 15/15 with accepted state unchanged.",
+    "Gen11 initially failed closed because the freshly rerun Gen10 Tier-1 benchmark SHA post-dated the current Twin; refreshing the Twin restored a coherent epoch and 39/39.",
+    "Gen12 initially reproduced the documented 28/30 historical-leak diagnostic because its prior derived future-evidence fixture existed before epoch seal; removing only that derived fixture, rebuilding the Twin, and rerunning restored 30/30 with historical leakage 0 and unsafe rejection 10/10.",
+    "All temporary Capsule directories created or retained during the Gen16 regression campaign were removed before final acceptance validation."
+  ],
+  "status": "PASS",
+  "version": "gen16-retained-regressions-r1"
+}

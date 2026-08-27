@@ -1,0 +1,18 @@
+{
+  "capability_hashes": {
+    "musical-telemetry-profiler-r1": "4dd178d667af77f5c50e846dec419dac3206040491017ca591a3504fa2b455c3",
+    "songboss-causality-auditor-r1": "7a8ffc0c3facad20c5714834d1d4e0d0d106f663ae4ec07f8106c21c3d951edf"
+  },
+  "contexts_semantically_equal": true,
+  "critical_false_negatives_max": 0,
+  "independent_evaluations": {
+    "songboss": true,
+    "telemetry": true
+  },
+  "legacy_manifest_sha256": "e7473a8783218981a7bcf621690f96ea430dd5810a0e4d689217bbcb11f14ea3",
+  "manifest_semantics_equal": true,
+  "new_manifest_sha256": "3f2a2863fea79c82be1b2f2ff0ec30e2f7fd9a9556a4ccd0902588165e894089",
+  "required_evidence_recall_min": 1.0,
+  "twin_semantics_equal": true,
+  "version": "gen16-song-city-compatibility-r1"
+}

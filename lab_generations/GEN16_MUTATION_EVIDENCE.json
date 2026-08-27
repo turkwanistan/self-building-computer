@@ -1,0 +1,263 @@
+{
+  "dangerous_kill_rate": 1.0,
+  "dangerous_survivors": [],
+  "result": {
+    "baseline_result": {
+      "case_results": [
+        {
+          "id": "candidate-not-available",
+          "internal_checks_run": [],
+          "oracle_details": [
+            {
+              "actual": "WEAK_NEEDS_SPECIALIZATION",
+              "exists": true,
+              "expected": "WEAK_NEEDS_SPECIALIZATION",
+              "op": "equals",
+              "pass": true,
+              "path": "capabilities.0.status"
+            },
+            {
+              "actual": false,
+              "exists": true,
+              "expected": null,
+              "op": "falsy",
+              "pass": true,
+              "path": "capabilities.0.forge_plan.promotion_is_automatic"
+            }
+          ],
+          "oracle_pass": true,
+          "raw_result": {
+            "capabilities": [
+              {
+                "authority_requirements": [],
+                "forge_plan": {
+                  "gap": {
+                    "applicability": [
+                      "fixture"
+                    ],
+                    "authority_requirements": [],
+                    "desired_name": "fixture-cap",
+                    "purpose": "classifier fixture",
+                    "runtime_dependencies": []
+                  },
+                  "gates": [
+                    "search",
+                    "open_gap",
+                    "author",
+                    "seal",
+                    "evaluate",
+                    "real_task_evidence",
+                    "govern"
+                  ],
+                  "governor": "existing Capability Forge promotion governor",
+                  "promotion_is_automatic": false
+                },
+                "id": "fixture-cap",
+                "provider": "forge",
+                "reason": "matching Forge capability is unpromoted or content identity differs",
+                "runtime_dependencies": [],
+                "selected": {
+                  "content_hash": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                  "name": "fixture-cap",
+                  "state": "CANDIDATE"
+                },
+                "status": "WEAK_NEEDS_SPECIALIZATION",
+                "utility": 1.0
+              }
+            ],
+            "classification_sha256": "09319f458048c9eb5022ed5200659ec3c00494ff360b3cc6f6d959390e37460e",
+            "manifest_sha256": "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff",
+            "pack_sha256": "25f42948c84d7da331dc254cd3998f4cae6717f3f9e81eb99ef5549d544fcb4b",
+            "project_id": "classifier-fixture",
+            "route": null,
+            "schema": "gen16.capability-classification.v1",
+            "task": null
+          }
+        }
+      ],
+      "checks_run": [
+        "candidate-not-available"
+      ],
+      "decision": "PASS",
+      "evaluator_digest": "33dad6262d3a2071c4198b4d0e337076f0c8d52c9f9015dab6b052054ff458c0",
+      "expected_case_ids": [
+        "candidate-not-available"
+      ],
+      "protocol_violations": [],
+      "runner_digest": "08f150fe82ecfa3928fd4ec421d1d8ddbf3466327e46c9112ab4812d46f7b980",
+      "skipped_checks": [],
+      "version": "gen14-evaluator-envelope-r1"
+    },
+    "baseline_validation": {
+      "derived_decision": "PASS",
+      "errors": [],
+      "ok": true
+    },
+    "candidate_binding": {
+      "baseline_mutant_same_cases": true,
+      "case_digest": "0b23b1e40057e644ba48a2068432b8dc8b017ffb3dcf775dbddc2e3fc4163d6c",
+      "case_ids": [
+        "candidate-not-available"
+      ]
+    },
+    "capsule_cleanup": {
+      "removed": true,
+      "run_id": "cap8_20260827T023601Z_96503624"
+    },
+    "check_id": "promoted_exact_availability",
+    "classification": "KILLED",
+    "dangerous": true,
+    "kill_reason": "INDEPENDENT_ORACLE_MISMATCH",
+    "mutant_result": {
+      "case_results": [
+        {
+          "id": "candidate-not-available",
+          "internal_checks_run": [],
+          "oracle_details": [
+            {
+              "actual": "AVAILABLE",
+              "exists": true,
+              "expected": "WEAK_NEEDS_SPECIALIZATION",
+              "op": "equals",
+              "pass": false,
+              "path": "capabilities.0.status"
+            },
+            {
+              "actual": null,
+              "exists": false,
+              "expected": null,
+              "op": "falsy",
+              "pass": false,
+              "path": "capabilities.0.forge_plan.promotion_is_automatic"
+            }
+          ],
+          "oracle_pass": false,
+          "raw_result": {
+            "capabilities": [
+              {
+                "authority_requirements": [],
+                "forge_plan": null,
+                "id": "fixture-cap",
+                "provider": "forge",
+                "reason": "exact promoted Forge capability",
+                "runtime_dependencies": [],
+                "selected": {
+                  "content_hash": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                  "name": "fixture-cap",
+                  "state": "CANDIDATE"
+                },
+                "status": "AVAILABLE",
+                "utility": 1.0
+              }
+            ],
+            "classification_sha256": "161b47d9428339d4942a8ca25c0513e45e819519dfb2409b7e2e923740c9ba7e",
+            "manifest_sha256": "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff",
+            "pack_sha256": "25f42948c84d7da331dc254cd3998f4cae6717f3f9e81eb99ef5549d544fcb4b",
+            "project_id": "classifier-fixture",
+            "route": null,
+            "schema": "gen16.capability-classification.v1",
+            "task": null
+          }
+        }
+      ],
+      "checks_run": [
+        "candidate-not-available"
+      ],
+      "decision": "FAIL",
+      "evaluator_digest": "04e2de90c52805b3070ab9e0eda2d31b5ffc24a64e8bdf59cd070ec6ff4d7dc1",
+      "expected_case_ids": [
+        "candidate-not-available"
+      ],
+      "protocol_violations": [],
+      "runner_digest": "08f150fe82ecfa3928fd4ec421d1d8ddbf3466327e46c9112ab4812d46f7b980",
+      "skipped_checks": [],
+      "version": "gen14-evaluator-envelope-r1"
+    },
+    "mutant_validation": {
+      "derived_decision": "FAIL",
+      "errors": [],
+      "ok": true
+    },
+    "mutation_class": "trust_declared_state",
+    "mutation_id": "mu14_a3da7f5d38d7c01a1deeffbb",
+    "ok": true,
+    "provenance": {
+      "authorities": [
+        "evaluation",
+        "evidence_read"
+      ],
+      "baseline_context_id": "hx13_3ec039d65f4e179324f85d26",
+      "mutant_context_id": "hx13_c4078c07fe287ffff3a6d992",
+      "mutant_observed_mutations": [],
+      "physical_isolation_owner": "capsule:cap8_20260827T023601Z_96503624",
+      "prepare_context_id": "hx13_525ab7aaa549c3f47fa4c263",
+      "prepare_observed_mutations": [
+        {
+          "bytes": null,
+          "change": "created",
+          "path": "/root/gen14-nursery",
+          "sha256": null,
+          "symlink_target": null,
+          "type": "dir"
+        },
+        {
+          "bytes": null,
+          "change": "created",
+          "path": "/root/gen14-nursery/mu14_a3da7f5d38d7c01a1deeffbb",
+          "sha256": null,
+          "symlink_target": null,
+          "type": "dir"
+        },
+        {
+          "bytes": 35320,
+          "change": "created",
+          "path": "/root/gen14-nursery/mu14_a3da7f5d38d7c01a1deeffbb/baseline.py",
+          "sha256": "33dad6262d3a2071c4198b4d0e337076f0c8d52c9f9015dab6b052054ff458c0",
+          "symlink_target": null,
+          "type": "file"
+        },
+        {
+          "bytes": 1377,
+          "change": "created",
+          "path": "/root/gen14-nursery/mu14_a3da7f5d38d7c01a1deeffbb/cases.json",
+          "sha256": "1054e5f13ff60991f9a48f19f9bf8217818e84c696bcbe00e1b87e3a863576f9",
+          "symlink_target": null,
+          "type": "file"
+        },
+        {
+          "bytes": 35325,
+          "change": "created",
+          "path": "/root/gen14-nursery/mu14_a3da7f5d38d7c01a1deeffbb/mutant.py",
+          "sha256": "04e2de90c52805b3070ab9e0eda2d31b5ffc24a64e8bdf59cd070ec6ff4d7dc1",
+          "symlink_target": null,
+          "type": "file"
+        }
+      ],
+      "root_context_id": "hx13_67dc8373c01f9b2302ecd711",
+      "workspace_scope": "/root/gen14-nursery/mu14_a3da7f5d38d7c01a1deeffbb/**"
+    },
+    "redundancy_candidate": false,
+    "root_proof": {
+      "accepted_state_unchanged": true,
+      "final_mutation_paths": [
+        "/root/gen14-nursery/mu14_a3da7f5d38d7c01a1deeffbb/baseline.py",
+        "/root/gen14-nursery/mu14_a3da7f5d38d7c01a1deeffbb/cases.json",
+        "/root/gen14-nursery/mu14_a3da7f5d38d7c01a1deeffbb/mutant-cases.json",
+        "/root/gen14-nursery/mu14_a3da7f5d38d7c01a1deeffbb/mutant.py"
+      ],
+      "forbidden_accepted_state_mutations": 0,
+      "physical_isolation_owner_count": 1,
+      "root_semantic_result_digest": "3f63b92e27a84951bdb6628930991d5341d297278e6549f9df173a9b69e18346",
+      "unexpected_final_mutations": []
+    },
+    "semantic_result_digest": "6b50f1fb5a9e8180667d9ee101b20f5a4df4e811fd0e58a64b9019b0975425f6",
+    "source": {
+      "accepted_sha256": "33dad6262d3a2071c4198b4d0e337076f0c8d52c9f9015dab6b052054ff458c0",
+      "baseline_sha256": "33dad6262d3a2071c4198b4d0e337076f0c8d52c9f9015dab6b052054ff458c0",
+      "mutant_sha256": "04e2de90c52805b3070ab9e0eda2d31b5ffc24a64e8bdf59cd070ec6ff4d7dc1"
+    },
+    "spec_semantic_digest": "a3da7f5d38d7c01a1deeffbb0ed4e2ef19c0543ddb50d95fa33183a5b69d3285",
+    "version": "gen14-mutation-result-r1"
+  },
+  "version": "gen16-evaluator-mutation-r1"
+}

@@ -1,0 +1,16 @@
+{
+  "bridge_line_reduction": 0.771739,
+  "bridge_lines_after": 21,
+  "bridge_lines_before": 92,
+  "canonical_project_analysis_paths": 1,
+  "capability_source_copies_in_pack": 0,
+  "critical_false_negatives": 0,
+  "dangerous_classifier_mutation_kill_rate": 1.0,
+  "dangerous_classifier_survivors": 0,
+  "legacy_project_capability_requirement_block_removed": true,
+  "manual_operator_steps_after": 4,
+  "manual_operator_steps_before": 8,
+  "manual_step_reduction": 0.5,
+  "required_evidence_recall": 1.0,
+  "version": "gen16-consolidation-r1"
+}

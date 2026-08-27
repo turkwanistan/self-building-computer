@@ -6,7 +6,7 @@ intentionally outside the Lab mount. Produces content-addressed onboarding manif
 namespaced project Twins, task-oriented context packets, and capability-gap analysis.
 """
 from __future__ import annotations
-import argparse, fnmatch, hashlib, json, os, pathlib, re, stat, sys
+import argparse, copy, fnmatch, hashlib, importlib.util, json, os, pathlib, re, stat, sys
 from typing import Any
 
 SCHEMA = "gen15.project-onboarding.v1"
@@ -232,6 +232,264 @@ def capability_gaps(manifest: dict[str,Any], adapter: dict[str,Any], available: 
     out={"schema":GAPS_SCHEMA,"project_id":manifest["project_id"],"manifest_sha256":manifest["manifest_sha256"],"available_capabilities":sorted(av),"capabilities":rows}
     out["gaps_sha256"]=digest(out); return out
 
+
+PACK_SCHEMA = "gen16.project-capability-pack.v1"
+ANALYSIS_SCHEMA = "gen16.project-analysis.v1"
+CLASSIFICATION_SCHEMA = "gen16.capability-classification.v1"
+BRIDGE_VERSION = "gen16-project-context-compose-r1"
+CAPABILITY_STATES = {"AVAILABLE", "WEAK_NEEDS_SPECIALIZATION", "MISSING_VALUABLE", "UNNECESSARY"}
+PACK_ID_RE = re.compile(r"^[A-Za-z0-9][A-Za-z0-9._-]{0,95}$")
+DEFAULT_EPOCH_PATH = pathlib.Path(os.environ.get("OPTIPLEX_EVIDENCE_EPOCH_PATH", "/opt/optiplex-lab/evidence_epoch.py"))
+
+
+def _pack_core(pack: dict[str, Any]) -> dict[str, Any]:
+    return {k: v for k, v in pack.items() if k != "pack_sha256"}
+
+
+def seal_pack(pack: dict[str, Any]) -> dict[str, Any]:
+    out = copy.deepcopy(pack)
+    out.pop("pack_sha256", None)
+    validate_pack(out, require_digest=False)
+    out["pack_sha256"] = digest(out)
+    return out
+
+
+def _safe_resource_name(value: str) -> str:
+    name = str(value)
+    if not PACK_ID_RE.fullmatch(name) or "/" in name or "\\" in name or name in {".", ".."}:
+        raise OnboardingError(f"unsafe pack resource name: {value}")
+    return name
+
+
+def _resource_refs(pack: dict[str, Any]) -> list[dict[str, str]]:
+    refs: list[dict[str, str]] = []
+    for cap in pack.get("capabilities", []):
+        ev = cap.get("evaluator")
+        if not ev:
+            continue
+        if not isinstance(ev, dict):
+            raise OnboardingError(f"capability evaluator must be object: {cap.get('id')}")
+        resource = _safe_resource_name(ev.get("resource", ""))
+        expected = str(ev.get("sha256", ""))
+        if not re.fullmatch(r"[0-9a-f]{64}", expected):
+            raise OnboardingError(f"invalid evaluator resource hash: {cap.get('id')}")
+        function = str(ev.get("function", ""))
+        if not re.fullmatch(r"[A-Za-z_][A-Za-z0-9_]*", function):
+            raise OnboardingError(f"invalid evaluator function: {cap.get('id')}")
+        refs.append({"resource": resource, "sha256": expected, "function": function, "capability_id": str(cap.get("id"))})
+    return sorted(refs, key=lambda x: (x["resource"], x["function"], x["capability_id"]))
+
+
+def verify_pack_resources(pack: dict[str, Any], resource_catalog: dict[str, str] | None) -> dict[str, Any]:
+    refs = _resource_refs(pack)
+    if not refs:
+        return {"ok": True, "required": 0, "verified": 0, "resources": []}
+    if not isinstance(resource_catalog, dict):
+        raise OnboardingError("pack evaluator resources require a resource catalog")
+    results = []
+    for ref in refs:
+        path_text = resource_catalog.get(ref["resource"])
+        if not isinstance(path_text, str) or not path_text:
+            raise OnboardingError(f"missing pack resource: {ref['resource']}")
+        p = pathlib.Path(path_text).resolve(strict=True)
+        if not p.is_file():
+            raise OnboardingError(f"pack resource is not a file: {ref['resource']}")
+        observed = file_sha(p)
+        if observed != ref["sha256"]:
+            raise OnboardingError(f"pack resource hash mismatch: {ref['resource']}")
+        results.append({**ref, "observed_sha256": observed})
+    return {"ok": True, "required": len(refs), "verified": len(results), "resources": results}
+
+
+def validate_pack(pack: dict[str, Any], *, resource_catalog: dict[str, str] | None = None, require_digest: bool = True, verify_resources: bool = False) -> dict[str, Any]:
+    if not isinstance(pack, dict):
+        raise OnboardingError("capability pack must be an object")
+    if pack.get("schema") != PACK_SCHEMA:
+        raise OnboardingError("unsupported project capability pack schema")
+    pack_id = str(pack.get("pack_id", "")); version = str(pack.get("version", ""))
+    if not PACK_ID_RE.fullmatch(pack_id): raise OnboardingError("invalid pack_id")
+    if not PACK_ID_RE.fullmatch(version): raise OnboardingError("invalid pack version")
+    project = pack.get("project")
+    if not isinstance(project, dict) or not project.get("project_id"):
+        raise OnboardingError("pack requires project adapter")
+    capabilities = pack.get("capabilities")
+    if not isinstance(capabilities, list): raise OnboardingError("pack capabilities must be a list")
+    seen: set[str] = set()
+    for cap in capabilities:
+        if not isinstance(cap, dict): raise OnboardingError("pack capability must be an object")
+        cid = str(cap.get("id", ""))
+        if not PACK_ID_RE.fullmatch(cid): raise OnboardingError("invalid capability requirement id")
+        if cid in seen: raise OnboardingError(f"duplicate capability requirement: {cid}")
+        seen.add(cid)
+        if not isinstance(cap.get("purpose"), str) or not cap["purpose"].strip(): raise OnboardingError(f"capability purpose missing: {cid}")
+        utility = float(cap.get("utility", -1))
+        if not 0 <= utility <= 1: raise OnboardingError(f"capability utility out of range: {cid}")
+        applicability = cap.get("applicability", [])
+        if not isinstance(applicability, list) or not all(isinstance(x, str) and x for x in applicability): raise OnboardingError(f"invalid applicability: {cid}")
+        provider = cap.get("provider", "forge")
+        if provider not in {"forge", "platform"}: raise OnboardingError(f"invalid provider: {cid}")
+        necessity = cap.get("necessity", "valuable")
+        if necessity not in {"required", "valuable", "specialize", "optional", "unnecessary"}: raise OnboardingError(f"invalid necessity: {cid}")
+        for key in ("authority_requirements", "runtime_dependencies", "task_intents"):
+            if key in cap and (not isinstance(cap[key], list) or not all(isinstance(x, str) and x for x in cap[key])):
+                raise OnboardingError(f"{key} must be list[str]: {cid}")
+        forge = cap.get("forge") or {}
+        if not isinstance(forge, dict): raise OnboardingError(f"forge declaration must be object: {cid}")
+        expected_hash = forge.get("expected_content_hash")
+        if expected_hash is not None and not re.fullmatch(r"[0-9a-f]{64}", str(expected_hash)):
+            raise OnboardingError(f"invalid capability content hash: {cid}")
+        if provider == "platform" and cap.get("platform_status") not in CAPABILITY_STATES:
+            raise OnboardingError(f"platform capability requires explicit platform_status: {cid}")
+    prov = pack.get("provenance")
+    if not isinstance(prov, dict) or not prov.get("creator") or not prov.get("source_generation"):
+        raise OnboardingError("pack provenance requires creator and source_generation")
+    policy = pack.get("classification_policy", {})
+    if not isinstance(policy, dict): raise OnboardingError("classification_policy must be object")
+    threshold = float(policy.get("valuable_utility_min", 0.5))
+    if not 0 <= threshold <= 1: raise OnboardingError("valuable_utility_min out of range")
+    observed = digest(_pack_core(pack))
+    declared = pack.get("pack_sha256")
+    if require_digest and declared != observed:
+        raise OnboardingError("project capability pack digest mismatch")
+    refs = _resource_refs(pack)  # structural validation is always required
+    if verify_resources:
+        resources = verify_pack_resources(pack, resource_catalog)
+    else:
+        resources = {"ok": True, "required": len(refs), "verified": 0, "resources": refs}
+    return {"ok": True, "pack_id": pack_id, "version": version, "pack_sha256": observed, "capabilities": len(capabilities), "resources": resources}
+
+
+def load_pack(path: str | pathlib.Path, *, resource_catalog: dict[str, str] | None = None) -> dict[str, Any]:
+    pack = load_json(path)
+    validate_pack(pack, resource_catalog=resource_catalog, verify_resources=resource_catalog is not None)
+    return pack
+
+
+def adapter_from_pack(pack: dict[str, Any]) -> dict[str, Any]:
+    validate_pack(pack, require_digest=bool(pack.get("pack_sha256")))
+    return copy.deepcopy(pack["project"])
+
+
+def forge_registry_records(registry: dict[str, Any]) -> list[dict[str, Any]]:
+    caps = registry.get("capabilities", {}) if isinstance(registry, dict) else {}
+    if not isinstance(caps, dict): raise OnboardingError("invalid Forge registry")
+    return sorted(({**rec, "content_hash": h} for h, rec in caps.items() if isinstance(rec, dict)), key=lambda x: (str(x.get("name", "")), str(x.get("content_hash", ""))))
+
+
+def _forge_plan(requirement: dict[str, Any]) -> dict[str, Any]:
+    forge = requirement.get("forge") or {}
+    desired = str(forge.get("desired_name") or requirement["id"])
+    gap = {
+        "desired_name": desired,
+        "purpose": requirement["purpose"],
+        "applicability": sorted(set(requirement.get("applicability", []))),
+        "authority_requirements": sorted(set(requirement.get("authority_requirements", []))),
+        "runtime_dependencies": sorted(set(requirement.get("runtime_dependencies", []))),
+    }
+    return {
+        "gap": gap,
+        "gates": ["search", "open_gap", "author", "seal", "evaluate", "real_task_evidence", "govern"],
+        "promotion_is_automatic": False,
+        "governor": "existing Capability Forge promotion governor",
+    }
+
+
+def classify_capabilities(manifest: dict[str, Any], pack: dict[str, Any], available_records: list[dict[str, Any]], task: str | None = None) -> dict[str, Any]:
+    validate_pack(pack, require_digest=bool(pack.get("pack_sha256")))
+    if manifest.get("project_id") != pack["project"].get("project_id"):
+        raise OnboardingError("pack/project manifest identity mismatch")
+    route = route_task(task, pack["project"]) if task else None
+    records = [r for r in available_records if isinstance(r, dict)]
+    threshold = float((pack.get("classification_policy") or {}).get("valuable_utility_min", 0.5))
+    rows = []
+    for req in sorted(pack.get("capabilities", []), key=lambda x: (-float(x.get("utility", 0)), x["id"])):
+        cid = req["id"]; necessity = req.get("necessity", "valuable"); provider = req.get("provider", "forge")
+        routed_out = bool(route and req.get("task_intents") and route["intent"] not in req.get("task_intents", []))
+        status: str; reason: str; selected = None
+        if necessity == "unnecessary" or routed_out:
+            status, reason = "UNNECESSARY", "not required for this routed task" if routed_out else "pack marks capability unnecessary"
+        elif provider == "platform":
+            status = str(req.get("platform_status")); reason = str(req.get("platform_reason") or "declared platform capability state")
+        else:
+            forge = req.get("forge") or {}; desired = str(forge.get("desired_name") or cid); pinned = forge.get("expected_content_hash")
+            same = [r for r in records if r.get("name") == desired and r.get("state") not in {"REJECTED", "EXPIRED", "SUPERSEDED"}]
+            exact = [r for r in same if pinned is None or r.get("content_hash") == pinned]
+            # CHECK:promoted_exact_availability
+            promoted = [r for r in exact if r.get("state") == "PROMOTED"]
+            if promoted:
+                selected = sorted(promoted, key=lambda r: str(r.get("content_hash", "")))[0]
+                status, reason = "AVAILABLE", "exact promoted Forge capability"
+            elif same:
+                selected = sorted(same, key=lambda r: (r.get("state") != "CANDIDATE", str(r.get("content_hash", ""))))[0]
+                status, reason = "WEAK_NEEDS_SPECIALIZATION", "matching Forge capability is unpromoted or content identity differs"
+            elif necessity in {"required", "valuable", "specialize"} and float(req.get("utility", 0)) >= threshold:
+                status, reason = "MISSING_VALUABLE", "no sufficient Forge capability found"
+            else:
+                status, reason = "UNNECESSARY", "utility below pack capability-work threshold"
+        if status not in CAPABILITY_STATES: raise OnboardingError(f"invalid classification state for {cid}: {status}")
+        forge_plan = _forge_plan(req) if status in {"MISSING_VALUABLE", "WEAK_NEEDS_SPECIALIZATION"} and req.get("allow_forge", provider == "forge") else None
+        if status == "MISSING_VALUABLE" and forge_plan is None:
+            raise OnboardingError(f"missing valuable capability has no Forge plan: {cid}")
+        rows.append({
+            "id": cid, "status": status, "provider": provider, "utility": float(req.get("utility", 0)), "reason": reason,
+            "selected": {k: selected.get(k) for k in ("name", "content_hash", "state") if k in selected} if selected else None,
+            "authority_requirements": sorted(req.get("authority_requirements", [])), "runtime_dependencies": sorted(req.get("runtime_dependencies", [])),
+            "forge_plan": forge_plan,
+        })
+    out = {"schema": CLASSIFICATION_SCHEMA, "project_id": manifest["project_id"], "manifest_sha256": manifest["manifest_sha256"], "pack_sha256": pack.get("pack_sha256") or digest(_pack_core(pack)), "task": task, "route": route, "capabilities": rows}
+    out["classification_sha256"] = digest(out)
+    return out
+
+
+def _load_module(path: pathlib.Path, name: str):
+    spec = importlib.util.spec_from_file_location(name, path)
+    if spec is None or spec.loader is None: raise RuntimeError(f"unable to load {path}")
+    mod = importlib.util.module_from_spec(spec); spec.loader.exec_module(mod); return mod
+
+
+def compose_platform_context(task: str, project_packet_path: str, *, evidence_epoch_path: str | pathlib.Path | None = None) -> dict[str, Any]:
+    pp = pathlib.Path(project_packet_path).resolve()
+    if not pp.is_file(): raise RuntimeError("project context packet missing")
+    project = json.loads(pp.read_text(encoding="utf-8"))
+    if project.get("schema") != CONTEXT_SCHEMA or project.get("task") != task: raise RuntimeError("project context/task binding mismatch")
+    packet_sha = digest({k: v for k, v in project.items() if k != "packet_sha256"})
+    if packet_sha != project.get("packet_sha256"): raise RuntimeError("project context digest mismatch")
+    ep_path = pathlib.Path(evidence_epoch_path) if evidence_epoch_path else DEFAULT_EPOCH_PATH
+    ep = _load_module(ep_path, "gen16_project_epoch_bridge")
+    begun = ep.begin_epoch(task=task, extra_paths=[str(pp)]); epoch_id = begun["epoch_id"]
+    compiled = ep.compile_minimized(epoch_id, task, budget_bytes=24000)
+    verification = ep.verify_epoch(epoch_id); finalized = ep.finalize_epoch(epoch_id)
+    if not compiled.get("ok") or compiled.get("fail_closed") or not verification.get("ok") or not finalized.get("ok"):
+        raise RuntimeError("Gen8-Gen11 epoch composition failed closed")
+    route = compiled.get("routing_proof") or {}; minimized = compiled.get("minimized_packet") or {}; budget = minimized.get("budget") or {}
+    material = {
+        "version": BRIDGE_VERSION, "task": task, "project_context_path": str(pp), "project_packet_sha256": project["packet_sha256"],
+        "project_manifest_sha256": project["project_manifest_sha256"], "project_evidence_epoch": project["evidence_epoch"],
+        "gen10_epoch_id": epoch_id, "gen10_epoch_digest": begun["epoch_digest"], "gen10_transaction_digest": compiled["transaction_digest"],
+        "gen11_routing_digest": compiled["routing_digest"], "gen11_primary_intent": route.get("detected_primary_intent"),
+        "gen11_required_authority_classes": route.get("required_authority_classes") or [],
+        "gen8_compiler_packet_digest": (compiled.get("compiler_packet") or {}).get("packet_digest"), "gen9_optimizer_packet_digest": minimized.get("packet_digest"),
+        "gen9_context_payload_bytes": budget.get("context_payload_bytes"), "gen9_context_payload_reduction": budget.get("context_payload_reduction"),
+        "domain_required_evidence_recall": (project.get("metrics") or {}).get("required_evidence_recall"), "domain_context_reduction": (project.get("metrics") or {}).get("context_reduction"),
+        "domain_selected_bytes": (project.get("metrics") or {}).get("selected_bytes"), "domain_route": project.get("route"),
+        "epoch_verification_ok": verification.get("ok"), "epoch_finalized_state": finalized.get("state"), "fail_closed": False,
+    }
+    material["composition_sha256"] = digest(material); return material
+
+
+def analyze_project(transport: dict[str, Any], pack: dict[str, Any], available_records: list[dict[str, Any]], task: str, *, resource_catalog: dict[str, str] | None = None) -> dict[str, Any]:
+    pack_check = validate_pack(pack, resource_catalog=resource_catalog, verify_resources=True)
+    adapter = copy.deepcopy(pack["project"])
+    manifest = onboard_transport(transport, adapter); twin = build_twin(manifest); context = compile_context(task, manifest, transport, adapter)
+    classification = classify_capabilities(manifest, pack, available_records, task)
+    out = {
+        "schema": ANALYSIS_SCHEMA, "pack": pack_check, "project_manifest": manifest, "project_twin": twin, "task_context": context,
+        "capability_classification": classification,
+        "operator_path": ["validate_pack", "analyze_project", "forge_only_when_needed", "evaluate_and_govern"],
+        "automatic_promotion": False,
+    }
+    out["analysis_sha256"] = digest(out); return out
+
 def main() -> int:
     ap=argparse.ArgumentParser(); sp=ap.add_subparsers(dest="cmd",required=True)
     p=sp.add_parser("snapshot"); p.add_argument("root"); p.add_argument("adapter"); p.add_argument("out")
@@ -240,6 +498,9 @@ def main() -> int:
     p=sp.add_parser("twin"); p.add_argument("manifest"); p.add_argument("out")
     p=sp.add_parser("context"); p.add_argument("task"); p.add_argument("manifest"); p.add_argument("transport"); p.add_argument("adapter"); p.add_argument("out")
     p=sp.add_parser("gaps"); p.add_argument("manifest"); p.add_argument("adapter"); p.add_argument("out"); p.add_argument("--available",default="")
+    p=sp.add_parser("pack-verify"); p.add_argument("pack"); p.add_argument("--resource-catalog")
+    p=sp.add_parser("analyze"); p.add_argument("transport"); p.add_argument("pack"); p.add_argument("task"); p.add_argument("out"); p.add_argument("--registry"); p.add_argument("--resource-catalog")
+    p=sp.add_parser("compose"); p.add_argument("task"); p.add_argument("project_context")
     a=ap.parse_args()
     try:
         if a.cmd=="snapshot": out=snapshot_local(pathlib.Path(a.root),load_json(a.adapter)); write_json(a.out,out)
@@ -248,7 +509,15 @@ def main() -> int:
         elif a.cmd=="twin": write_json(a.out,build_twin(load_json(a.manifest)))
         elif a.cmd=="context": write_json(a.out,compile_context(a.task,load_json(a.manifest),load_json(a.transport),load_json(a.adapter)))
         elif a.cmd=="gaps": write_json(a.out,capability_gaps(load_json(a.manifest),load_json(a.adapter),[x for x in a.available.split(",") if x]))
+        elif a.cmd=="pack-verify":
+            rc=load_json(a.resource_catalog) if a.resource_catalog else None
+            print(json.dumps(validate_pack(load_json(a.pack),resource_catalog=rc,verify_resources=rc is not None),indent=2,sort_keys=True))
+        elif a.cmd=="analyze":
+            registry=load_json(a.registry) if a.registry else {"capabilities":{}}
+            rc=load_json(a.resource_catalog) if a.resource_catalog else None
+            write_json(a.out,analyze_project(load_json(a.transport),load_json(a.pack),forge_registry_records(registry),a.task,resource_catalog=rc))
+        elif a.cmd=="compose": print(json.dumps(compose_platform_context(a.task,a.project_context),indent=2,sort_keys=True))
         return 0
-    except (OnboardingError,FileNotFoundError,json.JSONDecodeError) as e:
+    except (OnboardingError,FileNotFoundError,json.JSONDecodeError,RuntimeError) as e:
         print(json.dumps({"ok":False,"error":str(e)},sort_keys=True),file=sys.stderr); return 2
 if __name__=="__main__": raise SystemExit(main())

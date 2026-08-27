@@ -1,7 +1,7 @@
 {
   "lab": {
-    "accepted_at": "2026-08-27T02:03:46.415130+00:00",
-    "build_id": "gen15-project-onboarding-domain-capability-r1-50f8653f0623",
+    "accepted_at": "2026-08-27T02:58:35.784685Z",
+    "build_id": "gen16-capability-consolidation-r1-33dad6262d3a",
     "features_add": [
       "architectural_digital_twin",
       "causal_observability_spine",
@@ -61,7 +61,17 @@
       "independent_domain_evaluation",
       "domain_evaluator_mutation_hardening",
       "second_project_generalization",
-      "read_only_external_project_piloting"
+      "read_only_external_project_piloting",
+      "reusable_project_capability_pack_schema",
+      "content_addressed_project_capability_packs",
+      "single_consolidated_project_analysis_path",
+      "actionable_capability_state_classification",
+      "deterministic_forge_gap_mapping",
+      "explicit_pack_evaluation_promotion_gates",
+      "pack_resource_lineage_verification",
+      "gen15_song_city_pack_compatibility",
+      "project_factory_self_use",
+      "project_building_readiness_evidence"
     ],
     "gen10_validation": {
       "benchmark": {
@@ -626,6 +636,93 @@
         "validated_at": "2026-08-27T02:04:45.955136+00:00"
       },
       "version": "gen15-result-r1"
+    },
+    "gen16_validation": {
+      "accepted_at": "2026-08-27T02:58:35.784685Z",
+      "benchmark": {
+        "bridge_lines": 21,
+        "context_reduction_min": 0.6495714812941675,
+        "critical_fn": 0,
+        "dangerous_mutation_kill_rate": 1.0,
+        "dangerous_survivors": 0,
+        "manual_operator_steps": 4,
+        "required_evidence_recall": 1.0,
+        "result": "40/40 PASS"
+      },
+      "benchmark_source_sha256": "19e61cedde431c17571337324dc7de01319b767fd16826f1f65a98a898207317",
+      "capability_build": "gen16-capability-consolidation-r1-33dad6262d3a",
+      "consolidation": {
+        "bridge_lines_after": 21,
+        "bridge_lines_before": 92,
+        "bridge_reduction": 0.771739,
+        "canonical_project_analysis_paths": 1,
+        "capability_source_copies_in_pack": 0,
+        "manual_step_reduction": 0.5,
+        "manual_steps_after": 4,
+        "manual_steps_before": 8
+      },
+      "final_twin": {
+        "causal_index_sha256": "a68970ee63c3dda403f3e97fcbce9a27b33053bdb50b3f38c5f839d1ad607478",
+        "edges": 380,
+        "graph_digest": "ff8f7b5a4da46b42fefd73c427078edcf18d7345a725ec43d50fd96b80afe930",
+        "nodes": 245,
+        "snapshot_sha256": "c7d101384ea0d56d6fc21aae374a48cf62d54aad6f0cd3c4265da5954dff9f14",
+        "verify": "PASS_ZERO_ISSUES_ZERO_NEWER_EVIDENCE"
+      },
+      "generation": "gen16-capability-consolidation-r1",
+      "gold_sha256": "2755cc4fa09afbe653dbc6961a4bab314a052483fc9d8d62d3b71bf83db4b80a",
+      "operational_server": {
+        "build_id": "gen6-experience-memory-r1-dc0d2cb41595",
+        "generation": "gen6-experience-memory-r1",
+        "live_equals_lkg": true,
+        "lkg_sha256": "dc0d2cb41595a9a3d953873879ccc3e0bd88db2b4dcdee4cf8aa43dd4cb103e9",
+        "recovery_state": "ACCEPTED",
+        "server_sha256": "dc0d2cb41595a9a3d953873879ccc3e0bd88db2b4dcdee4cf8aa43dd4cb103e9",
+        "tool_surface": 10
+      },
+      "pack": {
+        "actionable_states": [
+          "AVAILABLE",
+          "WEAK_NEEDS_SPECIALIZATION",
+          "MISSING_VALUABLE",
+          "UNNECESSARY"
+        ],
+        "automatic_promotion": false,
+        "schema": "gen16.project-capability-pack.v1",
+        "song_city_semantic_sha256": "77789cfd1a759e8c55977c7e820592470ed1726405e9d72adf1bf102da7ce95b"
+      },
+      "project_context_bridge_sha256": "8f326f12edd6f96dafec75d271f98ff888f5e8a32b08dc42034522112649aec2",
+      "project_onboarding_sha256": "33dad6262d3a2071c4198b4d0e337076f0c8d52c9f9015dab6b052054ff458c0",
+      "protected_state": "PASS_ZERO_FORBIDDEN_TRACE_PREFIX_APPEND_ONLY",
+      "retained_regressions": {
+        "gen10": "24/24",
+        "gen11": "39/39",
+        "gen12": "30/30",
+        "gen13": "37/37",
+        "gen14": "52/52 dangerous 13/13 killed",
+        "gen15": "40/40",
+        "gen2": "12/12",
+        "gen3": "16/16",
+        "gen4": "18/18",
+        "gen5": "12/12",
+        "gen6": "13/13",
+        "gen7": "15/15 version-pinned",
+        "gen8": "17/17",
+        "gen9": "20/20"
+      },
+      "server_modified": false,
+      "status": "ACCEPTED",
+      "validation": {
+        "canonical_project_tests": "PASS_13_13",
+        "commit_or_push_performed": false,
+        "containment": "PASS",
+        "git_diff_check": "PASS",
+        "json_jsonl": "PASS_133_JSON_2_JSONL_124_RECORDS_FINAL",
+        "python_syntax": "PASS_52_FILES_MUTATION_FREE_AST",
+        "secret_credential_scan": "PASS",
+        "temp_capsule_cleanup": "PASS_ZERO_REMAINING",
+        "validated_at": "2026-08-27T03:01:21.215937Z"
+      }
     },
     "gen5_validation": {
       "accepted_guest_identity": {
@@ -1313,8 +1410,8 @@
         "validated_at": "2026-08-26T18:55:07.088888+00:00"
       }
     },
-    "generation": "gen15-project-onboarding-domain-capability-r1",
-    "generation_source_sha256": "50f8653f06237fe031fedb1e19c61a506646d73aa78813fbcc3a8ed536553ff3",
+    "generation": "gen16-capability-consolidation-r1",
+    "generation_source_sha256": "33dad6262d3a2071c4198b4d0e337076f0c8d52c9f9015dab6b052054ff458c0",
     "live_server_identity": {
       "build_id": "gen6-experience-memory-r1-dc0d2cb41595",
       "generation": "gen6-experience-memory-r1",
@@ -1328,41 +1425,37 @@
     },
     "recovery_state": "ACCEPTED",
     "source_sha256": "dc0d2cb41595a9a3d953873879ccc3e0bd88db2b4dcdee4cf8aa43dd4cb103e9",
-    "state": "GEN15_ACCEPTED_PROJECT_ONBOARDING_DOMAIN_CAPABILITY",
+    "state": "GEN16_ACCEPTED_CAPABILITY_CONSOLIDATION",
     "tool_count": 10
   },
   "next_iteration": {
-    "cycle_id": "gen16-capability-consolidation-001",
-    "proposals_artifact": "lab_generations/GEN16_PROPOSALS.json",
-    "required_stop": "DO_NOT_IMPLEMENT_GEN16_WITHOUT_USER_REQUEST",
+    "cycle_id": "gen17-terrarium-project-pilot-001",
+    "proposals_artifact": "lab_generations/GEN17_PROPOSALS.json",
+    "required_stop": "DO_NOT_IMPLEMENT_GEN17_WITHOUT_USER_REQUEST",
     "safe_mcp_policy": "FROZEN_NO_CHANGES",
     "status": "PROPOSED_NOT_STARTED",
     "target": "Optiplex_Lab + mcp-lab VM",
-    "top_recommendation": "Capability Consolidation + Reusable Project Capability Packs"
+    "top_recommendation": "Terrarium \u2014 First Full Project-Building Pilot"
   },
-  "resume_instruction": "Repository/live state is authoritative. Accepted Gen15 is gen15-project-onboarding-domain-capability-r1 / build gen15-project-onboarding-domain-capability-r1-50f8653f0623, gold 718d297ae608d53bad0b81b576f536df05c737c165c2dc3a1c29851b989440eb, benchmark 40/40, real Song City pilot read-only, two promoted/reused guest-local domain capabilities, required evidence recall 1.0, minimum context reduction 0.649571, adversarial 15/15, retained Gen2-Gen14 all pass including Gen13 37/37 and Gen14 52/52 with dangerous mutation kill rate 1.0. Operational Lab remains Gen6 server/LKG dc0d2cb41595a9a3d953873879ccc3e0bd88db2b4dcdee4cf8aa43dd4cb103e9, recovery ACCEPTED, exactly 10 tools. Final Twin 236/357 graph 9195d556b329c7c38505bb3b52c4584f47362f07c5388aa60bb91923575fec8c with zero issues. Preserve unrelated Git work and do not implement Gen16 without user request.",
-  "state": "LIFECYCLE_ACCEPTED_GEN15_PROJECT_ONBOARDING_DOMAIN_CAPABILITY",
+  "resume_instruction": "Repository/live state is authoritative. Accepted Gen16 is gen16-capability-consolidation-r1 / build gen16-capability-consolidation-r1-33dad6262d3a, gold 2755cc4fa09afbe653dbc6961a4bab314a052483fc9d8d62d3b71bf83db4b80a, benchmark 40/40, Project Capability Pack schema gen16.project-capability-pack.v1, required evidence recall 1.0, critical FN 0, bridge 21 lines, manual operator path 4 steps, dangerous new classifier mutation kill rate 1.0 with zero survivors. Retained Gen2-Gen15 all pass including Gen13 37/37, Gen14 52/52 with 13/13 dangerous mutants killed, Gen15 40/40. Operational Lab remains accepted Gen6 server/LKG dc0d2cb41595a9a3d953873879ccc3e0bd88db2b4dcdee4cf8aa43dd4cb103e9, recovery ACCEPTED, exactly 10 tools. Final Twin 245/380 graph ff8f7b5a4da46b42fefd73c427078edcf18d7345a725ec43d50fd96b80afe930 with zero issues. Next recommended generation is Terrarium \u2014 First Full Project-Building Pilot. Preserve unrelated Git work and do not implement Gen17 without user request.",
+  "state": "LIFECYCLE_ACCEPTED_GEN16_CAPABILITY_CONSOLIDATION",
   "validation": {
     "canonical_project_tests": "PASS_13_13",
     "commit_or_push_performed": false,
     "containment": "PASS",
-    "final_twin": "PASS_ZERO_ISSUES",
-    "frozen_optiplex_mcp": "PASS_NO_MCP_FRONTEND_CHANGES",
+    "final_twin": "PASS_ZERO_ISSUES_ZERO_NEWER_EVIDENCE",
     "git_diff_check": "PASS",
-    "json_jsonl": "PASS_119_JSON_2_JSONL_121_RECORDS_BEFORE_FINAL_EVENT",
+    "json_jsonl": "PASS_133_JSON_2_JSONL_124_RECORDS_FINAL",
     "permanent_mcp_tools": 10,
-    "pilot_project_tests": "PASS_45_1_SKIPPED",
-    "protected_state": "PASS_ZERO_FORBIDDEN_EXPECTED_CAPABILITY_FORGE_STATE",
-    "python_syntax": "PASS_51_FILES_MUTATION_FREE_AST",
-    "secret_credential_scan": "PASS_21_GEN15_OWNED_AND_LIFECYCLE_FILES",
-    "server_modified": false,
-    "source_identity_parity": "PASS_ONBOARDING_BRIDGE_EVALUATOR_BENCHMARK_GOLD",
+    "protected_state": "PASS_ZERO_FORBIDDEN_TRACE_PREFIX_APPEND_ONLY",
+    "python_syntax": "PASS_52_FILES_MUTATION_FREE_AST",
+    "secret_credential_scan": "PASS",
     "status": "PASS_FINAL_CANONICAL_VALIDATION",
-    "temp_capsule_cleanup": "PASS_190_REMOVED_ZERO_REMAINING",
+    "temp_capsule_cleanup": "PASS_ZERO_REMAINING",
     "unrelated_work_preserved": [
       "ideas.md",
       "host/check_chatgpt_ui_staleness.sh"
     ],
-    "validated_at": "2026-08-27T02:04:45.955136+00:00"
+    "validated_at": "2026-08-27T03:01:21.215937Z"
   }
 }

@@ -1,0 +1,602 @@
+{
+  "artifacts": {
+    "adversarial": "/var/lib/optiplex-lab/benchmarks/gen16-adversarial.json",
+    "compatibility": "/var/lib/optiplex-lab/benchmarks/gen16-song-city-compatibility.json",
+    "consolidation": "/var/lib/optiplex-lab/benchmarks/gen16-consolidation.json",
+    "evaluator_mutation": "/var/lib/optiplex-lab/benchmarks/gen16-evaluator-mutation.json",
+    "generalization": "/var/lib/optiplex-lab/benchmarks/gen16-generalization.json",
+    "readiness": "/var/lib/optiplex-lab/benchmarks/gen16-project-readiness.json",
+    "self_use": "/var/lib/optiplex-lab/benchmarks/gen16-self-use.json"
+  },
+  "bridge_sha256": "8f326f12edd6f96dafec75d271f98ff888f5e8a32b08dc42034522112649aec2",
+  "checks": [
+    {
+      "detail": {
+        "actual": "2755cc4fa09afbe653dbc6961a4bab314a052483fc9d8d62d3b71bf83db4b80a",
+        "expected": "2755cc4fa09afbe653dbc6961a4bab314a052483fc9d8d62d3b71bf83db4b80a"
+      },
+      "name": "frozen_gold_integrity",
+      "ok": true
+    },
+    {
+      "detail": {
+        "capabilities": 5,
+        "ok": true,
+        "pack_id": "song-city-telemetry-project-factory",
+        "pack_sha256": "77789cfd1a759e8c55977c7e820592470ed1726405e9d72adf1bf102da7ce95b",
+        "resources": {
+          "ok": true,
+          "required": 2,
+          "resources": [
+            {
+              "capability_id": "songboss-causality-auditor-r1",
+              "function": "evaluate_songboss_audit",
+              "observed_sha256": "c987dae835e68cfb663398d647b91e1eb9f9820f7a595184139a5176827e160e",
+              "resource": "gen15_domain_evaluators",
+              "sha256": "c987dae835e68cfb663398d647b91e1eb9f9820f7a595184139a5176827e160e"
+            },
+            {
+              "capability_id": "musical-telemetry-profiler-r1",
+              "function": "evaluate_telemetry_profile",
+              "observed_sha256": "c987dae835e68cfb663398d647b91e1eb9f9820f7a595184139a5176827e160e",
+              "resource": "gen15_domain_evaluators",
+              "sha256": "c987dae835e68cfb663398d647b91e1eb9f9820f7a595184139a5176827e160e"
+            }
+          ],
+          "verified": 2
+        },
+        "version": "1"
+      },
+      "name": "pack_schema_and_resource_integrity",
+      "ok": true
+    },
+    {
+      "detail": "77789cfd1a759e8c55977c7e820592470ed1726405e9d72adf1bf102da7ce95b",
+      "name": "pack_deterministic_content_identity",
+      "ok": true
+    },
+    {
+      "detail": "project_onboarding.py",
+      "name": "generic_engine_not_pilot_named",
+      "ok": true
+    },
+    {
+      "detail": {
+        "lines": 21
+      },
+      "name": "bridge_is_thin_compatibility_shim",
+      "ok": true
+    },
+    {
+      "detail": {
+        "project_keys": [
+          "artifact_locations",
+          "authority_hierarchy",
+          "authority_rules",
+          "build_commands",
+          "data_locations",
+          "embed_patterns",
+          "enforce_embedded_identity",
+          "entrypoints",
+          "external_interfaces",
+          "ignore_patterns",
+          "important_files",
+          "max_embed_bytes",
+          "project_id",
+          "project_name_aliases",
+          "safety_constraints",
+          "task_profiles",
+          "tests"
+        ]
+      },
+      "name": "pack_does_not_duplicate_capability_source",
+      "ok": true
+    },
+    {
+      "detail": "e7473a8783218981a7bcf621690f96ea430dd5810a0e4d689217bbcb11f14ea3",
+      "name": "gen15_legacy_manifest_reproduces_frozen_identity",
+      "ok": true
+    },
+    {
+      "detail": {
+        "legacy": "e7473a8783218981a7bcf621690f96ea430dd5810a0e4d689217bbcb11f14ea3",
+        "new": "3f2a2863fea79c82be1b2f2ff0ec30e2f7fd9a9556a4ccd0902588165e894089"
+      },
+      "name": "song_city_manifest_semantics_preserved",
+      "ok": true
+    },
+    {
+      "detail": {
+        "edges": 53,
+        "nodes": 50
+      },
+      "name": "song_city_twin_semantics_preserved",
+      "ok": true
+    },
+    {
+      "detail": [
+        {
+          "authoritative_bytes": 219477,
+          "context_reduction": 0.6495714812941675,
+          "critical_false_negatives": 0,
+          "required_evidence_recall": 1.0,
+          "selected_bytes": 76911
+        },
+        {
+          "authoritative_bytes": 219477,
+          "context_reduction": 0.8060890207174328,
+          "critical_false_negatives": 0,
+          "required_evidence_recall": 1.0,
+          "selected_bytes": 42559
+        },
+        {
+          "authoritative_bytes": 219477,
+          "context_reduction": 0.7795896608756271,
+          "critical_false_negatives": 0,
+          "required_evidence_recall": 1.0,
+          "selected_bytes": 48375
+        }
+      ],
+      "name": "song_city_task_context_semantics_preserved",
+      "ok": true
+    },
+    {
+      "detail": {
+        "max_fn": 0,
+        "min_recall": 1.0
+      },
+      "name": "required_evidence_recall_and_critical_fn",
+      "ok": true
+    },
+    {
+      "detail": {
+        "min": 0.6495714812941675
+      },
+      "name": "context_reduction_preserved",
+      "ok": true
+    },
+    {
+      "detail": [
+        "validate_pack",
+        "analyze_project",
+        "forge_only_when_needed",
+        "evaluate_and_govern"
+      ],
+      "name": "single_consolidated_operator_path",
+      "ok": true
+    },
+    {
+      "detail": {
+        "browser-visual-review": "WEAK_NEEDS_SPECIALIZATION",
+        "ffmpeg-audio-decode": "WEAK_NEEDS_SPECIALIZATION",
+        "musical-telemetry-profiler-r1": "AVAILABLE",
+        "songboss-causality-auditor-r1": "AVAILABLE",
+        "video-transcoding-suite": "UNNECESSARY"
+      },
+      "name": "actionable_capability_states",
+      "ok": true
+    },
+    {
+      "detail": {
+        "browser-visual-review": null,
+        "ffmpeg-audio-decode": null,
+        "musical-telemetry-profiler-r1": "4dd178d667af77f5c50e846dec419dac3206040491017ca591a3504fa2b455c3",
+        "songboss-causality-auditor-r1": "7a8ffc0c3facad20c5714834d1d4e0d0d106f663ae4ec07f8106c21c3d951edf",
+        "video-transcoding-suite": null
+      },
+      "name": "promoted_capability_hashes_preserved",
+      "ok": true
+    },
+    {
+      "detail": [
+        {
+          "authority_requirements": [
+            "project telemetry evidence",
+            "source lineage"
+          ],
+          "forge_plan": null,
+          "id": "musical-telemetry-profiler-r1",
+          "provider": "forge",
+          "reason": "exact promoted Forge capability",
+          "runtime_dependencies": [],
+          "selected": {
+            "content_hash": "4dd178d667af77f5c50e846dec419dac3206040491017ca591a3504fa2b455c3",
+            "name": "musical-telemetry-profiler-r1",
+            "state": "PROMOTED"
+          },
+          "status": "AVAILABLE",
+          "utility": 0.96
+        },
+        {
+          "authority_requirements": [
+            "Song Boss plan",
+            "project safety evidence",
+            "telemetry profile"
+          ],
+          "forge_plan": null,
+          "id": "songboss-causality-auditor-r1",
+          "provider": "forge",
+          "reason": "exact promoted Forge capability",
+          "runtime_dependencies": [],
+          "selected": {
+            "content_hash": "7a8ffc0c3facad20c5714834d1d4e0d0d106f663ae4ec07f8106c21c3d951edf",
+            "name": "songboss-causality-auditor-r1",
+            "state": "PROMOTED"
+          },
+          "status": "AVAILABLE",
+          "utility": 0.94
+        },
+        {
+          "authority_requirements": [
+            "bounded project subprocess"
+          ],
+          "forge_plan": null,
+          "id": "ffmpeg-audio-decode",
+          "provider": "platform",
+          "reason": "Generic shell/subprocess authority exists; domain ergonomics remain project-specific.",
+          "runtime_dependencies": [
+            "ffmpeg"
+          ],
+          "selected": null,
+          "status": "WEAK_NEEDS_SPECIALIZATION",
+          "utility": 0.75
+        },
+        {
+          "authority_requirements": [
+            "mediated browser inspection"
+          ],
+          "forge_plan": null,
+          "id": "browser-visual-review",
+          "provider": "platform",
+          "reason": "Mediated browser inspection exists; project behavioral/visual criteria must stay pack-specific.",
+          "runtime_dependencies": [
+            "browser sidecar"
+          ],
+          "selected": null,
+          "status": "WEAK_NEEDS_SPECIALIZATION",
+          "utility": 0.68
+        },
+        {
+          "authority_requirements": [],
+          "forge_plan": null,
+          "id": "video-transcoding-suite",
+          "provider": "platform",
+          "reason": "pack marks capability unnecessary",
+          "runtime_dependencies": [],
+          "selected": null,
+          "status": "UNNECESSARY",
+          "utility": 0.25
+        }
+      ],
+      "name": "no_autonomous_promotion_path",
+      "ok": true
+    },
+    {
+      "detail": {
+        "audit": {
+          "checks_run": [
+            "source_lineage",
+            "duration_lineage",
+            "attack_count",
+            "observed_evidence_coverage",
+            "observed_family_grammar",
+            "observed_timing",
+            "observed_safety",
+            "candidate_consistency"
+          ],
+          "critical_failures": [],
+          "observed": {
+            "attack_count": 111,
+            "evidence_coverage": 1.0,
+            "family_counts": {
+              "PULSE": 69,
+              "SWEEP": 7,
+              "VOLLEY": 35
+            },
+            "safety_ok": true,
+            "timing_violations": 0,
+            "unsupported_families": []
+          },
+          "ok": true
+        },
+        "profile": {
+          "checks_run": [
+            "source_lineage",
+            "duration",
+            "beat_count",
+            "bar_count",
+            "section_count",
+            "section_pattern",
+            "largest_transition",
+            "strongest_bars",
+            "integrity"
+          ],
+          "critical_failures": [],
+          "observed": {
+            "bar_count": 226,
+            "beat_count": 905,
+            "largest_transition": {
+              "label": "A",
+              "novelty": 0.296481,
+              "section_index": 10,
+              "time": 166.42644
+            },
+            "section_count": 37,
+            "strongest_bars": [
+              {
+                "average_energy": 0.630601,
+                "index": 125,
+                "start": 260.026441
+              },
+              {
+                "average_energy": 0.629937,
+                "index": 129,
+                "start": 268.346441
+              },
+              {
+                "average_energy": 0.629892,
+                "index": 121,
+                "start": 251.706441
+              }
+            ]
+          },
+          "ok": true
+        }
+      },
+      "name": "both_gen15_domain_capabilities_still_evaluable",
+      "ok": true
+    },
+    {
+      "detail": {
+        "attacks": 111,
+        "transition": 166.42644
+      },
+      "name": "real_domain_results_preserved",
+      "ok": true
+    },
+    {
+      "detail": {
+        "classification": "KILLED",
+        "kill_reason": "INDEPENDENT_ORACLE_MISMATCH",
+        "mutation_id": "mu14_a3da7f5d38d7c01a1deeffbb"
+      },
+      "name": "dangerous_classifier_mutation_killed",
+      "ok": true
+    },
+    {
+      "detail": {
+        "analysis_sha256": "80a569e0980b66387736fc34c7501fad27d9e8df63831108c5901d6e13d9a255",
+        "capabilities": [
+          {
+            "authority_requirements": [],
+            "forge_plan": null,
+            "id": "node-runtime",
+            "provider": "platform",
+            "reason": "Node runtime is present in project substrate.",
+            "runtime_dependencies": [],
+            "selected": null,
+            "status": "AVAILABLE",
+            "utility": 0.9
+          }
+        ],
+        "context": {
+          "authoritative_bytes": 139,
+          "context_reduction": 0.08633093525179858,
+          "critical_false_negatives": 0,
+          "required_evidence_recall": 1.0,
+          "selected_bytes": 127
+        },
+        "deterministic": true,
+        "frameworks": [
+          "Node/package.json"
+        ],
+        "languages": [
+          [
+            "JavaScript",
+            2
+          ]
+        ],
+        "pack_sha256": "70f527e56057f9e9fc15f5b2d907e9e1aa30eeaf596ceaef287bf0d6e0c07678",
+        "transport_sha256": "6afe4fcb3db8fac048736dd1c6796289d45c94140b350f8879b111e1c7e81fab"
+      },
+      "name": "second_project_pack_generalization",
+      "ok": true
+    },
+    {
+      "detail": {
+        "bridge_lines_after": 21,
+        "bridge_lines_before": 92,
+        "bridge_reduction": 0.771739,
+        "canonical_compose_owner": "project_onboarding.compose_platform_context",
+        "context": {
+          "authoritative_bytes": 1010612,
+          "context_reduction": 0.8252583583017024,
+          "critical_false_negatives": 0,
+          "required_evidence_recall": 1.0,
+          "selected_bytes": 176596
+        },
+        "defects_found_and_resolved": [
+          {
+            "finding": "structural pack validation initially forced evaluator resource resolution during internal classification",
+            "resolution": "split structural validation from explicit resource verification; full analyze verifies resources once and internal classification reuses the verified pack"
+          },
+          {
+            "finding": "self-use source root includes runtime virtualenv symlinks outside the declared project root",
+            "resolution": "preserved fail-closed symlink containment and excluded venv/** from the source-only self-use scope"
+          }
+        ],
+        "legacy_capability_requirements_removed_from_pack_project": true,
+        "manifest_sha256": "f8684c2b87de1ccd3f1eed942b0cd7950500c5c70bde4c6aebea5a84545b2003",
+        "pack_sha256": "7781dee946ac84e04cb7bb12fdb979aebae74fed3b5e2d98ba4c2e7cbeb70260"
+      },
+      "name": "self_use_on_gen15_onboarding",
+      "ok": true
+    },
+    {
+      "detail": "OnboardingError: unsupported project capability pack schema",
+      "name": "adversarial_pack_schema_tamper",
+      "ok": true
+    },
+    {
+      "detail": "OnboardingError: project capability pack digest mismatch",
+      "name": "adversarial_pack_digest_tamper",
+      "ok": true
+    },
+    {
+      "detail": "OnboardingError: duplicate capability requirement: musical-telemetry-profiler-r1",
+      "name": "adversarial_duplicate_requirement",
+      "ok": true
+    },
+    {
+      "detail": "OnboardingError: unsafe pack resource name: ../escape",
+      "name": "adversarial_unsafe_resource",
+      "ok": true
+    },
+    {
+      "detail": "WEAK_NEEDS_SPECIALIZATION",
+      "name": "adversarial_content_hash_mismatch",
+      "ok": true
+    },
+    {
+      "detail": "WEAK_NEEDS_SPECIALIZATION",
+      "name": "adversarial_unpromoted_not_available",
+      "ok": true
+    },
+    {
+      "detail": "OnboardingError: missing valuable capability has no Forge plan: missing",
+      "name": "adversarial_missing_requires_forge_plan",
+      "ok": true
+    },
+    {
+      "detail": {
+        "forge_plan": null,
+        "status": "UNNECESSARY"
+      },
+      "name": "adversarial_unnecessary_no_gap",
+      "ok": true
+    },
+    {
+      "detail": {
+        "missing": "OnboardingError: missing authoritative inputs: definitely/missing.py",
+        "stale": "OnboardingError: stale project model"
+      },
+      "name": "adversarial_stale_and_missing_evidence",
+      "ok": true
+    },
+    {
+      "detail": "RuntimeError: project context/task binding mismatch",
+      "name": "adversarial_bridge_binding",
+      "ok": true
+    },
+    {
+      "detail": "OnboardingError: pack resource hash mismatch: gen15_domain_evaluators",
+      "name": "adversarial_evaluator_reference",
+      "ok": true
+    },
+    {
+      "detail": {
+        "accepted_state_unchanged": true,
+        "cleanup_removed": true,
+        "reason": "UNDECLARED_CHILD_MUTATION",
+        "status": "INVALID"
+      },
+      "name": "adversarial_undeclared_mutation",
+      "ok": true
+    },
+    {
+      "detail": {
+        "missing": []
+      },
+      "name": "all_frozen_adversarial_classes_represented",
+      "ok": true
+    },
+    {
+      "detail": {
+        "bounded_long_running_experiments": true,
+        "browser_render_inspection": {
+          "guest_dependency": "no new guest tool required",
+          "host_mediated_evidence_required": true
+        },
+        "deterministic_simulation_replay": true,
+        "frontend_backend_synchronization_tests": {
+          "browser_assertions_mediated_externally": true,
+          "project_native_checks_supported": true
+        },
+        "permanent_mcp_growth_required": false,
+        "persistent_background_project_services": true,
+        "project_specific_behavioral_evaluators": true,
+        "sqlite_event_ledger_inspection": true,
+        "visual_acceptance_evidence": {
+          "host_browser_screenshot_supported_externally": true,
+          "pack_specific_evaluator_supported": true
+        }
+      },
+      "name": "generic_project_building_readiness",
+      "ok": true
+    },
+    {
+      "detail": {
+        "bridge_line_reduction": 0.771739,
+        "bridge_lines_after": 21,
+        "bridge_lines_before": 92,
+        "canonical_project_analysis_paths": 1,
+        "capability_source_copies_in_pack": 0,
+        "critical_false_negatives": 0,
+        "dangerous_classifier_mutation_kill_rate": 1.0,
+        "dangerous_classifier_survivors": 0,
+        "legacy_project_capability_requirement_block_removed": true,
+        "manual_operator_steps_after": 4,
+        "manual_operator_steps_before": 8,
+        "manual_step_reduction": 0.5,
+        "required_evidence_recall": 1.0
+      },
+      "name": "measurable_consolidation_improvement",
+      "ok": true
+    },
+    {
+      "detail": {
+        "build": "gen6-experience-memory-r1-dc0d2cb41595",
+        "lkg": "dc0d2cb41595a9a3d953873879ccc3e0bd88db2b4dcdee4cf8aa43dd4cb103e9",
+        "server": "dc0d2cb41595a9a3d953873879ccc3e0bd88db2b4dcdee4cf8aa43dd4cb103e9"
+      },
+      "name": "operational_gen6_identity_unchanged",
+      "ok": true
+    },
+    {
+      "detail": null,
+      "name": "permanent_mcp_surface_exact_10",
+      "ok": true
+    },
+    {
+      "detail": {
+        "gold": "718d297ae608d53bad0b81b576f536df05c737c165c2dc3a1c29851b989440eb",
+        "passed": 40,
+        "total": 40
+      },
+      "name": "retained_gen15_boundary",
+      "ok": true
+    },
+    {
+      "detail": "2755cc4fa09afbe653dbc6961a4bab314a052483fc9d8d62d3b71bf83db4b80a",
+      "name": "frozen_gold_unchanged",
+      "ok": true
+    }
+  ],
+  "gold_sha256": "2755cc4fa09afbe653dbc6961a4bab314a052483fc9d8d62d3b71bf83db4b80a",
+  "metrics": {
+    "bridge_lines": 21,
+    "context_reduction_min": 0.6495714812941675,
+    "critical_evidence_false_negatives_max": 0,
+    "dangerous_new_evaluator_mutation_kill_rate": 1.0,
+    "dangerous_new_evaluator_survivors": 0,
+    "manual_operator_steps": 4,
+    "permanent_mcp_tools": 10,
+    "required_evidence_recall_min": 1.0
+  },
+  "ok": true,
+  "onboarding_sha256": "33dad6262d3a2071c4198b4d0e337076f0c8d52c9f9015dab6b052054ff458c0",
+  "pack_sha256": "77789cfd1a759e8c55977c7e820592470ed1726405e9d72adf1bf102da7ce95b",
+  "passed": 40,
+  "total": 40,
+  "version": "gen16-project-factory-benchmark-r1"
+}

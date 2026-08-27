@@ -1,0 +1,46 @@
+{
+  "append_only_audit": {
+    "prefix_preserved": true,
+    "trace_baseline_bytes": 1983015,
+    "trace_baseline_sha256": "1031056cab313d606d75708e55ecc5bb34e48021ee95a1aa3fbece2f4e49990e",
+    "trace_current_bytes": 2011623,
+    "trace_current_sha256": "6458184fed4705c67984fbc48a5cb444e78c006151821550783bec80edf02455"
+  },
+  "baseline": "accepted Gen15 final protected manifest",
+  "baseline_manifest_digest": "3451b076e94e9bdfecc54b08200dcf4d6bdb82b681d47558fecd64206de59196",
+  "containment": {
+    "blocked": [
+      "192.168.127.1:8790",
+      "10.0.0.1:22",
+      "172.16.0.1:22",
+      "100.64.0.1:22"
+    ],
+    "host_control_sockets": [],
+    "host_repository_present": false,
+    "ok": true,
+    "unexpected_reachable": []
+  },
+  "current_manifest_digest": "8fb6f72df8208c90e0a50bee446621aaf1b5430eb4fe737cbb2f206419dfbf62",
+  "generated_at": "2026-08-27T02:58:16.787561+00:00",
+  "immutable_comparison": {
+    "forbidden_changes": [],
+    "zero_forbidden_changes": true
+  },
+  "operational": {
+    "build_id": "gen6-experience-memory-r1-dc0d2cb41595",
+    "generation": "gen6-experience-memory-r1",
+    "live_equals_lkg": true,
+    "lkg_sha256": "dc0d2cb41595a9a3d953873879ccc3e0bd88db2b4dcdee4cf8aa43dd4cb103e9",
+    "permanent_mcp_tools": 10,
+    "recovery_state": "ACCEPTED",
+    "server_sha256": "dc0d2cb41595a9a3d953873879ccc3e0bd88db2b4dcdee4cf8aa43dd4cb103e9",
+    "service_state": "active"
+  },
+  "status": "PASS",
+  "temporary_debris": {
+    "capsule_dirs_remaining": 0,
+    "gen12_future_fixture_exists": false,
+    "gen14_nursery_exists": false
+  },
+  "version": "gen16-protected-state-r1"
+}

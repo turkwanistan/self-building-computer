@@ -1,0 +1,315 @@
+{
+  "capabilities": [
+    {
+      "applicability": [
+        "audio",
+        "music",
+        "telemetry",
+        "structure"
+      ],
+      "authority_requirements": [
+        "project telemetry evidence",
+        "source lineage"
+      ],
+      "evaluator": {
+        "function": "evaluate_telemetry_profile",
+        "resource": "gen15_domain_evaluators",
+        "sha256": "c987dae835e68cfb663398d647b91e1eb9f9820f7a595184139a5176827e160e"
+      },
+      "forge": {
+        "desired_name": "musical-telemetry-profiler-r1",
+        "expected_content_hash": "4dd178d667af77f5c50e846dec419dac3206040491017ca591a3504fa2b455c3"
+      },
+      "id": "musical-telemetry-profiler-r1",
+      "necessity": "required",
+      "provider": "forge",
+      "purpose": "Deterministically summarize and validate musical telemetry structure and source lineage.",
+      "runtime_dependencies": [],
+      "task_intents": [
+        "telemetry inspection",
+        "songboss causality"
+      ],
+      "utility": 0.96
+    },
+    {
+      "applicability": [
+        "music",
+        "gameplay",
+        "songboss",
+        "causality",
+        "safety"
+      ],
+      "authority_requirements": [
+        "Song Boss plan",
+        "telemetry profile",
+        "project safety evidence"
+      ],
+      "evaluator": {
+        "function": "evaluate_songboss_audit",
+        "resource": "gen15_domain_evaluators",
+        "sha256": "c987dae835e68cfb663398d647b91e1eb9f9820f7a595184139a5176827e160e"
+      },
+      "forge": {
+        "desired_name": "songboss-causality-auditor-r1",
+        "expected_content_hash": "7a8ffc0c3facad20c5714834d1d4e0d0d106f663ae4ec07f8106c21c3d951edf"
+      },
+      "id": "songboss-causality-auditor-r1",
+      "necessity": "required",
+      "provider": "forge",
+      "purpose": "Independently audit evidence-to-attack causality, timing grammar, lineage, and safety.",
+      "runtime_dependencies": [],
+      "task_intents": [
+        "songboss causality"
+      ],
+      "utility": 0.94
+    },
+    {
+      "allow_forge": false,
+      "applicability": [
+        "audio",
+        "decode"
+      ],
+      "authority_requirements": [
+        "bounded project subprocess"
+      ],
+      "id": "ffmpeg-audio-decode",
+      "necessity": "specialize",
+      "platform_reason": "Generic shell/subprocess authority exists; domain ergonomics remain project-specific.",
+      "platform_status": "WEAK_NEEDS_SPECIALIZATION",
+      "provider": "platform",
+      "purpose": "Decode and inspect audio through the project existing FFmpeg subprocess path.",
+      "runtime_dependencies": [
+        "ffmpeg"
+      ],
+      "task_intents": [
+        "telemetry inspection"
+      ],
+      "utility": 0.75
+    },
+    {
+      "allow_forge": false,
+      "applicability": [
+        "browser",
+        "visual",
+        "render"
+      ],
+      "authority_requirements": [
+        "mediated browser inspection"
+      ],
+      "id": "browser-visual-review",
+      "necessity": "specialize",
+      "platform_reason": "Mediated browser inspection exists; project behavioral/visual criteria must stay pack-specific.",
+      "platform_status": "WEAK_NEEDS_SPECIALIZATION",
+      "provider": "platform",
+      "purpose": "Inspect the local visualizer and capture render evidence without adding a project-specific MCP tool.",
+      "runtime_dependencies": [
+        "browser sidecar"
+      ],
+      "task_intents": [
+        "songboss causality"
+      ],
+      "utility": 0.68
+    },
+    {
+      "allow_forge": false,
+      "applicability": [
+        "video"
+      ],
+      "authority_requirements": [],
+      "id": "video-transcoding-suite",
+      "necessity": "unnecessary",
+      "platform_reason": "No current task requires a broad transcoding capability.",
+      "platform_status": "UNNECESSARY",
+      "provider": "platform",
+      "purpose": "Broad video transcoding beyond current project acceptance needs.",
+      "runtime_dependencies": [],
+      "utility": 0.25
+    }
+  ],
+  "classification_policy": {
+    "valuable_utility_min": 0.5
+  },
+  "pack_id": "song-city-telemetry-project-factory",
+  "pack_sha256": "77789cfd1a759e8c55977c7e820592470ed1726405e9d72adf1bf102da7ce95b",
+  "project": {
+    "artifact_locations": [
+      "artifacts/",
+      "visualizer/public/"
+    ],
+    "authority_hierarchy": [
+      "START_HERE.md fresh-session protocol",
+      "STATUS.md current state",
+      "AI_CONTEXT_PROTOCOL.md authority/context rules",
+      "source + tests",
+      "generated artifacts/evidence"
+    ],
+    "authority_rules": [
+      {
+        "patterns": [
+          "output/**",
+          "artifacts/**",
+          "visualizer/public/**"
+        ],
+        "role": "generated"
+      },
+      {
+        "patterns": [
+          "START_HERE.md",
+          "STATUS.md",
+          "AI_CONTEXT_PROTOCOL.md",
+          "DESIGN.md",
+          "TELEMETRY_SCHEMA.md",
+          "pyproject.toml",
+          "songcity_telemetry/**",
+          "songboss/**",
+          "tests/**",
+          "tools/**",
+          "visualizer/src/**",
+          "visualizer/package.json"
+        ],
+        "role": "authoritative"
+      }
+    ],
+    "build_commands": [
+      "python3 -m pip install -e '.[test]'"
+    ],
+    "data_locations": [
+      "fixtures/",
+      "output/real/",
+      "output/synthetic/"
+    ],
+    "embed_patterns": [
+      "START_HERE.md",
+      "STATUS.md",
+      "AI_CONTEXT_PROTOCOL.md",
+      "TELEMETRY_SCHEMA.md",
+      "pyproject.toml"
+    ],
+    "enforce_embedded_identity": true,
+    "entrypoints": [
+      "songcity_telemetry/__main__.py",
+      "tools/run_acceptance.py",
+      "tools/prepare_songboss.py",
+      "tools/run_songboss_acceptance.py"
+    ],
+    "external_interfaces": [
+      "FFmpeg subprocess",
+      "optional librosa/scipy/numpy MIR stack",
+      "local browser visualizer"
+    ],
+    "ignore_patterns": [
+      "private_audio/**",
+      "**/frames.npz",
+      "**/__pycache__/**",
+      "**/*.pyc",
+      "visualizer/node_modules/**",
+      ".venv/**"
+    ],
+    "important_files": [
+      "START_HERE.md",
+      "STATUS.md",
+      "AI_CONTEXT_PROTOCOL.md",
+      "TELEMETRY_SCHEMA.md",
+      "pyproject.toml",
+      "songcity_telemetry/pipeline.py",
+      "songcity_telemetry/validation.py",
+      "songboss/compiler.py",
+      "songboss/safety.py",
+      "tests/test_songboss.py"
+    ],
+    "max_embed_bytes": 131072,
+    "project_id": "song-city-telemetry",
+    "project_name_aliases": [
+      "song-city-telemetry"
+    ],
+    "safety_constraints": [
+      "do not expose private_audio",
+      "generated output is evidence not source authority",
+      "pilot checkout remains read-only during Gen15",
+      "no host path escape"
+    ],
+    "task_profiles": {
+      "songboss causality": {
+        "keywords": [
+          "songboss",
+          "boss",
+          "attack",
+          "causality",
+          "combat",
+          "set piece"
+        ],
+        "optional_patterns": [
+          "songboss/*.py",
+          "tests/test_songboss.py"
+        ],
+        "required_paths": [
+          "STATUS.md",
+          "songboss/compiler.py",
+          "songboss/safety.py"
+        ]
+      },
+      "telemetry inspection": {
+        "keywords": [
+          "telemetry",
+          "schema",
+          "structure",
+          "beat",
+          "section",
+          "audio"
+        ],
+        "optional_patterns": [
+          "songcity_telemetry/*.py",
+          "pyproject.toml"
+        ],
+        "required_paths": [
+          "TELEMETRY_SCHEMA.md",
+          "songcity_telemetry/pipeline.py",
+          "songcity_telemetry/validation.py"
+        ]
+      },
+      "test and acceptance": {
+        "keywords": [
+          "test",
+          "pytest",
+          "acceptance",
+          "fixture",
+          "regression"
+        ],
+        "optional_patterns": [
+          "tests/*.py",
+          "tools/run_*acceptance.py"
+        ],
+        "required_paths": [
+          "pyproject.toml",
+          "tests/test_pipeline.py",
+          "tests/test_songboss.py"
+        ]
+      }
+    },
+    "tests": [
+      "python3 -m pytest -q"
+    ]
+  },
+  "project_building_readiness": {
+    "behavioral_evaluators": "pack evaluator references + Gen14 mutation nursery",
+    "bounded_long_running_experiments": "existing durable jobs + Gen13 hierarchical isolation",
+    "browser_render_inspection": "existing mediated Playwright browser sidecar",
+    "deterministic_simulation_replay": "Gen12 counterfactual replay substrate",
+    "frontend_backend_sync_tests": "project-native checks + browser inspection",
+    "persistent_services": "existing guest systemd service control",
+    "sqlite_event_ledger_inspection": "guest Python/sqlite3 + bounded shell"
+  },
+  "provenance": {
+    "creator": "ChatGPT",
+    "derived_from": "gen15-project-onboarding-domain-capability-r1",
+    "gen15_manifest_sha256": "e7473a8783218981a7bcf621690f96ea430dd5810a0e4d689217bbcb11f14ea3",
+    "pilot": "song-city-telemetry",
+    "source_generation": "gen16-capability-consolidation-r1"
+  },
+  "schema": "gen16.project-capability-pack.v1",
+  "self_use_evidence": {
+    "source": "lab_generations/GEN15_SELF_USE.json",
+    "status": "accepted_input"
+  },
+  "version": "1"
+}

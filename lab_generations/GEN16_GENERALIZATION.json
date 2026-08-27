@@ -1,0 +1,36 @@
+{
+  "analysis_sha256": "80a569e0980b66387736fc34c7501fad27d9e8df63831108c5901d6e13d9a255",
+  "capabilities": [
+    {
+      "authority_requirements": [],
+      "forge_plan": null,
+      "id": "node-runtime",
+      "provider": "platform",
+      "reason": "Node runtime is present in project substrate.",
+      "runtime_dependencies": [],
+      "selected": null,
+      "status": "AVAILABLE",
+      "utility": 0.9
+    }
+  ],
+  "context": {
+    "authoritative_bytes": 139,
+    "context_reduction": 0.08633093525179858,
+    "critical_false_negatives": 0,
+    "required_evidence_recall": 1.0,
+    "selected_bytes": 127
+  },
+  "deterministic": true,
+  "frameworks": [
+    "Node/package.json"
+  ],
+  "languages": [
+    [
+      "JavaScript",
+      2
+    ]
+  ],
+  "pack_sha256": "70f527e56057f9e9fc15f5b2d907e9e1aa30eeaf596ceaef287bf0d6e0c07678",
+  "transport_sha256": "6afe4fcb3db8fac048736dd1c6796289d45c94140b350f8879b111e1c7e81fab",
+  "version": "gen16-generalization-r1"
+}

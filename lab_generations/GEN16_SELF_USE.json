@@ -1,0 +1,27 @@
+{
+  "bridge_lines_after": 21,
+  "bridge_lines_before": 92,
+  "bridge_reduction": 0.771739,
+  "canonical_compose_owner": "project_onboarding.compose_platform_context",
+  "context": {
+    "authoritative_bytes": 1010612,
+    "context_reduction": 0.8252583583017024,
+    "critical_false_negatives": 0,
+    "required_evidence_recall": 1.0,
+    "selected_bytes": 176596
+  },
+  "defects_found_and_resolved": [
+    {
+      "finding": "structural pack validation initially forced evaluator resource resolution during internal classification",
+      "resolution": "split structural validation from explicit resource verification; full analyze verifies resources once and internal classification reuses the verified pack"
+    },
+    {
+      "finding": "self-use source root includes runtime virtualenv symlinks outside the declared project root",
+      "resolution": "preserved fail-closed symlink containment and excluded venv/** from the source-only self-use scope"
+    }
+  ],
+  "legacy_capability_requirements_removed_from_pack_project": true,
+  "manifest_sha256": "f8684c2b87de1ccd3f1eed942b0cd7950500c5c70bde4c6aebea5a84545b2003",
+  "pack_sha256": "7781dee946ac84e04cb7bb12fdb979aebae74fed3b5e2d98ba4c2e7cbeb70260",
+  "version": "gen16-self-use-r1"
+}

@@ -1,0 +1,43 @@
+{
+  "generated_from": "accepted Gen16 capability consolidation + reusable project capability pack evidence",
+  "guardrails": [
+    "Frozen Optiplex_MCP remains unchanged",
+    "Operational Lab server remains accepted Gen6 unless project evidence proves a server change is necessary",
+    "Permanent Lab MCP surface remains exactly 10 by default",
+    "Retain the full Gen2-Gen16 acceptance matrix",
+    "Use the Gen16 project capability pack/onboarding path rather than inventing Terrarium-specific platform infrastructure",
+    "Project work may drive future capability forging, but evaluation and promotion gates remain explicit"
+  ],
+  "ranked_proposals": [
+    {
+      "rank": 1,
+      "name": "Terrarium — First Full Project-Building Pilot",
+      "goal": "Use the consolidated project factory on a real persistent artificial-creature project. Initial scope: Phase 0 contracts/skeleton; Phase 1 visibly alive autonomous creature; Phase 2 persistent objects; fixed 800x480 browser reference renderer; persistent host-owned life/state/history; deterministic simulation and replay. Let concrete project gaps trigger bounded capability discovery/forging rather than prebuilding Terrarium-specific platform branches."
+    },
+    {
+      "rank": 2,
+      "name": "Project-Driven Capability Expansion",
+      "goal": "As Terrarium exposes real gaps in rendering, persistent services, simulation inspection, SQLite/event-ledger analysis, behavioral evaluation, or visual acceptance, forge/evaluate reusable capabilities through Gen16 packs and Capability Forge."
+    },
+    {
+      "rank": 3,
+      "name": "Persistent Project Experiment Cadence",
+      "goal": "Use existing durable jobs/services, deterministic replay, Gen13 isolation and project-specific evaluators to make project evolution iterative across explicit development generations without introducing autonomous production promotion."
+    },
+    {
+      "rank": 4,
+      "name": "Hardware Renderer Fork",
+      "goal": "After the 800x480 browser reference behavior is stable, evaluate an ESP32-S3/LVGL or similarly bounded display target as a renderer/client fork while host-owned simulation/state remains authoritative."
+    }
+  ],
+  "recommended_next": "Terrarium — First Full Project-Building Pilot",
+  "terrarium_initial_scope": {
+    "phase_0": "contracts, project skeleton, deterministic world/state/event model, replay harness",
+    "phase_1": "visibly alive autonomous creature in a fixed 800x480 browser reference renderer",
+    "phase_2": "persistent objects/interactions with host-owned world/state/history",
+    "persistence": "host-owned life continues across renderer/browser restarts",
+    "determinism": "seeded simulation and deterministic replay are acceptance-critical",
+    "future": "learned preferences/routines and eventual ESP32-S3/LVGL hardware renderer after the reference implementation"
+  },
+  "version": "gen17-proposals-r1"
+}

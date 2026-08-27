@@ -1,0 +1,32 @@
+{
+  "cases": {
+    "capability_content_hash_mismatch": "WEAK_NEEDS_SPECIALIZATION",
+    "compatibility_bridge_binding_mismatch": "RuntimeError: project context/task binding mismatch",
+    "critical_classifier_check_disabled": {
+      "classification": "KILLED",
+      "kill_reason": "INDEPENDENT_ORACLE_MISMATCH",
+      "mutation_id": "mu14_a3da7f5d38d7c01a1deeffbb"
+    },
+    "duplicate_capability_requirement": "OnboardingError: duplicate capability requirement: musical-telemetry-profiler-r1",
+    "evaluator_reference_mismatch": "OnboardingError: pack resource hash mismatch: gen15_domain_evaluators",
+    "forged_available_without_promotion": "WEAK_NEEDS_SPECIALIZATION",
+    "missing_required_project_evidence": "OnboardingError: missing authoritative inputs: definitely/missing.py",
+    "missing_valuable_without_forge_plan": "OnboardingError: missing valuable capability has no Forge plan: missing",
+    "pack_digest_tamper": "OnboardingError: project capability pack digest mismatch",
+    "pack_schema_tamper": "OnboardingError: unsupported project capability pack schema",
+    "stale_project_manifest": "OnboardingError: stale project model",
+    "undeclared_project_mutation": {
+      "accepted_state_unchanged": true,
+      "cleanup_removed": true,
+      "reason": "UNDECLARED_CHILD_MUTATION",
+      "status": "INVALID"
+    },
+    "unnecessary_capability_opens_no_gap": {
+      "forge_plan": null,
+      "status": "UNNECESSARY"
+    },
+    "unsafe_pack_resource_path": "OnboardingError: unsafe pack resource name: ../escape",
+    "weak_match_not_claimed_available": "WEAK_NEEDS_SPECIALIZATION"
+  },
+  "version": "gen16-adversarial-r1"
+}

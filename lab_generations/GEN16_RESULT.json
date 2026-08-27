@@ -1,0 +1,157 @@
+{
+  "accepted_at": "2026-08-27T02:58:35.784685Z",
+  "benchmark": {
+    "bridge_lines": 21,
+    "context_reduction_min": 0.6495714812941675,
+    "critical_evidence_false_negatives_max": 0,
+    "dangerous_new_evaluator_mutation_kill_rate": 1.0,
+    "dangerous_new_evaluator_survivors": 0,
+    "manual_operator_steps": 4,
+    "passed": 40,
+    "permanent_mcp_tools": 10,
+    "required_evidence_recall_min": 1.0,
+    "result": "40/40 PASS",
+    "total": 40
+  },
+  "capability_build": "gen16-capability-consolidation-r1-33dad6262d3a",
+  "consolidation": {
+    "bridge_line_reduction": 0.771739,
+    "bridge_lines_after": 21,
+    "bridge_lines_before": 92,
+    "canonical_project_analysis_paths": 1,
+    "capability_source_copies_in_pack": 0,
+    "legacy_project_capability_requirement_block_removed": true,
+    "manual_operator_steps_after": 4,
+    "manual_operator_steps_before": 8,
+    "manual_step_reduction": 0.5,
+    "status": "PASS"
+  },
+  "final_twin": {
+    "causal_index_sha256": "a68970ee63c3dda403f3e97fcbce9a27b33053bdb50b3f38c5f839d1ad607478",
+    "edges": 380,
+    "graph_digest": "ff8f7b5a4da46b42fefd73c427078edcf18d7345a725ec43d50fd96b80afe930",
+    "nodes": 245,
+    "snapshot_sha256": "c7d101384ea0d56d6fc21aae374a48cf62d54aad6f0cd3c4265da5954dff9f14",
+    "verify": "PASS_ZERO_ISSUES_ZERO_NEWER_EVIDENCE"
+  },
+  "generalization": {
+    "framework": "Node/package.json",
+    "language": "JavaScript",
+    "required_evidence_recall": 1.0,
+    "second_project_pack_deterministic": true,
+    "status": "PASS"
+  },
+  "generation": "gen16-capability-consolidation-r1",
+  "identities": {
+    "adversarial_artifact_sha256": "67504d0d81993254dc378f9bc5864768a44a44f0d7c72ad8916b2b6aaedd25ca",
+    "benchmark_artifact_sha256": "6d5cde099b2e7e63ed253e726c62e17b8d621b5f717f175fee682ebe322b2506",
+    "benchmark_source_sha256": "19e61cedde431c17571337324dc7de01319b767fd16826f1f65a98a898207317",
+    "consolidation_artifact_sha256": "61827d0c3347a1756598760719d2202932b14f0510f576c822e732e7e4ccfbff",
+    "frozen_gold_sha256": "2755cc4fa09afbe653dbc6961a4bab314a052483fc9d8d62d3b71bf83db4b80a",
+    "generalization_artifact_sha256": "857f08e2a262ddeed11c89e6425d7a84ecd94f971657ad67c820b4ee351b30e7",
+    "mutation_evidence_sha256": "763eebddb38cbf051033b7c917c89ea4b84df0d28eb173078fa45947a459d778",
+    "project_context_bridge_sha256": "8f326f12edd6f96dafec75d271f98ff888f5e8a32b08dc42034522112649aec2",
+    "project_onboarding_sha256": "33dad6262d3a2071c4198b4d0e337076f0c8d52c9f9015dab6b052054ff458c0",
+    "project_readiness_artifact_sha256": "2b3e8d2fbf5f892ea3ced34522c3705ca1ab66425b4d5b4556c74502da0d2567",
+    "protected_state_artifact_sha256": "2910f211a83479b732135a3d75927e626e91019f2de8b29aac822145955235fe",
+    "retained_regressions_artifact_sha256": "3b595332bf2797a9b001432733ddef6bb108894f6128168b063ffff360b41872",
+    "self_use_artifact_sha256": "b7272941bef7c0efc6d22b2c9e08bcbf026c176b0c96551a12548b379e05fc30",
+    "song_city_compatibility_artifact_sha256": "7b54201d7b6c3a03c8c9f011622203c588881eacb09478e200734a7cb7d5d99e",
+    "song_city_pack_file_sha256": "0cf8ded7d30ce1a406e1854a4407e3c2072f2075611ba6487f2d15cfeb32d2d7",
+    "song_city_pack_semantic_sha256": "77789cfd1a759e8c55977c7e820592470ed1726405e9d72adf1bf102da7ce95b"
+  },
+  "next": "Terrarium \u2014 First Full Project-Building Pilot",
+  "operational_server": {
+    "build_id": "gen6-experience-memory-r1-dc0d2cb41595",
+    "generation": "gen6-experience-memory-r1",
+    "live_equals_lkg": true,
+    "lkg_sha256": "dc0d2cb41595a9a3d953873879ccc3e0bd88db2b4dcdee4cf8aa43dd4cb103e9",
+    "recovery_state": "ACCEPTED",
+    "server_sha256": "dc0d2cb41595a9a3d953873879ccc3e0bd88db2b4dcdee4cf8aa43dd4cb103e9",
+    "service_state": "active",
+    "tool_surface": 10
+  },
+  "project_capability_pack": {
+    "actionable_states": [
+      "AVAILABLE",
+      "WEAK_NEEDS_SPECIALIZATION",
+      "MISSING_VALUABLE",
+      "UNNECESSARY"
+    ],
+    "automatic_promotion": false,
+    "forge_evaluation_governance_preserved": true,
+    "schema": "gen16.project-capability-pack.v1",
+    "song_city_pack_semantic_sha256": "77789cfd1a759e8c55977c7e820592470ed1726405e9d72adf1bf102da7ce95b",
+    "status": "PASS"
+  },
+  "project_readiness": {
+    "bounded_long_running_experiments": true,
+    "browser_render_inspection": true,
+    "deterministic_simulation_replay": true,
+    "frontend_backend_synchronization_tests": true,
+    "persistent_background_project_services": true,
+    "project_specific_behavioral_evaluators": true,
+    "sqlite_event_ledger_inspection": true,
+    "visual_acceptance_evidence": true
+  },
+  "protected_state": {
+    "append_only_trace_prefix_preserved": true,
+    "forbidden_changes": 0,
+    "status": "PASS",
+    "temporary_capsules_remaining": 0
+  },
+  "retained_regressions": {
+    "gen10": "24/24",
+    "gen11": "39/39",
+    "gen12": "30/30",
+    "gen13": "37/37",
+    "gen14": "52/52; dangerous kill rate 1.0; survivors 0",
+    "gen15": "40/40",
+    "gen2": "12/12",
+    "gen3": "16/16",
+    "gen4": "18/18",
+    "gen5": "12/12",
+    "gen6": "13/13",
+    "gen7": "15/15 version-pinned",
+    "gen8": "17/17",
+    "gen9": "20/20"
+  },
+  "scope": "Optiplex_Lab + isolated mcp-lab VM",
+  "self_use": {
+    "defects_found_and_resolved": 2,
+    "gen15_onboarding_context_reduction": 0.8252583583017024,
+    "required_evidence_recall": 1.0,
+    "status": "PASS"
+  },
+  "song_city_compatibility": {
+    "auditor_hash": "7a8ffc0c3facad20c5714834d1d4e0d0d106f663ae4ec07f8106c21c3d951edf",
+    "contexts_semantically_equal": true,
+    "independent_evaluations": 2,
+    "manifest_semantics_equal": true,
+    "profiler_hash": "4dd178d667af77f5c50e846dec419dac3206040491017ca591a3504fa2b455c3",
+    "twin_semantics_equal": true
+  },
+  "status": "ACCEPTED",
+  "validation": {
+    "canonical_project_tests": "PASS_13_13",
+    "commit_or_push_performed": false,
+    "containment": "PASS",
+    "final_twin": "PASS_ZERO_ISSUES_ZERO_NEWER_EVIDENCE",
+    "frozen_optiplex_mcp": "PASS_NO_CHANGES",
+    "git_diff_check": "PASS",
+    "json_jsonl": "PASS_133_JSON_2_JSONL_124_RECORDS_FINAL",
+    "permanent_mcp_tools": 10,
+    "protected_state": "PASS_ZERO_FORBIDDEN_TRACE_PREFIX_APPEND_ONLY",
+    "python_syntax": "PASS_52_FILES_MUTATION_FREE_AST",
+    "secret_credential_scan": "PASS",
+    "source_identity_parity": "PASS_HOST_GUEST_ONBOARDING_BRIDGE_BENCHMARK_GOLD_PACK",
+    "status": "PASS_FINAL_CANONICAL_VALIDATION",
+    "temp_capsule_cleanup": "PASS_27_FINAL_REMOVED_ZERO_REMAINING",
+    "unrelated_work_preserved": [
+      "ideas.md",
+      "host/check_chatgpt_ui_staleness.sh"
+    ],
+    "validated_at": "2026-08-27T03:01:21.215937Z"
+  },
+  "version": "gen16-result-r1"
+}

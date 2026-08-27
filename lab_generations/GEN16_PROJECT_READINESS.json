@@ -1,0 +1,21 @@
+{
+  "bounded_long_running_experiments": true,
+  "browser_render_inspection": {
+    "guest_dependency": "no new guest tool required",
+    "host_mediated_evidence_required": true
+  },
+  "deterministic_simulation_replay": true,
+  "frontend_backend_synchronization_tests": {
+    "browser_assertions_mediated_externally": true,
+    "project_native_checks_supported": true
+  },
+  "permanent_mcp_growth_required": false,
+  "persistent_background_project_services": true,
+  "project_specific_behavioral_evaluators": true,
+  "sqlite_event_ledger_inspection": true,
+  "version": "gen16-project-readiness-r1",
+  "visual_acceptance_evidence": {
+    "host_browser_screenshot_supported_externally": true,
+    "pack_specific_evaluator_supported": true
+  }
+}
