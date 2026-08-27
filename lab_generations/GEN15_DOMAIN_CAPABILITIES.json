@@ -1,0 +1,71 @@
+{
+  "capabilities": [
+    {
+      "content_hash": "4dd178d667af77f5c50e846dec419dac3206040491017ca591a3504fa2b455c3",
+      "contract_evaluation": "3/3",
+      "dependencies": 0,
+      "independent_evaluation": "PASS",
+      "name": "musical-telemetry-profiler-r1",
+      "real_result": {
+        "bars": 226,
+        "beats": 905,
+        "largest_transition_seconds": 166.42644,
+        "sections": 37,
+        "strongest_bar_indices": [
+          125,
+          129,
+          121
+        ]
+      },
+      "real_task_successes": 2,
+      "reuse_count": 1,
+      "side_effects": 0,
+      "state": "PROMOTED"
+    },
+    {
+      "content_hash": "7a8ffc0c3facad20c5714834d1d4e0d0d106f663ae4ec07f8106c21c3d951edf",
+      "contract_evaluation": "3/3",
+      "dependencies": 0,
+      "independent_evaluation": "PASS",
+      "name": "songboss-causality-auditor-r1",
+      "real_result": {
+        "attacks": 111,
+        "evidence_coverage": 1.0,
+        "family_counts": {
+          "PULSE": 69,
+          "SWEEP": 7,
+          "VOLLEY": 35
+        },
+        "safety_ok": true,
+        "timing_violations": 0,
+        "unsupported_families": []
+      },
+      "real_task_successes": 2,
+      "reuse_count": 1,
+      "side_effects": 0,
+      "state": "PROMOTED"
+    }
+  ],
+  "contaminated_seals_expired": [
+    {
+      "content_hash": "d2edfadfe9ca1614c2cf3ffdb048589455fff6fa1255ad43bb7c023ad92154a1",
+      "name": "musical-telemetry-profiler-r1",
+      "object_removed": true,
+      "reason": "workspace pycache contamination detected before use",
+      "state": "EXPIRED"
+    },
+    {
+      "content_hash": "31500e46684ba4162203354589f425eb2aa3fb8015387533c3bffda5a41f9cb7",
+      "name": "songboss-causality-auditor-r1",
+      "object_removed": true,
+      "reason": "workspace pycache contamination detected before use",
+      "state": "EXPIRED"
+    }
+  ],
+  "generated_at": "2026-08-27T02:03:46.415130+00:00",
+  "permanent_mcp_tool_growth": 0,
+  "pilot": "song-city-telemetry",
+  "source_audio_sha256": "ad1cd7d4aaaa9c10897f332eefab51ef375399ae0b68d21fcce127096e7f94f1",
+  "status": "PASS",
+  "version": "gen15-domain-capabilities-r1"
+}

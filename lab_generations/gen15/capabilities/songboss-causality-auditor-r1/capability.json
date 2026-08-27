@@ -1,0 +1,334 @@
+{
+  "applicability": [
+    "music",
+    "gameplay",
+    "songboss",
+    "causality",
+    "safety"
+  ],
+  "dependencies": {
+    "pip": []
+  },
+  "entrypoint": [
+    "python",
+    "main.py"
+  ],
+  "evaluation": {
+    "cases": [
+      {
+        "expected": {
+          "attack_count": 2,
+          "attack_rate_per_minute": 12.0,
+          "causality_evidence_coverage": 1.0,
+          "duration_seconds": 10.0,
+          "family_counts": {
+            "PULSE": 1,
+            "SWEEP": 1,
+            "VOLLEY": 0
+          },
+          "findings": [],
+          "lineage_match": true,
+          "safety": {
+            "pattern_invariants_pass": true,
+            "reachability_pass": true,
+            "witness_collision_count": 0
+          },
+          "schema_version": "gen15.songboss-audit.v1",
+          "source_sha256": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+          "timing_violations": 0,
+          "unsupported_families": [],
+          "verdict": "PASS"
+        },
+        "input": {
+          "plan": {
+            "attacks": [
+              {
+                "active_end": 3,
+                "active_start": 2,
+                "family": "PULSE",
+                "id": "a1",
+                "source_evidence": {
+                  "energy": 0.8
+                },
+                "telegraph_start": 1
+              },
+              {
+                "active_end": 6,
+                "active_start": 5.5,
+                "family": "SWEEP",
+                "id": "a2",
+                "source_evidence": {
+                  "brightness": 0.7
+                },
+                "telegraph_start": 5
+              }
+            ],
+            "metadata": {
+              "duration": 10,
+              "source_sha256": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb"
+            },
+            "segments": [
+              {
+                "combat_motif_id": "M0",
+                "end": 10,
+                "start": 0
+              }
+            ],
+            "set_pieces": [
+              {
+                "boundary_time": 5,
+                "strength": 0.7
+              }
+            ],
+            "validation": {
+              "pattern_invariants_pass": true,
+              "reachability_pass": true,
+              "witness_collision_count": 0
+            }
+          },
+          "telemetry_profile": {
+            "duration_seconds": 10,
+            "source_sha256": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb"
+          }
+        },
+        "kind": "positive",
+        "name": "causal-positive"
+      },
+      {
+        "expected": {
+          "attack_count": 2,
+          "attack_rate_per_minute": 12.0,
+          "causality_evidence_coverage": 0.5,
+          "duration_seconds": 10.0,
+          "family_counts": {
+            "PULSE": 1,
+            "SWEEP": 1,
+            "VOLLEY": 0
+          },
+          "findings": [
+            "attack a2 lacks source evidence",
+            "causality evidence coverage 0.500"
+          ],
+          "lineage_match": true,
+          "safety": {
+            "pattern_invariants_pass": true,
+            "reachability_pass": true,
+            "witness_collision_count": 0
+          },
+          "schema_version": "gen15.songboss-audit.v1",
+          "source_sha256": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+          "timing_violations": 0,
+          "unsupported_families": [],
+          "verdict": "FAIL"
+        },
+        "input": {
+          "plan": {
+            "attacks": [
+              {
+                "active_end": 3,
+                "active_start": 2,
+                "family": "PULSE",
+                "id": "a1",
+                "source_evidence": {
+                  "energy": 0.8
+                },
+                "telegraph_start": 1
+              },
+              {
+                "active_end": 6,
+                "active_start": 5.5,
+                "family": "SWEEP",
+                "id": "a2",
+                "telegraph_start": 5
+              }
+            ],
+            "metadata": {
+              "duration": 10,
+              "source_sha256": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb"
+            },
+            "segments": [
+              {
+                "combat_motif_id": "M0",
+                "end": 10,
+                "start": 0
+              }
+            ],
+            "set_pieces": [
+              {
+                "boundary_time": 5,
+                "strength": 0.7
+              }
+            ],
+            "validation": {
+              "pattern_invariants_pass": true,
+              "reachability_pass": true,
+              "witness_collision_count": 0
+            }
+          },
+          "telemetry_profile": {
+            "duration_seconds": 10,
+            "source_sha256": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb"
+          }
+        },
+        "kind": "adversarial",
+        "name": "missing-source-evidence"
+      },
+      {
+        "expect_error": true,
+        "input": {
+          "plan": {
+            "attacks": [
+              {
+                "active_end": 3,
+                "active_start": 2,
+                "family": "PULSE",
+                "id": "a1",
+                "source_evidence": {
+                  "energy": 0.8
+                },
+                "telegraph_start": 1
+              },
+              {
+                "active_end": 6,
+                "active_start": 5.5,
+                "family": "SWEEP",
+                "id": "a2",
+                "source_evidence": {
+                  "brightness": 0.7
+                },
+                "telegraph_start": 5
+              }
+            ],
+            "metadata": {
+              "duration": 10,
+              "source_sha256": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb"
+            },
+            "segments": [
+              {
+                "combat_motif_id": "M0",
+                "end": 10,
+                "start": 0
+              }
+            ],
+            "set_pieces": [
+              {
+                "boundary_time": 5,
+                "strength": 0.7
+              }
+            ],
+            "validation": {
+              "pattern_invariants_pass": true,
+              "reachability_pass": true,
+              "witness_collision_count": 0
+            }
+          },
+          "telemetry_profile": {
+            "duration_seconds": 10,
+            "source_sha256": "cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc"
+          }
+        },
+        "kind": "negative",
+        "name": "lineage-mismatch"
+      }
+    ]
+  },
+  "input_schema": {
+    "additionalProperties": false,
+    "properties": {
+      "plan": {
+        "type": "object"
+      },
+      "telemetry_profile": {
+        "type": "object"
+      }
+    },
+    "required": [
+      "plan"
+    ],
+    "type": "object"
+  },
+  "lifecycle": "CANDIDATE",
+  "limits": {
+    "max_output_bytes": 65536,
+    "timeout_s": 5
+  },
+  "name": "songboss-causality-auditor-r1",
+  "output_schema": {
+    "additionalProperties": false,
+    "properties": {
+      "attack_count": {
+        "type": "integer"
+      },
+      "attack_rate_per_minute": {
+        "type": "number"
+      },
+      "causality_evidence_coverage": {
+        "type": "number"
+      },
+      "duration_seconds": {
+        "type": "number"
+      },
+      "family_counts": {
+        "type": "object"
+      },
+      "findings": {
+        "type": "array"
+      },
+      "lineage_match": {
+        "type": [
+          "boolean",
+          "null"
+        ]
+      },
+      "safety": {
+        "type": "object"
+      },
+      "schema_version": {
+        "const": "gen15.songboss-audit.v1"
+      },
+      "source_sha256": {
+        "type": "string"
+      },
+      "timing_violations": {
+        "type": "integer"
+      },
+      "unsupported_families": {
+        "type": "array"
+      },
+      "verdict": {
+        "enum": [
+          "PASS",
+          "FAIL"
+        ]
+      }
+    },
+    "required": [
+      "schema_version",
+      "verdict",
+      "source_sha256",
+      "duration_seconds",
+      "attack_count",
+      "attack_rate_per_minute",
+      "family_counts",
+      "causality_evidence_coverage",
+      "timing_violations",
+      "unsupported_families",
+      "lineage_match",
+      "safety",
+      "findings"
+    ],
+    "type": "object"
+  },
+  "provenance": {
+    "creator": "ChatGPT",
+    "creator_episode": "generation-15-project-onboarding-domain-pilot",
+    "project": "song-city-telemetry"
+  },
+  "purpose": "Independently audit Song Boss attack timing, musical source-evidence coverage, allowed family grammar, safety verdicts, set-piece bounds, and telemetry lineage.",
+  "schema_version": "capability-contract-v1",
+  "side_effects": [],
+  "ttl": {
+    "hours": 8760
+  },
+  "version": "1"
+}

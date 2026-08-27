@@ -1,0 +1,19 @@
+{
+  "version": "gen15-fixtures-r1",
+  "pilot": "song-city-telemetry",
+  "songcity_transport": {
+    "guest_path": "/opt/optiplex-lab/bench/gen15/songcity_transport.json",
+    "sha256": "94c3ae708992bbe2b4576a3d6acdd53e1578ef461eea8d58dd59b4e0f659ac85",
+    "bytes": 29997,
+    "transport_identity": "c8a93a3abb956010e926f94c4c595449f181e5803b43399c21db681f36f7e70f",
+    "source": "deterministic read-only inventory/evidence bundle from song-city-telemetry"
+  },
+  "bob_domain_input": {
+    "guest_path": "/opt/optiplex-lab/bench/gen15/bob_domain_input.json",
+    "sha256": "dfe25fa6988db2c5c28cf3756d432738f86ab9daf9b241f42ecca5c40997797f",
+    "bytes": 65295,
+    "source_sha256": "ad1cd7d4aaaa9c10897f332eefab51ef375399ae0b68d21fcce127096e7f94f1",
+    "source": "real Bob Moses telemetry + Song Boss compiled plan compact evidence bundle"
+  },
+  "policy": "The pilot checkout is not copied or mutated. Fixture hashes bind the isolated guest evidence used by the benchmark; raw project artifacts remain owned by the pilot project."
+}

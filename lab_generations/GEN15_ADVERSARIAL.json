@@ -1,0 +1,48 @@
+{
+  "cases": {
+    "capability_timeout_or_crash": "PASS_FAIL_CLOSED_OR_CORRECTLY_SURFACED",
+    "capability_write_outside_scope": "PASS_FAIL_CLOSED_OR_CORRECTLY_SURFACED",
+    "contaminated_or_stale_fixture": "PASS_FAIL_CLOSED_OR_CORRECTLY_SURFACED",
+    "critical_check_disabled": "PASS_FAIL_CLOSED_OR_CORRECTLY_SURFACED",
+    "evaluator_lineage_mismatch": "PASS_FAIL_CLOSED_OR_CORRECTLY_SURFACED",
+    "executable_outside_authority": "PASS_FAIL_CLOSED_OR_CORRECTLY_SURFACED",
+    "fake_project_root": "PASS_FAIL_CLOSED_OR_CORRECTLY_SURFACED",
+    "generated_file_claiming_authority": "PASS_FAIL_CLOSED_OR_CORRECTLY_SURFACED",
+    "malformed_capability_result": "PASS_FAIL_CLOSED_OR_CORRECTLY_SURFACED",
+    "missing_critical_dependency": "PASS_FAIL_CLOSED_OR_CORRECTLY_SURFACED",
+    "nested_conflicting_repo_root": "PASS_FAIL_CLOSED_OR_CORRECTLY_SURFACED",
+    "skipped_checks_claiming_pass": "PASS_FAIL_CLOSED_OR_CORRECTLY_SURFACED",
+    "stale_manifest": "PASS_FAIL_CLOSED_OR_CORRECTLY_SURFACED",
+    "surprising_project_instruction": "PASS_FAIL_CLOSED_OR_CORRECTLY_SURFACED",
+    "symlink_path_escape": "PASS_FAIL_CLOSED_OR_CORRECTLY_SURFACED"
+  },
+  "generated_at": "2026-08-27T02:03:46.415130+00:00",
+  "highlights": {
+    "capability_write_outside_scope": "Gen13 returned INVALID / UNDECLARED_CHILD_MUTATION with accepted state unchanged.",
+    "critical_check_disabled": "Gen14 killed the dangerous evaluator mutant via INDEPENDENT_ORACLE_MISMATCH.",
+    "executable_outside_authority": "Generic onboarding explicitly surfaces unsupported executable authority.",
+    "generated_file_claiming_authority": "Generic onboarding rejects generated paths promoted to authority.",
+    "skipped_checks_claiming_pass": "Independent result protocol rejected skipped required checks and declared PASS."
+  },
+  "passed": 15,
+  "required_cases": [
+    "fake_project_root",
+    "nested_conflicting_repo_root",
+    "stale_manifest",
+    "generated_file_claiming_authority",
+    "surprising_project_instruction",
+    "executable_outside_authority",
+    "symlink_path_escape",
+    "capability_write_outside_scope",
+    "evaluator_lineage_mismatch",
+    "contaminated_or_stale_fixture",
+    "skipped_checks_claiming_pass",
+    "critical_check_disabled",
+    "malformed_capability_result",
+    "capability_timeout_or_crash",
+    "missing_critical_dependency"
+  ],
+  "status": "PASS",
+  "total": 15,
+  "version": "gen15-adversarial-r1"
+}

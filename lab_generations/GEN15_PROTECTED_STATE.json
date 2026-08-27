@@ -1,0 +1,56 @@
+{
+  "append_only_audit": {
+    "capability_provenance_sha256": "492613035b112c26a52927e7567af7dfd9a90408c04fee9335b7db61053a30a1",
+    "trace_current_bytes": 1983015,
+    "trace_current_sha256": "1031056cab313d606d75708e55ecc5bb34e48021ee95a1aa3fbece2f4e49990e"
+  },
+  "baseline": "accepted Gen14 protected-state checkpoint",
+  "containment": {
+    "docker_socket_visible": false,
+    "host_repo_visible": false,
+    "libvirt_socket_visible": false,
+    "private_targets_reachable": false,
+    "tailscale_socket_visible": false
+  },
+  "generated_at": "2026-08-27T02:03:46.415130+00:00",
+  "immutable_operational_state": {
+    "build_id": "gen6-experience-memory-r1-dc0d2cb41595",
+    "generation": "gen6-experience-memory-r1",
+    "live_equals_lkg": true,
+    "lkg_sha256": "dc0d2cb41595a9a3d953873879ccc3e0bd88db2b4dcdee4cf8aa43dd4cb103e9",
+    "memory_registry_sha256": "2788ca0ef95cea8ff8112651700a611e2ba335cbeefca18b681521a703e953be",
+    "permanent_mcp_tools": 10,
+    "recovery_state": "ACCEPTED",
+    "regression_registry_sha256": "2c3d7b83754e1748909e3e52e43a617a134223917faa4e3baf48eba9cf555894",
+    "server_sha256": "dc0d2cb41595a9a3d953873879ccc3e0bd88db2b4dcdee4cf8aa43dd4cb103e9",
+    "service_state": "active",
+    "systemd_tree_digest": "d8d7606b6f5cc9abae38f55901a088e68f0cca6e30e1aa9e344c1f851eae6b69",
+    "workflow_graph_tree_digest": "97d9762de473c4d50372ce41146e3228773d5d25dbb4f370f90cd14fc82c3d4e",
+    "workflow_tree_digest": "427af4f69f9d0a960471db598f068033a4c63c51d003d8c3a83fd8221c2f49f3"
+  },
+  "intentional_gen15_state": {
+    "capability_registry_sha256": "add0898c76412312e10f20d33e2f52b6d726dcee6a27295b9dcb2400df4d8289",
+    "classification": "two promoted clean domain capabilities + two expired contaminated pre-use seals; expected Capability Forge state, not operational server promotion",
+    "expected_records": [
+      "4dd178d667af77f5c50e846dec419dac3206040491017ca591a3504fa2b455c3",
+      "7a8ffc0c3facad20c5714834d1d4e0d0d106f663ae4ec07f8106c21c3d951edf",
+      "d2edfadfe9ca1614c2cf3ffdb048589455fff6fa1255ad43bb7c023ad92154a1",
+      "31500e46684ba4162203354589f425eb2aa3fb8015387533c3bffda5a41f9cb7"
+    ]
+  },
+  "isolation_evidence": {
+    "forbidden_changes": [],
+    "gen14_mutation_challenge": "accepted_state_unchanged",
+    "gen15_scope_probe": "INVALID_UNDECLARED_CHILD_MUTATION_ACCEPTED_STATE_UNCHANGED",
+    "retained_gen2_gen7_capsules": "accepted_state_unchanged"
+  },
+  "status": "PASS",
+  "temporary_debris": {
+    "capsule_dirs_before_cleanup": 190,
+    "capsule_dirs_remaining": 0,
+    "capsule_dirs_removed": 190,
+    "gen14_nursery_dirs_remaining": 0,
+    "gen15_scope_probe_dirs_remaining": 0
+  },
+  "version": "gen15-protected-state-r1"
+}

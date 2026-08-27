@@ -1,0 +1,39 @@
+{
+  "generated_from": "accepted Gen15 real-project onboarding + domain capability pilot evidence",
+  "guardrails": [
+    "Frozen Optiplex_MCP remains unchanged",
+    "Operational Lab server remains accepted Gen6 unless a future generation explicitly justifies a server change",
+    "Permanent Lab MCP surface remains 10 by default",
+    "Retain Gen2-Gen15 matrix",
+    "Prefer consolidation and reusable domain/project capability packs over framework complexity for its own sake"
+  ],
+  "ranked_proposals": [
+    {
+      "goal": "Turn the successful Gen15 onboarding/Forge path into a smaller reusable set of project adapters, capability packs, and discovery/evaluation conventions; merge redundant paths while preserving every unique benchmark/evaluator contribution.",
+      "name": "Capability Consolidation + Reusable Project Capability Packs",
+      "rank": 1
+    },
+    {
+      "goal": "Onboard a second genuinely different real project\u2014not only a synthetic generalization fixture\u2014to measure which Gen15 assumptions and domain capability patterns transfer without tuning.",
+      "name": "Second Real-Domain Onboarding",
+      "rank": 2
+    },
+    {
+      "goal": "Combine Gen12 replay and Gen14 mutation evidence to localize which evidence binding, judge assumption, or score edge causes bad domain accept/reject decisions.",
+      "name": "Replay-Guided Domain Evaluator Debugging",
+      "rank": 3
+    },
+    {
+      "goal": "Compose reusable media/code/data benchmark suites through Gen13 delegation so project capability packs can be evaluated without inventing one-off harnesses.",
+      "name": "Delegated Domain Benchmark Orchestration",
+      "rank": 4
+    },
+    {
+      "goal": "Add audio/video/animation analysis or generation helpers only where real project onboarding identifies a concrete recurring capability gap.",
+      "name": "Evidence-Driven Media Capability Expansion",
+      "rank": 5
+    }
+  ],
+  "recommended_next": "Capability Consolidation + Reusable Project Capability Packs",
+  "version": "gen16-proposals-r1"
+}

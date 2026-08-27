@@ -1,0 +1,78 @@
+{
+  "context_tasks": [
+    {
+      "context_reduction": 0.6495714812941675,
+      "critical_false_negatives": 0,
+      "required_evidence_recall": 1.0,
+      "task": "telemetry structure / beat-bar-section evidence"
+    },
+    {
+      "context_reduction": 0.8060890207174328,
+      "critical_false_negatives": 0,
+      "required_evidence_recall": 1.0,
+      "task": "Song Boss attacks / musical causality audit"
+    },
+    {
+      "context_reduction": 0.7795896608756271,
+      "critical_false_negatives": 0,
+      "required_evidence_recall": 1.0,
+      "task": "test regression / runtime pipeline diagnosis"
+    }
+  ],
+  "evaluator_self_use": {
+    "accepted_state_unchanged": true,
+    "dangerous_survivors": 0,
+    "kill_reason": "INDEPENDENT_ORACLE_MISMATCH",
+    "mutation_class": "trust_declared_state",
+    "result": "KILLED",
+    "single_physical_isolation_owner": true,
+    "target": "gen15_domain_evaluators.evaluate_songboss_audit"
+  },
+  "gen8_gen11_composition": {
+    "mechanism": "Gen15 project packet sealed as critical Gen10 epoch input; Gen11 routes authority; Gen8 compiles platform safety/authority context; Gen9 minimizes; transaction digest binds both layers.",
+    "status": "PASS"
+  },
+  "generated_at": "2026-08-27T02:03:46.415130+00:00",
+  "measurable_improvement": {
+    "average_context_reduction": 0.745083,
+    "critical_false_negatives": 0,
+    "domain_gaps_closed": [
+      "musical-telemetry-profiler-r1",
+      "songboss-causality-auditor-r1"
+    ],
+    "minimum_context_reduction": 0.6495714812941675,
+    "raw_authoritative_bytes": 219477,
+    "required_evidence_recall": 1.0
+  },
+  "pilot": "song-city-telemetry",
+  "project_manifest_sha256": "e7473a8783218981a7bcf621690f96ea430dd5810a0e4d689217bbcb11f14ea3",
+  "project_namespace": "project:song-city-telemetry",
+  "real_defects_found_and_resolved": [
+    {
+      "finding": "large disconnected evidence transfer corrupted gzip payload",
+      "resolution": "per-chunk SHA256 verification plus whole Base64/raw identity checks before decode"
+    },
+    {
+      "finding": "manifest verification falsely marked fresh manifest stale after JSON round-trip",
+      "resolution": "compare canonical serialized values rather than Python tuple/list container identity"
+    },
+    {
+      "finding": "capability seals contained __pycache__ after local syntax check",
+      "resolution": "expired contaminated objects and resealed clean source-only workspaces"
+    },
+    {
+      "finding": "Gen10 bridge failed because capability registry changed after Twin snapshot",
+      "resolution": "fail-closed preserved; refreshed derived Twin then resealed coherent epochs"
+    },
+    {
+      "finding": "Gen7 current-state retained diagnostic included post-Gen7 validators",
+      "resolution": "used accepted version-pinned historical Capsule strategy"
+    },
+    {
+      "finding": "Gen12 future-evidence fixture from previous run contaminated next historical entry view",
+      "resolution": "removed only derived future fixture, rebuilt Twin, reran 30/30 with leakage 0"
+    }
+  ],
+  "status": "PASS",
+  "version": "gen15-self-use-r1"
+}

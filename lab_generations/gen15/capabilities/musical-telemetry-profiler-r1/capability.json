@@ -1,0 +1,300 @@
+{
+  "applicability": [
+    "audio",
+    "music",
+    "telemetry",
+    "structure",
+    "song-city"
+  ],
+  "dependencies": {
+    "pip": []
+  },
+  "entrypoint": [
+    "python",
+    "main.py"
+  ],
+  "evaluation": {
+    "cases": [
+      {
+        "expected": {
+          "bar_count": 2,
+          "beat_count": 2,
+          "bpm": 120.0,
+          "duration_seconds": 8.0,
+          "integrity": {
+            "bar_references_valid": true,
+            "ordered_bars": true,
+            "ordered_beats": true,
+            "ordered_sections": true
+          },
+          "largest_transition": {
+            "label": "B",
+            "novelty": 0.8,
+            "section_index": 1,
+            "time": 4.0
+          },
+          "repeated_section_instances": 0,
+          "schema_version": "gen15.telemetry-profile.v1",
+          "section_count": 2,
+          "section_pattern": "A-B",
+          "source_sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "strongest_bars": [
+            {
+              "average_energy": 0.8,
+              "index": 1,
+              "start": 4.0
+            },
+            {
+              "average_energy": 0.2,
+              "index": 0,
+              "start": 0.0
+            }
+          ],
+          "unique_section_labels": 2,
+          "warnings": [
+            "fallback"
+          ]
+        },
+        "input": {
+          "telemetry": {
+            "bars": [
+              {
+                "average_energy": 0.2,
+                "end": 4,
+                "index": 0,
+                "start": 0
+              },
+              {
+                "average_energy": 0.8,
+                "end": 8,
+                "index": 1,
+                "start": 4
+              }
+            ],
+            "beats": [
+              {
+                "time": 0.5
+              },
+              {
+                "time": 1.0
+              }
+            ],
+            "diagnostics": {
+              "warnings": [
+                "fallback"
+              ]
+            },
+            "global": {
+              "bpm": 120
+            },
+            "schema_version": "0.1",
+            "sections": [
+              {
+                "bar_indices": [
+                  0
+                ],
+                "end": 4,
+                "index": 0,
+                "label": "A",
+                "novelty": 0.0,
+                "start": 0
+              },
+              {
+                "bar_indices": [
+                  1
+                ],
+                "end": 8,
+                "index": 1,
+                "label": "B",
+                "novelty": 0.8,
+                "start": 4
+              }
+            ],
+            "source": {
+              "duration_seconds": 8,
+              "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+            }
+          }
+        },
+        "kind": "positive",
+        "name": "structured-positive"
+      },
+      {
+        "expect_error": true,
+        "input": {
+          "telemetry": {
+            "schema_version": "9"
+          }
+        },
+        "kind": "negative",
+        "name": "wrong-schema"
+      },
+      {
+        "expect_error": true,
+        "input": {
+          "telemetry": {
+            "bars": [
+              {
+                "average_energy": 0.8,
+                "end": 8,
+                "index": 1,
+                "start": 4
+              },
+              {
+                "average_energy": 0.2,
+                "end": 4,
+                "index": 0,
+                "start": 0
+              }
+            ],
+            "beats": [
+              {
+                "time": 0.5
+              },
+              {
+                "time": 1.0
+              }
+            ],
+            "diagnostics": {
+              "warnings": [
+                "fallback"
+              ]
+            },
+            "global": {
+              "bpm": 120
+            },
+            "schema_version": "0.1",
+            "sections": [
+              {
+                "bar_indices": [
+                  0
+                ],
+                "end": 4,
+                "index": 0,
+                "label": "A",
+                "novelty": 0.0,
+                "start": 0
+              },
+              {
+                "bar_indices": [
+                  1
+                ],
+                "end": 8,
+                "index": 1,
+                "label": "B",
+                "novelty": 0.8,
+                "start": 4
+              }
+            ],
+            "source": {
+              "duration_seconds": 8,
+              "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+            }
+          }
+        },
+        "kind": "adversarial",
+        "name": "unordered-bars"
+      }
+    ]
+  },
+  "input_schema": {
+    "additionalProperties": false,
+    "properties": {
+      "telemetry": {
+        "type": "object"
+      }
+    },
+    "required": [
+      "telemetry"
+    ],
+    "type": "object"
+  },
+  "lifecycle": "CANDIDATE",
+  "limits": {
+    "max_output_bytes": 65536,
+    "timeout_s": 5
+  },
+  "name": "musical-telemetry-profiler-r1",
+  "output_schema": {
+    "additionalProperties": false,
+    "properties": {
+      "bar_count": {
+        "type": "integer"
+      },
+      "beat_count": {
+        "type": "integer"
+      },
+      "bpm": {
+        "type": [
+          "number",
+          "null"
+        ]
+      },
+      "duration_seconds": {
+        "type": "number"
+      },
+      "integrity": {
+        "type": "object"
+      },
+      "largest_transition": {
+        "type": [
+          "object",
+          "null"
+        ]
+      },
+      "repeated_section_instances": {
+        "type": "integer"
+      },
+      "schema_version": {
+        "const": "gen15.telemetry-profile.v1"
+      },
+      "section_count": {
+        "type": "integer"
+      },
+      "section_pattern": {
+        "type": "string"
+      },
+      "source_sha256": {
+        "type": "string"
+      },
+      "strongest_bars": {
+        "type": "array"
+      },
+      "unique_section_labels": {
+        "type": "integer"
+      },
+      "warnings": {
+        "type": "array"
+      }
+    },
+    "required": [
+      "schema_version",
+      "source_sha256",
+      "duration_seconds",
+      "bpm",
+      "beat_count",
+      "bar_count",
+      "section_count",
+      "section_pattern",
+      "unique_section_labels",
+      "repeated_section_instances",
+      "largest_transition",
+      "strongest_bars",
+      "warnings",
+      "integrity"
+    ],
+    "type": "object"
+  },
+  "provenance": {
+    "creator": "ChatGPT",
+    "creator_episode": "generation-15-project-onboarding-domain-pilot",
+    "project": "song-city-telemetry"
+  },
+  "purpose": "Deterministically validate and summarize Song City telemetry structure, transitions, energy bars, warnings, and source lineage without manually reading dense telemetry.",
+  "schema_version": "capability-contract-v1",
+  "side_effects": [],
+  "ttl": {
+    "hours": 8760
+  },
+  "version": "1"
+}

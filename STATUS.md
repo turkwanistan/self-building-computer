@@ -1,61 +1,59 @@
 # Status
 
-Lifecycle phase: `LIFECYCLE_ACCEPTED_GEN14_EVALUATOR_MUTATION_NURSERY`
+Lifecycle phase: `LIFECYCLE_ACCEPTED_GEN15_PROJECT_ONBOARDING_DOMAIN_CAPABILITY`
 
-Generation 14 evolved **Optiplex_Lab + isolated `mcp-lab`** with an **Evaluator Mutation Nursery + Benchmark Hardening** layer. It deliberately mutates copied evaluator logic inside Gen13 hierarchical isolation, compares baseline and mutant behavior against independent oracles, and measures which evaluator assumptions actually detect defects. `Optiplex_MCP` remains frozen and the permanent Lab MCP surface remains exactly 10 tools.
+Generation 15 proved the mature Gen7–Gen14 substrate on a real external project: **Song City telemetry / SONG BOSS**. The pilot checkout remained read-only. Gen15 added deterministic project onboarding, a namespaced project Twin, task-oriented project context, Gen8–Gen11 context composition, capability-gap analysis, and two independently evaluated guest-local domain capabilities without growing the permanent MCP surface.
 
-## Accepted Gen14 capability
-- generation: `gen14-evaluator-mutation-nursery-r1`
-- capability build: `gen14-evaluator-mutation-nursery-r1-fe5f9d8fbb3c`
-- nursery SHA256: `fe5f9d8fbb3ce1aa7b7a9d8ee84536fead62c3246337644c76b037d196b2c87d`
-- fixture evaluator SHA256: `d0634a12bb0a92a697d96765ffa8756c60d75425f93af5cf3f4bfb2d6c1e8810`
-- benchmark source SHA256: `db8678ce1247f8fc9f139f68b17f4e0b53c87dfc34148cc6ed5e02272725e491`
-- frozen gold SHA256: `1a30b31a8f87c82428d157c20ddfd7c380289d6dae7447e01d573f2fb499483a`
-- `server.py`: **unchanged**; permanent MCP tools: **10**
+## Accepted Gen15 capability
+- generation: `gen15-project-onboarding-domain-capability-r1`
+- build: `gen15-project-onboarding-domain-capability-r1-50f8653f0623`
+- onboarding engine SHA256: `50f8653f06237fe031fedb1e19c61a506646d73aa78813fbcc3a8ed536553ff3`
+- project-context bridge SHA256: `76fe8a9fb76791a3226a200b5e4a1edba0597dea32c04de33f258df5d6bebf40`
+- independent domain evaluator SHA256: `c987dae835e68cfb663398d647b91e1eb9f9820f7a595184139a5176827e160e`
+- benchmark source SHA256: `6d9a03b745ac8ab4511c23ca31e3cadf75bdd2fc99e15467651fcab11ea766df`
+- frozen gold SHA256: `718d297ae608d53bad0b81b576f536df05c737c165c2dc3a1c29851b989440eb`
+- operational `server.py`: **unchanged**; permanent MCP tools: **10**
 
 Operational Lab intentionally remains Gen6: `gen6-experience-memory-r1`, build `gen6-experience-memory-r1-dc0d2cb41595`, server/LKG `dc0d2cb41595a9a3d953873879ccc3e0bd88db2b4dcdee4cf8aa43dd4cb103e9`, recovery `ACCEPTED`.
 
-## Gen14 evidence
-- frozen Gen14 benchmark: **52/52 PASS**
-- evaluator mutants: **14 attempted; 13 killed; 92.8571% overall kill rate**
-- dangerous mutants: **13/13 killed = 100%**; dangerous survivors: **0**
-- one intentional non-dangerous survivor is classified `SURVIVED_REDUNDANT_OR_EQUIVALENT` (`score_weight`)
-- all 10 required safe mutation classes exercised
-- deterministic content-addressed mutation identity and semantic result stability demonstrated
-- unique check contribution and redundant/equivalent-check reporting produced
+## Gen15 evidence
+- frozen Gen15 benchmark: **40/40 PASS**
+- real pilot manifest: `e7473a8783218981a7bcf621690f96ea430dd5810a0e4d689217bbcb11f14ea3`
+- project namespace: `project:song-city-telemetry`
+- 3 representative task packets: **100% required-evidence recall, 0 critical false negatives**
+- context reduction: **64.96% / 80.61% / 77.96%**; average **74.51%**
+- Song City canonical tests: **45 passed, 1 skipped** in a read-only sandbox
 
-## Self-use / adversarial hardening
-Gen14 mutated the real accepted `architecture_twin.verify` evaluator from the Gen8-Gen13 stack, weakening stale/missing-evidence fail-closed behavior. The nursery correctly killed the mutant through an independent oracle while preserving one physical Capsule owner and zero forbidden accepted-state mutations.
+## Domain capabilities
+1. `musical-telemetry-profiler-r1` — `4dd178d667af77f5c50e846dec419dac3206040491017ca591a3504fa2b455c3` — PROMOTED; 3/3 contract evaluation; 2/2 real tasks; independent evaluation PASS. Real Bob evidence: 905 beats, 226 bars, 37 sections; largest transition at **166.42644 s**.
+2. `songboss-causality-auditor-r1` — `7a8ffc0c3facad20c5714834d1d4e0d0d106f663ae4ec07f8106c21c3d951edf` — PROMOTED; 3/3 contract evaluation; 2/2 real tasks; independent evaluation PASS. Real Bob evidence: 111 attacks; 100% evidence coverage; PULSE 69 / SWEEP 7 / VOLLEY 35; zero timing/family/safety defects.
 
-Hostile evaluator cases—scope/authority expansion, forged or stale contexts, independent nested Capsule, accepted-state/frozen-gold/undeclared-fixture writes, self-detection mutation, ambiguous source replacement, crash, timeout, malformed output, skipped-check PASS, and lying decision output—all fail closed or are correctly killed. Frozen gold was not weakened.
+Two earlier seals polluted by local `__pycache__` were detected before use, expired, and removed; the clean source-only identities above are canonical.
+
+## Evaluator hardening / adversarial
+- new Gen15 evaluator dangerous mutation: **KILLED** by independent oracle
+- dangerous mutation kill rate: **100%**, survivors **0**
+- all **15/15** frozen Gen15 adversarial classes fail closed or are explicitly surfaced
+- out-of-scope capability write: `INVALID / UNDECLARED_CHILD_MUTATION`; accepted state unchanged
+- second generic project: Node/JavaScript fixture PASS with 100% required-evidence recall
 
 ## Retained regressions
-- Gen2 **12/12**, Gen3 **16/16**, Gen4 **18/18**, Gen5 **12/12**, Gen6 **13/13**
-- Gen7 **15/15** version-pinned, Gen8 **17/17**, Gen9 **20/20**, Gen10 **24/24**, Gen11 **39/39**, Gen12 **30/30**, Gen13 **37/37**
-- retained runner cleaned **20** new Capsule runs; the three early Gen14 smoke/debug Capsule directories were also explicitly cleaned
+- Gen2 **12/12**, Gen3 **16/16**, Gen4 **18/18**, Gen5 **12/12**, Gen6 **13/13**, Gen7 **15/15** version-pinned
+- Gen8 **17/17**, Gen9 **20/20**, Gen10 **24/24**, Gen11 **39/39**, Gen12 **30/30**, Gen13 **37/37**, Gen14 **52/52**
+- Gen14 dangerous mutants remain **13/13 killed**
 
 ## Protected state / containment
-- zero forbidden protected-state changes; only prefix-preserving append-only trace growth
 - server and LKG remain byte-identical at accepted Gen6 SHA
-- host repo not visible from guest; protected/private targets blocked; no Docker/libvirt control sockets exposed
-- no Gen14 Capsule/process/service/archive/temp debris remains
+- exactly 10 permanent Lab MCP tools; service active
+- no forbidden accepted-state mutations; intentional state is limited to the two clean Capability Forge promotions plus provenance/audit growth
+- host repo not visible from guest; Docker/libvirt/Tailscale sockets absent; private target probes blocked
+- **190** completed Capsule directories cleaned; **0** remain
 
 ## Final Twin checkpoint
-- **215 nodes / 330 edges / 114 inputs**
-- graph `0375f6d6ad59df98dfb3ce7dc3332a9d4a0e3a46c26860e04baf15b10d7e1664`
-- snapshot SHA256 `56bb5a6b84d2efda08e61c28b4a303a0c910e6d103c87bd4de04dc964cb863e2`
-- causal digest `e310699b7e40933f283ff6c7e0747913dfba84fb0bd3ce4aa59a88b1ac36b418`
-- verify **PASS, zero issues at checkpoint**
+- **236 nodes / 357 edges**
+- graph `9195d556b329c7c38505bb3b52c4584f47362f07c5388aa60bb91923575fec8c`
+- snapshot SHA256 `2de56bd8195cee8880147e0625b290cbc79ac326efd7f57210c90f47f41c91f0`
+- verify: **PASS, zero issues, zero newer evidence**
 
-## Gen15 direction
-Ranked #1 is **Project Onboarding + Domain Capability Expansion Pilot**. Use the hardened Gen8-Gen14 substrate on one real external project/domain, building bounded guest-local domain capabilities without growing the permanent MCP surface. See `lab_generations/GEN15_PROPOSALS.json`.
-
-## Final canonical validation
-- canonical project tests: **13/13 PASS**
-- mutation-free Python syntax: **45 files PASS**
-- JSON/JSONL: **106 JSON, 2 JSONL / 119 records PASS**
-- secret scan: **17 Gen14-owned + lifecycle files PASS**
-- `git diff --check`: **PASS**
-- containment/protected-state/debris: **PASS**
-- no commit or push performed
-- final acceptance validated at `2026-08-27T00:32:17.357000+00:00`
+## Gen16 direction
+Ranked #1 is **Capability Consolidation + Reusable Project Capability Packs**. See `lab_generations/GEN16_PROPOSALS.json`. Do not implement Gen16 without a fresh user request.

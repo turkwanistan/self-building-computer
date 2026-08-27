@@ -1,0 +1,128 @@
+{
+  "accepted_at": "2026-08-27T02:03:46.415130+00:00",
+  "adversarial": {
+    "all_fail_closed_or_correctly_surfaced": true,
+    "passed": 15,
+    "status": "PASS",
+    "total": 15
+  },
+  "benchmark": {
+    "context_reduction_average": 0.745083,
+    "context_reduction_min": 0.6495714812941675,
+    "critical_evidence_false_negatives_max": 0,
+    "new_evaluator_dangerous_kill_rate": 1.0,
+    "new_evaluator_dangerous_survivors": 0,
+    "passed": 40,
+    "permanent_mcp_tools": 10,
+    "required_evidence_recall_min": 1.0,
+    "result": "40/40 PASS",
+    "total": 40
+  },
+  "capability_build": "gen15-project-onboarding-domain-capability-r1-50f8653f0623",
+  "domain_capabilities": {
+    "auditor_hash": "7a8ffc0c3facad20c5714834d1d4e0d0d106f663ae4ec07f8106c21c3d951edf",
+    "count": 2,
+    "independent_evaluations": 2,
+    "meaningful": true,
+    "permanent_mcp_growth": 0,
+    "profiler_hash": "4dd178d667af77f5c50e846dec419dac3206040491017ca591a3504fa2b455c3",
+    "promoted_by_existing_guest_local_governor": true,
+    "real_task_successes_each": 2
+  },
+  "final_twin": {
+    "causal_index_sha256": "24b25f82f9bf1480a532b5c171e1bc3b904d06f0b7b0f562e747b631e1ab0d6c",
+    "edges": 357,
+    "graph_digest": "9195d556b329c7c38505bb3b52c4584f47362f07c5388aa60bb91923575fec8c",
+    "nodes": 236,
+    "post_checkpoint_note": "The recorded build/verify checkpoint had zero issues and zero newer evidence. Subsequent outer Lab status/containment calls append ordinary trace audit evidence after the checkpoint; refresh the derived Twin on next entry if that audit growth is visible.",
+    "snapshot_sha256": "2de56bd8195cee8880147e0625b290cbc79ac326efd7f57210c90f47f41c91f0",
+    "verify": "PASS_ZERO_ISSUES_ZERO_NEWER_EVIDENCE"
+  },
+  "generalization": {
+    "critical_false_negatives": 0,
+    "required_evidence_recall": 1.0,
+    "second_project": "tiny Node/JavaScript project",
+    "status": "PASS"
+  },
+  "generation": "gen15-project-onboarding-domain-capability-r1",
+  "identities": {
+    "adversarial_artifact_sha256": "ce1045b6a446b49d4a17b1cc7bcfe627b4b6200c930d84277db0739125108cd4",
+    "benchmark_artifact_sha256": "0001afdd2b12005173c25f6b6ee027c49929442acdee463d25b35cc9910fa700",
+    "benchmark_source_sha256": "6d9a03b745ac8ab4511c23ca31e3cadf75bdd2fc99e15467651fcab11ea766df",
+    "domain_capabilities_artifact_sha256": "9537a87fb81a4576e690dcd039ba9ed4bf0b52e5e88b86f5533a30546af587a3",
+    "domain_evaluator_sha256": "c987dae835e68cfb663398d647b91e1eb9f9820f7a595184139a5176827e160e",
+    "evaluator_mutation_artifact_sha256": "7110e40e0d1cc0c38b763b31a7ce6b648bae97fb03b21b0c362a8589f62eebdf",
+    "frozen_gold_sha256": "718d297ae608d53bad0b81b576f536df05c737c165c2dc3a1c29851b989440eb",
+    "generalization_artifact_sha256": "bd88037aadc49431424eb9dba4e8b1bf56d6f07a4150f29ee13fbf3fe4d82eaf",
+    "project_context_bridge_sha256": "76fe8a9fb76791a3226a200b5e4a1edba0597dea32c04de33f258df5d6bebf40",
+    "project_onboarding_sha256": "50f8653f06237fe031fedb1e19c61a506646d73aa78813fbcc3a8ed536553ff3",
+    "self_use_artifact_sha256": "7ebc43ec61fff6d1d325a74551fde0cfba53d5e8764afcc0cb5d3a3fd34429d9"
+  },
+  "next": "Capability Consolidation + Reusable Project Capability Packs",
+  "operational_server": {
+    "build_id": "gen6-experience-memory-r1-dc0d2cb41595",
+    "generation": "gen6-experience-memory-r1",
+    "live_equals_lkg": true,
+    "lkg_sha256": "dc0d2cb41595a9a3d953873879ccc3e0bd88db2b4dcdee4cf8aa43dd4cb103e9",
+    "recovery_state": "ACCEPTED",
+    "server_sha256": "dc0d2cb41595a9a3d953873879ccc3e0bd88db2b4dcdee4cf8aa43dd4cb103e9",
+    "service_state": "active",
+    "tool_surface": 10
+  },
+  "pilot": {
+    "existing_uncommitted_project_work_preserved": true,
+    "manifest_sha256": "e7473a8783218981a7bcf621690f96ea430dd5810a0e4d689217bbcb11f14ea3",
+    "namespace": "project:song-city-telemetry",
+    "project": "song-city-telemetry",
+    "read_only": true,
+    "real_project_tests": "45 passed, 1 skipped"
+  },
+  "protected_state": {
+    "forbidden_changes": 0,
+    "intentional_capability_forge_state_only": true,
+    "server_modified": false,
+    "status": "PASS",
+    "temporary_capsules_remaining": 0
+  },
+  "retained_regressions": {
+    "gen10": "24/24",
+    "gen11": "39/39",
+    "gen12": "30/30",
+    "gen13": "37/37",
+    "gen14": "52/52",
+    "gen2": "12/12",
+    "gen3": "16/16",
+    "gen4": "18/18",
+    "gen5": "12/12",
+    "gen6": "13/13",
+    "gen7": "15/15",
+    "gen8": "17/17",
+    "gen9": "20/20"
+  },
+  "scope": "Optiplex_Lab + isolated mcp-lab VM",
+  "status": "ACCEPTED",
+  "validation": {
+    "canonical_project_tests": "PASS_13_13",
+    "commit_or_push_performed": false,
+    "containment": "PASS",
+    "final_twin": "PASS_ZERO_ISSUES",
+    "frozen_optiplex_mcp": "PASS_NO_MCP_FRONTEND_CHANGES",
+    "git_diff_check": "PASS",
+    "json_jsonl": "PASS_119_JSON_2_JSONL_121_RECORDS_BEFORE_FINAL_EVENT",
+    "permanent_mcp_tools": 10,
+    "pilot_project_tests": "PASS_45_1_SKIPPED",
+    "protected_state": "PASS_ZERO_FORBIDDEN_EXPECTED_CAPABILITY_FORGE_STATE",
+    "python_syntax": "PASS_51_FILES_MUTATION_FREE_AST",
+    "secret_credential_scan": "PASS_21_GEN15_OWNED_AND_LIFECYCLE_FILES",
+    "server_modified": false,
+    "source_identity_parity": "PASS_ONBOARDING_BRIDGE_EVALUATOR_BENCHMARK_GOLD",
+    "status": "PASS_FINAL_CANONICAL_VALIDATION",
+    "temp_capsule_cleanup": "PASS_190_REMOVED_ZERO_REMAINING",
+    "unrelated_work_preserved": [
+      "ideas.md",
+      "host/check_chatgpt_ui_staleness.sh"
+    ],
+    "validated_at": "2026-08-27T02:04:45.955136+00:00"
+  },
+  "version": "gen15-result-r1"
+}

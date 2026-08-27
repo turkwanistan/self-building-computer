@@ -1,0 +1,21 @@
+{
+  "critical_false_negatives": 0,
+  "frameworks": [
+    "Node/package.json"
+  ],
+  "generated_at": "2026-08-27T02:03:46.415130+00:00",
+  "languages": [
+    [
+      "JavaScript",
+      2
+    ]
+  ],
+  "manifest_sha256": "a1bc61c714f54dc45525c3147c7ac9a272ab74aac6ac1449c15d3cfc26a6a823",
+  "note": "Distinct Node/JavaScript dependency shape passes the same generic engine with no Song City-specific path or name required.",
+  "project": "tiny synthetic Node project",
+  "required_evidence_recall": 1.0,
+  "status": "PASS",
+  "transport_sha256": "9669837fed21f43ac687a8ca800d7607ba346f68a4e08c9b6f765739af76f79d",
+  "twin_sha256": "7af58b8a4b4cabcb57cec0257866c9456492dff9e44bcd1d47f0d0904b705451",
+  "version": "gen15-generalization-r1"
+}

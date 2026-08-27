@@ -1,0 +1,125 @@
+{
+  "generated_at": "2026-08-27T02:03:46.415130+00:00",
+  "matrix": {
+    "gen10": {
+      "artifact_sha256": "de0637d1e277acaafce4718f9e39d68e2b705c54786740173fd4329b5470f478",
+      "ok": true,
+      "passed": 24,
+      "result": "24/24",
+      "strategy": "direct after fresh Twin; owns built-in isolation",
+      "total": 24
+    },
+    "gen11": {
+      "artifact_sha256": "03f6e82b82d29ab77c026be0beeeaeab32fb50027b4b684a3ab5101fb575ecf7",
+      "ok": true,
+      "passed": 39,
+      "result": "39/39",
+      "strategy": "direct after fresh Twin",
+      "total": 39
+    },
+    "gen12": {
+      "artifact_sha256": "b99334ee52aeeb70e3479ecba0fb340f90a02dd891e150fc9bf4d759ea52ac8d",
+      "ok": true,
+      "passed": 30,
+      "result": "30/30",
+      "strategy": "direct native replay/Capsule semantics after removing prior future-fixture and refreshing Twin",
+      "total": 30
+    },
+    "gen13": {
+      "artifact_sha256": "25e26327a6660136d2a48598f7669774e6c3c2f36c5c4c314d2cab7ab51e3e7a",
+      "ok": true,
+      "passed": 37,
+      "result": "37/37",
+      "strategy": "direct native hierarchical/Capsule semantics",
+      "total": 37
+    },
+    "gen14": {
+      "artifact_sha256": "0e6cff9aa5c24c2eb47dbc592b42079e25c5927479d36dbaaee931f9ca12f8da",
+      "ok": true,
+      "passed": 52,
+      "result": "52/52",
+      "strategy": "direct evaluator mutation nursery; 13/13 dangerous mutants killed",
+      "total": 52
+    },
+    "gen2": {
+      "artifact_sha256": "a37501a506a022b7e4370c3de3d9022bafa2b503e927f20da878e9fea84e3892",
+      "ok": true,
+      "passed": 12,
+      "result": "12/12",
+      "strategy": "shared historical Experiment Capsule",
+      "total": 12
+    },
+    "gen3": {
+      "artifact_sha256": "874740ff80f47a577c5352b508e2b879010529d7aece04770f326b56ca0336a8",
+      "ok": true,
+      "passed": 16,
+      "result": "16/16",
+      "strategy": "shared historical Experiment Capsule",
+      "total": 16
+    },
+    "gen4": {
+      "artifact_sha256": "1d9d1a9aba684e6a855f5144e346bee6904e7f25eeea9eb5b57f41fabc1d1842",
+      "ok": true,
+      "passed": 18,
+      "result": "18/18",
+      "strategy": "shared historical Experiment Capsule",
+      "total": 18
+    },
+    "gen5": {
+      "artifact_sha256": "63d77f5adc76051b53f3d4f8ba0a4a57eb9a325f033ea70e01a44ce0e70f2fa4",
+      "ok": true,
+      "passed": 12,
+      "result": "12/12",
+      "strategy": "historical empty capability/regression state Capsule",
+      "total": 12
+    },
+    "gen6": {
+      "artifact_sha256": "686d4f990f3f3f8f4ce28ae912f1a8113ca57a1b8efccc304013a19676b3ff7a",
+      "ok": true,
+      "passed": 13,
+      "result": "13/13",
+      "strategy": "Experiment Capsule",
+      "total": 13
+    },
+    "gen7": {
+      "artifact_sha256": "62284dcd0dca5bcd0e4a597605134f906a96995b1a847fe04796791d70a287d0",
+      "ok": true,
+      "passed": 15,
+      "result": "15/15",
+      "strategy": "version-pinned historical Capsule; post-Gen7 benchmark sources hidden",
+      "total": 15
+    },
+    "gen8": {
+      "artifact_sha256": "d93061bcd8bf5a7083de844ed989f7dc89d245ed8386933180d2acf9e03fc3a6",
+      "ok": true,
+      "passed": 17,
+      "result": "17/17",
+      "strategy": "quiescent native Capsule semantics",
+      "total": 17
+    },
+    "gen9": {
+      "artifact_sha256": "ffcabd1e429f152e552b0e5dac5e19b8c2e01274e2384516c37b17546526da73",
+      "ok": true,
+      "passed": 20,
+      "result": "20/20",
+      "strategy": "mutation-safe native isolation",
+      "total": 20
+    }
+  },
+  "metrics": {
+    "all_generations_pass": true,
+    "gen13_exact": "37/37",
+    "gen14_dangerous_mutation_kill_rate": 1.0,
+    "gen14_dangerous_survivors": 0,
+    "gen14_exact": "52/52",
+    "temporary_capsules_remaining": 0,
+    "temporary_capsules_removed": 190
+  },
+  "notes": [
+    "Gen7 direct current-state diagnostic first produced 14/15 because Gen8-Gen10 validators legitimately exist now; the accepted version-pinned historical rerun restored 15/15 and impact precision/recall 1.0.",
+    "Gen10 initially failed closed after Gen8 rewrote Tier-1 benchmark evidence; a fresh Twin restored coherent evidence and the real rerun passed 24/24.",
+    "Gen12 initially produced 28/30 because its prior future-evidence fixture existed before epoch seal; removing only that derived fixture, rebuilding the Twin, and rerunning restored 30/30 with historical leakage 0 and unsafe rejection 10/10."
+  ],
+  "status": "PASS",
+  "version": "gen15-retained-regressions-r1"
+}

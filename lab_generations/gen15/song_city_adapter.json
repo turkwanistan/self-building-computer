@@ -1,0 +1,47 @@
+{
+  "project_id": "song-city-telemetry",
+  "project_name_aliases": ["song-city-telemetry"],
+  "enforce_embedded_identity": true,
+  "ignore_patterns": [
+    "private_audio/**", "**/frames.npz", "**/__pycache__/**", "**/*.pyc", "visualizer/node_modules/**", ".venv/**"
+  ],
+  "embed_patterns": ["START_HERE.md", "STATUS.md", "AI_CONTEXT_PROTOCOL.md", "TELEMETRY_SCHEMA.md", "pyproject.toml"],
+  "max_embed_bytes": 131072,
+  "authority_rules": [
+    {"role": "generated", "patterns": ["output/**", "artifacts/**", "visualizer/public/**"]},
+    {"role": "authoritative", "patterns": ["START_HERE.md", "STATUS.md", "AI_CONTEXT_PROTOCOL.md", "DESIGN.md", "TELEMETRY_SCHEMA.md", "pyproject.toml", "songcity_telemetry/**", "songboss/**", "tests/**", "tools/**", "visualizer/src/**", "visualizer/package.json"]}
+  ],
+  "important_files": ["START_HERE.md", "STATUS.md", "AI_CONTEXT_PROTOCOL.md", "TELEMETRY_SCHEMA.md", "pyproject.toml", "songcity_telemetry/pipeline.py", "songcity_telemetry/validation.py", "songboss/compiler.py", "songboss/safety.py", "tests/test_songboss.py"],
+  "entrypoints": ["songcity_telemetry/__main__.py", "tools/run_acceptance.py", "tools/prepare_songboss.py", "tools/run_songboss_acceptance.py"],
+  "tests": ["python3 -m pytest -q"],
+  "build_commands": ["python3 -m pip install -e '.[test]'"],
+  "data_locations": ["fixtures/", "output/real/", "output/synthetic/"],
+  "artifact_locations": ["artifacts/", "visualizer/public/"],
+  "authority_hierarchy": ["START_HERE.md fresh-session protocol", "STATUS.md current state", "AI_CONTEXT_PROTOCOL.md authority/context rules", "source + tests", "generated artifacts/evidence"],
+  "external_interfaces": ["FFmpeg subprocess", "optional librosa/scipy/numpy MIR stack", "local browser visualizer"],
+  "safety_constraints": ["do not expose private_audio", "generated output is evidence not source authority", "pilot checkout remains read-only during Gen15", "no host path escape"],
+  "task_profiles": {
+    "telemetry inspection": {
+      "keywords": ["telemetry", "schema", "structure", "beat", "section", "audio"],
+      "required_paths": ["TELEMETRY_SCHEMA.md", "songcity_telemetry/pipeline.py", "songcity_telemetry/validation.py"],
+      "optional_patterns": ["songcity_telemetry/*.py", "pyproject.toml"]
+    },
+    "songboss causality": {
+      "keywords": ["songboss", "boss", "attack", "causality", "combat", "set piece"],
+      "required_paths": ["STATUS.md", "songboss/compiler.py", "songboss/safety.py"],
+      "optional_patterns": ["songboss/*.py", "tests/test_songboss.py"]
+    },
+    "test and acceptance": {
+      "keywords": ["test", "pytest", "acceptance", "fixture", "regression"],
+      "required_paths": ["pyproject.toml", "tests/test_pipeline.py", "tests/test_songboss.py"],
+      "optional_patterns": ["tests/*.py", "tools/run_*acceptance.py"]
+    }
+  },
+  "capability_requirements": [
+    {"id": "musical-telemetry-profiler-r1", "utility": 0.96, "status_if_absent": "missing_and_valuable", "reason": "Needs deterministic musical-structure/lineage diagnostics without reading dense telemetry by hand."},
+    {"id": "songboss-causality-auditor-r1", "utility": 0.94, "status_if_absent": "missing_and_valuable", "reason": "Needs independent evidence-to-attack and safety auditing of generated Song Boss plans."},
+    {"id": "ffmpeg-audio-decode", "utility": 0.75, "status_if_absent": "available_but_weak", "reason": "Project already shells to FFmpeg; generic shell exists but domain ergonomics are weak."},
+    {"id": "browser-visual-review", "utility": 0.68, "status_if_absent": "available_but_weak", "reason": "Browser sidecar exists, but perceptual visual judgment remains human-gated."},
+    {"id": "video-transcoding-suite", "utility": 0.25, "status_if_absent": "unnecessary", "reason": "Not needed for telemetry/Song Boss acceptance."}
+  ]
+}

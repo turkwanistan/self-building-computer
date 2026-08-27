@@ -1,7 +1,7 @@
 {
   "lab": {
-    "accepted_at": "2026-08-27T00:32:17.357000+00:00",
-    "build_id": "gen14-evaluator-mutation-nursery-r1-fe5f9d8fbb3c",
+    "accepted_at": "2026-08-27T02:03:46.415130+00:00",
+    "build_id": "gen15-project-onboarding-domain-capability-r1-50f8653f0623",
     "features_add": [
       "architectural_digital_twin",
       "causal_observability_spine",
@@ -50,7 +50,18 @@
       "mutation_detection_power_reporting",
       "evaluator_protocol_integrity_validation",
       "real_evaluator_mutation_self_use",
-      "benchmark_hardening"
+      "benchmark_hardening",
+      "deterministic_external_project_onboarding",
+      "content_addressed_project_manifests",
+      "namespaced_project_twin",
+      "task_oriented_project_context_compilation",
+      "gen8_gen11_project_context_composition",
+      "domain_capability_gap_analysis",
+      "guest_local_domain_capability_packs",
+      "independent_domain_evaluation",
+      "domain_evaluator_mutation_hardening",
+      "second_project_generalization",
+      "read_only_external_project_piloting"
     ],
     "gen10_validation": {
       "benchmark": {
@@ -487,6 +498,134 @@
         "temp_archive_cleanup": "PASS_ZERO_GEN14_DEBRIS",
         "validated_at": "2026-08-27T00:32:17.357000+00:00"
       }
+    },
+    "gen15_validation": {
+      "accepted_at": "2026-08-27T02:03:46.415130+00:00",
+      "adversarial": {
+        "all_fail_closed_or_correctly_surfaced": true,
+        "passed": 15,
+        "status": "PASS",
+        "total": 15
+      },
+      "benchmark": {
+        "context_reduction_average": 0.745083,
+        "context_reduction_min": 0.6495714812941675,
+        "critical_evidence_false_negatives_max": 0,
+        "new_evaluator_dangerous_kill_rate": 1.0,
+        "new_evaluator_dangerous_survivors": 0,
+        "passed": 40,
+        "permanent_mcp_tools": 10,
+        "required_evidence_recall_min": 1.0,
+        "result": "40/40 PASS",
+        "total": 40
+      },
+      "capability_build": "gen15-project-onboarding-domain-capability-r1-50f8653f0623",
+      "domain_capabilities": {
+        "auditor_hash": "7a8ffc0c3facad20c5714834d1d4e0d0d106f663ae4ec07f8106c21c3d951edf",
+        "count": 2,
+        "independent_evaluations": 2,
+        "meaningful": true,
+        "permanent_mcp_growth": 0,
+        "profiler_hash": "4dd178d667af77f5c50e846dec419dac3206040491017ca591a3504fa2b455c3",
+        "promoted_by_existing_guest_local_governor": true,
+        "real_task_successes_each": 2
+      },
+      "final_twin": {
+        "causal_index_sha256": "24b25f82f9bf1480a532b5c171e1bc3b904d06f0b7b0f562e747b631e1ab0d6c",
+        "edges": 357,
+        "graph_digest": "9195d556b329c7c38505bb3b52c4584f47362f07c5388aa60bb91923575fec8c",
+        "nodes": 236,
+        "post_checkpoint_note": "The recorded build/verify checkpoint had zero issues and zero newer evidence. Subsequent outer Lab status/containment calls append ordinary trace audit evidence after the checkpoint; refresh the derived Twin on next entry if that audit growth is visible.",
+        "snapshot_sha256": "2de56bd8195cee8880147e0625b290cbc79ac326efd7f57210c90f47f41c91f0",
+        "verify": "PASS_ZERO_ISSUES_ZERO_NEWER_EVIDENCE"
+      },
+      "generalization": {
+        "critical_false_negatives": 0,
+        "required_evidence_recall": 1.0,
+        "second_project": "tiny Node/JavaScript project",
+        "status": "PASS"
+      },
+      "generation": "gen15-project-onboarding-domain-capability-r1",
+      "identities": {
+        "adversarial_artifact_sha256": "ce1045b6a446b49d4a17b1cc7bcfe627b4b6200c930d84277db0739125108cd4",
+        "benchmark_artifact_sha256": "0001afdd2b12005173c25f6b6ee027c49929442acdee463d25b35cc9910fa700",
+        "benchmark_source_sha256": "6d9a03b745ac8ab4511c23ca31e3cadf75bdd2fc99e15467651fcab11ea766df",
+        "domain_capabilities_artifact_sha256": "9537a87fb81a4576e690dcd039ba9ed4bf0b52e5e88b86f5533a30546af587a3",
+        "domain_evaluator_sha256": "c987dae835e68cfb663398d647b91e1eb9f9820f7a595184139a5176827e160e",
+        "evaluator_mutation_artifact_sha256": "7110e40e0d1cc0c38b763b31a7ce6b648bae97fb03b21b0c362a8589f62eebdf",
+        "frozen_gold_sha256": "718d297ae608d53bad0b81b576f536df05c737c165c2dc3a1c29851b989440eb",
+        "generalization_artifact_sha256": "bd88037aadc49431424eb9dba4e8b1bf56d6f07a4150f29ee13fbf3fe4d82eaf",
+        "project_context_bridge_sha256": "76fe8a9fb76791a3226a200b5e4a1edba0597dea32c04de33f258df5d6bebf40",
+        "project_onboarding_sha256": "50f8653f06237fe031fedb1e19c61a506646d73aa78813fbcc3a8ed536553ff3",
+        "self_use_artifact_sha256": "7ebc43ec61fff6d1d325a74551fde0cfba53d5e8764afcc0cb5d3a3fd34429d9"
+      },
+      "next": "Capability Consolidation + Reusable Project Capability Packs",
+      "operational_server": {
+        "build_id": "gen6-experience-memory-r1-dc0d2cb41595",
+        "generation": "gen6-experience-memory-r1",
+        "live_equals_lkg": true,
+        "lkg_sha256": "dc0d2cb41595a9a3d953873879ccc3e0bd88db2b4dcdee4cf8aa43dd4cb103e9",
+        "recovery_state": "ACCEPTED",
+        "server_sha256": "dc0d2cb41595a9a3d953873879ccc3e0bd88db2b4dcdee4cf8aa43dd4cb103e9",
+        "service_state": "active",
+        "tool_surface": 10
+      },
+      "pilot": {
+        "existing_uncommitted_project_work_preserved": true,
+        "manifest_sha256": "e7473a8783218981a7bcf621690f96ea430dd5810a0e4d689217bbcb11f14ea3",
+        "namespace": "project:song-city-telemetry",
+        "project": "song-city-telemetry",
+        "read_only": true,
+        "real_project_tests": "45 passed, 1 skipped"
+      },
+      "protected_state": {
+        "forbidden_changes": 0,
+        "intentional_capability_forge_state_only": true,
+        "server_modified": false,
+        "status": "PASS",
+        "temporary_capsules_remaining": 0
+      },
+      "retained_regressions": {
+        "gen10": "24/24",
+        "gen11": "39/39",
+        "gen12": "30/30",
+        "gen13": "37/37",
+        "gen14": "52/52",
+        "gen2": "12/12",
+        "gen3": "16/16",
+        "gen4": "18/18",
+        "gen5": "12/12",
+        "gen6": "13/13",
+        "gen7": "15/15",
+        "gen8": "17/17",
+        "gen9": "20/20"
+      },
+      "scope": "Optiplex_Lab + isolated mcp-lab VM",
+      "status": "ACCEPTED",
+      "validation": {
+        "canonical_project_tests": "PASS_13_13",
+        "commit_or_push_performed": false,
+        "containment": "PASS",
+        "final_twin": "PASS_ZERO_ISSUES",
+        "frozen_optiplex_mcp": "PASS_NO_MCP_FRONTEND_CHANGES",
+        "git_diff_check": "PASS",
+        "json_jsonl": "PASS_119_JSON_2_JSONL_121_RECORDS_BEFORE_FINAL_EVENT",
+        "permanent_mcp_tools": 10,
+        "pilot_project_tests": "PASS_45_1_SKIPPED",
+        "protected_state": "PASS_ZERO_FORBIDDEN_EXPECTED_CAPABILITY_FORGE_STATE",
+        "python_syntax": "PASS_51_FILES_MUTATION_FREE_AST",
+        "secret_credential_scan": "PASS_21_GEN15_OWNED_AND_LIFECYCLE_FILES",
+        "server_modified": false,
+        "source_identity_parity": "PASS_ONBOARDING_BRIDGE_EVALUATOR_BENCHMARK_GOLD",
+        "status": "PASS_FINAL_CANONICAL_VALIDATION",
+        "temp_capsule_cleanup": "PASS_190_REMOVED_ZERO_REMAINING",
+        "unrelated_work_preserved": [
+          "ideas.md",
+          "host/check_chatgpt_ui_staleness.sh"
+        ],
+        "validated_at": "2026-08-27T02:04:45.955136+00:00"
+      },
+      "version": "gen15-result-r1"
     },
     "gen5_validation": {
       "accepted_guest_identity": {
@@ -1174,14 +1313,14 @@
         "validated_at": "2026-08-26T18:55:07.088888+00:00"
       }
     },
-    "generation": "gen14-evaluator-mutation-nursery-r1",
-    "generation_source_sha256": "fe5f9d8fbb3ce1aa7b7a9d8ee84536fead62c3246337644c76b037d196b2c87d",
+    "generation": "gen15-project-onboarding-domain-capability-r1",
+    "generation_source_sha256": "50f8653f06237fe031fedb1e19c61a506646d73aa78813fbcc3a8ed536553ff3",
     "live_server_identity": {
       "build_id": "gen6-experience-memory-r1-dc0d2cb41595",
       "generation": "gen6-experience-memory-r1",
       "live_equals_lkg": true,
       "lkg_sha256": "dc0d2cb41595a9a3d953873879ccc3e0bd88db2b4dcdee4cf8aa43dd4cb103e9",
-      "note": "Gen13 is additive guest-local capability infrastructure; operational MCP server intentionally remains accepted Gen6.",
+      "note": "Gen15 is additive project/domain capability infrastructure; operational MCP server remains accepted Gen6.",
       "recovery_state": "ACCEPTED",
       "server_sha256": "dc0d2cb41595a9a3d953873879ccc3e0bd88db2b4dcdee4cf8aa43dd4cb103e9",
       "service_state": "active",
@@ -1189,33 +1328,41 @@
     },
     "recovery_state": "ACCEPTED",
     "source_sha256": "dc0d2cb41595a9a3d953873879ccc3e0bd88db2b4dcdee4cf8aa43dd4cb103e9",
-    "state": "GEN11_ACCEPTED_INTENT_AUTHORITY_ROUTING",
+    "state": "GEN15_ACCEPTED_PROJECT_ONBOARDING_DOMAIN_CAPABILITY",
     "tool_count": 10
   },
   "next_iteration": {
-    "cycle_id": "gen15-project-onboarding-domain-capability-001",
-    "proposals_artifact": "lab_generations/GEN15_PROPOSALS.json",
-    "required_stop": "DO_NOT_IMPLEMENT_GEN15_WITHOUT_USER_REQUEST",
+    "cycle_id": "gen16-capability-consolidation-001",
+    "proposals_artifact": "lab_generations/GEN16_PROPOSALS.json",
+    "required_stop": "DO_NOT_IMPLEMENT_GEN16_WITHOUT_USER_REQUEST",
     "safe_mcp_policy": "FROZEN_NO_CHANGES",
     "status": "PROPOSED_NOT_STARTED",
     "target": "Optiplex_Lab + mcp-lab VM",
-    "top_recommendation": "Project Onboarding + Domain Capability Expansion Pilot"
+    "top_recommendation": "Capability Consolidation + Reusable Project Capability Packs"
   },
-  "resume_instruction": "Repository/live state is authoritative. Accepted Gen14 capability is gen14-evaluator-mutation-nursery-r1 / build gen14-evaluator-mutation-nursery-r1-fe5f9d8fbb3c, nursery SHA fe5f9d8fbb3ce1aa7b7a9d8ee84536fead62c3246337644c76b037d196b2c87d, gold 1a30b31a8f87c82428d157c20ddfd7c380289d6dae7447e01d573f2fb499483a, benchmark 52/52, dangerous mutation kill rate 100% (13/13) with zero dangerous survivors, retained Gen2-Gen13 all pass including Gen13 37/37, protected state zero forbidden changes. Operational Lab intentionally remains Gen6 build gen6-experience-memory-r1-dc0d2cb41595 with server/LKG dc0d2cb41595a9a3d953873879ccc3e0bd88db2b4dcdee4cf8aa43dd4cb103e9, recovery ACCEPTED and exactly 10 tools. Final Twin checkpoint 215/330/114 graph 0375f6d6ad59df98dfb3ce7dc3332a9d4a0e3a46c26860e04baf15b10d7e1664. Top Gen15 proposal is Project Onboarding + Domain Capability Expansion Pilot. Preserve unrelated Git work and never run mcp_probe.py synchronously through Lab shell.",
-  "state": "LIFECYCLE_ACCEPTED_GEN14_EVALUATOR_MUTATION_NURSERY",
+  "resume_instruction": "Repository/live state is authoritative. Accepted Gen15 is gen15-project-onboarding-domain-capability-r1 / build gen15-project-onboarding-domain-capability-r1-50f8653f0623, gold 718d297ae608d53bad0b81b576f536df05c737c165c2dc3a1c29851b989440eb, benchmark 40/40, real Song City pilot read-only, two promoted/reused guest-local domain capabilities, required evidence recall 1.0, minimum context reduction 0.649571, adversarial 15/15, retained Gen2-Gen14 all pass including Gen13 37/37 and Gen14 52/52 with dangerous mutation kill rate 1.0. Operational Lab remains Gen6 server/LKG dc0d2cb41595a9a3d953873879ccc3e0bd88db2b4dcdee4cf8aa43dd4cb103e9, recovery ACCEPTED, exactly 10 tools. Final Twin 236/357 graph 9195d556b329c7c38505bb3b52c4584f47362f07c5388aa60bb91923575fec8c with zero issues. Preserve unrelated Git work and do not implement Gen16 without user request.",
+  "state": "LIFECYCLE_ACCEPTED_GEN15_PROJECT_ONBOARDING_DOMAIN_CAPABILITY",
   "validation": {
     "canonical_project_tests": "PASS_13_13",
     "commit_or_push_performed": false,
     "containment": "PASS",
-    "final_lab_identity": "PASS_GEN14_CAPABILITY_OVER_GEN6_SERVER_UNCHANGED_10_TOOLS",
+    "final_twin": "PASS_ZERO_ISSUES",
+    "frozen_optiplex_mcp": "PASS_NO_MCP_FRONTEND_CHANGES",
     "git_diff_check": "PASS",
-    "json_jsonl": "PASS_106_JSON_2_JSONL_119_RECORDS",
-    "protected_state": "PASS_ZERO_FORBIDDEN_TRACE_PREFIX_APPEND_ONLY",
-    "python_syntax": "PASS_45_FILES_MUTATION_FREE_AST",
-    "secret_credential_scan": "PASS_17_GEN14_OWNED_AND_LIFECYCLE_FILES",
+    "json_jsonl": "PASS_119_JSON_2_JSONL_121_RECORDS_BEFORE_FINAL_EVENT",
+    "permanent_mcp_tools": 10,
+    "pilot_project_tests": "PASS_45_1_SKIPPED",
+    "protected_state": "PASS_ZERO_FORBIDDEN_EXPECTED_CAPABILITY_FORGE_STATE",
+    "python_syntax": "PASS_51_FILES_MUTATION_FREE_AST",
+    "secret_credential_scan": "PASS_21_GEN15_OWNED_AND_LIFECYCLE_FILES",
     "server_modified": false,
+    "source_identity_parity": "PASS_ONBOARDING_BRIDGE_EVALUATOR_BENCHMARK_GOLD",
     "status": "PASS_FINAL_CANONICAL_VALIDATION",
-    "temp_archive_cleanup": "PASS_ZERO_GEN14_DEBRIS",
-    "validated_at": "2026-08-27T00:32:17.357000+00:00"
+    "temp_capsule_cleanup": "PASS_190_REMOVED_ZERO_REMAINING",
+    "unrelated_work_preserved": [
+      "ideas.md",
+      "host/check_chatgpt_ui_staleness.sh"
+    ],
+    "validated_at": "2026-08-27T02:04:45.955136+00:00"
   }
 }
